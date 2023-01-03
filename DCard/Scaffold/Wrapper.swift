@@ -9,7 +9,7 @@
 import UIKit
 
 // swiftlint:disable identifier_name unused_setter_value
-/// 新增命名空间方法实现，类似：UIColor.z.background，参考：https://github.com/onevcat/Kingfisher/blob/master/Sources/General/Kingfisher.swift
+/// 新增命名空间方法实现，类似：UIColor.fw.background，参考：https://github.com/onevcat/Kingfisher/blob/master/Sources/General/Kingfisher.swift
 public struct Wrapper<Base> {
     public var base: Base
     public init(_ base: Base) {

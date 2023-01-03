@@ -22,6 +22,7 @@
 		541A8D3029641F1F00C59026 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2729641F1F00C59026 /* UITableView+Extension.swift */; };
 		541A8D3429641F8B00C59026 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D3329641F8B00C59026 /* UserManager.swift */; };
 		541A8D3729641FC300C59026 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D3629641FC300C59026 /* UserModel.swift */; };
+		541A8D3C296421E800C59026 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D3B296421E800C59026 /* TabBarController.swift */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 		541A8D2729641F1F00C59026 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		541A8D3329641F8B00C59026 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		541A8D3629641FC300C59026 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		541A8D3B296421E800C59026 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				547F4D0829640392007B05B9 /* AppDelegate.swift */,
+				541A8D3B296421E800C59026 /* TabBarController.swift */,
 				547F4D1329640392007B05B9 /* LaunchScreen.storyboard */,
 				547F4D1629640392007B05B9 /* Info.plist */,
 			);
@@ -520,6 +523,7 @@
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
+				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */,
 			);

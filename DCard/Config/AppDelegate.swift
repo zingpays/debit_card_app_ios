@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        setupEnvironment()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.rootViewController = rootViewController()
@@ -36,6 +38,19 @@ extension UIApplicationDelegate {
         // https://juejin.cn/post/6844903687991590920
         // https://www.cxyzjd.com/article/Forever_wj/108210234
         UIApplication.shared.keyWindow()?.rootViewController = rootViewController()
+    }
+}
+
+extension AppDelegate {
+    /// Set up app environment
+    func setupEnvironment() {
+        // Set up app language
+        LocalizationManager.shared.setupLanguage()
+        // Set up keyboard manager
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        let resignedClasses = [HomeViewController.self]
+        IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
 }
 
