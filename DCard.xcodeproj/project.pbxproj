@@ -11,6 +11,17 @@
 		3039B5F9A09B3CC8A0E0578D /* Pods_DCardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0418E050854616EFDA5F4DD5 /* Pods_DCardTests.framework */; };
 		541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D192964164600C59026 /* HomeViewController.swift */; };
 		541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D1A2964164600C59026 /* HomeViewController.xib */; };
+		541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D1E29641F1F00C59026 /* BaseTargetType.swift */; };
+		541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D1F29641F1F00C59026 /* BaseViewController.swift */; };
+		541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2029641F1F00C59026 /* Wrapper.swift */; };
+		541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2129641F1F00C59026 /* AppManager.swift */; };
+		541A8D2C29641F1F00C59026 /* DLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2229641F1F00C59026 /* DLog.swift */; };
+		541A8D2D29641F1F00C59026 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2329641F1F00C59026 /* Constant.swift */; };
+		541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2429641F1F00C59026 /* LocalizationManager.swift */; };
+		541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2629641F1F00C59026 /* MoyaProvider+Extension.swift */; };
+		541A8D3029641F1F00C59026 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D2729641F1F00C59026 /* UITableView+Extension.swift */; };
+		541A8D3429641F8B00C59026 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D3329641F8B00C59026 /* UserManager.swift */; };
+		541A8D3729641FC300C59026 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D3629641FC300C59026 /* UserModel.swift */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -42,6 +53,17 @@
 		25766209AC4621BF02B76576 /* Pods-DCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard.debug.xcconfig"; path = "Target Support Files/Pods-DCard/Pods-DCard.debug.xcconfig"; sourceTree = "<group>"; };
 		541A8D192964164600C59026 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		541A8D1A2964164600C59026 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		541A8D1E29641F1F00C59026 /* BaseTargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		541A8D1F29641F1F00C59026 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		541A8D2029641F1F00C59026 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		541A8D2129641F1F00C59026 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		541A8D2229641F1F00C59026 /* DLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLog.swift; sourceTree = "<group>"; };
+		541A8D2329641F1F00C59026 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		541A8D2429641F1F00C59026 /* LocalizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		541A8D2629641F1F00C59026 /* MoyaProvider+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Extension.swift"; sourceTree = "<group>"; };
+		541A8D2729641F1F00C59026 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		541A8D3329641F8B00C59026 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		541A8D3629641FC300C59026 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,8 +134,8 @@
 		541A8D17296415DD00C59026 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				541A8D192964164600C59026 /* HomeViewController.swift */,
-				541A8D1A2964164600C59026 /* HomeViewController.xib */,
+				541A8D382964208100C59026 /* Home */,
+				541A8D3129641F6500C59026 /* User */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -124,6 +146,64 @@
 				547F4D1129640392007B05B9 /* Assets.xcassets */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		541A8D1D29641EE600C59026 /* Scaffold */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D2529641F1F00C59026 /* Extension */,
+				541A8D2129641F1F00C59026 /* AppManager.swift */,
+				541A8D1E29641F1F00C59026 /* BaseTargetType.swift */,
+				541A8D1F29641F1F00C59026 /* BaseViewController.swift */,
+				541A8D2329641F1F00C59026 /* Constant.swift */,
+				541A8D2229641F1F00C59026 /* DLog.swift */,
+				541A8D2429641F1F00C59026 /* LocalizationManager.swift */,
+				541A8D2029641F1F00C59026 /* Wrapper.swift */,
+			);
+			path = Scaffold;
+			sourceTree = "<group>";
+		};
+		541A8D2529641F1F00C59026 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D2629641F1F00C59026 /* MoyaProvider+Extension.swift */,
+				541A8D2729641F1F00C59026 /* UITableView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		541A8D3129641F6500C59026 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D3529641FB500C59026 /* Model */,
+				541A8D3229641F6D00C59026 /* Manager */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		541A8D3229641F6D00C59026 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D3329641F8B00C59026 /* UserManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		541A8D3529641FB500C59026 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D3629641FC300C59026 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		541A8D382964208100C59026 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D192964164600C59026 /* HomeViewController.swift */,
+				541A8D1A2964164600C59026 /* HomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		547F4CFC29640392007B05B9 = {
@@ -152,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				541A8D17296415DD00C59026 /* Feature */,
+				541A8D1D29641EE600C59026 /* Scaffold */,
 				541A8D16296415CF00C59026 /* Config */,
 				541A8D182964160100C59026 /* Source */,
 			);
@@ -428,8 +509,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541A8D3029641F1F00C59026 /* UITableView+Extension.swift in Sources */,
 				547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */,
+				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
+				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
+				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
+				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
+				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
+				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
+				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
+				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
+				541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
