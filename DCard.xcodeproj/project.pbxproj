@@ -25,6 +25,8 @@
 		541A8D3C296421E800C59026 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D3B296421E800C59026 /* TabBarController.swift */; };
 		541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D412964242D00C59026 /* InfoPlist.strings */; };
 		541A8D462964252A00C59026 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D482964252A00C59026 /* Localizable.strings */; };
+		541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */; };
+		541A8D582965702200C59026 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D572965702200C59026 /* R.generated.swift */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -73,6 +75,8 @@
 		541A8D452964251F00C59026 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		541A8D472964252A00C59026 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		541A8D492964252D00C59026 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenManager.swift; sourceTree = "<group>"; };
+		541A8D572965702200C59026 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		541A8D16296415CF00C59026 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				541A8D572965702200C59026 /* R.generated.swift */,
 				547F4D0829640392007B05B9 /* AppDelegate.swift */,
 				541A8D3B296421E800C59026 /* TabBarController.swift */,
 				547F4D1329640392007B05B9 /* LaunchScreen.storyboard */,
@@ -169,8 +174,9 @@
 				541A8D1F29641F1F00C59026 /* BaseViewController.swift */,
 				541A8D2329641F1F00C59026 /* Constant.swift */,
 				541A8D2229641F1F00C59026 /* DLog.swift */,
-				541A8D2429641F1F00C59026 /* LocalizationManager.swift */,
 				541A8D2029641F1F00C59026 /* Wrapper.swift */,
+				541A8D2429641F1F00C59026 /* LocalizationManager.swift */,
+				541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */,
 			);
 			path = Scaffold;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 			buildConfigurationList = 547F4D2F29640393007B05B9 /* Build configuration list for PBXNativeTarget "DCard" */;
 			buildPhases = (
 				CDB32B702087EFB6493335BE /* [CP] Check Pods Manifest.lock */,
+				541A8D5229656D1B00C59026 /* R Script */,
 				547F4D0129640392007B05B9 /* Sources */,
 				547F4D0229640392007B05B9 /* Frameworks */,
 				547F4D0329640392007B05B9 /* Resources */,
@@ -417,6 +424,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		541A8D5229656D1B00C59026 /* R Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "R Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/DCard/Config/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/DCard/Config/R.generated.swift\"\n";
+		};
 		6FCD2A8DDA0CF9718F7B00FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -535,8 +561,10 @@
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
+				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
+				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,
 				541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

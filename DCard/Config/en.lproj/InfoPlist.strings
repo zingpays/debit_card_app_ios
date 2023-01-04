@@ -7,3 +7,4 @@
 */
 
 "CFBundleDisplayName" = "DCard";
+"NSFaceIDUsageDescription" = "Need to use your biometric information to lock in your app.";

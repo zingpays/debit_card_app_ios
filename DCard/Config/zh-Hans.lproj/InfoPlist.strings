@@ -7,3 +7,4 @@
 */
 
 "CFBundleDisplayName" = "DCard";
+"NSFaceIDUsageDescription" = "需要使用你的生物识别来锁屏";
