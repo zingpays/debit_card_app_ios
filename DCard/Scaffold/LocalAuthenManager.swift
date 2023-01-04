@@ -48,7 +48,9 @@ class LocalAuthenManager {
                 return " "
             }
         }()
-        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason) { isSuccess, err in
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason) { [weak self] isSuccess, err in
+            guard let this = self else { return }
+            this.isAuthorized = isSuccess
             let code: Int32 = {
                 if let e = err as? NSError {
                     return Int32(e.code)

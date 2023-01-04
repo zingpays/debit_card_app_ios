@@ -20,7 +20,6 @@ class HomeViewController: BaseViewController {
         if LocalAuthenManager.shared.isAvailable {
             LocalAuthenManager.shared.evaluate { isSuccess, errCode in
                 if isSuccess {
-                    LocalAuthenManager.shared.isAuthorized = true
                     print("success")
                 } else {
                     switch errCode {
