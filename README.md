@@ -15,3 +15,15 @@ swiftlint是代码规范工具，参考 [swiftLint文档](https://github.com/rea
 ## 其他
 
 具体代码约束请参考工程根目录中的`Zing Tech iOS Development Guide`
+
+## Jira Board
+
+https://flashwire.atlassian.net/jira/software/projects/DC/boards/6
+
+## 排期表
+
+https://flashwire1111-my.sharepoint.com/:x:/g/personal/frida_wang_flashwire_com/ET1UYKw9-cFPq-EVtA4o45QBDfFPVTRQvCuqCqbljG7ABw?rtime=wMB_EQvq2kg
+
+## 产品原型
+
+https://modao.cc/app/Ep0mv2SrltyhkcWCqY7Vv#screen=slauuh17d4bsf76
