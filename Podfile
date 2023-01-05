@@ -26,6 +26,9 @@ target 'DCard' do
   # keyboard manager https://github.com/hackiftekhar/IQKeyboardManager
   pod 'IQKeyboardManagerSwift'
   
+  # banner view https://github.com/WenchaoD/FSPagerView
+  pod 'FSPagerView'
+  
   # Toast
   pod 'Toast-Swift'
 
