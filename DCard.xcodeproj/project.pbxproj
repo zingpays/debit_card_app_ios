@@ -27,6 +27,8 @@
 		541A8D462964252A00C59026 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D482964252A00C59026 /* Localizable.strings */; };
 		541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */; };
 		541A8D582965702200C59026 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D572965702200C59026 /* R.generated.swift */; };
+		541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */; };
+		541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -77,6 +79,8 @@
 		541A8D492964252D00C59026 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenManager.swift; sourceTree = "<group>"; };
 		541A8D572965702200C59026 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenViewController.swift; sourceTree = "<group>"; };
+		541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockScreenViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				541A8D382964208100C59026 /* Home */,
+				541A8D5D2966CF8700C59026 /* LockScreen */,
 				541A8D3129641F6500C59026 /* User */,
 			);
 			path = Feature;
@@ -169,12 +174,12 @@
 			isa = PBXGroup;
 			children = (
 				541A8D2529641F1F00C59026 /* Extension */,
-				541A8D2129641F1F00C59026 /* AppManager.swift */,
+				541A8D2229641F1F00C59026 /* DLog.swift */,
+				541A8D2329641F1F00C59026 /* Constant.swift */,
+				541A8D2029641F1F00C59026 /* Wrapper.swift */,
 				541A8D1E29641F1F00C59026 /* BaseTargetType.swift */,
 				541A8D1F29641F1F00C59026 /* BaseViewController.swift */,
-				541A8D2329641F1F00C59026 /* Constant.swift */,
-				541A8D2229641F1F00C59026 /* DLog.swift */,
-				541A8D2029641F1F00C59026 /* Wrapper.swift */,
+				541A8D2129641F1F00C59026 /* AppManager.swift */,
 				541A8D2429641F1F00C59026 /* LocalizationManager.swift */,
 				541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */,
 			);
@@ -222,6 +227,15 @@
 				541A8D1A2964164600C59026 /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		541A8D5D2966CF8700C59026 /* LockScreen */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */,
+				541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */,
+			);
+			path = LockScreen;
 			sourceTree = "<group>";
 		};
 		547F4CFC29640392007B05B9 = {
@@ -400,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				541A8D462964252A00C59026 /* Localizable.strings in Resources */,
+				541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */,
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
@@ -559,6 +574,7 @@
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,

@@ -29,7 +29,9 @@ extension UIApplicationDelegate {
     /// App root viewcontroller
     /// - Returns: root vc
     func rootViewController() -> UIViewController {
-        return HomeViewController()
+        let homeVC = HomeViewController()
+        let homeNav = UINavigationController(rootViewController: homeVC)
+        return homeNav
     }
 
     /// Reset app root viewcontroller and sub viewcontroller
