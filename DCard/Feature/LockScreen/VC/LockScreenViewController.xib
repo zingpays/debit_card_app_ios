@@ -20,8 +20,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="应用已锁定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l3-52-4Sq">
-                    <rect key="frame" x="130.66666666666666" y="410" width="131.99999999999997" height="32"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <rect key="frame" x="129" y="410" width="135" height="32.333333333333314"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>

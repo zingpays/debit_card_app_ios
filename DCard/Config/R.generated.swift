@@ -14,6 +14,7 @@ struct _R {
   let bundle: Foundation.Bundle
   var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
@@ -27,6 +28,9 @@ struct _R {
     .init(bundle: bundle, preferredLanguages: preferredLanguages, locale: locale)
   }
   func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
   func nib(bundle: Foundation.Bundle) -> nib {
@@ -44,20 +48,16 @@ struct _R {
     let developmentRegion = "en"
   }
 
-  /// This `_R.string` struct is generated, and contains static references to 3 localization tables.
+  /// This `_R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
     let bundle: Foundation.Bundle
     let preferredLanguages: [String]?
     let locale: Locale?
     var infoPlist: infoPlist { .init(source: .init(bundle: bundle, tableName: "InfoPlist", preferredLanguages: preferredLanguages, locale: locale)) }
-    var launchScreen: launchScreen { .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale)) }
     var localizable: localizable { .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale)) }
 
     func infoPlist(preferredLanguages: [String]) -> infoPlist {
       .init(source: .init(bundle: bundle, tableName: "InfoPlist", preferredLanguages: preferredLanguages, locale: locale))
-    }
-    func launchScreen(preferredLanguages: [String]) -> launchScreen {
-      .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale))
     }
     func localizable(preferredLanguages: [String]) -> localizable {
       .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale))
@@ -81,11 +81,6 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
-    }
-
-    /// This `_R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
-    struct launchScreen {
-      let source: RswiftResources.StringResource.Source
     }
 
     /// This `_R.string.localizable` struct is generated, and contains static references to 2 localization keys.
@@ -114,6 +109,17 @@ struct _R {
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 2 images.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `lanuchscreen_bg`.
+    var lanuchscreen_bg: RswiftResources.ImageResource { .init(name: "lanuchscreen_bg", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `lanuchscreen_logo`.
+    var lanuchscreen_logo: RswiftResources.ImageResource { .init(name: "lanuchscreen_logo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
@@ -152,7 +158,8 @@ struct _R {
 
       let name = "LaunchScreen"
       func validate() throws {
-
+        if UIKit.UIImage(named: "lanuchscreen_bg", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'lanuchscreen_bg' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "lanuchscreen_logo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'lanuchscreen_logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
       }
     }
   }

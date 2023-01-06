@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,16 +12,44 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PQj-FJ-tCX"/>
+                        <viewControllerLayoutGuide type="bottom" id="bem-KU-CKa"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="lanuchscreen_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sUn-Vb-rXj">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanuchscreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="vIX-Gz-NHn">
+                                <rect key="frame" x="170" y="405.66666666666669" width="90" height="121.00000000000006"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vIX-Gz-NHn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6dl-nf-qFM"/>
+                            <constraint firstItem="sUn-Vb-rXj" firstAttribute="top" secondItem="PQj-FJ-tCX" secondAttribute="bottom" constant="-59" id="771-mj-LAa"/>
+                            <constraint firstAttribute="trailing" secondItem="sUn-Vb-rXj" secondAttribute="trailing" id="7wb-Gt-SwA"/>
+                            <constraint firstItem="sUn-Vb-rXj" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BmZ-Dd-hT4"/>
+                            <constraint firstItem="bem-KU-CKa" firstAttribute="top" secondItem="sUn-Vb-rXj" secondAttribute="bottom" constant="-34" id="oOy-de-Bme"/>
+                            <constraint firstItem="vIX-Gz-NHn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yI6-Fn-lbC"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-193" y="267"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lanuchscreen_bg" width="375" height="812"/>
+        <image name="lanuchscreen_logo" width="90" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
