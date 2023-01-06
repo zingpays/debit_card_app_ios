@@ -13,9 +13,9 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
         let lockScreenVC = LockScreenViewController()
-        lockScreenVC.modalPresentationStyle = .fullScreen
-        self.present(lockScreenVC, animated: false)
+        let navVC = UINavigationController(rootViewController: lockScreenVC)
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: false)
     }
 }

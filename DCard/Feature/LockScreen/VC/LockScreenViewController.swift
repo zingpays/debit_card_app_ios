@@ -16,6 +16,7 @@ class LockScreenViewController: UIViewController {
     }
     
     // MARK: - Private
+    
     private func startAuth() {
         if LocalAuthenManager.shared.isAvailable {
             LocalAuthenManager.shared.evaluate { isSuccess, errCode in
@@ -36,5 +37,10 @@ class LockScreenViewController: UIViewController {
     
     @IBAction func unlock(_ sender: Any) {
         startAuth()
+    }
+    
+    @IBAction func nineGraphLockScreen(_ sender: Any) {
+        let vc = NineGraphLockScreenViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

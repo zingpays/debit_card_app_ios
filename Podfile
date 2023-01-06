@@ -29,8 +29,11 @@ target 'DCard' do
   # banner view https://github.com/WenchaoD/FSPagerView
   pod 'FSPagerView'
   
-  # Toast
+  # Toast https://github.com/scalessec/Toast-Swift
   pod 'Toast-Swift'
+  
+  # GPassword https://github.com/hackjie/GPassword
+  pod "GPassword"
 
   target 'DCardTests' do
     inherit! :search_paths

@@ -26,19 +26,29 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMe-ZT-wRS">
-                    <rect key="frame" x="167" y="663" width="59" height="35"/>
+                    <rect key="frame" x="150" y="663" width="93.333333333333314" height="35"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="解锁"/>
+                    <buttonConfiguration key="configuration" style="plain" title="再试一次"/>
                     <connections>
                         <action selector="unlock:" destination="-1" eventType="touchUpInside" id="E0S-mY-jXT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rF-ba-H79">
+                    <rect key="frame" x="150" y="706" width="93.333333333333314" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="密码解锁"/>
+                    <connections>
+                        <action selector="nineGraphLockScreen:" destination="-1" eventType="touchUpInside" id="Rwy-KZ-FVx"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="4rF-ba-H79" firstAttribute="top" secondItem="XMe-ZT-wRS" secondAttribute="bottom" constant="8" symbolic="YES" id="2Aq-MS-ZDN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XMe-ZT-wRS" secondAttribute="bottom" constant="120" id="4nt-nZ-uIo"/>
                 <constraint firstItem="XMe-ZT-wRS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E1V-tR-mWb"/>
+                <constraint firstItem="4rF-ba-H79" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GTy-oR-NV9"/>
                 <constraint firstItem="6l3-52-4Sq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="i46-g1-ntx"/>
                 <constraint firstItem="6l3-52-4Sq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xDT-gy-1Zk"/>
             </constraints>
