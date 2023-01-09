@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GuidePagerViewCell" customModule="DCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Your international travel, Easily" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZT-zX-1dl">
+                        <rect key="frame" x="28" y="0.0" width="280" height="76.666666666666671"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                        <color key="textColor" name="color#FFFFFF"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Travel the world with one card, no need to exchange currency" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kft-pe-Ly4">
+                        <rect key="frame" x="28" y="88.666666666666671" width="280" height="33.666666666666671"/>
+                        <color key="tintColor" name="color#FFFFFF"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                        <color key="textColor" red="0.99755865335464478" green="0.99755865335464478" blue="0.99755853414535522" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="guide_bg_intro_3" translatesAutoresizingMaskIntoConstraints="NO" id="aM0-cU-cJL">
+                        <rect key="frame" x="0.0" y="148.33333333333334" width="375" height="412.66666666666663"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SZT-zX-1dl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0Zz-Yc-CWy"/>
+                <constraint firstItem="aM0-cU-cJL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3rC-Kt-wQi"/>
+                <constraint firstItem="SZT-zX-1dl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="28" id="ChJ-e2-veH"/>
+                <constraint firstAttribute="trailing" secondItem="kft-pe-Ly4" secondAttribute="trailing" constant="67" id="GHw-px-l0e"/>
+                <constraint firstAttribute="trailing" secondItem="aM0-cU-cJL" secondAttribute="trailing" id="Ih2-Il-auB"/>
+                <constraint firstItem="aM0-cU-cJL" firstAttribute="top" secondItem="kft-pe-Ly4" secondAttribute="bottom" constant="26" id="adO-dU-fWD"/>
+                <constraint firstAttribute="trailing" secondItem="SZT-zX-1dl" secondAttribute="trailing" constant="67" id="oRL-HY-9vN"/>
+                <constraint firstItem="kft-pe-Ly4" firstAttribute="top" secondItem="SZT-zX-1dl" secondAttribute="bottom" constant="12" id="rIe-Kx-XnZ"/>
+                <constraint firstItem="kft-pe-Ly4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="28" id="ruU-1I-CyH"/>
+                <constraint firstAttribute="bottom" secondItem="aM0-cU-cJL" secondAttribute="bottom" id="vqa-t7-x2D"/>
+            </constraints>
+            <size key="customSize" width="375" height="561"/>
+            <connections>
+                <outlet property="descLabel" destination="kft-pe-Ly4" id="5cX-Iy-T0a"/>
+                <outlet property="guideImageView" destination="aM0-cU-cJL" id="8sm-Is-pny"/>
+                <outlet property="titleLabel" destination="SZT-zX-1dl" id="GhT-Y8-IHg"/>
+            </connections>
+            <point key="canvasLocation" x="251.14503816793894" y="-12.323943661971832"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="guide_bg_intro_3" width="349" height="348.33334350585938"/>
+        <namedColor name="color#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

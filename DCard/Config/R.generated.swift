@@ -103,17 +103,41 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 1 colors.
+  /// This `_R.color` struct is generated, and contains static references to 5 colors.
   struct color {
     let bundle: Foundation.Bundle
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+
+    /// Color `color#004396`.
+    var color004396: RswiftResources.ColorResource { .init(name: "color#004396", path: [], bundle: bundle) }
+
+    /// Color `color#008999`.
+    var color008999: RswiftResources.ColorResource { .init(name: "color#008999", path: [], bundle: bundle) }
+
+    /// Color `color#00A9B5`.
+    var color00A9B5: RswiftResources.ColorResource { .init(name: "color#00A9B5", path: [], bundle: bundle) }
+
+    /// Color `color#FFFFFF`.
+    var colorFFFFFF: RswiftResources.ColorResource { .init(name: "color#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 2 images.
+  /// This `_R.image` struct is generated, and contains static references to 6 images.
   struct image {
     let bundle: Foundation.Bundle
+
+    /// Image `guide_bg_intro_1`.
+    var guide_bg_intro_1: RswiftResources.ImageResource { .init(name: "guide_bg_intro_1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `guide_bg_intro_2`.
+    var guide_bg_intro_2: RswiftResources.ImageResource { .init(name: "guide_bg_intro_2", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `guide_bg_intro_3`.
+    var guide_bg_intro_3: RswiftResources.ImageResource { .init(name: "guide_bg_intro_3", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `guide_bg_intro_4`.
+    var guide_bg_intro_4: RswiftResources.ImageResource { .init(name: "guide_bg_intro_4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `lanuchscreen_bg`.
     var lanuchscreen_bg: RswiftResources.ImageResource { .init(name: "lanuchscreen_bg", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -122,9 +146,15 @@ struct _R {
     var lanuchscreen_logo: RswiftResources.ImageResource { .init(name: "lanuchscreen_logo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     let bundle: Foundation.Bundle
+
+    /// Nib `GuidePagerViewCell`.
+    var guidePagerViewCell: RswiftResources.NibReference<GuidePagerViewCell> { .init(name: "GuidePagerViewCell", bundle: bundle) }
+
+    /// Nib `GuideViewController`.
+    var guideViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "GuideViewController", bundle: bundle) }
 
     /// Nib `HomeViewController`.
     var homeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HomeViewController", bundle: bundle) }
@@ -133,7 +163,10 @@ struct _R {
     var lockScreenViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "LockScreenViewController", bundle: bundle) }
 
     func validate() throws {
-
+      if UIKit.UIImage(named: "guide_bg_intro_3", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'guide_bg_intro_3' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "color#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'color#FFFFFF' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "color#00A9B5", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'color#00A9B5' is used in nib 'GuideViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "colorFFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'colorFFFFFF' is used in nib 'GuideViewController', but couldn't be loaded.") }
     }
   }
 

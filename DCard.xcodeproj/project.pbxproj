@@ -30,6 +30,18 @@
 		541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */; };
 		541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */; };
 		541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */; };
+		541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D7529682D5B00C59026 /* GuidePagerViewCell.swift */; };
+		541A8D7D29682D5B00C59026 /* GuidePagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D7629682D5B00C59026 /* GuidePagerViewCell.xib */; };
+		541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D7829682D5B00C59026 /* GuideCollectionModel.swift */; };
+		541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D7A29682D5B00C59026 /* GuideViewController.xib */; };
+		541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D7B29682D5B00C59026 /* GuideViewController.swift */; };
+		541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D86296BFEC600C59026 /* UIFont+Extension.swift */; };
+		541A8D88296C05BB00C59026 /* Roboto-Bold-3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D82296BFCFA00C59026 /* Roboto-Bold-3.ttf */; };
+		541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */; };
+		541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */; };
+		541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D83296BFCFA00C59026 /* Roboto-Regular-14.ttf */; };
+		541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D90296C07D200C59026 /* DIN Bold.ttf */; };
+		541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D91296C07D200C59026 /* DIN Light.ttf */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -82,6 +94,18 @@
 		541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenViewController.swift; sourceTree = "<group>"; };
 		541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockScreenViewController.xib; sourceTree = "<group>"; };
 		541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineGraphLockScreenViewController.swift; sourceTree = "<group>"; };
+		541A8D7529682D5B00C59026 /* GuidePagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePagerViewCell.swift; sourceTree = "<group>"; };
+		541A8D7629682D5B00C59026 /* GuidePagerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuidePagerViewCell.xib; sourceTree = "<group>"; };
+		541A8D7829682D5B00C59026 /* GuideCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideCollectionModel.swift; sourceTree = "<group>"; };
+		541A8D7A29682D5B00C59026 /* GuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideViewController.xib; sourceTree = "<group>"; };
+		541A8D7B29682D5B00C59026 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		541A8D82296BFCFA00C59026 /* Roboto-Bold-3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold-3.ttf"; sourceTree = "<group>"; };
+		541A8D83296BFCFA00C59026 /* Roboto-Regular-14.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular-14.ttf"; sourceTree = "<group>"; };
+		541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light-10.ttf"; sourceTree = "<group>"; };
+		541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium-12.ttf"; sourceTree = "<group>"; };
+		541A8D86296BFEC600C59026 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		541A8D90296C07D200C59026 /* DIN Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Bold.ttf"; sourceTree = "<group>"; };
+		541A8D91296C07D200C59026 /* DIN Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Light.ttf"; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +180,7 @@
 		541A8D17296415DD00C59026 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				541A8D692968282700C59026 /* Guide */,
 				541A8D382964208100C59026 /* Home */,
 				541A8D5D2966CF8700C59026 /* LockScreen */,
 				541A8D3129641F6500C59026 /* User */,
@@ -166,6 +191,12 @@
 		541A8D182964160100C59026 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				541A8D90296C07D200C59026 /* DIN Bold.ttf */,
+				541A8D91296C07D200C59026 /* DIN Light.ttf */,
+				541A8D82296BFCFA00C59026 /* Roboto-Bold-3.ttf */,
+				541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */,
+				541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */,
+				541A8D83296BFCFA00C59026 /* Roboto-Regular-14.ttf */,
 				547F4D1129640392007B05B9 /* Assets.xcassets */,
 			);
 			path = Source;
@@ -192,6 +223,7 @@
 			children = (
 				541A8D2629641F1F00C59026 /* MoyaProvider+Extension.swift */,
 				541A8D2729641F1F00C59026 /* UITableView+Extension.swift */,
+				541A8D86296BFEC600C59026 /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -244,6 +276,42 @@
 				541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */,
 				541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */,
 				541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		541A8D692968282700C59026 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D7729682D5B00C59026 /* Model */,
+				541A8D7929682D5B00C59026 /* VC */,
+				541A8D7429682D5B00C59026 /* View */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		541A8D7429682D5B00C59026 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D7529682D5B00C59026 /* GuidePagerViewCell.swift */,
+				541A8D7629682D5B00C59026 /* GuidePagerViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		541A8D7729682D5B00C59026 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D7829682D5B00C59026 /* GuideCollectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		541A8D7929682D5B00C59026 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D7B29682D5B00C59026 /* GuideViewController.swift */,
+				541A8D7A29682D5B00C59026 /* GuideViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -423,10 +491,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541A8D88296C05BB00C59026 /* Roboto-Bold-3.ttf in Resources */,
+				541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */,
+				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
+				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
+				541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */,
+				541A8D7D29682D5B00C59026 /* GuidePagerViewCell.xib in Resources */,
+				541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */,
 				541A8D462964252A00C59026 /* Localizable.strings in Resources */,
 				541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */,
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
+				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
 			);
@@ -579,17 +655,21 @@
 				547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */,
 				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
 				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
+				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
 				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,
+				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
+				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,
 				541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */,

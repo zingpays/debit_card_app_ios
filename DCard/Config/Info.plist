@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Bold-3</string>
+		<string>Roboto-Light-10</string>
+		<string>Roboto-Medium-12</string>
+		<string>Roboto-Regular-14</string>
+	</array>
+</dict>
 </plist>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuideViewController" customModule="DCard" customModuleProvider="target">
+            <connections>
+                <outlet property="guidePagerView" destination="zCv-I4-BVv" id="MPN-OY-oWn"/>
+                <outlet property="loginButton" destination="rqt-84-9Hz" id="ydq-SQ-rsJ"/>
+                <outlet property="pageControl" destination="mze-99-NL0" id="DRX-ab-Nt6"/>
+                <outlet property="registerButton" destination="Ysi-zd-aq8" id="7ok-b4-cFg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCv-I4-BVv" userLabel="Pager View" customClass="FSPagerView" customModule="FSPagerView">
+                    <rect key="frame" x="0.0" y="87" width="390" height="507"/>
+                    <color key="backgroundColor" name="colorFFFFFF"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NiM-WQ-KEY"/>
+                        <outlet property="delegate" destination="-1" id="YXD-G2-TbL"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mze-99-NL0" userLabel="pageControl" customClass="FSPageControl" customModule="FSPagerView">
+                    <rect key="frame" x="18" y="594" width="354" height="26"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="eGB-46-V2F"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqt-84-9Hz">
+                    <rect key="frame" x="27" y="656" width="336" height="46"/>
+                    <color key="backgroundColor" name="color#00A9B5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="qxg-ge-evm"/>
+                    </constraints>
+                    <color key="tintColor" name="colorFFFFFF"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Log In"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysi-zd-aq8">
+                    <rect key="frame" x="27" y="718" width="336" height="46"/>
+                    <color key="backgroundColor" name="color#00A9B5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="Mrh-cS-gck"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ysi-zd-aq8" secondAttribute="trailing" constant="27" id="1ff-b8-aN1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mze-99-NL0" secondAttribute="trailing" constant="18" id="25e-0y-ZGg"/>
+                <constraint firstItem="rqt-84-9Hz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3a0-vY-H4r"/>
+                <constraint firstItem="mze-99-NL0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="FUN-Ef-luF"/>
+                <constraint firstItem="Ysi-zd-aq8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="MbB-q3-vZT"/>
+                <constraint firstItem="Ysi-zd-aq8" firstAttribute="top" secondItem="rqt-84-9Hz" secondAttribute="bottom" constant="16" id="PyG-Lh-g7t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zCv-I4-BVv" secondAttribute="trailing" id="V89-xs-Pli"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ysi-zd-aq8" secondAttribute="bottom" constant="46" id="ZRw-vB-vtr"/>
+                <constraint firstItem="rqt-84-9Hz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="dNq-gP-DOB"/>
+                <constraint firstItem="mze-99-NL0" firstAttribute="top" secondItem="zCv-I4-BVv" secondAttribute="bottom" id="lrm-Ej-bet"/>
+                <constraint firstItem="zCv-I4-BVv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mZ2-Tj-ENu"/>
+                <constraint firstItem="rqt-84-9Hz" firstAttribute="top" secondItem="mze-99-NL0" secondAttribute="bottom" constant="36" id="mbv-JM-iAZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rqt-84-9Hz" secondAttribute="trailing" constant="27" id="oHB-hE-Gp0"/>
+                <constraint firstItem="zCv-I4-BVv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="vSz-5h-Ib3"/>
+                <constraint firstItem="Ysi-zd-aq8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wWM-pf-qn0"/>
+            </constraints>
+            <point key="canvasLocation" x="-666.15384615384608" y="-46.208530805687204"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="color#00A9B5">
+            <color red="0.29399999976158142" green="0.65100002288818359" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="colorFFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
