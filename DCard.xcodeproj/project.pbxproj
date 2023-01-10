@@ -48,6 +48,10 @@
 		547F4D2029640393007B05B9 /* DCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D1F29640393007B05B9 /* DCardTests.swift */; };
 		547F4D2A29640393007B05B9 /* DCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D2929640393007B05B9 /* DCardUITests.swift */; };
 		547F4D2C29640393007B05B9 /* DCardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D2B29640393007B05B9 /* DCardUITestsLaunchTests.swift */; };
+		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
+		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
+		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
+		54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA115296D0B9200EB316F /* RegisterViewController.xib */; };
 		E86C994F204390CC5D44D531 /* Pods_DCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E035AEB38AFB921F754BF /* Pods_DCard.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +120,10 @@
 		547F4D2529640393007B05B9 /* DCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D2929640393007B05B9 /* DCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCardUITests.swift; sourceTree = "<group>"; };
 		547F4D2B29640393007B05B9 /* DCardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
+		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
+		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		54BBA115296D0B9200EB316F /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		6978148901B7D68CBED64117 /* Pods-DCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard.release.xcconfig"; path = "Target Support Files/Pods-DCard/Pods-DCard.release.xcconfig"; sourceTree = "<group>"; };
 		8BD0E5E6DC2A5E430AAEC9CF /* Pods-DCard-DCardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard-DCardUITests.release.xcconfig"; path = "Target Support Files/Pods-DCard-DCardUITests/Pods-DCard-DCardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91FF5ADB08459E1FC9FE7047 /* Pods-DCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCardTests.debug.xcconfig"; path = "Target Support Files/Pods-DCardTests/Pods-DCardTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +188,7 @@
 		541A8D17296415DD00C59026 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				54BBA10E296C127E00EB316F /* Register */,
 				541A8D692968282700C59026 /* Guide */,
 				541A8D382964208100C59026 /* Home */,
 				541A8D5D2966CF8700C59026 /* LockScreen */,
@@ -312,6 +321,8 @@
 			children = (
 				541A8D7B29682D5B00C59026 /* GuideViewController.swift */,
 				541A8D7A29682D5B00C59026 /* GuideViewController.xib */,
+				54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */,
+				54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -364,6 +375,23 @@
 				547F4D2B29640393007B05B9 /* DCardUITestsLaunchTests.swift */,
 			);
 			path = DCardUITests;
+			sourceTree = "<group>";
+		};
+		54BBA10E296C127E00EB316F /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				54BBA10F296C133500EB316F /* VC */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		54BBA10F296C133500EB316F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				54BBA114296D0B9200EB316F /* RegisterViewController.swift */,
+				54BBA115296D0B9200EB316F /* RegisterViewController.xib */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		A24AD97F5187678639266329 /* Pods */ = {
@@ -504,6 +532,8 @@
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
+				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
+				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,11 +696,13 @@
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
+				54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */,
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
+				54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */,
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,
 				541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */,
 			);

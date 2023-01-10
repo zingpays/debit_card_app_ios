@@ -7,6 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import GKNavigationBarSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupEnvironment()
+        setupNavBar()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.rootViewController = rootViewController()
@@ -53,6 +55,10 @@ extension AppDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
         let resignedClasses = [HomeViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
+    }
+    
+    func setupNavBar() {
+        GKConfigure.setupDefault()
     }
 }
 

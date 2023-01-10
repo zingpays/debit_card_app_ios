@@ -15,6 +15,8 @@ struct _R {
   var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
+  var font: font { .init(bundle: bundle) }
+  var file: file { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
@@ -33,6 +35,12 @@ struct _R {
   func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
+  func font(bundle: Foundation.Bundle) -> font {
+    .init(bundle: bundle)
+  }
+  func file(bundle: Foundation.Bundle) -> file {
+    .init(bundle: bundle)
+  }
   func nib(bundle: Foundation.Bundle) -> nib {
     .init(bundle: bundle)
   }
@@ -40,6 +48,7 @@ struct _R {
     .init(bundle: bundle)
   }
   func validate() throws {
+    try self.font.validate()
     try self.nib.validate()
     try self.storyboard.validate()
   }
@@ -103,12 +112,15 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 5 colors.
+  /// This `_R.color` struct is generated, and contains static references to 6 colors.
   struct color {
     let bundle: Foundation.Bundle
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+
+    /// Color `color#00191C`.
+    var color00191C: RswiftResources.ColorResource { .init(name: "color#00191C", path: [], bundle: bundle) }
 
     /// Color `color#004396`.
     var color004396: RswiftResources.ColorResource { .init(name: "color#004396", path: [], bundle: bundle) }
@@ -123,7 +135,7 @@ struct _R {
     var colorFFFFFF: RswiftResources.ColorResource { .init(name: "color#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 6 images.
+  /// This `_R.image` struct is generated, and contains static references to 7 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -139,6 +151,9 @@ struct _R {
     /// Image `guide_bg_intro_4`.
     var guide_bg_intro_4: RswiftResources.ImageResource { .init(name: "guide_bg_intro_4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconBack`.
+    var iconBack: RswiftResources.ImageResource { .init(name: "iconBack", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `lanuchscreen_bg`.
     var lanuchscreen_bg: RswiftResources.ImageResource { .init(name: "lanuchscreen_bg", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -146,7 +161,62 @@ struct _R {
     var lanuchscreen_logo: RswiftResources.ImageResource { .init(name: "lanuchscreen_logo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `_R.font` struct is generated, and contains static references to 6 fonts.
+  struct font: Sequence {
+    let bundle: Foundation.Bundle
+
+    /// Font `DIN-Bold`.
+    var dinBold: RswiftResources.FontResource { .init(name: "DIN-Bold", bundle: bundle, filename: "DIN Bold.ttf") }
+
+    /// Font `DIN-Light`.
+    var dinLight: RswiftResources.FontResource { .init(name: "DIN-Light", bundle: bundle, filename: "DIN Light.ttf") }
+
+    /// Font `Roboto-Bold`.
+    var robotoBold: RswiftResources.FontResource { .init(name: "Roboto-Bold", bundle: bundle, filename: "Roboto-Bold-3.ttf") }
+
+    /// Font `Roboto-Light`.
+    var robotoLight: RswiftResources.FontResource { .init(name: "Roboto-Light", bundle: bundle, filename: "Roboto-Light-10.ttf") }
+
+    /// Font `Roboto-Medium`.
+    var robotoMedium: RswiftResources.FontResource { .init(name: "Roboto-Medium", bundle: bundle, filename: "Roboto-Medium-12.ttf") }
+
+    /// Font `Roboto-Regular`.
+    var robotoRegular: RswiftResources.FontResource { .init(name: "Roboto-Regular", bundle: bundle, filename: "Roboto-Regular-14.ttf") }
+
+    func makeIterator() -> IndexingIterator<[RswiftResources.FontResource]> {
+      [dinBold, dinLight, robotoBold, robotoLight, robotoMedium, robotoRegular].makeIterator()
+    }
+    func validate() throws {
+      for font in self {
+        if !font.canBeLoaded() { throw RswiftResources.ValidationError("[R.swift] Font '\(font.name)' could not be loaded, is '\(font.filename)' added to the UIAppFonts array in this targets Info.plist?") }
+      }
+    }
+  }
+
+  /// This `_R.file` struct is generated, and contains static references to 6 resource files.
+  struct file {
+    let bundle: Foundation.Bundle
+
+    /// Resource file `DIN Bold.ttf`.
+    var dinBoldTtf: RswiftResources.FileResource { .init(name: "DIN Bold", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `DIN Light.ttf`.
+    var dinLightTtf: RswiftResources.FileResource { .init(name: "DIN Light", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `Roboto-Bold-3.ttf`.
+    var robotoBold3Ttf: RswiftResources.FileResource { .init(name: "Roboto-Bold-3", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `Roboto-Light-10.ttf`.
+    var robotoLight10Ttf: RswiftResources.FileResource { .init(name: "Roboto-Light-10", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `Roboto-Medium-12.ttf`.
+    var robotoMedium12Ttf: RswiftResources.FileResource { .init(name: "Roboto-Medium-12", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `Roboto-Regular-14.ttf`.
+    var robotoRegular14Ttf: RswiftResources.FileResource { .init(name: "Roboto-Regular-14", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
+  }
+
+  /// This `_R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -161,6 +231,12 @@ struct _R {
 
     /// Nib `LockScreenViewController`.
     var lockScreenViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "LockScreenViewController", bundle: bundle) }
+
+    /// Nib `RegisterViewController`.
+    var registerViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "RegisterViewController", bundle: bundle) }
+
+    /// Nib `StartExperienceViewController`.
+    var startExperienceViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "StartExperienceViewController", bundle: bundle) }
 
     func validate() throws {
       if UIKit.UIImage(named: "guide_bg_intro_3", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'guide_bg_intro_3' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }

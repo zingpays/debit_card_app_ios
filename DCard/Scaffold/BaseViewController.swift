@@ -12,6 +12,18 @@ import SnapKit
 class BaseViewController: UIViewController {
     /// Loading indicator
     let indicator = UIActivityIndicatorView(style: .large)
+    /// Back item
+    private lazy var backItem: UIBarButtonItem = {
+        let btn = UIButton()
+        btn.frame = CGRect(x: 0, y: 4, width: 36, height: 36)
+        btn.backgroundColor = .white
+        btn.layer.cornerRadius = 12
+        btn.setImage(R.image.iconBack(), for: .normal)
+        btn.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        return UIBarButtonItem(customView: btn)
+    }()
+    
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +31,26 @@ class BaseViewController: UIViewController {
     }
     
     // MARK: - Private
+    
     private func setupUI() {
+        setupNavBar()
         view.addSubview(indicator)
         indicator.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
+    }
+    
+    private func setupNavBar() {
+        self.gk_navBackgroundColor = .clear
+        self.gk_navLineHidden = false
+        self.gk_navLeftBarButtonItem = backItem
+        self.gk_navItemLeftSpace = 16
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func closeAction() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

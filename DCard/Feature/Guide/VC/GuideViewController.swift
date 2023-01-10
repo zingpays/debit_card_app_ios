@@ -75,8 +75,8 @@ class GuideViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func registerActon(_ sender: Any) {
-//        let vc = RegisterViewController()
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = RegisterViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func loginAction(_ sender: Any) {

@@ -34,6 +34,9 @@ target 'DCard' do
   
   # GPassword https://github.com/hackjie/GPassword
   pod "GPassword"
+  
+  # GKNavigationBarSwift https://github.com/QuintGao/GKNavigationBarSwift
+  pod 'GKNavigationBarSwift'
 
   target 'DCardTests' do
     inherit! :search_paths
