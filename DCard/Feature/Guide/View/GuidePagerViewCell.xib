@@ -22,12 +22,12 @@
                         <rect key="frame" x="28" y="0.0" width="280" height="76.666666666666671"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                        <color key="textColor" name="color#FFFFFF"/>
+                        <color key="textColor" name="fw#FFFFFF"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Travel the world with one card, no need to exchange currency" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kft-pe-Ly4">
                         <rect key="frame" x="28" y="88.666666666666671" width="280" height="33.666666666666671"/>
-                        <color key="tintColor" name="color#FFFFFF"/>
+                        <color key="tintColor" name="fw#FFFFFF"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                         <color key="textColor" red="0.99755865335464478" green="0.99755865335464478" blue="0.99755853414535522" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
     </objects>
     <resources>
         <image name="guide_bg_intro_3" width="349" height="348.33334350585938"/>
-        <namedColor name="color#FFFFFF">
+        <namedColor name="fw#FFFFFF">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

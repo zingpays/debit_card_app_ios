@@ -41,7 +41,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqt-84-9Hz">
                     <rect key="frame" x="27" y="656" width="336" height="46"/>
-                    <color key="backgroundColor" name="color#00A9B5"/>
+                    <color key="backgroundColor" name="fw#00A9B5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="qxg-ge-evm"/>
                     </constraints>
@@ -59,7 +59,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysi-zd-aq8">
                     <rect key="frame" x="27" y="718" width="336" height="46"/>
-                    <color key="backgroundColor" name="color#00A9B5"/>
+                    <color key="backgroundColor" name="fw#00A9B5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Mrh-cS-gck"/>
                     </constraints>
@@ -98,11 +98,11 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="color#00A9B5">
-            <color red="0.29399999976158142" green="0.65100002288818359" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="colorFFFFFF">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="fw#00A9B5">
+            <color red="0.29399999976158142" green="0.65100002288818359" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

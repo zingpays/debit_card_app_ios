@@ -53,7 +53,7 @@ extension AppDelegate {
         // Set up keyboard manager
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
-        let resignedClasses = [HomeViewController.self]
+        let resignedClasses = [RegisterViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     

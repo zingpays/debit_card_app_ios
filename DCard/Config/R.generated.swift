@@ -112,27 +112,30 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 6 colors.
+  /// This `_R.color` struct is generated, and contains static references to 7 colors.
   struct color {
     let bundle: Foundation.Bundle
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
 
-    /// Color `color#00191C`.
-    var color00191C: RswiftResources.ColorResource { .init(name: "color#00191C", path: [], bundle: bundle) }
+    /// Color `fw#00191C`.
+    var fw00191C: RswiftResources.ColorResource { .init(name: "fw#00191C", path: [], bundle: bundle) }
 
-    /// Color `color#004396`.
-    var color004396: RswiftResources.ColorResource { .init(name: "color#004396", path: [], bundle: bundle) }
+    /// Color `fw#004396`.
+    var fw004396: RswiftResources.ColorResource { .init(name: "fw#004396", path: [], bundle: bundle) }
 
-    /// Color `color#008999`.
-    var color008999: RswiftResources.ColorResource { .init(name: "color#008999", path: [], bundle: bundle) }
+    /// Color `fw#008999`.
+    var fw008999: RswiftResources.ColorResource { .init(name: "fw#008999", path: [], bundle: bundle) }
 
-    /// Color `color#00A9B5`.
-    var color00A9B5: RswiftResources.ColorResource { .init(name: "color#00A9B5", path: [], bundle: bundle) }
+    /// Color `fw#00A8BB`.
+    var fw00A8BB: RswiftResources.ColorResource { .init(name: "fw#00A8BB", path: [], bundle: bundle) }
 
-    /// Color `color#FFFFFF`.
-    var colorFFFFFF: RswiftResources.ColorResource { .init(name: "color#FFFFFF", path: [], bundle: bundle) }
+    /// Color `fw#00A9B5`.
+    var fw00A9B5: RswiftResources.ColorResource { .init(name: "fw#00A9B5", path: [], bundle: bundle) }
+
+    /// Color `fw#FFFFFF`.
+    var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
   /// This `_R.image` struct is generated, and contains static references to 7 images.
@@ -240,9 +243,9 @@ struct _R {
 
     func validate() throws {
       if UIKit.UIImage(named: "guide_bg_intro_3", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'guide_bg_intro_3' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "color#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'color#FFFFFF' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "color#00A9B5", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'color#00A9B5' is used in nib 'GuideViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "colorFFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'colorFFFFFF' is used in nib 'GuideViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A9B5", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A9B5' is used in nib 'GuideViewController', but couldn't be loaded.") }
     }
   }
 

@@ -19,17 +19,17 @@ class GuideViewController: UIViewController {
     @IBOutlet weak var pageControl: FSPageControl! {
         didSet {
             pageControl.interitemSpacing = 18
-            pageControl.setFillColor(R.color.color00A9B5()?.withAlphaComponent(0.14), for: .normal)
-            pageControl.setFillColor(R.color.color00A9B5(), for: .selected)
+            pageControl.setFillColor(R.color.fw00A9B5()?.withAlphaComponent(0.14), for: .normal)
+            pageControl.setFillColor(R.color.fw00A9B5(), for: .selected)
             pageControl.setPath(UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 18, height: 4), cornerRadius: 6), for: .selected)
             pageControl.setPath(UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 18, height: 4), cornerRadius: 6), for: .normal)
         }
     }
     @IBOutlet weak var registerButton: UIButton! {
         didSet {
-            registerButton.setTitleColor(R.color.colorFFFFFF()?.withAlphaComponent(0.2), for: .normal)
-            registerButton.tintColor = R.color.colorFFFFFF()?.withAlphaComponent(0.2)
-            registerButton.backgroundColor = R.color.colorFFFFFF()?.withAlphaComponent(0.12)
+            registerButton.setTitleColor(R.color.fwFFFFFF()?.withAlphaComponent(0.2), for: .normal)
+            registerButton.tintColor = R.color.fwFFFFFF()?.withAlphaComponent(0.2)
+            registerButton.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.12)
         }
     }
     @IBOutlet weak var loginButton: UIButton!
@@ -64,7 +64,7 @@ class GuideViewController: UIViewController {
     
     private func setupGradientBackground() {
         let bgLayer = CAGradientLayer()
-        bgLayer.colors = [R.color.color008999()!.cgColor, R.color.color004396()!.cgColor]
+        bgLayer.colors = [R.color.fw008999()!.cgColor, R.color.fw004396()!.cgColor]
         bgLayer.locations = [0, 1]
         bgLayer.frame = UIScreen.main.bounds
         bgLayer.startPoint = CGPoint(x: 0, y: 0)
