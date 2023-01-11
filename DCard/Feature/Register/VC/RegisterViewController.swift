@@ -107,6 +107,7 @@ class RegisterViewController: BaseViewController {
     }
 
     // MARK: - Actions
+    
     @objc private func loginAction() {
         
     }
@@ -120,7 +121,8 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        
+        let vc = SettingPasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

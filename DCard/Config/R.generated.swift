@@ -112,12 +112,15 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 7 colors.
+  /// This `_R.color` struct is generated, and contains static references to 9 colors.
   struct color {
     let bundle: Foundation.Bundle
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+
+    /// Color `fw#000000`.
+    var fw000000: RswiftResources.ColorResource { .init(name: "fw#000000", path: [], bundle: bundle) }
 
     /// Color `fw#00191C`.
     var fw00191C: RswiftResources.ColorResource { .init(name: "fw#00191C", path: [], bundle: bundle) }
@@ -134,11 +137,14 @@ struct _R {
     /// Color `fw#00A9B5`.
     var fw00A9B5: RswiftResources.ColorResource { .init(name: "fw#00A9B5", path: [], bundle: bundle) }
 
+    /// Color `fw#ED4949`.
+    var fwED4949: RswiftResources.ColorResource { .init(name: "fw#ED4949", path: [], bundle: bundle) }
+
     /// Color `fw#FFFFFF`.
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 7 images.
+  /// This `_R.image` struct is generated, and contains static references to 13 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -156,6 +162,24 @@ struct _R {
 
     /// Image `iconBack`.
     var iconBack: RswiftResources.ImageResource { .init(name: "iconBack", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconPasswordHide`.
+    var iconPasswordHide: RswiftResources.ImageResource { .init(name: "iconPasswordHide", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconPasswordShow`.
+    var iconPasswordShow: RswiftResources.ImageResource { .init(name: "iconPasswordShow", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconRegisterCheckboxOff`.
+    var iconRegisterCheckboxOff: RswiftResources.ImageResource { .init(name: "iconRegisterCheckboxOff", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconRegisterCheckboxOn`.
+    var iconRegisterCheckboxOn: RswiftResources.ImageResource { .init(name: "iconRegisterCheckboxOn", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTickOff`.
+    var iconTickOff: RswiftResources.ImageResource { .init(name: "iconTickOff", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTickOn`.
+    var iconTickOn: RswiftResources.ImageResource { .init(name: "iconTickOn", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `lanuchscreen_bg`.
     var lanuchscreen_bg: RswiftResources.ImageResource { .init(name: "lanuchscreen_bg", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -219,7 +243,7 @@ struct _R {
     var robotoRegular14Ttf: RswiftResources.FileResource { .init(name: "Roboto-Regular-14", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -238,6 +262,12 @@ struct _R {
     /// Nib `RegisterViewController`.
     var registerViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "RegisterViewController", bundle: bundle) }
 
+    /// Nib `SettingPasswordTipsTableViewCell`.
+    var settingPasswordTipsTableViewCell: RswiftResources.NibReference<SettingPasswordTipsTableViewCell> { .init(name: "SettingPasswordTipsTableViewCell", bundle: bundle) }
+
+    /// Nib `SettingPasswordViewController`.
+    var settingPasswordViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "SettingPasswordViewController", bundle: bundle) }
+
     /// Nib `StartExperienceViewController`.
     var startExperienceViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "StartExperienceViewController", bundle: bundle) }
 
@@ -246,6 +276,14 @@ struct _R {
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "colorFFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'colorFFFFFF' is used in nib 'GuideViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A9B5", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A9B5' is used in nib 'GuideViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRegisterCheckboxOff", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRegisterCheckboxOff' is used in nib 'RegisterViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRegisterCheckboxOn", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRegisterCheckboxOn' is used in nib 'RegisterViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'RegisterViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#ED4949", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#ED4949' is used in nib 'RegisterViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'RegisterViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconTickOn", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconTickOn' is used in nib 'SettingPasswordTipsTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SettingPasswordViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SettingPasswordViewController', but couldn't be loaded.") }
     }
   }
 

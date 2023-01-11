@@ -42,6 +42,8 @@
 		541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D83296BFCFA00C59026 /* Roboto-Regular-14.ttf */; };
 		541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D90296C07D200C59026 /* DIN Bold.ttf */; };
 		541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D91296C07D200C59026 /* DIN Light.ttf */; };
+		542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */; };
+		542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -52,6 +54,8 @@
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
 		54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA115296D0B9200EB316F /* RegisterViewController.xib */; };
+		54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */; };
+		54BBA11B296D7A5500EB316F /* SettingPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA119296D7A5500EB316F /* SettingPasswordViewController.xib */; };
 		E86C994F204390CC5D44D531 /* Pods_DCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E035AEB38AFB921F754BF /* Pods_DCard.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +114,8 @@
 		541A8D86296BFEC600C59026 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		541A8D90296C07D200C59026 /* DIN Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Bold.ttf"; sourceTree = "<group>"; };
 		541A8D91296C07D200C59026 /* DIN Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Light.ttf"; sourceTree = "<group>"; };
+		542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordTipsTableViewCell.swift; sourceTree = "<group>"; };
+		542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPasswordTipsTableViewCell.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		54BBA115296D0B9200EB316F /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordViewController.swift; sourceTree = "<group>"; };
+		54BBA119296D7A5500EB316F /* SettingPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPasswordViewController.xib; sourceTree = "<group>"; };
 		6978148901B7D68CBED64117 /* Pods-DCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard.release.xcconfig"; path = "Target Support Files/Pods-DCard/Pods-DCard.release.xcconfig"; sourceTree = "<group>"; };
 		8BD0E5E6DC2A5E430AAEC9CF /* Pods-DCard-DCardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard-DCardUITests.release.xcconfig"; path = "Target Support Files/Pods-DCard-DCardUITests/Pods-DCard-DCardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91FF5ADB08459E1FC9FE7047 /* Pods-DCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCardTests.debug.xcconfig"; path = "Target Support Files/Pods-DCardTests/Pods-DCardTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +335,15 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		542BC180296E8CF800133659 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */,
+				542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		547F4CFC29640392007B05B9 = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +397,7 @@
 		54BBA10E296C127E00EB316F /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				542BC180296E8CF800133659 /* View */,
 				54BBA10F296C133500EB316F /* VC */,
 			);
 			path = Register;
@@ -390,6 +408,8 @@
 			children = (
 				54BBA114296D0B9200EB316F /* RegisterViewController.swift */,
 				54BBA115296D0B9200EB316F /* RegisterViewController.xib */,
+				54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */,
+				54BBA119296D7A5500EB316F /* SettingPasswordViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -520,7 +540,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				541A8D88296C05BB00C59026 /* Roboto-Bold-3.ttf in Resources */,
+				54BBA11B296D7A5500EB316F /* SettingPasswordViewController.xib in Resources */,
 				541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */,
+				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */,
@@ -692,12 +714,14 @@
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
+				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */,
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
+				54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */,
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
