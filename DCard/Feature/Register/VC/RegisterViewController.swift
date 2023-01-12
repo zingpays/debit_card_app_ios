@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 class RegisterViewController: BaseViewController {
     
@@ -34,12 +35,30 @@ class RegisterViewController: BaseViewController {
     private let privacyPolicyKey = "PrivacyPolicy"
     private let termsAndConditionsKey = "TermsandConditions"
     
+    private var tipsCheckedDic: [Int : Bool] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupUI()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - Private
+    
+    private func setupData() {
+        setupNotification()
+    }
+    
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardHiden),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
     
     private func setupUI() {
         setupGradientBackground()
@@ -81,6 +100,7 @@ class RegisterViewController: BaseViewController {
         }
         checkButton.setTitle("", for: .normal)
         setupCheckDescText()
+        emailTextField.becomeFirstResponder()
     }
     
     private func setupCheckDescText() {
@@ -105,6 +125,81 @@ class RegisterViewController: BaseViewController {
     private func textFiledLeftView() -> UIView {
         return UIView(frame: CGRect(origin: .zero, size: CGSize(width: 16, height: emailTextField.height)))
     }
+    
+    private func inputBeginEditing(_ textField: UITextField) {
+        if textField == emailTextField {
+            textField.layer.borderColor = R.color.fw00A8BB()?.cgColor
+            textField.layer.borderWidth = 2
+            updateEmailErrorTips(isShow: false)
+        }
+        if textField == codeTextField {
+            codeInputView.layer.borderColor = R.color.fw00A8BB()?.cgColor
+            codeInputView.layer.borderWidth = 2
+            updateCodeErrorTips(isShow: false)
+        }
+    }
+    
+    private func inputViewEndEditing(_ textField: UITextField) {
+        if textField == emailTextField {
+            if let text = textField.text, !text.isEmpty,!text.isValidEmail {
+                tipsCheckedDic[0] = true
+                updateEmailErrorTips(isShow: true, text: "· E-mail format is incorrect.")
+            } else {
+                tipsCheckedDic[0] = false
+                updateEmailErrorTips(isShow: false)
+            }
+        }
+        if textField == codeTextField {
+            if let text = codeTextField.text, !text.isEmpty {
+                tipsCheckedDic[1] = true
+            } else {
+                tipsCheckedDic[1] = false
+            }
+            updateCodeErrorTips(isShow: false)
+        }
+    }
+    
+    private func updateEmailErrorTips(isShow: Bool, text: String = "") {
+        if isShow {
+            emailTextField.layer.borderColor = R.color.fwED4949()?.cgColor
+            emailTextField.layer.borderWidth = 2
+            emailErrorTipsLabel.text = text
+            emailErrorTipsLabel.snp.remakeConstraints { make in
+                make.height.equalTo(16)
+            }
+        } else {
+            emailErrorTipsLabel.snp.remakeConstraints { make in
+                make.height.equalTo(0)
+            }
+            emailTextField.layer.borderWidth = 0
+        }
+    }
+    
+    private func updateCodeErrorTips(isShow: Bool, text: String = "") {
+        if isShow {
+            codeInputView.layer.borderColor = R.color.fwED4949()?.cgColor
+            codeInputView.layer.borderWidth = 2
+            codeErrorTipsLabel.text = text
+            codeErrorTipsLabel.snp.remakeConstraints { make in
+                make.height.equalTo(16)
+            }
+        } else {
+            codeErrorTipsLabel.snp.remakeConstraints { make in
+                make.height.equalTo(0)
+            }
+            codeInputView.layer.borderWidth = 0
+        }
+    }
+    
+    private func updateNextButtonStatus() {
+        var checkedCount = 0
+        for (_, status) in tipsCheckedDic {
+            if status {
+                checkedCount += 1
+            }
+        }
+        nextButton.alpha = checkedCount == 3 ? 1 : 0.4
+    }
 
     // MARK: - Actions
     
@@ -118,13 +213,20 @@ class RegisterViewController: BaseViewController {
     
     @IBAction func agreementCheckAction(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        tipsCheckedDic[2] = sender.isSelected
+        updateNextButtonStatus()
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        let vc = SettingPasswordViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        if nextButton.alpha == 1 {
+            let vc = SettingPasswordViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
+    @objc private func keyboardHiden() {
+        updateNextButtonStatus()
+    }
 }
 
 // MARK: - UITextViewDelegate
@@ -148,5 +250,13 @@ extension RegisterViewController: UITextFieldDelegate {
             codeTextField.becomeFirstResponder()
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        inputBeginEditing(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        inputViewEndEditing(textField)
     }
 }

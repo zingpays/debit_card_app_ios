@@ -74,7 +74,7 @@
                     <color key="textColor" name="fw#ED4949"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxE-eY-DVo" userLabel="checkButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxE-eY-DVo" userLabel="checkButton">
                     <rect key="frame" x="16" y="376" width="20" height="20"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>

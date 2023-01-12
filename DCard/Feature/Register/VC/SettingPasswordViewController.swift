@@ -144,6 +144,15 @@ class SettingPasswordViewController: BaseViewController {
         return checkedCount == 5
     }
     
+    private func inputBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = R.color.fw00A8BB()?.cgColor
+        textField.layer.borderWidth = 2
+    }
+    
+    private func inputViewEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+    }
+    
     // MARK: - Actions
     
     @objc private func loginAction() {
@@ -234,10 +243,6 @@ extension SettingPasswordViewController: UITableViewDelegate, UITableViewDataSou
 // MARK: - UITextViewDelegate
 
 extension SettingPasswordViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField)
-    }
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField.text?.count ?? 0 >= 20 {
             return false
@@ -255,6 +260,14 @@ extension SettingPasswordViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        inputBeginEditing(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        inputViewEndEditing(textField)
     }
 
 }
