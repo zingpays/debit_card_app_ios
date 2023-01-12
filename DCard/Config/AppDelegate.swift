@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupEnvironment()
         setupNavBar()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
+        window?.backgroundColor = .black
         window?.rootViewController = rootViewController()
         window?.makeKeyAndVisible()
         return true
@@ -54,7 +54,8 @@ extension AppDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         let resignedClasses = [RegisterViewController.self,
-                               SettingPasswordViewController.self]
+                               SettingPasswordViewController.self,
+                               BindPhoneViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     

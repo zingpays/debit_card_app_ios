@@ -218,10 +218,12 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        if nextButton.alpha == 1 {
-            let vc = SettingPasswordViewController()
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = SettingPasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
+//        if nextButton.alpha == 1 {
+//            let vc = SettingPasswordViewController()
+//            navigationController?.pushViewController(vc, animated: true)
+//        }
     }
     
     @objc private func keyboardHiden() {

@@ -44,6 +44,12 @@
 		541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D91296C07D200C59026 /* DIN Light.ttf */; };
 		542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */; };
 		542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */; };
+		542BC187296FF30600133659 /* BindPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC185296FF30600133659 /* BindPhoneViewController.swift */; };
+		542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC186296FF30600133659 /* BindPhoneViewController.xib */; };
+		542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC189297001DD00133659 /* ChooseRegionViewController.swift */; };
+		542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC18A297001DD00133659 /* ChooseRegionViewController.xib */; };
+		542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC18D297008EB00133659 /* ChooseRegionTableViewCell.swift */; };
+		542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC18E297008EB00133659 /* ChooseRegionTableViewCell.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -116,6 +122,12 @@
 		541A8D91296C07D200C59026 /* DIN Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Light.ttf"; sourceTree = "<group>"; };
 		542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordTipsTableViewCell.swift; sourceTree = "<group>"; };
 		542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPasswordTipsTableViewCell.xib; sourceTree = "<group>"; };
+		542BC185296FF30600133659 /* BindPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindPhoneViewController.swift; sourceTree = "<group>"; };
+		542BC186296FF30600133659 /* BindPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindPhoneViewController.xib; sourceTree = "<group>"; };
+		542BC189297001DD00133659 /* ChooseRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionViewController.swift; sourceTree = "<group>"; };
+		542BC18A297001DD00133659 /* ChooseRegionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseRegionViewController.xib; sourceTree = "<group>"; };
+		542BC18D297008EB00133659 /* ChooseRegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionTableViewCell.swift; sourceTree = "<group>"; };
+		542BC18E297008EB00133659 /* ChooseRegionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseRegionTableViewCell.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -340,6 +352,8 @@
 			children = (
 				542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */,
 				542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */,
+				542BC18D297008EB00133659 /* ChooseRegionTableViewCell.swift */,
+				542BC18E297008EB00133659 /* ChooseRegionTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +424,10 @@
 				54BBA115296D0B9200EB316F /* RegisterViewController.xib */,
 				54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */,
 				54BBA119296D7A5500EB316F /* SettingPasswordViewController.xib */,
+				542BC185296FF30600133659 /* BindPhoneViewController.swift */,
+				542BC186296FF30600133659 /* BindPhoneViewController.xib */,
+				542BC189297001DD00133659 /* ChooseRegionViewController.swift */,
+				542BC18A297001DD00133659 /* ChooseRegionViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -550,13 +568,16 @@
 				541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */,
 				541A8D462964252A00C59026 /* Localizable.strings in Resources */,
 				541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */,
+				542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */,
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
+				542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
 				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
+				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,16 +734,19 @@
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
+				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */,
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */,
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,
+				542BC187296FF30600133659 /* BindPhoneViewController.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,

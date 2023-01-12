@@ -70,7 +70,7 @@ class SettingPasswordViewController: BaseViewController {
     }
     
     private func setupSubviews() {
-        titleLabel.font = UIFont.fw.font28(type: .roboto, weight: .bold)
+        titleLabel.font = UIFont.fw.font28(weight: .bold)
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
@@ -84,6 +84,7 @@ class SettingPasswordViewController: BaseViewController {
         passwordTextField.rightView = textFieldRightView(#selector(passwordEyeAction))
         againPasswordTextField.rightView = textFieldRightView(#selector(againPasswordEyeAction))
         passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
+        passwordTextField.becomeFirstResponder()
     }
     
     private func textFiledLeftView() -> UIView {
@@ -167,6 +168,11 @@ class SettingPasswordViewController: BaseViewController {
     @objc private func againPasswordEyeAction(sender: UIButton) {
         sender.isSelected = !sender.isSelected
         againPasswordTextField.isSecureTextEntry = !sender.isSelected
+    }
+    
+    @IBAction func next(_ sender: UIButton) {
+        let vc = BindPhoneViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func passwordChanged(_ sender: UITextField) {
