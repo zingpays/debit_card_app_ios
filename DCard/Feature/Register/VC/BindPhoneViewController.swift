@@ -75,7 +75,8 @@ class BindPhoneViewController: BaseViewController {
     }
     
     @IBAction func sendVerifyCode(_ sender: Any) {
-        
+        let vc = VerificationCodeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

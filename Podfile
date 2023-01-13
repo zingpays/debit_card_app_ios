@@ -37,6 +37,8 @@ target 'DCard' do
   
   # GKNavigationBarSwift https://github.com/QuintGao/GKNavigationBarSwift
   pod 'GKNavigationBarSwift'
+  
+  pod 'CRBoxInputView'
 
   target 'DCardTests' do
     inherit! :search_paths
