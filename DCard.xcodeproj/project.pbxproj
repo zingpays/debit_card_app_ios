@@ -52,6 +52,8 @@
 		542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC18E297008EB00133659 /* ChooseRegionTableViewCell.xib */; };
 		542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC1912970F86A00133659 /* VerificationCodeViewController.swift */; };
 		542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC1922970F86A00133659 /* VerificationCodeViewController.xib */; };
+		542BC197297573BC00133659 /* FillInNameAndNationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC195297573BC00133659 /* FillInNameAndNationalViewController.swift */; };
+		542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC196297573BC00133659 /* FillInNameAndNationalViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -132,6 +134,8 @@
 		542BC18E297008EB00133659 /* ChooseRegionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseRegionTableViewCell.xib; sourceTree = "<group>"; };
 		542BC1912970F86A00133659 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
 		542BC1922970F86A00133659 /* VerificationCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationCodeViewController.xib; sourceTree = "<group>"; };
+		542BC195297573BC00133659 /* FillInNameAndNationalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInNameAndNationalViewController.swift; sourceTree = "<group>"; };
+		542BC196297573BC00133659 /* FillInNameAndNationalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillInNameAndNationalViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 				542BC18A297001DD00133659 /* ChooseRegionViewController.xib */,
 				542BC1912970F86A00133659 /* VerificationCodeViewController.swift */,
 				542BC1922970F86A00133659 /* VerificationCodeViewController.xib */,
+				542BC195297573BC00133659 /* FillInNameAndNationalViewController.swift */,
+				542BC196297573BC00133659 /* FillInNameAndNationalViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */,
 				541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */,
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
+				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */,
@@ -744,6 +751,7 @@
 				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,
+				542BC197297573BC00133659 /* FillInNameAndNationalViewController.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,

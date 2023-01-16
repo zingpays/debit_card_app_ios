@@ -207,7 +207,7 @@
                 <constraint firstItem="CQ9-T2-EDT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="uN8-6O-WNa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="a0x-y7-Z6X" secondAttribute="trailing" constant="17" id="xhW-ZB-Mrh"/>
             </constraints>
-            <point key="canvasLocation" x="-211.4503816793893" y="-13.380281690140846"/>
+            <point key="canvasLocation" x="108" y="-7"/>
         </view>
     </objects>
     <resources>

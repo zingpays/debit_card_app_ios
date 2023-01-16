@@ -55,7 +55,8 @@ extension AppDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
         let resignedClasses = [RegisterViewController.self,
                                SettingPasswordViewController.self,
-                               BindPhoneViewController.self]
+                               BindPhoneViewController.self,
+                               FillInNameAndNationalViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     

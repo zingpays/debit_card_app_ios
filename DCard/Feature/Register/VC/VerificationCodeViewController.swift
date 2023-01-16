@@ -140,11 +140,14 @@ class VerificationCodeViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func resendAction(_ sender: UIButton) {
-        if sender.alpha == 1 {
-            // TODO: 请求网络校验验证码是否正确
-            boxInputView.clearAll(withBeginEdit: true)
-            resendButton.alpha = 0.4
-        }
+        // Test code
+        let vc = FillInNameAndNationalViewController()
+        navigationController?.pushViewController(vc, animated: true)
+//        if sender.alpha == 1 {
+//            // TODO: 请求网络校验验证码是否正确
+//            boxInputView.clearAll(withBeginEdit: true)
+//            resendButton.alpha = 0.4
+//        }
     }
 
 }

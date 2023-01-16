@@ -41,7 +41,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    private func setupNavBar() {
+    func setupNavBar() {
         self.gk_navBackgroundColor = .clear
         self.gk_navLineHidden = false
         self.gk_navLeftBarButtonItem = backItem
