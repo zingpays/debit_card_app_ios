@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,12 +19,74 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_thanks" translatesAutoresizingMaskIntoConstraints="NO" id="bgC-pk-PEM">
+                    <rect key="frame" x="63" y="219" width="261" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="83" id="Lq2-Ab-u2G"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have successfully registered." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apY-R1-0cl">
+                    <rect key="frame" x="76.000000000000014" y="314" width="241.33333333333337" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="mlN-L3-kUw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_reg_pic_success" translatesAutoresizingMaskIntoConstraints="NO" id="l8U-XH-7wb">
+                    <rect key="frame" x="16" y="383" width="360" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="ARB-hU-CVK"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9e-IK-Krd">
+                    <rect key="frame" x="27" y="621" width="338" height="46"/>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="bGR-1i-kLf"/>
+                    </constraints>
+                    <color key="tintColor" name="fw#FFFFFF"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="To Experience"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="startExperience:" destination="-1" eventType="touchUpInside" id="oAv-bx-iEw"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="117" y="-38"/>
+            <constraints>
+                <constraint firstItem="l8U-XH-7wb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3j3-bX-szi"/>
+                <constraint firstItem="J9e-IK-Krd" firstAttribute="top" secondItem="l8U-XH-7wb" secondAttribute="bottom" constant="58" id="6nM-36-lIf"/>
+                <constraint firstItem="bgC-pk-PEM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="160" id="EHn-ZQ-Lg2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bgC-pk-PEM" secondAttribute="trailing" constant="69" id="Gx5-Aw-KYM"/>
+                <constraint firstItem="bgC-pk-PEM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="63" id="I0b-WE-PLU"/>
+                <constraint firstItem="apY-R1-0cl" firstAttribute="top" secondItem="bgC-pk-PEM" secondAttribute="bottom" constant="12" id="NEC-Cy-M5z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l8U-XH-7wb" secondAttribute="trailing" constant="17" id="ReN-eV-u3e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J9e-IK-Krd" secondAttribute="trailing" constant="28" id="Xvw-DV-6MC"/>
+                <constraint firstItem="l8U-XH-7wb" firstAttribute="top" secondItem="apY-R1-0cl" secondAttribute="bottom" constant="50" id="k4Y-Ke-L3l"/>
+                <constraint firstItem="apY-R1-0cl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uhD-om-ttS"/>
+                <constraint firstItem="J9e-IK-Krd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="wAE-nU-vvv"/>
+            </constraints>
+            <point key="canvasLocation" x="102" y="-37"/>
         </view>
     </objects>
     <resources>
+        <image name="bg_reg_pic_success" width="342" height="180"/>
+        <image name="bg_thanks" width="243" height="87"/>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,12 +8,44 @@
 
 import UIKit
 
-class StartExperienceViewController: UIViewController {
+class StartExperienceViewController: BaseViewController {
 
+    // MARK: - Init
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+        
     }
-
+    
+    // MARK: - Private
+    
+    private func setupUI() {
+        setupGradientBackground()
+    }
+    
+    private func setupGradientBackground() {
+        let bgLayer = CAGradientLayer()
+        bgLayer.colors = [R.color.fw008999()!.cgColor,
+                          R.color.fw004396()!.cgColor]
+        bgLayer.locations = [0, 1]
+        bgLayer.frame = UIScreen.main.bounds
+        bgLayer.startPoint = .zero
+        bgLayer.endPoint = CGPoint(x: 0.79, y: 0.79)
+        bgLayer.opacity = 0.1
+        view.layer.insertSublayer(bgLayer, at: 0)
+    }
+    
+    internal override func setupNavBar() {
+        super.setupNavBar()
+        self.gk_navLineHidden = false
+        self.gk_navLeftBarButtonItem = nil
+    }
+    
+    // MARK: - Action
+    
+    @IBAction func startExperience(_ sender: Any) {
+        // TODO: - go to home page
+    }
+    
 }
