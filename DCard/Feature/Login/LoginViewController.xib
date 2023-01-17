@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DCard" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextfield" destination="rDs-nc-xfM" id="aCS-gO-c6S"/>
+                <outlet property="forgotPasswordButton" destination="k8o-kS-twX" id="QG8-uT-30x"/>
+                <outlet property="loginButton" destination="t0x-Oz-PgA" id="mGA-Za-e1R"/>
+                <outlet property="passwordTextField" destination="pZD-JT-j5N" id="1Pt-rG-3t4"/>
+                <outlet property="titleLabel" destination="QoK-gV-6Zn" id="B4p-Cn-Ugs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoK-gV-6Zn">
+                    <rect key="frame" x="16" y="137" width="360" height="34.666666666666657"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rDs-nc-xfM">
+                    <rect key="frame" x="16" y="195.66666666666666" width="360" height="50"/>
+                    <color key="backgroundColor" name="fw#FFFFFF"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="uNR-pj-MMb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pZD-JT-j5N">
+                    <rect key="frame" x="16" y="261.66666666666669" width="360" height="50"/>
+                    <color key="backgroundColor" name="fw#FFFFFF"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="c9B-PA-sTO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8o-kS-twX">
+                    <rect key="frame" x="211.66666666666663" y="327.66666666666669" width="164.33333333333337" height="19"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="1C2-64-PhU"/>
+                    </constraints>
+                    <color key="tintColor" name="fw#00A8BB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Forgot password ?"/>
+                    <connections>
+                        <action selector="forgotPasswordAction:" destination="-1" eventType="touchUpInside" id="vgC-dD-CxO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0x-Oz-PgA">
+                    <rect key="frame" x="16" y="378.66666666666669" width="360" height="46"/>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="tyb-tW-lrH"/>
+                    </constraints>
+                    <color key="tintColor" name="fw#FFFFFF"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="lHe-XE-5bu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="pZD-JT-j5N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="573-Pt-lLt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t0x-Oz-PgA" secondAttribute="trailing" constant="17" id="5Pv-Fj-MzW"/>
+                <constraint firstItem="QoK-gV-6Zn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="78" id="7IX-XU-f6s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QoK-gV-6Zn" secondAttribute="trailing" constant="17" id="EWC-da-77l"/>
+                <constraint firstItem="k8o-kS-twX" firstAttribute="top" secondItem="pZD-JT-j5N" secondAttribute="bottom" constant="16" id="GLc-Wo-bVA"/>
+                <constraint firstItem="rDs-nc-xfM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LS2-qP-tqE"/>
+                <constraint firstItem="rDs-nc-xfM" firstAttribute="top" secondItem="QoK-gV-6Zn" secondAttribute="bottom" constant="24" id="Nc3-fl-KRS"/>
+                <constraint firstItem="t0x-Oz-PgA" firstAttribute="top" secondItem="k8o-kS-twX" secondAttribute="bottom" constant="32" id="VDd-s0-cbd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pZD-JT-j5N" secondAttribute="trailing" constant="17" id="c8J-jr-Yxk"/>
+                <constraint firstItem="pZD-JT-j5N" firstAttribute="top" secondItem="rDs-nc-xfM" secondAttribute="bottom" constant="16" id="fOx-ga-rx0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rDs-nc-xfM" secondAttribute="trailing" constant="17" id="lTZ-oY-2VE"/>
+                <constraint firstItem="t0x-Oz-PgA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="o3X-X0-UTw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k8o-kS-twX" secondAttribute="trailing" constant="17" id="qrx-eI-gOU"/>
+                <constraint firstItem="QoK-gV-6Zn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sY5-N5-omU"/>
+            </constraints>
+            <point key="canvasLocation" x="-277" y="-97"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

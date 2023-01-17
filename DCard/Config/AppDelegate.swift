@@ -31,7 +31,7 @@ extension UIApplicationDelegate {
     /// App root viewcontroller
     /// - Returns: root vc
     func rootViewController() -> UIViewController {
-        let vc = GuideViewController()
+        let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }
@@ -56,7 +56,8 @@ extension AppDelegate {
         let resignedClasses = [RegisterViewController.self,
                                SettingPasswordViewController.self,
                                BindPhoneViewController.self,
-                               FillInNameAndNationalViewController.self]
+                               FillInNameAndNationalViewController.self,
+                               LoginViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     
