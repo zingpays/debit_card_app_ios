@@ -68,8 +68,11 @@ class BindPhoneViewController: BaseViewController {
     @IBAction func selectPhoneRegionAction(_ sender: Any) {
         phoneTextField.resignFirstResponder()
         let vc = ChooseRegionViewController()
-        vc.didSelectedCompletion = { code in
-            self.phoneRegionLabel.text = code
+        let datas = [ChooseRegionModel(title: "China", subTitle: "+86"), ChooseRegionModel(title: "Singpore", subTitle: "+65")]
+        vc.pageTitle = "choose your country"
+        vc.datasource = datas
+        vc.didSelectedCompletion = { data in
+            self.phoneRegionLabel.text = data.subTitle
         }
         self.present(vc, animated: true)
     }

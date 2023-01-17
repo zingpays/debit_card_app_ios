@@ -54,6 +54,7 @@
 		542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC1922970F86A00133659 /* VerificationCodeViewController.xib */; };
 		542BC197297573BC00133659 /* FillInNameAndNationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC195297573BC00133659 /* FillInNameAndNationalViewController.swift */; };
 		542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC196297573BC00133659 /* FillInNameAndNationalViewController.xib */; };
+		542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC19A2975A26C00133659 /* ChooseRegionModel.swift */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -136,6 +137,7 @@
 		542BC1922970F86A00133659 /* VerificationCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationCodeViewController.xib; sourceTree = "<group>"; };
 		542BC195297573BC00133659 /* FillInNameAndNationalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInNameAndNationalViewController.swift; sourceTree = "<group>"; };
 		542BC196297573BC00133659 /* FillInNameAndNationalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillInNameAndNationalViewController.xib; sourceTree = "<group>"; };
+		542BC19A2975A26C00133659 /* ChooseRegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionModel.swift; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -366,6 +368,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		542BC1992975A25400133659 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				542BC19A2975A26C00133659 /* ChooseRegionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		547F4CFC29640392007B05B9 = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +429,7 @@
 		54BBA10E296C127E00EB316F /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				542BC1992975A25400133659 /* Model */,
 				542BC180296E8CF800133659 /* View */,
 				54BBA10F296C133500EB316F /* VC */,
 			);
@@ -746,6 +757,7 @@
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
 				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
+				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
 				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,

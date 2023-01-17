@@ -11,18 +11,28 @@ import UIKit
 class ChooseRegionViewController: UIViewController {
 
     /// selected callback
-    var didSelectedCompletion: ((String) -> Void)? = nil
+    var didSelectedCompletion: ((ChooseRegionModel) -> Void)? = nil
+    /// page title
+    var pageTitle: String? = nil
+    /// data source
+    var datasource: [ChooseRegionModel] = []
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultTableview: UITableView!
+    
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
+    // MARK: - Private
+    
     private func setupUI() {
         titleLabel.font = .fw.font20(weight: .bold)
+        titleLabel.text = pageTitle
         resultTableview.fw.registerCellNib(ChooseRegionTableViewCell.self)
         searchBar.becomeFirstResponder()
     }
@@ -33,18 +43,20 @@ class ChooseRegionViewController: UIViewController {
 
 extension ChooseRegionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return datasource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeue(cellType: ChooseRegionTableViewCell.self, for: indexPath)
-        cell.countryLabel.text = "China"
-        cell.codeLabel.text = "\(indexPath.row)"
+        let data = datasource[indexPath.row]
+        cell.countryLabel.text = data.title
+        cell.codeLabel.text = data.subTitle
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectedCompletion?("\(indexPath.row)")
+        let data = datasource[indexPath.row]
+        didSelectedCompletion?(data)
         self.dismiss(animated: true)
     }
 }

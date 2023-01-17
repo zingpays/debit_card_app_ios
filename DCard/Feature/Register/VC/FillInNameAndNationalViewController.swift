@@ -154,7 +154,16 @@ class FillInNameAndNationalViewController: BaseViewController {
     }
     
     @objc private func chooseNationality() {
-        
+        let vc = ChooseRegionViewController()
+        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
+        vc.pageTitle = "choose your nationality"
+        vc.datasource = datas
+        vc.didSelectedCompletion = { data in
+            DispatchQueue.main.async {
+                self.chooseNationalTextField.text = data.title
+            }
+        }
+        self.present(vc, animated: true)
     }
     
     @IBAction func continueNext(_ sender: UIButton) {
