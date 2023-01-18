@@ -69,16 +69,33 @@ class LoginViewController: BaseViewController {
         passwordTextField.leftView = textFiledLeftView()
         forgotPasswordButton.titleLabel?.font = .fw.font16()
         loginButton.titleLabel?.font = .fw.font16()
+        passwordTextField.rightViewMode = .whileEditing
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.rightView = textFieldRightView(#selector(passwordEyeAction))
+        passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
     }
     
     private func textFiledLeftView() -> UIView {
         return UIView(frame: CGRect(origin: .zero, size: CGSize(width: 16, height: 50)))
     }
     
+    private func textFieldRightView(_ action: Selector) -> UIView {
+        let size = CGSize(width: 44, height: passwordTextField.height)
+        let v = UIView(frame: CGRect(origin: .zero, size: size))
+        v.backgroundColor = .clear
+        let btn = UIButton()
+        btn.addTarget(self, action: action, for: .touchUpInside)
+        btn.frame = CGRect(origin: CGPoint(x: 0, y: 11), size: CGSize(width: 28, height: 28))
+        btn.setImage(R.image.iconPasswordShow(), for: .selected)
+        btn.setImage(R.image.iconPasswordHide(), for: .normal)
+        v.addSubview(btn)
+        return v
+    }
+    
     // MARK: - Actions
     
     @objc private func registerAction() {
-        
+        // TODO: go to register
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
@@ -89,4 +106,12 @@ class LoginViewController: BaseViewController {
         
     }
     
+    @objc private func passwordEyeAction(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        passwordTextField.isSecureTextEntry = !sender.isSelected
+    }
+    
+    @objc private func passwordChanged(_ sender: UITextField) {
+        
+    }
 }
