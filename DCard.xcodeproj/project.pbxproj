@@ -57,6 +57,8 @@
 		542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC19A2975A26C00133659 /* ChooseRegionModel.swift */; };
 		542BC19F2977026900133659 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC19D2977026900133659 /* LoginViewController.swift */; };
 		542BC1A02977026900133659 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC19E2977026900133659 /* LoginViewController.xib */; };
+		545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C567E2978507800D7F058 /* BiometricsViewController.swift */; };
+		545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C567F2978507800D7F058 /* BiometricsViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -142,6 +144,8 @@
 		542BC19A2975A26C00133659 /* ChooseRegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionModel.swift; sourceTree = "<group>"; };
 		542BC19D2977026900133659 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		542BC19E2977026900133659 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		545C567E2978507800D7F058 /* BiometricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsViewController.swift; sourceTree = "<group>"; };
+		545C567F2978507800D7F058 /* BiometricsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiometricsViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 				541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */,
 				541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */,
 				541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */,
+				545C567E2978507800D7F058 /* BiometricsViewController.swift */,
+				545C567F2978507800D7F058 /* BiometricsViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				541A8D88296C05BB00C59026 /* Roboto-Bold-3.ttf in Resources */,
 				54BBA11B296D7A5500EB316F /* SettingPasswordViewController.xib in Resources */,
 				542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */,
+				545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */,
 				541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */,
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
@@ -769,6 +776,7 @@
 				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
 				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
+				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
 				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
