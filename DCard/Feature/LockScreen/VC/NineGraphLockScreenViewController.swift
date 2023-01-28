@@ -76,7 +76,6 @@ class NineGraphLockScreenViewController: BaseViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-        setupGradientBackground()
         self.gk_navLeftBarButtonItem = nil
         
         view.addSubview(titleLabel)
@@ -138,18 +137,6 @@ class NineGraphLockScreenViewController: BaseViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-(24+TOUCHBARHEIGHT))
         }
-    }
-    
-    private func setupGradientBackground() {
-        let bgLayer = CAGradientLayer()
-        bgLayer.colors = [R.color.fw008999()!.cgColor,
-                          R.color.fw004396()!.cgColor]
-        bgLayer.locations = [0, 1]
-        bgLayer.frame = UIScreen.main.bounds
-        bgLayer.startPoint = .zero
-        bgLayer.endPoint = CGPoint(x: 0.79, y: 0.79)
-        bgLayer.opacity = 0.1
-        view.layer.insertSublayer(bgLayer, at: 0)
     }
     
     private func setupData() {

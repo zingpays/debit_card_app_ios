@@ -61,6 +61,8 @@
 		545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C567F2978507800D7F058 /* BiometricsViewController.xib */; };
 		545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C56822984FB1D00D7F058 /* PasswordLoginViewController.swift */; };
 		545C56852984FB1D00D7F058 /* PasswordLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C56832984FB1D00D7F058 /* PasswordLoginViewController.xib */; };
+		545C56892985141100D7F058 /* VerifyYourIdentityGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */; };
+		545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -150,6 +152,8 @@
 		545C567F2978507800D7F058 /* BiometricsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiometricsViewController.xib; sourceTree = "<group>"; };
 		545C56822984FB1D00D7F058 /* PasswordLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginViewController.swift; sourceTree = "<group>"; };
 		545C56832984FB1D00D7F058 /* PasswordLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordLoginViewController.xib; sourceTree = "<group>"; };
+		545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyYourIdentityGuideViewController.swift; sourceTree = "<group>"; };
+		545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyYourIdentityGuideViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,10 +234,11 @@
 		541A8D17296415DD00C59026 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				541A8D382964208100C59026 /* Home */,
+				545C56862985132E00D7F058 /* KYC */,
 				542BC19C2977025300133659 /* Login */,
 				54BBA10E296C127E00EB316F /* Register */,
 				541A8D692968282700C59026 /* Guide */,
-				541A8D382964208100C59026 /* Home */,
 				541A8D5D2966CF8700C59026 /* LockScreen */,
 				541A8D3129641F6500C59026 /* User */,
 			);
@@ -400,6 +405,15 @@
 				542BC19E2977026900133659 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		545C56862985132E00D7F058 /* KYC */ = {
+			isa = PBXGroup;
+			children = (
+				545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */,
+				545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */,
+			);
+			path = KYC;
 			sourceTree = "<group>";
 		};
 		547F4CFC29640392007B05B9 = {
@@ -631,6 +645,7 @@
 				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
+				545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */,
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,6 +818,7 @@
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,
 				542BC19F2977026900133659 /* LoginViewController.swift in Sources */,
 				54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */,
+				545C56892985141100D7F058 /* VerifyYourIdentityGuideViewController.swift in Sources */,
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */,
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,

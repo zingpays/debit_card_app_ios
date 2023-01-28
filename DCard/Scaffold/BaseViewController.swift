@@ -33,6 +33,7 @@ class BaseViewController: UIViewController {
     // MARK: - Private
     
     private func setupUI() {
+        setupGradientBackground()
         setupNavBar()
         view.addSubview(indicator)
         indicator.snp.makeConstraints { make in
@@ -46,6 +47,18 @@ class BaseViewController: UIViewController {
         self.gk_navLineHidden = false
         self.gk_navLeftBarButtonItem = backItem
         self.gk_navItemLeftSpace = 16
+    }
+    
+    private func setupGradientBackground() {
+        let bgLayer = CAGradientLayer()
+        bgLayer.colors = [R.color.fw008999()!.cgColor,
+                          R.color.fw004396()!.cgColor]
+        bgLayer.locations = [0, 1]
+        bgLayer.frame = UIScreen.main.bounds
+        bgLayer.startPoint = .zero
+        bgLayer.endPoint = CGPoint(x: 0.79, y: 0.79)
+        bgLayer.opacity = 0.1
+        view.layer.insertSublayer(bgLayer, at: 0)
     }
     
     // MARK: - Actions

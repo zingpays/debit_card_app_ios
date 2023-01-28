@@ -31,7 +31,7 @@ extension UIApplicationDelegate {
     /// App root viewcontroller
     /// - Returns: root vc
     func rootViewController() -> UIViewController {
-        let vc = PasswordLoginViewController()
+        let vc = VerifyYourIdentityGuideViewController()
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }

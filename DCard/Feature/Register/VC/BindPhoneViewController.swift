@@ -28,20 +28,7 @@ class BindPhoneViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
-        setupGradientBackground()
         setupSubviews()
-    }
-    
-    private func setupGradientBackground() {
-        let bgLayer = CAGradientLayer()
-        bgLayer.colors = [R.color.fw008999()!.cgColor,
-                          R.color.fw004396()!.cgColor]
-        bgLayer.locations = [0, 1]
-        bgLayer.frame = UIScreen.main.bounds
-        bgLayer.startPoint = .zero
-        bgLayer.endPoint = CGPoint(x: 0.79, y: 0.79)
-        bgLayer.opacity = 0.1
-        view.layer.insertSublayer(bgLayer, at: 0)
     }
     
     private func setupSubviews() {
