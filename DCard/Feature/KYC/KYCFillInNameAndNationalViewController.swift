@@ -9,6 +9,9 @@
 import UIKit
 
 class KYCFillInNameAndNationalViewController: BaseViewController {
+    @IBOutlet weak var tipsView: UIView!
+    @IBOutlet weak var tipsTitleLabel: UILabel!
+    @IBOutlet weak var tipsContentLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var infoLabell: UILabel!
@@ -19,7 +22,9 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     @IBOutlet weak var continueNextButton: UIButton!
     @IBOutlet weak var nameTipsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var middleNameTipsHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var LastNameTipsHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lastNameTipsHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tipsViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tipsViewTopConstraint: NSLayoutConstraint!
     
     private var tipsCheckedDic: [Int : Bool] = [:]
     
@@ -38,6 +43,11 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     }
     
     private func setupSubviews() {
+        tipsViewHeightConstraint.constant = 0
+        tipsViewTopConstraint.constant = 4 //default is 20
+        tipsView.backgroundColor = R.color.fwED4949()?.withAlphaComponent(0.1)
+        tipsTitleLabel.font = UIFont.fw.font16(weight: .bold)
+        tipsContentLabel.font = UIFont.fw.font14()
         titleLabel.font = UIFont.fw.font28(weight: .bold)
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
