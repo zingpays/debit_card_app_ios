@@ -53,7 +53,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We use your phone number to verify important changes to your account." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wO0-X1-30e">
                     <rect key="frame" x="40" y="221.33333333333334" width="336" height="33.666666666666657"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" name="fw#00A8BB"/>
+                    <color key="textColor" name="fw#000000"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BAh-sH-UIc">
@@ -173,7 +173,7 @@
                 <constraint firstItem="jqI-hA-606" firstAttribute="top" secondItem="nIG-aC-BEw" secondAttribute="bottom" constant="24" id="uxK-wb-aqe"/>
                 <constraint firstItem="By3-gh-FwD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wlt-Uk-5px"/>
             </constraints>
-            <point key="canvasLocation" x="35.877862595419849" y="-12.67605633802817"/>
+            <point key="canvasLocation" x="-60" y="2"/>
         </view>
     </objects>
     <resources>

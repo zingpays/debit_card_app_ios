@@ -21,4 +21,10 @@ class VerifyYourIdentityGuideViewController: BaseViewController {
         self.gk_navLeftBarButtonItem = nil
     }
 
+    // MARK: - Actions
+    
+    @IBAction func verifyNowAction(_ sender: Any) {
+        let vc = KYCFillInNameAndNationalViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

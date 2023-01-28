@@ -147,6 +147,9 @@
                             <real key="value" value="23"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="verifyNowAction:" destination="-1" eventType="touchUpInside" id="aao-f6-MUh"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

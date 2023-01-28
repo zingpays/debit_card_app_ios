@@ -63,6 +63,8 @@
 		545C56852984FB1D00D7F058 /* PasswordLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C56832984FB1D00D7F058 /* PasswordLoginViewController.xib */; };
 		545C56892985141100D7F058 /* VerifyYourIdentityGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */; };
 		545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */; };
+		545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */; };
+		545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -154,6 +156,8 @@
 		545C56832984FB1D00D7F058 /* PasswordLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordLoginViewController.xib; sourceTree = "<group>"; };
 		545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyYourIdentityGuideViewController.swift; sourceTree = "<group>"; };
 		545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyYourIdentityGuideViewController.xib; sourceTree = "<group>"; };
+		545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCFillInNameAndNationalViewController.swift; sourceTree = "<group>"; };
+		545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCFillInNameAndNationalViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -412,6 +416,8 @@
 			children = (
 				545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */,
 				545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */,
+				545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */,
+				545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */,
 			);
 			path = KYC;
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
+				545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				542BC1A02977026900133659 /* LoginViewController.xib in Resources */,
 				541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */,
@@ -813,6 +820,7 @@
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
+				545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */,
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,
