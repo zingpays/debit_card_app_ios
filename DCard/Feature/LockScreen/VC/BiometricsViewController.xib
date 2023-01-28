@@ -64,7 +64,7 @@
                 <constraint firstItem="B13-se-j2M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xfW-1w-YUc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YNM-kb-ODI" secondAttribute="bottom" constant="24" id="xoa-wQ-fHk"/>
             </constraints>
-            <point key="canvasLocation" x="35.877862595419849" y="-12.67605633802817"/>
+            <point key="canvasLocation" x="-5" y="18"/>
         </view>
     </objects>
     <resources>
