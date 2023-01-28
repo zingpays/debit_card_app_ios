@@ -11,7 +11,7 @@ import GPassword
 import Toast_Swift
 
 class NineGraphLockScreenViewController: BaseViewController {
-
+    
     // MARK: - Properies
     
     private lazy var titleLabel: UILabel = {
@@ -35,11 +35,41 @@ class NineGraphLockScreenViewController: BaseViewController {
         return box
     }()
     
+    private lazy var loginStatckView: UIStackView = {
+        let v = UIStackView()
+        v.axis = .horizontal
+        v.spacing = 12
+        v.alignment = .center
+        return v
+    }()
+    
+    private lazy var passwordButton: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.1)
+        btn.setTitle("Password Login", for: .normal)
+        btn.titleLabel?.font = UIFont.fw.font16()
+        btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
+        btn.layer.cornerRadius = 15
+        btn.addTarget(self, action: #selector(passwordLogin), for: .touchUpInside)
+        return btn
+    }()
+    
+    private lazy var biometricsButton: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.1)
+        btn.titleLabel?.font = UIFont.fw.font16()
+        btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
+        btn.layer.cornerRadius = 15
+        btn.addTarget(self, action: #selector(biometricsLogin), for: .touchUpInside)
+        return btn
+    }()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupData()
     }
     
     // MARK: - Private
@@ -47,7 +77,7 @@ class NineGraphLockScreenViewController: BaseViewController {
     private func setupUI() {
         view.backgroundColor = .white
         setupGradientBackground()
-        setupRightItem()
+        self.gk_navLeftBarButtonItem = nil
         
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -83,6 +113,31 @@ class NineGraphLockScreenViewController: BaseViewController {
             make.height.equalTo(300)
             make.center.equalToSuperview()
         }
+        
+        view.addSubview(loginStatckView)
+        
+        loginStatckView.addArrangedSubview(passwordButton)
+        passwordButton.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.width.equalTo(160)
+        }
+        
+        var statckViewWidth = 160
+        if LocalAuthenManager.shared.isBind {
+            statckViewWidth += 100
+            loginStatckView.addArrangedSubview(biometricsButton)
+            biometricsButton.snp.makeConstraints { make in
+                make.height.equalTo(30)
+                make.width.equalTo(100)
+            }
+        }
+        
+        loginStatckView.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.width.equalTo(statckViewWidth)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-(24+TOUCHBARHEIGHT))
+        }
     }
     
     private func setupGradientBackground() {
@@ -97,8 +152,26 @@ class NineGraphLockScreenViewController: BaseViewController {
         view.layer.insertSublayer(bgLayer, at: 0)
     }
     
-    private func setupRightItem() {
-        self.gk_navLeftBarButtonItem = nil
+    private func setupData() {
+        guard LocalAuthenManager.shared.isBind && LocalAuthenManager.shared.isAvailable else {
+            return
+        }
+        if LocalAuthenManager.shared.type == .faceID {
+            biometricsButton.setTitle("Face ID", for: .normal)
+        }
+        if LocalAuthenManager.shared.type == .touchID {
+            biometricsButton.setTitle("Touch ID", for: .normal)
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func passwordLogin() {
+        
+    }
+    
+    @objc private func biometricsLogin() {
+        // TODO: - 待定
     }
 
 }

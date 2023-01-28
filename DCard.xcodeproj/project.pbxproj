@@ -59,6 +59,8 @@
 		542BC1A02977026900133659 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC19E2977026900133659 /* LoginViewController.xib */; };
 		545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C567E2978507800D7F058 /* BiometricsViewController.swift */; };
 		545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C567F2978507800D7F058 /* BiometricsViewController.xib */; };
+		545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C56822984FB1D00D7F058 /* PasswordLoginViewController.swift */; };
+		545C56852984FB1D00D7F058 /* PasswordLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C56832984FB1D00D7F058 /* PasswordLoginViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -146,6 +148,8 @@
 		542BC19E2977026900133659 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		545C567E2978507800D7F058 /* BiometricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsViewController.swift; sourceTree = "<group>"; };
 		545C567F2978507800D7F058 /* BiometricsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiometricsViewController.xib; sourceTree = "<group>"; };
+		545C56822984FB1D00D7F058 /* PasswordLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginViewController.swift; sourceTree = "<group>"; };
+		545C56832984FB1D00D7F058 /* PasswordLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordLoginViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */,
 				545C567E2978507800D7F058 /* BiometricsViewController.swift */,
 				545C567F2978507800D7F058 /* BiometricsViewController.xib */,
+				545C56822984FB1D00D7F058 /* PasswordLoginViewController.swift */,
+				545C56832984FB1D00D7F058 /* PasswordLoginViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -605,6 +611,7 @@
 				542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */,
 				545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */,
 				541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */,
+				545C56852984FB1D00D7F058 /* PasswordLoginViewController.xib in Resources */,
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
@@ -783,6 +790,7 @@
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */,
 				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,

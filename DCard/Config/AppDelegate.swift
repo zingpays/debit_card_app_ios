@@ -31,7 +31,7 @@ extension UIApplicationDelegate {
     /// App root viewcontroller
     /// - Returns: root vc
     func rootViewController() -> UIViewController {
-        let vc = NineGraphLockScreenViewController()
+        let vc = PasswordLoginViewController()
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }
@@ -57,7 +57,8 @@ extension AppDelegate {
                                SettingPasswordViewController.self,
                                BindPhoneViewController.self,
                                FillInNameAndNationalViewController.self,
-                               LoginViewController.self]
+                               LoginViewController.self,
+                               PasswordLoginViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     

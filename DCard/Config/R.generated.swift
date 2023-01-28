@@ -153,7 +153,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 18 images.
+  /// This `_R.image` struct is generated, and contains static references to 19 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -183,6 +183,9 @@ struct _R {
 
     /// Image `iconInfo`.
     var iconInfo: RswiftResources.ImageResource { .init(name: "iconInfo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconMore`.
+    var iconMore: RswiftResources.ImageResource { .init(name: "iconMore", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconPasswordHide`.
     var iconPasswordHide: RswiftResources.ImageResource { .init(name: "iconPasswordHide", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -267,7 +270,7 @@ struct _R {
     var robotoRegular14Ttf: RswiftResources.FileResource { .init(name: "Roboto-Regular-14", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 15 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 16 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -300,6 +303,9 @@ struct _R {
 
     /// Nib `LoginViewController`.
     var loginViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "LoginViewController", bundle: bundle) }
+
+    /// Nib `PasswordLoginViewController`.
+    var passwordLoginViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "PasswordLoginViewController", bundle: bundle) }
 
     /// Nib `RegisterViewController`.
     var registerViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "RegisterViewController", bundle: bundle) }
