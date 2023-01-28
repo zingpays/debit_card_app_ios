@@ -30,14 +30,14 @@ class PasswordLoginViewController: BaseViewController {
         btn.addTarget(self, action: #selector(moreAction), for: .touchUpInside)
         return UIBarButtonItem(customView: btn)
     }()
-    private lazy var passwordButton: UIButton = {
+    private lazy var gestureButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.1)
-        btn.setTitle("Password Login", for: .normal)
+        btn.setTitle("Gesture Login", for: .normal)
         btn.titleLabel?.font = UIFont.fw.font16()
         btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
         btn.layer.cornerRadius = 15
-        btn.addTarget(self, action: #selector(passwordLogin), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(gestureLogin), for: .touchUpInside)
         return btn
     }()
     
@@ -92,8 +92,8 @@ class PasswordLoginViewController: BaseViewController {
         passwordTextField.rightView = textFieldRightView(#selector(passwordEyeAction))
         passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
         view.addSubview(loginStatckView)
-        loginStatckView.addArrangedSubview(passwordButton)
-        passwordButton.snp.makeConstraints { make in
+        loginStatckView.addArrangedSubview(gestureButton)
+        gestureButton.snp.makeConstraints { make in
             make.height.equalTo(30)
             make.width.equalTo(160)
         }
@@ -163,8 +163,9 @@ class PasswordLoginViewController: BaseViewController {
         
     }
     
-    @objc private func passwordLogin() {
-        
+    @objc private func gestureLogin() {
+        let vc = NineGraphLockScreenViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func biometricsLogin() {

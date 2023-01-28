@@ -167,7 +167,8 @@ class NineGraphLockScreenViewController: BaseViewController {
     // MARK: - Actions
     
     @objc private func passwordLogin() {
-        
+        let vc = PasswordLoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func biometricsLogin() {
