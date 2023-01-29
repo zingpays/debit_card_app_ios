@@ -72,7 +72,8 @@ class FillInAddressViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func continueAction(_ sender: Any) {
-        
+        let vc = KYCFinishViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func countryAction(_ sender: Any) {

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCFinishViewController" customModule="DCard" customModuleProvider="target">
+            <connections>
+                <outlet property="subTitleLabel" destination="EyB-WK-10b" id="tHA-gz-7Pg"/>
+                <outlet property="titleLabel" destination="wV8-rx-i07" id="suE-aW-i3Q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks For Your Verification ! " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV8-rx-i07">
+                    <rect key="frame" x="44" y="293" width="305" height="28.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" name="fw#000000"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyB-WK-10b">
+                    <rect key="frame" x="27" y="333.66666666666669" width="338" height="54"/>
+                    <string key="text">Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly. </string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" name="fw#000000"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnx-x3-EVE">
+                    <rect key="frame" x="27" y="435.66666666666669" width="338" height="46"/>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="ylb-Dc-JT9"/>
+                    </constraints>
+                    <color key="tintColor" name="fw#FFFFFF"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Got it"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="gotItAction:" destination="-1" eventType="touchUpInside" id="ajA-AD-TYy"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Be-xU-S1O">
+                    <rect key="frame" x="155.66666666666666" y="187" width="82" height="82"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconProfile" translatesAutoresizingMaskIntoConstraints="NO" id="AXa-kU-OCr">
+                            <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconTick" translatesAutoresizingMaskIntoConstraints="NO" id="grZ-ct-1Md">
+                            <rect key="frame" x="54" y="54" width="28" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="SBn-DR-2ba"/>
+                                <constraint firstAttribute="width" constant="28" id="bTx-IM-99Q"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="grZ-ct-1Md" secondAttribute="trailing" id="7FH-mP-mCe"/>
+                        <constraint firstAttribute="bottom" secondItem="grZ-ct-1Md" secondAttribute="bottom" id="BZ6-XM-8yc"/>
+                        <constraint firstAttribute="width" constant="82" id="Frk-GL-ZAi"/>
+                        <constraint firstAttribute="trailing" secondItem="AXa-kU-OCr" secondAttribute="trailing" id="TUf-P4-241"/>
+                        <constraint firstItem="AXa-kU-OCr" firstAttribute="leading" secondItem="0Be-xU-S1O" secondAttribute="leading" id="VX9-BD-TCH"/>
+                        <constraint firstItem="AXa-kU-OCr" firstAttribute="top" secondItem="0Be-xU-S1O" secondAttribute="top" id="rT0-1d-OxL"/>
+                        <constraint firstAttribute="bottom" secondItem="AXa-kU-OCr" secondAttribute="bottom" id="w20-SH-oUu"/>
+                        <constraint firstAttribute="height" constant="82" id="weK-o8-IWI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="EyB-WK-10b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="6OV-Di-jVQ"/>
+                <constraint firstItem="xnx-x3-EVE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="CUa-uS-xTN"/>
+                <constraint firstItem="0Be-xU-S1O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="128" id="HGZ-wq-d9T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xnx-x3-EVE" secondAttribute="trailing" constant="28" id="Q4D-Nw-i8K"/>
+                <constraint firstAttribute="trailing" secondItem="EyB-WK-10b" secondAttribute="trailing" constant="28" id="mhH-D2-Ij2"/>
+                <constraint firstItem="xnx-x3-EVE" firstAttribute="top" secondItem="EyB-WK-10b" secondAttribute="bottom" constant="48" id="n3e-r8-UAi"/>
+                <constraint firstItem="wV8-rx-i07" firstAttribute="top" secondItem="0Be-xU-S1O" secondAttribute="bottom" constant="24" id="q5G-lh-Ihv"/>
+                <constraint firstItem="EyB-WK-10b" firstAttribute="top" secondItem="wV8-rx-i07" secondAttribute="bottom" constant="12" id="uYO-ri-y7Y"/>
+                <constraint firstItem="wV8-rx-i07" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ubN-QN-nDb"/>
+                <constraint firstItem="0Be-xU-S1O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zOS-Kn-BZC"/>
+            </constraints>
+            <point key="canvasLocation" x="362.59541984732823" y="-101.40845070422536"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconProfile" width="82" height="82"/>
+        <image name="iconTick" width="28" height="28"/>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

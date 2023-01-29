@@ -79,6 +79,10 @@
 		54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA115296D0B9200EB316F /* RegisterViewController.xib */; };
 		54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */; };
 		54BBA11B296D7A5500EB316F /* SettingPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA119296D7A5500EB316F /* SettingPasswordViewController.xib */; };
+		54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */; };
+		54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */; };
+		54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */; };
+		54D082D329864531008B0FBC /* KYCUnAvailableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082D129864531008B0FBC /* KYCUnAvailableViewController.xib */; };
 		E86C994F204390CC5D44D531 /* Pods_DCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E035AEB38AFB921F754BF /* Pods_DCard.framework */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +182,10 @@
 		54BBA115296D0B9200EB316F /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordViewController.swift; sourceTree = "<group>"; };
 		54BBA119296D7A5500EB316F /* SettingPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPasswordViewController.xib; sourceTree = "<group>"; };
+		54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCFinishViewController.swift; sourceTree = "<group>"; };
+		54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCFinishViewController.xib; sourceTree = "<group>"; };
+		54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCUnAvailableViewController.swift; sourceTree = "<group>"; };
+		54D082D129864531008B0FBC /* KYCUnAvailableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCUnAvailableViewController.xib; sourceTree = "<group>"; };
 		6978148901B7D68CBED64117 /* Pods-DCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard.release.xcconfig"; path = "Target Support Files/Pods-DCard/Pods-DCard.release.xcconfig"; sourceTree = "<group>"; };
 		8BD0E5E6DC2A5E430AAEC9CF /* Pods-DCard-DCardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard-DCardUITests.release.xcconfig"; path = "Target Support Files/Pods-DCard-DCardUITests/Pods-DCard-DCardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91FF5ADB08459E1FC9FE7047 /* Pods-DCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCardTests.debug.xcconfig"; path = "Target Support Files/Pods-DCardTests/Pods-DCardTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -424,6 +432,10 @@
 				545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */,
 				545C569B2986142F00D7F058 /* FillInAddressViewController.swift */,
 				545C569C2986142F00D7F058 /* FillInAddressViewController.xib */,
+				54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */,
+				54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */,
+				54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */,
+				54D082D129864531008B0FBC /* KYCUnAvailableViewController.xib */,
 			);
 			path = KYC;
 			sourceTree = "<group>";
@@ -652,6 +664,7 @@
 				542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */,
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
+				54D082D329864531008B0FBC /* KYCUnAvailableViewController.xib in Resources */,
 				545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */,
 				542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
@@ -661,6 +674,7 @@
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
 				545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */,
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
+				54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,6 +823,7 @@
 			files = (
 				541A8D3029641F1F00C59026 /* UITableView+Extension.swift in Sources */,
 				547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */,
+				54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */,
 				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
 				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
@@ -825,6 +840,7 @@
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,
 				542BC197297573BC00133659 /* FillInNameAndNationalViewController.swift in Sources */,
+				54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
