@@ -31,9 +31,10 @@ extension UIApplicationDelegate {
     /// App root viewcontroller
     /// - Returns: root vc
     func rootViewController() -> UIViewController {
-        let vc = VerifyYourIdentityGuideViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        return nav
+        let vc = TabBarController()
+        return vc
+//        let nav = UINavigationController(rootViewController: vc)
+//        return nav
     }
 
     /// Reset app root viewcontroller and sub viewcontroller

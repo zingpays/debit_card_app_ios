@@ -83,6 +83,10 @@
 		54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */; };
 		54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */; };
 		54D082D329864531008B0FBC /* KYCUnAvailableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082D129864531008B0FBC /* KYCUnAvailableViewController.xib */; };
+		54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082DB29865955008B0FBC /* WalletViewController.swift */; };
+		54D082DE29865955008B0FBC /* WalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082DC29865955008B0FBC /* WalletViewController.xib */; };
+		54D082E129865965008B0FBC /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082DF29865965008B0FBC /* CardViewController.swift */; };
+		54D082E229865965008B0FBC /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082E029865965008B0FBC /* CardViewController.xib */; };
 		E86C994F204390CC5D44D531 /* Pods_DCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E035AEB38AFB921F754BF /* Pods_DCard.framework */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +190,10 @@
 		54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCFinishViewController.xib; sourceTree = "<group>"; };
 		54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCUnAvailableViewController.swift; sourceTree = "<group>"; };
 		54D082D129864531008B0FBC /* KYCUnAvailableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCUnAvailableViewController.xib; sourceTree = "<group>"; };
+		54D082DB29865955008B0FBC /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		54D082DC29865955008B0FBC /* WalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletViewController.xib; sourceTree = "<group>"; };
+		54D082DF29865965008B0FBC /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		54D082E029865965008B0FBC /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		6978148901B7D68CBED64117 /* Pods-DCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard.release.xcconfig"; path = "Target Support Files/Pods-DCard/Pods-DCard.release.xcconfig"; sourceTree = "<group>"; };
 		8BD0E5E6DC2A5E430AAEC9CF /* Pods-DCard-DCardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard-DCardUITests.release.xcconfig"; path = "Target Support Files/Pods-DCard-DCardUITests/Pods-DCard-DCardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91FF5ADB08459E1FC9FE7047 /* Pods-DCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCardTests.debug.xcconfig"; path = "Target Support Files/Pods-DCardTests/Pods-DCardTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -250,6 +258,9 @@
 		541A8D17296415DD00C59026 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				54D082DA2986593D008B0FBC /* Wallet */,
+				54D082D92986590B008B0FBC /* Card */,
+				54D082D429864E50008B0FBC /* Security */,
 				541A8D382964208100C59026 /* Home */,
 				545C56862985132E00D7F058 /* KYC */,
 				542BC19C2977025300133659 /* Login */,
@@ -519,6 +530,31 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		54D082D429864E50008B0FBC /* Security */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		54D082D92986590B008B0FBC /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				54D082DF29865965008B0FBC /* CardViewController.swift */,
+				54D082E029865965008B0FBC /* CardViewController.xib */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		54D082DA2986593D008B0FBC /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				54D082DB29865955008B0FBC /* WalletViewController.swift */,
+				54D082DC29865955008B0FBC /* WalletViewController.xib */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
 		A24AD97F5187678639266329 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -661,6 +697,7 @@
 				541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */,
 				541A8D462964252A00C59026 /* Localizable.strings in Resources */,
 				541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */,
+				54D082DE29865955008B0FBC /* WalletViewController.xib in Resources */,
 				542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */,
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
@@ -669,6 +706,7 @@
 				542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
+				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
 				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
@@ -829,6 +867,7 @@
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
 				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
+				54D082E129865965008B0FBC /* CardViewController.swift in Sources */,
 				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
@@ -857,6 +896,7 @@
 				542BC187296FF30600133659 /* BindPhoneViewController.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
+				54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */,
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,

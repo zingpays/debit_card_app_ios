@@ -18,24 +18,9 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是首页" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKa-CB-7bv">
-                    <rect key="frame" x="176.66666666666666" y="259" width="40" height="191"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="4TV-o2-BIk"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="aKa-CB-7bv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PPL-XN-Zji"/>
-                <constraint firstItem="aKa-CB-7bv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="W1Y-oF-Phq"/>
-            </constraints>
-            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+            <point key="canvasLocation" x="103" y="7"/>
         </view>
     </objects>
     <resources>

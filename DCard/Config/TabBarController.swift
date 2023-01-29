@@ -13,14 +13,20 @@ class TabBarController: UITabBarController {
     // tabBar viewcontrollers
     var tabVCs: [TabbarItem] = {
         var vcs: [TabbarItem] = []
-//        vcs.append(TabbarItem(title: R.string.localizable.homeTitle(), vc: HomeViewController(), normalImage: "house", selectedImage: "house.fill"))
-//        vcs.append(TabbarItem(title: R.string.localizable.settingTitle(), vc: SettingViewController(), normalImage: "gearshape", selectedImage: "gearshape.fill"))
+        vcs.append(TabbarItem(title: "", vc: CardViewController(), normalImage: "iconTabbarCard", selectedImage: "iconTabbarCardSelected"))
+        vcs.append(TabbarItem(title: "", vc: HomeViewController(), normalImage: "iconTabbarHome", selectedImage: "iconTabbarHomeSelected"))
+        vcs.append(TabbarItem(title: "", vc: WalletViewController(), normalImage: "iconTabbarWallet", selectedImage: "iconTabbarWalletSelected"))
         return vcs
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
+        tabBar.backgroundColor = .white
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = .init(origin: .zero, size: .init(width: tabBar.width, height: tabBar.height+STATUSBARHEIGHT))
+        maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size), byRoundingCorners: [.topLeft, .topRight], cornerRadii: .init(width: 20, height: 20)).cgPath
+        tabBar.layer.mask = maskLayer
     }
 
     private func setupViewControllers() {
@@ -34,8 +40,7 @@ class TabBarController: UITabBarController {
 
     private func addChildVC(childVC: UIViewController, title: String, normalImage: String, selectedImage: String) {
         tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for: .highlighted)
-        // TODO: test code is here
-        var img = UIImage(systemName: normalImage)//UIImage(named: normalImage)
+        var img = UIImage(named: normalImage)
         img = img?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         var selectedImg = UIImage(named: selectedImage)
         selectedImg = selectedImg?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
