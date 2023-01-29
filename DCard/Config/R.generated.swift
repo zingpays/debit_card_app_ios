@@ -112,7 +112,7 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 12 colors.
+  /// This `_R.color` struct is generated, and contains static references to 15 colors.
   struct color {
     let bundle: Foundation.Bundle
 
@@ -143,17 +143,26 @@ struct _R {
     /// Color `fw#00A9B5`.
     var fw00A9B5: RswiftResources.ColorResource { .init(name: "fw#00A9B5", path: [], bundle: bundle) }
 
+    /// Color `fw#00C0B3`.
+    var fw00C0B3: RswiftResources.ColorResource { .init(name: "fw#00C0B3", path: [], bundle: bundle) }
+
+    /// Color `fw#095CAB`.
+    var fw095CAB: RswiftResources.ColorResource { .init(name: "fw#095CAB", path: [], bundle: bundle) }
+
     /// Color `fw#D3E9F0`.
     var fwD3E9F0: RswiftResources.ColorResource { .init(name: "fw#D3E9F0", path: [], bundle: bundle) }
 
     /// Color `fw#ED4949`.
     var fwED4949: RswiftResources.ColorResource { .init(name: "fw#ED4949", path: [], bundle: bundle) }
 
+    /// Color `fw#FAFAFA`.
+    var fwFAFAFA: RswiftResources.ColorResource { .init(name: "fw#FAFAFA", path: [], bundle: bundle) }
+
     /// Color `fw#FFFFFF`.
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 19 images.
+  /// This `_R.image` struct is generated, and contains static references to 32 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -175,6 +184,9 @@ struct _R {
     /// Image `guide_bg_intro_4`.
     var guide_bg_intro_4: RswiftResources.ImageResource { .init(name: "guide_bg_intro_4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconAddress`.
+    var iconAddress: RswiftResources.ImageResource { .init(name: "iconAddress", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconBack`.
     var iconBack: RswiftResources.ImageResource { .init(name: "iconBack", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -184,8 +196,14 @@ struct _R {
     /// Image `iconInfo`.
     var iconInfo: RswiftResources.ImageResource { .init(name: "iconInfo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconLogo`.
+    var iconLogo: RswiftResources.ImageResource { .init(name: "iconLogo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconMore`.
     var iconMore: RswiftResources.ImageResource { .init(name: "iconMore", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconPassport`.
+    var iconPassport: RswiftResources.ImageResource { .init(name: "iconPassport", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconPasswordHide`.
     var iconPasswordHide: RswiftResources.ImageResource { .init(name: "iconPasswordHide", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -193,17 +211,47 @@ struct _R {
     /// Image `iconPasswordShow`.
     var iconPasswordShow: RswiftResources.ImageResource { .init(name: "iconPasswordShow", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconProfile`.
+    var iconProfile: RswiftResources.ImageResource { .init(name: "iconProfile", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconRegisterCheckboxOff`.
     var iconRegisterCheckboxOff: RswiftResources.ImageResource { .init(name: "iconRegisterCheckboxOff", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconRegisterCheckboxOn`.
     var iconRegisterCheckboxOn: RswiftResources.ImageResource { .init(name: "iconRegisterCheckboxOn", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconSelfie`.
+    var iconSelfie: RswiftResources.ImageResource { .init(name: "iconSelfie", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTabbarCard`.
+    var iconTabbarCard: RswiftResources.ImageResource { .init(name: "iconTabbarCard", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTabbarCardSelected`.
+    var iconTabbarCardSelected: RswiftResources.ImageResource { .init(name: "iconTabbarCardSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTabbarHome`.
+    var iconTabbarHome: RswiftResources.ImageResource { .init(name: "iconTabbarHome", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTabbarHomeSelected`.
+    var iconTabbarHomeSelected: RswiftResources.ImageResource { .init(name: "iconTabbarHomeSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTabbarWallet`.
+    var iconTabbarWallet: RswiftResources.ImageResource { .init(name: "iconTabbarWallet", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTabbarWalletSelected`.
+    var iconTabbarWalletSelected: RswiftResources.ImageResource { .init(name: "iconTabbarWalletSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconTick`.
+    var iconTick: RswiftResources.ImageResource { .init(name: "iconTick", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconTickOff`.
     var iconTickOff: RswiftResources.ImageResource { .init(name: "iconTickOff", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconTickOn`.
     var iconTickOn: RswiftResources.ImageResource { .init(name: "iconTickOn", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconUser`.
+    var iconUser: RswiftResources.ImageResource { .init(name: "iconUser", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `icon_faceid`.
     var icon_faceid: RswiftResources.ImageResource { .init(name: "icon_faceid", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -270,7 +318,7 @@ struct _R {
     var robotoRegular14Ttf: RswiftResources.FileResource { .init(name: "Roboto-Regular-14", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 16 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 23 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -280,11 +328,17 @@ struct _R {
     /// Nib `BiometricsViewController`.
     var biometricsViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "BiometricsViewController", bundle: bundle) }
 
+    /// Nib `CardViewController`.
+    var cardViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "CardViewController", bundle: bundle) }
+
     /// Nib `ChooseRegionTableViewCell`.
     var chooseRegionTableViewCell: RswiftResources.NibReference<ChooseRegionTableViewCell> { .init(name: "ChooseRegionTableViewCell", bundle: bundle) }
 
     /// Nib `ChooseRegionViewController`.
     var chooseRegionViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ChooseRegionViewController", bundle: bundle) }
+
+    /// Nib `FillInAddressViewController`.
+    var fillInAddressViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "FillInAddressViewController", bundle: bundle) }
 
     /// Nib `FillInNameAndNationalViewController`.
     var fillInNameAndNationalViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "FillInNameAndNationalViewController", bundle: bundle) }
@@ -297,6 +351,15 @@ struct _R {
 
     /// Nib `HomeViewController`.
     var homeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HomeViewController", bundle: bundle) }
+
+    /// Nib `KYCFillInNameAndNationalViewController`.
+    var kycFillInNameAndNationalViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "KYCFillInNameAndNationalViewController", bundle: bundle) }
+
+    /// Nib `KYCFinishViewController`.
+    var kycFinishViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "KYCFinishViewController", bundle: bundle) }
+
+    /// Nib `KYCUnAvailableViewController`.
+    var kycUnAvailableViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "KYCUnAvailableViewController", bundle: bundle) }
 
     /// Nib `LockScreenViewController`.
     var lockScreenViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "LockScreenViewController", bundle: bundle) }
@@ -322,15 +385,24 @@ struct _R {
     /// Nib `VerificationCodeViewController`.
     var verificationCodeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "VerificationCodeViewController", bundle: bundle) }
 
+    /// Nib `VerifyYourIdentityGuideViewController`.
+    var verifyYourIdentityGuideViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "VerifyYourIdentityGuideViewController", bundle: bundle) }
+
+    /// Nib `WalletViewController`.
+    var walletViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WalletViewController", bundle: bundle) }
+
     func validate() throws {
       if UIKit.UIImage(named: "iconDownArrow", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDownArrow' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "icon_faceid", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'icon_faceid' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'CardViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ChooseRegionTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
@@ -339,8 +411,26 @@ struct _R {
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "colorFFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'colorFFFFFF' is used in nib 'GuideViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A9B5", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A9B5' is used in nib 'GuideViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00191C", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00191C' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#ED4949", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#ED4949' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconProfile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconProfile' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconTick", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconTick' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconProfile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconProfile' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'LoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'LoginViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconLogo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconLogo' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconRegisterCheckboxOff", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRegisterCheckboxOff' is used in nib 'RegisterViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconRegisterCheckboxOn", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRegisterCheckboxOn' is used in nib 'RegisterViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'RegisterViewController', but couldn't be loaded.") }
@@ -358,6 +448,14 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'VerificationCodeViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#ED4949", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#ED4949' is used in nib 'VerificationCodeViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'VerificationCodeViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconAddress", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconAddress' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconPassport", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconPassport' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconProfile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconProfile' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconSelfie", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconSelfie' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconUser", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconUser' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'VerifyYourIdentityGuideViewController', but couldn't be loaded.") }
     }
   }
 
