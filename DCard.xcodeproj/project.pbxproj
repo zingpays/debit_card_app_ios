@@ -65,6 +65,8 @@
 		545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */; };
 		545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */; };
 		545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */; };
+		545C569D2986142F00D7F058 /* FillInAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C569B2986142F00D7F058 /* FillInAddressViewController.swift */; };
+		545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C569C2986142F00D7F058 /* FillInAddressViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -158,6 +160,8 @@
 		545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyYourIdentityGuideViewController.xib; sourceTree = "<group>"; };
 		545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCFillInNameAndNationalViewController.swift; sourceTree = "<group>"; };
 		545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCFillInNameAndNationalViewController.xib; sourceTree = "<group>"; };
+		545C569B2986142F00D7F058 /* FillInAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInAddressViewController.swift; sourceTree = "<group>"; };
+		545C569C2986142F00D7F058 /* FillInAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillInAddressViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -418,6 +422,8 @@
 				545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */,
 				545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */,
 				545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */,
+				545C569B2986142F00D7F058 /* FillInAddressViewController.swift */,
+				545C569C2986142F00D7F058 /* FillInAddressViewController.xib */,
 			);
 			path = KYC;
 			sourceTree = "<group>";
@@ -646,6 +652,7 @@
 				542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */,
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
+				545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */,
 				542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
@@ -813,6 +820,7 @@
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
 				545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */,
+				545C569D2986142F00D7F058 /* FillInAddressViewController.swift in Sources */,
 				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,

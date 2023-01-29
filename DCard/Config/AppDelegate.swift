@@ -58,7 +58,8 @@ extension AppDelegate {
                                BindPhoneViewController.self,
                                FillInNameAndNationalViewController.self,
                                LoginViewController.self,
-                               PasswordLoginViewController.self]
+                               PasswordLoginViewController.self,
+                               FillInAddressViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     

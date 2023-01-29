@@ -142,7 +142,8 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     }
     
     @IBAction func continueNext(_ sender: UIButton) {
-        
+        let vc = FillInAddressViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
