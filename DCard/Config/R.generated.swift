@@ -162,7 +162,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 32 images.
+  /// This `_R.image` struct is generated, and contains static references to 33 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -183,6 +183,9 @@ struct _R {
 
     /// Image `guide_bg_intro_4`.
     var guide_bg_intro_4: RswiftResources.ImageResource { .init(name: "guide_bg_intro_4", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconAddCard`.
+    var iconAddCard: RswiftResources.ImageResource { .init(name: "iconAddCard", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconAddress`.
     var iconAddress: RswiftResources.ImageResource { .init(name: "iconAddress", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -397,7 +400,10 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "icon_faceid", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'icon_faceid' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconAddCard", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconAddCard' is used in nib 'CardViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'CardViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'CardViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'CardViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ChooseRegionTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }

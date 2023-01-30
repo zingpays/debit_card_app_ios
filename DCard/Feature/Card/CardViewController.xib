@@ -76,7 +76,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeT-B8-tpF">
-                                            <rect key="frame" x="131.33333333333334" y="112" width="68.333333333333343" height="17.666666666666657"/>
+                                            <rect key="frame" x="131.33333333333334" y="112" width="68.333333333333343" height="16.333333333333343"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                             <color key="textColor" name="fw#FFFFFF"/>
                                             <nil key="highlightedColor"/>
@@ -216,7 +216,7 @@
                 <constraint firstItem="haj-t9-WdW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mCm-nq-gjd"/>
                 <constraint firstItem="haj-t9-WdW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="uGm-O2-bWR"/>
             </constraints>
-            <point key="canvasLocation" x="78.625954198473281" y="-11.267605633802818"/>
+            <point key="canvasLocation" x="-123" y="-42"/>
         </view>
     </objects>
     <resources>
