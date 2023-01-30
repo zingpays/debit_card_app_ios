@@ -31,9 +31,19 @@ extension UIApplicationDelegate {
     /// App root viewcontroller
     /// - Returns: root vc
     func rootViewController() -> UIViewController {
-        let vc = ForgotPasswordEmailCheckViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        return nav
+        if UserManager.shared.token == nil {
+            if UserDefaults.standard.value(forKey: APPISSHOWGUIDEKEY) == nil {
+                let guideVC = GuideViewController()
+                let guideNavVC = UINavigationController(rootViewController: guideVC)
+                return guideNavVC
+            } else {
+                let vc = LoginViewController()
+                let loginNavVC = UINavigationController(rootViewController: vc)
+                return loginNavVC
+            }
+        } else {
+            return TabBarController()
+        }
     }
 
     /// Reset app root viewcontroller and sub viewcontroller
@@ -61,7 +71,9 @@ extension AppDelegate {
                                PasswordLoginViewController.self,
                                FillInAddressViewController.self,
                                SecurityVerificationViewController.self,
-                               ForgotPasswordEmailCheckViewController.self]
+                               ForgotPasswordEmailCheckViewController.self,
+                               SecurityVerificationViewController.self,
+                               SettingNewPasswordViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     

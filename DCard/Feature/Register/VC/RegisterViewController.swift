@@ -66,6 +66,7 @@ class RegisterViewController: BaseViewController {
     }
     
     private func setupRightItem() {
+        self.gk_navLeftBarButtonItem = nil
         self.gk_navRightBarButtonItem = loginItem
         self.gk_navItemRightSpace = 17
     }
@@ -87,7 +88,6 @@ class RegisterViewController: BaseViewController {
         }
         checkButton.setTitle("", for: .normal)
         setupCheckDescText()
-        emailTextField.becomeFirstResponder()
     }
     
     private func setupCheckDescText() {
@@ -187,7 +187,8 @@ class RegisterViewController: BaseViewController {
     // MARK: - Actions
     
     @objc private func loginAction() {
-        
+        let vc = LoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func codeAction(_ sender: UIButton) {

@@ -80,8 +80,8 @@ class GuideViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-//        let vc = LoginViewController()
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = LoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

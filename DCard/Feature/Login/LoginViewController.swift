@@ -56,6 +56,7 @@ class LoginViewController: BaseViewController {
         passwordTextField.leftView = textFiledLeftView()
         forgotPasswordButton.titleLabel?.font = .fw.font16()
         loginButton.titleLabel?.font = .fw.font16()
+        loginButton.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.4)
         passwordTextField.rightViewMode = .whileEditing
         passwordTextField.isSecureTextEntry = true
         passwordTextField.rightView = textFieldRightView(#selector(passwordEyeAction))
@@ -75,10 +76,19 @@ class LoginViewController: BaseViewController {
         return v
     }
     
+    private func refreshLoginButton(isPass: Bool) {
+        if isPass {
+            loginButton.backgroundColor = R.color.fw00A8BB()
+        } else {
+            loginButton.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.4)
+        }
+    }
+    
     // MARK: - Actions
     
     @objc private func registerAction() {
-        // TODO: go to register
+        let vc = RegisterViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
@@ -86,7 +96,17 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        
+        if passwordTextField.text == "12345" {
+            let expireDate: Date = Date(timeIntervalSinceNow: 60*60*24*7)
+            // save user token
+            UserManager.shared.saveToken("test", expireDate: expireDate)
+            // change application root viewController to tabbar viewController
+            UIApplication.shared.keyWindow()?.rootViewController = nil
+            UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+            
+        } else {
+            view.makeToast("password is invaild", duration: 1, position: .top)
+        }
     }
     
     @objc private func passwordEyeAction(sender: UIButton) {
@@ -95,6 +115,10 @@ class LoginViewController: BaseViewController {
     }
     
     @objc private func passwordChanged(_ sender: UITextField) {
-        
+        if sender.text?.count ?? 0 > 0 {
+            refreshLoginButton(isPass: true)
+        } else {
+            refreshLoginButton(isPass: false)
+        }
     }
 }
