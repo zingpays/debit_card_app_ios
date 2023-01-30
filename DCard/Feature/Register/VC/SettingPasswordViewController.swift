@@ -74,10 +74,6 @@ class SettingPasswordViewController: BaseViewController {
         passwordTextField.becomeFirstResponder()
     }
     
-    private func textFiledLeftView() -> UIView {
-        return UIView(frame: CGRect(origin: .zero, size: CGSize(width: 16, height: passwordTextField.height)))
-    }
-    
     private func textFieldRightView(_ action: Selector) -> UIView {
         let size = CGSize(width: 44, height: passwordTextField.height)
         let v = UIView(frame: CGRect(origin: .zero, size: size))

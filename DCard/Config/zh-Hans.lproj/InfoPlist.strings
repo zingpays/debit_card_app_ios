@@ -6,5 +6,5 @@
   Copyright © 2023 Flashwire. All rights reserved.
 */
 
-"CFBundleDisplayName" = "DCard";
+"CFBundleDisplayName" = "恒星支付";
 "NSFaceIDUsageDescription" = "需要使用你的生物识别来锁屏";

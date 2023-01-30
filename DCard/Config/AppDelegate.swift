@@ -31,10 +31,9 @@ extension UIApplicationDelegate {
     /// App root viewcontroller
     /// - Returns: root vc
     func rootViewController() -> UIViewController {
-        let vc = TabBarController()
-        return vc
-//        let nav = UINavigationController(rootViewController: vc)
-//        return nav
+        let vc = ForgotPasswordEmailCheckViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        return nav
     }
 
     /// Reset app root viewcontroller and sub viewcontroller
@@ -60,7 +59,9 @@ extension AppDelegate {
                                FillInNameAndNationalViewController.self,
                                LoginViewController.self,
                                PasswordLoginViewController.self,
-                               FillInAddressViewController.self]
+                               FillInAddressViewController.self,
+                               SecurityVerificationViewController.self,
+                               ForgotPasswordEmailCheckViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     

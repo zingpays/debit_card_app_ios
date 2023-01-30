@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
     private lazy var backItem: UIBarButtonItem = {
         let btn = UIButton()
         btn.frame = CGRect(x: 0, y: 4, width: 36, height: 36)
-        btn.backgroundColor = .white
+        btn.backgroundColor = ISNOTCH() ? .white : .clear
         btn.layer.cornerRadius = 12
         btn.setImage(R.image.iconBack(), for: .normal)
         btn.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
@@ -46,7 +46,12 @@ class BaseViewController: UIViewController {
         self.gk_navBackgroundColor = .clear
         self.gk_navLineHidden = false
         self.gk_navLeftBarButtonItem = backItem
-        self.gk_navItemLeftSpace = 16
+        self.gk_navItemLeftSpace = ISNOTCH() ? 16 : 4
+    }
+    
+    func textFiledLeftView() -> UIView {
+        return UIView(frame: CGRect(origin: .zero,
+                                    size: CGSize(width: 16, height: 50)))
     }
     
     private func setupGradientBackground() {

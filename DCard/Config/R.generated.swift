@@ -77,12 +77,12 @@ struct _R {
     struct infoPlist {
       let source: RswiftResources.StringResource.Source
 
-      /// en translation: DCard
+      /// en translation: Stella Pay
       ///
       /// Key: CFBundleDisplayName
       ///
       /// Locales: en, zh-Hans
-      var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "InfoPlist", source: source, developmentValue: "DCard", comment: nil) }
+      var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "InfoPlist", source: source, developmentValue: "Stella Pay", comment: nil) }
 
       /// en translation: Need to use your biometric information to lock in your app.
       ///
@@ -321,7 +321,7 @@ struct _R {
     var robotoRegular14Ttf: RswiftResources.FileResource { .init(name: "Roboto-Regular-14", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 23 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 25 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -345,6 +345,9 @@ struct _R {
 
     /// Nib `FillInNameAndNationalViewController`.
     var fillInNameAndNationalViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "FillInNameAndNationalViewController", bundle: bundle) }
+
+    /// Nib `ForgotPasswordEmailCheckViewController`.
+    var forgotPasswordEmailCheckViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ForgotPasswordEmailCheckViewController", bundle: bundle) }
 
     /// Nib `GuidePagerViewCell`.
     var guidePagerViewCell: RswiftResources.NibReference<GuidePagerViewCell> { .init(name: "GuidePagerViewCell", bundle: bundle) }
@@ -375,6 +378,9 @@ struct _R {
 
     /// Nib `RegisterViewController`.
     var registerViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "RegisterViewController", bundle: bundle) }
+
+    /// Nib `SecurityVerificationViewController`.
+    var securityVerificationViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "SecurityVerificationViewController", bundle: bundle) }
 
     /// Nib `SettingPasswordTipsTableViewCell`.
     var settingPasswordTipsTableViewCell: RswiftResources.NibReference<SettingPasswordTipsTableViewCell> { .init(name: "SettingPasswordTipsTableViewCell", bundle: bundle) }
@@ -413,6 +419,9 @@ struct _R {
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ForgotPasswordEmailCheckViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ForgotPasswordEmailCheckViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ForgotPasswordEmailCheckViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "guide_bg_intro_3", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'guide_bg_intro_3' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "colorFFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'colorFFFFFF' is used in nib 'GuideViewController', but couldn't be loaded.") }
@@ -442,6 +451,10 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'RegisterViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#ED4949", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#ED4949' is used in nib 'RegisterViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'RegisterViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconTickOff", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconTickOff' is used in nib 'SettingPasswordTipsTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SettingPasswordTipsTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SettingPasswordViewController', but couldn't be loaded.") }

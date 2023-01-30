@@ -53,10 +53,6 @@ class FillInAddressViewController: BaseViewController {
         postcodeTextField.leftView = textFiledLeftView()
     }
     
-    private func textFiledLeftView() -> UIView {
-        return UIView(frame: CGRect(origin: .zero, size: CGSize(width: 16, height: 50)))
-    }
-    
     private func textFieldRightView() -> UIView {
         let size = CGSize(width: 44, height: 50)
         let v = UIView(frame: CGRect(origin: .zero, size: size))

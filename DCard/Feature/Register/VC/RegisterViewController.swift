@@ -109,10 +109,6 @@ class RegisterViewController: BaseViewController {
         checkDescTextView.attributedText = attrString
     }
     
-    private func textFiledLeftView() -> UIView {
-        return UIView(frame: CGRect(origin: .zero, size: CGSize(width: 16, height: emailTextField.height)))
-    }
-    
     private func inputBeginEditing(_ textField: UITextField) {
         if textField == emailTextField {
             textField.layer.borderColor = R.color.fw00A8BB()?.cgColor

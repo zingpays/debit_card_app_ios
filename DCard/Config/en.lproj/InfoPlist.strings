@@ -6,5 +6,5 @@
   Copyright © 2023 Flashwire. All rights reserved.
 */
 
-"CFBundleDisplayName" = "DCard";
+"CFBundleDisplayName" = "Stella Pay";
 "NSFaceIDUsageDescription" = "Need to use your biometric information to lock in your app.";

@@ -62,10 +62,6 @@ class LoginViewController: BaseViewController {
         passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
     }
     
-    private func textFiledLeftView() -> UIView {
-        return UIView(frame: CGRect(origin: .zero, size: CGSize(width: 16, height: 50)))
-    }
-    
     private func textFieldRightView(_ action: Selector) -> UIView {
         let size = CGSize(width: 44, height: passwordTextField.height)
         let v = UIView(frame: CGRect(origin: .zero, size: size))
