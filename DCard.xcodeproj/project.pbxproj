@@ -71,6 +71,8 @@
 		545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C569C2986142F00D7F058 /* FillInAddressViewController.xib */; };
 		5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */; };
 		5473220529879A18007B9AEA /* SecurityVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */; };
+		547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */; };
+		547322092987BF0D007B9AEA /* SettingNewPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -178,6 +180,8 @@
 		545C569C2986142F00D7F058 /* FillInAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillInAddressViewController.xib; sourceTree = "<group>"; };
 		5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityVerificationViewController.swift; sourceTree = "<group>"; };
 		5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityVerificationViewController.xib; sourceTree = "<group>"; };
+		547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNewPasswordViewController.swift; sourceTree = "<group>"; };
+		547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNewPasswordViewController.xib; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -545,6 +549,8 @@
 				544ABBCE2987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib */,
 				5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */,
 				5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */,
+				547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */,
+				547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */,
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
 				54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */,
+				547322092987BF0D007B9AEA /* SettingNewPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +887,7 @@
 				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
 				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
+				547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
 				54D082E129865965008B0FBC /* CardViewController.swift in Sources */,
 				5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */,

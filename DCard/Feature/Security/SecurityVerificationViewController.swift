@@ -63,4 +63,8 @@ class SecurityVerificationViewController: BaseViewController {
         
     }
     
+    @IBAction func nextAction(_ sender: Any) {
+        let vc = SettingNewPasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
