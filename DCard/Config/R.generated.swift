@@ -406,6 +406,7 @@ struct _R {
     func validate() throws {
       if UIKit.UIImage(named: "iconDownArrow", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDownArrow' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "icon_faceid", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'icon_faceid' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
