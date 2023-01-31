@@ -52,7 +52,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We use your phone number to verify important changes to your account." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eih-lO-8N0">
                     <rect key="frame" x="40" y="221.33333333333334" width="336" height="33.666666666666657"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" name="fw#00A8BB"/>
+                    <color key="textColor" name="fw#000000"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DP-N3-1jH">
@@ -158,6 +158,9 @@
     <resources>
         <image name="iconDownArrow" width="18" height="18"/>
         <image name="iconInfo" width="18" height="18"/>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

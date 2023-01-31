@@ -47,7 +47,7 @@ class VerificationCodeViewController: BaseViewController {
         box.inputType = .number
         box.boxFlowLayout?.itemSize = CGSize(width: boxWidth-10, height: boxWidth-10)
         box.customCellProperty = self.cellProperty
-        box.loadAndPrepare(withBeginEdit: true)
+        box.loadAndPrepare(withBeginEdit: false)
         box.mainCollectionView()?.contentInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
         return box
     }()

@@ -97,6 +97,7 @@ class LoginViewController: BaseViewController {
     
     @IBAction func loginAction(_ sender: Any) {
         if passwordTextField.text == "12345" {
+            LocalAuthenManager.shared.isAuthorized = true
             let expireDate: Date = Date(timeIntervalSinceNow: 60*60*24*7)
             // save user token
             UserManager.shared.saveToken("test", expireDate: expireDate)

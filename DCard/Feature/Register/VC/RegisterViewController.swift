@@ -43,6 +43,11 @@ class RegisterViewController: BaseViewController {
         setupUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailTextField.becomeFirstResponder()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

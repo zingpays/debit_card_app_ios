@@ -43,6 +43,11 @@ class SettingPasswordViewController: BaseViewController {
         setupUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        passwordTextField.becomeFirstResponder()
+    }
+    
     // MARK: - Private
     
     private func setupUI() {
@@ -71,7 +76,6 @@ class SettingPasswordViewController: BaseViewController {
         passwordTextField.rightView = textFieldRightView(#selector(passwordEyeAction))
         againPasswordTextField.rightView = textFieldRightView(#selector(againPasswordEyeAction))
         passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
-        passwordTextField.becomeFirstResponder()
     }
     
     private func textFieldRightView(_ action: Selector) -> UIView {
@@ -154,6 +158,7 @@ class SettingPasswordViewController: BaseViewController {
     }
     
     @IBAction func next(_ sender: UIButton) {
+        LocalAuthenManager.shared.isAuthorized = true
         let vc = BindPhoneViewController()
         navigationController?.pushViewController(vc, animated: true)
     }

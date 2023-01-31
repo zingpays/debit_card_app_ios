@@ -33,7 +33,12 @@ class StartExperienceViewController: BaseViewController {
     // MARK: - Action
     
     @IBAction func startExperience(_ sender: Any) {
-        // TODO: - go to home page
+        let expireDate: Date = Date(timeIntervalSinceNow: 60*60*24*7)
+        // save user token
+        UserManager.shared.saveToken("test", expireDate: expireDate)
+        // change application root viewController to tabbar viewController
+        UIApplication.shared.keyWindow()?.rootViewController = nil
+        UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
     }
     
 }

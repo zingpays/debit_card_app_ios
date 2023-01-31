@@ -24,6 +24,13 @@ class BindPhoneViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
     }
+    
+    override func setupNavBar() {}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        phoneTextField.becomeFirstResponder()
+    }
 
     // MARK: - Private
     
@@ -39,7 +46,6 @@ class BindPhoneViewController: BaseViewController {
         subTitleLabel.font = UIFont.fw.font16()
         infoLabell.font = .fw.font14()
         phoneTextField.addTarget(self, action: #selector(phoneNumValueChangeAction), for: .editingChanged)
-        phoneTextField.becomeFirstResponder()
     }
     
     @objc private func phoneNumValueChangeAction() {
