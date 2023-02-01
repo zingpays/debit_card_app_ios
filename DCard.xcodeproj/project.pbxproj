@@ -95,6 +95,8 @@
 		54D082DE29865955008B0FBC /* WalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082DC29865955008B0FBC /* WalletViewController.xib */; };
 		54D082E129865965008B0FBC /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082DF29865965008B0FBC /* CardViewController.swift */; };
 		54D082E229865965008B0FBC /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082E029865965008B0FBC /* CardViewController.xib */; };
+		54D4808E298A3A590068671E /* ApplyCardSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */; };
+		54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */; };
 		54E368AC298A15440042D072 /* ApplyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E368AA298A15440042D072 /* ApplyCardViewController.swift */; };
 		54E368AD298A15440042D072 /* ApplyCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54E368AB298A15440042D072 /* ApplyCardViewController.xib */; };
 		E86C994F204390CC5D44D531 /* Pods_DCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E035AEB38AFB921F754BF /* Pods_DCard.framework */; };
@@ -212,6 +214,8 @@
 		54D082DC29865955008B0FBC /* WalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletViewController.xib; sourceTree = "<group>"; };
 		54D082DF29865965008B0FBC /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		54D082E029865965008B0FBC /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyCardSuccessViewController.swift; sourceTree = "<group>"; };
+		54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplyCardSuccessViewController.xib; sourceTree = "<group>"; };
 		54E368AA298A15440042D072 /* ApplyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyCardViewController.swift; sourceTree = "<group>"; };
 		54E368AB298A15440042D072 /* ApplyCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplyCardViewController.xib; sourceTree = "<group>"; };
 		6978148901B7D68CBED64117 /* Pods-DCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard.release.xcconfig"; path = "Target Support Files/Pods-DCard/Pods-DCard.release.xcconfig"; sourceTree = "<group>"; };
@@ -572,6 +576,8 @@
 				54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */,
 				54E368AA298A15440042D072 /* ApplyCardViewController.swift */,
 				54E368AB298A15440042D072 /* ApplyCardViewController.xib */,
+				54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */,
+				54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
 				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
+				54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
 				545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */,
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
@@ -933,6 +940,7 @@
 				54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */,
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,
 				542BC187296FF30600133659 /* BindPhoneViewController.swift in Sources */,
+				54D4808E298A3A590068671E /* ApplyCardSuccessViewController.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				544ABBCF2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift in Sources */,

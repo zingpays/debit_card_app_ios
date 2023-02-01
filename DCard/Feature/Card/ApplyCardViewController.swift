@@ -23,13 +23,13 @@ class ApplyCardViewController: BaseViewController {
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
-        
     }
 
     // MARK: - Actions
     
     @IBAction func continueAction(_ sender: Any) {
-        
+        let vc = ApplyCardSuccessViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

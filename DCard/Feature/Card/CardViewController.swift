@@ -47,6 +47,10 @@ class CardViewController: BaseViewController {
         }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - Private
     
     private func setupUI() {
@@ -58,9 +62,16 @@ class CardViewController: BaseViewController {
         
     }
     
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(applyCardSuccess),
+                                               name: Notification.Name(APPLYCARDSUCCESS),
+                                               object: nil)
+    }
+    
     // MARK: - Action
     
-    @IBAction func addCardAction(_ sender: Any) {
+    @objc private func applyCardSuccess() {
         
     }
     
