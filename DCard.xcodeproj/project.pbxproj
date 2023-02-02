@@ -40,8 +40,6 @@
 		541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */; };
 		541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */; };
 		541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D83296BFCFA00C59026 /* Roboto-Regular-14.ttf */; };
-		541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D90296C07D200C59026 /* DIN Bold.ttf */; };
-		541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D91296C07D200C59026 /* DIN Light.ttf */; };
 		54259A7729891E3800BFF2E7 /* EmptyCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */; };
 		54259A7829891E3800BFF2E7 /* EmptyCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */; };
 		542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */; };
@@ -81,6 +79,12 @@
 		547F4D2029640393007B05B9 /* DCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D1F29640393007B05B9 /* DCardTests.swift */; };
 		547F4D2A29640393007B05B9 /* DCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D2929640393007B05B9 /* DCardUITests.swift */; };
 		547F4D2C29640393007B05B9 /* DCardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D2B29640393007B05B9 /* DCardUITestsLaunchTests.swift */; };
+		549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549D4620298A4B7C009AEB13 /* din-bold.ttf */; };
+		549D4623298A4B7C009AEB13 /* din-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549D4621298A4B7C009AEB13 /* din-regular.ttf */; };
+		549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549D4624298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift */; };
+		549D4627298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549D4625298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib */; };
+		549D462A298A715F009AEB13 /* TransactionItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549D4628298A715F009AEB13 /* TransactionItemTableViewCell.swift */; };
+		549D462B298A715F009AEB13 /* TransactionItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549D4629298A715F009AEB13 /* TransactionItemTableViewCell.xib */; };
 		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
@@ -97,6 +101,8 @@
 		54D082E229865965008B0FBC /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082E029865965008B0FBC /* CardViewController.xib */; };
 		54D4808E298A3A590068671E /* ApplyCardSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */; };
 		54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */; };
+		54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D48092298A3F750068671E /* CardBagTableViewCell.swift */; };
+		54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D48093298A3F750068671E /* CardBagTableViewCell.xib */; };
 		54E368AC298A15440042D072 /* ApplyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E368AA298A15440042D072 /* ApplyCardViewController.swift */; };
 		54E368AD298A15440042D072 /* ApplyCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54E368AB298A15440042D072 /* ApplyCardViewController.xib */; };
 		E86C994F204390CC5D44D531 /* Pods_DCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E035AEB38AFB921F754BF /* Pods_DCard.framework */; };
@@ -155,8 +161,6 @@
 		541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light-10.ttf"; sourceTree = "<group>"; };
 		541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium-12.ttf"; sourceTree = "<group>"; };
 		541A8D86296BFEC600C59026 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		541A8D90296C07D200C59026 /* DIN Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Bold.ttf"; sourceTree = "<group>"; };
-		541A8D91296C07D200C59026 /* DIN Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Light.ttf"; sourceTree = "<group>"; };
 		54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardTableViewCell.swift; sourceTree = "<group>"; };
 		54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCardTableViewCell.xib; sourceTree = "<group>"; };
 		542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordTipsTableViewCell.swift; sourceTree = "<group>"; };
@@ -200,6 +204,12 @@
 		547F4D2529640393007B05B9 /* DCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D2929640393007B05B9 /* DCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCardUITests.swift; sourceTree = "<group>"; };
 		547F4D2B29640393007B05B9 /* DCardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		549D4620298A4B7C009AEB13 /* din-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-bold.ttf"; sourceTree = "<group>"; };
+		549D4621298A4B7C009AEB13 /* din-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-regular.ttf"; sourceTree = "<group>"; };
+		549D4624298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsTableViewCell.swift; sourceTree = "<group>"; };
+		549D4625298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTransactionsTableViewCell.xib; sourceTree = "<group>"; };
+		549D4628298A715F009AEB13 /* TransactionItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemTableViewCell.swift; sourceTree = "<group>"; };
+		549D4629298A715F009AEB13 /* TransactionItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionItemTableViewCell.xib; sourceTree = "<group>"; };
 		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +226,8 @@
 		54D082E029865965008B0FBC /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyCardSuccessViewController.swift; sourceTree = "<group>"; };
 		54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplyCardSuccessViewController.xib; sourceTree = "<group>"; };
+		54D48092298A3F750068671E /* CardBagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBagTableViewCell.swift; sourceTree = "<group>"; };
+		54D48093298A3F750068671E /* CardBagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardBagTableViewCell.xib; sourceTree = "<group>"; };
 		54E368AA298A15440042D072 /* ApplyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyCardViewController.swift; sourceTree = "<group>"; };
 		54E368AB298A15440042D072 /* ApplyCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplyCardViewController.xib; sourceTree = "<group>"; };
 		6978148901B7D68CBED64117 /* Pods-DCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCard.release.xcconfig"; path = "Target Support Files/Pods-DCard/Pods-DCard.release.xcconfig"; sourceTree = "<group>"; };
@@ -299,8 +311,8 @@
 		541A8D182964160100C59026 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				541A8D90296C07D200C59026 /* DIN Bold.ttf */,
-				541A8D91296C07D200C59026 /* DIN Light.ttf */,
+				549D4620298A4B7C009AEB13 /* din-bold.ttf */,
+				549D4621298A4B7C009AEB13 /* din-regular.ttf */,
 				541A8D82296BFCFA00C59026 /* Roboto-Bold-3.ttf */,
 				541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */,
 				541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */,
@@ -570,14 +582,8 @@
 		54D082D92986590B008B0FBC /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				54D082DF29865965008B0FBC /* CardViewController.swift */,
-				54D082E029865965008B0FBC /* CardViewController.xib */,
-				54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */,
-				54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */,
-				54E368AA298A15440042D072 /* ApplyCardViewController.swift */,
-				54E368AB298A15440042D072 /* ApplyCardViewController.xib */,
-				54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */,
-				54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */,
+				54D48091298A3F020068671E /* VC */,
+				54D48090298A3EF70068671E /* View */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -589,6 +595,34 @@
 				54D082DC29865955008B0FBC /* WalletViewController.xib */,
 			);
 			path = Wallet;
+			sourceTree = "<group>";
+		};
+		54D48090298A3EF70068671E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */,
+				54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */,
+				54D48092298A3F750068671E /* CardBagTableViewCell.swift */,
+				54D48093298A3F750068671E /* CardBagTableViewCell.xib */,
+				549D4624298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift */,
+				549D4625298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib */,
+				549D4628298A715F009AEB13 /* TransactionItemTableViewCell.swift */,
+				549D4629298A715F009AEB13 /* TransactionItemTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54D48091298A3F020068671E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				54D082DF29865965008B0FBC /* CardViewController.swift */,
+				54D082E029865965008B0FBC /* CardViewController.xib */,
+				54E368AA298A15440042D072 /* ApplyCardViewController.swift */,
+				54E368AB298A15440042D072 /* ApplyCardViewController.xib */,
+				54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */,
+				54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		A24AD97F5187678639266329 /* Pods */ = {
@@ -721,9 +755,10 @@
 				5473220529879A18007B9AEA /* SecurityVerificationViewController.xib in Resources */,
 				542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */,
 				545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */,
-				541A8D92296C07D200C59026 /* DIN Bold.ttf in Resources */,
+				549D4623298A4B7C009AEB13 /* din-regular.ttf in Resources */,
 				545C56852984FB1D00D7F058 /* PasswordLoginViewController.xib in Resources */,
 				54E368AD298A15440042D072 /* ApplyCardViewController.xib in Resources */,
+				54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */,
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
 				544ABBD02987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib in Resources */,
@@ -733,13 +768,15 @@
 				542BC1A02977026900133659 /* LoginViewController.xib in Resources */,
 				541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */,
 				541A8D7D29682D5B00C59026 /* GuidePagerViewCell.xib in Resources */,
-				541A8D93296C07D200C59026 /* DIN Light.ttf in Resources */,
+				549D462B298A715F009AEB13 /* TransactionItemTableViewCell.xib in Resources */,
+				549D4627298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib in Resources */,
 				541A8D462964252A00C59026 /* Localizable.strings in Resources */,
 				541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */,
 				54D082DE29865955008B0FBC /* WalletViewController.xib in Resources */,
 				542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */,
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
+				549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */,
 				54D082D329864531008B0FBC /* KYCUnAvailableViewController.xib in Resources */,
 				545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */,
 				54259A7829891E3800BFF2E7 /* EmptyCardTableViewCell.xib in Resources */,
@@ -928,8 +965,10 @@
 				54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
+				549D462A298A715F009AEB13 /* TransactionItemTableViewCell.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */,
+				549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */,
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,
@@ -943,6 +982,7 @@
 				54D4808E298A3A590068671E /* ApplyCardSuccessViewController.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
+				54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */,
 				544ABBCF2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift in Sources */,
 				54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,

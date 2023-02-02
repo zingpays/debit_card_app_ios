@@ -112,7 +112,7 @@ public extension Wrapper where Base: UIFont {
     }
     
     static func DINFont(weight: FontWeight, size: CGFloat) -> UIFont {
-        return UIFont(name: "DINA-" + weight.rawValue, size: size) ?? UIFont.systemFont(fontWeight: weight, size: size)
+        return UIFont(name: "DIN-" + weight.rawValue, size: size) ?? UIFont.systemFont(fontWeight: weight, size: size)
     }
     
     static func robotoFont(weight: FontWeight, size: CGFloat) -> UIFont {

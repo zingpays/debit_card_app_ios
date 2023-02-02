@@ -1,25 +1,29 @@
 //
-//  EmptyCardTableViewCell.swift
+//  CardBagTableViewCell.swift
 //  DCard
 //
-//  Created by Fei Zhang on 2023/1/31.
+//  Created by Fei Zhang on 2023/2/1.
 //  Copyright © 2023 Flashwire. All rights reserved.
 //
 
 import UIKit
 
-protocol EmptyCardTableViewCellDelegate: NSObject {
-    func didSelectedAddCard(_ cell: EmptyCardTableViewCell)
+protocol CardBagTableViewCellDelegate: NSObject {
+    func didSelectedCashbackInfo(_ cell: CardBagTableViewCell)
+    func didSelectedTransitInfo(_ cell: CardBagTableViewCell)
+    func didSelectedDeposit(_ cell: CardBagTableViewCell)
+    func didSelectedStatement(_ cell: CardBagTableViewCell)
+    func didSelectedCardDetail(_ cell: CardBagTableViewCell)
 }
 
-class EmptyCardTableViewCell: UITableViewCell {
+class CardBagTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var cardContentView: UIView!
     @IBOutlet weak var cardContentShadowView: UIView!
-    @IBOutlet weak var applyCardLabel: UILabel!
-
-    weak var delegate: EmptyCardTableViewCellDelegate?
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var cashbackView: UIView!
+    @IBOutlet weak var transitView: UIView!
+    weak var delegate: CardBagTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +36,8 @@ class EmptyCardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Private
+    
     private func setupSubviews() {
         cardContentView.layer.masksToBounds = true
         cardContentShadowView.layer.masksToBounds = false
@@ -40,23 +46,37 @@ class EmptyCardTableViewCell: UITableViewCell {
         bgLayer.colors = [R.color.fw00C0B3()!.cgColor,
                           R.color.fw095CAB()!.cgColor]
         bgLayer.locations = [0, 1]
-        bgLayer.frame = cardView.bounds
+        bgLayer.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH-64, height: 176))
         bgLayer.startPoint = .zero
         bgLayer.endPoint = CGPoint(x: 0.79, y: 0.79)
         cardView.layer.insertSublayer(bgLayer, at: 0)
         let maskLayer = CAShapeLayer()
         maskLayer.frame = .init(origin: .zero,
-                                size: .init(width: cardView.width, height: cardView.height))
+                                size: .init(width: SCREENWIDTH-64, height: 176))
         maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
                                       byRoundingCorners: [.topLeft, .topRight],
                                       cornerRadii: .init(width: 20, height: 20)).cgPath
         cardView.layer.mask = maskLayer
-        applyCardLabel.textColor = R.color.fwFFFFFF()?.withAlphaComponent(0.4)
-
     }
     
-    @IBAction func addCardAction(_ sender: Any) {
-        delegate?.didSelectedAddCard(self)
+    @IBAction func cashbackInfoAction(_ sender: Any) {
+        delegate?.didSelectedCashbackInfo(self)
+    }
+    
+    @IBAction func transitInfoAction(_ sender: Any) {
+        delegate?.didSelectedTransitInfo(self)
+    }
+    
+    @IBAction func depositAction(_ sender: Any) {
+        delegate?.didSelectedDeposit(self)
+    }
+    
+    @IBAction func statementAction(_ sender: Any) {
+        delegate?.didSelectedStatement(self)
+    }
+    
+    @IBAction func cardDetailAction(_ sender: Any) {
+        delegate?.didSelectedCardDetail(self)
     }
     
 }
