@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="KGk-i7-Jjw" customClass="DepositFromTableViewCell" customModule="DCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkf-4E-pEn">
+                        <rect key="frame" x="16" y="0.0" width="288" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBtc" translatesAutoresizingMaskIntoConstraints="NO" id="NXH-CK-vC2">
+                                <rect key="frame" x="12" y="18" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="n8G-dq-XDR"/>
+                                    <constraint firstAttribute="width" constant="28" id="z9K-0Q-ZEX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiT-zM-CtJ">
+                                <rect key="frame" x="48" y="14" width="29.666666666666671" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="5Pf-t5-Kc1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available 4.55 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH9-6e-UU1">
+                                <rect key="frame" x="48.000000000000007" y="37" width="97.666666666666686" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="iBq-xT-kfb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                                <color key="textColor" name="fw#000000"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRightArrowGreen" translatesAutoresizingMaskIntoConstraints="NO" id="EPe-ll-eI8">
+                                <rect key="frame" x="264" y="26" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="9yS-TL-eXZ"/>
+                                    <constraint firstAttribute="height" constant="12" id="BRl-FA-c6M"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="fw#76A4A7"/>
+                        <constraints>
+                            <constraint firstItem="EPe-ll-eI8" firstAttribute="centerY" secondItem="Xkf-4E-pEn" secondAttribute="centerY" id="5Jx-T5-AiW"/>
+                            <constraint firstItem="hH9-6e-UU1" firstAttribute="leading" secondItem="NXH-CK-vC2" secondAttribute="trailing" constant="8" id="5oA-id-0gY"/>
+                            <constraint firstItem="ZiT-zM-CtJ" firstAttribute="leading" secondItem="NXH-CK-vC2" secondAttribute="trailing" constant="8" id="Rs3-fr-5ZM"/>
+                            <constraint firstAttribute="trailing" secondItem="EPe-ll-eI8" secondAttribute="trailing" constant="12" id="S0D-Z5-1Da"/>
+                            <constraint firstItem="NXH-CK-vC2" firstAttribute="centerY" secondItem="Xkf-4E-pEn" secondAttribute="centerY" id="VHd-ph-qBx"/>
+                            <constraint firstItem="NXH-CK-vC2" firstAttribute="leading" secondItem="Xkf-4E-pEn" secondAttribute="leading" constant="12" id="fyf-rt-WaZ"/>
+                            <constraint firstAttribute="height" constant="64" id="seP-W0-ZeU"/>
+                            <constraint firstItem="ZiT-zM-CtJ" firstAttribute="top" secondItem="Xkf-4E-pEn" secondAttribute="top" constant="14" id="uMh-TC-8f5"/>
+                            <constraint firstItem="hH9-6e-UU1" firstAttribute="top" secondItem="ZiT-zM-CtJ" secondAttribute="bottom" constant="4" id="v2H-0u-SMj"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xkf-4E-pEn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Fii-o4-B3i"/>
+                    <constraint firstAttribute="trailing" secondItem="Xkf-4E-pEn" secondAttribute="trailing" constant="16" id="TP7-fB-Ume"/>
+                    <constraint firstItem="Xkf-4E-pEn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oo5-a2-pYW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellContentView" destination="Xkf-4E-pEn" id="igM-X1-HKN"/>
+                <outlet property="statusLabel" destination="hH9-6e-UU1" id="rPu-Qg-zfR"/>
+            </connections>
+            <point key="canvasLocation" x="187.78625954198472" y="-41.549295774647888"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iconBtc" width="28" height="28"/>
+        <image name="iconRightArrowGreen" width="12" height="12"/>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#76A4A7">
+            <color red="0.50199997425079346" green="0.63899999856948853" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

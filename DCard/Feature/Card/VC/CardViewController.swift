@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JFPopup
 
 class CardViewController: BaseViewController {
     
@@ -134,7 +135,19 @@ extension CardViewController: CardBagTableViewCellDelegate {
     }
     
     func didSelectedDeposit(_ cell: CardBagTableViewCell) {
-        
+        popup.bottomSheet {
+            let v = DepositFromView.loadFromNib()
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
     }
     
     func didSelectedStatement(_ cell: CardBagTableViewCell) {
@@ -148,6 +161,12 @@ extension CardViewController: CardBagTableViewCellDelegate {
 
 extension CardViewController: RecentTransactionsTableViewCellDelegate {
     func didSelectedViewTheAll(_ cell: RecentTransactionsTableViewCell) {
+        
+    }
+}
+
+extension CardViewController: DepositFromViewDelegate {
+    func didSelectedDepositItem() {
         
     }
 }

@@ -39,6 +39,9 @@ target 'DCard' do
   pod 'GKNavigationBarSwift'
   
   pod 'CRBoxInputView'
+  
+  # https://github.com/JerryFans/JFPopup
+  pod 'JFPopup'
 
   target 'DCardTests' do
     inherit! :search_paths
