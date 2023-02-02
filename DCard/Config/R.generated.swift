@@ -168,7 +168,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 41 images.
+  /// This `_R.image` struct is generated, and contains static references to 45 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -202,6 +202,9 @@ struct _R {
     /// Image `iconBackInfo`.
     var iconBackInfo: RswiftResources.ImageResource { .init(name: "iconBackInfo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconBtc`.
+    var iconBtc: RswiftResources.ImageResource { .init(name: "iconBtc", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconCard`.
     var iconCard: RswiftResources.ImageResource { .init(name: "iconCard", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -216,6 +219,9 @@ struct _R {
 
     /// Image `iconExactitude`.
     var iconExactitude: RswiftResources.ImageResource { .init(name: "iconExactitude", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconFilterButton`.
+    var iconFilterButton: RswiftResources.ImageResource { .init(name: "iconFilterButton", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconFrom`.
     var iconFrom: RswiftResources.ImageResource { .init(name: "iconFrom", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -250,8 +256,14 @@ struct _R {
     /// Image `iconRightArrowGray`.
     var iconRightArrowGray: RswiftResources.ImageResource { .init(name: "iconRightArrowGray", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconRightArrowGreen`.
+    var iconRightArrowGreen: RswiftResources.ImageResource { .init(name: "iconRightArrowGreen", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconSelfie`.
     var iconSelfie: RswiftResources.ImageResource { .init(name: "iconSelfie", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconShareButton`.
+    var iconShareButton: RswiftResources.ImageResource { .init(name: "iconShareButton", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconStatement`.
     var iconStatement: RswiftResources.ImageResource { .init(name: "iconStatement", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -351,7 +363,7 @@ struct _R {
     var dinRegularTtf: RswiftResources.FileResource { .init(name: "din-regular", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 33 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 35 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -378,6 +390,9 @@ struct _R {
 
     /// Nib `ChooseRegionViewController`.
     var chooseRegionViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ChooseRegionViewController", bundle: bundle) }
+
+    /// Nib `DepositFromTableViewCell`.
+    var depositFromTableViewCell: RswiftResources.NibReference<DepositFromTableViewCell> { .init(name: "DepositFromTableViewCell", bundle: bundle) }
 
     /// Nib `DepositFromView`.
     var depositFromView: RswiftResources.NibReference<DepositFromView> { .init(name: "DepositFromView", bundle: bundle) }
@@ -445,6 +460,9 @@ struct _R {
     /// Nib `TransactionItemTableViewCell`.
     var transactionItemTableViewCell: RswiftResources.NibReference<TransactionItemTableViewCell> { .init(name: "TransactionItemTableViewCell", bundle: bundle) }
 
+    /// Nib `TransactionsViewController`.
+    var transactionsViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "TransactionsViewController", bundle: bundle) }
+
     /// Nib `VerificationCodeViewController`.
     var verificationCodeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "VerificationCodeViewController", bundle: bundle) }
 
@@ -480,8 +498,13 @@ struct _R {
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ChooseRegionTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconBtc", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBtc' is used in nib 'DepositFromTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRightArrowGreen", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowGreen' is used in nib 'DepositFromTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'DepositFromTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#76A4A7", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#76A4A7' is used in nib 'DepositFromTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'DepositFromView', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#76A4A7", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#76A4A7' is used in nib 'DepositFromView', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'DepositFromView', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconAddCard", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconAddCard' is used in nib 'EmptyCardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'EmptyCardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'EmptyCardTableViewCell', but couldn't be loaded.") }

@@ -90,6 +90,10 @@
 		549D4631298B5DBF009AEB13 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549D4630298B5DBF009AEB13 /* NibLoadable.swift */; };
 		54A454F3298B668400621311 /* DepositFromTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A454F1298B668400621311 /* DepositFromTableViewCell.swift */; };
 		54A454F4298B668400621311 /* DepositFromTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A454F2298B668400621311 /* DepositFromTableViewCell.xib */; };
+		54A454F7298B876D00621311 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A454F5298B876D00621311 /* TransactionsViewController.swift */; };
+		54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A454F6298B876D00621311 /* TransactionsViewController.xib */; };
+		54A454FB298B920C00621311 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A454F9298B920C00621311 /* TransactionTableViewCell.swift */; };
+		54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A454FA298B920C00621311 /* TransactionTableViewCell.xib */; };
 		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
@@ -220,6 +224,10 @@
 		549D4630298B5DBF009AEB13 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		54A454F1298B668400621311 /* DepositFromTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositFromTableViewCell.swift; sourceTree = "<group>"; };
 		54A454F2298B668400621311 /* DepositFromTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepositFromTableViewCell.xib; sourceTree = "<group>"; };
+		54A454F5298B876D00621311 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		54A454F6298B876D00621311 /* TransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsViewController.xib; sourceTree = "<group>"; };
+		54A454F9298B920C00621311 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		54A454FA298B920C00621311 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -623,6 +631,8 @@
 				549D462C298B5CCD009AEB13 /* DepositFromView.xib */,
 				54A454F1298B668400621311 /* DepositFromTableViewCell.swift */,
 				54A454F2298B668400621311 /* DepositFromTableViewCell.xib */,
+				54A454F9298B920C00621311 /* TransactionTableViewCell.swift */,
+				54A454FA298B920C00621311 /* TransactionTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -636,6 +646,8 @@
 				54E368AB298A15440042D072 /* ApplyCardViewController.xib */,
 				54D4808C298A3A590068671E /* ApplyCardSuccessViewController.swift */,
 				54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */,
+				54A454F5298B876D00621311 /* TransactionsViewController.swift */,
+				54A454F6298B876D00621311 /* TransactionsViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -779,6 +791,7 @@
 				544ABBD02987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
 				545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */,
+				54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				542BC1A02977026900133659 /* LoginViewController.xib in Resources */,
 				54A454F4298B668400621311 /* DepositFromTableViewCell.xib in Resources */,
@@ -800,6 +813,7 @@
 				542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
+				54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */,
 				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
 				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
@@ -969,6 +983,7 @@
 				549D4631298B5DBF009AEB13 /* NibLoadable.swift in Sources */,
 				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
+				54A454F7298B876D00621311 /* TransactionsViewController.swift in Sources */,
 				54259A7729891E3800BFF2E7 /* EmptyCardTableViewCell.swift in Sources */,
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
@@ -1004,6 +1019,7 @@
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */,
 				544ABBCF2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift in Sources */,
+				54A454FB298B920C00621311 /* TransactionTableViewCell.swift in Sources */,
 				54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */,
