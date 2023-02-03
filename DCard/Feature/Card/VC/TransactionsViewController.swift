@@ -98,7 +98,21 @@ class TransactionsViewController: BaseViewController {
     }
     
     @objc private func shareAction() {
+        let activity = UIActivity()
         
+        let address = ""
+        let date = ""
+        let content = ""
+        
+        let activityItems = NSMutableArray.init(objects: address, date, content)
+        //activityItems.addObjects(from: imgArray as! [Any])
+    
+        let activities = [activity]
+        //初始化UIActivityViewController
+        let activityController = UIActivityViewController(activityItems: activityItems as! [Any], applicationActivities: activities)
+       
+        //iphone中为模式跳转
+        present(activityController, animated: true, completion: nil)
     }
     
 }

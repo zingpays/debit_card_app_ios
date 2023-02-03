@@ -103,6 +103,8 @@
 		54A4550A298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45509298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift */; };
 		54A4550D298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4550B298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift */; };
 		54A4550E298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */; };
+		54A45510298CA7D100621311 /* ChooseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4550F298CA7D100621311 /* ChooseDateView.swift */; };
+		54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45511298CA7E800621311 /* ChooseDateView.xib */; };
 		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
@@ -246,6 +248,8 @@
 		54A45509298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterCollectionHeaderView.swift; sourceTree = "<group>"; };
 		54A4550B298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsFilterDateCollectionViewCell.xib; sourceTree = "<group>"; };
+		54A4550F298CA7D100621311 /* ChooseDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateView.swift; sourceTree = "<group>"; };
+		54A45511298CA7E800621311 /* ChooseDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDateView.xib; sourceTree = "<group>"; };
 		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -658,6 +662,8 @@
 				54A45509298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift */,
 				54A4550B298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift */,
 				54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */,
+				54A4550F298CA7D100621311 /* ChooseDateView.swift */,
+				54A45511298CA7E800621311 /* ChooseDateView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
 				54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */,
 				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
+				54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */,
 				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
 				54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */,
@@ -1009,6 +1016,7 @@
 				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
 				547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
+				54A45510298CA7D100621311 /* ChooseDateView.swift in Sources */,
 				54D082E129865965008B0FBC /* CardViewController.swift in Sources */,
 				5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */,
 				549D4631298B5DBF009AEB13 /* NibLoadable.swift in Sources */,

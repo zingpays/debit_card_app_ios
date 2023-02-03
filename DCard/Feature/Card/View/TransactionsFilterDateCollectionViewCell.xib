@@ -42,6 +42,14 @@
                                 <color key="textColor" name="fw#F5F5F7"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFx-Sn-yFL">
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                <connections>
+                                    <action selector="startDateAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TuX-gj-8xa"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRightArrowWhite" translatesAutoresizingMaskIntoConstraints="NO" id="7wP-bm-xkX">
                                 <rect key="frame" x="142" y="14" width="12" height="12"/>
                                 <constraints>
@@ -54,8 +62,12 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="0Q0-zd-f61" secondAttribute="bottom" id="2Wh-Lz-0ea"/>
                             <constraint firstAttribute="trailing" secondItem="7wP-bm-xkX" secondAttribute="trailing" constant="12" id="5YY-GG-BXb"/>
+                            <constraint firstAttribute="bottom" secondItem="CFx-Sn-yFL" secondAttribute="bottom" id="HE9-DF-Oyw"/>
+                            <constraint firstItem="CFx-Sn-yFL" firstAttribute="leading" secondItem="aR8-eh-eDg" secondAttribute="leading" id="Ndr-zo-Bid"/>
+                            <constraint firstAttribute="trailing" secondItem="CFx-Sn-yFL" secondAttribute="trailing" id="Ope-0T-nTS"/>
                             <constraint firstItem="0Q0-zd-f61" firstAttribute="leading" secondItem="aR8-eh-eDg" secondAttribute="leading" id="Vbp-C1-W5L"/>
                             <constraint firstItem="0Q0-zd-f61" firstAttribute="top" secondItem="aR8-eh-eDg" secondAttribute="top" id="WYn-Xm-83o"/>
+                            <constraint firstItem="CFx-Sn-yFL" firstAttribute="top" secondItem="aR8-eh-eDg" secondAttribute="top" id="Yfg-rA-o2Q"/>
                             <constraint firstItem="7wP-bm-xkX" firstAttribute="centerY" secondItem="aR8-eh-eDg" secondAttribute="centerY" id="dvQ-rk-mwm"/>
                             <constraint firstItem="7wP-bm-xkX" firstAttribute="leading" secondItem="0Q0-zd-f61" secondAttribute="trailing" id="tmk-QH-KiJ"/>
                         </constraints>
@@ -82,10 +94,22 @@
                                     <constraint firstAttribute="width" constant="12" id="XXr-M8-ao7"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWO-33-3ml">
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                <connections>
+                                    <action selector="endDateAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JN4-W0-wYD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="fw#FFFFFF"/>
                         <constraints>
                             <constraint firstItem="V4d-cZ-88L" firstAttribute="centerY" secondItem="eca-ez-q7F" secondAttribute="centerY" id="6np-lC-FW8"/>
+                            <constraint firstItem="GWO-33-3ml" firstAttribute="leading" secondItem="eca-ez-q7F" secondAttribute="leading" id="Cfg-CF-sNY"/>
+                            <constraint firstAttribute="bottom" secondItem="GWO-33-3ml" secondAttribute="bottom" id="H6O-J4-L95"/>
+                            <constraint firstItem="GWO-33-3ml" firstAttribute="top" secondItem="eca-ez-q7F" secondAttribute="top" id="WF1-O9-Bja"/>
+                            <constraint firstAttribute="trailing" secondItem="GWO-33-3ml" secondAttribute="trailing" id="l0Z-aL-XuQ"/>
                             <constraint firstAttribute="trailing" secondItem="V4d-cZ-88L" secondAttribute="trailing" constant="12" id="mbI-UM-Jo6"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -116,7 +140,7 @@
                 <outlet property="leftView" destination="aR8-eh-eDg" id="EZz-RF-rdk"/>
                 <outlet property="rightView" destination="eca-ez-q7F" id="w93-u9-B8F"/>
             </connections>
-            <point key="canvasLocation" x="232.82442748091603" y="-73.239436619718319"/>
+            <point key="canvasLocation" x="249.61832061068702" y="-96.478873239436624"/>
         </collectionViewCell>
     </objects>
     <resources>

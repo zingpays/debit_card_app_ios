@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol TransactionsFilterDateCollectionViewCellDelegate: NSObject {
+    func didSelectedStartDate()
+    func didSelectedEndDate()
+}
+
 class TransactionsFilterDateCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var leftView: UIView!
+    
+    weak var delegate: TransactionsFilterDateCollectionViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,4 +26,14 @@ class TransactionsFilterDateCollectionViewCell: UICollectionViewCell {
         rightView.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.1)
     }
 
+    // MARK: - Actions
+    
+    @IBAction func startDateAction(_ sender: Any) {
+        delegate?.didSelectedStartDate()
+    }
+    
+    @IBAction func endDateAction(_ sender: Any) {
+        delegate?.didSelectedEndDate()
+    }
+    
 }

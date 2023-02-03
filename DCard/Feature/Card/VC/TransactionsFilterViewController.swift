@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JFPopup
 
 class TransactionsFilterViewController: BaseViewController {
     
@@ -120,6 +121,7 @@ extension TransactionsFilterViewController: UICollectionViewDelegate, UICollecti
         if indexPath.section == 2 {
             let cell = collectionView.fw.dequeue(cellType: TransactionsFilterDateCollectionViewCell.self, for: indexPath)
             cell.layer.cornerRadius = 12
+            cell.delegate = self
             return cell
         }
         let cell = collectionView.fw.dequeue(cellType: TransactionsFilterCollectionViewCell.self, for: indexPath)
@@ -157,3 +159,34 @@ extension TransactionsFilterViewController: UICollectionViewDelegate, UICollecti
     }
     
 }
+
+extension TransactionsFilterViewController: TransactionsFilterDateCollectionViewCellDelegate {
+    func didSelectedStartDate() {
+        popup.bottomSheet {
+            let v = ChooseDateView.loadFromNib()
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 292 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 292 + TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
+    }
+    
+    func didSelectedEndDate() {
+        
+    }
+    
+}
+
+extension TransactionsFilterViewController: ChooseDateViewDelegate {
+    func didSelectedOK(_ date: Date) {
+        popup.dismissPopup()
+        print(date)
+    }
+}
+
