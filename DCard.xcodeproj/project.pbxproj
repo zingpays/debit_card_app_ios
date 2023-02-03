@@ -109,6 +109,12 @@
 		54A45516298CDCC800621311 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45514298CDCC800621311 /* CardDetailViewController.xib */; };
 		54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45517298CDE1400621311 /* CardTableViewCell.swift */; };
 		54A4551A298CDE1400621311 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45518298CDE1400621311 /* CardTableViewCell.xib */; };
+		54A4551D298CEC5B00621311 /* CardSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4551B298CEC5B00621311 /* CardSettingViewController.swift */; };
+		54A4551E298CEC5B00621311 /* CardSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A4551C298CEC5B00621311 /* CardSettingViewController.xib */; };
+		54A45521298CEEF800621311 /* CardSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4551F298CEEF800621311 /* CardSettingTableViewCell.swift */; };
+		54A45522298CEEF800621311 /* CardSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45520298CEEF800621311 /* CardSettingTableViewCell.xib */; };
+		54A45525298CF89300621311 /* FreezeSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45523298CF89300621311 /* FreezeSuccessViewController.swift */; };
+		54A45526298CF89300621311 /* FreezeSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45524298CF89300621311 /* FreezeSuccessViewController.xib */; };
 		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
@@ -258,6 +264,12 @@
 		54A45514298CDCC800621311 /* CardDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
 		54A45517298CDE1400621311 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		54A45518298CDE1400621311 /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
+		54A4551B298CEC5B00621311 /* CardSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSettingViewController.swift; sourceTree = "<group>"; };
+		54A4551C298CEC5B00621311 /* CardSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardSettingViewController.xib; sourceTree = "<group>"; };
+		54A4551F298CEEF800621311 /* CardSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSettingTableViewCell.swift; sourceTree = "<group>"; };
+		54A45520298CEEF800621311 /* CardSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardSettingTableViewCell.xib; sourceTree = "<group>"; };
+		54A45523298CF89300621311 /* FreezeSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezeSuccessViewController.swift; sourceTree = "<group>"; };
+		54A45524298CF89300621311 /* FreezeSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreezeSuccessViewController.xib; sourceTree = "<group>"; };
 		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -674,6 +686,8 @@
 				54A45511298CA7E800621311 /* ChooseDateView.xib */,
 				54A45517298CDE1400621311 /* CardTableViewCell.swift */,
 				54A45518298CDE1400621311 /* CardTableViewCell.xib */,
+				54A4551F298CEEF800621311 /* CardSettingTableViewCell.swift */,
+				54A45520298CEEF800621311 /* CardSettingTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -693,6 +707,10 @@
 				54A454FE298BA20600621311 /* TransactionsFilterViewController.xib */,
 				54A45513298CDCC800621311 /* CardDetailViewController.swift */,
 				54A45514298CDCC800621311 /* CardDetailViewController.xib */,
+				54A4551B298CEC5B00621311 /* CardSettingViewController.swift */,
+				54A4551C298CEC5B00621311 /* CardSettingViewController.xib */,
+				54A45523298CF89300621311 /* FreezeSuccessViewController.swift */,
+				54A45524298CF89300621311 /* FreezeSuccessViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -828,6 +846,7 @@
 				542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */,
 				545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */,
 				549D4623298A4B7C009AEB13 /* din-regular.ttf in Resources */,
+				54A4551E298CEC5B00621311 /* CardSettingViewController.xib in Resources */,
 				545C56852984FB1D00D7F058 /* PasswordLoginViewController.xib in Resources */,
 				54E368AD298A15440042D072 /* ApplyCardViewController.xib in Resources */,
 				54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */,
@@ -837,6 +856,7 @@
 				54A4550E298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
 				545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */,
+				54A45526298CF89300621311 /* FreezeSuccessViewController.xib in Resources */,
 				54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */,
 				54A45504298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
@@ -847,6 +867,7 @@
 				549D462B298A715F009AEB13 /* TransactionItemTableViewCell.xib in Resources */,
 				549D4627298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib in Resources */,
 				541A8D462964252A00C59026 /* Localizable.strings in Resources */,
+				54A45522298CEEF800621311 /* CardSettingTableViewCell.xib in Resources */,
 				541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */,
 				54D082DE29865955008B0FBC /* WalletViewController.xib in Resources */,
 				542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */,
@@ -1034,6 +1055,7 @@
 				54A45510298CA7D100621311 /* ChooseDateView.swift in Sources */,
 				54D082E129865965008B0FBC /* CardViewController.swift in Sources */,
 				5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */,
+				54A45521298CEEF800621311 /* CardSettingTableViewCell.swift in Sources */,
 				549D4631298B5DBF009AEB13 /* NibLoadable.swift in Sources */,
 				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
@@ -1058,6 +1080,7 @@
 				54A45508298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				549D462A298A715F009AEB13 /* TransactionItemTableViewCell.swift in Sources */,
 				54A454F3298B668400621311 /* DepositFromTableViewCell.swift in Sources */,
+				54A45525298CF89300621311 /* FreezeSuccessViewController.swift in Sources */,
 				54A45503298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */,
@@ -1083,6 +1106,7 @@
 				54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */,
+				54A4551D298CEC5B00621311 /* CardSettingViewController.swift in Sources */,
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,
 				541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */,
 			);

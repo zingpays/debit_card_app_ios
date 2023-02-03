@@ -28,28 +28,43 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1bW-I7-zHS">
-                    <rect key="frame" x="0.0" y="111" width="393" height="707"/>
+                    <rect key="frame" x="0.0" y="121" width="393" height="697"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="0Th-Gr-5Km"/>
                         <outlet property="delegate" destination="-1" id="tFw-gh-YPD"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukt-3y-CSi">
+                    <rect key="frame" x="340" y="77" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="Tt2-41-fcs"/>
+                        <constraint firstAttribute="height" constant="32" id="b95-PB-EDJ"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="iconCardSetting" title=" "/>
+                    <connections>
+                        <action selector="cardSettingAction:" destination="-1" eventType="touchUpInside" id="mg0-SU-ICt"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1bW-I7-zHS" secondAttribute="trailing" id="2N2-pK-z12"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ukt-3y-CSi" secondAttribute="trailing" constant="21" id="Av3-7K-Lac"/>
                 <constraint firstItem="1bW-I7-zHS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hQe-3u-C9s"/>
                 <constraint firstItem="haj-t9-WdW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mCm-nq-gjd"/>
                 <constraint firstItem="haj-t9-WdW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="uGm-O2-bWR"/>
-                <constraint firstItem="1bW-I7-zHS" firstAttribute="top" secondItem="haj-t9-WdW" secondAttribute="bottom" constant="10" id="vuI-xW-iNJ"/>
+                <constraint firstItem="1bW-I7-zHS" firstAttribute="top" secondItem="haj-t9-WdW" secondAttribute="bottom" constant="20" id="vuI-xW-iNJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1bW-I7-zHS" secondAttribute="bottom" id="wdI-0B-NIS"/>
+                <constraint firstItem="ukt-3y-CSi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="zBm-k8-z89"/>
             </constraints>
             <point key="canvasLocation" x="-283" y="-131"/>
         </view>
     </objects>
     <resources>
+        <image name="iconCardSetting" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

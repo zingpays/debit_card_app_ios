@@ -78,6 +78,12 @@ class CardViewController: BaseViewController {
         
     }
     
+    @IBAction func cardSettingAction(_ sender: Any) {
+        let vc = CardSettingViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension CardViewController: UITableViewDelegate, UITableViewDataSource {
@@ -151,7 +157,9 @@ extension CardViewController: CardBagTableViewCellDelegate {
     }
     
     func didSelectedStatement(_ cell: CardBagTableViewCell) {
-        
+        let vc = TransactionsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func didSelectedCardDetail(_ cell: CardBagTableViewCell) {
@@ -171,6 +179,6 @@ extension CardViewController: RecentTransactionsTableViewCellDelegate {
 
 extension CardViewController: DepositFromViewDelegate {
     func didSelectedDepositItem() {
-        
+        popup.dismissPopup()
     }
 }
