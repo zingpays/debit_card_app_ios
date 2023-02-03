@@ -105,6 +105,10 @@
 		54A4550E298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */; };
 		54A45510298CA7D100621311 /* ChooseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4550F298CA7D100621311 /* ChooseDateView.swift */; };
 		54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45511298CA7E800621311 /* ChooseDateView.xib */; };
+		54A45515298CDCC800621311 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45513298CDCC800621311 /* CardDetailViewController.swift */; };
+		54A45516298CDCC800621311 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45514298CDCC800621311 /* CardDetailViewController.xib */; };
+		54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45517298CDE1400621311 /* CardTableViewCell.swift */; };
+		54A4551A298CDE1400621311 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45518298CDE1400621311 /* CardTableViewCell.xib */; };
 		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
@@ -250,6 +254,10 @@
 		54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsFilterDateCollectionViewCell.xib; sourceTree = "<group>"; };
 		54A4550F298CA7D100621311 /* ChooseDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateView.swift; sourceTree = "<group>"; };
 		54A45511298CA7E800621311 /* ChooseDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDateView.xib; sourceTree = "<group>"; };
+		54A45513298CDCC800621311 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		54A45514298CDCC800621311 /* CardDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
+		54A45517298CDE1400621311 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		54A45518298CDE1400621311 /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -664,6 +672,8 @@
 				54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */,
 				54A4550F298CA7D100621311 /* ChooseDateView.swift */,
 				54A45511298CA7E800621311 /* ChooseDateView.xib */,
+				54A45517298CDE1400621311 /* CardTableViewCell.swift */,
+				54A45518298CDE1400621311 /* CardTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -681,6 +691,8 @@
 				54A454F6298B876D00621311 /* TransactionsViewController.xib */,
 				54A454FD298BA20600621311 /* TransactionsFilterViewController.swift */,
 				54A454FE298BA20600621311 /* TransactionsFilterViewController.xib */,
+				54A45513298CDCC800621311 /* CardDetailViewController.swift */,
+				54A45514298CDCC800621311 /* CardDetailViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -841,6 +853,7 @@
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
 				549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */,
+				54A4551A298CDE1400621311 /* CardTableViewCell.xib in Resources */,
 				54D082D329864531008B0FBC /* KYCUnAvailableViewController.xib in Resources */,
 				54A45500298BA20600621311 /* TransactionsFilterViewController.xib in Resources */,
 				545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */,
@@ -849,6 +862,7 @@
 				542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
+				54A45516298CDCC800621311 /* CardDetailViewController.xib in Resources */,
 				54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */,
 				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
 				54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */,
@@ -1011,6 +1025,7 @@
 				54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */,
 				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
 				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
+				54A45515298CDCC800621311 /* CardDetailViewController.swift in Sources */,
 				54A4550A298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift in Sources */,
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
 				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
@@ -1065,6 +1080,7 @@
 				544ABBCF2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift in Sources */,
 				54A454FB298B920C00621311 /* TransactionTableViewCell.swift in Sources */,
 				54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */,
+				54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */,
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,
