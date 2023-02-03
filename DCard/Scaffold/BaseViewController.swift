@@ -19,7 +19,7 @@ class BaseViewController: UIViewController {
         btn.backgroundColor = ISNOTCH() ? .white : .clear
         btn.layer.cornerRadius = 12
         btn.setImage(R.image.iconBack(), for: .normal)
-        btn.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         return UIBarButtonItem(customView: btn)
     }()
     
@@ -68,7 +68,7 @@ class BaseViewController: UIViewController {
     
     // MARK: - Actions
     
-    @objc private func closeAction() {
+    @objc private func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionsFilterViewController" customModule="DCard" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="VVs-N7-bub" id="0IX-Ju-5EI"/>
+                <outlet property="filterCollectionView" destination="rnC-1X-LKZ" id="4xn-jW-5Qh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVs-N7-bub" userLabel="background">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rnC-1X-LKZ">
+                            <rect key="frame" x="16" y="0.0" width="377" height="793"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewLayout key="collectionViewLayout" id="XHX-kZ-xdw" customClass="UICollectionViewLeftAlignedLayout" customModule="DCard" customModuleProvider="target"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="gMI-Qm-18h"/>
+                                <outlet property="delegate" destination="-1" id="5Cc-d3-R11"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="rnC-1X-LKZ" firstAttribute="top" secondItem="VVs-N7-bub" secondAttribute="top" id="STf-28-cAf"/>
+                        <constraint firstAttribute="bottom" secondItem="rnC-1X-LKZ" secondAttribute="bottom" id="VhZ-Kl-zBf"/>
+                        <constraint firstItem="rnC-1X-LKZ" firstAttribute="leading" secondItem="VVs-N7-bub" secondAttribute="leading" constant="16" id="Y2A-IE-aGF"/>
+                        <constraint firstAttribute="trailing" secondItem="rnC-1X-LKZ" secondAttribute="trailing" id="eBg-Y3-OQk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VVs-N7-bub" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="J0b-uE-SOk"/>
+                <constraint firstAttribute="bottom" secondItem="VVs-N7-bub" secondAttribute="bottom" id="bAA-SE-ADw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VVs-N7-bub" secondAttribute="trailing" id="dha-P8-fa4"/>
+                <constraint firstItem="VVs-N7-bub" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hUY-6m-SvE"/>
+            </constraints>
+            <point key="canvasLocation" x="-22" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

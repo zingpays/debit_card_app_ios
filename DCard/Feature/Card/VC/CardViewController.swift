@@ -155,15 +155,15 @@ extension CardViewController: CardBagTableViewCellDelegate {
     }
     
     func didSelectedCardDetail(_ cell: CardBagTableViewCell) {
-        let vc = TransactionsViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
 extension CardViewController: RecentTransactionsTableViewCellDelegate {
     func didSelectedViewTheAll(_ cell: RecentTransactionsTableViewCell) {
-        
+        let vc = TransactionsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

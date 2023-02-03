@@ -92,7 +92,9 @@ class TransactionsViewController: BaseViewController {
     // MARK: - Actions
     
     @objc private func filterAction() {
-        
+        let vc = TransactionsFilterViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     @objc private func shareAction() {

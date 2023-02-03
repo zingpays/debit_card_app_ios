@@ -94,6 +94,15 @@
 		54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A454F6298B876D00621311 /* TransactionsViewController.xib */; };
 		54A454FB298B920C00621311 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A454F9298B920C00621311 /* TransactionTableViewCell.swift */; };
 		54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A454FA298B920C00621311 /* TransactionTableViewCell.xib */; };
+		54A454FF298BA20600621311 /* TransactionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A454FD298BA20600621311 /* TransactionsFilterViewController.swift */; };
+		54A45500298BA20600621311 /* TransactionsFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A454FE298BA20600621311 /* TransactionsFilterViewController.xib */; };
+		54A45503298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45501298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift */; };
+		54A45504298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45502298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib */; };
+		54A45506298BB24900621311 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45505298BB24900621311 /* UICollectionView+Extension.swift */; };
+		54A45508298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45507298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift */; };
+		54A4550A298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45509298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift */; };
+		54A4550D298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4550B298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift */; };
+		54A4550E298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */; };
 		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
@@ -228,6 +237,15 @@
 		54A454F6298B876D00621311 /* TransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsViewController.xib; sourceTree = "<group>"; };
 		54A454F9298B920C00621311 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		54A454FA298B920C00621311 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		54A454FD298BA20600621311 /* TransactionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterViewController.swift; sourceTree = "<group>"; };
+		54A454FE298BA20600621311 /* TransactionsFilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsFilterViewController.xib; sourceTree = "<group>"; };
+		54A45501298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		54A45502298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsFilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		54A45505298BB24900621311 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		54A45507298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedLayout.swift; sourceTree = "<group>"; };
+		54A45509298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterCollectionHeaderView.swift; sourceTree = "<group>"; };
+		54A4550B298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsFilterDateCollectionViewCell.xib; sourceTree = "<group>"; };
 		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +381,7 @@
 				541A8D2629641F1F00C59026 /* MoyaProvider+Extension.swift */,
 				541A8D2729641F1F00C59026 /* UITableView+Extension.swift */,
 				541A8D86296BFEC600C59026 /* UIFont+Extension.swift */,
+				54A45505298BB24900621311 /* UICollectionView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -619,6 +638,7 @@
 		54D48090298A3EF70068671E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				54A45507298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift */,
 				54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */,
 				54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */,
 				54D48092298A3F750068671E /* CardBagTableViewCell.swift */,
@@ -633,6 +653,11 @@
 				54A454F2298B668400621311 /* DepositFromTableViewCell.xib */,
 				54A454F9298B920C00621311 /* TransactionTableViewCell.swift */,
 				54A454FA298B920C00621311 /* TransactionTableViewCell.xib */,
+				54A45501298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift */,
+				54A45502298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib */,
+				54A45509298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift */,
+				54A4550B298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift */,
+				54A4550C298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -648,6 +673,8 @@
 				54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */,
 				54A454F5298B876D00621311 /* TransactionsViewController.swift */,
 				54A454F6298B876D00621311 /* TransactionsViewController.xib */,
+				54A454FD298BA20600621311 /* TransactionsFilterViewController.swift */,
+				54A454FE298BA20600621311 /* TransactionsFilterViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -789,9 +816,11 @@
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
 				544ABBD02987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib in Resources */,
+				54A4550E298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
 				545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */,
 				54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */,
+				54A45504298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				542BC1A02977026900133659 /* LoginViewController.xib in Resources */,
 				54A454F4298B668400621311 /* DepositFromTableViewCell.xib in Resources */,
@@ -807,6 +836,7 @@
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
 				549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */,
 				54D082D329864531008B0FBC /* KYCUnAvailableViewController.xib in Resources */,
+				54A45500298BA20600621311 /* TransactionsFilterViewController.xib in Resources */,
 				545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */,
 				549D462D298B5CCD009AEB13 /* DepositFromView.xib in Resources */,
 				54259A7829891E3800BFF2E7 /* EmptyCardTableViewCell.xib in Resources */,
@@ -974,6 +1004,7 @@
 				54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */,
 				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
 				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
+				54A4550A298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift in Sources */,
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
 				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
 				547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */,
@@ -985,6 +1016,7 @@
 				541A8D2D29641F1F00C59026 /* Constant.swift in Sources */,
 				54A454F7298B876D00621311 /* TransactionsViewController.swift in Sources */,
 				54259A7729891E3800BFF2E7 /* EmptyCardTableViewCell.swift in Sources */,
+				54A45506298BB24900621311 /* UICollectionView+Extension.swift in Sources */,
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
@@ -996,11 +1028,14 @@
 				542BC197297573BC00133659 /* FillInNameAndNationalViewController.swift in Sources */,
 				54E368AC298A15440042D072 /* ApplyCardViewController.swift in Sources */,
 				54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */,
+				54A454FF298BA20600621311 /* TransactionsFilterViewController.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				549D462F298B5D1F009AEB13 /* DepositFromView.swift in Sources */,
+				54A45508298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				549D462A298A715F009AEB13 /* TransactionItemTableViewCell.swift in Sources */,
 				54A454F3298B668400621311 /* DepositFromTableViewCell.swift in Sources */,
+				54A45503298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */,
 				549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */,
@@ -1015,6 +1050,7 @@
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,
 				542BC187296FF30600133659 /* BindPhoneViewController.swift in Sources */,
 				54D4808E298A3A590068671E /* ApplyCardSuccessViewController.swift in Sources */,
+				54A4550D298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */,
