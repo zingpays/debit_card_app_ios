@@ -8,8 +8,14 @@
 
 import UIKit
 
+enum TransactionItemTableViewCellStyle {
+    case content
+    case withFlag
+}
+
 class TransactionItemTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var line: UIView!
     @IBOutlet weak var leftStackView: UIStackView!
     private lazy var leftTitleLabel: UILabel = {
         let l = UILabel()
@@ -63,7 +69,17 @@ class TransactionItemTableViewCell: UITableViewCell {
             make.left.equalTo(leftIconView.snp.right).offset(4)
             make.top.bottom.right.equalToSuperview()
         }
-        
+        line.backgroundColor = R.color.fw000000()?.withAlphaComponent(0.05)
     }
     
+    func updateData(style: TransactionItemTableViewCellStyle) {
+        if style == .content {
+            leftSubTitleView.removeFromSuperview()
+        } else {
+            leftStackView.addArrangedSubview(leftSubTitleView)
+            leftSubTitleView.snp.makeConstraints { make in
+                make.height.equalTo(14)
+            }
+        }
+    }
 }

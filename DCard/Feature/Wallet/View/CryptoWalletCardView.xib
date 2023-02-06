@@ -22,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY4-oG-xHJ" userLabel="background">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1V-vd-U54" userLabel="card">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1G-GA-Vts" userLabel="actionView">
-                            <rect key="frame" x="0.0" y="169" width="375" height="80"/>
+                            <rect key="frame" x="0.0" y="185" width="375" height="80"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="It2-Mo-piE">
                                     <rect key="frame" x="0.0" y="0.0" width="125" height="80"/>
@@ -163,7 +163,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="zY4-oG-xHJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3Kd-k4-Obg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zY4-oG-xHJ" secondAttribute="bottom" constant="16" id="8pU-1r-ZRa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zY4-oG-xHJ" secondAttribute="bottom" id="8pU-1r-ZRa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zY4-oG-xHJ" secondAttribute="trailing" id="HFY-G2-DqB"/>
                 <constraint firstItem="zY4-oG-xHJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rdL-jo-8sJ"/>
             </constraints>
