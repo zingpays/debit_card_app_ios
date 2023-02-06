@@ -243,7 +243,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZk-05-8dc">
-                                                        <rect key="frame" x="22.666666666666657" y="56" width="69.333333333333329" height="16"/>
+                                                        <rect key="frame" x="22.333333333333343" y="56" width="70" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="edC-Ab-laQ"/>
                                                         </constraints>
@@ -346,7 +346,7 @@
                 <outlet property="cashbackView" destination="GRf-CZ-fEu" id="lYm-5a-Hko"/>
                 <outlet property="transitView" destination="Ia2-cm-uax" id="Z60-4L-VTB"/>
             </connections>
-            <point key="canvasLocation" x="304.58015267175574" y="-94.366197183098592"/>
+            <point key="canvasLocation" x="163" y="-87"/>
         </tableViewCell>
     </objects>
     <resources>
