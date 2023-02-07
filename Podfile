@@ -45,8 +45,7 @@ target 'DCard' do
   pod 'JFPopup'
   
   # https://github.com/danielgindi/Charts
-#  pod 'Charts'
-#  pod 'ChartsRealm'
+  pod 'Charts'
 
   target 'DCardTests' do
     inherit! :search_paths
@@ -57,4 +56,19 @@ target 'DCard' do
     # Pods for testing
   end
 
+end
+
+deployment_target = '13.0'
+
+post_install do |installer|
+    installer.generated_projects.each do |project|
+        project.targets.each do |target|
+            target.build_configurations.each do |config|
+                config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = deployment_target
+            end
+        end
+        project.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = deployment_target
+        end
+    end
 end

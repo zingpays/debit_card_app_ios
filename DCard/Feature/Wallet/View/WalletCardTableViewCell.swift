@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol WalletCardTableViewCellDelegate: NSObject {
+    func didSelectedSell(_ cell: WalletCardTableViewCell)
+    func didSelectedDeposit(_ cell: WalletCardTableViewCell)
+    func didSelectedWithdraw(_ cell: WalletCardTableViewCell)}
+
 class WalletCardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cardContentView: UIView!
@@ -15,6 +20,8 @@ class WalletCardTableViewCell: UITableViewCell {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var actionView: UIView!
     @IBOutlet weak var tagLabel: UILabel!
+    
+    weak var delegate: WalletCardTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,5 +58,16 @@ class WalletCardTableViewCell: UITableViewCell {
         tagLabel.textColor = R.color.fwFFFFFF()?.withAlphaComponent(0.7)
     }
     
+    @IBAction func sellAction(_ sender: Any) {
+        delegate?.didSelectedSell(self)
+    }
+    
+    @IBAction func depositAction(_ sender: Any) {
+        delegate?.didSelectedDeposit(self)
+    }
+    
+    @IBAction func withdrawAction(_ sender: Any) {
+        delegate?.didSelectedWithdraw(self)
+    }
     
 }

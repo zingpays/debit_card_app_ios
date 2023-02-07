@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JFPopup
 
 class WalletViewController: BaseViewController {
 
@@ -52,14 +53,50 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let cell = tableView.fw.dequeueReusableCell(withIdentifier: WalletCardTableViewCell.description()) as! WalletCardTableViewCell
         cell.selectionStyle = .none
-//        cell.delegate = self
+        cell.delegate = self
         return cell
     }
 }
 
-extension WalletViewController: WalletCryptoTableViewCellDelegate {
+extension WalletViewController: WalletCryptoTableViewCellDelegate, WalletCardTableViewCellDelegate {
+    func didSelectedSell(_ cell: WalletCardTableViewCell) {
+        let vc = SellCryptoViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didSelectedDeposit(_ cell: WalletCardTableViewCell) {
+        popup.bottomSheet {
+            let v = DepositFromView.loadFromNib()
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
+    }
+    
+    func didSelectedWithdraw(_ cell: WalletCardTableViewCell) {
+        
+    }
+    
     func didSelectItemAt(_ cell: WalletCryptoTableViewCell) {
         let vc = CryptoWalletDetailViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+extension WalletViewController: DepositFromViewDelegate {
+    func didSelectedDepositItem() {
+        popup.dismissPopup()
+        let vc = SellCryptoViewController()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

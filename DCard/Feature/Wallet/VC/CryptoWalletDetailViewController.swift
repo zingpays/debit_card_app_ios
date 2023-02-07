@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import JFPopup
 
 class CryptoWalletDetailViewController: BaseViewController {
 
     @IBOutlet weak var cryptoTableView: UITableView!
-    var cryptoTableHeaderView: UIView = {
+    var cryptoTableHeaderView: CryptoWalletCardView = {
         let v = CryptoWalletCardView.loadFromNib()
         v.backgroundColor = .clear
         return v
@@ -32,12 +33,18 @@ class CryptoWalletDetailViewController: BaseViewController {
     private func setupUI() {
         gk_navTitle = "BTC Wallet"
         cryptoTableView.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(NAVBARHEIGHT+10)
+            make.top.equalToSuperview().offset(NAVBARHEIGHT+20)
         }
         cryptoTableView.tableHeaderView = cryptoTableHeaderView
+        cryptoTableHeaderView.delegate = self
         cryptoTableView.fw.registerCellNib(TransactionItemTableViewCell.self)
     }
 
+    // MARK: - Actions
+    
+    @objc private func viewTheAllAction() {
+        
+    }
 }
 
 extension CryptoWalletDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -81,19 +88,20 @@ extension CryptoWalletDetailViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let v = UIView()
-        let label = UILabel()
-        v.addSubview(label)
-        label.snp.makeConstraints { make in
+        let btn = UIButton()
+        v.addSubview(btn)
+        btn.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-        label.text = "View the all"
-        label.textColor = R.color.fw000000()?.withAlphaComponent(0.5)
-        label.font = UIFont.fw.font14()
+        btn.addTarget(self, action: #selector(viewTheAllAction), for: .touchUpInside)
+        btn.setTitle("View the all", for: .normal)
+        btn.setTitleColor(R.color.fw000000()?.withAlphaComponent(0.5), for: .normal)
+        btn.titleLabel?.font = UIFont.fw.font14()
         let imgV = UIImageView()
         v.addSubview(imgV)
         imgV.image = R.image.iconRightArrowGray()
         imgV.snp.makeConstraints { make in
-            make.left.equalTo(label.snp.right).offset(8)
+            make.left.equalTo(btn.snp.right).offset(8)
             make.centerY.equalToSuperview()
             make.width.height.equalTo(8)
         }
@@ -107,4 +115,41 @@ extension CryptoWalletDetailViewController: UITableViewDelegate, UITableViewData
         return cell
     }
     
+}
+
+extension CryptoWalletDetailViewController: CryptoWalletCardViewDelegate {
+    func didSelectedSell(_ view: CryptoWalletCardView) {
+        let vc = SellCryptoViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didSelectedDeposit(_ view: CryptoWalletCardView) {
+        popup.bottomSheet {
+            let v = DepositFromView.loadFromNib()
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
+    }
+    
+    func didSelectedWithdraw(_ view: CryptoWalletCardView) {
+        
+    }
+    
+}
+
+extension CryptoWalletDetailViewController: DepositFromViewDelegate {
+    func didSelectedDepositItem() {
+        popup.dismissPopup()
+        let vc = SellCryptoViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

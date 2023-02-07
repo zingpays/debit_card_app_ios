@@ -40,6 +40,8 @@
 		541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */; };
 		541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */; };
 		541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D83296BFCFA00C59026 /* Roboto-Regular-14.ttf */; };
+		54222679299257F800447A1A /* SellCryptoConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54222678299257F800447A1A /* SellCryptoConfirmView.swift */; };
+		5422267B2992580600447A1A /* SellCryptoConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5422267A2992580600447A1A /* SellCryptoConfirmView.xib */; };
 		54259A7729891E3800BFF2E7 /* EmptyCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */; };
 		54259A7829891E3800BFF2E7 /* EmptyCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */; };
 		542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */; };
@@ -115,6 +117,8 @@
 		54A45522298CEEF800621311 /* CardSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45520298CEEF800621311 /* CardSettingTableViewCell.xib */; };
 		54A45525298CF89300621311 /* FreezeSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45523298CF89300621311 /* FreezeSuccessViewController.swift */; };
 		54A45526298CF89300621311 /* FreezeSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45524298CF89300621311 /* FreezeSuccessViewController.xib */; };
+		54B0850C2991F3D100B6C84B /* SellCryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0850A2991F3D100B6C84B /* SellCryptoViewController.swift */; };
+		54B0850D2991F3D100B6C84B /* SellCryptoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B0850B2991F3D100B6C84B /* SellCryptoViewController.xib */; };
 		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
 		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
@@ -203,6 +207,8 @@
 		541A8D84296BFCFB00C59026 /* Roboto-Light-10.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light-10.ttf"; sourceTree = "<group>"; };
 		541A8D85296BFCFB00C59026 /* Roboto-Medium-12.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium-12.ttf"; sourceTree = "<group>"; };
 		541A8D86296BFEC600C59026 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		54222678299257F800447A1A /* SellCryptoConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCryptoConfirmView.swift; sourceTree = "<group>"; };
+		5422267A2992580600447A1A /* SellCryptoConfirmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellCryptoConfirmView.xib; sourceTree = "<group>"; };
 		54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardTableViewCell.swift; sourceTree = "<group>"; };
 		54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCardTableViewCell.xib; sourceTree = "<group>"; };
 		542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordTipsTableViewCell.swift; sourceTree = "<group>"; };
@@ -282,6 +288,8 @@
 		54A45520298CEEF800621311 /* CardSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardSettingTableViewCell.xib; sourceTree = "<group>"; };
 		54A45523298CF89300621311 /* FreezeSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezeSuccessViewController.swift; sourceTree = "<group>"; };
 		54A45524298CF89300621311 /* FreezeSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreezeSuccessViewController.xib; sourceTree = "<group>"; };
+		54B0850A2991F3D100B6C84B /* SellCryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCryptoViewController.swift; sourceTree = "<group>"; };
+		54B0850B2991F3D100B6C84B /* SellCryptoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellCryptoViewController.xib; sourceTree = "<group>"; };
 		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
 		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -746,6 +754,8 @@
 				54D082DC29865955008B0FBC /* WalletViewController.xib */,
 				54DE3E892990E2200077B120 /* CryptoWalletDetailViewController.swift */,
 				54DE3E8A2990E2200077B120 /* CryptoWalletDetailViewController.xib */,
+				54B0850A2991F3D100B6C84B /* SellCryptoViewController.swift */,
+				54B0850B2991F3D100B6C84B /* SellCryptoViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -763,6 +773,8 @@
 				54DE3E8F2990E8E50077B120 /* CryptoWalletCardView.xib */,
 				54CCDE902990FAE10035DE6D /* CryptoTransactionTableViewCell.swift */,
 				54CCDE912990FAE10035DE6D /* CryptoTransactionTableViewCell.xib */,
+				54222678299257F800447A1A /* SellCryptoConfirmView.swift */,
+				5422267A2992580600447A1A /* SellCryptoConfirmView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -947,11 +959,13 @@
 				54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */,
 				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
+				54B0850D2991F3D100B6C84B /* SellCryptoViewController.xib in Resources */,
 				54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
 				545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */,
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
 				54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */,
+				5422267B2992580600447A1A /* SellCryptoConfirmView.xib in Resources */,
 				547322092987BF0D007B9AEA /* SettingNewPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1100,6 +1114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				541A8D3029641F1F00C59026 /* UITableView+Extension.swift in Sources */,
+				54B0850C2991F3D100B6C84B /* SellCryptoViewController.swift in Sources */,
 				547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */,
 				54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */,
 				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
@@ -1150,6 +1165,7 @@
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,
+				54222679299257F800447A1A /* SellCryptoConfirmView.swift in Sources */,
 				542BC19F2977026900133659 /* LoginViewController.swift in Sources */,
 				54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */,
 				545C56892985141100D7F058 /* VerifyYourIdentityGuideViewController.swift in Sources */,

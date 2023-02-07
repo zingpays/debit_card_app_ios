@@ -13,6 +13,9 @@
         <array key="Roboto-Regular-14.ttf">
             <string>Roboto-Regular</string>
         </array>
+        <array key="din-bold.ttf">
+            <string>DIN-Bold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -26,7 +29,59 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1V-vd-U54" userLabel="card">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhZ-BX-Yno">
+                                    <rect key="frame" x="149.33333333333334" y="44" width="76.666666666666657" height="48.333333333333343"/>
+                                    <fontDescription key="fontDescription" name="DIN-Bold" family="DIN-Bold" pointSize="40"/>
+                                    <color key="textColor" name="fw#FFFFFF"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IS-U6-wNV">
+                                    <rect key="frame" x="162.33333333333334" y="92.333333333333329" width="50.666666666666657" height="16.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="fw#FFFFFF"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-5d-4gN">
+                                    <rect key="frame" x="16" y="155" width="41" height="14"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" name="fw#FFFFFF"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC/USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkF-TW-cb7">
+                                    <rect key="frame" x="16.000000000000004" y="134.66666666666666" width="59.333333333333343" height="16.333333333333343"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="fw#FFFFFF"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+5.87%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovJ-fm-vg5">
+                                    <rect key="frame" x="312.66666666666669" y="154" width="46.333333333333314" height="17"/>
+                                    <fontDescription key="fontDescription" name="DIN-Bold" family="DIN-Bold" pointSize="14"/>
+                                    <color key="textColor" name="fw#00DF9C"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23286.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-p8-7nU">
+                                    <rect key="frame" x="283.66666666666669" y="130" width="75.333333333333314" height="20"/>
+                                    <fontDescription key="fontDescription" name="DIN-Bold" family="DIN-Bold" pointSize="16"/>
+                                    <color key="textColor" name="fw#FFFFFF"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
+                            <constraints>
+                                <constraint firstItem="2Pb-5d-4gN" firstAttribute="leading" secondItem="f1V-vd-U54" secondAttribute="leading" constant="16" id="FLV-zq-eJw"/>
+                                <constraint firstItem="6IS-U6-wNV" firstAttribute="centerX" secondItem="f1V-vd-U54" secondAttribute="centerX" id="FgD-iG-P23"/>
+                                <constraint firstItem="OkF-TW-cb7" firstAttribute="leading" secondItem="f1V-vd-U54" secondAttribute="leading" constant="16" id="G61-LR-0ne"/>
+                                <constraint firstItem="ovJ-fm-vg5" firstAttribute="top" secondItem="EfP-p8-7nU" secondAttribute="bottom" constant="4" id="Mr3-9G-cki"/>
+                                <constraint firstAttribute="bottom" secondItem="ovJ-fm-vg5" secondAttribute="bottom" constant="14" id="PjN-0b-eko"/>
+                                <constraint firstItem="DhZ-BX-Yno" firstAttribute="centerX" secondItem="f1V-vd-U54" secondAttribute="centerX" id="Wi0-7S-zKD"/>
+                                <constraint firstItem="2Pb-5d-4gN" firstAttribute="top" secondItem="OkF-TW-cb7" secondAttribute="bottom" constant="4" id="Zsg-fR-S8F"/>
+                                <constraint firstAttribute="trailing" secondItem="ovJ-fm-vg5" secondAttribute="trailing" constant="16" id="cBm-S8-ayZ"/>
+                                <constraint firstAttribute="bottom" secondItem="2Pb-5d-4gN" secondAttribute="bottom" constant="16" id="kpE-bH-bgl"/>
+                                <constraint firstItem="6IS-U6-wNV" firstAttribute="top" secondItem="DhZ-BX-Yno" secondAttribute="bottom" id="laI-yp-om4"/>
+                                <constraint firstAttribute="trailing" secondItem="EfP-p8-7nU" secondAttribute="trailing" constant="16" id="vve-7h-C1e"/>
+                                <constraint firstItem="DhZ-BX-Yno" firstAttribute="top" secondItem="f1V-vd-U54" secondAttribute="top" constant="44" id="xgt-Gu-X0C"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1G-GA-Vts" userLabel="actionView">
                             <rect key="frame" x="0.0" y="185" width="375" height="80"/>
@@ -42,6 +97,9 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="iconSell" title=" "/>
+                                            <connections>
+                                                <action selector="sellAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="2hl-Fg-J1X"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avY-VQ-zN6">
                                             <rect key="frame" x="51" y="56" width="23" height="16"/>
@@ -72,6 +130,9 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="iconDeposit" title=" "/>
+                                            <connections>
+                                                <action selector="depositAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="lw4-Q8-lzK"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdy-Ah-WNm">
                                             <rect key="frame" x="38.333333333333343" y="56" width="48.333333333333343" height="16"/>
@@ -102,6 +163,9 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="iconWithdraw" title=" "/>
+                                            <connections>
+                                                <action selector="withdrawAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="3ki-9m-VFr"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Withdraw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovk-z2-x3G">
                                             <rect key="frame" x="32.666666666666686" y="56" width="59.666666666666657" height="16"/>
@@ -168,7 +232,10 @@
                 <constraint firstItem="zY4-oG-xHJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rdL-jo-8sJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-141.22137404580153" y="38.380281690140848"/>
+            <connections>
+                <outlet property="cardView" destination="f1V-vd-U54" id="R8S-IV-PvD"/>
+            </connections>
+            <point key="canvasLocation" x="353" y="-26"/>
         </view>
     </objects>
     <resources>
@@ -177,6 +244,9 @@
         <image name="iconWithdraw" width="38" height="38"/>
         <namedColor name="fw#000000">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#00DF9C">
+            <color red="0.39599999785423279" green="0.86299997568130493" blue="0.63099998235702515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fw#FFFFFF">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
