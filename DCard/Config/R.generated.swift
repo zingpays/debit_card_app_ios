@@ -177,7 +177,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 56 images.
+  /// This `_R.image` struct is generated, and contains static references to 57 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -241,8 +241,11 @@ struct _R {
     /// Image `iconExactitudeButton`.
     var iconExactitudeButton: RswiftResources.ImageResource { .init(name: "iconExactitudeButton", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-    /// Image `iconFilterButton`.
-    var iconFilterButton: RswiftResources.ImageResource { .init(name: "iconFilterButton", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `iconFilterButtonNormal`.
+    var iconFilterButtonNormal: RswiftResources.ImageResource { .init(name: "iconFilterButtonNormal", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconFilterButtonSelected`.
+    var iconFilterButtonSelected: RswiftResources.ImageResource { .init(name: "iconFilterButtonSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconFrom`.
     var iconFrom: RswiftResources.ImageResource { .init(name: "iconFrom", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -405,7 +408,7 @@ struct _R {
     var dinRegularTtf: RswiftResources.FileResource { .init(name: "din-regular", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 52 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 55 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -514,6 +517,9 @@ struct _R {
     /// Nib `SecurityVerificationViewController`.
     var securityVerificationViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "SecurityVerificationViewController", bundle: bundle) }
 
+    /// Nib `SellCryptoConfirmView`.
+    var sellCryptoConfirmView: RswiftResources.NibReference<SellCryptoConfirmView> { .init(name: "SellCryptoConfirmView", bundle: bundle) }
+
     /// Nib `SellCryptoViewController`.
     var sellCryptoViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "SellCryptoViewController", bundle: bundle) }
 
@@ -562,6 +568,12 @@ struct _R {
     /// Nib `WalletCryptoTableViewCell`.
     var walletCryptoTableViewCell: RswiftResources.NibReference<WalletCryptoTableViewCell> { .init(name: "WalletCryptoTableViewCell", bundle: bundle) }
 
+    /// Nib `WalletTransactionsContentBaseViewController`.
+    var walletTransactionsContentBaseViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WalletTransactionsContentBaseViewController", bundle: bundle) }
+
+    /// Nib `WalletTransactionsViewController`.
+    var walletTransactionsViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WalletTransactionsViewController", bundle: bundle) }
+
     /// Nib `WalletViewController`.
     var walletViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WalletViewController", bundle: bundle) }
 
@@ -602,6 +614,10 @@ struct _R {
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ChooseRegionTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ChooseRegionViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconBtc", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBtc' is used in nib 'CryptoTransactionTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'CryptoTransactionTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00DF9C", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00DF9C' is used in nib 'CryptoTransactionTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#999999", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#999999' is used in nib 'CryptoTransactionTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconDeposit", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDeposit' is used in nib 'CryptoWalletCardView', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconSell", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconSell' is used in nib 'CryptoWalletCardView', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconWithdraw", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconWithdraw' is used in nib 'CryptoWalletCardView', but couldn't be loaded.") }
@@ -666,6 +682,15 @@ struct _R {
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SellCryptoConfirmView', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'SellCryptoConfirmView', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconBtc", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBtc' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconDownArrow", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDownArrow' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00191C", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00191C' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#999999", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#999999' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SettingNewPasswordViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SettingNewPasswordViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SettingNewPasswordViewController', but couldn't be loaded.") }
@@ -710,6 +735,7 @@ struct _R {
       if UIKit.UIImage(named: "iconBtc", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBtc' is used in nib 'WalletCryptoItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconRightArrowBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowBlue' is used in nib 'WalletCryptoItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'WalletCryptoTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'WalletTransactionsViewController', but couldn't be loaded.") }
     }
   }
 

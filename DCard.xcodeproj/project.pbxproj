@@ -42,6 +42,14 @@
 		541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D83296BFCFA00C59026 /* Roboto-Regular-14.ttf */; };
 		54222679299257F800447A1A /* SellCryptoConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54222678299257F800447A1A /* SellCryptoConfirmView.swift */; };
 		5422267B2992580600447A1A /* SellCryptoConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5422267A2992580600447A1A /* SellCryptoConfirmView.xib */; };
+		5422267E2992648900447A1A /* WalletTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5422267C2992648900447A1A /* WalletTransactionsViewController.swift */; };
+		5422267F2992648900447A1A /* WalletTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5422267D2992648900447A1A /* WalletTransactionsViewController.xib */; };
+		54222682299376AB00447A1A /* WalletTransactionsContentBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54222680299376AB00447A1A /* WalletTransactionsContentBaseViewController.swift */; };
+		54222683299376AB00447A1A /* WalletTransactionsContentBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54222681299376AB00447A1A /* WalletTransactionsContentBaseViewController.xib */; };
+		5422268629939AC600447A1A /* SellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5422268429939AC600447A1A /* SellDetailViewController.swift */; };
+		5422268729939AC600447A1A /* SellDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5422268529939AC600447A1A /* SellDetailViewController.xib */; };
+		5422268929939D2B00447A1A /* TransactionsFilterBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5422268829939D2B00447A1A /* TransactionsFilterBoardView.swift */; };
+		5422268B29939D3C00447A1A /* TransactionsFilterBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5422268A29939D3C00447A1A /* TransactionsFilterBoardView.xib */; };
 		54259A7729891E3800BFF2E7 /* EmptyCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */; };
 		54259A7829891E3800BFF2E7 /* EmptyCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */; };
 		542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */; };
@@ -209,6 +217,14 @@
 		541A8D86296BFEC600C59026 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		54222678299257F800447A1A /* SellCryptoConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCryptoConfirmView.swift; sourceTree = "<group>"; };
 		5422267A2992580600447A1A /* SellCryptoConfirmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellCryptoConfirmView.xib; sourceTree = "<group>"; };
+		5422267C2992648900447A1A /* WalletTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTransactionsViewController.swift; sourceTree = "<group>"; };
+		5422267D2992648900447A1A /* WalletTransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTransactionsViewController.xib; sourceTree = "<group>"; };
+		54222680299376AB00447A1A /* WalletTransactionsContentBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTransactionsContentBaseViewController.swift; sourceTree = "<group>"; };
+		54222681299376AB00447A1A /* WalletTransactionsContentBaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTransactionsContentBaseViewController.xib; sourceTree = "<group>"; };
+		5422268429939AC600447A1A /* SellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellDetailViewController.swift; sourceTree = "<group>"; };
+		5422268529939AC600447A1A /* SellDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellDetailViewController.xib; sourceTree = "<group>"; };
+		5422268829939D2B00447A1A /* TransactionsFilterBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFilterBoardView.swift; sourceTree = "<group>"; };
+		5422268A29939D3C00447A1A /* TransactionsFilterBoardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsFilterBoardView.xib; sourceTree = "<group>"; };
 		54259A7529891E3800BFF2E7 /* EmptyCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardTableViewCell.swift; sourceTree = "<group>"; };
 		54259A7629891E3800BFF2E7 /* EmptyCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCardTableViewCell.xib; sourceTree = "<group>"; };
 		542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordTipsTableViewCell.swift; sourceTree = "<group>"; };
@@ -756,6 +772,12 @@
 				54DE3E8A2990E2200077B120 /* CryptoWalletDetailViewController.xib */,
 				54B0850A2991F3D100B6C84B /* SellCryptoViewController.swift */,
 				54B0850B2991F3D100B6C84B /* SellCryptoViewController.xib */,
+				5422267C2992648900447A1A /* WalletTransactionsViewController.swift */,
+				5422267D2992648900447A1A /* WalletTransactionsViewController.xib */,
+				54222680299376AB00447A1A /* WalletTransactionsContentBaseViewController.swift */,
+				54222681299376AB00447A1A /* WalletTransactionsContentBaseViewController.xib */,
+				5422268429939AC600447A1A /* SellDetailViewController.swift */,
+				5422268529939AC600447A1A /* SellDetailViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -775,6 +797,8 @@
 				54CCDE912990FAE10035DE6D /* CryptoTransactionTableViewCell.xib */,
 				54222678299257F800447A1A /* SellCryptoConfirmView.swift */,
 				5422267A2992580600447A1A /* SellCryptoConfirmView.xib */,
+				5422268829939D2B00447A1A /* TransactionsFilterBoardView.swift */,
+				5422268A29939D3C00447A1A /* TransactionsFilterBoardView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -924,14 +948,17 @@
 				54DE3E902990E8E50077B120 /* CryptoWalletCardView.xib in Resources */,
 				545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */,
 				54A45526298CF89300621311 /* FreezeSuccessViewController.xib in Resources */,
+				5422268B29939D3C00447A1A /* TransactionsFilterBoardView.xib in Resources */,
 				54DE3E842990AD280077B120 /* WalletCryptoTableViewCell.xib in Resources */,
 				54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */,
+				5422267F2992648900447A1A /* WalletTransactionsViewController.xib in Resources */,
 				54DE3E80298D1B190077B120 /* WalletCardTableViewCell.xib in Resources */,
 				54A45504298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				542BC1A02977026900133659 /* LoginViewController.xib in Resources */,
 				54A454F4298B668400621311 /* DepositFromTableViewCell.xib in Resources */,
 				541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */,
+				54222683299376AB00447A1A /* WalletTransactionsContentBaseViewController.xib in Resources */,
 				541A8D7D29682D5B00C59026 /* GuidePagerViewCell.xib in Resources */,
 				549D462B298A715F009AEB13 /* TransactionItemTableViewCell.xib in Resources */,
 				549D4627298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib in Resources */,
@@ -945,6 +972,7 @@
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
 				549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */,
 				54A4551A298CDE1400621311 /* CardTableViewCell.xib in Resources */,
+				5422268729939AC600447A1A /* SellDetailViewController.xib in Resources */,
 				54D082D329864531008B0FBC /* KYCUnAvailableViewController.xib in Resources */,
 				54A45500298BA20600621311 /* TransactionsFilterViewController.xib in Resources */,
 				545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */,
@@ -1140,6 +1168,7 @@
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				5422268629939AC600447A1A /* SellDetailViewController.swift in Sources */,
 				545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */,
 				545C569D2986142F00D7F058 /* FillInAddressViewController.swift in Sources */,
 				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,
@@ -1150,9 +1179,11 @@
 				54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */,
 				54A454FF298BA20600621311 /* TransactionsFilterViewController.swift in Sources */,
 				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
+				54222682299376AB00447A1A /* WalletTransactionsContentBaseViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				54DE3E832990AD280077B120 /* WalletCryptoTableViewCell.swift in Sources */,
 				549D462F298B5D1F009AEB13 /* DepositFromView.swift in Sources */,
+				5422268929939D2B00447A1A /* TransactionsFilterBoardView.swift in Sources */,
 				54A45508298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				549D462A298A715F009AEB13 /* TransactionItemTableViewCell.swift in Sources */,
 				54CCDE922990FAE10035DE6D /* CryptoTransactionTableViewCell.swift in Sources */,
@@ -1161,6 +1192,7 @@
 				54A45503298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
 				545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */,
+				5422267E2992648900447A1A /* WalletTransactionsViewController.swift in Sources */,
 				549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */,
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,

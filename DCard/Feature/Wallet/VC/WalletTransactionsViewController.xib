@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalletTransactionsViewController" customModule="DCard" customModuleProvider="target">
+            <connections>
+                <outlet property="filterBoardView" destination="Hi3-cc-pzZ" id="Q4y-UE-qe4"/>
+                <outlet property="titleLabel" destination="QRg-cn-FLe" id="2yf-4h-VNM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRg-cn-FLe">
+                    <rect key="frame" x="16" y="173" width="163.33333333333334" height="33"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                    <color key="textColor" name="fw#000000"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-cc-pzZ">
+                    <rect key="frame" x="0.0" y="69" width="393" height="84"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbg-ua-kk5">
+                            <rect key="frame" x="16" y="20" width="30" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="FOi-xh-hed"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#F5F5F7"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-02-2by">
+                            <rect key="frame" x="16" y="48" width="28.666666666666671" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="zsQ-uG-oN0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#F5F5F7"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vh1-tR-db9">
+                            <rect key="frame" x="146.33333333333334" y="20" width="51" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="VSI-ov-xks"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#F5F5F7"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mal-fz-wWx">
+                            <rect key="frame" x="58" y="20" width="48.333333333333343" height="16.666666666666671"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#FFFFFF"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9h-a9-Qky">
+                            <rect key="frame" x="209.33333333333334" y="20" width="70.000000000000028" height="16.666666666666671"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#FFFFFF"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Jan/2022 - 09/Jan/2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYh-K8-51q">
+                            <rect key="frame" x="56.666666666666657" y="48.666666666666671" width="178" height="16.666666666666671"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#FFFFFF"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstItem="vh1-tR-db9" firstAttribute="top" secondItem="Hi3-cc-pzZ" secondAttribute="top" constant="20" id="5c9-Ei-SOD"/>
+                        <constraint firstItem="fbg-ua-kk5" firstAttribute="top" secondItem="Hi3-cc-pzZ" secondAttribute="top" constant="20" id="9zc-Gd-fTD"/>
+                        <constraint firstAttribute="height" constant="84" id="BbX-hn-8sz"/>
+                        <constraint firstItem="fbg-ua-kk5" firstAttribute="leading" secondItem="Hi3-cc-pzZ" secondAttribute="leading" constant="16" id="MBn-T3-gcl"/>
+                        <constraint firstItem="YYh-K8-51q" firstAttribute="leading" secondItem="Bkq-02-2by" secondAttribute="trailing" constant="12" id="MUv-id-NHn"/>
+                        <constraint firstItem="YYh-K8-51q" firstAttribute="top" secondItem="Mal-fz-wWx" secondAttribute="bottom" constant="12" id="TNT-Tj-zA1"/>
+                        <constraint firstItem="vh1-tR-db9" firstAttribute="leading" secondItem="Mal-fz-wWx" secondAttribute="trailing" constant="40" id="TOj-Df-ncK"/>
+                        <constraint firstItem="R9h-a9-Qky" firstAttribute="leading" secondItem="vh1-tR-db9" secondAttribute="trailing" constant="12" id="W1K-56-daF"/>
+                        <constraint firstItem="R9h-a9-Qky" firstAttribute="top" secondItem="Hi3-cc-pzZ" secondAttribute="top" constant="20" id="WQV-hS-I2t"/>
+                        <constraint firstItem="Mal-fz-wWx" firstAttribute="leading" secondItem="fbg-ua-kk5" secondAttribute="trailing" constant="12" id="ae3-wF-8SE"/>
+                        <constraint firstItem="Bkq-02-2by" firstAttribute="leading" secondItem="Hi3-cc-pzZ" secondAttribute="leading" constant="16" id="haF-Ap-Vrj"/>
+                        <constraint firstItem="Mal-fz-wWx" firstAttribute="top" secondItem="Hi3-cc-pzZ" secondAttribute="top" constant="20" id="pGs-vP-sVQ"/>
+                        <constraint firstItem="Bkq-02-2by" firstAttribute="top" secondItem="fbg-ua-kk5" secondAttribute="bottom" constant="12" id="zpg-wL-4qi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="QRg-cn-FLe" firstAttribute="top" secondItem="Hi3-cc-pzZ" secondAttribute="bottom" constant="20" id="At1-KA-mPu"/>
+                <constraint firstItem="Hi3-cc-pzZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ljx-ty-Jx3"/>
+                <constraint firstItem="Hi3-cc-pzZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Xng-aJ-mZq"/>
+                <constraint firstItem="Hi3-cc-pzZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n3i-Yw-7yh"/>
+                <constraint firstItem="QRg-cn-FLe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qSS-sw-0Lr"/>
+            </constraints>
+            <point key="canvasLocation" x="77" y="2"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#F5F5F7">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

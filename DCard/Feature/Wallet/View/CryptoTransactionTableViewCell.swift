@@ -10,15 +10,18 @@ import UIKit
 
 class CryptoTransactionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var line: UIView!
+    @IBOutlet weak var flagLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        setupUI()
     }
     
+    // MARK: - Private
+    
+    private func setupUI() {
+        line.backgroundColor = R.color.fw000000()?.withAlphaComponent(0.05)
+        flagLabel.backgroundColor = R.color.fw00DF9C()?.withAlphaComponent(0.1)
+    }
 }

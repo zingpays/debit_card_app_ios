@@ -22,7 +22,7 @@ class TransactionsViewController: BaseViewController {
             make.left.top.bottom.equalToSuperview()
             make.width.equalTo(36)
         }
-        filterBtn.setImage(R.image.iconFilterButton(), for: .normal)
+        filterBtn.setImage(R.image.iconFilterButtonNormal(), for: .normal)
         filterBtn.addTarget(self, action: #selector(filterAction), for: .touchUpInside)
         filterBtn.backgroundColor = R.color.fw00A8BB()
         filterBtn.layer.cornerRadius = 12

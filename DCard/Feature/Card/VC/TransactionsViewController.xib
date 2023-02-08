@@ -117,7 +117,7 @@
                 <constraint firstItem="r0L-5q-Qai" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kdl-LZ-YZZ"/>
                 <constraint firstAttribute="bottom" secondItem="1ci-1i-E2R" secondAttribute="bottom" id="ueU-pV-PLM"/>
             </constraints>
-            <point key="canvasLocation" x="471" y="-287"/>
+            <point key="canvasLocation" x="320" y="-132"/>
         </view>
     </objects>
     <resources>
@@ -125,7 +125,7 @@
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fw#F5F5F7">
-            <color red="0.96078431610000004" green="0.96078431610000004" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fw#FFFFFF">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

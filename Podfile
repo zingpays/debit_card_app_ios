@@ -46,6 +46,9 @@ target 'DCard' do
   
   # https://github.com/danielgindi/Charts
   pod 'Charts'
+  
+  # https://github.com/pujiaxin33/JXSegmentedView
+  pod 'JXSegmentedView'
 
   target 'DCardTests' do
     inherit! :search_paths

@@ -43,13 +43,14 @@ class CryptoWalletDetailViewController: BaseViewController {
     // MARK: - Actions
     
     @objc private func viewTheAllAction() {
-        
+        let vc = WalletTransactionsViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension CryptoWalletDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -106,12 +107,20 @@ extension CryptoWalletDetailViewController: UITableViewDelegate, UITableViewData
             make.width.height.equalTo(8)
         }
         v.backgroundColor = .white
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = .init(origin: .zero,
+                                size: .init(width: SCREENWIDTH-32, height: 47))
+        maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                      byRoundingCorners: [.bottomLeft, .bottomRight],
+                                      cornerRadii: .init(width: 20, height: 20)).cgPath
+        v.layer.mask = maskLayer
         return v
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeue(cellType: TransactionItemTableViewCell.self, for: indexPath)
         cell.updateData(style: .content)
+        cell.selectionStyle = .none
         return cell
     }
     
