@@ -139,6 +139,8 @@
 		54C3130229949C5300DBF373 /* SellDetailOrderItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C3130029949C5300DBF373 /* SellDetailOrderItemTableViewCell.xib */; };
 		54C313052994C63200DBF373 /* SellDetailOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C313032994C63200DBF373 /* SellDetailOrderTableViewCell.swift */; };
 		54C313062994C63200DBF373 /* SellDetailOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C313042994C63200DBF373 /* SellDetailOrderTableViewCell.xib */; };
+		54C313112994F3C300DBF373 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3130F2994F3C300DBF373 /* WithdrawViewController.swift */; };
+		54C313122994F3C300DBF373 /* WithdrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C313102994F3C300DBF373 /* WithdrawViewController.xib */; };
 		54CCDE922990FAE10035DE6D /* CryptoTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCDE902990FAE10035DE6D /* CryptoTransactionTableViewCell.swift */; };
 		54CCDE932990FAE10035DE6D /* CryptoTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CCDE912990FAE10035DE6D /* CryptoTransactionTableViewCell.xib */; };
 		54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */; };
@@ -324,6 +326,8 @@
 		54C3130029949C5300DBF373 /* SellDetailOrderItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellDetailOrderItemTableViewCell.xib; sourceTree = "<group>"; };
 		54C313032994C63200DBF373 /* SellDetailOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellDetailOrderTableViewCell.swift; sourceTree = "<group>"; };
 		54C313042994C63200DBF373 /* SellDetailOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellDetailOrderTableViewCell.xib; sourceTree = "<group>"; };
+		54C3130F2994F3C300DBF373 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		54C313102994F3C300DBF373 /* WithdrawViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawViewController.xib; sourceTree = "<group>"; };
 		54CCDE902990FAE10035DE6D /* CryptoTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTransactionTableViewCell.swift; sourceTree = "<group>"; };
 		54CCDE912990FAE10035DE6D /* CryptoTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoTransactionTableViewCell.xib; sourceTree = "<group>"; };
 		54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCFinishViewController.swift; sourceTree = "<group>"; };
@@ -790,6 +794,8 @@
 				54222681299376AB00447A1A /* WalletTransactionsContentBaseViewController.xib */,
 				5422268429939AC600447A1A /* SellDetailViewController.swift */,
 				5422268529939AC600447A1A /* SellDetailViewController.xib */,
+				54C3130F2994F3C300DBF373 /* WithdrawViewController.swift */,
+				54C313102994F3C300DBF373 /* WithdrawViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1000,6 +1006,7 @@
 				54C3130229949C5300DBF373 /* SellDetailOrderItemTableViewCell.xib in Resources */,
 				542BC188296FF30600133659 /* BindPhoneViewController.xib in Resources */,
 				541A8D7F29682D5B00C59026 /* GuideViewController.xib in Resources */,
+				54C313122994F3C300DBF373 /* WithdrawViewController.xib in Resources */,
 				54C313062994C63200DBF373 /* SellDetailOrderTableViewCell.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
 				54A45516298CDCC800621311 /* CardDetailViewController.xib in Resources */,
@@ -1178,6 +1185,7 @@
 				547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
 				54A45510298CA7D100621311 /* ChooseDateView.swift in Sources */,
+				54C313112994F3C300DBF373 /* WithdrawViewController.swift in Sources */,
 				54D082E129865965008B0FBC /* CardViewController.swift in Sources */,
 				5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */,
 				54A45521298CEEF800621311 /* CardSettingTableViewCell.swift in Sources */,

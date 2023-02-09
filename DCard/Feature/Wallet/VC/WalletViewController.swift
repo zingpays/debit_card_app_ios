@@ -69,6 +69,8 @@ extension WalletViewController: WalletCryptoTableViewCellDelegate, WalletCardTab
         popup.bottomSheet {
             let v = DepositFromView.loadFromNib()
             v.identifier = "Deposit"
+            v.titleLabel.text = "Deposit"
+            v.subTitleLabel.text = "Choose a crypto to deposit"
             v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
             let maskLayer = CAShapeLayer()
             maskLayer.frame = .init(origin: .zero,
@@ -110,10 +112,19 @@ extension WalletViewController: WalletCryptoTableViewCellDelegate, WalletCardTab
 }
 
 extension WalletViewController: DepositFromViewDelegate {
+    func didSelectedRecord(_ view: DepositFromView) {
+        popup.dismissPopup()
+        let vc = WalletTransactionsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func didSelectedDepositItem(_ view: DepositFromView) {
         popup.dismissPopup()
         if view.identifier == "Withdraw" {
-            
+            let vc = WithdrawViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         }
         if view.identifier == "Deposit" {
             let vc = SellCryptoViewController()

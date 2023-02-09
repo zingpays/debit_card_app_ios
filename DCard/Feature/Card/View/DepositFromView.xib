@@ -38,9 +38,10 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NK-GM-m3i">
-                    <rect key="frame" x="0.0" y="42" width="375" height="23"/>
+                    <rect key="frame" x="87.666666666666686" y="42" width="200" height="23"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="23" id="4Ya-T3-Nwv"/>
+                        <constraint firstAttribute="width" constant="200" id="RDq-W8-d8m"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                     <color key="textColor" name="fw#00A8BB"/>
@@ -62,10 +63,23 @@
                         <constraint firstAttribute="height" constant="240" id="xMU-sV-eLB"/>
                     </constraints>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1p-dD-T3O">
+                    <rect key="frame" x="323" y="35" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="6TO-Fk-Tbd"/>
+                        <constraint firstAttribute="width" constant="36" id="bIq-Eu-yAd"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="iconRecordBtn" title=" "/>
+                    <connections>
+                        <action selector="recordAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="b3u-SI-MW2"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="fw#FFFFFF"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K1p-dD-T3O" secondAttribute="trailing" constant="16" id="1dN-o2-1rs"/>
                 <constraint firstItem="2NK-GM-m3i" firstAttribute="top" secondItem="EMD-ZX-0dB" secondAttribute="bottom" constant="24" id="4Mv-jl-h7F"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BTe-2j-tbQ" secondAttribute="trailing" constant="16" id="5yq-rS-KT0"/>
                 <constraint firstItem="5aO-iA-rAU" firstAttribute="top" secondItem="BTe-2j-tbQ" secondAttribute="bottom" constant="16" id="BNU-3a-Cta"/>
@@ -73,15 +87,15 @@
                 <constraint firstItem="BTe-2j-tbQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="K2a-FY-KJJ"/>
                 <constraint firstItem="BTe-2j-tbQ" firstAttribute="top" secondItem="2NK-GM-m3i" secondAttribute="bottom" constant="28" id="gqW-cK-dDX"/>
                 <constraint firstItem="2NK-GM-m3i" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jQ1-HQ-dpe"/>
+                <constraint firstItem="K1p-dD-T3O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="lRX-xj-rzW"/>
                 <constraint firstItem="5aO-iA-rAU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mMC-1a-H4L"/>
-                <constraint firstItem="2NK-GM-m3i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ohT-RV-Dwe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5aO-iA-rAU" secondAttribute="trailing" id="rDv-qu-x8K"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2NK-GM-m3i" secondAttribute="trailing" id="rYd-4P-yOy"/>
                 <constraint firstItem="EMD-ZX-0dB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="uHG-Gx-oD8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="fromTableView" destination="5aO-iA-rAU" id="wd7-Dj-Y4g"/>
+                <outlet property="recordButton" destination="K1p-dD-T3O" id="kZo-Vc-7pr"/>
                 <outlet property="subTitleLabel" destination="BTe-2j-tbQ" id="Hfy-8Y-D76"/>
                 <outlet property="titleLabel" destination="2NK-GM-m3i" id="5A0-VA-q5U"/>
             </connections>
@@ -89,6 +103,7 @@
         </view>
     </objects>
     <resources>
+        <image name="iconRecordBtn" width="36" height="36"/>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

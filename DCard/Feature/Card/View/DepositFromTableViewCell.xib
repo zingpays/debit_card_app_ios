@@ -61,8 +61,14 @@
                                     <constraint firstAttribute="height" constant="12" id="BRl-FA-c6M"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.55BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-Ak-e2G">
+                                <rect key="frame" x="198.66666666666666" y="23.666666666666664" width="53.333333333333343" height="16.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                <color key="textColor" name="fw#000000"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" name="fw#76A4A7"/>
+                        <color key="backgroundColor" name="fw#D3E9F0"/>
                         <constraints>
                             <constraint firstItem="EPe-ll-eI8" firstAttribute="centerY" secondItem="Xkf-4E-pEn" secondAttribute="centerY" id="5Jx-T5-AiW"/>
                             <constraint firstItem="hH9-6e-UU1" firstAttribute="leading" secondItem="NXH-CK-vC2" secondAttribute="trailing" constant="8" id="5oA-id-0gY"/>
@@ -70,9 +76,12 @@
                             <constraint firstAttribute="trailing" secondItem="EPe-ll-eI8" secondAttribute="trailing" constant="12" id="S0D-Z5-1Da"/>
                             <constraint firstItem="NXH-CK-vC2" firstAttribute="centerY" secondItem="Xkf-4E-pEn" secondAttribute="centerY" id="VHd-ph-qBx"/>
                             <constraint firstItem="NXH-CK-vC2" firstAttribute="leading" secondItem="Xkf-4E-pEn" secondAttribute="leading" constant="12" id="fyf-rt-WaZ"/>
+                            <constraint firstItem="ycU-Ak-e2G" firstAttribute="centerY" secondItem="Xkf-4E-pEn" secondAttribute="centerY" id="iRx-r3-kNo"/>
+                            <constraint firstItem="ycU-Ak-e2G" firstAttribute="leading" secondItem="ZiT-zM-CtJ" secondAttribute="trailing" constant="120.99999999999999" id="pd3-J7-Dxb"/>
                             <constraint firstAttribute="height" constant="64" id="seP-W0-ZeU"/>
                             <constraint firstItem="ZiT-zM-CtJ" firstAttribute="top" secondItem="Xkf-4E-pEn" secondAttribute="top" constant="14" id="uMh-TC-8f5"/>
                             <constraint firstItem="hH9-6e-UU1" firstAttribute="top" secondItem="ZiT-zM-CtJ" secondAttribute="bottom" constant="4" id="v2H-0u-SMj"/>
+                            <constraint firstItem="EPe-ll-eI8" firstAttribute="leading" secondItem="ycU-Ak-e2G" secondAttribute="trailing" constant="12" id="wmO-zM-sNy"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -90,6 +99,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellContentView" destination="Xkf-4E-pEn" id="igM-X1-HKN"/>
+                <outlet property="rightContentLabel" destination="ycU-Ak-e2G" id="BLk-0O-Exg"/>
                 <outlet property="statusLabel" destination="hH9-6e-UU1" id="rPu-Qg-zfR"/>
             </connections>
             <point key="canvasLocation" x="187.78625954198472" y="-41.549295774647888"/>
@@ -101,8 +111,8 @@
         <namedColor name="fw#000000">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
-        <namedColor name="fw#76A4A7">
-            <color red="0.50199997425079346" green="0.63899999856948853" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="fw#D3E9F0">
+            <color red="0.82700002193450928" green="0.91399997472763062" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

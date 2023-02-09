@@ -143,6 +143,7 @@ extension CardViewController: CardBagTableViewCellDelegate {
     func didSelectedDeposit(_ cell: CardBagTableViewCell) {
         popup.bottomSheet {
             let v = DepositFromView.loadFromNib()
+            v.recordButton.isHidden = true
             v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
             let maskLayer = CAShapeLayer()
             maskLayer.frame = .init(origin: .zero,
@@ -178,6 +179,8 @@ extension CardViewController: RecentTransactionsTableViewCellDelegate {
 }
 
 extension CardViewController: DepositFromViewDelegate {
+    func didSelectedRecord(_ view: DepositFromView) {}
+    
     func didSelectedDepositItem(_ view: DepositFromView) {
         popup.dismissPopup()
     }

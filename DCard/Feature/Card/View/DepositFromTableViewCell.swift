@@ -22,6 +22,8 @@ class DepositFromTableViewCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var rightContentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

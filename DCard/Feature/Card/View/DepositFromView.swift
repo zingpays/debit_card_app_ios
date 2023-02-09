@@ -10,6 +10,7 @@ import UIKit
 
 protocol DepositFromViewDelegate: NSObject {
     func didSelectedDepositItem(_ view: DepositFromView)
+    func didSelectedRecord(_ view: DepositFromView)
 }
 
 class DepositFromView: UIView, NibLoadable {
@@ -22,6 +23,7 @@ class DepositFromView: UIView, NibLoadable {
             fromTableView.dataSource = self
         }
     }
+    @IBOutlet weak var recordButton: UIButton!
     
     weak var delegate: DepositFromViewDelegate?
     var identifier: String = ""
@@ -30,6 +32,11 @@ class DepositFromView: UIView, NibLoadable {
         super.layoutSubviews()
         fromTableView.fw.registerCellNib(DepositFromTableViewCell.self)
     }
+    
+    @IBAction func recordAction(_ sender: Any) {
+        delegate?.didSelectedRecord(self)
+    }
+    
 }
 
 extension DepositFromView: UITableViewDelegate, UITableViewDataSource {

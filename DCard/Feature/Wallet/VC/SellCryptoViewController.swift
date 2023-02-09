@@ -105,6 +105,8 @@ class SellCryptoViewController: BaseViewController {
 }
 
 extension SellCryptoViewController: DepositFromViewDelegate {
+    func didSelectedRecord(_ view: DepositFromView) {}
+    
     func didSelectedDepositItem(_ view: DepositFromView) {
         popup.dismissPopup()
     }

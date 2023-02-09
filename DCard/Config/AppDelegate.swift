@@ -74,7 +74,8 @@ extension AppDelegate {
                                ForgotPasswordEmailCheckViewController.self,
                                SecurityVerificationViewController.self,
                                SettingNewPasswordViewController.self,
-                               SellCryptoViewController.self]
+                               SellCryptoViewController.self,
+                               WithdrawViewController.self]
         IQKeyboardManager.shared.enabledTouchResignedClasses = resignedClasses
     }
     
