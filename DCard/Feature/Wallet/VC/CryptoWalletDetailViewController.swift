@@ -155,7 +155,7 @@ extension CryptoWalletDetailViewController: CryptoWalletCardViewDelegate {
 }
 
 extension CryptoWalletDetailViewController: DepositFromViewDelegate {
-    func didSelectedDepositItem() {
+    func didSelectedDepositItem(_ view: DepositFromView) {
         popup.dismissPopup()
         let vc = SellCryptoViewController()
         vc.hidesBottomBarWhenPushed = true

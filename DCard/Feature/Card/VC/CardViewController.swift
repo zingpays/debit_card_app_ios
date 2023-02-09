@@ -178,7 +178,7 @@ extension CardViewController: RecentTransactionsTableViewCellDelegate {
 }
 
 extension CardViewController: DepositFromViewDelegate {
-    func didSelectedDepositItem() {
+    func didSelectedDepositItem(_ view: DepositFromView) {
         popup.dismissPopup()
     }
 }

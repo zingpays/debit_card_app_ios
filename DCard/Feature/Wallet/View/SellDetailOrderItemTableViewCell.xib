@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KGk-i7-Jjw" customClass="SellDetailOrderItemTableViewCell" customModule="DCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lj-XY-ObD">
+                        <rect key="frame" x="16" y="9" width="88.333333333333329" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="aoN-jo-dzT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <color key="textColor" name="fw#000000"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SP01012023000001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-W8-77x">
+                        <rect key="frame" x="150" y="13.666666666666664" width="128" height="17"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <color key="textColor" name="fw#000000"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDg-u3-hc0">
+                        <rect key="frame" x="284" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="4rP-BF-t4M"/>
+                            <constraint firstAttribute="height" constant="20" id="VuC-oD-nsC"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="iconCopy" title=" "/>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" name="fw#FFFFFF"/>
+                <constraints>
+                    <constraint firstItem="1Lj-XY-ObD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1N3-jW-LmM"/>
+                    <constraint firstItem="cDg-u3-hc0" firstAttribute="leading" secondItem="hrQ-W8-77x" secondAttribute="trailing" constant="6" id="1gc-dF-H3f"/>
+                    <constraint firstItem="cDg-u3-hc0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G6b-fb-Jum"/>
+                    <constraint firstItem="hrQ-W8-77x" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="T0J-83-soq"/>
+                    <constraint firstAttribute="trailing" secondItem="cDg-u3-hc0" secondAttribute="trailing" constant="16" id="X5k-4y-7fx"/>
+                    <constraint firstItem="1Lj-XY-ObD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="i4I-if-AvR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="contentLabel" destination="hrQ-W8-77x" id="RBj-ce-Raf"/>
+                <outlet property="copyButton" destination="cDg-u3-hc0" id="2Fj-U4-3zY"/>
+                <outlet property="titleLabel" destination="1Lj-XY-ObD" id="Qov-wo-5g8"/>
+            </connections>
+            <point key="canvasLocation" x="287.02290076335879" y="-54.225352112676056"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iconCopy" width="20" height="20"/>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -82,6 +82,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="fromTableView" destination="5aO-iA-rAU" id="wd7-Dj-Y4g"/>
+                <outlet property="subTitleLabel" destination="BTe-2j-tbQ" id="Hfy-8Y-D76"/>
+                <outlet property="titleLabel" destination="2NK-GM-m3i" id="5A0-VA-q5U"/>
             </connections>
             <point key="canvasLocation" x="390" y="-177"/>
         </view>

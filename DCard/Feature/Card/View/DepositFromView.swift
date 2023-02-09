@@ -9,11 +9,13 @@
 import UIKit
 
 protocol DepositFromViewDelegate: NSObject {
-    func didSelectedDepositItem()
+    func didSelectedDepositItem(_ view: DepositFromView)
 }
 
 class DepositFromView: UIView, NibLoadable {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var fromTableView: UITableView! {
         didSet {
             fromTableView.delegate = self
@@ -22,6 +24,7 @@ class DepositFromView: UIView, NibLoadable {
     }
     
     weak var delegate: DepositFromViewDelegate?
+    var identifier: String = ""
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -45,7 +48,7 @@ extension DepositFromView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectedDepositItem()
+        delegate?.didSelectedDepositItem(self)
     }
     
 }

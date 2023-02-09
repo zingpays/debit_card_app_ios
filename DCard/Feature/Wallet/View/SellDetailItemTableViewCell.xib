@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+        <array key="din-bold.ttf">
+            <string>DIN-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="KGk-i7-Jjw" customClass="SellDetailItemTableViewCell" customModule="DCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconStepDone" translatesAutoresizingMaskIntoConstraints="NO" id="djv-RI-1NK">
+                        <rect key="frame" x="16" y="6" width="28" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="DvV-Yf-Lfe"/>
+                            <constraint firstAttribute="width" constant="28" id="VcV-4e-xwd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold Crypto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7y-UA-pKA">
+                        <rect key="frame" x="52" y="11" width="126" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="pYI-tE-1Ix"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" name="fw#000000"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGv-8f-a74">
+                        <rect key="frame" x="186" y="9" width="118" height="24"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconExactitudeWhite" translatesAutoresizingMaskIntoConstraints="NO" id="ZDc-xO-HXX">
+                                <rect key="frame" x="6" y="4" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="hrD-bW-ihw"/>
+                                    <constraint firstAttribute="height" constant="16" id="jwI-FV-ycn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQS-XY-YI4">
+                                <rect key="frame" x="24" y="4" width="88" height="16.333333333333332"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                <color key="textColor" name="fw#FAFAFA"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="fw#20B085"/>
+                        <constraints>
+                            <constraint firstItem="HQS-XY-YI4" firstAttribute="centerY" secondItem="RGv-8f-a74" secondAttribute="centerY" id="Hxu-HZ-orn"/>
+                            <constraint firstItem="HQS-XY-YI4" firstAttribute="leading" secondItem="ZDc-xO-HXX" secondAttribute="trailing" constant="2" id="Sc9-I2-pZl"/>
+                            <constraint firstAttribute="trailing" secondItem="HQS-XY-YI4" secondAttribute="trailing" constant="6" id="Z8c-ad-fs0"/>
+                            <constraint firstAttribute="height" constant="24" id="agT-GK-vqi"/>
+                            <constraint firstItem="ZDc-xO-HXX" firstAttribute="leading" secondItem="RGv-8f-a74" secondAttribute="leading" constant="6" id="i4h-3j-FdF"/>
+                            <constraint firstAttribute="width" constant="118" id="vzm-yU-jbs"/>
+                            <constraint firstItem="ZDc-xO-HXX" firstAttribute="centerY" secondItem="RGv-8f-a74" secondAttribute="centerY" id="zsJ-Sf-a0h"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFr-r3-B5L">
+                        <rect key="frame" x="30" y="40" width="2" height="78"/>
+                        <color key="backgroundColor" name="fw#20B085"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="2" id="YUz-qZ-gKd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBtc" translatesAutoresizingMaskIntoConstraints="NO" id="KDv-TL-KMX">
+                        <rect key="frame" x="52" y="39" width="28" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="RAU-ev-nMb"/>
+                            <constraint firstAttribute="width" constant="28" id="jIa-13-PHp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldg-Sx-y7F">
+                        <rect key="frame" x="88" y="38" width="46" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="mLt-JD-Kvf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="DIN-Bold" family="DIN-Bold" pointSize="24"/>
+                        <color key="textColor" name="fw#000000"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDJ-1O-xev">
+                        <rect key="frame" x="138" y="47" width="29.333333333333343" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="nIS-eI-LYj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD has arrived in your Stella Pay virtual debit card. View your debit card balance for more details." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-rX-VPK">
+                        <rect key="frame" x="52" y="73" width="252" height="45"/>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                        <color key="textColor" name="fw#000000"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Jvk-rX-VPK" firstAttribute="top" secondItem="Ldg-Sx-y7F" secondAttribute="bottom" constant="6" id="2th-cC-A0f"/>
+                    <constraint firstItem="jFr-r3-B5L" firstAttribute="top" secondItem="djv-RI-1NK" secondAttribute="bottom" constant="6" id="9Sl-9Y-3wd"/>
+                    <constraint firstItem="Jvk-rX-VPK" firstAttribute="leading" secondItem="jFr-r3-B5L" secondAttribute="trailing" constant="20" id="EZf-Ws-Var"/>
+                    <constraint firstItem="djv-RI-1NK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="HnA-hl-iWw"/>
+                    <constraint firstItem="tDJ-1O-xev" firstAttribute="top" secondItem="H7y-UA-pKA" secondAttribute="bottom" constant="17" id="I2e-j8-99F"/>
+                    <constraint firstItem="H7y-UA-pKA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="QIT-E9-fkG"/>
+                    <constraint firstItem="RGv-8f-a74" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="SXZ-R0-a55"/>
+                    <constraint firstItem="H7y-UA-pKA" firstAttribute="leading" secondItem="djv-RI-1NK" secondAttribute="trailing" constant="8" id="VIj-ri-eM7"/>
+                    <constraint firstItem="djv-RI-1NK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="ZcX-8A-B8K"/>
+                    <constraint firstItem="Ldg-Sx-y7F" firstAttribute="top" secondItem="H7y-UA-pKA" secondAttribute="bottom" constant="8" id="bea-qp-J0u"/>
+                    <constraint firstItem="RGv-8f-a74" firstAttribute="leading" secondItem="H7y-UA-pKA" secondAttribute="trailing" constant="8" id="ceU-4d-0qx"/>
+                    <constraint firstAttribute="trailing" secondItem="Jvk-rX-VPK" secondAttribute="trailing" constant="16" id="fco-4k-cq0"/>
+                    <constraint firstAttribute="trailing" secondItem="RGv-8f-a74" secondAttribute="trailing" constant="16" id="gXI-w1-Bja"/>
+                    <constraint firstItem="tDJ-1O-xev" firstAttribute="leading" secondItem="Ldg-Sx-y7F" secondAttribute="trailing" constant="4" id="gtT-MR-ed2"/>
+                    <constraint firstAttribute="bottom" secondItem="jFr-r3-B5L" secondAttribute="bottom" constant="6" id="n9C-F9-jdA"/>
+                    <constraint firstItem="KDv-TL-KMX" firstAttribute="top" secondItem="H7y-UA-pKA" secondAttribute="bottom" constant="9" id="nHR-p7-fDP"/>
+                    <constraint firstItem="jFr-r3-B5L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="ng4-x2-5b6"/>
+                    <constraint firstAttribute="bottom" secondItem="Jvk-rX-VPK" secondAttribute="bottom" constant="6" id="rRA-CV-33P"/>
+                    <constraint firstItem="KDv-TL-KMX" firstAttribute="leading" secondItem="djv-RI-1NK" secondAttribute="trailing" constant="8" id="szP-0P-l8t"/>
+                    <constraint firstItem="Ldg-Sx-y7F" firstAttribute="leading" secondItem="KDv-TL-KMX" secondAttribute="trailing" constant="8" id="w4g-Dv-RbE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cryptoCount" destination="Ldg-Sx-y7F" id="tUY-zm-p6p"/>
+                <outlet property="cryptoImageView" destination="KDv-TL-KMX" id="qxD-ww-YNn"/>
+                <outlet property="cryptoType" destination="tDJ-1O-xev" id="LqF-Iy-efx"/>
+                <outlet property="descLabel" destination="Jvk-rX-VPK" id="nc1-Nq-AQc"/>
+                <outlet property="lineView" destination="jFr-r3-B5L" id="eRT-wR-7vU"/>
+                <outlet property="statusImageView" destination="djv-RI-1NK" id="IrO-b5-DCC"/>
+                <outlet property="statusTitleLabel" destination="H7y-UA-pKA" id="u1m-s7-QJX"/>
+                <outlet property="tagContentLabel" destination="HQS-XY-YI4" id="Rbj-CQ-cjA"/>
+                <outlet property="tagIconImageView" destination="ZDc-xO-HXX" id="Gqr-1Y-BQb"/>
+                <outlet property="tagView" destination="RGv-8f-a74" id="kKN-RO-SB5"/>
+            </connections>
+            <point key="canvasLocation" x="352.67175572519085" y="20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iconBtc" width="28" height="28"/>
+        <image name="iconExactitudeWhite" width="16" height="16"/>
+        <image name="iconStepDone" width="28" height="28"/>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#20B085">
+            <color red="0.32899999618530273" green="0.67799997329711914" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FAFAFA">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
