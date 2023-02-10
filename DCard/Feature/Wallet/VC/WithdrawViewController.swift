@@ -52,7 +52,24 @@ class WithdrawViewController: BaseViewController {
     }
     
     @IBAction func filterCryptoAction(_ sender: Any) {
-        
+        popup.bottomSheet {
+            let v = ChooseCryptoNetworkView.loadFromNib()
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 230+80*4 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 230+80*4 + TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
+    }
+    
+    @IBAction func withdrawAction(_ sender: Any) {
+        let vc = SecurityVerificationViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -64,5 +81,12 @@ extension WithdrawViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         inputViewEndEditing()
+    }
+}
+
+extension WithdrawViewController: ChooseCryptoNetworkViewDelegate {
+    func didSelectedNetworkItem(_ view: ChooseCryptoNetworkView) {
+        popup.dismissPopup()
+        
     }
 }

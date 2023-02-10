@@ -301,6 +301,9 @@
                             <real key="value" value="23"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="withdrawAction:" destination="-1" eventType="touchUpInside" id="KDg-4C-LKb"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

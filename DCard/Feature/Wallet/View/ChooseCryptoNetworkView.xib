@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChooseCryptoNetworkView" customModule="DCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="447"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jH4-8s-E22">
+                    <rect key="frame" x="177.66666666666666" y="12" width="38" height="6"/>
+                    <color key="backgroundColor" name="fw#76A4A7"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="3fq-u5-0S9"/>
+                        <constraint firstAttribute="height" constant="6" id="Rfd-Ch-MU5"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose withdrawal network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-jd-7E3">
+                    <rect key="frame" x="72.666666666666686" y="42" width="248" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="RKZ-rh-lzf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                    <color key="textColor" name="fw#00A8BB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eI-jX-yfb">
+                    <rect key="frame" x="16" y="85" width="361" height="135"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDg-5M-nLX">
+                            <rect key="frame" x="16" y="12" width="69" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="4U2-IR-uqb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                            <color key="textColor" name="fw#00A8BB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPA-oy-som">
+                            <rect key="frame" x="16" y="36" width="329" height="85"/>
+                            <string key="text">Make sure you select the same network for this withdrawal as the one on deposit side, and check that the receiving platform supports the network. Otherwise, you'll lose your assets.</string>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#000000"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="135" id="0b4-EU-HYf"/>
+                        <constraint firstAttribute="bottom" secondItem="kPA-oy-som" secondAttribute="bottom" constant="14" id="6qd-QY-box"/>
+                        <constraint firstItem="VDg-5M-nLX" firstAttribute="leading" secondItem="1eI-jX-yfb" secondAttribute="leading" constant="16" id="9A8-CX-3xf"/>
+                        <constraint firstItem="VDg-5M-nLX" firstAttribute="top" secondItem="1eI-jX-yfb" secondAttribute="top" constant="12" id="RoP-JT-bmd"/>
+                        <constraint firstAttribute="trailing" secondItem="kPA-oy-som" secondAttribute="trailing" constant="16" id="aIO-eZ-76C"/>
+                        <constraint firstItem="kPA-oy-som" firstAttribute="leading" secondItem="1eI-jX-yfb" secondAttribute="leading" constant="16" id="ngL-WB-umb"/>
+                        <constraint firstItem="kPA-oy-som" firstAttribute="top" secondItem="VDg-5M-nLX" secondAttribute="bottom" constant="8" id="sBZ-tv-BXQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dps-O5-DIw">
+                    <rect key="frame" x="16" y="230" width="361" height="217"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="L2e-sm-ukx"/>
+                        <outlet property="delegate" destination="-1" id="0cs-gb-7Og"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1eI-jX-yfb" firstAttribute="top" secondItem="xL0-jd-7E3" secondAttribute="bottom" constant="20" id="9gu-ad-mRo"/>
+                <constraint firstAttribute="bottom" secondItem="dps-O5-DIw" secondAttribute="bottom" id="AUK-AK-D5y"/>
+                <constraint firstItem="jH4-8s-E22" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AVB-CC-sPV"/>
+                <constraint firstItem="dps-O5-DIw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Bub-bC-gL7"/>
+                <constraint firstItem="xL0-jd-7E3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OVi-v8-2pA"/>
+                <constraint firstItem="dps-O5-DIw" firstAttribute="top" secondItem="1eI-jX-yfb" secondAttribute="bottom" constant="10" id="WQI-Tx-x3s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1eI-jX-yfb" secondAttribute="trailing" constant="16" id="exS-RL-PoU"/>
+                <constraint firstItem="1eI-jX-yfb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="hH2-EV-6Vk"/>
+                <constraint firstItem="xL0-jd-7E3" firstAttribute="top" secondItem="jH4-8s-E22" secondAttribute="bottom" constant="24" id="mDd-BW-DYW"/>
+                <constraint firstItem="jH4-8s-E22" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="v7R-ej-XAn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dps-O5-DIw" secondAttribute="trailing" constant="16" id="zST-9T-7BF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="networkTableView" destination="dps-O5-DIw" id="Vqd-de-EWa"/>
+                <outlet property="reminderView" destination="1eI-jX-yfb" id="OvV-Lw-0w6"/>
+            </connections>
+            <point key="canvasLocation" x="225.19083969465649" y="-108.80281690140846"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#76A4A7">
+            <color red="0.50199997425079346" green="0.63899999856948853" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

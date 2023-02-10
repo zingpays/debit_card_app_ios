@@ -82,7 +82,9 @@ class SellCryptoViewController: BaseViewController {
     }
     
     @objc private func recordAction() {
-        
+        let vc = WalletTransactionsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

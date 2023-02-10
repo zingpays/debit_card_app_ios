@@ -135,6 +135,7 @@ extension CryptoWalletDetailViewController: CryptoWalletCardViewDelegate {
     func didSelectedDeposit(_ view: CryptoWalletCardView) {
         popup.bottomSheet {
             let v = DepositFromView.loadFromNib()
+            v.identifier = "Deposit"
             v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
             let maskLayer = CAShapeLayer()
             maskLayer.frame = .init(origin: .zero,
@@ -149,18 +150,45 @@ extension CryptoWalletDetailViewController: CryptoWalletCardViewDelegate {
     }
     
     func didSelectedWithdraw(_ view: CryptoWalletCardView) {
-        
+        popup.bottomSheet {
+            let v = DepositFromView.loadFromNib()
+            v.identifier = "Withdraw"
+            v.titleLabel.text = "Withdraw"
+            v.subTitleLabel.text = "Choose a crypto to withdraw"
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
     }
     
 }
 
 extension CryptoWalletDetailViewController: DepositFromViewDelegate {
-    func didSelectedRecord(_ view: DepositFromView) {}
+    func didSelectedRecord(_ view: DepositFromView) {
+        popup.dismissPopup()
+        let vc = WalletTransactionsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     func didSelectedDepositItem(_ view: DepositFromView) {
         popup.dismissPopup()
-        let vc = SellCryptoViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        if view.identifier == "Withdraw" {
+            let vc = WithdrawViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if view.identifier == "Deposit" {
+            let vc = SellCryptoViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
