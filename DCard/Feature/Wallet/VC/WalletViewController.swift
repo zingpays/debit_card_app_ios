@@ -127,7 +127,7 @@ extension WalletViewController: DepositFromViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
         }
         if view.identifier == "Deposit" {
-            let vc = SellCryptoViewController()
+            let vc = DepositViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }

@@ -69,7 +69,7 @@ extension WalletTransactionsContentBaseViewController: UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SellDetailViewController()
+        let vc = TransactionsDetailViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SellDetailViewController: BaseViewController {
+class TransactionsDetailViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sellTableView: UITableView!
@@ -30,7 +30,7 @@ class SellDetailViewController: BaseViewController {
     
 }
 
-extension SellDetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension TransactionsDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

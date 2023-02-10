@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SellDetailViewController" customModule="DCard" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionsDetailViewController" customModule="DCard" customModuleProvider="target">
             <connections>
                 <outlet property="sellTableView" destination="3Mn-k4-ocr" id="wB5-pH-21r"/>
                 <outlet property="titleLabel" destination="djo-0h-nXX" id="h1h-wK-UXe"/>
