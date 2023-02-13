@@ -49,6 +49,9 @@ target 'DCard' do
   
   # https://github.com/pujiaxin33/JXSegmentedView
   pod 'JXSegmentedView'
+  
+  # Date parse lib https://github.com/malcommac/SwiftDate
+  pod 'SwiftDate'
 
   target 'DCardTests' do
     inherit! :search_paths

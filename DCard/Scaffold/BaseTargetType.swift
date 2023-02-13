@@ -17,7 +17,7 @@ protocol BaseTargetType: TargetType {
 
 extension BaseTargetType {
     var baseURL: URL {
-        URL(string: "https://bankdev2.zingpays.com/app")!
+        URL(string: "https://carddev.zingpays.com/app")!
     }
 
     var method: Moya.Method {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class LoginViewController: BaseViewController {
     
@@ -16,7 +17,7 @@ class LoginViewController: BaseViewController {
         btn.backgroundColor = R.color.fw00A8BB()
         btn.layer.cornerRadius = 18
         btn.titleLabel?.font  = .fw.font16()
-        btn.setTitle("Register", for: .normal)
+        btn.setTitle(R.string.localizable.registerTitle(), for: .normal)
         btn.addTarget(self, action: #selector(registerAction), for: .touchUpInside)
         return UIBarButtonItem(customView: btn)
     }()
@@ -27,9 +28,11 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Init
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupData()
     }
     
     // MARK: - Private
@@ -37,6 +40,7 @@ class LoginViewController: BaseViewController {
     private func setupUI() {
         setupRightItem()
         setupSubviews()
+        setupData()
     }
     
     private func setupRightItem() {
@@ -46,15 +50,13 @@ class LoginViewController: BaseViewController {
     }
     
     private func setupSubviews() {
-        titleLabel.font = UIFont.fw.font28(weight: .bold)
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
+            make.top.equalToSuperview().offset(NAVBARHEIGHT + 20)
         }
         emailTextfield.leftViewMode = .always
         emailTextfield.leftView = textFiledLeftView()
         passwordTextField.leftViewMode = .always
         passwordTextField.leftView = textFiledLeftView()
-        forgotPasswordButton.titleLabel?.font = .fw.font16()
         loginButton.titleLabel?.font = .fw.font16()
         loginButton.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.4)
         passwordTextField.rightViewMode = .whileEditing
@@ -84,7 +86,69 @@ class LoginViewController: BaseViewController {
         }
     }
     
+    private func setupData() {
+        titleLabel.text = R.string.localizable.loginTitle()
+        emailTextfield.placeholder = R.string.localizable.emialInputPlaceholder()
+        passwordTextField.placeholder = R.string.localizable.passwordInputPlaceholder()
+        forgotPasswordButton.setTitle(R.string.localizable.forgotPassword(), for: .normal)
+        loginButton.setTitle(R.string.localizable.loginTitle(), for: .normal)
+    }
+    
+    private func handleLogin(data: LoginModel?) {
+        guard let loginData = data else {
+            view.makeToast("data error~")
+            return
+        }
+        if loginData.furtherAuth {
+            continueLogin(authType: loginData.authType,
+                          authToken: loginData.accessToken)
+        } else {
+            loginFinish(token: loginData.accessToken,
+                        expireDate: loginData.expireAt)
+        }
+    }
+    
+    private func continueLogin(authType: AuthType, authToken: String) {
+        let vc = SecurityVerificationViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func loginFinish(token: String?, expireDate: String?) {
+        guard let userToken = token else {
+            view.makeToast("Token is null，login fail～")
+            return
+        }
+        LocalAuthenManager.shared.isAuthorized = true
+        let expireDate: Date =  expireDate?.toDate()?.date ?? Date(timeIntervalSinceNow: 60*60*24*7)
+        // save user token
+        UserManager.shared.saveToken(userToken, expireDate: expireDate)
+        // change application root viewController to tabbar viewController
+        UIApplication.shared.keyWindow()?.rootViewController = nil
+        UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+    }
+    
+    private func inputBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = R.color.fw00A8BB()?.cgColor
+        textField.layer.borderWidth = 2
+    }
+    
+    private func inputEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.clear.cgColor
+        textField.layer.borderWidth = 0
+    }
+    
     // MARK: - Actions
+    
+    @IBAction func emailInputEnd(_ sender: Any) {
+        if let emailText = emailTextfield.text, !emailText.isValidEmail {
+            view.makeToast(R.string.localizable.emailErrorTips(), duration: 1, position: .top)
+        }
+    }
+    
+    @IBAction func emailInputChanged(_ sender: UITextField) {
+        let isPass = passwordTextField.text?.count ?? 0 > 0 && emailTextfield.text?.count ?? 0 > 0
+        refreshLoginButton(isPass: isPass)
+    }
     
     @objc private func registerAction() {
         let vc = RegisterViewController()
@@ -92,21 +156,21 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
-        
+        let vc = ForgotPasswordEmailCheckViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        if passwordTextField.text == "12345" {
-            LocalAuthenManager.shared.isAuthorized = true
-            let expireDate: Date = Date(timeIntervalSinceNow: 60*60*24*7)
-            // save user token
-            UserManager.shared.saveToken("test", expireDate: expireDate)
-            // change application root viewController to tabbar viewController
-            UIApplication.shared.keyWindow()?.rootViewController = nil
-            UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
-            
-        } else {
-            view.makeToast("password is invaild", duration: 1, position: .top)
+        guard let email = emailTextfield.text, let password = passwordTextField.text else { return }
+        indicator.startAnimating()
+        LoginRequest.login(email: email, password: password) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.handleLogin(data: data)
+            } else {
+                this.view.makeToast(message, duration: 1, position: .top)
+            }
         }
     }
     
@@ -116,10 +180,19 @@ class LoginViewController: BaseViewController {
     }
     
     @objc private func passwordChanged(_ sender: UITextField) {
-        if sender.text?.count ?? 0 > 0 {
-            refreshLoginButton(isPass: true)
-        } else {
-            refreshLoginButton(isPass: false)
-        }
+        let isPass = sender.text?.count ?? 0 > 0 && emailTextfield.text?.count ?? 0 > 0
+        refreshLoginButton(isPass: isPass)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        inputBeginEditing(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        inputEndEditing(textField)
     }
 }

@@ -6,6 +6,16 @@
   Copyright © 2023 Flashwire. All rights reserved.
 */
 
+/// Login
+"loginTitle" = "登录";
+"emialInputPlaceholder" = "请输入邮箱";
+"passwordInputPlaceholder" = "请输入密码";
+"forgotPassword" = "忘记密码?";
+"emailErrorTips" = "邮箱格式不正确";
+
+/// Register
+"registerTitle" = "注册";
+
 /// Common
 "LocalAuthenticationTouchIdLocalizedReason" = "需要使用你的指纹来解锁应用";
 "LocalAuthenticationFaceIdLocalizedReason" = "需要使用你的面容来解锁应用";

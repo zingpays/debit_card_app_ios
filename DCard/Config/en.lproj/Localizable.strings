@@ -6,6 +6,17 @@
   Copyright © 2023 Flashwire. All rights reserved.
 */
 
+/// Login
+"loginTitle" = "Login";
+"emialInputPlaceholder" = "Enter E-mail";
+"passwordInputPlaceholder" = "Enter password";
+"forgotPassword" = "Forgot password?";
+"emailErrorTips" = "E-mail format is incorrect";
+
+/// Register
+"registerTitle" = "Register";
+
+
 /// Common
 "LocalAuthenticationTouchIdLocalizedReason" = "We need to use your Touch ID to unlock the screen";
 "LocalAuthenticationFaceIdLocalizedReason" = "We need to use your Face ID to unlock the screen";

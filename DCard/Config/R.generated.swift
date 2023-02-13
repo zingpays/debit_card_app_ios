@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 8 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -109,6 +109,48 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var localAuthenticationTouchIdLocalizedReason: RswiftResources.StringResource { .init(key: "LocalAuthenticationTouchIdLocalizedReason", tableName: "Localizable", source: source, developmentValue: "We need to use your Touch ID to unlock the screen", comment: nil) }
+
+      /// en translation: E-mail format is incorrect
+      ///
+      /// Key: emailErrorTips
+      ///
+      /// Locales: en, zh-Hans
+      var emailErrorTips: RswiftResources.StringResource { .init(key: "emailErrorTips", tableName: "Localizable", source: source, developmentValue: "E-mail format is incorrect", comment: nil) }
+
+      /// en translation: Enter E-mail
+      ///
+      /// Key: emialInputPlaceholder
+      ///
+      /// Locales: en, zh-Hans
+      var emialInputPlaceholder: RswiftResources.StringResource { .init(key: "emialInputPlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter E-mail", comment: nil) }
+
+      /// en translation: Forgot password?
+      ///
+      /// Key: forgotPassword
+      ///
+      /// Locales: en, zh-Hans
+      var forgotPassword: RswiftResources.StringResource { .init(key: "forgotPassword", tableName: "Localizable", source: source, developmentValue: "Forgot password?", comment: nil) }
+
+      /// en translation: Login
+      ///
+      /// Key: loginTitle
+      ///
+      /// Locales: en, zh-Hans
+      var loginTitle: RswiftResources.StringResource { .init(key: "loginTitle", tableName: "Localizable", source: source, developmentValue: "Login", comment: nil) }
+
+      /// en translation: Enter password
+      ///
+      /// Key: passwordInputPlaceholder
+      ///
+      /// Locales: en, zh-Hans
+      var passwordInputPlaceholder: RswiftResources.StringResource { .init(key: "passwordInputPlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter password", comment: nil) }
+
+      /// en translation: Register
+      ///
+      /// Key: registerTitle
+      ///
+      /// Locales: en, zh-Hans
+      var registerTitle: RswiftResources.StringResource { .init(key: "registerTitle", tableName: "Localizable", source: source, developmentValue: "Register", comment: nil) }
     }
   }
 
@@ -616,8 +658,8 @@ struct _R {
     /// Nib `WalletCryptoTableViewCell`.
     var walletCryptoTableViewCell: RswiftResources.NibReference<WalletCryptoTableViewCell> { .init(name: "WalletCryptoTableViewCell", bundle: bundle) }
 
-    /// Nib `WalletTransactionsContentBaseViewController`.
-    var walletTransactionsContentBaseViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WalletTransactionsContentBaseViewController", bundle: bundle) }
+    /// Nib `WalletTransactionsContentViewController`.
+    var walletTransactionsContentViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WalletTransactionsContentViewController", bundle: bundle) }
 
     /// Nib `WalletTransactionsViewController`.
     var walletTransactionsViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WalletTransactionsViewController", bundle: bundle) }
@@ -734,6 +776,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'LoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'LoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'LoginViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconLogo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconLogo' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
