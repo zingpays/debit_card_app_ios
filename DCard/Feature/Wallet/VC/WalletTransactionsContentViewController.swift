@@ -9,7 +9,7 @@
 import UIKit
 import JXSegmentedView
 
-class WalletTransactionsContentBaseViewController: BaseViewController {
+class WalletTransactionsContentViewController: BaseViewController {
 
     @IBOutlet weak var recordListView: UITableView!
     
@@ -27,13 +27,13 @@ class WalletTransactionsContentBaseViewController: BaseViewController {
     }
 }
 
-extension WalletTransactionsContentBaseViewController: JXSegmentedListContainerViewListDelegate {
+extension WalletTransactionsContentViewController: JXSegmentedListContainerViewListDelegate {
     func listView() -> UIView {
         return view
     }
 }
 
-extension WalletTransactionsContentBaseViewController: UITableViewDelegate, UITableViewDataSource {
+extension WalletTransactionsContentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }

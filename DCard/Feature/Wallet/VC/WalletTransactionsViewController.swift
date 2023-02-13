@@ -119,7 +119,7 @@ extension WalletTransactionsViewController: JXSegmentedListContainerViewDataSour
     }
     
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
-        let vc = WalletTransactionsContentBaseViewController()
+        let vc = WalletTransactionsContentViewController()
         return vc
     }
     
