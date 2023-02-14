@@ -103,17 +103,20 @@ class LoginViewController: BaseViewController {
             continueLogin(authType: loginData.authType,
                           authToken: loginData.accessToken)
         } else {
+            UserManager.shared.info = data?.user
             loginFinish(token: loginData.accessToken,
-                        expireDate: loginData.expireAt)
+                        expireDate: loginData.expireAt,
+                        email: loginData.user?.email)
         }
     }
     
     private func continueLogin(authType: AuthType, authToken: String) {
         let vc = SecurityVerificationViewController()
+        vc.style = authType == .email ? .email : .twofa
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func loginFinish(token: String?, expireDate: String?) {
+    private func loginFinish(token: String?, expireDate: String?, email: String?) {
         guard let userToken = token else {
             view.makeToast("Token is null，login fail～")
             return
@@ -122,6 +125,7 @@ class LoginViewController: BaseViewController {
         let expireDate: Date =  expireDate?.toDate()?.date ?? Date(timeIntervalSinceNow: 60*60*24*7)
         // save user token
         UserManager.shared.saveToken(userToken, expireDate: expireDate)
+        UserManager.shared.saveUserEmail(email ?? "")
         // change application root viewController to tabbar viewController
         UIApplication.shared.keyWindow()?.rootViewController = nil
         UIApplication.shared.keyWindow()?.rootViewController = TabBarController()

@@ -83,6 +83,12 @@
 		545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C569C2986142F00D7F058 /* FillInAddressViewController.xib */; };
 		546BD3F5299A2183003C15D8 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F4299A2183003C15D8 /* LoginRequest.swift */; };
 		546BD3F7299A21A2003C15D8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F6299A21A2003C15D8 /* LoginModel.swift */; };
+		546BD3F9299A3A66003C15D8 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F8299A3A66003C15D8 /* UserRequest.swift */; };
+		546BD3FB299A3B88003C15D8 /* LoginUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3FA299A3B88003C15D8 /* LoginUserInfo.swift */; };
+		546BD3FE299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3FC299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift */; };
+		546BD3FF299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546BD3FD299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib */; };
+		546BD402299B5BFD003C15D8 /* SecurityVerificationItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD401299B5BFD003C15D8 /* SecurityVerificationItemModel.swift */; };
+		546BD407299B7AB4003C15D8 /* VerifyEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD406299B7AB4003C15D8 /* VerifyEmailRequest.swift */; };
 		5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */; };
 		5473220529879A18007B9AEA /* SecurityVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */; };
 		547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */; };
@@ -274,6 +280,12 @@
 		545C569C2986142F00D7F058 /* FillInAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillInAddressViewController.xib; sourceTree = "<group>"; };
 		546BD3F4299A2183003C15D8 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		546BD3F6299A21A2003C15D8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		546BD3F8299A3A66003C15D8 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		546BD3FA299A3B88003C15D8 /* LoginUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInfo.swift; sourceTree = "<group>"; };
+		546BD3FC299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityVerificationItemTableViewCell.swift; sourceTree = "<group>"; };
+		546BD3FD299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityVerificationItemTableViewCell.xib; sourceTree = "<group>"; };
+		546BD401299B5BFD003C15D8 /* SecurityVerificationItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityVerificationItemModel.swift; sourceTree = "<group>"; };
+		546BD406299B7AB4003C15D8 /* VerifyEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailRequest.swift; sourceTree = "<group>"; };
 		5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityVerificationViewController.swift; sourceTree = "<group>"; };
 		5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityVerificationViewController.xib; sourceTree = "<group>"; };
 		547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNewPasswordViewController.swift; sourceTree = "<group>"; };
@@ -495,6 +507,7 @@
 			children = (
 				541A8D3529641FB500C59026 /* Model */,
 				541A8D3229641F6D00C59026 /* Manager */,
+				546BD3F8299A3A66003C15D8 /* UserRequest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -511,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				541A8D3629641FC300C59026 /* UserModel.swift */,
+				546BD3FA299A3B88003C15D8 /* LoginUserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -631,6 +645,22 @@
 			path = KYC;
 			sourceTree = "<group>";
 		};
+		546BD400299B5BEB003C15D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				546BD401299B5BFD003C15D8 /* SecurityVerificationItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		546BD403299B79C2003C15D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				546BD406299B7AB4003C15D8 /* VerifyEmailRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		547F4CFC29640392007B05B9 = {
 			isa = PBXGroup;
 			children = (
@@ -713,12 +743,16 @@
 		54D082D429864E50008B0FBC /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				546BD403299B79C2003C15D8 /* Network */,
+				546BD400299B5BEB003C15D8 /* Model */,
 				544ABBCD2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift */,
 				544ABBCE2987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib */,
 				5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */,
 				5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */,
 				547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */,
 				547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */,
+				546BD3FC299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift */,
+				546BD3FD299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -1009,6 +1043,7 @@
 				54A454F4298B668400621311 /* DepositFromTableViewCell.xib in Resources */,
 				541A8D8B296C05BB00C59026 /* Roboto-Regular-14.ttf in Resources */,
 				54222683299376AB00447A1A /* WalletTransactionsContentViewController.xib in Resources */,
+				546BD3FF299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib in Resources */,
 				541A8D7D29682D5B00C59026 /* GuidePagerViewCell.xib in Resources */,
 				549D462B298A715F009AEB13 /* TransactionItemTableViewCell.xib in Resources */,
 				549D4627298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib in Resources */,
@@ -1215,6 +1250,7 @@
 				54C313112994F3C300DBF373 /* WithdrawViewController.swift in Sources */,
 				54D082E129865965008B0FBC /* CardViewController.swift in Sources */,
 				5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */,
+				546BD402299B5BFD003C15D8 /* SecurityVerificationItemModel.swift in Sources */,
 				54A45521298CEEF800621311 /* CardSettingTableViewCell.swift in Sources */,
 				549D4631298B5DBF009AEB13 /* NibLoadable.swift in Sources */,
 				541A8D3729641FC300C59026 /* UserModel.swift in Sources */,
@@ -1226,6 +1262,7 @@
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				546BD407299B7AB4003C15D8 /* VerifyEmailRequest.swift in Sources */,
 				54C313142996120900DBF373 /* ChooseCryptoNetworkView.swift in Sources */,
 				54C3131D299625D800DBF373 /* DepositViewController.swift in Sources */,
 				5422268629939AC600447A1A /* TransactionsDetailViewController.swift in Sources */,
@@ -1234,6 +1271,7 @@
 				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,
+				546BD3F9299A3A66003C15D8 /* UserRequest.swift in Sources */,
 				542BC197297573BC00133659 /* FillInNameAndNationalViewController.swift in Sources */,
 				54E368AC298A15440042D072 /* ApplyCardViewController.swift in Sources */,
 				54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */,
@@ -1258,6 +1296,7 @@
 				549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */,
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
+				546BD3FB299A3B88003C15D8 /* LoginUserInfo.swift in Sources */,
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,
 				54222679299257F800447A1A /* SellCryptoConfirmView.swift in Sources */,
 				542BC19F2977026900133659 /* LoginViewController.swift in Sources */,
@@ -1273,6 +1312,7 @@
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */,
+				546BD3FE299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift in Sources */,
 				544ABBCF2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift in Sources */,
 				54DE3E8E2990E8D20077B120 /* CryptoWalletCardView.swift in Sources */,
 				54A454FB298B920C00621311 /* TransactionTableViewCell.swift in Sources */,

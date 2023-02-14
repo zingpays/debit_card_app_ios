@@ -13,6 +13,8 @@ import SwifterSwift
 class UserManager {
     let TOKEN_KEY: String = "USER_TOKEN_KEY"
     let TOKEN_EXPIRE_DATE_KEY = "UESR_TOKEN_EXPIRE_DATE_KEY"
+    let USER_EMAIL_KEY = "USER_EMAIL_KEY"
+    let USER_PHONENUM_KEY = "USER_PHONENUM_KEY"
     
     static let shared = UserManager()
     /// 用户ID
@@ -25,6 +27,20 @@ class UserManager {
     }
     /// 用户信息
     var info: UserModel?
+    
+    /// Email
+    var email: String? {
+        get {
+            return UserDefaults.standard.string(forKey: USER_EMAIL_KEY)
+        }
+    }
+    
+    /// phone
+    var phoneNum: String? {
+        get {
+            return UserDefaults.standard.string(forKey: USER_PHONENUM_KEY)
+        }
+    }
     
     func saveToken(_ value: String, expireDate: Date) {
         UserDefaults.standard.set(value, forKey: TOKEN_KEY)
@@ -40,6 +56,16 @@ class UserManager {
     func removeToken() {
         UserDefaults.standard.removeObject(forKey: TOKEN_KEY)
         UserDefaults.standard.removeObject(forKey: TOKEN_EXPIRE_DATE_KEY)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func saveUserEmail(_ value: String) {
+        UserDefaults.standard.set(value, forKey: USER_EMAIL_KEY)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func saveUserPhoneNum(_ value: String) {
+        UserDefaults.standard.set(value, forKey: USER_PHONENUM_KEY)
         UserDefaults.standard.synchronize()
     }
     

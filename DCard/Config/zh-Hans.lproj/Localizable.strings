@@ -16,6 +16,23 @@
 /// Register
 "registerTitle" = "注册";
 
+/// Security
+"securityVerificationTitle" = "安全认证";
+"emailVerificationCode" = "邮箱验证码";
+"emailVerificationCodePlaceholder" = "输入邮箱验证码";
+"phoneVerificationCode" = "手机验证码";
+"phoneVerificationCodePlaceholder" = "输入手机验证码";
+"authenticatorCode" = "验证码";
+"authenticatorCodeInfo" = "输入6位谷歌验证码";
+"authenticatorCodePlaceholder" = "输入谷歌验证码";
+"googleAuthenticatorUnavailable" = "谷歌验证码不可用？";
+"getCode" = "获取验证码";
+"resetAuthTips" = "你确定要重置谷歌验证码吗？";
+
 /// Common
 "LocalAuthenticationTouchIdLocalizedReason" = "需要使用你的指纹来解锁应用";
 "LocalAuthenticationFaceIdLocalizedReason" = "需要使用你的面容来解锁应用";
+"tips" = "提示";
+"cancel" = "取消";
+"continue" = "确定";
+"submit" = "提交";

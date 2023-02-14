@@ -16,7 +16,23 @@
 /// Register
 "registerTitle" = "Register";
 
+/// Security
+"securityVerificationTitle" = "Security Verification";
+"emailVerificationCode" = "Email Verification Code";
+"emailVerificationCodePlaceholder" = "Enter the code";
+"phoneVerificationCode" = "Phone Verification Code";
+"phoneVerificationCodePlaceholder" = "Enter the code";
+"authenticatorCode" = "Authenticator Code";
+"authenticatorCodeInfo" = "Enter the 6-digit code from Google Authenticator";
+"authenticatorCodePlaceholder" = "Enter authenticator code";
+"googleAuthenticatorUnavailable" = "Google Authenticator Unavailable？";
+"getCode" = "Get Code";
+"resetAuthTips" = "Are you sure to reset Google Authenticator?";
 
 /// Common
 "LocalAuthenticationTouchIdLocalizedReason" = "We need to use your Touch ID to unlock the screen";
 "LocalAuthenticationFaceIdLocalizedReason" = "We need to use your Face ID to unlock the screen";
+"tips" = "Tips";
+"cancel" = "Cancel";
+"continue" = "Continue";
+"submit" = "Submit";

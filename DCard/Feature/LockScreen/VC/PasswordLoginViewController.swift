@@ -10,6 +10,7 @@ import UIKit
 
 class PasswordLoginViewController: BaseViewController {
     
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var forgotPasswordButton: UIButton!
@@ -54,6 +55,7 @@ class PasswordLoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupData()
     }
 
     // MARK: - Private
@@ -61,6 +63,12 @@ class PasswordLoginViewController: BaseViewController {
     private func setupUI() {
         setupRightItem()
         setupSubviews()
+    }
+    
+    private func setupData() {
+        emailLabel.text = UserManager.shared.email
+        loginButton.setTitle(R.string.localizable.loginTitle(), for: .normal)
+        forgotPasswordButton.setTitle(R.string.localizable.forgotPassword(), for: .normal)
     }
     
     private func setupRightItem() {
@@ -114,10 +122,58 @@ class PasswordLoginViewController: BaseViewController {
         return v
     }
     
+    private func handleLogin(data: LoginModel?) {
+        guard let loginData = data else {
+            view.makeToast("data error~")
+            return
+        }
+        if loginData.furtherAuth {
+            continueLogin(authType: loginData.authType,
+                          authToken: loginData.accessToken)
+        } else {
+            loginFinish(token: loginData.accessToken,
+                        expireDate: loginData.expireAt,
+                        email: loginData.user?.email)
+        }
+    }
+    
+    private func continueLogin(authType: AuthType, authToken: String) {
+        let vc = SecurityVerificationViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func loginFinish(token: String?, expireDate: String?, email: String?) {
+        guard let userToken = token else {
+            view.makeToast("Token is null，login fail～")
+            return
+        }
+        LocalAuthenManager.shared.isAuthorized = true
+        let expireDate: Date =  expireDate?.toDate()?.date ?? Date(timeIntervalSinceNow: 60*60*24*7)
+        // save user token
+        UserManager.shared.saveToken(userToken, expireDate: expireDate)
+        UserManager.shared.saveUserEmail(email ?? "")
+        self.dismiss(animated: true)
+    }
+    
     // MARK: - Actions
     
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+        let vc = ForgotPasswordEmailCheckViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func loginAction(_ sender: Any) {
-        
+        guard let email = emailLabel.text, let password = passwordTextField.text else { return }
+        indicator.startAnimating()
+        LoginRequest.login(email: email, password: password) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.handleLogin(data: data)
+            } else {
+                this.view.makeToast(message, duration: 1, position: .top)
+            }
+        }
     }
     
     @objc private func moreAction() {

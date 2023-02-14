@@ -13,22 +13,12 @@
         <array key="Roboto-Bold-3.ttf">
             <string>Roboto-Bold</string>
         </array>
-        <array key="Roboto-Light-10.ttf">
-            <string>Roboto-Light</string>
-        </array>
-        <array key="Roboto-Regular-14.ttf">
-            <string>Roboto-Regular</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecurityVerificationViewController" customModule="DCard" customModuleProvider="target">
             <connections>
-                <outlet property="authTextField" destination="4Ef-6J-ghq" id="TMU-KA-xCN"/>
-                <outlet property="emailDescLabel" destination="wjX-Qz-zcI" id="mj2-9i-31J"/>
-                <outlet property="emailTextField" destination="6cU-wF-cYT" id="ASy-qX-6Pm"/>
+                <outlet property="securityTableView" destination="D5t-cB-SQ5" id="Loa-zU-IRR"/>
                 <outlet property="titleLabel" destination="0RP-Xf-EpV" id="jfT-ve-q2S"/>
-                <outlet property="verifyCodeLabel" destination="2Ib-ni-PIa" id="nbZ-Ew-QU4"/>
-                <outlet property="verifyCodeTextField" destination="qT1-C8-ig2" id="WyR-7Z-9qQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,179 +33,31 @@
                     <color key="textColor" name="fw#000000"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter Your e-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-S5-Tmo">
-                    <rect key="frame" x="16" y="99" width="177.5" height="19"/>
-                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                    <color key="textColor" name="fw#000000"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconInfo" translatesAutoresizingMaskIntoConstraints="NO" id="5oV-wJ-XoS">
-                    <rect key="frame" x="16" y="126" width="18" height="18"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="18" id="Dv0-AM-Dxi"/>
-                        <constraint firstAttribute="height" constant="18" id="K0n-Cg-yfW"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code sent to 118***@qq.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjX-Qz-zcI">
-                    <rect key="frame" x="40" y="126" width="319" height="16.5"/>
-                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-wF-cYT">
-                    <rect key="frame" x="16" y="164" width="343" height="50"/>
-                    <color key="backgroundColor" name="fw#FFFFFF"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="ydl-J3-IG0"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Verification Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibN-37-YYG">
-                    <rect key="frame" x="16" y="238" width="172" height="19"/>
-                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                    <color key="textColor" name="fw#000000"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconInfo" translatesAutoresizingMaskIntoConstraints="NO" id="Fof-Az-t26">
-                    <rect key="frame" x="16" y="265" width="18" height="18"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="18" id="94v-uj-BEq"/>
-                        <constraint firstAttribute="width" constant="18" id="Yr2-yn-01R"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6 digit code sent to 188****0575." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ib-ni-PIa">
-                    <rect key="frame" x="40" y="265" width="319" height="18"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="18" id="Px5-Zk-9Jd"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                    <color key="textColor" name="fw#000000"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qT1-C8-ig2">
-                    <rect key="frame" x="16" y="303" width="343" height="50"/>
-                    <color key="backgroundColor" name="fw#FFFFFF"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="duC-X2-xZE"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authenticator Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2T-HI-5JP">
-                    <rect key="frame" x="16" y="377" width="138.5" height="19"/>
-                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                    <color key="textColor" name="fw#000000"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconInfo" translatesAutoresizingMaskIntoConstraints="NO" id="jw9-o4-Yxc">
-                    <rect key="frame" x="16" y="404" width="18" height="18"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="18" id="1b5-Sg-gOG"/>
-                        <constraint firstAttribute="height" constant="18" id="rDq-I5-sTT"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code from Google Authenticator" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-28-tG2">
-                    <rect key="frame" x="40" y="404" width="319" height="16.5"/>
-                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4Ef-6J-ghq">
-                    <rect key="frame" x="16" y="442" width="343" height="50"/>
-                    <color key="backgroundColor" name="fw#FFFFFF"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Zfu-dj-mAq"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textField>
-                <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-g4-cY2">
-                    <rect key="frame" x="27" y="524" width="321" height="46"/>
-                    <color key="backgroundColor" name="fw#00A8BB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="46" id="psX-7i-g9P"/>
-                    </constraints>
-                    <color key="tintColor" name="fw#FFFFFF"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Next"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="23"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D5t-cB-SQ5">
+                    <rect key="frame" x="0.0" y="103" width="375" height="564"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
-                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="kQP-G0-oQ3"/>
+                        <outlet property="dataSource" destination="-1" id="pl0-El-ROk"/>
+                        <outlet property="delegate" destination="-1" id="kEC-bX-NR5"/>
                     </connections>
-                </button>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6cU-wF-cYT" secondAttribute="trailing" constant="16" id="1fb-1d-efA"/>
-                <constraint firstItem="qT1-C8-ig2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1nc-nC-4vW"/>
-                <constraint firstItem="Fof-Az-t26" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2mP-bh-gOA"/>
-                <constraint firstItem="6cU-wF-cYT" firstAttribute="top" secondItem="5oV-wJ-XoS" secondAttribute="bottom" constant="20" id="Fof-Oc-z48"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Ef-6J-ghq" secondAttribute="trailing" constant="16" id="Jn0-cH-tOe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XHd-g4-cY2" secondAttribute="trailing" constant="27" id="Kec-gy-XmW"/>
-                <constraint firstItem="XHd-g4-cY2" firstAttribute="top" secondItem="4Ef-6J-ghq" secondAttribute="bottom" constant="32" id="ME8-lt-fGp"/>
+                <constraint firstItem="D5t-cB-SQ5" firstAttribute="top" secondItem="0RP-Xf-EpV" secondAttribute="bottom" constant="24" id="1DS-Wv-jEy"/>
                 <constraint firstItem="0RP-Xf-EpV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="46" id="PNn-ay-JKo"/>
-                <constraint firstItem="SYN-S5-Tmo" firstAttribute="top" secondItem="0RP-Xf-EpV" secondAttribute="bottom" constant="20" id="Q6r-S1-VzB"/>
-                <constraint firstItem="2Ib-ni-PIa" firstAttribute="top" secondItem="ibN-37-YYG" secondAttribute="bottom" constant="8" id="SWO-Fb-zZt"/>
-                <constraint firstItem="wjX-Qz-zcI" firstAttribute="leading" secondItem="5oV-wJ-XoS" secondAttribute="trailing" constant="6" id="Sr0-cz-IKi"/>
-                <constraint firstItem="4Ef-6J-ghq" firstAttribute="top" secondItem="jw9-o4-Yxc" secondAttribute="bottom" constant="20" id="TYS-BF-dmF"/>
+                <constraint firstAttribute="bottom" secondItem="D5t-cB-SQ5" secondAttribute="bottom" id="Q8Q-Fx-2SN"/>
                 <constraint firstItem="0RP-Xf-EpV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VPs-8D-Rpj"/>
-                <constraint firstItem="qT1-C8-ig2" firstAttribute="top" secondItem="Fof-Az-t26" secondAttribute="bottom" constant="20" id="XfX-MM-Sng"/>
-                <constraint firstItem="2Ib-ni-PIa" firstAttribute="leading" secondItem="Fof-Az-t26" secondAttribute="trailing" constant="6" id="bAp-QC-o8m"/>
-                <constraint firstItem="e2T-HI-5JP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bi1-GE-VTv"/>
-                <constraint firstAttribute="trailing" secondItem="wjX-Qz-zcI" secondAttribute="trailing" constant="16" id="cpd-Kd-3Aq"/>
-                <constraint firstItem="jw9-o4-Yxc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dla-jZ-PMl"/>
-                <constraint firstItem="kFx-28-tG2" firstAttribute="leading" secondItem="jw9-o4-Yxc" secondAttribute="trailing" constant="6" id="gTb-Oc-67j"/>
-                <constraint firstItem="4Ef-6J-ghq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gyb-dn-0On"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qT1-C8-ig2" secondAttribute="trailing" constant="16" id="h1o-22-oZN"/>
-                <constraint firstItem="5oV-wJ-XoS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="het-hI-opO"/>
-                <constraint firstItem="Fof-Az-t26" firstAttribute="top" secondItem="ibN-37-YYG" secondAttribute="bottom" constant="8" id="idH-ee-Mbn"/>
-                <constraint firstAttribute="trailing" secondItem="kFx-28-tG2" secondAttribute="trailing" constant="16" id="j7x-oG-WhX"/>
-                <constraint firstItem="e2T-HI-5JP" firstAttribute="top" secondItem="qT1-C8-ig2" secondAttribute="bottom" constant="24" id="jKn-s4-ryy"/>
-                <constraint firstItem="jw9-o4-Yxc" firstAttribute="top" secondItem="e2T-HI-5JP" secondAttribute="bottom" constant="8" id="ln2-9X-inz"/>
-                <constraint firstItem="XHd-g4-cY2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="n7n-FA-b0a"/>
-                <constraint firstItem="SYN-S5-Tmo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pJH-p8-Mj2"/>
-                <constraint firstItem="kFx-28-tG2" firstAttribute="top" secondItem="e2T-HI-5JP" secondAttribute="bottom" constant="8" id="q6D-Pj-7Zc"/>
-                <constraint firstItem="5oV-wJ-XoS" firstAttribute="top" secondItem="SYN-S5-Tmo" secondAttribute="bottom" constant="8" id="tlN-Lc-qBs"/>
-                <constraint firstItem="ibN-37-YYG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="uf4-tN-T49"/>
-                <constraint firstItem="ibN-37-YYG" firstAttribute="top" secondItem="6cU-wF-cYT" secondAttribute="bottom" constant="24" id="yWs-Xu-hUq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Ib-ni-PIa" secondAttribute="trailing" constant="16" id="zTS-xb-UBF"/>
-                <constraint firstItem="6cU-wF-cYT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="zUN-Zp-OHs"/>
-                <constraint firstItem="wjX-Qz-zcI" firstAttribute="top" secondItem="SYN-S5-Tmo" secondAttribute="bottom" constant="8" id="zfa-b5-AYC"/>
+                <constraint firstItem="D5t-cB-SQ5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wg3-cX-r3H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D5t-cB-SQ5" secondAttribute="trailing" id="xd9-99-a7v"/>
             </constraints>
             <point key="canvasLocation" x="-28" y="-81"/>
         </view>
     </objects>
     <resources>
-        <image name="iconInfo" width="18" height="18"/>
         <namedColor name="fw#000000">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </namedColor>
-        <namedColor name="fw#00A8BB">
-            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="fw#FFFFFF">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

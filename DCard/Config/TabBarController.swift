@@ -13,8 +13,8 @@ class TabBarController: UITabBarController {
     // tabBar viewcontrollers
     var tabVCs: [TabbarItem] = {
         var vcs: [TabbarItem] = []
-        vcs.append(TabbarItem(title: "", vc: CardViewController(), normalImage: "iconTabbarCard", selectedImage: "iconTabbarCardSelected"))
         vcs.append(TabbarItem(title: "", vc: HomeViewController(), normalImage: "iconTabbarHome", selectedImage: "iconTabbarHomeSelected"))
+        vcs.append(TabbarItem(title: "", vc: CardViewController(), normalImage: "iconTabbarCard", selectedImage: "iconTabbarCardSelected"))
         vcs.append(TabbarItem(title: "", vc: WalletViewController(), normalImage: "iconTabbarWallet", selectedImage: "iconTabbarWalletSelected"))
         return vcs
     }()

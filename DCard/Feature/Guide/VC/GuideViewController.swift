@@ -30,9 +30,14 @@ class GuideViewController: UIViewController {
             registerButton.setTitleColor(R.color.fwFFFFFF()?.withAlphaComponent(0.2), for: .normal)
             registerButton.tintColor = R.color.fwFFFFFF()?.withAlphaComponent(0.2)
             registerButton.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.12)
+            registerButton.setTitle(R.string.localizable.registerTitle(), for: .normal)
         }
     }
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton! {
+        didSet {
+            loginButton.setTitle(R.string.localizable.loginTitle(), for: .normal)
+        }
+    }
     /// collection view data source
     private var guideDatas: [GuideCollectionModel] = []
     /// index of page displayed

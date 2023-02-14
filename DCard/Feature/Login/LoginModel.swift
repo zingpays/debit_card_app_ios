@@ -22,6 +22,8 @@ class LoginModel: Mappable {
     var furtherAuth: Bool = false
     /// 二次验证类型
     var authType: AuthType = .email
+    /// 用户信息
+    var user: UserModel?
 
     required init?(map: Map) {}
 
@@ -30,5 +32,6 @@ class LoginModel: Mappable {
         furtherAuth <- map["further_auth"]
         accessToken <- map["access_token"]
         authType    <- map["auth_type"]
+        user        <- map["user"]
     }
 }
