@@ -18,7 +18,11 @@ class ChooseRegionViewController: UIViewController {
     var datasource: [ChooseRegionModel] = []
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.placeholder = R.string.localizable.chooseYourCountryInputPlaceholder()
+        }
+    }
     @IBOutlet weak var resultTableview: UITableView!
     
     // MARK: - Init

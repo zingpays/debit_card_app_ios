@@ -160,7 +160,7 @@ class FillInNameAndNationalViewController: BaseViewController {
     }
     
     @IBAction func continueNext(_ sender: UIButton) {
-        let vc = StartExperienceViewController()
+        let vc = RegisterSuccessViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     

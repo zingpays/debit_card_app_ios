@@ -20,6 +20,22 @@
 "agreement" = "我已阅读并同意隐私政策和条款协议，我也同意不使用恒星支付账户代表他人进行交易。";
 "resend" = "重新发送";
 "emailIsIncorrectTips" = "· 邮箱格式不正确";
+"settingYourPassword" = "设置您的密码";
+"enterPassword" = "请输入你的密码";
+"enterPasswordAgain" = "请再次输入你的密码";
+"passwordFormatIsNotCorrect" = ". 密码格式不符合要求";
+"passwordsDoNotMatchTips" = ". 两次密码不一致";
+"toVerifyPhoneNumber" = "验证手机号码";
+"registerSuccessTips" = "您已经注册成功。";
+"toVerifyPhoneNumberTips" = "我们使用您的手机号码来验证您账户的重要更改操作";
+"toVerifyPhoneNumberTitle" = "验证手机号";
+"yourPhoneNumber" = "你的手机号码";
+"yourPhoneNumberInfo" = "我们将使用您的电话号码来验证您帐户的重要更改。";
+"toVerifyPhoneNumberEnterYourNumber" = "请输入您的手机号码";
+"sendVerifyCode" = "发送验证码";
+"chooseYourCountryTitle" = "选择你的区号";
+"chooseYourCountryInputPlaceholder" = "支持字母和数字搜索";
+"phoneCodeInputSubTitle" = "验证码已经发送至";
 
 /// Security
 "securityVerificationTitle" = "安全认证";

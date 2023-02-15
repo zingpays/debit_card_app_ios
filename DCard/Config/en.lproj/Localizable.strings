@@ -8,7 +8,7 @@
 
 /// Login
 "loginTitle" = "Login";
-"emialInputPlaceholder" = "Enter E-mail";
+"emialInputPlaceholder" = "Enter your E-mail";
 "passwordInputPlaceholder" = "Enter password";
 "forgotPassword" = "Forgot password?";
 "emailErrorTips" = "E-mail format is incorrect";
@@ -20,6 +20,22 @@
 "agreement" = "I have read and agree with the Privacy Policy and Terms and Conditions. I also agree to not use Stella Pay to transact on behalf of someone else.";
 "resend" = "Resend";
 "emailIsIncorrectTips" = "· E-mail format is incorrect";
+"settingYourPassword" = "Setting your password";
+"enterPassword" = "Enter password";
+"enterPasswordAgain" = "Enter password again";
+"passwordFormatIsNotCorrect" = ". Please fill in the correct password format";
+"passwordsDoNotMatchTips" = ". Passwords do not match";
+"toVerifyPhoneNumber" = "Verify Phone Number";
+"registerSuccessTips" = "You have successfully registered.";
+"toVerifyPhoneNumberTips" = "We use your phone number to verify important changes to your account";
+"toVerifyPhoneNumberTitle" = "Verify Phone Number";
+"yourPhoneNumber" = "Your phone number";
+"yourPhoneNumberInfo" = "We use your phone number to verify important changes to your account.";
+"toVerifyPhoneNumberEnterYourNumber" = "Enter your phone number";
+"sendVerifyCode" = "Send Verification Code";
+"chooseYourCountryTitle" = "Choose Your Country";
+"chooseYourCountryInputPlaceholder" = "Enter the initial letter";
+"phoneCodeInputSubTitle" = "A verification code has been sent to";
 
 /// Security
 "securityVerificationTitle" = "Security Verification";

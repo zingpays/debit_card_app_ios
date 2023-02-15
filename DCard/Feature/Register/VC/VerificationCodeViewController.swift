@@ -11,8 +11,16 @@ import CRBoxInputView
 
 class VerificationCodeViewController: BaseViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = R.string.localizable.toVerifyPhoneNumberTitle()
+        }
+    }
+    @IBOutlet weak var subTitleLabel: UILabel! {
+        didSet {
+            subTitleLabel.text = R.string.localizable.phoneCodeInputSubTitle()
+        }
+    }
     @IBOutlet weak var phoneNumLabel: UILabel!
     @IBOutlet weak var errorTipsLabel: UILabel!
     @IBOutlet weak var resendButton: UIButton!
@@ -61,13 +69,19 @@ class VerificationCodeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupData()
     }
     
     // MARK: - Private
     
     private func setupUI() {
         setupSubviews()
+    }
+    
+    private func setupData() {
         startCountDown()
+        requestPhoneCode()
+        boxAction()
     }
     
     private func setupSubviews() {
@@ -77,13 +91,9 @@ class VerificationCodeViewController: BaseViewController {
         boxInputView.frame = CGRect(x: 0, y: 0,
                                     width: (SCREENWIDTH - 16 - 17),
                                     height: boxWidth)
-        titleLabel.font = .fw.font28(weight: .bold)
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
+            make.top.equalToSuperview().offset(NAVBARHEIGHT + 20)
         }
-        subTitleLabel.font = .fw.font16()
-        phoneNumLabel.font = .fw.font16()
-        errorTipsLabel.font = .fw.font14()
         errorTipsLabel.snp.makeConstraints { make in
             make.height.equalTo(0)
         }
@@ -109,13 +119,13 @@ class VerificationCodeViewController: BaseViewController {
             if times < 0 {
                 DispatchQueue.main.async {
                     this.resendButton.alpha = 1
-                    this.resendButton.setTitle("Resend", for: .normal)
+                    this.resendButton.setTitle(R.string.localizable.resend(), for: .normal)
                     this.time.cancel()
                 }
             } else {
                 DispatchQueue.main.async {
                     times -= 1
-                    let text = "Resend after \(times)s"
+                    let text = LocalizationManager.shared.currentLanguage() == .zh ? "\(times)s后重新发送" : "Resend after \(times)s"
                     this.resendButton.alpha = 0.4
                     this.resendButton.setTitle(text, for: .normal)
                 }
@@ -124,17 +134,35 @@ class VerificationCodeViewController: BaseViewController {
         time.resume()
     }
     
+    // MARK: - Network
+    private func requestPhoneCode() {
+        // TODO: phone code request
+    }
+    
+    private func requestVerifyPhoneCode(_ code: String?) {
+        // test code
+        let vc = FillInNameAndNationalViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        // TODO: verify code request
+        // if request success, go to next page
+        // if request fail, show error tips
+    }
+    
     // MARK: - Actions
     
     @IBAction func resendAction(_ sender: UIButton) {
-        // Test code
-        let vc = FillInNameAndNationalViewController()
-        navigationController?.pushViewController(vc, animated: true)
-//        if sender.alpha == 1 {
-//            // TODO: 请求网络校验验证码是否正确
-//            boxInputView.clearAll(withBeginEdit: true)
-//            resendButton.alpha = 0.4
-//        }
+        // TODO: 请求网络校验验证码是否正确
+        // request success, clear all number
+        boxInputView.clearAll(withBeginEdit: true)
     }
 
+    private func boxAction() {
+        boxInputView.textDidChangeblock = { [weak self] text, isFinish in
+            guard let this = self else { return }
+            if isFinish {
+                this.requestVerifyPhoneCode(text)
+            }
+        }
+    }
+    
 }

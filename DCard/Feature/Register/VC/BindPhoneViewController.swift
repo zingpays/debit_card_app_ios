@@ -10,13 +10,33 @@ import UIKit
 
 class BindPhoneViewController: BaseViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = R.string.localizable.toVerifyPhoneNumberTitle()
+        }
+    }
+    @IBOutlet weak var subTitleLabel: UILabel! {
+        didSet {
+            subTitleLabel.text = R.string.localizable.yourPhoneNumber()
+        }
+    }
     @IBOutlet weak var phoneInputView: UIView!
-    @IBOutlet weak var infoLabell: UILabel!
+    @IBOutlet weak var infoLabell: UILabel! {
+        didSet {
+            infoLabell.text = R.string.localizable.yourPhoneNumberInfo()
+        }
+    }
     @IBOutlet weak var phoneRegionLabel: UILabel!
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var phoneTextField: UITextField! {
+        didSet {
+            phoneTextField.placeholder = R.string.localizable.toVerifyPhoneNumberEnterYourNumber()
+        }
+    }
+    @IBOutlet weak var sendButton: UIButton! {
+        didSet {
+            sendButton.setTitle(R.string.localizable.sendVerifyCode(), for: .normal)
+        }
+    }
     
     // MARK: - Init
     
@@ -39,12 +59,9 @@ class BindPhoneViewController: BaseViewController {
     }
     
     private func setupSubviews() {
-        titleLabel.font = UIFont.fw.font28(weight: .bold)
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
+            make.top.equalToSuperview().offset(NAVBARHEIGHT + 20)
         }
-        subTitleLabel.font = UIFont.fw.font16()
-        infoLabell.font = .fw.font14()
         phoneTextField.addTarget(self, action: #selector(phoneNumValueChangeAction), for: .editingChanged)
     }
     
@@ -60,9 +77,10 @@ class BindPhoneViewController: BaseViewController {
     
     @IBAction func selectPhoneRegionAction(_ sender: Any) {
         phoneTextField.resignFirstResponder()
+        // TODO: 请求国家区域数据信息
         let vc = ChooseRegionViewController()
         let datas = [ChooseRegionModel(title: "China", subTitle: "+86"), ChooseRegionModel(title: "Singpore", subTitle: "+65")]
-        vc.pageTitle = "choose your country"
+        vc.pageTitle = R.string.localizable.chooseYourCountryTitle()
         vc.datasource = datas
         vc.didSelectedCompletion = { data in
             self.phoneRegionLabel.text = data.subTitle
@@ -71,8 +89,10 @@ class BindPhoneViewController: BaseViewController {
     }
     
     @IBAction func sendVerifyCode(_ sender: Any) {
-        let vc = VerificationCodeViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        if sendButton.alpha == 1 {
+            let vc = VerificationCodeViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

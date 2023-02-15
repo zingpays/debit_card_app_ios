@@ -9,9 +9,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartExperienceViewController" customModule="DCard" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterSuccessViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="registerSuccessLabel" destination="apY-R1-0cl" id="OgK-4K-mfs"/>
+                <outlet property="toVerifyPhoneNumber" destination="J9e-IK-Krd" id="rTW-hR-33P"/>
+                <outlet property="toVerifyPhoneTipsLabel" destination="P71-fq-4ly" id="l2l-gl-Ov4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,13 +29,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_thanks" translatesAutoresizingMaskIntoConstraints="NO" id="bgC-pk-PEM">
-                    <rect key="frame" x="63" y="219" width="261" height="83"/>
+                    <rect key="frame" x="63" y="199" width="261" height="83"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="83" id="Lq2-Ab-u2G"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have successfully registered." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apY-R1-0cl">
-                    <rect key="frame" x="76.000000000000014" y="314" width="241.33333333333337" height="19"/>
+                    <rect key="frame" x="76.000000000000014" y="294" width="241.33333333333337" height="19"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="mlN-L3-kUw"/>
                     </constraints>
@@ -36,13 +44,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_reg_pic_success" translatesAutoresizingMaskIntoConstraints="NO" id="l8U-XH-7wb">
-                    <rect key="frame" x="16" y="383" width="360" height="180"/>
+                    <rect key="frame" x="16" y="363" width="360" height="180"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="180" id="ARB-hU-CVK"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9e-IK-Krd">
-                    <rect key="frame" x="27" y="621" width="338" height="46"/>
+                    <rect key="frame" x="27" y="636" width="338" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="bGR-1i-kLf"/>
@@ -56,31 +64,54 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="startExperience:" destination="-1" eventType="touchUpInside" id="oAv-bx-iEw"/>
+                        <action selector="toVerifyPhoneNumber:" destination="-1" eventType="touchUpInside" id="g9U-sS-jXO"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We use your phone number to verify important changes to your account" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P71-fq-4ly">
+                    <rect key="frame" x="62" y="583" width="291" height="33"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                    <color key="textColor" name="fw#001214"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconInfo" translatesAutoresizingMaskIntoConstraints="NO" id="Hfu-Re-Bhy">
+                    <rect key="frame" x="40" y="583" width="18" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="8Yb-8V-17N"/>
+                        <constraint firstAttribute="width" constant="18" id="D02-BJ-XT3"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="P71-fq-4ly" firstAttribute="leading" secondItem="Hfu-Re-Bhy" secondAttribute="trailing" constant="4" id="0Zw-Rv-Ush"/>
                 <constraint firstItem="l8U-XH-7wb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3j3-bX-szi"/>
-                <constraint firstItem="J9e-IK-Krd" firstAttribute="top" secondItem="l8U-XH-7wb" secondAttribute="bottom" constant="58" id="6nM-36-lIf"/>
-                <constraint firstItem="bgC-pk-PEM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="160" id="EHn-ZQ-Lg2"/>
+                <constraint firstItem="Hfu-Re-Bhy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="9qs-UR-xyP"/>
+                <constraint firstItem="bgC-pk-PEM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="140" id="EHn-ZQ-Lg2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bgC-pk-PEM" secondAttribute="trailing" constant="69" id="Gx5-Aw-KYM"/>
                 <constraint firstItem="bgC-pk-PEM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="63" id="I0b-WE-PLU"/>
+                <constraint firstItem="P71-fq-4ly" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="11" id="LcG-da-saL"/>
                 <constraint firstItem="apY-R1-0cl" firstAttribute="top" secondItem="bgC-pk-PEM" secondAttribute="bottom" constant="12" id="NEC-Cy-M5z"/>
+                <constraint firstItem="Hfu-Re-Bhy" firstAttribute="top" secondItem="l8U-XH-7wb" secondAttribute="bottom" constant="40" id="Qdn-GT-Guk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l8U-XH-7wb" secondAttribute="trailing" constant="17" id="ReN-eV-u3e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J9e-IK-Krd" secondAttribute="trailing" constant="28" id="Xvw-DV-6MC"/>
+                <constraint firstItem="J9e-IK-Krd" firstAttribute="top" secondItem="P71-fq-4ly" secondAttribute="bottom" constant="20" id="bcZ-jC-Lwq"/>
+                <constraint firstItem="P71-fq-4ly" firstAttribute="top" secondItem="l8U-XH-7wb" secondAttribute="bottom" constant="40" id="eS9-Xy-YzJ"/>
+                <constraint firstAttribute="trailing" secondItem="P71-fq-4ly" secondAttribute="trailing" constant="40" id="edK-dQ-Oba"/>
                 <constraint firstItem="l8U-XH-7wb" firstAttribute="top" secondItem="apY-R1-0cl" secondAttribute="bottom" constant="50" id="k4Y-Ke-L3l"/>
                 <constraint firstItem="apY-R1-0cl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uhD-om-ttS"/>
                 <constraint firstItem="J9e-IK-Krd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="wAE-nU-vvv"/>
             </constraints>
-            <point key="canvasLocation" x="102" y="-37"/>
+            <point key="canvasLocation" x="101.5267175572519" y="-37.323943661971832"/>
         </view>
     </objects>
     <resources>
         <image name="bg_reg_pic_success" width="342" height="180"/>
         <image name="bg_thanks" width="243" height="87"/>
+        <image name="iconInfo" width="18" height="18"/>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

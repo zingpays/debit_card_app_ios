@@ -137,8 +137,8 @@
 		54A45526298CF89300621311 /* FreezeSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A45524298CF89300621311 /* FreezeSuccessViewController.xib */; };
 		54B0850C2991F3D100B6C84B /* SellCryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0850A2991F3D100B6C84B /* SellCryptoViewController.swift */; };
 		54B0850D2991F3D100B6C84B /* SellCryptoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B0850B2991F3D100B6C84B /* SellCryptoViewController.xib */; };
-		54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */; };
-		54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */; };
+		54BBA10C296C0E0600EB316F /* RegisterSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA10A296C0E0600EB316F /* RegisterSuccessViewController.swift */; };
+		54BBA10D296C0E0600EB316F /* RegisterSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA10B296C0E0600EB316F /* RegisterSuccessViewController.xib */; };
 		54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA114296D0B9200EB316F /* RegisterViewController.swift */; };
 		54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BBA115296D0B9200EB316F /* RegisterViewController.xib */; };
 		54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */; };
@@ -338,8 +338,8 @@
 		54A45524298CF89300621311 /* FreezeSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreezeSuccessViewController.xib; sourceTree = "<group>"; };
 		54B0850A2991F3D100B6C84B /* SellCryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCryptoViewController.swift; sourceTree = "<group>"; };
 		54B0850B2991F3D100B6C84B /* SellCryptoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellCryptoViewController.xib; sourceTree = "<group>"; };
-		54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExperienceViewController.swift; sourceTree = "<group>"; };
-		54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartExperienceViewController.xib; sourceTree = "<group>"; };
+		54BBA10A296C0E0600EB316F /* RegisterSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSuccessViewController.swift; sourceTree = "<group>"; };
+		54BBA10B296C0E0600EB316F /* RegisterSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterSuccessViewController.xib; sourceTree = "<group>"; };
 		54BBA114296D0B9200EB316F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		54BBA115296D0B9200EB316F /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		54BBA118296D7A5500EB316F /* SettingPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordViewController.swift; sourceTree = "<group>"; };
@@ -592,8 +592,6 @@
 			children = (
 				541A8D7B29682D5B00C59026 /* GuideViewController.swift */,
 				541A8D7A29682D5B00C59026 /* GuideViewController.xib */,
-				54BBA10A296C0E0600EB316F /* StartExperienceViewController.swift */,
-				54BBA10B296C0E0600EB316F /* StartExperienceViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -736,6 +734,8 @@
 				542BC1922970F86A00133659 /* VerificationCodeViewController.xib */,
 				542BC195297573BC00133659 /* FillInNameAndNationalViewController.swift */,
 				542BC196297573BC00133659 /* FillInNameAndNationalViewController.xib */,
+				54BBA10A296C0E0600EB316F /* RegisterSuccessViewController.swift */,
+				54BBA10B296C0E0600EB316F /* RegisterSuccessViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1075,7 +1075,7 @@
 				54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */,
 				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
 				54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */,
-				54BBA10D296C0E0600EB316F /* StartExperienceViewController.xib in Resources */,
+				54BBA10D296C0E0600EB316F /* RegisterSuccessViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
 				54B0850D2991F3D100B6C84B /* SellCryptoViewController.xib in Resources */,
 				54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */,
@@ -1319,7 +1319,7 @@
 				54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */,
 				54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
-				54BBA10C296C0E0600EB316F /* StartExperienceViewController.swift in Sources */,
+				54BBA10C296C0E0600EB316F /* RegisterSuccessViewController.swift in Sources */,
 				546BD3F7299A21A2003C15D8 /* LoginModel.swift in Sources */,
 				54A4551D298CEC5B00621311 /* CardSettingViewController.swift in Sources */,
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,
