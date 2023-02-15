@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 28 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 29 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -158,6 +158,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var emailErrorTips: RswiftResources.StringResource { .init(key: "emailErrorTips", tableName: "Localizable", source: source, developmentValue: "E-mail format is incorrect", comment: nil) }
+
+      /// en translation: · E-mail format is incorrect
+      ///
+      /// Key: emailIsIncorrectTips
+      ///
+      /// Locales: en, zh-Hans
+      var emailIsIncorrectTips: RswiftResources.StringResource { .init(key: "emailIsIncorrectTips", tableName: "Localizable", source: source, developmentValue: "· E-mail format is incorrect", comment: nil) }
 
       /// en translation: Email Verification Code
       ///

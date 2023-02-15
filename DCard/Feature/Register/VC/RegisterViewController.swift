@@ -165,7 +165,7 @@ class RegisterViewController: BaseViewController {
     private func inputViewEndEditing(_ textField: UITextField) {
         if textField == emailTextField {
             if let text = textField.text, !text.isEmpty, !text.isValidEmail {
-                updateEmailErrorTips("· E-mail format is incorrect.")
+                updateEmailErrorTips(R.string.localizable.emailIsIncorrectTips())
             } else {
                 emailTextField.layer.borderWidth = 0
             }
@@ -235,7 +235,7 @@ class RegisterViewController: BaseViewController {
     
     @IBAction func codeAction(_ sender: UIButton) {
         codeTextField.becomeFirstResponder()
-        startCountDown()
+        requestSendVerifyCode()
     }
     
     @IBAction func agreementCheckAction(_ sender: UIButton) {
@@ -246,13 +246,20 @@ class RegisterViewController: BaseViewController {
     
     @IBAction func nextAction(_ sender: Any) {
         if nextButton.alpha == 1 {
+            // TODO: reuest check email code
+            // if fail, alert view
+            // if success, go to  next page
             let vc = SettingPasswordViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    @objc private func keyboardHiden() {
-        updateNextButtonStatus()
+    // MARK: - Network
+    
+    private func requestSendVerifyCode() {
+        // TODO: send code request
+        // request success, then start count down
+        startCountDown()
     }
 }
 

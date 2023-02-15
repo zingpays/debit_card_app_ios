@@ -19,6 +19,7 @@
 "enterVerificationCodePlaceholder" = "请输入验证码";
 "agreement" = "我已阅读并同意隐私政策和条款协议，我也同意不使用恒星支付账户代表他人进行交易。";
 "resend" = "重新发送";
+"emailIsIncorrectTips" = "· 邮箱格式不正确";
 
 /// Security
 "securityVerificationTitle" = "安全认证";
