@@ -15,6 +15,10 @@
 
 /// Register
 "registerTitle" = "Register";
+"enterEmailInputPlaceholder" = "Enter your E-mail";
+"enterVerificationCodePlaceholder" = "Enter verification code";
+"agreement" = "I have read and agree with the Privacy Policy and Terms and Conditions. I also agree to not use Stella Pay to transact on behalf of someone else.";
+"resend" = "Resend";
 
 /// Security
 "securityVerificationTitle" = "Security Verification";
@@ -36,3 +40,4 @@
 "cancel" = "Cancel";
 "continue" = "Continue";
 "submit" = "Submit";
+"next" = "Next";
