@@ -25,7 +25,7 @@ class LocalAuthenManager {
     /// 是否已授权，锁屏只在冷启动重新弹出来
     var isAuthorized: Bool = false
     /// 是否已绑定
-    var isBind: Bool = false
+    var isBind: Bool = true
     
     init() {
         var error: NSError? = nil

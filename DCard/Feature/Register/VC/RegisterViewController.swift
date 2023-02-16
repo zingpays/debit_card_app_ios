@@ -225,7 +225,7 @@ class RegisterViewController: BaseViewController {
         }
         time.resume()
     }
-
+    
     // MARK: - Actions
     
     @objc private func loginAction() {
@@ -246,11 +246,7 @@ class RegisterViewController: BaseViewController {
     
     @IBAction func nextAction(_ sender: Any) {
         if nextButton.alpha == 1 {
-            // TODO: reuest check email code
-            // if fail, alert view
-            // if success, go to  next page
-            let vc = SettingPasswordViewController()
-            navigationController?.pushViewController(vc, animated: true)
+            registerRequest()
         }
     }
     
@@ -259,7 +255,34 @@ class RegisterViewController: BaseViewController {
     private func requestSendVerifyCode() {
         // TODO: send code request
         // request success, then start count down
+        MailRequest.sendCode(email: emailTextField.text ?? "", type: .register) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            if isSuccess {
+                // startCountDown()
+            } else {
+                this.view.makeToast(message)
+            }
+        }
         startCountDown()
+    }
+    
+    private func registerRequest() {
+        // TODO: reuest check email code
+        // if fail, alert view
+        // if success, go to  next page
+        MailRequest.verifyCode(email: emailTextField.text ?? "",
+                               code: codeTextField.text ?? "") { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            if isSuccess {
+                
+            } else {
+                this.view.makeToast(message)
+            }
+        }
+        let vc = SettingPasswordViewController()
+        vc.email = emailTextField.text
+        vc.code = codeTextField.text
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -11,6 +11,9 @@ import SwifterSwift
 
 class SettingPasswordViewController: BaseViewController {
     
+    var email: String?
+    var code: String?
+    
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = R.string.localizable.registerTitle()
@@ -275,6 +278,16 @@ class SettingPasswordViewController: BaseViewController {
         // if fail, alert view
         // if success, go to  next page
         // save user token
+        RegisterRequest.register(email: email ?? "",
+                                 password: passwordTextField.text ?? "",
+                                 code:code ?? "") { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            if isSuccess {
+                
+            } else {
+                this.view.makeToast(message)
+            }
+        }
         UserManager.shared.saveToken("i am a test token", expireDate: Date(timeIntervalSinceNow: 60*60*24*7))
         UserManager.shared.saveUserEmail("test@mail.com")
         LocalAuthenManager.shared.isAuthorized = true

@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 54 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 57 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -236,6 +236,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var enterVerificationCodePlaceholder: RswiftResources.StringResource { .init(key: "enterVerificationCodePlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter verification code", comment: nil) }
 
+      /// en translation: 人脸登录
+      ///
+      /// Key: faceID
+      ///
+      /// Locales: en, zh-Hans
+      var faceID: RswiftResources.StringResource { .init(key: "faceID", tableName: "Localizable", source: source, developmentValue: "人脸登录", comment: nil) }
+
       /// en translation: Forgot password?
       ///
       /// Key: forgotPassword
@@ -312,6 +319,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var passwordsDoNotMatchTips: RswiftResources.StringResource { .init(key: "passwordsDoNotMatchTips", tableName: "Localizable", source: source, developmentValue: ". Passwords do not match", comment: nil) }
+
+      /// en translation: 手势登录
+      ///
+      /// Key: patternLogin
+      ///
+      /// Locales: en, zh-Hans
+      var patternLogin: RswiftResources.StringResource { .init(key: "patternLogin", tableName: "Localizable", source: source, developmentValue: "手势登录", comment: nil) }
 
       /// en translation: A verification code has been sent to
       ///
@@ -439,6 +453,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var toVerifyPhoneNumberTitle: RswiftResources.StringResource { .init(key: "toVerifyPhoneNumberTitle", tableName: "Localizable", source: source, developmentValue: "Verify Phone Number", comment: nil) }
 
+      /// en translation: 指纹登录
+      ///
+      /// Key: touchID
+      ///
+      /// Locales: en, zh-Hans
+      var touchID: RswiftResources.StringResource { .init(key: "touchID", tableName: "Localizable", source: source, developmentValue: "指纹登录", comment: nil) }
+
       /// en translation: Verify Now
       ///
       /// Key: verifyNow
@@ -544,7 +565,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 64 images.
+  /// This `_R.image` struct is generated, and contains static references to 65 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -631,6 +652,9 @@ struct _R {
 
     /// Image `iconLink`.
     var iconLink: RswiftResources.ImageResource { .init(name: "iconLink", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconMeSet`.
+    var iconMeSet: RswiftResources.ImageResource { .init(name: "iconMeSet", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconMore`.
     var iconMore: RswiftResources.ImageResource { .init(name: "iconMore", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1086,6 +1110,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'GuidePagerViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "colorFFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'colorFFFFFF' is used in nib 'GuideViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A9B5", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A9B5' is used in nib 'GuideViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconMeSet", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconMeSet' is used in nib 'HomeViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00191C", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00191C' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }

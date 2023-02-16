@@ -12,5 +12,5 @@ struct SecurityVerificationItemModel {
     var title: String = ""
     var info: String = ""
     var inputPlaceholder: String = ""
-    var style: SecurityVerificationItemTableViewCellStyle = .normal
+    var style: SecurityVerificationItemTableViewCellStyle = .email
 }

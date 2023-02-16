@@ -55,12 +55,15 @@
                             <constraint firstAttribute="height" constant="50" id="e3X-DE-54B"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="inputEditingChangedAction:" destination="KGk-i7-Jjw" eventType="editingChanged" id="H3N-4J-CuC"/>
+                        </connections>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7f-gh-bUA">
                         <rect key="frame" x="66.666666666666657" y="135.66666666666666" width="292.33333333333337" height="19"/>
@@ -101,7 +104,7 @@
                 <outlet property="inputTextField" destination="b3g-Jy-NB6" id="fuU-cH-0oc"/>
                 <outlet property="titleLabel" destination="OKk-mo-QIq" id="Dsr-AR-Cyy"/>
             </connections>
-            <point key="canvasLocation" x="1008" y="-65"/>
+            <point key="canvasLocation" x="705" y="-70"/>
         </tableViewCell>
     </objects>
     <resources>

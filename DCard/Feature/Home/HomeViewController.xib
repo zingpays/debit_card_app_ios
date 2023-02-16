@@ -19,23 +19,30 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home，developing..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouz-9C-IlI">
-                    <rect key="frame" x="104.33333333333333" y="414" width="184.66666666666669" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-z3-Myp">
+                    <rect key="frame" x="20" y="59" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="eQh-78-1Nb"/>
+                        <constraint firstAttribute="height" constant="32" id="odb-Wv-QvX"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="iconMeSet" title=" "/>
+                    <connections>
+                        <action selector="personalCenterAction:" destination="-1" eventType="touchUpInside" id="pZd-ub-fHp"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Ouz-9C-IlI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5Ow-bi-eDY"/>
-                <constraint firstItem="Ouz-9C-IlI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OHz-Y1-dov"/>
+                <constraint firstItem="aJw-z3-Myp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DAq-Wy-25a"/>
+                <constraint firstItem="aJw-z3-Myp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NFL-C4-fK1"/>
             </constraints>
-            <point key="canvasLocation" x="103" y="7"/>
+            <point key="canvasLocation" x="277" y="10"/>
         </view>
     </objects>
     <resources>
+        <image name="iconMeSet" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

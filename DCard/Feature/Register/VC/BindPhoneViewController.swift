@@ -91,6 +91,11 @@ class BindPhoneViewController: BaseViewController {
     @IBAction func sendVerifyCode(_ sender: Any) {
         // TODO: send request
         if sendButton.alpha == 1 {
+            MailRequest.sendCode(email: phoneTextField.text ?? "", type: .register) { isSuccess, message in
+                if isSuccess {
+                    // go to next page
+                }
+            }
             let vc = VerificationCodeViewController()
             vc.phoneNum = "\(phoneRegionLabel.text ?? "") \(phoneTextField.text ?? "")"
             navigationController?.pushViewController(vc, animated: true)

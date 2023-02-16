@@ -12,6 +12,9 @@
 "passwordInputPlaceholder" = "Enter password";
 "forgotPassword" = "Forgot password?";
 "emailErrorTips" = "E-mail format is incorrect";
+"patternLogin" = "Pattern Login";
+"touchID" = "Touch ID";
+"faceID" = "Face ID";
 
 /// Register
 "registerTitle" = "Register";

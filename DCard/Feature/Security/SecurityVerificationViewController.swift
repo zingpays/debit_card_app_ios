@@ -22,7 +22,7 @@ class SecurityVerificationViewController: BaseViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var securityTableView: UITableView!
     
-    private var footerView: UIView = {
+    private lazy var footerView: UIView = {
         let v = UIView()
         v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 56))
         let btn = UIButton()
@@ -35,6 +35,7 @@ class SecurityVerificationViewController: BaseViewController {
         btn.layer.cornerRadius = 23
         btn.backgroundColor = R.color.fw00A8BB()
         btn.setTitle(R.string.localizable.submit(), for: .normal)
+        btn.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
         return v
     }()
     
@@ -42,7 +43,8 @@ class SecurityVerificationViewController: BaseViewController {
         let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位已经发送到\(UserManager.shared.email ?? "")的验证码" : "Enter the 6-digit code sent to \(UserManager.shared.email ?? "")"
         let item = SecurityVerificationItemModel(title: R.string.localizable.emailVerificationCode(),
                                                       info: info,
-                                                      inputPlaceholder: R.string.localizable.emialInputPlaceholder())
+                                                 inputPlaceholder: R.string.localizable.emialInputPlaceholder(),
+                                                 style: .email)
         
         return item
     }()
@@ -51,8 +53,8 @@ class SecurityVerificationViewController: BaseViewController {
         let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位发送到\(UserManager.shared.phoneNum ?? "")的验证码" : "Enter the 6 digit code sent to \(UserManager.shared.phoneNum ?? "")"
         let item = SecurityVerificationItemModel(title: R.string.localizable.phoneVerificationCode(),
                                                       info: info,
-                                                      inputPlaceholder: R.string.localizable.phoneVerificationCodePlaceholder())
-        
+                                                 inputPlaceholder: R.string.localizable.phoneVerificationCodePlaceholder(),
+                                                 style: .phone)
         return item
     }()
     
@@ -77,6 +79,10 @@ class SecurityVerificationViewController: BaseViewController {
             return [phoneNumItem]
         }
     }()
+    
+    private var authCode: String?
+    private var emailCode: String?
+    private var phoneCode: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,30 +109,54 @@ class SecurityVerificationViewController: BaseViewController {
     
     // MARK: - Actions
     
-    @IBAction func nextAction(_ sender: Any) {
+    @objc private func nextAction() {
         if style == .email {
-            // TODO: verify email code
+            requestMailVerify()
         }
-        
         if style == .twofa {
-            // TODO: verify twofa code
+            requestAuthVerify()
         }
-        
-        // TODO: other case
-//        let vc = SettingNewPasswordViewController()
-//        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Network
     
     private func requestSendEmailCode() {
-        // TODO: send email request
+        indicator.startAnimating()
+        MailRequest.sendCode(email: "", type: .login) { isSuccess, message in
+            self.indicator.stopAnimating()
+            if !isSuccess {
+                self.view.makeToast(message, position: .center)
+            }
+        }
     }
     
-    private func requestSubmit() {
-        // TODO: submit request
+    private func requestMailVerify() {
+        indicator.startAnimating()
+        MailRequest.verifyCode(email: "", code: emailCode ?? "", authToken: "") { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
     }
     
+    private func requestAuthVerify() {
+        indicator.startAnimating()
+        AuthRequest.verifyCode(uniqueId: "", authToken: "") { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
 }
 
 extension SecurityVerificationViewController: UITableViewDelegate, UITableViewDataSource {
@@ -149,6 +179,19 @@ extension SecurityVerificationViewController: UITableViewDelegate, UITableViewDa
 }
 
 extension SecurityVerificationViewController: SecurityVerificationItemTableViewCellDelegate {
+    func inputTextFieldEditing(_ text: String?, data: SecurityVerificationItemModel?) {
+        switch data?.style {
+        case .auth:
+            authCode = text
+        case .email:
+            emailCode = text
+        case .phone:
+            phoneCode = text
+        case .none:
+            break
+        }
+    }
+    
     func didSelectedAuthUnavailable() {
         let alert = UIAlertController(title: R.string.localizable.tips(),
                                       message: R.string.localizable.resetAuthTips(),

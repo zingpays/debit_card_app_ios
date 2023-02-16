@@ -11,7 +11,11 @@ import UIKit
 class PasswordLoginViewController: BaseViewController {
     
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.placeholder = R.string.localizable.enterPassword()
+        }
+    }
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     private lazy var loginStatckView: UIStackView = {
@@ -34,7 +38,7 @@ class PasswordLoginViewController: BaseViewController {
     private lazy var gestureButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.1)
-        btn.setTitle("Gesture Login", for: .normal)
+        btn.setTitle(R.string.localizable.patternLogin(), for: .normal)
         btn.titleLabel?.font = UIFont.fw.font16()
         btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
         btn.layer.cornerRadius = 15
@@ -49,6 +53,12 @@ class PasswordLoginViewController: BaseViewController {
         btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
         btn.layer.cornerRadius = 15
         btn.addTarget(self, action: #selector(biometricsLogin), for: .touchUpInside)
+        if LocalAuthenManager.shared.type == .faceID {
+            btn.setTitle(R.string.localizable.faceID(), for: .normal)
+        }
+        if LocalAuthenManager.shared.type == .touchID {
+            btn.setTitle(R.string.localizable.touchID(), for: .normal)
+        }
         return btn
     }()
     

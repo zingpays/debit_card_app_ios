@@ -25,17 +25,23 @@ class HomeViewController: BaseViewController {
             let loginNavVC = UINavigationController(rootViewController: vc)
             UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
         } else {
-//            if LocalAuthenManager.shared.isBind && !LocalAuthenManager.shared.isAuthorized {
-//                let lockScreenVC = BiometricsViewController()
-//                let navVC = UINavigationController(rootViewController: lockScreenVC)
-//                navVC.modalPresentationStyle = .fullScreen
-//                self.present(navVC, animated: false)
-//            } else if !LocalAuthenManager.shared.isAuthorized {
-//                let vc = PasswordLoginViewController()
-//                let navVC = UINavigationController(rootViewController: vc)
-//                navVC.modalPresentationStyle = .fullScreen
-//                self.present(navVC, animated: false)
-//            }
+            if LocalAuthenManager.shared.isBind && !LocalAuthenManager.shared.isAuthorized {
+                let lockScreenVC = BiometricsViewController()
+                let navVC = UINavigationController(rootViewController: lockScreenVC)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: false)
+            } else if !LocalAuthenManager.shared.isAuthorized {
+                let vc = PasswordLoginViewController()
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: false)
+            }
         }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func personalCenterAction(_ sender: Any) {
+        
     }
 }

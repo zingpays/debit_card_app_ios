@@ -12,6 +12,9 @@
 "passwordInputPlaceholder" = "请输入密码";
 "forgotPassword" = "忘记密码?";
 "emailErrorTips" = "邮箱格式不正确";
+"patternLogin" = "手势登录";
+"touchID" = "指纹登录";
+"faceID" = "人脸登录";
 
 /// Register
 "registerTitle" = "注册";

@@ -9,12 +9,14 @@
 import UIKit
 
 enum SecurityVerificationItemTableViewCellStyle {
-    case normal
+    case email
+    case phone
     case auth
 }
 
 protocol SecurityVerificationItemTableViewCellDelegate: NSObject {
     func didSelectedAuthUnavailable()
+    func inputTextFieldEditing(_ text: String?, data: SecurityVerificationItemModel?)
 }
 
 class SecurityVerificationItemTableViewCell: UITableViewCell {
@@ -30,6 +32,8 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     @IBOutlet weak var authUnavaiableButtonHeight: NSLayoutConstraint!
     
     weak var delegate: SecurityVerificationItemTableViewCellDelegate?
+    
+    private var itemModel: SecurityVerificationItemModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -68,6 +72,9 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func inputEditingChangedAction(_ sender: UITextField) {
+        delegate?.inputTextFieldEditing(sender.text, data: itemModel)
+    }
     
     @IBAction func authUnavailableAction(_ sender: Any) {
         delegate?.didSelectedAuthUnavailable()
@@ -75,7 +82,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     
     static func height(style: SecurityVerificationItemTableViewCellStyle) -> CGFloat {
         switch style {
-        case .normal:
+        case .email, .phone:
             return 160
         case .auth:
             return 180
@@ -83,8 +90,9 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     }
     
     func upadateData(data: SecurityVerificationItemModel) {
+        itemModel = data
         switch data.style {
-        case .normal:
+        case .email, .phone:
             authUnavaiableButtonHeight.constant = 0
             authUnavaiableButton.isHidden = true
             inputTextField.rightViewMode = .always
