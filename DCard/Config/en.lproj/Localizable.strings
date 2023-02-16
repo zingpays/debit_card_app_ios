@@ -37,6 +37,16 @@
 "chooseYourCountryInputPlaceholder" = "Enter the initial letter";
 "phoneCodeInputSubTitle" = "A verification code has been sent to";
 
+/// KYC
+"verifyYourIdentityTitle" = "Verify Your Identity";
+"verifyYourIdentitySubTitle" = "Government regulations require us to know more about you";
+"informationRequired" = "Information Required";
+"fullNameAndNationality" = "Full Name And Nationality";
+"passport" = "Passport";
+"selfie" = "Selfie";
+"address" = "Address";
+"verifyNow" = "Verify Now";
+
 /// Security
 "securityVerificationTitle" = "Security Verification";
 "emailVerificationCode" = "Email Verification Code";
@@ -58,3 +68,4 @@
 "continue" = "Continue";
 "submit" = "Submit";
 "next" = "Next";
+"skip" = "Skip";

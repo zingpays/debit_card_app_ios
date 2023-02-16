@@ -12,6 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyYourIdentityGuideViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="NdY-kk-93A" id="kU4-Oy-qXe"/>
+                <outlet property="fullNameAndNationalityLabel" destination="JKs-j1-8QZ" id="GZJ-Hh-0QE"/>
+                <outlet property="informationRequireLabel" destination="fU9-ZW-fVb" id="qJR-DH-b2b"/>
+                <outlet property="passportLabel" destination="dCd-ai-KVy" id="5gM-gG-dsg"/>
+                <outlet property="selfieLabel" destination="Bxb-aJ-7xQ" id="XVL-R9-Vlc"/>
+                <outlet property="subTitleLabel" destination="rSR-ln-qtI" id="UDL-Eg-O7v"/>
+                <outlet property="titleLabel" destination="vaC-t6-ced" id="ISe-hd-EIO"/>
+                <outlet property="veriftNowButton" destination="NuF-bW-zPR" id="2br-6h-BvM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

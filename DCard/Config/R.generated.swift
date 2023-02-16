@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 45 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 54 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -109,6 +109,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var localAuthenticationTouchIdLocalizedReason: RswiftResources.StringResource { .init(key: "LocalAuthenticationTouchIdLocalizedReason", tableName: "Localizable", source: source, developmentValue: "We need to use your Touch ID to unlock the screen", comment: nil) }
+
+      /// en translation: Address
+      ///
+      /// Key: address
+      ///
+      /// Locales: en, zh-Hans
+      var address: RswiftResources.StringResource { .init(key: "address", tableName: "Localizable", source: source, developmentValue: "Address", comment: nil) }
 
       /// en translation: I have read and agree with the Privacy Policy and Terms and Conditions. I also agree to not use Stella Pay to transact on behalf of someone else.
       ///
@@ -236,6 +243,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var forgotPassword: RswiftResources.StringResource { .init(key: "forgotPassword", tableName: "Localizable", source: source, developmentValue: "Forgot password?", comment: nil) }
 
+      /// en translation: Full Name And Nationality
+      ///
+      /// Key: fullNameAndNationality
+      ///
+      /// Locales: en, zh-Hans
+      var fullNameAndNationality: RswiftResources.StringResource { .init(key: "fullNameAndNationality", tableName: "Localizable", source: source, developmentValue: "Full Name And Nationality", comment: nil) }
+
       /// en translation: Get Code
       ///
       /// Key: getCode
@@ -250,6 +264,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var googleAuthenticatorUnavailable: RswiftResources.StringResource { .init(key: "googleAuthenticatorUnavailable", tableName: "Localizable", source: source, developmentValue: "Google Authenticator Unavailable？", comment: nil) }
 
+      /// en translation: Information Required
+      ///
+      /// Key: informationRequired
+      ///
+      /// Locales: en, zh-Hans
+      var informationRequired: RswiftResources.StringResource { .init(key: "informationRequired", tableName: "Localizable", source: source, developmentValue: "Information Required", comment: nil) }
+
       /// en translation: Login
       ///
       /// Key: loginTitle
@@ -263,6 +284,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var next: RswiftResources.StringResource { .init(key: "next", tableName: "Localizable", source: source, developmentValue: "Next", comment: nil) }
+
+      /// en translation: Passport
+      ///
+      /// Key: passport
+      ///
+      /// Locales: en, zh-Hans
+      var passport: RswiftResources.StringResource { .init(key: "passport", tableName: "Localizable", source: source, developmentValue: "Passport", comment: nil) }
 
       /// en translation: . Please fill in the correct password format
       ///
@@ -341,6 +369,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var securityVerificationTitle: RswiftResources.StringResource { .init(key: "securityVerificationTitle", tableName: "Localizable", source: source, developmentValue: "Security Verification", comment: nil) }
 
+      /// en translation: Selfie
+      ///
+      /// Key: selfie
+      ///
+      /// Locales: en, zh-Hans
+      var selfie: RswiftResources.StringResource { .init(key: "selfie", tableName: "Localizable", source: source, developmentValue: "Selfie", comment: nil) }
+
       /// en translation: Send Verification Code
       ///
       /// Key: sendVerifyCode
@@ -354,6 +389,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var settingYourPassword: RswiftResources.StringResource { .init(key: "settingYourPassword", tableName: "Localizable", source: source, developmentValue: "Setting your password", comment: nil) }
+
+      /// en translation: Skip
+      ///
+      /// Key: skip
+      ///
+      /// Locales: en, zh-Hans
+      var skip: RswiftResources.StringResource { .init(key: "skip", tableName: "Localizable", source: source, developmentValue: "Skip", comment: nil) }
 
       /// en translation: Submit
       ///
@@ -396,6 +438,27 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var toVerifyPhoneNumberTitle: RswiftResources.StringResource { .init(key: "toVerifyPhoneNumberTitle", tableName: "Localizable", source: source, developmentValue: "Verify Phone Number", comment: nil) }
+
+      /// en translation: Verify Now
+      ///
+      /// Key: verifyNow
+      ///
+      /// Locales: en, zh-Hans
+      var verifyNow: RswiftResources.StringResource { .init(key: "verifyNow", tableName: "Localizable", source: source, developmentValue: "Verify Now", comment: nil) }
+
+      /// en translation: Government regulations require us to know more about you
+      ///
+      /// Key: verifyYourIdentitySubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var verifyYourIdentitySubTitle: RswiftResources.StringResource { .init(key: "verifyYourIdentitySubTitle", tableName: "Localizable", source: source, developmentValue: "Government regulations require us to know more about you", comment: nil) }
+
+      /// en translation: Verify Your Identity
+      ///
+      /// Key: verifyYourIdentityTitle
+      ///
+      /// Locales: en, zh-Hans
+      var verifyYourIdentityTitle: RswiftResources.StringResource { .init(key: "verifyYourIdentityTitle", tableName: "Localizable", source: source, developmentValue: "Verify Your Identity", comment: nil) }
 
       /// en translation: Your phone number
       ///

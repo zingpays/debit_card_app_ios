@@ -10,7 +10,8 @@ import UIKit
 import CRBoxInputView
 
 class VerificationCodeViewController: BaseViewController {
-    
+    ///  phone number
+    var phoneNum: String?
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = R.string.localizable.toVerifyPhoneNumberTitle()
@@ -82,6 +83,7 @@ class VerificationCodeViewController: BaseViewController {
         startCountDown()
         requestPhoneCode()
         boxAction()
+        phoneNumLabel.text = phoneNum
     }
     
     private func setupSubviews() {
@@ -141,10 +143,10 @@ class VerificationCodeViewController: BaseViewController {
     
     private func requestVerifyPhoneCode(_ code: String?) {
         // test code
-        let vc = FillInNameAndNationalViewController()
+        let vc = VerifyYourIdentityGuideViewController()
         navigationController?.pushViewController(vc, animated: true)
         // TODO: verify code request
-        // if request success, go to next page
+        // if request success, go to kyc page
         // if request fail, show error tips
     }
     

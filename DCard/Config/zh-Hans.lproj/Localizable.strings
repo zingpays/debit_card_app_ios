@@ -37,6 +37,16 @@
 "chooseYourCountryInputPlaceholder" = "支持字母和数字搜索";
 "phoneCodeInputSubTitle" = "验证码已经发送至";
 
+/// KYC
+"verifyYourIdentityTitle" = "身份认证";
+"verifyYourIdentitySubTitle" = "政策要求我们了解您多一点";
+"informationRequired" = "需要的信息";
+"fullNameAndNationality" = "名字和国籍";
+"passport" = "护照 ";
+"selfie" = "自拍照";
+"address" = "住址";
+"verifyNow" = "去认证";
+
 /// Security
 "securityVerificationTitle" = "安全认证";
 "emailVerificationCode" = "邮箱验证码";
@@ -58,3 +68,4 @@
 "continue" = "确定";
 "submit" = "提交";
 "next" = "下一步";
+"skip" = "跳过";

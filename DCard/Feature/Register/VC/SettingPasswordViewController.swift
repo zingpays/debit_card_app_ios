@@ -274,6 +274,9 @@ class SettingPasswordViewController: BaseViewController {
         // TODO: register request
         // if fail, alert view
         // if success, go to  next page
+        // save user token
+        UserManager.shared.saveToken("i am a test token", expireDate: Date(timeIntervalSinceNow: 60*60*24*7))
+        UserManager.shared.saveUserEmail("test@mail.com")
         LocalAuthenManager.shared.isAuthorized = true
         let vc = RegisterSuccessViewController()
         navigationController?.pushViewController(vc, animated: true)
