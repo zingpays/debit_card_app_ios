@@ -18,6 +18,8 @@ enum SecurityVerificationType {
 class SecurityVerificationViewController: BaseViewController {
 
     var style: SecurityVerificationType = .email
+    var uniqueId: String?
+    var authToken: String?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var securityTableView: UITableView!
@@ -146,7 +148,7 @@ class SecurityVerificationViewController: BaseViewController {
     
     private func requestAuthVerify() {
         indicator.startAnimating()
-        AuthRequest.verifyCode(uniqueId: "", authToken: "") { [weak self] isSuccess, message in
+        AuthRequest.verifyCode(uniqueId: uniqueId ?? "", authToken: authToken ?? "") { [weak self] isSuccess, message in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {

@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 57 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 61 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -151,6 +151,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cancel: RswiftResources.StringResource { .init(key: "cancel", tableName: "Localizable", source: source, developmentValue: "Cancel", comment: nil) }
+
+      /// en translation: CARD
+      ///
+      /// Key: card
+      ///
+      /// Locales: en, zh-Hans
+      var card: RswiftResources.StringResource { .init(key: "card", tableName: "Localizable", source: source, developmentValue: "CARD", comment: nil) }
 
       /// en translation: Enter the initial letter
       ///
@@ -236,12 +243,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var enterVerificationCodePlaceholder: RswiftResources.StringResource { .init(key: "enterVerificationCodePlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter verification code", comment: nil) }
 
-      /// en translation: 人脸登录
+      /// en translation: Face ID
       ///
       /// Key: faceID
       ///
       /// Locales: en, zh-Hans
-      var faceID: RswiftResources.StringResource { .init(key: "faceID", tableName: "Localizable", source: source, developmentValue: "人脸登录", comment: nil) }
+      var faceID: RswiftResources.StringResource { .init(key: "faceID", tableName: "Localizable", source: source, developmentValue: "Face ID", comment: nil) }
 
       /// en translation: Forgot password?
       ///
@@ -270,6 +277,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var googleAuthenticatorUnavailable: RswiftResources.StringResource { .init(key: "googleAuthenticatorUnavailable", tableName: "Localizable", source: source, developmentValue: "Google Authenticator Unavailable？", comment: nil) }
+
+      /// en translation: HOME
+      ///
+      /// Key: home
+      ///
+      /// Locales: en, zh-Hans
+      var home: RswiftResources.StringResource { .init(key: "home", tableName: "Localizable", source: source, developmentValue: "HOME", comment: nil) }
 
       /// en translation: Information Required
       ///
@@ -313,6 +327,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var passwordInputPlaceholder: RswiftResources.StringResource { .init(key: "passwordInputPlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter password", comment: nil) }
 
+      /// en translation: Password Login
+      ///
+      /// Key: passwordLogin
+      ///
+      /// Locales: en, zh-Hans
+      var passwordLogin: RswiftResources.StringResource { .init(key: "passwordLogin", tableName: "Localizable", source: source, developmentValue: "Password Login", comment: nil) }
+
       /// en translation: . Passwords do not match
       ///
       /// Key: passwordsDoNotMatchTips
@@ -320,12 +341,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var passwordsDoNotMatchTips: RswiftResources.StringResource { .init(key: "passwordsDoNotMatchTips", tableName: "Localizable", source: source, developmentValue: ". Passwords do not match", comment: nil) }
 
-      /// en translation: 手势登录
+      /// en translation: Pattern Login
       ///
       /// Key: patternLogin
       ///
       /// Locales: en, zh-Hans
-      var patternLogin: RswiftResources.StringResource { .init(key: "patternLogin", tableName: "Localizable", source: source, developmentValue: "手势登录", comment: nil) }
+      var patternLogin: RswiftResources.StringResource { .init(key: "patternLogin", tableName: "Localizable", source: source, developmentValue: "Pattern Login", comment: nil) }
 
       /// en translation: A verification code has been sent to
       ///
@@ -453,12 +474,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var toVerifyPhoneNumberTitle: RswiftResources.StringResource { .init(key: "toVerifyPhoneNumberTitle", tableName: "Localizable", source: source, developmentValue: "Verify Phone Number", comment: nil) }
 
-      /// en translation: 指纹登录
+      /// en translation: Touch ID
       ///
       /// Key: touchID
       ///
       /// Locales: en, zh-Hans
-      var touchID: RswiftResources.StringResource { .init(key: "touchID", tableName: "Localizable", source: source, developmentValue: "指纹登录", comment: nil) }
+      var touchID: RswiftResources.StringResource { .init(key: "touchID", tableName: "Localizable", source: source, developmentValue: "Touch ID", comment: nil) }
 
       /// en translation: Verify Now
       ///
@@ -480,6 +501,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var verifyYourIdentityTitle: RswiftResources.StringResource { .init(key: "verifyYourIdentityTitle", tableName: "Localizable", source: source, developmentValue: "Verify Your Identity", comment: nil) }
+
+      /// en translation: WALLET
+      ///
+      /// Key: wallet
+      ///
+      /// Locales: en, zh-Hans
+      var wallet: RswiftResources.StringResource { .init(key: "wallet", tableName: "Localizable", source: source, developmentValue: "WALLET", comment: nil) }
 
       /// en translation: Your phone number
       ///

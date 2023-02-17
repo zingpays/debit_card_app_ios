@@ -8,8 +8,17 @@
 
 import UIKit
 
+enum LockScreenSource {
+    case password
+    case pattern
+    case biometrics
+    case none
+}
+
 class PasswordLoginViewController: BaseViewController {
-    
+    var source: LockScreenSource = .none
+    /// 是否有存在切换其他方式的按钮
+    var isHasChangeToOtherLoginMethod: Bool = false
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
@@ -67,6 +76,10 @@ class PasswordLoginViewController: BaseViewController {
         setupUI()
         setupData()
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     // MARK: - Private
     
@@ -79,6 +92,14 @@ class PasswordLoginViewController: BaseViewController {
         emailLabel.text = UserManager.shared.email
         loginButton.setTitle(R.string.localizable.loginTitle(), for: .normal)
         forgotPasswordButton.setTitle(R.string.localizable.forgotPassword(), for: .normal)
+        setupNotification()
+    }
+    
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(screenUnlockSuccess),
+                                               name: Notification.Name(UNLOCKSUCCESS),
+                                               object: nil)
     }
     
     private func setupRightItem() {
@@ -96,26 +117,28 @@ class PasswordLoginViewController: BaseViewController {
         passwordTextField.isSecureTextEntry = true
         passwordTextField.rightView = textFieldRightView(#selector(passwordEyeAction))
         passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
-        view.addSubview(loginStatckView)
-        loginStatckView.addArrangedSubview(gestureButton)
-        gestureButton.snp.makeConstraints { make in
-            make.height.equalTo(30)
-            make.width.equalTo(160)
-        }
-        var statckViewWidth = 160
-        if LocalAuthenManager.shared.isBind {
-            statckViewWidth += 100
-            loginStatckView.addArrangedSubview(biometricsButton)
-            biometricsButton.snp.makeConstraints { make in
+        if isHasChangeToOtherLoginMethod {
+            view.addSubview(loginStatckView)
+            loginStatckView.addArrangedSubview(gestureButton)
+            gestureButton.snp.makeConstraints { make in
                 make.height.equalTo(30)
-                make.width.equalTo(100)
+                make.width.equalTo(120)
             }
-        }
-        loginStatckView.snp.remakeConstraints { make in
-            make.height.equalTo(30)
-            make.width.equalTo(statckViewWidth)
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-(24+TOUCHBARHEIGHT))
+            var statckViewWidth = 120 + 12
+            if LocalAuthenManager.shared.isBind {
+                statckViewWidth += 120
+                loginStatckView.addArrangedSubview(biometricsButton)
+                biometricsButton.snp.makeConstraints { make in
+                    make.height.equalTo(30)
+                    make.width.equalTo(120)
+                }
+            }
+            loginStatckView.snp.remakeConstraints { make in
+                make.height.equalTo(30)
+                make.width.equalTo(statckViewWidth)
+                make.centerX.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-(24+TOUCHBARHEIGHT))
+            }
         }
     }
     
@@ -211,13 +234,37 @@ class PasswordLoginViewController: BaseViewController {
     @objc private func passwordChanged(_ sender: UITextField) {
         
     }
-    
+    /// 图案锁屏
     @objc private func gestureLogin() {
-        let vc = NineGraphLockScreenViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        switch source {
+        case .pattern:
+            navigationController?.popViewController()
+        case .password:
+            break
+        case .biometrics, .none:
+            let vc = NineGraphLockScreenViewController()
+            vc.source = .password
+            vc.isHasChangeToOtherLoginMethod = true
+            vc.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @objc private func biometricsLogin() {
-        // TODO: - 待定
+        switch source {
+        case .biometrics:
+            navigationController?.popViewController()
+        case .password:
+            break
+        case .pattern, .none:
+            let vc = BiometricsViewController()
+            vc.source = .password
+            vc.isHasChangeToOtherLoginMethod = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @objc private func screenUnlockSuccess() {
+        self.dismiss(animated: true)
     }
 }

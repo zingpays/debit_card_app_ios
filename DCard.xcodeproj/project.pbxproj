@@ -509,9 +509,9 @@
 		541A8D3129641F6500C59026 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				5429B934299E1A52005F721E /* Network */,
 				541A8D3529641FB500C59026 /* Model */,
 				541A8D3229641F6D00C59026 /* Manager */,
-				546BD3F8299A3A66003C15D8 /* UserRequest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -604,6 +604,14 @@
 			isa = PBXGroup;
 			children = (
 				5429B932299E0A01005F721E /* RegisterRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5429B934299E1A52005F721E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				546BD3F8299A3A66003C15D8 /* UserRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";

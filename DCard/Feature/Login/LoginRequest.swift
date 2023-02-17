@@ -24,10 +24,17 @@ struct LoginRequest {
                                     type: LoginModel.self,
                                     completion: completion)
     }
+    
+    /// 注销登录
+    static func logout(completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<LoginTarget>()
+        provider.requestStatus(.logout, completion: completion)
+    }
 }
 
 enum LoginTarget {
     case login(email: String, password: String)
+    case logout
 }
 
 extension LoginTarget: BaseTargetType {
@@ -35,6 +42,8 @@ extension LoginTarget: BaseTargetType {
         switch self {
         case .login:
             return "/auth-front/login"
+        case .logout:
+            return "/auth-front/logout"
         }
     }
 
@@ -44,11 +53,18 @@ extension LoginTarget: BaseTargetType {
         case .login(email: let email, password: let password):
             params["user_name"] = email
             params["password"] = password
+        case .logout:
+            break
         }
         return params
     }
 
     var needAuthorization: Bool {
-        return false
+        switch self {
+        case .login:
+            return false
+        case .logout:
+            return true
+        }
     }
 }

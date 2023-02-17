@@ -15,6 +15,7 @@
 "patternLogin" = "Pattern Login";
 "touchID" = "Touch ID";
 "faceID" = "Face ID";
+"passwordLogin" = "Password Login";
 
 /// Register
 "registerTitle" = "Register";
@@ -62,6 +63,11 @@
 "googleAuthenticatorUnavailable" = "Google Authenticator Unavailable？";
 "getCode" = "Get Code";
 "resetAuthTips" = "Are you sure to reset Google Authenticator?";
+
+/// Tabbar
+"home" = "HOME";
+"card" = "CARD";
+"wallet" = "WALLET";
 
 /// Common
 "LocalAuthenticationTouchIdLocalizedReason" = "We need to use your Touch ID to unlock the screen";

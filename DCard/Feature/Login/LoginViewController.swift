@@ -113,6 +113,9 @@ class LoginViewController: BaseViewController {
     private func continueLogin(authType: AuthType, authToken: String) {
         let vc = SecurityVerificationViewController()
         vc.style = authType == .email ? .email : .twofa
+        // TODO: 调试后赋值正确的值
+        vc.uniqueId = ""
+        vc.authToken = ""
         navigationController?.pushViewController(vc, animated: true)
     }
     

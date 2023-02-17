@@ -27,11 +27,13 @@ class HomeViewController: BaseViewController {
         } else {
             if LocalAuthenManager.shared.isBind && !LocalAuthenManager.shared.isAuthorized {
                 let lockScreenVC = BiometricsViewController()
+                lockScreenVC.isHasChangeToOtherLoginMethod = false
                 let navVC = UINavigationController(rootViewController: lockScreenVC)
                 navVC.modalPresentationStyle = .fullScreen
                 self.present(navVC, animated: false)
             } else if !LocalAuthenManager.shared.isAuthorized {
                 let vc = PasswordLoginViewController()
+                vc.isHasChangeToOtherLoginMethod = true
                 let navVC = UINavigationController(rootViewController: vc)
                 navVC.modalPresentationStyle = .fullScreen
                 self.present(navVC, animated: false)
@@ -42,6 +44,20 @@ class HomeViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func personalCenterAction(_ sender: Any) {
+        UserManager.shared.removeToken()
+        UIApplication.shared.keyWindow()?.rootViewController = nil
+        let vc = LoginViewController()
+        let loginNavVC = UINavigationController(rootViewController: vc)
+        UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
         
+//        LoginRequest.logout { isSuccess, message in
+//            if isSuccess {
+//                UserManager.shared.removeToken()
+//                UIApplication.shared.keyWindow()?.rootViewController = nil
+//                let vc = LoginViewController()
+//                let loginNavVC = UINavigationController(rootViewController: vc)
+//                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+//            }
+//        }
     }
 }
