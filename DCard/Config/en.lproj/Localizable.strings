@@ -16,6 +16,7 @@
 "touchID" = "Touch ID";
 "faceID" = "Face ID";
 "passwordLogin" = "Password Login";
+"switchNewAccountLogin" = "Switch New Account Login";
 
 /// Register
 "registerTitle" = "Register";
@@ -63,6 +64,16 @@
 "googleAuthenticatorUnavailable" = "Google Authenticator Unavailable？";
 "getCode" = "Get Code";
 "resetAuthTips" = "Are you sure to reset Google Authenticator?";
+
+/// User
+"logout" = "Log out";
+"notVerified" = "Not Verified";
+"verified" = "Verified";
+"securitySetting" = "Security Settings";
+"language" = "Language";
+"contractUs" = "Contract Us";
+"about" = "About";
+"hello" = "Hello!";
 
 /// Tabbar
 "home" = "HOME";

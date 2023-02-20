@@ -92,7 +92,9 @@ class PasswordLoginViewController: BaseViewController {
         emailLabel.text = UserManager.shared.email
         loginButton.setTitle(R.string.localizable.loginTitle(), for: .normal)
         forgotPasswordButton.setTitle(R.string.localizable.forgotPassword(), for: .normal)
-        setupNotification()
+        if source == .none {
+            setupNotification()
+        }
     }
     
     private func setupNotification() {
@@ -211,15 +213,15 @@ class PasswordLoginViewController: BaseViewController {
     
     @objc private func moreAction() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let switchAction = UIAlertAction(title: "Switch New Account Login", style: .default) { _ in
+        let switchAction = UIAlertAction(title: R.string.localizable.switchNewAccountLogin(), style: .default) { _ in
             let vc = LoginViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        let registerAction = UIAlertAction(title: "Register", style: .default) { _ in
+        let registerAction = UIAlertAction(title: R.string.localizable.registerTitle(), style: .default) { _ in
             let vc = RegisterViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
         alert.addAction(switchAction)
         alert.addAction(registerAction)
         alert.addAction(cancelAction)

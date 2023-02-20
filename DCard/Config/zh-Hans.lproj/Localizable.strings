@@ -16,6 +16,7 @@
 "touchID" = "指纹登录";
 "faceID" = "人脸登录";
 "passwordLogin" = "密码登录";
+"switchNewAccountLogin" = "切换新账号登录";
 
 /// Register
 "registerTitle" = "注册";
@@ -63,6 +64,16 @@
 "googleAuthenticatorUnavailable" = "谷歌验证码不可用？";
 "getCode" = "获取验证码";
 "resetAuthTips" = "你确定要重置谷歌验证码吗？";
+
+/// User
+"logout" = "退出";
+"notVerified" = "未认证";
+"verified" = "已认证";
+"securitySetting" = "安全设置";
+"language" = "语言";
+"contractUs" = "联系我们";
+"about" = "关于";
+"hello" = "你好!";
 
 /// Tabbar
 "home" = "首页";

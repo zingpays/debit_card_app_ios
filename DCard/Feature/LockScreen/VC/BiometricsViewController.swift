@@ -47,6 +47,13 @@ class BiometricsViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         startAuth()
+        if source == .none {
+            setupNotification()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Private
@@ -78,12 +85,19 @@ class BiometricsViewController: BaseViewController {
         }
     }
     
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(screenUnlockSuccess),
+                                               name: Notification.Name(UNLOCKSUCCESS),
+                                               object: nil)
+    }
+    
     private func startAuth() {
         if LocalAuthenManager.shared.isAvailable {
             LocalAuthenManager.shared.evaluate { isSuccess, errCode in
                 if isSuccess {
                     LocalAuthenManager.shared.isAuthorized = true
-                    if self.isHasChangeToOtherLoginMethod {
+                    if self.source != .none {
                         DispatchQueue.main.async {
                             NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
                         }
@@ -103,6 +117,10 @@ class BiometricsViewController: BaseViewController {
     }
     
     // MARK: - Actions
+    
+    @objc private func screenUnlockSuccess() {
+        self.dismiss(animated: true)
+    }
     
     @objc private func gestureLogin() {
         switch source {

@@ -114,8 +114,8 @@ class RegisterViewController: BaseViewController {
         paragraphStyle.lineSpacing = 2
         let paragraphAttr:[NSAttributedString.Key:Any] = [.paragraphStyle:paragraphStyle,.font: UIFont.fw.font14(weight: .light)]
         attrString.addAttributes(paragraphAttr, range: NSRange(location: 0, length: checkDescTextView.text.count))
-        let privacyPolicyString = LocalizationManager.shared.currentLanguage() == .zh ? "隐私政策" : "PrivacyPolicy"
-        let termsAndConditionsString = LocalizationManager.shared.currentLanguage() == .zh ? "条款协议" : "TermsandConditions"
+        let privacyPolicyString = LocalizationManager.shared.currentLanguage() == .zh ? "隐私政策" : "Privacy Policy"
+        let termsAndConditionsString = LocalizationManager.shared.currentLanguage() == .zh ? "条款协议" : "Terms and Conditions"
         let privacyPolicyRange = checkDescTextView.text.range(of: privacyPolicyString)
         let privacyPolicyLocation = checkDescTextView.text.distance(from: privacyPolicyString.startIndex, to: privacyPolicyRange!.lowerBound)
         let privacyPolicyStringRange = NSRange(location: privacyPolicyLocation, length: privacyPolicyString.count)

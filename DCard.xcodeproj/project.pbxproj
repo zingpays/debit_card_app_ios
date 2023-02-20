@@ -27,8 +27,6 @@
 		541A8D462964252A00C59026 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D482964252A00C59026 /* Localizable.strings */; };
 		541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */; };
 		541A8D582965702200C59026 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D572965702200C59026 /* R.generated.swift */; };
-		541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */; };
-		541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */; };
 		541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */; };
 		541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A8D7529682D5B00C59026 /* GuidePagerViewCell.swift */; };
 		541A8D7D29682D5B00C59026 /* GuidePagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541A8D7629682D5B00C59026 /* GuidePagerViewCell.xib */; };
@@ -57,6 +55,12 @@
 		5429B92A299E0243005F721E /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5429B929299E0243005F721E /* AuthRequest.swift */; };
 		5429B930299E039A005F721E /* MailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5429B92F299E039A005F721E /* MailRequest.swift */; };
 		5429B933299E0A01005F721E /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5429B932299E0A01005F721E /* RegisterRequest.swift */; };
+		5429B939299F4F00005F721E /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5429B937299F4F00005F721E /* UserCenterViewController.swift */; };
+		5429B93A299F4F00005F721E /* UserCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5429B938299F4F00005F721E /* UserCenterViewController.xib */; };
+		5429B93E299F6952005F721E /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5429B93C299F6952005F721E /* LanguageSettingViewController.swift */; };
+		5429B93F299F6952005F721E /* LanguageSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5429B93D299F6952005F721E /* LanguageSettingViewController.xib */; };
+		5429B947299F6C07005F721E /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5429B945299F6C07005F721E /* LanguageTableViewCell.swift */; };
+		5429B948299F6C07005F721E /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5429B946299F6C07005F721E /* LanguageTableViewCell.xib */; };
 		542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */; };
 		542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */; };
 		542BC187296FF30600133659 /* BindPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC185296FF30600133659 /* BindPhoneViewController.swift */; };
@@ -226,8 +230,6 @@
 		541A8D492964252D00C59026 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenManager.swift; sourceTree = "<group>"; };
 		541A8D572965702200C59026 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenViewController.swift; sourceTree = "<group>"; };
-		541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockScreenViewController.xib; sourceTree = "<group>"; };
 		541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineGraphLockScreenViewController.swift; sourceTree = "<group>"; };
 		541A8D7529682D5B00C59026 /* GuidePagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePagerViewCell.swift; sourceTree = "<group>"; };
 		541A8D7629682D5B00C59026 /* GuidePagerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuidePagerViewCell.xib; sourceTree = "<group>"; };
@@ -256,6 +258,12 @@
 		5429B929299E0243005F721E /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		5429B92F299E039A005F721E /* MailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailRequest.swift; sourceTree = "<group>"; };
 		5429B932299E0A01005F721E /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		5429B937299F4F00005F721E /* UserCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterViewController.swift; sourceTree = "<group>"; };
+		5429B938299F4F00005F721E /* UserCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCenterViewController.xib; sourceTree = "<group>"; };
+		5429B93C299F6952005F721E /* LanguageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingViewController.swift; sourceTree = "<group>"; };
+		5429B93D299F6952005F721E /* LanguageSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageSettingViewController.xib; sourceTree = "<group>"; };
+		5429B945299F6C07005F721E /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
+		5429B946299F6C07005F721E /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
 		542BC181296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPasswordTipsTableViewCell.swift; sourceTree = "<group>"; };
 		542BC182296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPasswordTipsTableViewCell.xib; sourceTree = "<group>"; };
 		542BC185296FF30600133659 /* BindPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindPhoneViewController.swift; sourceTree = "<group>"; };
@@ -509,6 +517,8 @@
 		541A8D3129641F6500C59026 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				5429B940299F6A77005F721E /* View */,
+				5429B93B299F4FFB005F721E /* VC */,
 				5429B934299E1A52005F721E /* Network */,
 				541A8D3529641FB500C59026 /* Model */,
 				541A8D3229641F6D00C59026 /* Manager */,
@@ -553,8 +563,6 @@
 		541A8D622966D59400C59026 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				541A8D5E2966CFF900C59026 /* LockScreenViewController.swift */,
-				541A8D5F2966CFF900C59026 /* LockScreenViewController.xib */,
 				541A8D632966D70700C59026 /* NineGraphLockScreenViewController.swift */,
 				545C567E2978507800D7F058 /* BiometricsViewController.swift */,
 				545C567F2978507800D7F058 /* BiometricsViewController.xib */,
@@ -614,6 +622,26 @@
 				546BD3F8299A3A66003C15D8 /* UserRequest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5429B93B299F4FFB005F721E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				5429B937299F4F00005F721E /* UserCenterViewController.swift */,
+				5429B938299F4F00005F721E /* UserCenterViewController.xib */,
+				5429B93C299F6952005F721E /* LanguageSettingViewController.swift */,
+				5429B93D299F6952005F721E /* LanguageSettingViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		5429B940299F6A77005F721E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5429B945299F6C07005F721E /* LanguageTableViewCell.swift */,
+				5429B946299F6C07005F721E /* LanguageTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		542BC180296E8CF800133659 /* View */ = {
@@ -730,6 +758,15 @@
 			path = DCardUITests;
 			sourceTree = "<group>";
 		};
+		5482973629A340AA00F82611 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				546BD3FC299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift */,
+				546BD3FD299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		54BBA10E296C127E00EB316F /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -765,6 +802,7 @@
 		54D082D429864E50008B0FBC /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				5482973629A340AA00F82611 /* View */,
 				546BD403299B79C2003C15D8 /* Network */,
 				546BD400299B5BEB003C15D8 /* Model */,
 				544ABBCD2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift */,
@@ -773,8 +811,6 @@
 				5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */,
 				547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */,
 				547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */,
-				546BD3FC299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift */,
-				546BD3FD299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -1032,6 +1068,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5429B93A299F4F00005F721E /* UserCenterViewController.xib in Resources */,
 				541A8D88296C05BB00C59026 /* Roboto-Bold-3.ttf in Resources */,
 				54BBA11B296D7A5500EB316F /* SettingPasswordViewController.xib in Resources */,
 				5473220529879A18007B9AEA /* SecurityVerificationViewController.xib in Resources */,
@@ -1068,10 +1105,10 @@
 				546BD3FF299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib in Resources */,
 				541A8D7D29682D5B00C59026 /* GuidePagerViewCell.xib in Resources */,
 				549D462B298A715F009AEB13 /* TransactionItemTableViewCell.xib in Resources */,
+				5429B93F299F6952005F721E /* LanguageSettingViewController.xib in Resources */,
 				549D4627298A6C3F009AEB13 /* RecentTransactionsTableViewCell.xib in Resources */,
 				541A8D462964252A00C59026 /* Localizable.strings in Resources */,
 				54A45522298CEEF800621311 /* CardSettingTableViewCell.xib in Resources */,
-				541A8D612966CFF900C59026 /* LockScreenViewController.xib in Resources */,
 				54D082DE29865955008B0FBC /* WalletViewController.xib in Resources */,
 				542BC18C297001DD00133659 /* ChooseRegionViewController.xib in Resources */,
 				54C3131E299625D800DBF373 /* DepositViewController.xib in Resources */,
@@ -1094,6 +1131,7 @@
 				54C313062994C63200DBF373 /* SellDetailOrderTableViewCell.xib in Resources */,
 				547F4D1229640392007B05B9 /* Assets.xcassets in Resources */,
 				54A45516298CDCC800621311 /* CardDetailViewController.xib in Resources */,
+				5429B948299F6C07005F721E /* LanguageTableViewCell.xib in Resources */,
 				54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */,
 				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
 				54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */,
@@ -1298,8 +1336,8 @@
 				54E368AC298A15440042D072 /* ApplyCardViewController.swift in Sources */,
 				54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */,
 				54A454FF298BA20600621311 /* TransactionsFilterViewController.swift in Sources */,
+				5429B93E299F6952005F721E /* LanguageSettingViewController.swift in Sources */,
 				54C313052994C63200DBF373 /* SellDetailOrderTableViewCell.swift in Sources */,
-				541A8D602966CFF900C59026 /* LockScreenViewController.swift in Sources */,
 				54222682299376AB00447A1A /* WalletTransactionsContentViewController.swift in Sources */,
 				541A8D2F29641F1F00C59026 /* MoyaProvider+Extension.swift in Sources */,
 				54DE3E832990AD280077B120 /* WalletCryptoTableViewCell.swift in Sources */,
@@ -1329,6 +1367,7 @@
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */,
 				541A8D642966D70700C59026 /* NineGraphLockScreenViewController.swift in Sources */,
+				5429B939299F4F00005F721E /* UserCenterViewController.swift in Sources */,
 				542BC187296FF30600133659 /* BindPhoneViewController.swift in Sources */,
 				54D4808E298A3A590068671E /* ApplyCardSuccessViewController.swift in Sources */,
 				54DE3E7F298D1B190077B120 /* WalletCardTableViewCell.swift in Sources */,
@@ -1349,6 +1388,7 @@
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,
 				541A8D2829641F1F00C59026 /* BaseTargetType.swift in Sources */,
 				546BD3F5299A2183003C15D8 /* LoginRequest.swift in Sources */,
+				5429B947299F6C07005F721E /* LanguageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1537,7 +1577,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7L38QK69R5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DCard/Config/Info.plist;
@@ -1570,7 +1610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7L38QK69R5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DCard/Config/Info.plist;

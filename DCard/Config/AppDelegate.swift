@@ -48,10 +48,15 @@ extension UIApplicationDelegate {
 
     /// Reset app root viewcontroller and sub viewcontroller
     func rebootApplication() {
-        // Maybe rewrite this logic due to release feture.
-        // https://juejin.cn/post/6844903687991590920
-        // https://www.cxyzjd.com/article/Forever_wj/108210234
-        UIApplication.shared.keyWindow()?.rootViewController = rootViewController()
+        let rootVC = TabBarController()
+        let homeVC = rootVC.viewControllers?.first as? UINavigationController
+        // rebuild nav structure
+        let vc = UserCenterViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let languageVC = LanguageSettingViewController()
+        homeVC?.viewControllers.append(vc)
+        homeVC?.viewControllers.append(languageVC)
+        UIApplication.shared.keyWindow()?.rootViewController = rootVC
     }
 }
 
