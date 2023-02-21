@@ -10,18 +10,28 @@ import UIKit
 import GPassword
 import Toast_Swift
 
+enum LockScreenStyle {
+    case set
+    case change
+    case forgot
+    case verify
+}
+
 class NineGraphLockScreenViewController: BaseViewController {
     
     // MARK: - Properies
     
     var source: LockScreenSource = .none
+    var style: LockScreenStyle = .set
+    var patternTitle: String = "Pattern"
+    var tips: String = ""
     
     /// 是否有存在切换其他方式的按钮
     var isHasChangeToOtherLoginMethod: Bool = false
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.patternLogin()
+        label.text = patternTitle
         label.font = UIFont.fw.font20(weight: .bold)
         return label
     }()
@@ -34,7 +44,8 @@ class NineGraphLockScreenViewController: BaseViewController {
     }()
     
     private lazy var passwordBox: Box = {
-        let box = Box(frame: CGRect(x: 55, y: 200, width: UIScreen.main.bounds.width - 2 * 55, height: 400))
+        let width = UIScreen.main.bounds.width - 2 * 55
+        let box = Box(frame: CGRect(x: 55, y: 200, width: width, height: width))
         box.delegate = self
         box.backgroundColor = .clear
         return box
@@ -75,6 +86,19 @@ class NineGraphLockScreenViewController: BaseViewController {
         return btn
     }()
     
+    private lazy var forgotPatternButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle(R.string.localizable.patternForgot(), for: .normal)
+        btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
+        btn.addTarget(self, action: #selector(forgotParttenAction), for: .touchUpInside)
+        btn.titleLabel?.font = UIFont.fw.font16()
+        return btn
+    }()
+    
+    private var password: String = ""
+    private var passwordFirst: String = ""
+    private var isAgain: Bool = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -87,8 +111,9 @@ class NineGraphLockScreenViewController: BaseViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-        self.gk_navLeftBarButtonItem = nil
-        
+        if style == .verify {
+            self.gk_navLeftBarButtonItem = nil
+        }
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(98+STATUSBARHEIGHT)
@@ -119,8 +144,9 @@ class NineGraphLockScreenViewController: BaseViewController {
         }
         view.addSubview(passwordBox)
         passwordBox.snp.makeConstraints { make in
-            make.width.equalTo(UIScreen.main.bounds.width - 2 * 55)
-            make.height.equalTo(300)
+            let width = UIScreen.main.bounds.width - 2 * 55
+            make.width.equalTo(width)
+            make.height.equalTo(width)
             make.center.equalToSuperview()
         }
         
@@ -150,10 +176,23 @@ class NineGraphLockScreenViewController: BaseViewController {
                 make.bottom.equalToSuperview().offset(-(24+TOUCHBARHEIGHT))
             }
         }
+        
+        if style == .change {
+            view.addSubview(forgotPatternButton)
+            forgotPatternButton.snp.makeConstraints { make in
+                make.bottom.equalToSuperview().offset(-84)
+                make.centerX.equalToSuperview()
+            }
+        }
     }
     
     private func setupData() {
+        updateTips(tips, isError: style == .verify)
+    }
     
+    private func updateTips(_ text: String, isError: Bool) {
+        errorTips.textColor =  isError ? R.color.fwED4949() : R.color.fw001214()
+        errorTips.text = text
     }
     
     // MARK: - Actions
@@ -183,6 +222,13 @@ class NineGraphLockScreenViewController: BaseViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    @objc private func forgotParttenAction() {
+        let vc = SecurityVerificationViewController()
+        vc.style = .allWithoutAuthReset
+        vc.source = .forgotPattern
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
@@ -190,12 +236,96 @@ class NineGraphLockScreenViewController: BaseViewController {
 
 extension NineGraphLockScreenViewController: GPasswordEventDelegate {
     func sendTouchPoint(with tag: String) {
-        print(tag)
+        password += tag
     }
     
     func touchesEnded() {
-        LocalAuthenManager.shared.isAuthorized = true
-        NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
+        switch style {
+        case .set:
+            if isAgain {
+                if passwordFirst == password {
+                    view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.5) { [weak self] didTap in
+                        guard let this = self else { return }
+                        PatternManager.shared.password = this.password
+                        NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
+                        this.navigationController?.popViewController()
+                    }
+                } else {
+                    password = ""
+                    updateTips(R.string.localizable.patternAgainErrorTips(), isError: true)
+                }
+            } else {
+                if password.count < 4 {
+                    updateTips(R.string.localizable.patternFormatErrorTips(), isError: true)
+                } else {
+                    isAgain = true
+                    passwordFirst = password
+                    password = ""
+                    updateTips(R.string.localizable.patternSetAgainTips(), isError: false)
+                }
+            }
+        case .change:
+            if isAgain {
+                if passwordFirst == password {
+                    view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.8) { [weak self] didTap in
+                        guard let this = self else { return }
+                        PatternManager.shared.password = this.password
+                        NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
+                        this.navigationController?.popViewController()
+                    }
+                } else {
+                    password = ""
+                    updateTips(R.string.localizable.patternAgainErrorTips(), isError: true)
+                }
+            } else {
+                if password == PatternManager.shared.password {
+                    isAgain = true
+                    passwordFirst = password
+                    password = ""
+                    updateTips(R.string.localizable.patternSetAgainTips(), isError: false)
+                } else {
+                    password = ""
+                    updateTips(R.string.localizable.patternNotMatchOriginPatternErrorTips(), isError: true)
+                }
+            }
+            print("")
+        case .forgot:
+            if isAgain {
+                if passwordFirst == password {
+                    view.makeToast(R.string.localizable.patternForgotSuccess(), duration: 0.8) { [weak self] didTap in
+                        guard let this = self else { return }
+                        PatternManager.shared.password = this.password
+                        NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
+                        let vcs = this.navigationController?.viewControllers.filter({ vcItem in
+                            if vcItem.isMember(of: QuickUnlockViewController.self) {
+                                return true
+                            } else {
+                                return false
+                            }
+                        })
+                        if let quickVC = vcs?.first {
+                            this.navigationController?.popToViewController(quickVC, animated: true)
+                        }
+                    }
+                } else {
+                    password = ""
+                    updateTips(R.string.localizable.patternAgainErrorTips(), isError: true)
+                }
+            } else {
+                if password.count < 4 {
+                    updateTips(R.string.localizable.patternFormatErrorTips(), isError: true)
+                } else {
+                    isAgain = true
+                    passwordFirst = password
+                    password = ""
+                    updateTips(R.string.localizable.patternSetAgainTips(), isError: false)
+                }
+            }
+        case .verify:
+            LocalAuthenManager.shared.isAuthorized = true
+            NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
+        }
+        
     }
     
 }

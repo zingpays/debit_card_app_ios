@@ -129,7 +129,8 @@ class UserCenterViewController: BaseViewController {
     }
 
     @IBAction func securitySettingAction(_ sender: Any) {
-        
+        let vc = SecuritySettingsViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func languageAction(_ sender: Any) {

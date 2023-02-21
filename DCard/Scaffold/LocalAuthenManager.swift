@@ -9,6 +9,8 @@
 import Foundation
 import LocalAuthentication
 
+let kBiometricsBindKey = "BIOMETRICSBINDKEY"
+
 class LocalAuthenManager {
     
     static let shared = LocalAuthenManager()
@@ -25,7 +27,15 @@ class LocalAuthenManager {
     /// 是否已授权，锁屏只在冷启动重新弹出来
     var isAuthorized: Bool = false
     /// 是否已绑定
-    var isBind: Bool = true
+    var isBind: Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: kBiometricsBindKey)
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.bool(forKey: kBiometricsBindKey)
+        }
+    }
     
     init() {
         var error: NSError? = nil

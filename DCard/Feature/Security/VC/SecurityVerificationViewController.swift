@@ -10,14 +10,21 @@ import UIKit
 
 enum SecurityVerificationType {
     case all
+    case allWithoutAuthReset
     case email
     case twofa
     case phone
 }
 
+enum SecurityVerificationSource {
+    case forgotPattern
+    case none
+}
+
 class SecurityVerificationViewController: BaseViewController {
 
     var style: SecurityVerificationType = .email
+    var source: SecurityVerificationSource = .none
     var uniqueId: String?
     var authToken: String?
     
@@ -36,7 +43,11 @@ class SecurityVerificationViewController: BaseViewController {
         }
         btn.layer.cornerRadius = 23
         btn.backgroundColor = R.color.fw00A8BB()
-        btn.setTitle(R.string.localizable.submit(), for: .normal)
+        if source == .forgotPattern {
+            btn.setTitle(R.string.localizable.next(), for: .normal)
+        } else {
+            btn.setTitle(R.string.localizable.submit(), for: .normal)
+        }
         btn.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
         return v
     }()
@@ -69,6 +80,15 @@ class SecurityVerificationViewController: BaseViewController {
         return item
     }()
     
+    private lazy var authWithoutResetItem: SecurityVerificationItemModel = {
+        let item = SecurityVerificationItemModel(title: R.string.localizable.authenticatorCode(),
+                                                 info: R.string.localizable.authenticatorCodeInfo(),
+                                                 inputPlaceholder: R.string.localizable.authenticatorCodePlaceholder(),
+                                                 style: .authWithoutReset)
+        
+        return item
+    }()
+    
     private lazy var datasource: [SecurityVerificationItemModel] = {
         switch style {
         case .all:
@@ -79,6 +99,8 @@ class SecurityVerificationViewController: BaseViewController {
             return [authItem]
         case .phone:
             return [phoneNumItem]
+        case .allWithoutAuthReset:
+            return [emailItem, phoneNumItem, authWithoutResetItem]
         }
     }()
     
@@ -113,10 +135,20 @@ class SecurityVerificationViewController: BaseViewController {
     
     @objc private func nextAction() {
         if style == .email {
-            requestMailVerify()
+            
         }
         if style == .twofa {
+            
+        }
+        switch style {
+        case .all, .allWithoutAuthReset:
+            requestAllVerify()
+        case .email:
+            requestMailVerify()
+        case .twofa:
             requestAuthVerify()
+        case .phone:
+            print("")
         }
     }
     
@@ -159,6 +191,18 @@ class SecurityVerificationViewController: BaseViewController {
             }
         }
     }
+    
+    private func requestAllVerify() {
+        // TODO: 成功后跳转新的页面
+        // request ...
+        if source == .forgotPattern {
+            let vc = NineGraphLockScreenViewController()
+            vc.style = .forgot
+            vc.patternTitle = R.string.localizable.patternForgot()
+            vc.tips = R.string.localizable.patternForgotTips()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension SecurityVerificationViewController: UITableViewDelegate, UITableViewDataSource {
@@ -183,7 +227,7 @@ extension SecurityVerificationViewController: UITableViewDelegate, UITableViewDa
 extension SecurityVerificationViewController: SecurityVerificationItemTableViewCellDelegate {
     func inputTextFieldEditing(_ text: String?, data: SecurityVerificationItemModel?) {
         switch data?.style {
-        case .auth:
+        case .auth, .authWithoutReset:
             authCode = text
         case .email:
             emailCode = text

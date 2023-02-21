@@ -64,6 +64,35 @@
 "googleAuthenticatorUnavailable" = "谷歌验证码不可用？";
 "getCode" = "获取验证码";
 "resetAuthTips" = "你确定要重置谷歌验证码吗？";
+"securitySettingsTitle" = "安全设置";
+"securitySettingsSubTitle" = "双因素身份验证（2FA)";
+"securitySettingsInfo" = "为了你的账户安全，建议至少开启一个双因素身份认证";
+"securitySettingsQuickUnlock" = "快速解锁";
+"securitySettingsAuth" = "谷歌验证";
+"securitySettingsEmail" = "邮箱";
+"securitySettingsSms" = "手机号码";
+"securitySettingsChangePassword" = "修改密码";
+"quickUnlockTitle" = "快速解锁";
+"quickUnlockInfo" = "设置快速解锁是为了更快更安全验证保护你的账号";
+"quickUnlockFaceID" = "人脸识别";
+"quickUnlockTouchID" = "指纹";
+"quickUnlockPattern" = "手势";
+"quickUnlockChange" = "更改";
+"patternSet" = "设置手势";
+"patternForgot" = "忘记手势";
+"patternChange" = "修改手势";
+"patternSetTips" = "请绘制手势图案";
+"patternSetAgainTips" = "请再次绘制您的手势图案";
+"patternChangeTips" = "请绘制你原手势图案";
+"patternChangeAgainTips" = "请绘制你新的手势图案";
+"patternForgotTips" = "请绘制你的手势图案";
+"patternForgotAgainTips" = "请再次绘制你的手势图案";
+"patternFormatErrorTips" = "至少需要链接4个点";
+"patternAgainErrorTips" = "解锁图案不一致";
+"patternSetupSuccessTips" = "手势设置成功";
+"patternForgot" = "忘记手势?";
+"patternNotMatchOriginPatternErrorTips" = "手势图案不正确";
+"patternForgotSuccess" = "新的手势设置成功";
 
 /// User
 "logout" = "退出";

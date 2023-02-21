@@ -12,6 +12,7 @@ enum SecurityVerificationItemTableViewCellStyle {
     case email
     case phone
     case auth
+    case authWithoutReset
 }
 
 protocol SecurityVerificationItemTableViewCellDelegate: NSObject {
@@ -82,7 +83,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     
     static func height(style: SecurityVerificationItemTableViewCellStyle) -> CGFloat {
         switch style {
-        case .email, .phone:
+        case .email, .phone, .authWithoutReset:
             return 160
         case .auth:
             return 180
@@ -92,7 +93,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     func upadateData(data: SecurityVerificationItemModel) {
         itemModel = data
         switch data.style {
-        case .email, .phone:
+        case .email, .phone, .authWithoutReset:
             authUnavaiableButtonHeight.constant = 0
             authUnavaiableButton.isHidden = true
             inputTextField.rightViewMode = .always

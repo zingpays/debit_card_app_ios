@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 70 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 98 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -383,12 +383,110 @@ struct _R {
       /// Locales: en, zh-Hans
       var passwordsDoNotMatchTips: RswiftResources.StringResource { .init(key: "passwordsDoNotMatchTips", tableName: "Localizable", source: source, developmentValue: ". Passwords do not match", comment: nil) }
 
+      /// en translation: Inconsistent unlock pattern
+      ///
+      /// Key: patternAgainErrorTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternAgainErrorTips: RswiftResources.StringResource { .init(key: "patternAgainErrorTips", tableName: "Localizable", source: source, developmentValue: "Inconsistent unlock pattern", comment: nil) }
+
+      /// en translation: Change Pattern
+      ///
+      /// Key: patternChange
+      ///
+      /// Locales: en, zh-Hans
+      var patternChange: RswiftResources.StringResource { .init(key: "patternChange", tableName: "Localizable", source: source, developmentValue: "Change Pattern", comment: nil) }
+
+      /// en translation: Please draw your new pattern
+      ///
+      /// Key: patternChangeAgainTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternChangeAgainTips: RswiftResources.StringResource { .init(key: "patternChangeAgainTips", tableName: "Localizable", source: source, developmentValue: "Please draw your new pattern", comment: nil) }
+
+      /// en translation: Please draw your original pattern
+      ///
+      /// Key: patternChangeTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternChangeTips: RswiftResources.StringResource { .init(key: "patternChangeTips", tableName: "Localizable", source: source, developmentValue: "Please draw your original pattern", comment: nil) }
+
+      /// en translation: Forgot Pattern ?
+      ///
+      /// Key: patternForgot
+      ///
+      /// Locales: en, zh-Hans
+      var patternForgot: RswiftResources.StringResource { .init(key: "patternForgot", tableName: "Localizable", source: source, developmentValue: "Forgot Pattern ?", comment: nil) }
+
+      /// en translation: Please draw your pattern again
+      ///
+      /// Key: patternForgotAgainTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternForgotAgainTips: RswiftResources.StringResource { .init(key: "patternForgotAgainTips", tableName: "Localizable", source: source, developmentValue: "Please draw your pattern again", comment: nil) }
+
+      /// en translation: New pattern setting successfully
+      ///
+      /// Key: patternForgotSuccess
+      ///
+      /// Locales: en, zh-Hans
+      var patternForgotSuccess: RswiftResources.StringResource { .init(key: "patternForgotSuccess", tableName: "Localizable", source: source, developmentValue: "New pattern setting successfully", comment: nil) }
+
+      /// en translation: Please draw your pattern
+      ///
+      /// Key: patternForgotTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternForgotTips: RswiftResources.StringResource { .init(key: "patternForgotTips", tableName: "Localizable", source: source, developmentValue: "Please draw your pattern", comment: nil) }
+
+      /// en translation: At least 4 points need to be linked
+      ///
+      /// Key: patternFormatErrorTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternFormatErrorTips: RswiftResources.StringResource { .init(key: "patternFormatErrorTips", tableName: "Localizable", source: source, developmentValue: "At least 4 points need to be linked", comment: nil) }
+
       /// en translation: Pattern Login
       ///
       /// Key: patternLogin
       ///
       /// Locales: en, zh-Hans
       var patternLogin: RswiftResources.StringResource { .init(key: "patternLogin", tableName: "Localizable", source: source, developmentValue: "Pattern Login", comment: nil) }
+
+      /// en translation: Pattern is incorrect
+      ///
+      /// Key: patternNotMatchOriginPatternErrorTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternNotMatchOriginPatternErrorTips: RswiftResources.StringResource { .init(key: "patternNotMatchOriginPatternErrorTips", tableName: "Localizable", source: source, developmentValue: "Pattern is incorrect", comment: nil) }
+
+      /// en translation: Set Pattern
+      ///
+      /// Key: patternSet
+      ///
+      /// Locales: en, zh-Hans
+      var patternSet: RswiftResources.StringResource { .init(key: "patternSet", tableName: "Localizable", source: source, developmentValue: "Set Pattern", comment: nil) }
+
+      /// en translation: Please draw the unlock pattern again
+      ///
+      /// Key: patternSetAgainTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternSetAgainTips: RswiftResources.StringResource { .init(key: "patternSetAgainTips", tableName: "Localizable", source: source, developmentValue: "Please draw the unlock pattern again", comment: nil) }
+
+      /// en translation: Please draw the unlock pattern
+      ///
+      /// Key: patternSetTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternSetTips: RswiftResources.StringResource { .init(key: "patternSetTips", tableName: "Localizable", source: source, developmentValue: "Please draw the unlock pattern", comment: nil) }
+
+      /// en translation: Gesture setting successfully
+      ///
+      /// Key: patternSetupSuccessTips
+      ///
+      /// Locales: en, zh-Hans
+      var patternSetupSuccessTips: RswiftResources.StringResource { .init(key: "patternSetupSuccessTips", tableName: "Localizable", source: source, developmentValue: "Gesture setting successfully", comment: nil) }
 
       /// en translation: A verification code has been sent to
       ///
@@ -410,6 +508,48 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var phoneVerificationCodePlaceholder: RswiftResources.StringResource { .init(key: "phoneVerificationCodePlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter the code", comment: nil) }
+
+      /// en translation: Change
+      ///
+      /// Key: quickUnlockChange
+      ///
+      /// Locales: en, zh-Hans
+      var quickUnlockChange: RswiftResources.StringResource { .init(key: "quickUnlockChange", tableName: "Localizable", source: source, developmentValue: "Change", comment: nil) }
+
+      /// en translation: Face ID
+      ///
+      /// Key: quickUnlockFaceID
+      ///
+      /// Locales: en, zh-Hans
+      var quickUnlockFaceID: RswiftResources.StringResource { .init(key: "quickUnlockFaceID", tableName: "Localizable", source: source, developmentValue: "Face ID", comment: nil) }
+
+      /// en translation: Set Quick unlock for a faster and more secure verification to protect your account.
+      ///
+      /// Key: quickUnlockInfo
+      ///
+      /// Locales: en, zh-Hans
+      var quickUnlockInfo: RswiftResources.StringResource { .init(key: "quickUnlockInfo", tableName: "Localizable", source: source, developmentValue: "Set Quick unlock for a faster and more secure verification to protect your account.", comment: nil) }
+
+      /// en translation: Pattern
+      ///
+      /// Key: quickUnlockPattern
+      ///
+      /// Locales: en, zh-Hans
+      var quickUnlockPattern: RswiftResources.StringResource { .init(key: "quickUnlockPattern", tableName: "Localizable", source: source, developmentValue: "Pattern", comment: nil) }
+
+      /// en translation: Quick Unlock
+      ///
+      /// Key: quickUnlockTitle
+      ///
+      /// Locales: en, zh-Hans
+      var quickUnlockTitle: RswiftResources.StringResource { .init(key: "quickUnlockTitle", tableName: "Localizable", source: source, developmentValue: "Quick Unlock", comment: nil) }
+
+      /// en translation: Touch ID
+      ///
+      /// Key: quickUnlockTouchID
+      ///
+      /// Locales: en, zh-Hans
+      var quickUnlockTouchID: RswiftResources.StringResource { .init(key: "quickUnlockTouchID", tableName: "Localizable", source: source, developmentValue: "Touch ID", comment: nil) }
 
       /// en translation: You have successfully registered.
       ///
@@ -445,6 +585,62 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var securitySetting: RswiftResources.StringResource { .init(key: "securitySetting", tableName: "Localizable", source: source, developmentValue: "Security Settings", comment: nil) }
+
+      /// en translation: Google Authentication
+      ///
+      /// Key: securitySettingsAuth
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsAuth: RswiftResources.StringResource { .init(key: "securitySettingsAuth", tableName: "Localizable", source: source, developmentValue: "Google Authentication", comment: nil) }
+
+      /// en translation: Change Password
+      ///
+      /// Key: securitySettingsChangePassword
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsChangePassword: RswiftResources.StringResource { .init(key: "securitySettingsChangePassword", tableName: "Localizable", source: source, developmentValue: "Change Password", comment: nil) }
+
+      /// en translation: Email
+      ///
+      /// Key: securitySettingsEmail
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsEmail: RswiftResources.StringResource { .init(key: "securitySettingsEmail", tableName: "Localizable", source: source, developmentValue: "Email", comment: nil) }
+
+      /// en translation: To protect your account, it is recommended to turn on at least one 2FA
+      ///
+      /// Key: securitySettingsInfo
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsInfo: RswiftResources.StringResource { .init(key: "securitySettingsInfo", tableName: "Localizable", source: source, developmentValue: "To protect your account, it is recommended to turn on at least one 2FA", comment: nil) }
+
+      /// en translation: Quick unlock
+      ///
+      /// Key: securitySettingsQuickUnlock
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsQuickUnlock: RswiftResources.StringResource { .init(key: "securitySettingsQuickUnlock", tableName: "Localizable", source: source, developmentValue: "Quick unlock", comment: nil) }
+
+      /// en translation: SMS
+      ///
+      /// Key: securitySettingsSms
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsSms: RswiftResources.StringResource { .init(key: "securitySettingsSms", tableName: "Localizable", source: source, developmentValue: "SMS", comment: nil) }
+
+      /// en translation: Two-Factor Authentication (2FA)
+      ///
+      /// Key: securitySettingsSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsSubTitle: RswiftResources.StringResource { .init(key: "securitySettingsSubTitle", tableName: "Localizable", source: source, developmentValue: "Two-Factor Authentication (2FA)", comment: nil) }
+
+      /// en translation: Security Settings
+      ///
+      /// Key: securitySettingsTitle
+      ///
+      /// Locales: en, zh-Hans
+      var securitySettingsTitle: RswiftResources.StringResource { .init(key: "securitySettingsTitle", tableName: "Localizable", source: source, developmentValue: "Security Settings", comment: nil) }
 
       /// en translation: Security Verification
       ///
@@ -656,7 +852,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 70 images.
+  /// This `_R.image` struct is generated, and contains static references to 82 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -689,6 +885,12 @@ struct _R {
 
     /// Image `iconBackInfo`.
     var iconBackInfo: RswiftResources.ImageResource { .init(name: "iconBackInfo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconBiometrics`.
+    var iconBiometrics: RswiftResources.ImageResource { .init(name: "iconBiometrics", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconBiometricsNotActivated`.
+    var iconBiometricsNotActivated: RswiftResources.ImageResource { .init(name: "iconBiometricsNotActivated", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconBtc`.
     var iconBtc: RswiftResources.ImageResource { .init(name: "iconBtc", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -744,6 +946,9 @@ struct _R {
     /// Image `iconInfo`.
     var iconInfo: RswiftResources.ImageResource { .init(name: "iconInfo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconInfoRed`.
+    var iconInfoRed: RswiftResources.ImageResource { .init(name: "iconInfoRed", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconLTC`.
     var iconLTC: RswiftResources.ImageResource { .init(name: "iconLTC", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -768,6 +973,15 @@ struct _R {
     /// Image `iconProfile`.
     var iconProfile: RswiftResources.ImageResource { .init(name: "iconProfile", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconQuFaceId`.
+    var iconQuFaceId: RswiftResources.ImageResource { .init(name: "iconQuFaceId", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconQuGesture`.
+    var iconQuGesture: RswiftResources.ImageResource { .init(name: "iconQuGesture", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconQuTouchId`.
+    var iconQuTouchId: RswiftResources.ImageResource { .init(name: "iconQuTouchId", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconRecordBtn`.
     var iconRecordBtn: RswiftResources.ImageResource { .init(name: "iconRecordBtn", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -791,6 +1005,24 @@ struct _R {
 
     /// Image `iconRightArrowWhite`.
     var iconRightArrowWhite: RswiftResources.ImageResource { .init(name: "iconRightArrowWhite", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconSecurityEmail`.
+    var iconSecurityEmail: RswiftResources.ImageResource { .init(name: "iconSecurityEmail", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconSecurityEmailNotActivated`.
+    var iconSecurityEmailNotActivated: RswiftResources.ImageResource { .init(name: "iconSecurityEmailNotActivated", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconSecurityGa`.
+    var iconSecurityGa: RswiftResources.ImageResource { .init(name: "iconSecurityGa", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconSecurityGaNotActivated`.
+    var iconSecurityGaNotActivated: RswiftResources.ImageResource { .init(name: "iconSecurityGaNotActivated", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconSecuritySms`.
+    var iconSecuritySms: RswiftResources.ImageResource { .init(name: "iconSecuritySms", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconSecuritySmsNotActivated`.
+    var iconSecuritySmsNotActivated: RswiftResources.ImageResource { .init(name: "iconSecuritySmsNotActivated", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconSelfie`.
     var iconSelfie: RswiftResources.ImageResource { .init(name: "iconSelfie", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -926,7 +1158,7 @@ struct _R {
     var dinRegularTtf: RswiftResources.FileResource { .init(name: "din-regular", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 67 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 71 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -1038,6 +1270,12 @@ struct _R {
     /// Nib `PasswordLoginViewController`.
     var passwordLoginViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "PasswordLoginViewController", bundle: bundle) }
 
+    /// Nib `QuickUnlockTableViewCell`.
+    var quickUnlockTableViewCell: RswiftResources.NibReference<QuickUnlockTableViewCell> { .init(name: "QuickUnlockTableViewCell", bundle: bundle) }
+
+    /// Nib `QuickUnlockViewController`.
+    var quickUnlockViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "QuickUnlockViewController", bundle: bundle) }
+
     /// Nib `RecentTransactionsTableViewCell`.
     var recentTransactionsTableViewCell: RswiftResources.NibReference<RecentTransactionsTableViewCell> { .init(name: "RecentTransactionsTableViewCell", bundle: bundle) }
 
@@ -1046,6 +1284,12 @@ struct _R {
 
     /// Nib `RegisterViewController`.
     var registerViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "RegisterViewController", bundle: bundle) }
+
+    /// Nib `SecurityCollectionViewCell`.
+    var securityCollectionViewCell: RswiftResources.NibReference<SecurityCollectionViewCell> { .init(name: "SecurityCollectionViewCell", bundle: bundle) }
+
+    /// Nib `SecuritySettingsViewController`.
+    var securitySettingsViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "SecuritySettingsViewController", bundle: bundle) }
 
     /// Nib `SecurityVerificationItemTableViewCell`.
     var securityVerificationItemTableViewCell: RswiftResources.NibReference<SecurityVerificationItemTableViewCell> { .init(name: "SecurityVerificationItemTableViewCell", bundle: bundle) }
@@ -1247,6 +1491,14 @@ struct _R {
       if UIKit.UIImage(named: "userAvator", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'userAvator' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconQuFaceId", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconQuFaceId' is used in nib 'QuickUnlockTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'QuickUnlockTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'QuickUnlockViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconQuFaceId", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconQuFaceId' is used in nib 'QuickUnlockViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconQuGesture", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconQuGesture' is used in nib 'QuickUnlockViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRightArrowBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowBlue' is used in nib 'QuickUnlockViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'QuickUnlockViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'QuickUnlockViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'RecentTransactionsTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "bg_reg_pic_success", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'bg_reg_pic_success' is used in nib 'RegisterSuccessViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "bg_thanks", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'bg_thanks' is used in nib 'RegisterSuccessViewController', but couldn't be loaded.") }
@@ -1259,6 +1511,14 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'RegisterViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#ED4949", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#ED4949' is used in nib 'RegisterViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'RegisterViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconBiometrics", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBiometrics' is used in nib 'SecurityCollectionViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRightArrowBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowBlue' is used in nib 'SecurityCollectionViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconTick", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconTick' is used in nib 'SecurityCollectionViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'SecurityCollectionViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SecurityCollectionViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'SecuritySettingsViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRightArrowBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowBlue' is used in nib 'SecuritySettingsViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'SecuritySettingsViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'SecurityVerificationItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'SecurityVerificationItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SecurityVerificationItemTableViewCell', but couldn't be loaded.") }

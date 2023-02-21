@@ -64,6 +64,35 @@
 "googleAuthenticatorUnavailable" = "Google Authenticator Unavailable？";
 "getCode" = "Get Code";
 "resetAuthTips" = "Are you sure to reset Google Authenticator?";
+"securitySettingsTitle" = "Security Settings";
+"securitySettingsSubTitle" = "Two-Factor Authentication (2FA)";
+"securitySettingsInfo" = "To protect your account, it is recommended to turn on at least one 2FA";
+"securitySettingsQuickUnlock" = "Quick unlock";
+"securitySettingsAuth" = "Google Authentication";
+"securitySettingsEmail" = "Email";
+"securitySettingsSms" = "SMS";
+"securitySettingsChangePassword" = "Change Password";
+"quickUnlockTitle" = "Quick Unlock";
+"quickUnlockInfo" = "Set Quick unlock for a faster and more secure verification to protect your account.";
+"quickUnlockFaceID" = "Face ID";
+"quickUnlockTouchID" = "Touch ID";
+"quickUnlockPattern" = "Pattern";
+"quickUnlockChange" = "Change";
+"patternSet" = "Set Pattern";
+"patternForgot" = "Forgot Pattern";
+"patternChange" = "Change Pattern";
+"patternSetTips" = "Please draw the unlock pattern";
+"patternSetAgainTips" = "Please draw the unlock pattern again";
+"patternChangeTips" = "Please draw your original pattern";
+"patternChangeAgainTips" = "Please draw your new pattern";
+"patternForgotTips" = "Please draw your pattern";
+"patternForgotAgainTips" = "Please draw your pattern again";
+"patternFormatErrorTips" = "At least 4 points need to be linked";
+"patternAgainErrorTips" = "Inconsistent unlock pattern";
+"patternSetupSuccessTips" = "Gesture setting successfully";
+"patternForgot" = "Forgot Pattern ?";
+"patternNotMatchOriginPatternErrorTips" = "Pattern is incorrect";
+"patternForgotSuccess" = "New pattern setting successfully";
 
 /// User
 "logout" = "Log out";
