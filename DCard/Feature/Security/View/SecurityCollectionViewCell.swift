@@ -12,15 +12,15 @@ struct SecurityCollectionViewCellModel {
     var icon: UIImage?
     var title: String?
     var status: Bool
+    var isAccess: Bool = true
 }
 
 class SecurityCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
-    
     @IBOutlet weak var statusImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var accessImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,5 +34,6 @@ class SecurityCollectionViewCell: UICollectionViewCell {
         } else {
             statusImageView.image = R.image.iconInfoRed()
         }
+        accessImageView.isHidden = !data.isAccess
     }
 }

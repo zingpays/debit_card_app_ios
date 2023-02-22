@@ -9,31 +9,22 @@
 import UIKit
 import SwifterSwift
 
+enum SettingPasswordStyle {
+    case register
+    case change
+    case forgot
+}
+
 class SettingPasswordViewController: BaseViewController {
     
     var email: String?
     var code: String?
+    var style: SettingPasswordStyle = .register
     
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.text = R.string.localizable.registerTitle()
-        }
-    }
-    @IBOutlet weak var subTitleLabel: UILabel! {
-        didSet {
-            subTitleLabel.text = R.string.localizable.settingYourPassword()
-        }
-    }
-    @IBOutlet weak var passwordTextField: UITextField! {
-        didSet {
-            passwordTextField.placeholder = R.string.localizable.enterPassword()
-        }
-    }
-    @IBOutlet weak var againPasswordTextField: UITextField! {
-        didSet {
-            againPasswordTextField.placeholder = R.string.localizable.enterPasswordAgain()
-        }
-    }
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var againPasswordTextField: UITextField!
     @IBOutlet weak var againPasswordErrorTipsLabel: UILabel! {
         didSet {
             againPasswordErrorTipsLabel.text = R.string.localizable.passwordsDoNotMatchTips()
@@ -92,6 +83,7 @@ class SettingPasswordViewController: BaseViewController {
     
     private func setupUI() {
 //        setupRightItem()
+        setupTitle()
         setupSubviews()
         setupTableview()
     }
@@ -120,6 +112,26 @@ class SettingPasswordViewController: BaseViewController {
         passwordErrorTipsLabel.snp.remakeConstraints { make in
             make.height.equalTo(0)
             make.top.equalTo(passwordTextField.snp.bottom).offset(0)
+        }
+    }
+    
+    private func setupTitle() {
+        switch style {
+        case .register:
+            titleLabel.text = R.string.localizable.registerTitle()
+            subTitleLabel.text = R.string.localizable.settingYourPassword()
+            passwordTextField.placeholder = R.string.localizable.enterPassword()
+            againPasswordTextField.placeholder = R.string.localizable.enterPasswordAgain()
+        case .change:
+            titleLabel.text = R.string.localizable.securitySettingsChangePassword()
+            subTitleLabel.text = R.string.localizable.settingYourPassword()
+            passwordTextField.placeholder = R.string.localizable.enterPassword()
+            againPasswordTextField.placeholder = R.string.localizable.enterPasswordAgain()
+        case .forgot:
+            titleLabel.text = R.string.localizable.forgotPasswordTitle()
+            subTitleLabel.text = R.string.localizable.forgotPasswordSubTitle()
+            passwordTextField.placeholder = R.string.localizable.newPassword()
+            againPasswordTextField.placeholder = R.string.localizable.confirmNewPassword()
         }
     }
     
@@ -208,7 +220,22 @@ class SettingPasswordViewController: BaseViewController {
     
     @IBAction func next(_ sender: UIButton) {
         if nextButton.alpha == 1 {
-            requestRegister()
+            switch style {
+            case .register:
+                requestRegister()
+            case .change:
+                UserManager.shared.removeToken()
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                let vc = LoginViewController()
+                let loginNavVC = UINavigationController(rootViewController: vc)
+                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+            case .forgot:
+                UserManager.shared.removeToken()
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                let vc = LoginViewController()
+                let loginNavVC = UINavigationController(rootViewController: vc)
+                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+            }
         }
     }
     

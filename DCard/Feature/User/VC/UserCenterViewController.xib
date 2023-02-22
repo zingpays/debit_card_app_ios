@@ -267,6 +267,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="361" height="56"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title=" "/>
+                            <connections>
+                                <action selector="contractUsAction:" destination="-1" eventType="touchUpInside" id="afO-Pv-eI5"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

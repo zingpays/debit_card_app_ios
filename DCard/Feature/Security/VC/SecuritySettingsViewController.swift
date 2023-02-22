@@ -58,12 +58,15 @@ class SecuritySettingsViewController: BaseViewController {
         let authItem = SecurityCollectionViewCellModel(icon: authIcon,
                                                        title: R.string.localizable.securitySettingsAuth(),
                                                        status: authStatus)
-        let emailItem = SecurityCollectionViewCellModel(icon: R.image.iconSecurityEmailNotActivated(),
-                                                       title: R.string.localizable.securitySettingsEmail(),
-                                                       status: false)
-        let smsItem = SecurityCollectionViewCellModel(icon: R.image.iconSecuritySmsNotActivated(),
-                                                       title: R.string.localizable.securitySettingsSms(),
-                                                       status: false)
+        let emailTitle = "\(R.string.localizable.securitySettingsEmail()) \(UserManager.shared.email ?? "")"
+        let emailItem = SecurityCollectionViewCellModel(icon: R.image.iconSecurityEmail(),
+                                                       title: emailTitle,
+                                                       status: true)
+        let smsTitle = "\(R.string.localizable.securitySettingsSms()) \(UserManager.shared.phoneNum ?? "")"
+        let smsItem = SecurityCollectionViewCellModel(icon: R.image.iconSecuritySms(),
+                                                       title: smsTitle,
+                                                      status: true,
+                                                      isAccess: false)
         return [bioItem, authItem, emailItem, smsItem]
     }()
     
@@ -116,6 +119,14 @@ class SecuritySettingsViewController: BaseViewController {
         datasource[1] = authData
         securityCollectionView.reloadData()
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func changePasswordAction(_ sender: Any) {
+        let vc = ChangePasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension SecuritySettingsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -137,6 +148,10 @@ extension SecuritySettingsViewController: UICollectionViewDataSource, UICollecti
         }
         if indexPath.row == 1 {
             let vc = AuthSettingViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.row == 2 {
+            let vc = AuthEmailViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
     }

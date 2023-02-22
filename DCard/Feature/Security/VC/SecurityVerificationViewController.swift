@@ -18,6 +18,9 @@ enum SecurityVerificationType {
 
 enum SecurityVerificationSource {
     case forgotPattern
+    case changeEmail
+    case closeAuth
+    case forgotPassword
     case none
 }
 
@@ -200,6 +203,19 @@ class SecurityVerificationViewController: BaseViewController {
             vc.style = .forgot
             vc.patternTitle = R.string.localizable.patternForgot()
             vc.tips = R.string.localizable.patternForgotTips()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if source == .changeEmail {
+            let vc = ChangeEmailSuccessViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if source == .closeAuth {
+            LockScreenManager.shared.isOn = false
+            navigationController?.popViewController(animated: true)
+        }
+        if source == .forgotPassword {
+            let vc = SettingPasswordViewController()
+            vc.style = .forgot
             navigationController?.pushViewController(vc, animated: true)
         }
     }

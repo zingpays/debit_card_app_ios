@@ -37,11 +37,8 @@
                             <constraint firstAttribute="height" constant="20" id="ezL-V4-Obe"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick unlock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-Be-NjE">
-                        <rect key="frame" x="16" y="90" width="81.333333333333329" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="FfY-fr-ktt"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick unlock" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-Be-NjE">
+                        <rect key="frame" x="16" y="89.666666666666671" width="117" height="16.666666666666671"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                         <color key="textColor" name="fw#001214"/>
                         <nil key="highlightedColor"/>
@@ -59,10 +56,11 @@
             <color key="backgroundColor" name="fw#FFFFFF"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="A7q-rR-jn3" secondAttribute="trailing" constant="12" id="0aT-T1-vfk"/>
+                <constraint firstItem="A7q-rR-jn3" firstAttribute="leading" secondItem="TVM-Be-NjE" secondAttribute="trailing" constant="8" id="23O-cA-xQ3"/>
                 <constraint firstAttribute="trailing" secondItem="lR3-ly-dGX" secondAttribute="trailing" constant="8" id="HZh-j9-NIr"/>
+                <constraint firstItem="A7q-rR-jn3" firstAttribute="centerY" secondItem="TVM-Be-NjE" secondAttribute="centerY" id="Z3d-tZ-fUh"/>
                 <constraint firstItem="IDb-6d-fSn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="aTE-wE-wbh"/>
                 <constraint firstItem="lR3-ly-dGX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="cDJ-YK-3nb"/>
-                <constraint firstAttribute="bottom" secondItem="TVM-Be-NjE" secondAttribute="bottom" constant="24" id="lLL-0S-WI9"/>
                 <constraint firstItem="IDb-6d-fSn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18" id="m5G-Ga-YIp"/>
                 <constraint firstItem="TVM-Be-NjE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="muN-0m-no5"/>
                 <constraint firstAttribute="bottom" secondItem="A7q-rR-jn3" secondAttribute="bottom" constant="26" id="vmZ-DJ-WPU"/>
@@ -74,11 +72,12 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="accessImageView" destination="A7q-rR-jn3" id="XFy-mg-1cs"/>
                 <outlet property="iconImageView" destination="IDb-6d-fSn" id="Eez-To-O3j"/>
                 <outlet property="statusImageView" destination="lR3-ly-dGX" id="Rwe-yu-BqC"/>
                 <outlet property="titleLabel" destination="TVM-Be-NjE" id="tmf-sS-zhu"/>
             </connections>
-            <point key="canvasLocation" x="142.74809160305344" y="23.943661971830988"/>
+            <point key="canvasLocation" x="351.90839694656489" y="-15.492957746478874"/>
         </collectionViewCell>
     </objects>
     <resources>

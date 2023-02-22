@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 114 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 127 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -166,6 +166,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var card: RswiftResources.StringResource { .init(key: "card", tableName: "Localizable", source: source, developmentValue: "CARD", comment: nil) }
 
+      /// en translation: Verify your old password
+      ///
+      /// Key: changePasswordSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var changePasswordSubTitle: RswiftResources.StringResource { .init(key: "changePasswordSubTitle", tableName: "Localizable", source: source, developmentValue: "Verify your old password", comment: nil) }
+
       /// en translation: Enter the initial letter
       ///
       /// Key: chooseYourCountryInputPlaceholder
@@ -180,6 +187,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var chooseYourCountryTitle: RswiftResources.StringResource { .init(key: "chooseYourCountryTitle", tableName: "Localizable", source: source, developmentValue: "Choose Your Country", comment: nil) }
 
+      /// en translation: Confirm new password
+      ///
+      /// Key: confirmNewPassword
+      ///
+      /// Locales: en, zh-Hans
+      var confirmNewPassword: RswiftResources.StringResource { .init(key: "confirmNewPassword", tableName: "Localizable", source: source, developmentValue: "Confirm new password", comment: nil) }
+
       /// en translation: Continue
       ///
       /// Key: continue
@@ -193,6 +207,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var contractUs: RswiftResources.StringResource { .init(key: "contractUs", tableName: "Localizable", source: source, developmentValue: "Contract Us", comment: nil) }
+
+      /// en translation: Email
+      ///
+      /// Key: email
+      ///
+      /// Locales: en, zh-Hans
+      var email: RswiftResources.StringResource { .init(key: "email", tableName: "Localizable", source: source, developmentValue: "Email", comment: nil) }
 
       /// en translation: E-mail format is incorrect
       ///
@@ -236,6 +257,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var enterEmailInputPlaceholder: RswiftResources.StringResource { .init(key: "enterEmailInputPlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter your E-mail", comment: nil) }
 
+      /// en translation: Enter old password
+      ///
+      /// Key: enterOldPassword
+      ///
+      /// Locales: en, zh-Hans
+      var enterOldPassword: RswiftResources.StringResource { .init(key: "enterOldPassword", tableName: "Localizable", source: source, developmentValue: "Enter old password", comment: nil) }
+
       /// en translation: Enter password
       ///
       /// Key: enterPassword
@@ -270,6 +298,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var forgotPassword: RswiftResources.StringResource { .init(key: "forgotPassword", tableName: "Localizable", source: source, developmentValue: "Forgot password?", comment: nil) }
+
+      /// en translation: Please Enter Your New Password
+      ///
+      /// Key: forgotPasswordSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var forgotPasswordSubTitle: RswiftResources.StringResource { .init(key: "forgotPasswordSubTitle", tableName: "Localizable", source: source, developmentValue: "Please Enter Your New Password", comment: nil) }
+
+      /// en translation: Forgot Password
+      ///
+      /// Key: forgotPasswordTitle
+      ///
+      /// Locales: en, zh-Hans
+      var forgotPasswordTitle: RswiftResources.StringResource { .init(key: "forgotPasswordTitle", tableName: "Localizable", source: source, developmentValue: "Forgot Password", comment: nil) }
 
       /// en translation: Full Name And Nationality
       ///
@@ -340,6 +382,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var logout: RswiftResources.StringResource { .init(key: "logout", tableName: "Localizable", source: source, developmentValue: "Log out", comment: nil) }
+
+      /// en translation: New password
+      ///
+      /// Key: newPassword
+      ///
+      /// Locales: en, zh-Hans
+      var newPassword: RswiftResources.StringResource { .init(key: "newPassword", tableName: "Localizable", source: source, developmentValue: "New password", comment: nil) }
 
       /// en translation: Next
       ///
@@ -691,6 +740,48 @@ struct _R {
       /// Locales: en, zh-Hans
       var resetAuthTips: RswiftResources.StringResource { .init(key: "resetAuthTips", tableName: "Localizable", source: source, developmentValue: "Are you sure to reset Google Authenticator?", comment: nil) }
 
+      /// en translation: Change Email Authentication
+      ///
+      /// Key: securityChangeEmailButton
+      ///
+      /// Locales: en, zh-Hans
+      var securityChangeEmailButton: RswiftResources.StringResource { .init(key: "securityChangeEmailButton", tableName: "Localizable", source: source, developmentValue: "Change Email Authentication", comment: nil) }
+
+      /// en translation: Email authentication adds another layer of security to your Stella Pay account
+      ///
+      /// Key: securityChangeEmailInfoTips
+      ///
+      /// Locales: en, zh-Hans
+      var securityChangeEmailInfoTips: RswiftResources.StringResource { .init(key: "securityChangeEmailInfoTips", tableName: "Localizable", source: source, developmentValue: "Email authentication adds another layer of security to your Stella Pay account", comment: nil) }
+
+      /// en translation: Please contact our customer service and email a photo of you holding your ID and a white piece of paper that says "I voluntarily change email address on the flashwire platform". 
+      ///
+      /// Key: securityChangeEmailSuccessContent
+      ///
+      /// Locales: en, zh-Hans
+      var securityChangeEmailSuccessContent: RswiftResources.StringResource { .init(key: "securityChangeEmailSuccessContent", tableName: "Localizable", source: source, developmentValue: "Please contact our customer service and email a photo of you holding your ID and a white piece of paper that says \"I voluntarily change email address on the flashwire platform\". ", comment: nil) }
+
+      /// en translation: Next You Need To Do
+      ///
+      /// Key: securityChangeEmailSuccessSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var securityChangeEmailSuccessSubTitle: RswiftResources.StringResource { .init(key: "securityChangeEmailSuccessSubTitle", tableName: "Localizable", source: source, developmentValue: "Next You Need To Do", comment: nil) }
+
+      /// en translation: Your Application Has Been Received ! 
+      ///
+      /// Key: securityChangeEmailSuccessTitle
+      ///
+      /// Locales: en, zh-Hans
+      var securityChangeEmailSuccessTitle: RswiftResources.StringResource { .init(key: "securityChangeEmailSuccessTitle", tableName: "Localizable", source: source, developmentValue: "Your Application Has Been Received ! ", comment: nil) }
+
+      /// en translation: Email
+      ///
+      /// Key: securityChangeEmailTitle
+      ///
+      /// Locales: en
+      var securityChangeEmailTitle: RswiftResources.StringResource { .init(key: "securityChangeEmailTitle", tableName: "Localizable", source: source, developmentValue: "Email", comment: nil) }
+
       /// en translation: Security Settings
       ///
       /// Key: securitySetting
@@ -964,7 +1055,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 87 images.
+  /// This `_R.image` struct is generated, and contains static references to 88 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -1063,6 +1154,9 @@ struct _R {
 
     /// Image `iconGlobal`.
     var iconGlobal: RswiftResources.ImageResource { .init(name: "iconGlobal", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconGoogle`.
+    var iconGoogle: RswiftResources.ImageResource { .init(name: "iconGoogle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconGooglePlay`.
     var iconGooglePlay: RswiftResources.ImageResource { .init(name: "iconGooglePlay", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1285,7 +1379,7 @@ struct _R {
     var dinRegularTtf: RswiftResources.FileResource { .init(name: "din-regular", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 77 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 80 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -1297,6 +1391,9 @@ struct _R {
 
     /// Nib `AuthDownloadCollectionViewCell`.
     var authDownloadCollectionViewCell: RswiftResources.NibReference<AuthDownloadCollectionViewCell> { .init(name: "AuthDownloadCollectionViewCell", bundle: bundle) }
+
+    /// Nib `AuthEmailViewController`.
+    var authEmailViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "AuthEmailViewController", bundle: bundle) }
 
     /// Nib `AuthSettingGuideViewController`.
     var authSettingGuideViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "AuthSettingGuideViewController", bundle: bundle) }
@@ -1336,6 +1433,12 @@ struct _R {
 
     /// Nib `CardViewController`.
     var cardViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "CardViewController", bundle: bundle) }
+
+    /// Nib `ChangeEmailSuccessViewController`.
+    var changeEmailSuccessViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ChangeEmailSuccessViewController", bundle: bundle) }
+
+    /// Nib `ChangePasswordViewController`.
+    var changePasswordViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ChangePasswordViewController", bundle: bundle) }
 
     /// Nib `ChooseCryptoNetworkView`.
     var chooseCryptoNetworkView: RswiftResources.NibReference<ChooseCryptoNetworkView> { .init(name: "ChooseCryptoNetworkView", bundle: bundle) }
@@ -1534,6 +1637,9 @@ struct _R {
       if UIKit.UIImage(named: "iconAppleStore", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconAppleStore' is used in nib 'AuthDownloadCollectionViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00191C", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00191C' is used in nib 'AuthDownloadCollectionViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'AuthDownloadCollectionViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'AuthEmailViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRightArrowBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowBlue' is used in nib 'AuthEmailViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'AuthEmailViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'AuthSettingGuideViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'AuthSettingGuideViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#76A4A7", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#76A4A7' is used in nib 'AuthSettingGuideViewController', but couldn't be loaded.") }
@@ -1554,8 +1660,8 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'AuthSettingVerifyCodeViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#76A4A7", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#76A4A7' is used in nib 'AuthSettingVerifyCodeViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'AuthSettingVerifyCodeViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconGoogle", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconGoogle' is used in nib 'AuthSettingViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'AuthSettingViewController', but couldn't be loaded.") }
-      if UIKit.UIImage(named: "iconQuFaceId", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconQuFaceId' is used in nib 'AuthSettingViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'AuthSettingViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'AuthSettingViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconDownArrow", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDownArrow' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
@@ -1578,6 +1684,14 @@ struct _R {
       if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'CardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'CardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconCardSetting", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconCardSetting' is used in nib 'CardViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconCopy", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconCopy' is used in nib 'ChangeEmailSuccessViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconDone", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDone' is used in nib 'ChangeEmailSuccessViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'ChangeEmailSuccessViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ChangeEmailSuccessViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ChangeEmailSuccessViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ChangePasswordViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ChangePasswordViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ChangePasswordViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ChooseCryptoNetworkView', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ChooseCryptoNetworkView', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#76A4A7", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#76A4A7' is used in nib 'ChooseCryptoNetworkView', but couldn't be loaded.") }

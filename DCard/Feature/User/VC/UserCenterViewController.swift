@@ -138,4 +138,11 @@ class UserCenterViewController: BaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func contractUsAction(_ sender: Any) {
+        let email = "support@flashwire.com"
+        if let url = URL(string: "mailto:\(email)") {
+           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
 }

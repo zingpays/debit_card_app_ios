@@ -17,6 +17,10 @@
 "faceID" = "人脸登录";
 "passwordLogin" = "密码登录";
 "switchNewAccountLogin" = "切换新账号登录";
+"forgotPasswordSubTitle" = "请输入你的新密码";
+"newPassword" = "新密码";
+"confirmNewPassword" = "确认你的新密码";
+"forgotPasswordTitle" = "忘记密码";
 
 /// Register
 "registerTitle" = "注册";
@@ -108,6 +112,13 @@
 "patternAuthCodeTips" = "请输入6位数字的谷歌验证码";
 "patternAuthSuccess" = "成功 ";
 "patternAuthSuccessTips" = "这个谷歌验证已绑定";
+"securityChangeEmailInfoTips" = "邮件验证为您的恒星支付帐户增加了另一层安全性";
+"securityChangeEmailButton" = "修改邮箱";
+"securityChangeEmailSuccessTitle" = "您的申请已经收到";
+"securityChangeEmailSuccessSubTitle" = "下面你需要做";
+"securityChangeEmailSuccessContent" = "请联系我们的客服，并通过电子邮件发送一张您手持身份证件的照片和一张写着“我自愿在恒星支付平台上重置我的谷歌验证”的白纸。 ";
+"changePasswordSubTitle" = "验证你的原密码";
+"enterOldPassword" = "请填写原密码";
 
 /// User
 "logout" = "退出";
@@ -134,3 +145,4 @@
 "next" = "下一步";
 "skip" = "跳过";
 "gotIt" = "了解";
+"email" = "邮件";

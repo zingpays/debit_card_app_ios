@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeEmailSuccessViewController" customModule="DCard" customModuleProvider="target">
+            <connections>
+                <outlet property="contactUsLabel" destination="6HX-uE-ugI" id="ZqV-Bg-4YP"/>
+                <outlet property="contentLabel" destination="je7-HW-qtR" id="5wg-BT-AUW"/>
+                <outlet property="emailButton" destination="VUB-yO-uIK" id="U1y-U2-v0o"/>
+                <outlet property="subTitleLabel" destination="KXh-A6-bKT" id="2hu-pS-yM1"/>
+                <outlet property="titleLabel" destination="otL-aI-xbw" id="uxb-CL-U9K"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconDone" translatesAutoresizingMaskIntoConstraints="NO" id="KNW-as-sgQ">
+                    <rect key="frame" x="155.66666666666666" y="159" width="82" height="82"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="82" id="2tb-af-fQL"/>
+                        <constraint firstAttribute="height" constant="82" id="A7q-Jf-ePZ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your application has been received ! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otL-aI-xbw">
+                    <rect key="frame" x="46.666666666666657" y="261" width="300" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="MkR-Lq-gSk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                    <color key="textColor" name="fw#001214"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYA-c7-vvE">
+                    <rect key="frame" x="16" y="347" width="361" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Next You Need To Do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXh-A6-bKT">
+                            <rect key="frame" x="16" y="20" width="329" height="19"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                            <color key="textColor" name="fw#001214"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je7-HW-qtR">
+                            <rect key="frame" x="16" y="51" width="329" height="79"/>
+                            <string key="text">Please contact our customer service and email a photo of you holding your ID and a white piece of paper that says "I voluntarily change email address on the flashwire platform”. </string>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="fw#001214"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="je7-HW-qtR" secondAttribute="trailing" constant="16" id="1e7-cO-gvx"/>
+                        <constraint firstItem="je7-HW-qtR" firstAttribute="leading" secondItem="eYA-c7-vvE" secondAttribute="leading" constant="16" id="Jp8-JE-zhS"/>
+                        <constraint firstItem="KXh-A6-bKT" firstAttribute="leading" secondItem="eYA-c7-vvE" secondAttribute="leading" constant="16" id="K7O-px-j86"/>
+                        <constraint firstAttribute="height" constant="150" id="Of1-gt-Epn"/>
+                        <constraint firstItem="je7-HW-qtR" firstAttribute="top" secondItem="KXh-A6-bKT" secondAttribute="bottom" constant="12" id="RU6-tx-fXe"/>
+                        <constraint firstAttribute="trailing" secondItem="KXh-A6-bKT" secondAttribute="trailing" constant="16" id="fuy-hW-Lee"/>
+                        <constraint firstItem="KXh-A6-bKT" firstAttribute="top" secondItem="eYA-c7-vvE" secondAttribute="top" constant="20" id="pfA-3a-U0v"/>
+                        <constraint firstAttribute="bottom" secondItem="je7-HW-qtR" secondAttribute="bottom" constant="20" id="uLo-th-hAg"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atJ-E9-Ok6">
+                    <rect key="frame" x="16" y="513" width="359" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HX-uE-ugI">
+                            <rect key="frame" x="15" y="15.666666666666629" width="78" height="19"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                            <color key="textColor" name="fw#001214"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvL-oo-c9S">
+                            <rect key="frame" x="323" y="15" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="JG5-8H-5Fx"/>
+                                <constraint firstAttribute="width" constant="20" id="m1u-ux-tmZ"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="iconCopy" title=" "/>
+                            <connections>
+                                <action selector="copyAction:" destination="-1" eventType="touchUpInside" id="tnV-v9-Hs4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUB-yO-uIK">
+                            <rect key="frame" x="119.33333333333336" y="7.6666666666666288" width="203.66666666666663" height="35"/>
+                            <color key="tintColor" name="fw#00A8BB"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="support@flashwire.com"/>
+                            <connections>
+                                <action selector="emailAction:" destination="-1" eventType="touchUpInside" id="Tua-uu-svg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="4na-dw-0X7"/>
+                        <constraint firstAttribute="trailing" secondItem="bvL-oo-c9S" secondAttribute="trailing" constant="16" id="Gsi-tL-oLD"/>
+                        <constraint firstItem="bvL-oo-c9S" firstAttribute="leading" secondItem="VUB-yO-uIK" secondAttribute="trailing" id="R92-es-gkf"/>
+                        <constraint firstItem="VUB-yO-uIK" firstAttribute="centerY" secondItem="atJ-E9-Ok6" secondAttribute="centerY" id="WpK-X1-l3A"/>
+                        <constraint firstItem="bvL-oo-c9S" firstAttribute="centerY" secondItem="atJ-E9-Ok6" secondAttribute="centerY" id="ZIV-9j-2f7"/>
+                        <constraint firstItem="6HX-uE-ugI" firstAttribute="leading" secondItem="atJ-E9-Ok6" secondAttribute="leading" constant="15" id="hsg-hi-euE"/>
+                        <constraint firstItem="6HX-uE-ugI" firstAttribute="centerY" secondItem="atJ-E9-Ok6" secondAttribute="centerY" id="vlN-LF-cMd"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-7u-m9J">
+                    <rect key="frame" x="26" y="595" width="341" height="46"/>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="kgk-Zv-ZBF"/>
+                    </constraints>
+                    <color key="tintColor" name="fw#FFFFFF"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Got It"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="gotItAction:" destination="-1" eventType="touchUpInside" id="NZ0-XK-F0w"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eYA-c7-vvE" secondAttribute="trailing" constant="16" id="04H-f2-flX"/>
+                <constraint firstItem="eYA-c7-vvE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1Fs-4R-S4s"/>
+                <constraint firstItem="KNW-as-sgQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="79b-dj-a21"/>
+                <constraint firstItem="gxb-7u-m9J" firstAttribute="top" secondItem="atJ-E9-Ok6" secondAttribute="bottom" constant="32" id="BiE-Ae-HVH"/>
+                <constraint firstItem="atJ-E9-Ok6" firstAttribute="top" secondItem="eYA-c7-vvE" secondAttribute="bottom" constant="16" id="NYe-es-i6Y"/>
+                <constraint firstItem="gxb-7u-m9J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="Thd-jd-sMz"/>
+                <constraint firstItem="otL-aI-xbw" firstAttribute="top" secondItem="KNW-as-sgQ" secondAttribute="bottom" constant="20" id="bOR-Dm-4Tq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="atJ-E9-Ok6" secondAttribute="trailing" constant="18" id="f2k-FX-2h1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gxb-7u-m9J" secondAttribute="trailing" constant="26" id="neJ-KE-Xxg"/>
+                <constraint firstItem="atJ-E9-Ok6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sXd-Fh-0nK"/>
+                <constraint firstItem="eYA-c7-vvE" firstAttribute="top" secondItem="otL-aI-xbw" secondAttribute="bottom" constant="30" id="voP-t4-lNr"/>
+                <constraint firstItem="otL-aI-xbw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wzc-VA-kuW"/>
+                <constraint firstItem="KNW-as-sgQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="y6W-8l-yUV"/>
+            </constraints>
+            <point key="canvasLocation" x="9.9236641221374047" y="24.647887323943664"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconCopy" width="20" height="20"/>
+        <image name="iconDone" width="82" height="82"/>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

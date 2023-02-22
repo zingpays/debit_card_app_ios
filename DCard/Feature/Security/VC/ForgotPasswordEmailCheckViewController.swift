@@ -32,6 +32,8 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
     
     @IBAction func nextAction(_ sender: Any) {
         let vc = SecurityVerificationViewController()
+        vc.style = .allWithoutAuthReset
+        vc.source = .forgotPassword
         navigationController?.pushViewController(vc, animated: true)
     }
     

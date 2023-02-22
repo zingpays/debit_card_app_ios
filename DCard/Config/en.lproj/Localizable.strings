@@ -17,6 +17,10 @@
 "faceID" = "Face ID";
 "passwordLogin" = "Password Login";
 "switchNewAccountLogin" = "Switch New Account Login";
+"forgotPasswordSubTitle" = "Please Enter Your New Password";
+"newPassword" = "New password";
+"confirmNewPassword" = "Confirm new password";
+"forgotPasswordTitle" = "Forgot Password";
 
 /// Register
 "registerTitle" = "Register";
@@ -108,6 +112,14 @@
 "patternAuthCodeTips" = "Enter the 6-digit code from Google Authenticator";
 "patternAuthSuccess" = "Successfully ";
 "patternAuthSuccessTips" = "The Google Authenticator has bound";
+"securityChangeEmailTitle" = "Email";
+"securityChangeEmailInfoTips" = "Email authentication adds another layer of security to your Stella Pay account";
+"securityChangeEmailButton" = "Change Email Authentication";
+"securityChangeEmailSuccessTitle" = "Your Application Has Been Received ! ";
+"securityChangeEmailSuccessSubTitle" = "Next You Need To Do";
+"securityChangeEmailSuccessContent" = "Please contact our customer service and email a photo of you holding your ID and a white piece of paper that says \"I voluntarily change email address on the flashwire platform\". ";
+"changePasswordSubTitle" = "Verify your old password";
+"enterOldPassword" = "Enter old password";
 
 /// User
 "logout" = "Log out";
@@ -134,3 +146,4 @@
 "next" = "Next";
 "skip" = "Skip";
 "gotIt" = "Got It";
+"email" = "Email";

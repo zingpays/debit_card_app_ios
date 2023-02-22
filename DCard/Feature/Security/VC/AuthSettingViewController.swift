@@ -28,16 +28,17 @@ class AuthSettingViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var authSwitch: UISwitch! {
-        didSet {
-            authSwitch.isOn = LockScreenManager.shared.isOn
-        }
-    }
+    @IBOutlet weak var authSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupNotification()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        authSwitch.isOn = LockScreenManager.shared.isOn
     }
     
     deinit {
@@ -63,8 +64,10 @@ class AuthSettingViewController: BaseViewController {
     
     @IBAction func authAction(_ sender: UIButton) {
         if authSwitch.isOn {
-            LockScreenManager.shared.isOn = false
-            authSwitch.isOn = false
+            let vc = SecurityVerificationViewController()
+            vc.style = .allWithoutAuthReset
+            vc.source = .closeAuth
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = AuthSettingGuideViewController()
             navigationController?.pushViewController(vc, animated: true)
