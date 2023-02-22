@@ -89,10 +89,25 @@
 "patternForgotAgainTips" = "Please draw your pattern again";
 "patternFormatErrorTips" = "At least 4 points need to be linked";
 "patternAgainErrorTips" = "Inconsistent unlock pattern";
-"patternSetupSuccessTips" = "Gesture setting successfully";
+"patternSetupSuccessTips" = "Pattern setting successfully";
 "patternForgot" = "Forgot Pattern ?";
 "patternNotMatchOriginPatternErrorTips" = "Pattern is incorrect";
 "patternForgotSuccess" = "New pattern setting successfully";
+"patternAuthGuideTitle" = "GA Enable";
+"patternAuthGuideSubTitle" = "Download and install the Authenticator app";
+"patternAuthDownloadFrom" = "Download from";
+"patternAuthAppStore" = "APP Store";
+"patternAuthGooglePlay" = "Google play";
+"patternAuthNext" = "Already Installed, Next";
+"patternAuthSettingTitle" = "Google Authenticator";
+"patternAuthSettingSubTitle" = "The Google Authenticator app protects your Stella Pay account";
+"patternAuthQrCodeSubTitle" = "Scan this QRcode in the Authenticator app";
+"patternAuthQrCodeDoneSubTitle" = "Save this Backup Key in a secure location";
+"patternAuthQrTips" = "This Key will allow you to recover your Authenticator should you lose your phone.";
+"patternAuthCodeSubTitle" = "Enable the Authenticator by verifying your account";
+"patternAuthCodeTips" = "Enter the 6-digit code from Google Authenticator";
+"patternAuthSuccess" = "Successfully ";
+"patternAuthSuccessTips" = "The Google Authenticator has bound";
 
 /// User
 "logout" = "Log out";
@@ -118,3 +133,4 @@
 "submit" = "Submit";
 "next" = "Next";
 "skip" = "Skip";
+"gotIt" = "Got It";

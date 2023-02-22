@@ -246,7 +246,7 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
                 if passwordFirst == password {
                     view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.5) { [weak self] didTap in
                         guard let this = self else { return }
-                        PatternManager.shared.password = this.password
+                        LockScreenManager.shared.password = this.password
                         NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
                         this.navigationController?.popViewController()
                     }
@@ -269,7 +269,7 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
                 if passwordFirst == password {
                     view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.8) { [weak self] didTap in
                         guard let this = self else { return }
-                        PatternManager.shared.password = this.password
+                        LockScreenManager.shared.password = this.password
                         NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
                         this.navigationController?.popViewController()
                     }
@@ -278,7 +278,7 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
                     updateTips(R.string.localizable.patternAgainErrorTips(), isError: true)
                 }
             } else {
-                if password == PatternManager.shared.password {
+                if password == LockScreenManager.shared.password {
                     isAgain = true
                     passwordFirst = password
                     password = ""
@@ -294,7 +294,7 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
                 if passwordFirst == password {
                     view.makeToast(R.string.localizable.patternForgotSuccess(), duration: 0.8) { [weak self] didTap in
                         guard let this = self else { return }
-                        PatternManager.shared.password = this.password
+                        LockScreenManager.shared.password = this.password
                         NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
                         let vcs = this.navigationController?.viewControllers.filter({ vcItem in
                             if vcItem.isMember(of: QuickUnlockViewController.self) {

@@ -48,14 +48,16 @@ class SecuritySettingsViewController: BaseViewController {
     }()
     
     private lazy var datasource: [SecurityCollectionViewCellModel] = {
-        let bioStatus = LocalAuthenManager.shared.isBind && !(PatternManager.shared.password?.isEmpty ?? true)
+        let bioStatus = LocalAuthenManager.shared.isBind && !(LockScreenManager.shared.password?.isEmpty ?? true)
         let bioIcon = bioStatus ? R.image.iconBiometrics() : R.image.iconBiometricsNotActivated()
         let bioItem = SecurityCollectionViewCellModel(icon: bioIcon,
                                                       title: R.string.localizable.securitySettingsQuickUnlock(),
                                                       status: bioStatus)
-        let authItem = SecurityCollectionViewCellModel(icon: R.image.iconSecurityGaNotActivated(),
+        let authStatus = LockScreenManager.shared.isOn
+        let authIcon = authStatus ? R.image.iconSecurityGa() : R.image.iconSecurityGaNotActivated()
+        let authItem = SecurityCollectionViewCellModel(icon: authIcon,
                                                        title: R.string.localizable.securitySettingsAuth(),
-                                                       status: false)
+                                                       status: authStatus)
         let emailItem = SecurityCollectionViewCellModel(icon: R.image.iconSecurityEmailNotActivated(),
                                                        title: R.string.localizable.securitySettingsEmail(),
                                                        status: false)
@@ -75,6 +77,7 @@ class SecuritySettingsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateQuickUnlock()
+        updateAuthStatus()
     }
     
     // MARK: - Private
@@ -88,7 +91,7 @@ class SecuritySettingsViewController: BaseViewController {
 
     private func updateQuickUnlock() {
         var unlockData = datasource.first
-        if LocalAuthenManager.shared.isBind && !(PatternManager.shared.password?.isEmpty ?? true) {
+        if LocalAuthenManager.shared.isBind && !(LockScreenManager.shared.password?.isEmpty ?? true) {
             unlockData?.status = true
             unlockData?.icon = R.image.iconBiometrics()
         } else {
@@ -98,6 +101,19 @@ class SecuritySettingsViewController: BaseViewController {
         if let data = unlockData {
             datasource[0] = data
         }
+        securityCollectionView.reloadData()
+    }
+    
+    private func updateAuthStatus() {
+        var authData = datasource[1]
+        if LockScreenManager.shared.isOn {
+            authData.status = true
+            authData.icon = R.image.iconSecurityGa()
+        } else {
+            authData.status = false
+            authData.icon = R.image.iconBiometricsNotActivated()
+        }
+        datasource[1] = authData
         securityCollectionView.reloadData()
     }
 }
@@ -117,6 +133,10 @@ extension SecuritySettingsViewController: UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let vc = QuickUnlockViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.row == 1 {
+            let vc = AuthSettingViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
     }

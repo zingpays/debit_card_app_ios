@@ -116,6 +116,14 @@
 		5482974929A3790E00F82611 /* PatternManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974829A3790E00F82611 /* PatternManager.swift */; };
 		5482974C29A49B9A00F82611 /* AuthSettingGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974A29A49B9A00F82611 /* AuthSettingGuideViewController.swift */; };
 		5482974D29A49B9A00F82611 /* AuthSettingGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482974B29A49B9A00F82611 /* AuthSettingGuideViewController.xib */; };
+		5482975029A4A49500F82611 /* AuthDownloadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974E29A4A49500F82611 /* AuthDownloadCollectionViewCell.swift */; };
+		5482975129A4A49500F82611 /* AuthDownloadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482974F29A4A49500F82611 /* AuthDownloadCollectionViewCell.xib */; };
+		5482975429A4B16400F82611 /* AuthSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482975229A4B16400F82611 /* AuthSettingViewController.swift */; };
+		5482975529A4B16400F82611 /* AuthSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482975329A4B16400F82611 /* AuthSettingViewController.xib */; };
+		5482975829A4B5FC00F82611 /* AuthSettingQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482975629A4B5FC00F82611 /* AuthSettingQRCodeViewController.swift */; };
+		5482975929A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482975729A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib */; };
+		5482975C29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482975A29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift */; };
+		5482975D29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482975B29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib */; };
 		549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549D4620298A4B7C009AEB13 /* din-bold.ttf */; };
 		549D4623298A4B7C009AEB13 /* din-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549D4621298A4B7C009AEB13 /* din-regular.ttf */; };
 		549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549D4624298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift */; };
@@ -174,6 +182,8 @@
 		54C3131E299625D800DBF373 /* DepositViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C3131C299625D800DBF373 /* DepositViewController.xib */; };
 		54CCDE922990FAE10035DE6D /* CryptoTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCDE902990FAE10035DE6D /* CryptoTransactionTableViewCell.swift */; };
 		54CCDE932990FAE10035DE6D /* CryptoTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CCDE912990FAE10035DE6D /* CryptoTransactionTableViewCell.xib */; };
+		54CD894C29A5C5B60038E822 /* AuthSettingSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD894A29A5C5B60038E822 /* AuthSettingSuccessViewController.swift */; };
+		54CD894D29A5C5B60038E822 /* AuthSettingSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CD894B29A5C5B60038E822 /* AuthSettingSuccessViewController.xib */; };
 		54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */; };
 		54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */; };
 		54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */; };
@@ -334,6 +344,14 @@
 		5482974829A3790E00F82611 /* PatternManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternManager.swift; sourceTree = "<group>"; };
 		5482974A29A49B9A00F82611 /* AuthSettingGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettingGuideViewController.swift; sourceTree = "<group>"; };
 		5482974B29A49B9A00F82611 /* AuthSettingGuideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingGuideViewController.xib; sourceTree = "<group>"; };
+		5482974E29A4A49500F82611 /* AuthDownloadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDownloadCollectionViewCell.swift; sourceTree = "<group>"; };
+		5482974F29A4A49500F82611 /* AuthDownloadCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthDownloadCollectionViewCell.xib; sourceTree = "<group>"; };
+		5482975229A4B16400F82611 /* AuthSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettingViewController.swift; sourceTree = "<group>"; };
+		5482975329A4B16400F82611 /* AuthSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingViewController.xib; sourceTree = "<group>"; };
+		5482975629A4B5FC00F82611 /* AuthSettingQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettingQRCodeViewController.swift; sourceTree = "<group>"; };
+		5482975729A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingQRCodeViewController.xib; sourceTree = "<group>"; };
+		5482975A29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettingVerifyCodeViewController.swift; sourceTree = "<group>"; };
+		5482975B29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingVerifyCodeViewController.xib; sourceTree = "<group>"; };
 		549D4620298A4B7C009AEB13 /* din-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-bold.ttf"; sourceTree = "<group>"; };
 		549D4621298A4B7C009AEB13 /* din-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-regular.ttf"; sourceTree = "<group>"; };
 		549D4624298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -392,6 +410,8 @@
 		54C3131C299625D800DBF373 /* DepositViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepositViewController.xib; sourceTree = "<group>"; };
 		54CCDE902990FAE10035DE6D /* CryptoTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTransactionTableViewCell.swift; sourceTree = "<group>"; };
 		54CCDE912990FAE10035DE6D /* CryptoTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoTransactionTableViewCell.xib; sourceTree = "<group>"; };
+		54CD894A29A5C5B60038E822 /* AuthSettingSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettingSuccessViewController.swift; sourceTree = "<group>"; };
+		54CD894B29A5C5B60038E822 /* AuthSettingSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingSuccessViewController.xib; sourceTree = "<group>"; };
 		54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCFinishViewController.swift; sourceTree = "<group>"; };
 		54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCFinishViewController.xib; sourceTree = "<group>"; };
 		54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCUnAvailableViewController.swift; sourceTree = "<group>"; };
@@ -790,6 +810,8 @@
 				5482973D29A3464800F82611 /* SecurityCollectionViewCell.xib */,
 				5482974429A35F2B00F82611 /* QuickUnlockTableViewCell.swift */,
 				5482974529A35F2B00F82611 /* QuickUnlockTableViewCell.xib */,
+				5482974E29A4A49500F82611 /* AuthDownloadCollectionViewCell.swift */,
+				5482974F29A4A49500F82611 /* AuthDownloadCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -807,8 +829,16 @@
 				5482973929A3417600F82611 /* SecuritySettingsViewController.xib */,
 				5482974029A35B0300F82611 /* QuickUnlockViewController.swift */,
 				5482974129A35B0300F82611 /* QuickUnlockViewController.xib */,
+				5482975229A4B16400F82611 /* AuthSettingViewController.swift */,
+				5482975329A4B16400F82611 /* AuthSettingViewController.xib */,
 				5482974A29A49B9A00F82611 /* AuthSettingGuideViewController.swift */,
 				5482974B29A49B9A00F82611 /* AuthSettingGuideViewController.xib */,
+				5482975629A4B5FC00F82611 /* AuthSettingQRCodeViewController.swift */,
+				5482975729A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib */,
+				5482975A29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift */,
+				5482975B29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib */,
+				54CD894A29A5C5B60038E822 /* AuthSettingSuccessViewController.swift */,
+				54CD894B29A5C5B60038E822 /* AuthSettingSuccessViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1109,6 +1139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5482975129A4A49500F82611 /* AuthDownloadCollectionViewCell.xib in Resources */,
 				5429B93A299F4F00005F721E /* UserCenterViewController.xib in Resources */,
 				541A8D88296C05BB00C59026 /* Roboto-Bold-3.ttf in Resources */,
 				54BBA11B296D7A5500EB316F /* SettingPasswordViewController.xib in Resources */,
@@ -1125,6 +1156,8 @@
 				54C313162996121F00DBF373 /* ChooseCryptoNetworkView.xib in Resources */,
 				54E368AD298A15440042D072 /* ApplyCardViewController.xib in Resources */,
 				54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */,
+				5482975D29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib in Resources */,
+				5482975529A4B16400F82611 /* AuthSettingViewController.xib in Resources */,
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
 				544ABBD02987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib in Resources */,
@@ -1140,6 +1173,7 @@
 				5422267F2992648900447A1A /* WalletTransactionsViewController.xib in Resources */,
 				5482974729A35F2B00F82611 /* QuickUnlockTableViewCell.xib in Resources */,
 				54DE3E80298D1B190077B120 /* WalletCardTableViewCell.xib in Resources */,
+				5482975929A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib in Resources */,
 				54A45504298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				542BC1A02977026900133659 /* LoginViewController.xib in Resources */,
@@ -1187,6 +1221,7 @@
 				54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
 				545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */,
+				54CD894D29A5C5B60038E822 /* AuthSettingSuccessViewController.xib in Resources */,
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
 				54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */,
 				5422267B2992580600447A1A /* SellCryptoConfirmView.xib in Resources */,
@@ -1340,6 +1375,7 @@
 				541A8D3029641F1F00C59026 /* UITableView+Extension.swift in Sources */,
 				54B0850C2991F3D100B6C84B /* SellCryptoViewController.swift in Sources */,
 				547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */,
+				5482975C29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift in Sources */,
 				54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */,
 				541A8D2E29641F1F00C59026 /* LocalizationManager.swift in Sources */,
 				541A8D2A29641F1F00C59026 /* Wrapper.swift in Sources */,
@@ -1348,6 +1384,7 @@
 				54DE3E872990CBC90077B120 /* WalletCryptoItemTableViewCell.swift in Sources */,
 				54A4550A298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift in Sources */,
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
+				5482975029A4A49500F82611 /* AuthDownloadCollectionViewCell.swift in Sources */,
 				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
 				5422268E2993ADC000447A1A /* SellDetailItemTableViewCell.swift in Sources */,
 				547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */,
@@ -1369,6 +1406,8 @@
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				5482975429A4B16400F82611 /* AuthSettingViewController.swift in Sources */,
+				5482975829A4B5FC00F82611 /* AuthSettingQRCodeViewController.swift in Sources */,
 				54C313142996120900DBF373 /* ChooseCryptoNetworkView.swift in Sources */,
 				54C3131D299625D800DBF373 /* DepositViewController.swift in Sources */,
 				5422268629939AC600447A1A /* TransactionsDetailViewController.swift in Sources */,
@@ -1400,6 +1439,7 @@
 				54A45525298CF89300621311 /* FreezeSuccessViewController.swift in Sources */,
 				54A45503298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
+				54CD894C29A5C5B60038E822 /* AuthSettingSuccessViewController.swift in Sources */,
 				545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */,
 				5429B933299E0A01005F721E /* RegisterRequest.swift in Sources */,
 				5422267E2992648900447A1A /* WalletTransactionsViewController.swift in Sources */,

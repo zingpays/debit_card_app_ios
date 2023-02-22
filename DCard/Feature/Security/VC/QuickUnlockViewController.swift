@@ -59,7 +59,7 @@ class QuickUnlockViewController: BaseViewController {
     @IBOutlet weak var patternContentLabel: UILabel! {
         didSet {
             patternContentLabel.text = R.string.localizable.quickUnlockChange()
-            patternContentLabel.isHidden = PatternManager.shared.password?.isEmpty ?? true
+            patternContentLabel.isHidden = LockScreenManager.shared.password?.isEmpty ?? true
         }
     }
     

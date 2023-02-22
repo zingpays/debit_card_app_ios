@@ -93,6 +93,21 @@
 "patternForgot" = "忘记手势?";
 "patternNotMatchOriginPatternErrorTips" = "手势图案不正确";
 "patternForgotSuccess" = "新的手势设置成功";
+"patternAuthGuideTitle" = "谷歌验证器绑定";
+"patternAuthGuideSubTitle" = "下载和安装谷歌验证器";
+"patternAuthDownloadFrom" = "下载渠道";
+"patternAuthAppStore" = "应用商店";
+"patternAuthGooglePlay" = "谷歌应用商店";
+"patternAuthNext" = "已下载，继续";
+"patternAuthSettingTitle" = "谷歌验证";
+"patternAuthSettingSubTitle" = "谷歌验证app保护您恒星支付账号的安全";
+"patternAuthQrCodeSubTitle" = "使用谷歌验证器扫描下方二维码";
+"patternAuthQrCodeDoneSubTitle" = "保存下方密钥到一个安全的地方";
+"patternAuthQrTips" = "这个密钥是当你丢失了手机用来恢复你的验证器";
+"patternAuthCodeSubTitle" = "用已绑定的谷歌验证器的验证码来验证你的账号";
+"patternAuthCodeTips" = "请输入6位数字的谷歌验证码";
+"patternAuthSuccess" = "成功 ";
+"patternAuthSuccessTips" = "这个谷歌验证已绑定";
 
 /// User
 "logout" = "退出";
@@ -118,3 +133,4 @@
 "submit" = "提交";
 "next" = "下一步";
 "skip" = "跳过";
+"gotIt" = "了解";

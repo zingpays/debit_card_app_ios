@@ -8,10 +8,11 @@
 
 import Foundation
 
-class PatternManager {
+class LockScreenManager {
     
-    static let shared = PatternManager()
+    static let shared = LockScreenManager()
     fileprivate let kPatternPasswordKey = "PATTERNPASSWORDKEY"
+    fileprivate let kAuthPasswordKey = "AUTHPASSWORDKEY"
     
     var password: String? {
         set {
@@ -20,6 +21,16 @@ class PatternManager {
         }
         get {
             return UserDefaults.standard.string(forKey: kPatternPasswordKey)
+        }
+    }
+    
+    var isOn: Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: kAuthPasswordKey)
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.bool(forKey: kAuthPasswordKey)
         }
     }
 }

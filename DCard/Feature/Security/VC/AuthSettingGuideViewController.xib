@@ -9,9 +9,21 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthSettingGuideViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="downloadCollectionView" destination="YK4-Xr-kjI" id="HPY-BV-Sym"/>
+                <outlet property="downloadCollectionViewHeight" destination="oRo-Ai-FF4" id="fcJ-kS-DBL"/>
+                <outlet property="subTitleLabel" destination="5BV-Wa-5rm" id="vHO-48-9ey"/>
+                <outlet property="titleLabel" destination="WWk-ap-4pn" id="rRB-sG-YlY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,24 +33,156 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GA Enable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWk-ap-4pn">
-                    <rect key="frame" x="16" y="89" width="80.666666666666671" height="20"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <rect key="frame" x="16" y="89" width="128" height="33"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
                     <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-TB-bX7">
+                    <rect key="frame" x="16" y="138" width="32" height="32"/>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="RIc-gk-Uf3"/>
+                        <constraint firstAttribute="width" constant="32" id="cTe-Eh-Oww"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="fw#FFFFFF"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download and install the Authenticator app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-Wa-5rm">
+                    <rect key="frame" x="56" y="138" width="305" height="32"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PN-ai-blN">
+                    <rect key="frame" x="20" y="186" width="82.333333333333329" height="3"/>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="ckI-C5-Htc"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bF-Y2-k1u">
+                    <rect key="frame" x="110.33333333333334" y="186" width="82.333333333333343" height="3"/>
+                    <color key="backgroundColor" name="fw#76A4A7"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fV-EJ-oIY">
+                    <rect key="frame" x="200.66666666666666" y="186" width="81.999999999999972" height="3"/>
+                    <color key="backgroundColor" name="fw#76A4A7"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2G-fG-sDY">
+                    <rect key="frame" x="290.66666666666669" y="186" width="82.333333333333314" height="3"/>
+                    <color key="backgroundColor" name="fw#76A4A7"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YK4-Xr-kjI">
+                    <rect key="frame" x="16" y="209" width="361" height="160"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="oRo-Ai-FF4"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fs1-7N-08v">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ixx-6e-bDv"/>
+                        <outlet property="delegate" destination="-1" id="ZPJ-af-hfm"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X1-yE-0cV">
+                    <rect key="frame" x="26" y="401" width="341" height="46"/>
+                    <color key="backgroundColor" name="fw#00A8BB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="WDj-x8-Kcw"/>
+                    </constraints>
+                    <color key="tintColor" name="fw#FFFFFF"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Already installed, Next"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="LtV-8Z-PIS"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5BV-Wa-5rm" secondAttribute="trailing" constant="32" id="0UC-ap-S8u"/>
+                <constraint firstItem="2X1-yE-0cV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="29g-Zn-SNd"/>
+                <constraint firstItem="7bF-Y2-k1u" firstAttribute="width" secondItem="2PN-ai-blN" secondAttribute="width" id="29w-B1-1e3"/>
                 <constraint firstItem="WWk-ap-4pn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2Nr-rf-G3x"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YK4-Xr-kjI" secondAttribute="trailing" constant="16" id="2nl-ue-ETk"/>
+                <constraint firstItem="A2G-fG-sDY" firstAttribute="width" secondItem="2PN-ai-blN" secondAttribute="width" id="4Di-E1-Mms"/>
+                <constraint firstItem="5BV-Wa-5rm" firstAttribute="top" secondItem="WWk-ap-4pn" secondAttribute="bottom" constant="16" id="6cl-rF-w02"/>
+                <constraint firstItem="7bF-Y2-k1u" firstAttribute="height" secondItem="2PN-ai-blN" secondAttribute="height" id="9jN-N5-OD1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A2G-fG-sDY" secondAttribute="trailing" constant="20" id="CJf-6d-Wb6"/>
+                <constraint firstItem="1fV-EJ-oIY" firstAttribute="width" secondItem="2PN-ai-blN" secondAttribute="width" id="CZU-pc-wQE"/>
+                <constraint firstItem="Jla-TB-bX7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="DIt-TL-GQS"/>
+                <constraint firstItem="7bF-Y2-k1u" firstAttribute="top" secondItem="2PN-ai-blN" secondAttribute="top" id="QmT-H0-9sC"/>
+                <constraint firstItem="1fV-EJ-oIY" firstAttribute="leading" secondItem="7bF-Y2-k1u" secondAttribute="trailing" constant="8" id="Rlz-aT-3Ur"/>
+                <constraint firstItem="7bF-Y2-k1u" firstAttribute="leading" secondItem="2PN-ai-blN" secondAttribute="trailing" constant="8" id="T0T-Dm-07G"/>
+                <constraint firstItem="5BV-Wa-5rm" firstAttribute="centerY" secondItem="Jla-TB-bX7" secondAttribute="centerY" id="VKN-gU-KQc"/>
+                <constraint firstItem="5BV-Wa-5rm" firstAttribute="leading" secondItem="Jla-TB-bX7" secondAttribute="trailing" constant="8" id="aBN-5V-Rnz"/>
+                <constraint firstItem="A2G-fG-sDY" firstAttribute="leading" secondItem="1fV-EJ-oIY" secondAttribute="trailing" constant="8" id="d9y-PW-6Pd"/>
+                <constraint firstItem="Jla-TB-bX7" firstAttribute="top" secondItem="WWk-ap-4pn" secondAttribute="bottom" constant="16" id="fyL-Gl-tXr"/>
+                <constraint firstItem="1fV-EJ-oIY" firstAttribute="height" secondItem="2PN-ai-blN" secondAttribute="height" id="gCS-BY-Hw9"/>
+                <constraint firstItem="A2G-fG-sDY" firstAttribute="top" secondItem="2PN-ai-blN" secondAttribute="top" id="gYZ-Ub-PzK"/>
+                <constraint firstItem="2X1-yE-0cV" firstAttribute="top" secondItem="YK4-Xr-kjI" secondAttribute="bottom" constant="32" id="gbl-Fo-8ZS"/>
+                <constraint firstItem="2PN-ai-blN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gc2-Iy-8Oy"/>
+                <constraint firstItem="2PN-ai-blN" firstAttribute="top" secondItem="Jla-TB-bX7" secondAttribute="bottom" constant="16" id="lTT-9c-cFe"/>
+                <constraint firstItem="A2G-fG-sDY" firstAttribute="height" secondItem="2PN-ai-blN" secondAttribute="height" id="pNH-pp-PU1"/>
+                <constraint firstItem="YK4-Xr-kjI" firstAttribute="top" secondItem="2PN-ai-blN" secondAttribute="bottom" constant="20" id="qPI-1O-rI1"/>
                 <constraint firstItem="WWk-ap-4pn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="s7t-2N-lbh"/>
+                <constraint firstItem="YK4-Xr-kjI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sx2-1C-4qQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2X1-yE-0cV" secondAttribute="trailing" constant="26" id="wQV-QQ-wCy"/>
+                <constraint firstItem="1fV-EJ-oIY" firstAttribute="top" secondItem="2PN-ai-blN" secondAttribute="top" id="yQr-W4-0Kb"/>
             </constraints>
-            <point key="canvasLocation" x="103" y="-11"/>
+            <point key="canvasLocation" x="251" y="-18"/>
         </view>
     </objects>
     <resources>
         <namedColor name="fw#001214">
             <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#76A4A7">
+            <color red="0.50199997425079346" green="0.63899999856948853" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
