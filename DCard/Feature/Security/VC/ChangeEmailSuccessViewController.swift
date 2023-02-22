@@ -30,11 +30,7 @@ class ChangeEmailSuccessViewController: BaseViewController {
             contactUsLabel.text = R.string.localizable.contractUs()
         }
     }
-    @IBOutlet weak var emailButton: UIButton! {
-        didSet {
-            emailButton.setTitle(UserManager.shared.email, for: .normal)
-        }
-    }
+    @IBOutlet weak var emailButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +41,15 @@ class ChangeEmailSuccessViewController: BaseViewController {
     
     
     @IBAction func emailAction(_ sender: Any) {
-        
+        let email = "support@flashwire.com"
+        if let url = URL(string: "mailto:\(email)") {
+           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func copyAction(_ sender: Any) {
-        
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = "support@flashwire.com"
     }
     
     @IBAction func gotItAction(_ sender: Any) {
