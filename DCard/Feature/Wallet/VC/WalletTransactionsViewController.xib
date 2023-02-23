@@ -82,7 +82,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Jan/2022 - 09/Jan/2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYh-K8-51q">
-                            <rect key="frame" x="56.666666666666657" y="48.666666666666671" width="178" height="16.666666666666671"/>
+                            <rect key="frame" x="56.666666666666657" y="48.666666666666671" width="178.00000000000003" height="16.666666666666671"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                             <color key="textColor" name="fw#FFFFFF"/>
                             <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                 <constraint firstItem="Hi3-cc-pzZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n3i-Yw-7yh"/>
                 <constraint firstItem="QRg-cn-FLe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qSS-sw-0Lr"/>
             </constraints>
-            <point key="canvasLocation" x="77" y="2"/>
+            <point key="canvasLocation" x="431" y="6"/>
         </view>
     </objects>
     <resources>

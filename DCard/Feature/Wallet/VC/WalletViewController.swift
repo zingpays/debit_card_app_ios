@@ -20,7 +20,9 @@ class WalletViewController: BaseViewController {
         setupUI()
     }
 
-    override func setupNavBar() {}
+    override func setupNavBar() {
+        self.gk_navigationBar.isHidden = true
+    }
     
     // MARK: - Private
     

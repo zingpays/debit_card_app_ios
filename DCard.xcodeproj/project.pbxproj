@@ -78,6 +78,8 @@
 		542BC1A02977026900133659 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542BC19E2977026900133659 /* LoginViewController.xib */; };
 		544ABBCF2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544ABBCD2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift */; };
 		544ABBD02987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544ABBCE2987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib */; };
+		54569A3C29A71537009DD55D /* HomeMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54569A3A29A71537009DD55D /* HomeMarketTableViewCell.swift */; };
+		54569A3D29A71537009DD55D /* HomeMarketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54569A3B29A71537009DD55D /* HomeMarketTableViewCell.xib */; };
 		545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C567E2978507800D7F058 /* BiometricsViewController.swift */; };
 		545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C567F2978507800D7F058 /* BiometricsViewController.xib */; };
 		545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C56822984FB1D00D7F058 /* PasswordLoginViewController.swift */; };
@@ -124,6 +126,19 @@
 		5482975929A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482975729A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib */; };
 		5482975C29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482975A29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift */; };
 		5482975D29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482975B29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib */; };
+		5495F8E229A7158D0073EA48 /* HomeOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5495F8E129A7158D0073EA48 /* HomeOverviewTableViewCell.xib */; };
+		5495F8E529A7385B0073EA48 /* MarketItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495F8E329A7385B0073EA48 /* MarketItemTableViewCell.swift */; };
+		5495F8E629A7385B0073EA48 /* MarketItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5495F8E429A7385B0073EA48 /* MarketItemTableViewCell.xib */; };
+		5495F8E929A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495F8E729A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.swift */; };
+		5495F8EA29A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5495F8E829A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.xib */; };
+		5495F8ED29A74DDD0073EA48 /* TopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495F8EB29A74DDD0073EA48 /* TopupViewController.swift */; };
+		5495F8EE29A74DDD0073EA48 /* TopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5495F8EC29A74DDD0073EA48 /* TopupViewController.xib */; };
+		5495F8F129A754A00073EA48 /* TopupHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495F8EF29A754A00073EA48 /* TopupHistoryViewController.swift */; };
+		5495F8F229A754A00073EA48 /* TopupHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5495F8F029A754A00073EA48 /* TopupHistoryViewController.xib */; };
+		5495F8F529A75F170073EA48 /* TopUpHistoryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495F8F329A75F170073EA48 /* TopUpHistoryItemTableViewCell.swift */; };
+		5495F8F629A75F170073EA48 /* TopUpHistoryItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5495F8F429A75F170073EA48 /* TopUpHistoryItemTableViewCell.xib */; };
+		5495F8F929A76BDB0073EA48 /* HomeTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495F8F729A76BDB0073EA48 /* HomeTransactionsViewController.swift */; };
+		5495F8FA29A76BDB0073EA48 /* HomeTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5495F8F829A76BDB0073EA48 /* HomeTransactionsViewController.xib */; };
 		549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549D4620298A4B7C009AEB13 /* din-bold.ttf */; };
 		549D4623298A4B7C009AEB13 /* din-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549D4621298A4B7C009AEB13 /* din-regular.ttf */; };
 		549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549D4624298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift */; };
@@ -190,6 +205,7 @@
 		54CD895529A5FB640038E822 /* ChangeEmailSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CD895329A5FB640038E822 /* ChangeEmailSuccessViewController.xib */; };
 		54CD895829A6106C0038E822 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD895629A6106C0038E822 /* ChangePasswordViewController.swift */; };
 		54CD895929A6106C0038E822 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CD895729A6106C0038E822 /* ChangePasswordViewController.xib */; };
+		54CD895C29A63BB10038E822 /* HomeOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD895A29A63BB10038E822 /* HomeOverviewTableViewCell.swift */; };
 		54D082CE29863FA6008B0FBC /* KYCFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */; };
 		54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */; };
 		54D082D229864531008B0FBC /* KYCUnAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */; };
@@ -308,6 +324,8 @@
 		542BC19E2977026900133659 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		544ABBCD2987938A00C840FA /* ForgotPasswordEmailCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordEmailCheckViewController.swift; sourceTree = "<group>"; };
 		544ABBCE2987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordEmailCheckViewController.xib; sourceTree = "<group>"; };
+		54569A3A29A71537009DD55D /* HomeMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMarketTableViewCell.swift; sourceTree = "<group>"; };
+		54569A3B29A71537009DD55D /* HomeMarketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMarketTableViewCell.xib; sourceTree = "<group>"; };
 		545C567E2978507800D7F058 /* BiometricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsViewController.swift; sourceTree = "<group>"; };
 		545C567F2978507800D7F058 /* BiometricsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiometricsViewController.xib; sourceTree = "<group>"; };
 		545C56822984FB1D00D7F058 /* PasswordLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +376,19 @@
 		5482975729A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingQRCodeViewController.xib; sourceTree = "<group>"; };
 		5482975A29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettingVerifyCodeViewController.swift; sourceTree = "<group>"; };
 		5482975B29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingVerifyCodeViewController.xib; sourceTree = "<group>"; };
+		5495F8E129A7158D0073EA48 /* HomeOverviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeOverviewTableViewCell.xib; sourceTree = "<group>"; };
+		5495F8E329A7385B0073EA48 /* MarketItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemTableViewCell.swift; sourceTree = "<group>"; };
+		5495F8E429A7385B0073EA48 /* MarketItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketItemTableViewCell.xib; sourceTree = "<group>"; };
+		5495F8E729A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentTransactionsTableViewCell.swift; sourceTree = "<group>"; };
+		5495F8E829A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentTransactionsTableViewCell.xib; sourceTree = "<group>"; };
+		5495F8EB29A74DDD0073EA48 /* TopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupViewController.swift; sourceTree = "<group>"; };
+		5495F8EC29A74DDD0073EA48 /* TopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopupViewController.xib; sourceTree = "<group>"; };
+		5495F8EF29A754A00073EA48 /* TopupHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupHistoryViewController.swift; sourceTree = "<group>"; };
+		5495F8F029A754A00073EA48 /* TopupHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopupHistoryViewController.xib; sourceTree = "<group>"; };
+		5495F8F329A75F170073EA48 /* TopUpHistoryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpHistoryItemTableViewCell.swift; sourceTree = "<group>"; };
+		5495F8F429A75F170073EA48 /* TopUpHistoryItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopUpHistoryItemTableViewCell.xib; sourceTree = "<group>"; };
+		5495F8F729A76BDB0073EA48 /* HomeTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsViewController.swift; sourceTree = "<group>"; };
+		5495F8F829A76BDB0073EA48 /* HomeTransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTransactionsViewController.xib; sourceTree = "<group>"; };
 		549D4620298A4B7C009AEB13 /* din-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-bold.ttf"; sourceTree = "<group>"; };
 		549D4621298A4B7C009AEB13 /* din-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-regular.ttf"; sourceTree = "<group>"; };
 		549D4624298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -424,6 +455,7 @@
 		54CD895329A5FB640038E822 /* ChangeEmailSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeEmailSuccessViewController.xib; sourceTree = "<group>"; };
 		54CD895629A6106C0038E822 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		54CD895729A6106C0038E822 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		54CD895A29A63BB10038E822 /* HomeOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCFinishViewController.swift; sourceTree = "<group>"; };
 		54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KYCFinishViewController.xib; sourceTree = "<group>"; };
 		54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCUnAvailableViewController.swift; sourceTree = "<group>"; };
@@ -601,8 +633,8 @@
 		541A8D382964208100C59026 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				541A8D192964164600C59026 /* HomeViewController.swift */,
-				541A8D1A2964164600C59026 /* HomeViewController.xib */,
+				54569A3E29A71540009DD55D /* VC */,
+				54569A3F29A7154B009DD55D /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -727,6 +759,38 @@
 				546BD3F6299A21A2003C15D8 /* LoginModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		54569A3E29A71540009DD55D /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				541A8D192964164600C59026 /* HomeViewController.swift */,
+				541A8D1A2964164600C59026 /* HomeViewController.xib */,
+				5495F8EB29A74DDD0073EA48 /* TopupViewController.swift */,
+				5495F8EC29A74DDD0073EA48 /* TopupViewController.xib */,
+				5495F8EF29A754A00073EA48 /* TopupHistoryViewController.swift */,
+				5495F8F029A754A00073EA48 /* TopupHistoryViewController.xib */,
+				5495F8F729A76BDB0073EA48 /* HomeTransactionsViewController.swift */,
+				5495F8F829A76BDB0073EA48 /* HomeTransactionsViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		54569A3F29A7154B009DD55D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54CD895A29A63BB10038E822 /* HomeOverviewTableViewCell.swift */,
+				5495F8E129A7158D0073EA48 /* HomeOverviewTableViewCell.xib */,
+				54569A3A29A71537009DD55D /* HomeMarketTableViewCell.swift */,
+				54569A3B29A71537009DD55D /* HomeMarketTableViewCell.xib */,
+				5495F8E329A7385B0073EA48 /* MarketItemTableViewCell.swift */,
+				5495F8E429A7385B0073EA48 /* MarketItemTableViewCell.xib */,
+				5495F8E729A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.swift */,
+				5495F8E829A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.xib */,
+				5495F8F329A75F170073EA48 /* TopUpHistoryItemTableViewCell.swift */,
+				5495F8F429A75F170073EA48 /* TopUpHistoryItemTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		545C56862985132E00D7F058 /* KYC */ = {
@@ -1177,17 +1241,22 @@
 				54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */,
 				5482975D29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib in Resources */,
 				5482975529A4B16400F82611 /* AuthSettingViewController.xib in Resources */,
+				54569A3D29A71537009DD55D /* HomeMarketTableViewCell.xib in Resources */,
 				542BC184296E8D2B00133659 /* SettingPasswordTipsTableViewCell.xib in Resources */,
 				542BC198297573BC00133659 /* FillInNameAndNationalViewController.xib in Resources */,
 				544ABBD02987938A00C840FA /* ForgotPasswordEmailCheckViewController.xib in Resources */,
+				5495F8F229A754A00073EA48 /* TopupHistoryViewController.xib in Resources */,
 				54A4550E298BCED100621311 /* TransactionsFilterDateCollectionViewCell.xib in Resources */,
 				541A8D89296C05BB00C59026 /* Roboto-Light-10.ttf in Resources */,
 				54DE3E902990E8E50077B120 /* CryptoWalletCardView.xib in Resources */,
 				545C569A29852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib in Resources */,
 				5482974329A35B0300F82611 /* QuickUnlockViewController.xib in Resources */,
 				54A45526298CF89300621311 /* FreezeSuccessViewController.xib in Resources */,
+				5495F8F629A75F170073EA48 /* TopUpHistoryItemTableViewCell.xib in Resources */,
 				5422268B29939D3C00447A1A /* TransactionsFilterBoardView.xib in Resources */,
 				54DE3E842990AD280077B120 /* WalletCryptoTableViewCell.xib in Resources */,
+				5495F8FA29A76BDB0073EA48 /* HomeTransactionsViewController.xib in Resources */,
+				5495F8E629A7385B0073EA48 /* MarketItemTableViewCell.xib in Resources */,
 				54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */,
 				5422267F2992648900447A1A /* WalletTransactionsViewController.xib in Resources */,
 				5482974729A35F2B00F82611 /* QuickUnlockTableViewCell.xib in Resources */,
@@ -1215,6 +1284,8 @@
 				547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */,
 				54DE3E882990CBC90077B120 /* WalletCryptoItemTableViewCell.xib in Resources */,
 				54C3131A2996183800DBF373 /* CryptoNetworkItemTableViewCell.xib in Resources */,
+				5495F8EA29A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.xib in Resources */,
+				5495F8E229A7158D0073EA48 /* HomeOverviewTableViewCell.xib in Resources */,
 				541A8D3F2964242D00C59026 /* InfoPlist.strings in Resources */,
 				549D4622298A4B7C009AEB13 /* din-bold.ttf in Resources */,
 				54A4551A298CDE1400621311 /* CardTableViewCell.xib in Resources */,
@@ -1241,6 +1312,7 @@
 				54B0850D2991F3D100B6C84B /* SellCryptoViewController.xib in Resources */,
 				54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */,
 				541A8D1C2964164600C59026 /* HomeViewController.xib in Resources */,
+				5495F8EE29A74DDD0073EA48 /* TopupViewController.xib in Resources */,
 				545C568A2985141100D7F058 /* VerifyYourIdentityGuideViewController.xib in Resources */,
 				54CD894D29A5C5B60038E822 /* AuthSettingSuccessViewController.xib in Resources */,
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
@@ -1403,11 +1475,13 @@
 				54DE3E8B2990E2200077B120 /* CryptoWalletDetailViewController.swift in Sources */,
 				54A45515298CDCC800621311 /* CardDetailViewController.swift in Sources */,
 				54DE3E872990CBC90077B120 /* WalletCryptoItemTableViewCell.swift in Sources */,
+				5495F8E529A7385B0073EA48 /* MarketItemTableViewCell.swift in Sources */,
 				54A4550A298BC4C600621311 /* TransactionsFilterCollectionHeaderView.swift in Sources */,
 				541A8D7C29682D5B00C59026 /* GuidePagerViewCell.swift in Sources */,
 				5482975029A4A49500F82611 /* AuthDownloadCollectionViewCell.swift in Sources */,
 				545C56802978507800D7F058 /* BiometricsViewController.swift in Sources */,
 				5422268E2993ADC000447A1A /* SellDetailItemTableViewCell.swift in Sources */,
+				5495F8F929A76BDB0073EA48 /* HomeTransactionsViewController.swift in Sources */,
 				547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
 				54A45510298CA7D100621311 /* ChooseDateView.swift in Sources */,
@@ -1423,8 +1497,10 @@
 				5429B930299E039A005F721E /* MailRequest.swift in Sources */,
 				54259A7729891E3800BFF2E7 /* EmptyCardTableViewCell.swift in Sources */,
 				54C3130129949C5300DBF373 /* SellDetailOrderItemTableViewCell.swift in Sources */,
+				54CD895C29A63BB10038E822 /* HomeOverviewTableViewCell.swift in Sources */,
 				54A45506298BB24900621311 /* UICollectionView+Extension.swift in Sources */,
 				542BC19B2975A26C00133659 /* ChooseRegionModel.swift in Sources */,
+				5495F8F129A754A00073EA48 /* TopupHistoryViewController.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
 				5482975429A4B16400F82611 /* AuthSettingViewController.swift in Sources */,
@@ -1461,7 +1537,9 @@
 				54A45525298CF89300621311 /* FreezeSuccessViewController.swift in Sources */,
 				54A45503298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
+				5495F8F529A75F170073EA48 /* TopUpHistoryItemTableViewCell.swift in Sources */,
 				54CD895029A5F4BF0038E822 /* AuthEmailViewController.swift in Sources */,
+				54569A3C29A71537009DD55D /* HomeMarketTableViewCell.swift in Sources */,
 				54CD894C29A5C5B60038E822 /* AuthSettingSuccessViewController.swift in Sources */,
 				545C569929852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift in Sources */,
 				54CD895429A5FB640038E822 /* ChangeEmailSuccessViewController.swift in Sources */,
@@ -1470,6 +1548,7 @@
 				549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */,
 				5482974629A35F2B00F82611 /* QuickUnlockTableViewCell.swift in Sources */,
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
+				5495F8ED29A74DDD0073EA48 /* TopupViewController.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				546BD3FB299A3B88003C15D8 /* LoginUserInfo.swift in Sources */,
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,
@@ -1496,6 +1575,7 @@
 				54A454FB298B920C00621311 /* TransactionTableViewCell.swift in Sources */,
 				5482974229A35B0300F82611 /* QuickUnlockViewController.swift in Sources */,
 				54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */,
+				5495F8E929A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.swift in Sources */,
 				54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				54BBA10C296C0E0600EB316F /* RegisterSuccessViewController.swift in Sources */,

@@ -1,14 +1,14 @@
 //
-//  TransactionsViewController.swift
+//  HomeTransactionsViewController.swift
 //  DCard
 //
-//  Created by Fei Zhang on 2023/2/2.
+//  Created by Fei Zhang on 2023/2/23.
 //  Copyright © 2023 Flashwire. All rights reserved.
 //
 
 import UIKit
 
-class TransactionsViewController: BaseViewController {
+class HomeTransactionsViewController: BaseViewController {
     
     @IBOutlet weak var transactionTableView: UITableView!
     @IBOutlet weak var filterBoardView: UIView!
@@ -40,31 +40,26 @@ class TransactionsViewController: BaseViewController {
         return UIBarButtonItem(customView: v)
     }()
     
-    private lazy var tableviewHeaderView: UIView = {
-        let v = UIView()
-        v.backgroundColor = .clear
-        v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 73))
-        let label = UILabel()
-        v.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.top.bottom.right.left.equalToSuperview()
-        }
-        label.text = "Transactions"
-        label.font = UIFont.fw.font28(weight: .bold)
-        label.textColor = R.color.fw000000()
-        return v
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
-
+    
+    override func setupNavBar() {
+        super.setupNavBar()
+        self.gk_navTitle = R.string.localizable.transactions()
+    }
+    
     // MARK: - Private
     
     private func setupUI() {
         setupRightItem()
         setupSubviews()
+    }
+    
+    private func setupRightItem() {
+        self.gk_navRightBarButtonItem = rightItem
+        self.gk_navItemRightSpace = 16
     }
     
     private func setupSubviews() {
@@ -80,13 +75,9 @@ class TransactionsViewController: BaseViewController {
         filterBoardView.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT+20)
         }
-        transactionTableView.fw.registerCellNib(TransactionItemTableViewCell.self)
-        transactionTableView.tableHeaderView = tableviewHeaderView
-    }
-    
-    private func setupRightItem() {
-        self.gk_navRightBarButtonItem = rightItem
-        self.gk_navItemRightSpace = 16
+        transactionTableView.delegate = self
+        transactionTableView.dataSource = self
+        transactionTableView.fw.registerCellNib(TransactionTableViewCell.self)
     }
     
     // MARK: - Actions
@@ -114,22 +105,21 @@ class TransactionsViewController: BaseViewController {
         //iphone中为模式跳转
         present(activityController, animated: true, completion: nil)
     }
-    
 }
-
-extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource {
+ 
+extension HomeTransactionsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 71
+        return 78
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let maskLayer = CAShapeLayer()
-            maskLayer.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: SCREENWIDTH-32, height: 71))
+            maskLayer.frame = .init(origin: .zero, size: CGSize(width: SCREENWIDTH-32, height: 78))
             maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
                                           byRoundingCorners: [.topLeft, .topRight],
                                           cornerRadii: .init(width: 20, height: 20)).cgPath
@@ -138,7 +128,7 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
         
         if indexPath.row == 9 {
             let maskLayer = CAShapeLayer()
-            maskLayer.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: SCREENWIDTH-32, height: 71))
+            maskLayer.frame = .init(origin: .zero, size: CGSize(width: SCREENWIDTH-32, height: 78))
             maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
                                           byRoundingCorners: [.bottomLeft, .bottomRight],
                                           cornerRadii: .init(width: 20, height: 20)).cgPath
@@ -147,8 +137,10 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.fw.dequeueReusableCell(withIdentifier: TransactionItemTableViewCell.description()) as! TransactionItemTableViewCell
+        let cell = tableView.fw.dequeue(cellType: TransactionTableViewCell.self, for: indexPath)
+        cell.selectionStyle = .none
         return cell
     }
     
 }
+

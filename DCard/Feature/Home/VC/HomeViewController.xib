@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="homeTableView" destination="2OW-C6-83G" id="ImQ-VY-oo8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,6 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2OW-C6-83G">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="J5V-Jt-ucT"/>
+                        <outlet property="delegate" destination="-1" id="UFL-4Q-acy"/>
+                    </connections>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-z3-Myp">
                     <rect key="frame" x="20" y="59" width="32" height="32"/>
                     <constraints>
@@ -37,12 +46,16 @@
             <constraints>
                 <constraint firstItem="aJw-z3-Myp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DAq-Wy-25a"/>
                 <constraint firstItem="aJw-z3-Myp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NFL-C4-fK1"/>
+                <constraint firstItem="2OW-C6-83G" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XfF-1W-WBg"/>
+                <constraint firstItem="2OW-C6-83G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cpU-6j-7fM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2OW-C6-83G" secondAttribute="trailing" id="jcT-qf-WPo"/>
+                <constraint firstAttribute="bottom" secondItem="2OW-C6-83G" secondAttribute="bottom" id="zQp-f3-XbD"/>
             </constraints>
-            <point key="canvasLocation" x="277" y="10"/>
+            <point key="canvasLocation" x="-36" y="-275"/>
         </view>
     </objects>
     <resources>
-        <image name="iconMeSet" width="32" height="32"/>
+        <image name="iconMeSet" width="32" height="29.666666030883789"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

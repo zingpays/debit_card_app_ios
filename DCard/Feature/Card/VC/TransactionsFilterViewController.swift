@@ -76,7 +76,7 @@ class TransactionsFilterViewController: BaseViewController {
         bgLayer.colors = [R.color.fw008999()!.cgColor,
                           R.color.fw004396()!.cgColor]
         bgLayer.locations = [0, 1]
-        bgLayer.frame = backgroundView.bounds
+        bgLayer.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: SCREENHEIGHT))
         bgLayer.startPoint = .zero
         bgLayer.endPoint = CGPoint(x: 0.79, y: 0.79)
         bgLayer.opacity = 1

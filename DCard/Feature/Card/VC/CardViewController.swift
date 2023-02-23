@@ -15,7 +15,7 @@ class CardViewController: BaseViewController {
     
     @IBOutlet weak var cardTableView: UITableView! {
         didSet {
-            cardTableView.bounces = false
+//            cardTableView.bounces = false
             cardTableView.showsVerticalScrollIndicator = false
         }
     }
@@ -28,7 +28,7 @@ class CardViewController: BaseViewController {
     }
     
     override func setupNavBar() {
-        navigationController?.navigationBar.isHidden = true
+        self.gk_navigationBar.isHidden = true
     }
     
     deinit {

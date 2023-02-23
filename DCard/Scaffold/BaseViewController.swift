@@ -43,6 +43,8 @@ class BaseViewController: UIViewController {
     }
     
     func setupNavBar() {
+        self.gk_navTitleColor = R.color.fw001214()
+        self.gk_navTitleFont = UIFont.fw.font18(weight: .bold)
         self.gk_navBackgroundColor = .clear
         self.gk_navLineHidden = false
         self.gk_navLeftBarButtonItem = backItem

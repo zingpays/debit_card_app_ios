@@ -31,7 +31,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbt-ks-fRc">
-                        <rect key="frame" x="16" y="0.0" width="343" height="78"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETH Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvX-Ya-0u6">
                                 <rect key="frame" x="16" y="16" width="78" height="19"/>
@@ -43,13 +43,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETH" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUJ-Vz-V5U">
-                                <rect key="frame" x="304.66666666666669" y="22" width="22.333333333333314" height="14.333333333333336"/>
+                                <rect key="frame" x="336" y="22" width="23" height="14"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-23.22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPO-Pr-aSu">
-                                <rect key="frame" x="254.33333333333334" y="17" width="46.333333333333343" height="20"/>
+                                <rect key="frame" x="285.66666666666669" y="17" width="46.333333333333314" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="jdi-4F-EBE"/>
                                 </constraints>
@@ -58,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Jan/2022 12:22:23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q6-Yz-GQA">
-                                <rect key="frame" x="206.66666666666666" y="43" width="120.33333333333334" height="14"/>
+                                <rect key="frame" x="238.66666666666666" y="43" width="120.33333333333334" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Iiq-UC-7mG"/>
                                 </constraints>
@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.050000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OW8-2D-kQa" userLabel="line">
-                                <rect key="frame" x="16" y="77" width="311" height="1"/>
+                                <rect key="frame" x="16" y="77" width="343" height="1"/>
                                 <color key="backgroundColor" name="fw#000000"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Lw6-b1-8tl"/>
@@ -110,14 +110,14 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="nbt-ks-fRc" secondAttribute="bottom" id="HfA-Du-gd2"/>
-                    <constraint firstAttribute="trailing" secondItem="nbt-ks-fRc" secondAttribute="trailing" constant="16" id="PvW-yO-ckt"/>
-                    <constraint firstItem="nbt-ks-fRc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="aAy-q1-czq"/>
+                    <constraint firstAttribute="trailing" secondItem="nbt-ks-fRc" secondAttribute="trailing" id="PvW-yO-ckt"/>
+                    <constraint firstItem="nbt-ks-fRc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aAy-q1-czq"/>
                     <constraint firstItem="nbt-ks-fRc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hf0-Zf-88u"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="-141.22137404580153" y="-47.183098591549296"/>
+            <point key="canvasLocation" x="306" y="-75"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -131,6 +131,17 @@
 "about" = "About";
 "hello" = "Hello!";
 
+/// Home
+"totalBalance" = "Total Balance";
+"addCard" = "Add Card";
+"debitCard" = "Debit Card";
+"cryptoWallet" = "Crypto Wallet";
+"market" = "Market";
+"recentTransactions" = "Recent Transactions";
+"topUpHome" = "TOP UP";
+"topupHistory" = "Top Up History";
+"transactions" = "Transactions";
+
 /// Tabbar
 "home" = "HOME";
 "card" = "CARD";

@@ -130,6 +130,17 @@
 "about" = "关于";
 "hello" = "你好!";
 
+/// Home
+"totalBalance" = "总余额";
+"addCard" = "申请卡";
+"debitCard" = "借记卡";
+"cryptoWallet" = "数字货币钱包";
+"market" = "行情";
+"recentTransactions" = "最近交易";
+"topUpHome" = "充值";
+"topupHistory" = "充值历史";
+"transactions" = "交易";
+
 /// Tabbar
 "home" = "首页";
 "card" = "卡";
