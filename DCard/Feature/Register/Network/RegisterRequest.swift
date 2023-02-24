@@ -10,9 +10,10 @@ import Moya
 import Moya_ObjectMapper
 
 struct RegisterRequest {
-    static func register(email: String, password: String, code: String, completion: @escaping ResponseNormalCompletion) {
+    static func register(email: String, password: String, code: String, completion: @escaping ((Bool, String, RegisterModel?) -> Void)) {
         let provider = MoyaProvider<RegisterTarget>()
-        provider.requestStatus(.register(email: email, password: password, code: code),
+        provider.requestObject(.register(email: email, password: password, code: code),
+                               type: RegisterModel.self,
                                completion: completion)
     }
 }
@@ -25,7 +26,7 @@ extension RegisterTarget: BaseTargetType {
     var path: String {
         switch self {
         case .register:
-            return ""
+            return "/user/regiter"
         }
     }
     

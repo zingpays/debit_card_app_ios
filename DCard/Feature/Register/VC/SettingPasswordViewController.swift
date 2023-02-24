@@ -17,8 +17,8 @@ enum SettingPasswordStyle {
 
 class SettingPasswordViewController: BaseViewController {
     
-    var email: String?
-    var code: String?
+    private var email: String
+    private var code: String
     var style: SettingPasswordStyle = .register
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -68,6 +68,16 @@ class SettingPasswordViewController: BaseViewController {
     }()
     
     private var tipsCheckedDic: [Int : Bool] = [:]
+    
+    init(email: String = "", code: String = "") {
+        self.email = email
+        self.code = code
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -222,7 +232,7 @@ class SettingPasswordViewController: BaseViewController {
         if nextButton.alpha == 1 {
             switch style {
             case .register:
-                requestRegister()
+                requestRegister(email: email, code: code, password: passwordTextField.text ?? "")
             case .change:
                 UserManager.shared.removeToken()
                 UIApplication.shared.keyWindow()?.rootViewController = nil
@@ -300,26 +310,21 @@ class SettingPasswordViewController: BaseViewController {
     
     // MARK: - Network
     
-    private func requestRegister() {
-        // TODO: register request
-        // if fail, alert view
-        // if success, go to  next page
-        // save user token
-        RegisterRequest.register(email: email ?? "",
+    private func requestRegister(email: String, code: String, password: String) {
+        indicator.startAnimating()
+        RegisterRequest.register(email: email,
                                  password: passwordTextField.text ?? "",
-                                 code:code ?? "") { [weak self] isSuccess, message in
+                                 code:code) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
+            this.indicator.stopAnimating()
             if isSuccess {
-                
+                let vc = RegisterSuccessViewController()
+                vc.uniqueId = "\(data?.uniqueId ?? 0)"
+                this.navigationController?.pushViewController(vc, animated: true)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .top)
             }
         }
-        UserManager.shared.saveToken("i am a test token", expireDate: Date(timeIntervalSinceNow: 60*60*24*7))
-        UserManager.shared.saveUserEmail("test@mail.com")
-        LocalAuthenManager.shared.isAuthorized = true
-        let vc = RegisterSuccessViewController()
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

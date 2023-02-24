@@ -8,10 +8,13 @@
 
 import UIKit
 import CRBoxInputView
+import SwiftDate
 
 class VerificationCodeViewController: BaseViewController {
     ///  phone number
     var phoneNum: String?
+    var uniqueId: String?
+    
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = R.string.localizable.toVerifyPhoneNumberTitle()
@@ -103,6 +106,7 @@ class VerificationCodeViewController: BaseViewController {
     
     private func updateErrorTips(isShow: Bool, text: String = "") {
         if isShow {
+            errorTipsLabel.text = text
             errorTipsLabel.snp.remakeConstraints { make in
                 make.height.equalTo(16)
             }
@@ -141,28 +145,55 @@ class VerificationCodeViewController: BaseViewController {
         // TODO: phone code request
     }
     
-    private func requestVerifyPhoneCode(_ code: String?) {
-        // test code
-        let vc = VerifyYourIdentityGuideViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        // TODO: verify code request
-        // if request success, go to kyc page
-        // if request fail, show error tips
+    private func requestVerifyPhoneCode(_ code: String, uniId: String, num: String) {
+        indicator.startAnimating()
+        PhoneRequest.setPhone(code: code, uniId: uniId, number: num) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                if let email = data?.user?.email,
+                   let phoneNum = data?.user?.phoneNumber,
+                    let expireDate = data?.expireAt,
+                    let token = data?.accessToken {
+                    if let date = expireDate.toDate()?.date {
+                        UserManager.shared.saveToken(token, expireDate: date)
+                        UserManager.shared.saveUserEmail(email)
+                        UserManager.shared.saveUserPhoneNum(phoneNum)
+                        LocalAuthenManager.shared.isAuthorized = true
+                        let vc = VerifyYourIdentityGuideViewController()
+                        this.navigationController?.pushViewController(vc, animated: true)
+                    } else {
+                        this.updateErrorTips(isShow: true, text: "date parse error")
+                    }
+                } else {
+                    
+                }
+            } else {
+                this.updateErrorTips(isShow: true, text: message)
+            }
+        }
     }
     
     // MARK: - Actions
     
     @IBAction func resendAction(_ sender: UIButton) {
-        // TODO: 请求网络校验验证码是否正确
-        // request success, clear all number
-        boxInputView.clearAll(withBeginEdit: true)
+        indicator.startAnimating()
+        PhoneRequest.sendCode(number: phoneNum ?? "") { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.boxInputView.clearAll(withBeginEdit: true)
+            } else {
+                this.view.makeToast(message)
+            }
+        }
     }
 
     private func boxAction() {
         boxInputView.textDidChangeblock = { [weak self] text, isFinish in
             guard let this = self else { return }
             if isFinish {
-                this.requestVerifyPhoneCode(text)
+                this.requestVerifyPhoneCode(text ?? "", uniId: this.uniqueId ?? "", num: this.phoneNum ?? "")
             }
         }
     }

@@ -101,37 +101,36 @@ class LoginViewController: BaseViewController {
         }
         if loginData.furtherAuth {
             continueLogin(authType: loginData.authType,
-                          authToken: loginData.accessToken)
+                          authToken: loginData.authToken ?? "",
+                          uniqueId: loginData.user?.uniqueId ?? "")
         } else {
             UserManager.shared.info = data?.user
             loginFinish(token: loginData.accessToken,
-                        expireDate: loginData.expireAt,
-                        email: loginData.user?.email)
+                        expireDate: loginData.expireAt ?? "",
+                        email: loginData.user?.email ?? "",
+                        phoneNum: loginData.user?.phoneNumber ?? "")
         }
     }
     
-    private func continueLogin(authType: AuthType, authToken: String) {
+    private func continueLogin(authType: AuthType, authToken: String, uniqueId: String) {
         let vc = SecurityVerificationViewController()
         vc.style = authType == .email ? .email : .twofa
-        // TODO: 调试后赋值正确的值
-        vc.uniqueId = ""
-        vc.authToken = ""
+        vc.uniqueId = uniqueId
+        vc.authToken = authToken
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func loginFinish(token: String?, expireDate: String?, email: String?) {
-        guard let userToken = token else {
-            view.makeToast("Token is null，login fail～")
-            return
+    private func loginFinish(token: String, expireDate: String, email: String, phoneNum: String) {
+        if let expireDate = expireDate.toDate()?.date {
+            LocalAuthenManager.shared.isAuthorized = true
+            // save user token
+            UserManager.shared.saveToken(token, expireDate: expireDate)
+            UserManager.shared.saveUserEmail(email)
+            UserManager.shared.saveUserPhoneNum(phoneNum)
+            // change application root viewController to tabbar viewController
+            UIApplication.shared.keyWindow()?.rootViewController = nil
+            UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
         }
-        LocalAuthenManager.shared.isAuthorized = true
-        let expireDate: Date =  expireDate?.toDate()?.date ?? Date(timeIntervalSinceNow: 60*60*24*7)
-        // save user token
-        UserManager.shared.saveToken(userToken, expireDate: expireDate)
-        UserManager.shared.saveUserEmail(email ?? "")
-        // change application root viewController to tabbar viewController
-        UIApplication.shared.keyWindow()?.rootViewController = nil
-        UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
     }
     
     private func inputBeginEditing(_ textField: UITextField) {

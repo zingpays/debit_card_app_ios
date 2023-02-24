@@ -23,9 +23,7 @@ struct MailRequest {
                                completion: completion)
     }
     
-    static func verifyCode(email: String,
-                           code: String,
-                           authToken: String? = nil,
+    static func verifyCode(email: String, code: String, authToken: String? = nil,
                            completion: @escaping ResponseNormalCompletion) {
         let provider = MoyaProvider<MailTarget>()
         provider.requestStatus(.verifyCode(email: email, code: code, authToken: authToken),

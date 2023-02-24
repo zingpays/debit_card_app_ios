@@ -10,6 +10,8 @@ import UIKit
 
 class BindPhoneViewController: BaseViewController {
 
+    var uniqueId: String?
+    
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = R.string.localizable.toVerifyPhoneNumberTitle()
@@ -89,16 +91,19 @@ class BindPhoneViewController: BaseViewController {
     }
     
     @IBAction func sendVerifyCode(_ sender: Any) {
-        // TODO: send request
         if sendButton.alpha == 1 {
-            MailRequest.sendCode(email: phoneTextField.text ?? "", type: .register) { isSuccess, message in
+            let phoneNum = "\(phoneRegionLabel.text ?? "")\(phoneTextField.text ?? "")"
+            PhoneRequest.sendCode(number: phoneNum) { [weak self] isSuccess, message  in
+                guard let this = self else { return }
                 if isSuccess {
-                    // go to next page
+                    let vc = VerificationCodeViewController()
+                    vc.phoneNum = phoneNum
+                    vc.uniqueId = this.uniqueId
+                    this.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    this.view.makeToast(message)
                 }
             }
-            let vc = VerificationCodeViewController()
-            vc.phoneNum = "\(phoneRegionLabel.text ?? "") \(phoneTextField.text ?? "")"
-            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

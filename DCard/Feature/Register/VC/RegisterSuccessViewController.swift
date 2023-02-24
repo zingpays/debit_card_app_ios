@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterSuccessViewController: BaseViewController {
     
+    var uniqueId: String?
+    
     @IBOutlet weak var toVerifyPhoneNumber: UIButton! {
         didSet {
             toVerifyPhoneNumber.setTitle(R.string.localizable.toVerifyPhoneNumber(), for: .normal)
@@ -51,6 +53,7 @@ class RegisterSuccessViewController: BaseViewController {
     
     @IBAction func toVerifyPhoneNumber(_ sender: Any) {
         let vc = BindPhoneViewController()
+        vc.uniqueId = uniqueId
         navigationController?.pushViewController(vc, animated: true)
     }
     

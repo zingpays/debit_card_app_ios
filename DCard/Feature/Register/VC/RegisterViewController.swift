@@ -234,8 +234,12 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func codeAction(_ sender: UIButton) {
+        guard sender.alpha == 1 else { return }
         codeTextField.becomeFirstResponder()
-        requestSendVerifyCode()
+        guard let email = emailTextField.text, email.count > 0, email.isValidEmail else {
+            return
+        }
+        requestSendVerifyCode(email: email)
     }
     
     @IBAction func agreementCheckAction(_ sender: UIButton) {
@@ -245,44 +249,38 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        if nextButton.alpha == 1 {
-            registerRequest()
-        }
+        guard nextButton.alpha == 1 else { return }
+        guard let email = emailTextField.text, let code = codeTextField.text else { return }
+        registerRequest(email: email, code: code)
     }
     
     // MARK: - Network
     
-    private func requestSendVerifyCode() {
-        // TODO: send code request
-        // request success, then start count down
-        MailRequest.sendCode(email: emailTextField.text ?? "", type: .register) { [weak self] isSuccess, message in
+    private func requestSendVerifyCode(email: String) {
+        indicator.startAnimating()
+        MailRequest.sendCode(email: email, type: .register) { [weak self] isSuccess, message in
             guard let this = self else { return }
+            this.indicator.stopAnimating()
             if isSuccess {
-                // startCountDown()
+                this.startCountDown()
             } else {
                 this.view.makeToast(message)
             }
         }
-        startCountDown()
     }
     
-    private func registerRequest() {
-        // TODO: reuest check email code
-        // if fail, alert view
-        // if success, go to  next page
-        MailRequest.verifyCode(email: emailTextField.text ?? "",
-                               code: codeTextField.text ?? "") { [weak self] isSuccess, message in
+    private func registerRequest(email: String, code: String) {
+        indicator.startAnimating()
+        MailRequest.verifyCode(email: email, code: code) { [weak self] isSuccess, message in
             guard let this = self else { return }
+            this.indicator.stopAnimating()
             if isSuccess {
-                
+                let vc = SettingPasswordViewController(email: email, code: code)
+                this.navigationController?.pushViewController(vc, animated: true)
             } else {
                 this.view.makeToast(message)
             }
         }
-        let vc = SettingPasswordViewController()
-        vc.email = emailTextField.text
-        vc.code = codeTextField.text
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

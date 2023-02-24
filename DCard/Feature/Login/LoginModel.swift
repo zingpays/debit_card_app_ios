@@ -24,6 +24,8 @@ class LoginModel: Mappable {
     var authType: AuthType = .email
     /// 用户信息
     var user: UserModel?
+    
+    var authToken: String?
 
     required init?(map: Map) {}
 
@@ -33,5 +35,6 @@ class LoginModel: Mappable {
         accessToken <- map["access_token"]
         authType    <- map["auth_type"]
         user        <- map["user"]
+        authToken   <- map["auth_token"]
     }
 }
