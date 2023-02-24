@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Bold-3.ttf">
-            <string>Roboto-Bold</string>
-        </array>
         <array key="Roboto-Light-10.ttf">
             <string>Roboto-Light</string>
         </array>
@@ -24,7 +21,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalletTransactionsViewController" customModule="DCard" customModuleProvider="target">
             <connections>
                 <outlet property="filterBoardView" destination="Hi3-cc-pzZ" id="Q4y-UE-qe4"/>
-                <outlet property="titleLabel" destination="QRg-cn-FLe" id="2yf-4h-VNM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,12 +29,6 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRg-cn-FLe">
-                    <rect key="frame" x="16" y="173" width="163.33333333333334" height="33"/>
-                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
-                    <color key="textColor" name="fw#000000"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-cc-pzZ">
                     <rect key="frame" x="0.0" y="69" width="393" height="84"/>
                     <subviews>
@@ -82,7 +72,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Jan/2022 - 09/Jan/2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYh-K8-51q">
-                            <rect key="frame" x="56.666666666666657" y="48.666666666666671" width="178.00000000000003" height="16.666666666666671"/>
+                            <rect key="frame" x="56.666666666666657" y="48.666666666666671" width="178" height="16.666666666666671"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                             <color key="textColor" name="fw#FFFFFF"/>
                             <nil key="highlightedColor"/>
@@ -109,19 +99,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="QRg-cn-FLe" firstAttribute="top" secondItem="Hi3-cc-pzZ" secondAttribute="bottom" constant="20" id="At1-KA-mPu"/>
                 <constraint firstItem="Hi3-cc-pzZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ljx-ty-Jx3"/>
                 <constraint firstItem="Hi3-cc-pzZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Xng-aJ-mZq"/>
                 <constraint firstItem="Hi3-cc-pzZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n3i-Yw-7yh"/>
-                <constraint firstItem="QRg-cn-FLe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qSS-sw-0Lr"/>
             </constraints>
             <point key="canvasLocation" x="431" y="6"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="fw#000000">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </namedColor>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

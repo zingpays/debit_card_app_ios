@@ -127,10 +127,6 @@ extension CryptoWalletDetailViewController: UITableViewDelegate, UITableViewData
 }
 
 extension CryptoWalletDetailViewController: CryptoWalletCardViewDelegate {
-    func didSelectedSell(_ view: CryptoWalletCardView) {
-        let vc = SellCryptoViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
     
     func didSelectedDeposit(_ view: CryptoWalletCardView) {
         popup.bottomSheet {

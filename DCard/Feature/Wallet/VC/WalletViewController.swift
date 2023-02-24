@@ -10,10 +10,21 @@ import UIKit
 import JFPopup
 
 class WalletViewController: BaseViewController {
-
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var walletTableView: UITableView!
+    @IBOutlet weak var backgroundView: UIView! {
+        didSet {
+            let bgLayer = CAGradientLayer()
+            bgLayer.colors = [R.color.fw00A8BB()!.cgColor,
+                              R.color.fw0E7BFF()!.cgColor]
+            bgLayer.locations = [0, 1]
+            bgLayer.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 370))
+            bgLayer.startPoint = .zero
+            bgLayer.endPoint = CGPoint(x: 1, y: 1)
+            bgLayer.opacity = 0.8
+            backgroundView.layer.insertSublayer(bgLayer, at: 0)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +52,9 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 233
+            return 200
         }
-        return 51+91*3+20
+        return 83*4 + 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,12 +72,6 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension WalletViewController: WalletCryptoTableViewCellDelegate, WalletCardTableViewCellDelegate {
-    func didSelectedSell(_ cell: WalletCardTableViewCell) {
-        let vc = SellCryptoViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func didSelectedDeposit(_ cell: WalletCardTableViewCell) {
         popup.bottomSheet {
             let v = DepositFromView.loadFromNib()

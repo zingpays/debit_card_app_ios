@@ -10,13 +10,15 @@ import UIKit
 import Charts
 
 protocol CryptoWalletCardViewDelegate: NSObject {
-    func didSelectedSell(_ view: CryptoWalletCardView)
     func didSelectedDeposit(_ view: CryptoWalletCardView)
     func didSelectedWithdraw(_ view: CryptoWalletCardView)
 }
 
 class CryptoWalletCardView: UIView, NibLoadable {
     
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var depositView: UIView!
+    @IBOutlet weak var withdrawView: UIView!
     @IBOutlet weak var cardView: UIView! {
         didSet {
             cardView.insertSubview(lineChartView, at: 1)
@@ -40,7 +42,7 @@ class CryptoWalletCardView: UIView, NibLoadable {
         let data = LineChartData(dataSet: set)
         chartView.data = data
         set.drawFilledEnabled = true
-        set.fillAlpha = 0.2
+        set.fillAlpha = 0.1
         set.fillColor = .white.withAlphaComponent(0.3)
         set.lineCapType = .round
         set.lineWidth = 3
@@ -63,6 +65,8 @@ class CryptoWalletCardView: UIView, NibLoadable {
     override func layoutSubviews() {
         super.layoutSubviews()
         setupGradientBackground()
+        depositView.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.14)
+        withdrawView.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.14)
     }
     
     private func setupGradientBackground() {
@@ -70,15 +74,11 @@ class CryptoWalletCardView: UIView, NibLoadable {
         bgLayer.colors = [R.color.fw00C0B3()!.cgColor,
                           R.color.fw095CAB()!.cgColor]
         bgLayer.locations = [0, 1]
-        bgLayer.frame = cardView.bounds
+        bgLayer.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH-32, height: 245))
         bgLayer.startPoint = .zero
         bgLayer.endPoint = CGPoint(x: 1, y: 0)
         bgLayer.opacity = 0.8
-        cardView.layer.insertSublayer(bgLayer, at: 0)
-    }
-    
-    @IBAction func sellAction(_ sender: Any) {
-        delegate?.didSelectedSell(self)
+        backgroundView.layer.insertSublayer(bgLayer, at: 0)
     }
     
     @IBAction func depositAction(_ sender: Any) {

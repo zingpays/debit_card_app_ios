@@ -10,8 +10,7 @@ import UIKit
 import JXSegmentedView
 
 class WalletTransactionsViewController: BaseViewController {
-    
-    @IBOutlet weak var titleLabel: UILabel!
+
     @IBOutlet weak var filterBoardView: UIView! {
         didSet {
             let bgLayer = CAGradientLayer()
@@ -37,7 +36,7 @@ class WalletTransactionsViewController: BaseViewController {
     
     private lazy var segmentedDataSource: JXSegmentedTitleDataSource = {
         let source = JXSegmentedTitleDataSource()
-        source.titles = ["Deposits", "Withdrawals", "Sell"]
+        source.titles = ["Deposits", "Withdrawals"]
         source.titleNormalFont = UIFont.fw.font18()
         source.titleSelectedFont = UIFont.fw.font18(weight: .bold)
         source.titleNormalColor = R.color.fw000000()?.withAlphaComponent(0.4) ?? .black
@@ -53,7 +52,7 @@ class WalletTransactionsViewController: BaseViewController {
         view.indicatorHeight = 4
         view.lineStyle = .lengthen
         view.lineScrollOffsetX = -10
-        view.indicatorWidth = 20
+        view.indicatorWidth = 40
         view.indicatorCornerRadius = 2
         return view
     }()
@@ -81,6 +80,7 @@ class WalletTransactionsViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
+        self.gk_navTitle = "History"
         setupRightItem()
         filterBoardView.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 20)
@@ -88,7 +88,7 @@ class WalletTransactionsViewController: BaseViewController {
         view.addSubview(segmentedView)
         segmentedView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.top.equalTo(filterBoardView.snp.bottom).offset(10)
             make.height.equalTo(44)
         }
         view.addSubview(listContainerView)
@@ -115,7 +115,7 @@ class WalletTransactionsViewController: BaseViewController {
 
 extension WalletTransactionsViewController: JXSegmentedListContainerViewDataSource, JXSegmentedViewDelegate {
     func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
-        return 3
+        return 2
     }
     
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {

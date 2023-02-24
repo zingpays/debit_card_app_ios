@@ -4,13 +4,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalletViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="0WF-y3-oBb" id="tWn-4q-MfZ"/>
                 <outlet property="titleLabel" destination="h5n-1j-rYF" id="fJ6-31-4OK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="walletTableView" destination="r09-p2-R83" id="M2L-1a-lyg"/>
@@ -21,10 +28,17 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5n-1j-rYF">
-                    <rect key="frame" x="169.66666666666666" y="60" width="54" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <nil key="textColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WF-y3-oBb" userLabel="background">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="370"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="370" id="LWS-1f-vtG"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5n-1j-rYF">
+                    <rect key="frame" x="136" y="60" width="121" height="24"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                    <color key="textColor" name="fw#FAFAFA"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r09-p2-R83">
@@ -43,16 +57,25 @@
                 <constraint firstAttribute="bottom" secondItem="r09-p2-R83" secondAttribute="bottom" id="Drs-eI-X5c"/>
                 <constraint firstItem="r09-p2-R83" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LOn-Dp-XAa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r09-p2-R83" secondAttribute="trailing" id="PC5-OZ-Q2O"/>
+                <constraint firstItem="0WF-y3-oBb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yfc-rL-8PE"/>
                 <constraint firstItem="r09-p2-R83" firstAttribute="top" secondItem="h5n-1j-rYF" secondAttribute="bottom" constant="20" id="aRA-wI-4D0"/>
                 <constraint firstItem="h5n-1j-rYF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="hLk-Vw-9VO"/>
                 <constraint firstItem="h5n-1j-rYF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mKr-RO-oC7"/>
+                <constraint firstItem="0WF-y3-oBb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r7F-nM-hah"/>
+                <constraint firstItem="0WF-y3-oBb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sM5-GJ-Nqc"/>
             </constraints>
             <point key="canvasLocation" x="281.67938931297709" y="14.788732394366198"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="fw#FAFAFA">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
