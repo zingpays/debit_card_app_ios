@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 136 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 141 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -214,6 +214,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var contractUs: RswiftResources.StringResource { .init(key: "contractUs", tableName: "Localizable", source: source, developmentValue: "Contract Us", comment: nil) }
+
+      /// en translation: Crypto Balance
+      ///
+      /// Key: cryptoBalance
+      ///
+      /// Locales: en, zh-Hans
+      var cryptoBalance: RswiftResources.StringResource { .init(key: "cryptoBalance", tableName: "Localizable", source: source, developmentValue: "Crypto Balance", comment: nil) }
 
       /// en translation: Crypto Wallet
       ///
@@ -404,12 +411,33 @@ struct _R {
       /// Locales: en, zh-Hans
       var logout: RswiftResources.StringResource { .init(key: "logout", tableName: "Localizable", source: source, developmentValue: "Log out", comment: nil) }
 
+      /// en translation: Make A Deposit
+      ///
+      /// Key: makeADeposit
+      ///
+      /// Locales: en, zh-Hans
+      var makeADeposit: RswiftResources.StringResource { .init(key: "makeADeposit", tableName: "Localizable", source: source, developmentValue: "Make A Deposit", comment: nil) }
+
+      /// en translation: Insufficient balance, don't have sufficient crypto ?
+      ///
+      /// Key: makeDepositInfo
+      ///
+      /// Locales: en, zh-Hans
+      var makeDepositInfo: RswiftResources.StringResource { .init(key: "makeDepositInfo", tableName: "Localizable", source: source, developmentValue: "Insufficient balance, don't have sufficient crypto ?", comment: nil) }
+
       /// en translation: Market
       ///
       /// Key: market
       ///
       /// Locales: en, zh-Hans
       var market: RswiftResources.StringResource { .init(key: "market", tableName: "Localizable", source: source, developmentValue: "Market", comment: nil) }
+
+      /// en translation: Max
+      ///
+      /// Key: max
+      ///
+      /// Locales: en, zh-Hans
+      var max: RswiftResources.StringResource { .init(key: "max", tableName: "Localizable", source: source, developmentValue: "Max", comment: nil) }
 
       /// en translation: New password
       ///
@@ -964,6 +992,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var toVerifyPhoneNumberTitle: RswiftResources.StringResource { .init(key: "toVerifyPhoneNumberTitle", tableName: "Localizable", source: source, developmentValue: "Verify Phone Number", comment: nil) }
 
+      /// en translation: Top Up Debit Card
+      ///
+      /// Key: topUpDebitCard
+      ///
+      /// Locales: en, zh-Hans
+      var topUpDebitCard: RswiftResources.StringResource { .init(key: "topUpDebitCard", tableName: "Localizable", source: source, developmentValue: "Top Up Debit Card", comment: nil) }
+
       /// en translation: TOP UP
       ///
       /// Key: topUpHome
@@ -1121,9 +1156,12 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 92 images.
+  /// This `_R.image` struct is generated, and contains static references to 95 images.
   struct image {
     let bundle: Foundation.Bundle
+
+    /// Image `bgDollarCircle`.
+    var bgDollarCircle: RswiftResources.ImageResource { .init(name: "bgDollarCircle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `bg_reg_pic_success`.
     var bg_reg_pic_success: RswiftResources.ImageResource { .init(name: "bg_reg_pic_success", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1184,6 +1222,9 @@ struct _R {
 
     /// Image `iconCategory`.
     var iconCategory: RswiftResources.ImageResource { .init(name: "iconCategory", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconChangeCircle`.
+    var iconChangeCircle: RswiftResources.ImageResource { .init(name: "iconChangeCircle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconCloseButton`.
     var iconCloseButton: RswiftResources.ImageResource { .init(name: "iconCloseButton", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1379,6 +1420,9 @@ struct _R {
 
     /// Image `iconTimer`.
     var iconTimer: RswiftResources.ImageResource { .init(name: "iconTimer", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconUsdt`.
+    var iconUsdt: RswiftResources.ImageResource { .init(name: "iconUsdt", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconUser`.
     var iconUser: RswiftResources.ImageResource { .init(name: "iconUser", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1934,12 +1978,15 @@ struct _R {
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SecurityVerificationViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SellCryptoConfirmView', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'SellCryptoConfirmView', but couldn't be loaded.") }
-      if UIKit.UIImage(named: "iconBtc", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBtc' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconDownArrow", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDownArrow' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconUsdt", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconUsdt' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00191C", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00191C' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#999999", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#999999' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SellCryptoViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconBtc", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBtc' is used in nib 'SellDetailItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconExactitudeWhite", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconExactitudeWhite' is used in nib 'SellDetailItemTableViewCell', but couldn't be loaded.") }

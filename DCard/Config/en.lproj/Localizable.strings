@@ -141,6 +141,11 @@
 "topUpHome" = "TOP UP";
 "topupHistory" = "Top Up History";
 "transactions" = "Transactions";
+"topUpDebitCard" = "Top Up Debit Card";
+"cryptoBalance" = "Crypto Balance";
+"max" = "Max";
+"makeADeposit" = "Make A Deposit";
+"makeDepositInfo" = "Insufficient balance, don't have sufficient crypto ?";
 
 /// Tabbar
 "home" = "HOME";

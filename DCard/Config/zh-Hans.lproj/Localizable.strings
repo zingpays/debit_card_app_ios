@@ -140,6 +140,12 @@
 "topUpHome" = "充值";
 "topupHistory" = "充值历史";
 "transactions" = "交易";
+"topUpDebitCard" = "Top Up Debit Card";
+"cryptoBalance" = "数字货币余额";
+"max" = "全部";
+"makeADeposit" = "用数字货币进行充值";
+"makeDepositInfo" = "余额不足，没有足够的数字货币？";
+
 
 /// Tabbar
 "home" = "首页";

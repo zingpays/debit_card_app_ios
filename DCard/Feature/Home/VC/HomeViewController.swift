@@ -112,20 +112,23 @@ extension HomeViewController: HomeOverviewTableViewCellDelegate, HomeRecentTrans
     }
     
     func didSelectedVerify(_ cell: HomeOverviewTableViewCell) {
-        
+         
     }
     
     func didSelectedAddCard(_ cell: HomeOverviewTableViewCell) {
-        
+        let vc = ApplyCardViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func didSelectedWallet(_ cell: HomeOverviewTableViewCell) {
-        
+        navigationController?.tabBarController?.selectedIndex = 1
     }
     
     func didSelectedTopup(_ cell: HomeOverviewTableViewCell) {
-        let vc = TopupHistoryViewController()
+        let vc = SellCryptoViewController ()
         vc.hidesBottomBarWhenPushed = true
+        vc.source = .home
         navigationController?.pushViewController(vc, animated: true)
     }
     

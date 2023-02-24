@@ -9,7 +9,14 @@
 import UIKit
 import JFPopup
 
+enum SellCryptoSource {
+    case home
+    case wallet
+}
+
 class SellCryptoViewController: BaseViewController {
+    
+    var source: SellCryptoSource = .wallet
     
     private lazy var rightItem: UIBarButtonItem = {
         let btn = UIButton()
@@ -21,12 +28,20 @@ class SellCryptoViewController: BaseViewController {
     }()
     
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var inputContentView: UIView!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var priceTagLabel: UILabel!
+    @IBOutlet weak var boardView: UIView!
+    @IBOutlet weak var balanceView: UIView!
+    @IBOutlet weak var balanceNumLabel: UILabel!
+    @IBOutlet weak var depositView: UIView!
+    @IBOutlet weak var depositInfoLabel: UILabel!
+    @IBOutlet weak var cryptoBalanceLabel: UILabel!
+    @IBOutlet weak var makeDepositButton: UIButton!
+    @IBOutlet weak var inputUsdtLabel: UILabel!
+    @IBOutlet weak var topUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +51,23 @@ class SellCryptoViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
+        self.gk_navTitle = R.string.localizable.topUpDebitCard()
         setupRightItem()
-        titleLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(NAVBARHEIGHT + 20)
+        boardView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NAVBARHEIGHT + 26)
         }
         statusLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.4)
         inputTextField.textColor = R.color.fw000000()?.withAlphaComponent(0.3)
         priceLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.3)
         priceTagLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.3)
         line.backgroundColor = R.color.fw000000()?.withAlphaComponent(0.05)
+        balanceNumLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.3)
+        depositInfoLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.6)
+        cryptoBalanceLabel.text = R.string.localizable.cryptoBalance()
+        makeDepositButton.setTitle(R.string.localizable.makeADeposit(), for: .normal)
+        depositInfoLabel.text = R.string.localizable.makeDepositInfo()
+        inputUsdtLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.3)
+        topUpButton.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.4)
     }
     
     private func setupRightItem() {
@@ -82,19 +105,53 @@ class SellCryptoViewController: BaseViewController {
     }
     
     @objc private func recordAction() {
-        let vc = WalletTransactionsViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        switch source {
+        case .home:
+            let vc = TopupHistoryViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case .wallet:
+            let vc = WalletTransactionsViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     
     @IBAction func sellCryptoAction(_ sender: Any) {
-        popup.dialog {
+        popup.bottomSheet {
             let v = SellCryptoConfirmView.loadFromNib()
-            v.frame = CGRect(origin: CGPoint(x: 26, y: 0), size: CGSize(width: SCREENWIDTH-52, height: 314))
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 447 + TOUCHBARHEIGHT))
+            let bgLayer = CAGradientLayer()
+            bgLayer.colors = [R.color.fw008999()!.cgColor,
+                              R.color.fw004396()!.cgColor]
+            bgLayer.locations = [0, 1]
+            bgLayer.frame = v.bounds
+            bgLayer.startPoint = .zero
+            bgLayer.endPoint = CGPoint(x: 0.79, y: 0.79)
+            bgLayer.opacity = 0.1
+            v.layer.insertSublayer(bgLayer, at: 0)
             let maskLayer = CAShapeLayer()
             maskLayer.frame = .init(origin: .zero,
-                                    size: .init(width: SCREENWIDTH-52, height: 314))
+                                    size: .init(width: SCREENWIDTH, height: 447+TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
+    }
+    
+    @IBAction func makeDepositAction(_ sender: Any) {
+        popup.bottomSheet {
+            let v = DepositFromView.loadFromNib()
+            v.identifier = "Deposit"
+            v.titleLabel.text = "Deposit"
+            v.subTitleLabel.text = "Choose a crypto to deposit"
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 368 + TOUCHBARHEIGHT))
             maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
                                           byRoundingCorners: [.topLeft, .topRight],
                                           cornerRadii: .init(width: 32, height: 32)).cgPath
@@ -125,12 +182,15 @@ extension SellCryptoViewController: UITextFieldDelegate {
 }
 
 extension SellCryptoViewController: SellCryptoConfirmViewDelegate {
-    func didSelectedCancel() {
-        popup.dismissPopup()
-    }
-    
     func didSelectedContinue() {
         popup.dismissPopup()
+        switch source {
+        case .home:
+            let vc = TransactionsDetailViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case .wallet:
+            print("")
+        }
     }
     
 }
