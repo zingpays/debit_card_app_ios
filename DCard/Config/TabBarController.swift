@@ -23,6 +23,16 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         setupViewControllers()
         tabBar.backgroundColor = .white
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var frame = tabBar.frame
+        let height = tabBar.frame.size.height + 10
+        frame.size.height = height
+        frame.origin.y = view.bounds.size.height - height
+        tabBar.frame = frame
+        
         let maskLayer = CAShapeLayer()
         maskLayer.frame = .init(origin: .zero, size: .init(width: tabBar.width, height: tabBar.height+STATUSBARHEIGHT))
         maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size), byRoundingCorners: [.topLeft, .topRight], cornerRadii: .init(width: 20, height: 20)).cgPath
