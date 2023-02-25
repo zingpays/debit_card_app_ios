@@ -208,11 +208,11 @@ class RegisterViewController: BaseViewController {
         time.schedule(deadline: .now(), repeating: 1)
         time.setEventHandler { [weak self] in
             guard let this = self else { return }
-            if times < 0 {
+            if times <= 0 {
                 DispatchQueue.main.async {
                     this.sendButton.alpha = 1
                     this.sendButton.setTitle(R.string.localizable.resend(), for: .normal)
-                    this.time.cancel()
+                    this.time.suspend()
                 }
             } else {
                 DispatchQueue.main.async {
