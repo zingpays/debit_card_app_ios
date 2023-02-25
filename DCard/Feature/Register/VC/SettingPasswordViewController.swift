@@ -234,13 +234,13 @@ class SettingPasswordViewController: BaseViewController {
             case .register:
                 requestRegister(email: email, code: code, password: passwordTextField.text ?? "")
             case .change:
-                UserManager.shared.removeToken()
+                UserManager.shared.clearUserData()
                 UIApplication.shared.keyWindow()?.rootViewController = nil
                 let vc = LoginViewController()
                 let loginNavVC = UINavigationController(rootViewController: vc)
                 UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
             case .forgot:
-                UserManager.shared.removeToken()
+                UserManager.shared.clearUserData()
                 UIApplication.shared.keyWindow()?.rootViewController = nil
                 let vc = LoginViewController()
                 let loginNavVC = UINavigationController(rootViewController: vc)
@@ -318,8 +318,9 @@ class SettingPasswordViewController: BaseViewController {
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
+                UserManager.shared.saveUserEmail(email)
                 let vc = RegisterSuccessViewController()
-                vc.uniqueId = "\(data?.uniqueId ?? 0)"
+                vc.uniqueId = data?.uniqueId
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
                 this.view.makeToast(message, position: .top)

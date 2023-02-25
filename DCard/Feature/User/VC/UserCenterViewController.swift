@@ -95,20 +95,17 @@ class UserCenterViewController: BaseViewController {
     // MARK: - Network
     
     private func requestLogout() {
-        UserManager.shared.removeToken()
-        UIApplication.shared.keyWindow()?.rootViewController = nil
-        let vc = LoginViewController()
-        let loginNavVC = UINavigationController(rootViewController: vc)
-        UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
-//        LoginRequest.logout { isSuccess, message in
-//            if isSuccess {
-//                UserManager.shared.removeToken()
-//                UIApplication.shared.keyWindow()?.rootViewController = nil
-//                let vc = LoginViewController()
-//                let loginNavVC = UINavigationController(rootViewController: vc)
-//                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
-//            }
-//        }
+        LoginRequest.logout { isSuccess, message in
+            if isSuccess {
+                UserManager.shared.clearUserData()
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                let vc = LoginViewController()
+                let loginNavVC = UINavigationController(rootViewController: vc)
+                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+            } else {
+                self.view.makeToast(message)
+            }
+        }
     }
     
     // MARK: - Actions

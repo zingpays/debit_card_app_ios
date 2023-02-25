@@ -161,6 +161,7 @@ class VerificationCodeViewController: BaseViewController {
                         UserManager.shared.saveUserPhoneNum(phoneNum)
                         LocalAuthenManager.shared.isAuthorized = true
                         let vc = VerifyYourIdentityGuideViewController()
+                        vc.source = .register
                         this.navigationController?.pushViewController(vc, animated: true)
                     } else {
                         this.updateErrorTips(isShow: true, text: "date parse error")

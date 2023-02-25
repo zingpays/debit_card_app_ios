@@ -104,7 +104,7 @@ class LoginViewController: BaseViewController {
                           authToken: loginData.authToken ?? "",
                           uniqueId: loginData.user?.uniqueId ?? "")
         } else {
-            UserManager.shared.info = data?.user
+//            UserManager.shared.info = data
             loginFinish(token: loginData.accessToken,
                         expireDate: loginData.expireAt ?? "",
                         email: loginData.user?.email ?? "",

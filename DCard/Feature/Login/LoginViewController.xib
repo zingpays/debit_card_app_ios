@@ -39,7 +39,7 @@
                     <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zhanglin.cheng@zingpays.com" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rDs-nc-xfM">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter E-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rDs-nc-xfM">
                     <rect key="frame" x="16" y="194" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>

@@ -1,5 +1,5 @@
 //
-//  PatternManager.swift
+//  LockScreenManager.swift
 //  DCard
 //
 //  Created by Fei Zhang on 2023/2/20.

@@ -30,19 +30,19 @@ class HomeViewController: BaseViewController {
             let loginNavVC = UINavigationController(rootViewController: vc)
             UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
         } else {
-//            if LocalAuthenManager.shared.isBind && !LocalAuthenManager.shared.isAuthorized {
-//                let lockScreenVC = BiometricsViewController()
-//                lockScreenVC.isHasChangeToOtherLoginMethod = true
-//                let navVC = UINavigationController(rootViewController: lockScreenVC)
-//                navVC.modalPresentationStyle = .fullScreen
-//                self.present(navVC, animated: false)
-//            } else if !LocalAuthenManager.shared.isAuthorized {
-//                let vc = PasswordLoginViewController()
-//                vc.isHasChangeToOtherLoginMethod = true
-//                let navVC = UINavigationController(rootViewController: vc)
-//                navVC.modalPresentationStyle = .fullScreen
-//                self.present(navVC, animated: false)
-//            }
+            if LocalAuthenManager.shared.isBind && !LocalAuthenManager.shared.isAuthorized {
+                let lockScreenVC = BiometricsViewController()
+                lockScreenVC.isHasChangeToOtherLoginMethod = true
+                let navVC = UINavigationController(rootViewController: lockScreenVC)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: false)
+            } else if !LocalAuthenManager.shared.isAuthorized {
+                let vc = PasswordLoginViewController()
+                vc.isHasChangeToOtherLoginMethod = true
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: false)
+            }
         }
     }
     
@@ -60,15 +60,6 @@ class HomeViewController: BaseViewController {
         let vc = UserCenterViewController()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
-//        LoginRequest.logout { isSuccess, message in
-//            if isSuccess {
-//                UserManager.shared.removeToken()
-//                UIApplication.shared.keyWindow()?.rootViewController = nil
-//                let vc = LoginViewController()
-//                let loginNavVC = UINavigationController(rootViewController: vc)
-//                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
-//            }
-//        }
     }
 }
 
@@ -112,7 +103,10 @@ extension HomeViewController: HomeOverviewTableViewCellDelegate, HomeRecentTrans
     }
     
     func didSelectedVerify(_ cell: HomeOverviewTableViewCell) {
-         
+        let vc = VerifyYourIdentityGuideViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.source = .home
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func didSelectedAddCard(_ cell: HomeOverviewTableViewCell) {

@@ -121,12 +121,15 @@ class PasswordLoginViewController: BaseViewController {
         passwordTextField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
         if isHasChangeToOtherLoginMethod {
             view.addSubview(loginStatckView)
-            loginStatckView.addArrangedSubview(gestureButton)
-            gestureButton.snp.makeConstraints { make in
-                make.height.equalTo(30)
-                make.width.equalTo(120)
+            var statckViewWidth = 0
+            if LockScreenManager.shared.password != nil {
+                statckViewWidth += 120 + 12
+                loginStatckView.addArrangedSubview(gestureButton)
+                gestureButton.snp.makeConstraints { make in
+                    make.height.equalTo(30)
+                    make.width.equalTo(120)
+                }
             }
-            var statckViewWidth = 120 + 12
             if LocalAuthenManager.shared.isBind {
                 statckViewWidth += 120
                 loginStatckView.addArrangedSubview(biometricsButton)
@@ -164,30 +167,37 @@ class PasswordLoginViewController: BaseViewController {
         }
         if loginData.furtherAuth {
             continueLogin(authType: loginData.authType,
-                          authToken: loginData.accessToken)
+                          authToken: loginData.authToken ?? "",
+                          uniqueId: loginData.user?.uniqueId ?? "")
         } else {
             loginFinish(token: loginData.accessToken,
-                        expireDate: loginData.expireAt,
-                        email: loginData.user?.email)
+                        expireDate: loginData.expireAt ?? "",
+                        email: loginData.user?.email ?? "",
+                        phoneNum: loginData.user?.phoneNumber ?? "")
         }
     }
     
-    private func continueLogin(authType: AuthType, authToken: String) {
+    private func continueLogin(authType: AuthType, authToken: String, uniqueId: String) {
         let vc = SecurityVerificationViewController()
+        vc.style = authType == .email ? .email : .twofa
+        vc.uniqueId = uniqueId
+        vc.authToken = authToken
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func loginFinish(token: String?, expireDate: String?, email: String?) {
-        guard let userToken = token else {
-            view.makeToast("Token is null，login fail～")
-            return
+    private func loginFinish(token: String, expireDate: String, email: String, phoneNum: String) {
+        if let expireDate = expireDate.toDate()?.date {
+            LocalAuthenManager.shared.isAuthorized = true
+            // save user token
+            UserManager.shared.saveToken(token, expireDate: expireDate)
+            UserManager.shared.saveUserEmail(email)
+            UserManager.shared.saveUserPhoneNum(phoneNum)
+            // change application root viewController to tabbar viewController
+            UIApplication.shared.keyWindow()?.rootViewController = nil
+            UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+        } else {
+            DLog.error("⚠️⚠️⚠️登录过期时间解析失败！")
         }
-        LocalAuthenManager.shared.isAuthorized = true
-        let expireDate: Date =  expireDate?.toDate()?.date ?? Date(timeIntervalSinceNow: 60*60*24*7)
-        // save user token
-        UserManager.shared.saveToken(userToken, expireDate: expireDate)
-        UserManager.shared.saveUserEmail(email ?? "")
-        self.dismiss(animated: true)
     }
     
     // MARK: - Actions

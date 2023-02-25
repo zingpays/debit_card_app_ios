@@ -8,7 +8,14 @@
 
 import UIKit
 
+enum VerifyYourIdentitySource {
+    case home
+    case register
+}
+
 class VerifyYourIdentityGuideViewController: BaseViewController {
+    
+    var source: VerifyYourIdentitySource = .home
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -71,8 +78,10 @@ class VerifyYourIdentityGuideViewController: BaseViewController {
         super.setupNavBar()
         self.gk_navLineHidden = false
         self.gk_navLeftBarButtonItem = nil
-        self.gk_navRightBarButtonItem = rightItem
-        self.gk_navItemRightSpace = 16
+        if source == .register {
+            self.gk_navRightBarButtonItem = rightItem
+            self.gk_navItemRightSpace = 16
+        }
     }
     
     // MARK: - Private

@@ -103,6 +103,8 @@
 		547322092987BF0D007B9AEA /* SettingNewPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */; };
 		5473856F29A8ACA900924AD8 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473856E29A8ACA900924AD8 /* RegisterModel.swift */; };
 		5473857129A8C30E00924AD8 /* PhoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473857029A8C30E00924AD8 /* PhoneRequest.swift */; };
+		5473857529A9C6ED00924AD8 /* RegionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473857429A9C6ED00924AD8 /* RegionRequest.swift */; };
+		5473857829A9C83100924AD8 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473857729A9C83100924AD8 /* RegionModel.swift */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -117,7 +119,7 @@
 		5482974329A35B0300F82611 /* QuickUnlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482974129A35B0300F82611 /* QuickUnlockViewController.xib */; };
 		5482974629A35F2B00F82611 /* QuickUnlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974429A35F2B00F82611 /* QuickUnlockTableViewCell.swift */; };
 		5482974729A35F2B00F82611 /* QuickUnlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482974529A35F2B00F82611 /* QuickUnlockTableViewCell.xib */; };
-		5482974929A3790E00F82611 /* PatternManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974829A3790E00F82611 /* PatternManager.swift */; };
+		5482974929A3790E00F82611 /* LockScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974829A3790E00F82611 /* LockScreenManager.swift */; };
 		5482974C29A49B9A00F82611 /* AuthSettingGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974A29A49B9A00F82611 /* AuthSettingGuideViewController.swift */; };
 		5482974D29A49B9A00F82611 /* AuthSettingGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5482974B29A49B9A00F82611 /* AuthSettingGuideViewController.xib */; };
 		5482975029A4A49500F82611 /* AuthDownloadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482974E29A4A49500F82611 /* AuthDownloadCollectionViewCell.swift */; };
@@ -351,6 +353,8 @@
 		547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNewPasswordViewController.xib; sourceTree = "<group>"; };
 		5473856E29A8ACA900924AD8 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		5473857029A8C30E00924AD8 /* PhoneRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRequest.swift; sourceTree = "<group>"; };
+		5473857429A9C6ED00924AD8 /* RegionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRequest.swift; sourceTree = "<group>"; };
+		5473857729A9C83100924AD8 /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -369,7 +373,7 @@
 		5482974129A35B0300F82611 /* QuickUnlockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickUnlockViewController.xib; sourceTree = "<group>"; };
 		5482974429A35F2B00F82611 /* QuickUnlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickUnlockTableViewCell.swift; sourceTree = "<group>"; };
 		5482974529A35F2B00F82611 /* QuickUnlockTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickUnlockTableViewCell.xib; sourceTree = "<group>"; };
-		5482974829A3790E00F82611 /* PatternManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternManager.swift; sourceTree = "<group>"; };
+		5482974829A3790E00F82611 /* LockScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenManager.swift; sourceTree = "<group>"; };
 		5482974A29A49B9A00F82611 /* AuthSettingGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettingGuideViewController.swift; sourceTree = "<group>"; };
 		5482974B29A49B9A00F82611 /* AuthSettingGuideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthSettingGuideViewController.xib; sourceTree = "<group>"; };
 		5482974E29A4A49500F82611 /* AuthDownloadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDownloadCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -588,7 +592,7 @@
 				541A8D2129641F1F00C59026 /* AppManager.swift */,
 				541A8D2429641F1F00C59026 /* LocalizationManager.swift */,
 				541A8D5029655DAE00C59026 /* LocalAuthenManager.swift */,
-				5482974829A3790E00F82611 /* PatternManager.swift */,
+				5482974829A3790E00F82611 /* LockScreenManager.swift */,
 			);
 			path = Scaffold;
 			sourceTree = "<group>";
@@ -801,16 +805,9 @@
 		545C56862985132E00D7F058 /* KYC */ = {
 			isa = PBXGroup;
 			children = (
-				545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */,
-				545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */,
-				545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */,
-				545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */,
-				545C569B2986142F00D7F058 /* FillInAddressViewController.swift */,
-				545C569C2986142F00D7F058 /* FillInAddressViewController.xib */,
-				54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */,
-				54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */,
-				54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */,
-				54D082D129864531008B0FBC /* KYCUnAvailableViewController.xib */,
+				5473857629A9C82400924AD8 /* Model */,
+				5473857329A9C6C900924AD8 /* VC */,
+				5473857229A9C61000924AD8 /* Network */,
 			);
 			path = KYC;
 			sourceTree = "<group>";
@@ -831,6 +828,39 @@
 				5473857029A8C30E00924AD8 /* PhoneRequest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5473857229A9C61000924AD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5473857429A9C6ED00924AD8 /* RegionRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5473857329A9C6C900924AD8 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				545C56872985141100D7F058 /* VerifyYourIdentityGuideViewController.swift */,
+				545C56882985141100D7F058 /* VerifyYourIdentityGuideViewController.xib */,
+				545C569729852B7000D7F058 /* KYCFillInNameAndNationalViewController.swift */,
+				545C569829852B7000D7F058 /* KYCFillInNameAndNationalViewController.xib */,
+				545C569B2986142F00D7F058 /* FillInAddressViewController.swift */,
+				545C569C2986142F00D7F058 /* FillInAddressViewController.xib */,
+				54D082CC29863FA6008B0FBC /* KYCFinishViewController.swift */,
+				54D082CD29863FA6008B0FBC /* KYCFinishViewController.xib */,
+				54D082D029864531008B0FBC /* KYCUnAvailableViewController.swift */,
+				54D082D129864531008B0FBC /* KYCUnAvailableViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		5473857629A9C82400924AD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5473857729A9C83100924AD8 /* RegionModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		547F4CFC29640392007B05B9 = {
@@ -1533,6 +1563,7 @@
 				54DE3E832990AD280077B120 /* WalletCryptoTableViewCell.swift in Sources */,
 				549D462F298B5D1F009AEB13 /* DepositFromView.swift in Sources */,
 				5422268929939D2B00447A1A /* TransactionsFilterBoardView.swift in Sources */,
+				5473857529A9C6ED00924AD8 /* RegionRequest.swift in Sources */,
 				5482973E29A3464800F82611 /* SecurityCollectionViewCell.swift in Sources */,
 				54C313192996183800DBF373 /* CryptoNetworkItemTableViewCell.swift in Sources */,
 				54A45508298BBE0200621311 /* UICollectionViewLeftAlignedLayout.swift in Sources */,
@@ -1563,6 +1594,7 @@
 				54222679299257F800447A1A /* SellCryptoConfirmView.swift in Sources */,
 				542BC19F2977026900133659 /* LoginViewController.swift in Sources */,
 				54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */,
+				5473857829A9C83100924AD8 /* RegionModel.swift in Sources */,
 				545C56892985141100D7F058 /* VerifyYourIdentityGuideViewController.swift in Sources */,
 				541A8D3C296421E800C59026 /* TabBarController.swift in Sources */,
 				54BBA11A296D7A5500EB316F /* SettingPasswordViewController.swift in Sources */,
@@ -1574,7 +1606,7 @@
 				54A4550D298BCED100621311 /* TransactionsFilterDateCollectionViewCell.swift in Sources */,
 				5482974C29A49B9A00F82611 /* AuthSettingGuideViewController.swift in Sources */,
 				541A8D7E29682D5B00C59026 /* GuideCollectionModel.swift in Sources */,
-				5482974929A3790E00F82611 /* PatternManager.swift in Sources */,
+				5482974929A3790E00F82611 /* LockScreenManager.swift in Sources */,
 				541A8D8029682D5B00C59026 /* GuideViewController.swift in Sources */,
 				54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */,
 				546BD3FE299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.swift in Sources */,

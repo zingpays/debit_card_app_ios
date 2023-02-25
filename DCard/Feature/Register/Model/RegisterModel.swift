@@ -10,9 +10,9 @@ import ObjectMapper
 
 struct RegisterModel: Mappable {
     
-    var id: Int?
+    var id: String?
     var email: String?
-    var uniqueId: Int?
+    var uniqueId: String?
     
     init?(map: ObjectMapper.Map) {}
 

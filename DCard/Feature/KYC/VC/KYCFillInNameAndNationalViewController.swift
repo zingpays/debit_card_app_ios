@@ -27,12 +27,14 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     @IBOutlet weak var tipsViewTopConstraint: NSLayoutConstraint!
     
     private var tipsCheckedDic: [Int : Bool] = [:]
+    var datasource: [ChooseRegionModel] = []
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        requestRegion()
     }
     
     // MARK: - Private
@@ -122,19 +124,47 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         return checkedCount == 4
     }
     
-    // MARK: - Action
+    private func requestRegion() {
+        RegionRequest.list { isSuccess, message, list in
+            if isSuccess, let regionList = list {
+                for data in regionList {
+                    let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                    let region = ChooseRegionModel(title: title, subTitle: "")
+                    self.datasource.append(region)
+                }
+            }
+        }
+    }
     
-    @objc private func chooseNationality() {
+    private func gotoRegionPage() {
         let vc = ChooseRegionViewController()
-        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
         vc.pageTitle = "choose your nationality"
-        vc.datasource = datas
+        vc.datasource = datasource
         vc.didSelectedCompletion = { data in
             DispatchQueue.main.async {
                 self.chooseNationalTextField.text = data.title
             }
         }
         self.present(vc, animated: true)
+    }
+    
+    // MARK: - Action
+    
+    @objc @IBAction func chooseNationality() {
+        if datasource.isEmpty {
+            RegionRequest.list { isSuccess, message, list in
+                if isSuccess, let regionList = list {
+                    for data in regionList {
+                        let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                        let region = ChooseRegionModel(title: title, subTitle: data.phoneCode ?? "")
+                        self.datasource.append(region)
+                        self.gotoRegionPage()
+                    }
+                }
+            }
+        } else {
+            gotoRegionPage()
+        }
     }
     
     @IBAction func continueNext(_ sender: UIButton) {

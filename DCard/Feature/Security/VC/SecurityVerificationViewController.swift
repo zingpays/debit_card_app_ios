@@ -137,12 +137,6 @@ class SecurityVerificationViewController: BaseViewController {
     // MARK: - Actions
     
     @objc private func nextAction() {
-        if style == .email {
-            
-        }
-        if style == .twofa {
-            
-        }
         switch style {
         case .all, .allWithoutAuthReset:
             requestAllVerify()

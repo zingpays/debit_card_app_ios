@@ -40,11 +40,14 @@ class BindPhoneViewController: BaseViewController {
         }
     }
     
+    var datasource: [ChooseRegionModel] = []
+    
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        requestRegion()
     }
     
     override func setupNavBar() {}
@@ -67,6 +70,32 @@ class BindPhoneViewController: BaseViewController {
         phoneTextField.addTarget(self, action: #selector(phoneNumValueChangeAction), for: .editingChanged)
     }
     
+    private func gotoRegionPage() {
+        let vc = ChooseRegionViewController()
+        vc.pageTitle = R.string.localizable.chooseYourCountryTitle()
+        vc.datasource = datasource
+        vc.didSelectedCompletion = { data in
+            self.phoneRegionLabel.text = data.subTitle
+        }
+        self.present(vc, animated: true)
+    }
+    
+    // MARK: - Network
+    
+    private func requestRegion() {
+        RegionRequest.list { isSuccess, message, list in
+            if isSuccess, let regionList = list {
+                for data in regionList {
+                    let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                    let region = ChooseRegionModel(title: title, subTitle: data.phoneCode ?? "")
+                    self.datasource.append(region)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    
     @objc private func phoneNumValueChangeAction() {
         if let text = phoneTextField.text, !text.isEmpty {
             sendButton.alpha = 1
@@ -75,19 +104,22 @@ class BindPhoneViewController: BaseViewController {
         }
     }
     
-    // MARK: - Actions
-    
     @IBAction func selectPhoneRegionAction(_ sender: Any) {
         phoneTextField.resignFirstResponder()
-        // TODO: 请求国家区域数据信息
-        let vc = ChooseRegionViewController()
-        let datas = [ChooseRegionModel(title: "China", subTitle: "+86"), ChooseRegionModel(title: "Singpore", subTitle: "+65")]
-        vc.pageTitle = R.string.localizable.chooseYourCountryTitle()
-        vc.datasource = datas
-        vc.didSelectedCompletion = { data in
-            self.phoneRegionLabel.text = data.subTitle
+        if datasource.isEmpty {
+            RegionRequest.list { isSuccess, message, list in
+                if isSuccess, let regionList = list {
+                    for data in regionList {
+                        let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                        let region = ChooseRegionModel(title: title, subTitle: data.phoneCode ?? "")
+                        self.datasource.append(region)
+                    }
+                }
+                self.gotoRegionPage()
+            }
+        } else {
+            gotoRegionPage()
         }
-        self.present(vc, animated: true)
     }
     
     @IBAction func sendVerifyCode(_ sender: Any) {
