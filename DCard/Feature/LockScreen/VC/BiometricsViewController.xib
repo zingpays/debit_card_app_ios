@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BiometricsViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="iconButton" destination="NKB-dM-f94" id="utb-wO-TGj"/>
+                <outlet property="subTitleLabel" destination="1e5-st-k10" id="AU4-hT-E7e"/>
+                <outlet property="titleLabel" destination="B13-se-j2M" id="hme-oY-hjn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,13 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_faceid" translatesAutoresizingMaskIntoConstraints="NO" id="K7I-vF-dGx">
-                    <rect key="frame" x="151.66666666666666" y="309" width="90" height="90"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="90" id="5IK-pP-gYt"/>
-                        <constraint firstAttribute="width" constant="90" id="VKm-x4-LqO"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face ID Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B13-se-j2M">
                     <rect key="frame" x="134" y="427" width="125" height="24"/>
                     <constraints>
@@ -50,17 +46,29 @@
                         <constraint firstAttribute="height" constant="50" id="p7T-OZ-JA3"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-dM-f94">
+                    <rect key="frame" x="151.66666666666666" y="309" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="KHA-dH-do5"/>
+                        <constraint firstAttribute="height" constant="90" id="Of5-8t-NB5"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="iconFaceid" title=" "/>
+                    <connections>
+                        <action selector="againFaceId:" destination="-1" eventType="touchUpInside" id="SBH-Xh-9nZ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="B13-se-j2M" firstAttribute="top" secondItem="K7I-vF-dGx" secondAttribute="bottom" constant="28" id="Bon-Dn-LrF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YNM-kb-ODI" secondAttribute="trailing" id="GMy-6l-JHb"/>
-                <constraint firstItem="K7I-vF-dGx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="250" id="QLZ-hr-gv7"/>
+                <constraint firstItem="NKB-dM-f94" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NB1-eX-GXJ"/>
+                <constraint firstItem="B13-se-j2M" firstAttribute="top" secondItem="NKB-dM-f94" secondAttribute="bottom" constant="28" id="VQB-bL-hTW"/>
                 <constraint firstItem="1e5-st-k10" firstAttribute="top" secondItem="B13-se-j2M" secondAttribute="bottom" constant="8" id="Wvc-2i-16D"/>
+                <constraint firstItem="NKB-dM-f94" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="250" id="hba-92-zYD"/>
                 <constraint firstItem="YNM-kb-ODI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="siG-rz-gdf"/>
                 <constraint firstItem="1e5-st-k10" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vBp-AF-Tkr"/>
-                <constraint firstItem="K7I-vF-dGx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wGn-ku-l6X"/>
                 <constraint firstItem="B13-se-j2M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xfW-1w-YUc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YNM-kb-ODI" secondAttribute="bottom" constant="24" id="xoa-wQ-fHk"/>
             </constraints>
@@ -68,7 +76,7 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_faceid" width="90" height="90"/>
+        <image name="iconFaceid" width="90" height="90"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

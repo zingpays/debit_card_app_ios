@@ -22,6 +22,7 @@
             <connections>
                 <outlet property="downloadCollectionView" destination="YK4-Xr-kjI" id="HPY-BV-Sym"/>
                 <outlet property="downloadCollectionViewHeight" destination="oRo-Ai-FF4" id="fcJ-kS-DBL"/>
+                <outlet property="nextButton" destination="2X1-yE-0cV" id="7aF-g9-zBa"/>
                 <outlet property="subTitleLabel" destination="5BV-Wa-5rm" id="vHO-48-9ey"/>
                 <outlet property="titleLabel" destination="WWk-ap-4pn" id="rRB-sG-YlY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

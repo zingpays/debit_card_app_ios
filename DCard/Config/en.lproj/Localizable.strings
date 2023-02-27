@@ -120,6 +120,10 @@
 "securityChangeEmailSuccessContent" = "Please contact our customer service and email a photo of you holding your ID and a white piece of paper that says \"I voluntarily change email address on the flashwire platform\". ";
 "changePasswordSubTitle" = "Verify your old password";
 "enterOldPassword" = "Enter old password";
+"faceIdLogin" = "Face ID Login";
+"touchIdLogin" = "Touch ID Login";
+"faceIDLoginSubTitle" = "Click to verify Face ID";
+"touchIDLoginSubTitle" = "Click to verify Touch ID";
 
 /// User
 "logout" = "Log out";

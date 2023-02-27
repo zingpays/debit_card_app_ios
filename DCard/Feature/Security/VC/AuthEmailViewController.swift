@@ -31,6 +31,8 @@ class AuthEmailViewController: BaseViewController {
         }
     }
     
+    var isBindAuth: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -45,7 +47,7 @@ class AuthEmailViewController: BaseViewController {
 
     @IBAction func changeEmailAction(_ sender: Any) {
         let vc = SecurityVerificationViewController()
-        vc.style = .allWithoutAuthReset
+        vc.dataStyle = isBindAuth ? [.email, .phone, .twofaWithoutReset] : [.email, .phone]
         vc.source = .changeEmail
         navigationController?.pushViewController(vc, animated: true)
     }

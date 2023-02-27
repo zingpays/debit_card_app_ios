@@ -225,7 +225,7 @@ class NineGraphLockScreenViewController: BaseViewController {
     
     @objc private func forgotParttenAction() {
         let vc = SecurityVerificationViewController()
-        vc.style = .allWithoutAuthReset
+        vc.dataStyle = [.email, .phone]
         vc.source = .forgotPattern
         navigationController?.pushViewController(vc, animated: true)
     }

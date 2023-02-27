@@ -13,6 +13,10 @@ class BiometricsViewController: BaseViewController {
     /// 是否有存在切换其他方式的按钮
     var isHasChangeToOtherLoginMethod: Bool = false
 
+    @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
     private lazy var loginStatckView: UIStackView = {
         let v = UIStackView()
         v.axis = .horizontal
@@ -83,6 +87,12 @@ class BiometricsViewController: BaseViewController {
                 make.bottom.equalToSuperview().offset(-(24+TOUCHBARHEIGHT))
             }
         }
+        let image = LocalAuthenManager.shared.type == .faceID ? R.image.iconFaceid() : R.image.iconTouchid()
+        iconButton.setImage(image, for: .normal)
+        let title = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.faceIdLogin() :  R.string.localizable.touchIdLogin()
+        let subtitle = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.faceIDLoginSubTitle() :  R.string.localizable.touchIDLoginSubTitle()
+        titleLabel.text = title
+        subTitleLabel.text = subtitle
     }
     
     private func setupNotification() {
@@ -117,6 +127,10 @@ class BiometricsViewController: BaseViewController {
     }
     
     // MARK: - Actions
+    
+    @IBAction func againFaceId(_ sender: Any) {
+        startAuth()
+    }
     
     @objc private func screenUnlockSuccess() {
         self.dismiss(animated: true)

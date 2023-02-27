@@ -16,8 +16,12 @@ enum SecurityVerificationItemTableViewCellStyle {
 }
 
 protocol SecurityVerificationItemTableViewCellDelegate: NSObject {
-    func didSelectedAuthUnavailable()
-    func inputTextFieldEditing(_ text: String?, data: SecurityVerificationItemModel?)
+    func didSelectedAuthUnavailable(_ cell: SecurityVerificationItemTableViewCell)
+    func didSelectedSendCode(_ cell: SecurityVerificationItemTableViewCell,
+                             data: SecurityVerificationItemModel)
+    func inputTextFieldEditing(_ cell: SecurityVerificationItemTableViewCell,
+                               _ text: String?,
+                               data: SecurityVerificationItemModel?)
 }
 
 class SecurityVerificationItemTableViewCell: UITableViewCell {
@@ -31,10 +35,23 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var authUnavaiableButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var infoLabelHeight: NSLayoutConstraint!
     
     weak var delegate: SecurityVerificationItemTableViewCellDelegate?
     
     private var itemModel: SecurityVerificationItemModel?
+    private var time = DispatchSource.makeTimerSource()
+    private lazy var getCodeButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle(R.string.localizable.getCode(), for: .normal)
+        btn.titleLabel?.font = .fw.font16()
+        btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
+        btn.frame = CGRect(origin: CGPoint(x: 0, y: 11), size: CGSize(width: 100, height: 28))
+        btn.contentMode = .right
+        return btn
+    }()
+    private var isCountDowning: Bool = false
+    private var isCountDowned: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,46 +74,82 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
         let size = CGSize(width: 100, height: 50)
         let v = UIView(frame: CGRect(origin: .zero, size: size))
         v.backgroundColor = .clear
-        let btn = UIButton()
-        btn.setTitle(R.string.localizable.getCode(), for: .normal)
-        btn.titleLabel?.font = .fw.font16()
-        btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
-        btn.addTarget(self, action: action, for: .touchUpInside)
-        btn.frame = CGRect(origin: CGPoint(x: 0, y: 11), size: CGSize(width: 100, height: 28))
-        btn.contentMode = .right
-        v.addSubview(btn)
+        getCodeButton.addTarget(self, action: action, for: .touchUpInside)
+        v.addSubview(getCodeButton)
         return v
+    }
+    
+    private func startCountDown() {
+        isCountDowning = true
+        var times = 60
+        time.schedule(deadline: .now(), repeating: 1)
+        time.setEventHandler { [weak self] in
+            guard let this = self else { return }
+            if times <= 0 {
+                DispatchQueue.main.async {
+                    this.getCodeButton.setTitle(R.string.localizable.resend(), for: .normal)
+                    this.time.suspend()
+                    this.isCountDowning = false
+                }
+            } else {
+                DispatchQueue.main.async {
+                    times -= 1
+                    let text = LocalizationManager.shared.currentLanguage() == .zh ? "\(times)s后重新发送" : "Resend after \(times)s"
+                    this.getCodeButton.setTitle(text, for: .normal)
+                }
+            }
+        }
+        time.resume()
     }
     
     // MARK: - Actions
     @objc private func inputAction() {
-        
+        guard let data = itemModel else { return }
+        delegate?.didSelectedSendCode(self, data: data)
     }
     
     @IBAction func inputEditingChangedAction(_ sender: UITextField) {
-        delegate?.inputTextFieldEditing(sender.text, data: itemModel)
+        delegate?.inputTextFieldEditing(self, sender.text, data: itemModel)
     }
     
     @IBAction func authUnavailableAction(_ sender: Any) {
-        delegate?.didSelectedAuthUnavailable()
+        delegate?.didSelectedAuthUnavailable(self)
     }
     
-    static func height(style: SecurityVerificationItemTableViewCellStyle) -> CGFloat {
+    static func height(style: SecurityVerificationItemTableViewCellStyle, infoStyle: SecurityVerificationItemInfoStyle) -> CGFloat {
+        var height: CGFloat = 0
         switch style {
         case .email, .phone, .authWithoutReset:
-            return 160
+            height = 140
+            switch infoStyle {
+            case .none:
+                height = 115
+            case .tips, .error:
+                break
+            }
         case .auth:
-            return 180
+            height = 170
+            switch infoStyle {
+            case .none:
+                height = 142
+            case .tips, .error:
+                break
+            }
         }
+        return height
     }
     
     func upadateData(data: SecurityVerificationItemModel) {
         itemModel = data
         switch data.style {
-        case .email, .phone, .authWithoutReset:
+        case .email, .phone:
             authUnavaiableButtonHeight.constant = 0
             authUnavaiableButton.isHidden = true
             inputTextField.rightViewMode = .always
+        case .authWithoutReset:
+            authUnavaiableButtonHeight.constant = 0
+            authUnavaiableButton.isHidden = true
+            inputTextField.rightViewMode = .never
         case .auth:
             authUnavaiableButtonHeight.constant = 19
             authUnavaiableButton.isHidden = false
@@ -105,5 +158,31 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         infoLabel.text = data.info
         inputTextField.placeholder = data.inputPlaceholder
+        inputTextField.text = data.text
+        switch data.infoStyle {
+        case .none:
+            infoLabel.isHidden = true
+            infoLabelHeight.constant = 0
+        case .tips:
+            infoLabel.isHidden = false
+            infoLabel.textColor = R.color.fw001214()
+            infoLabel.font = UIFont.fw.font14(weight: .light)
+            infoLabelHeight.constant = 18
+        case .error:
+            infoLabel.isHidden = false
+            infoLabel.textColor = R.color.fwED4949()
+            infoLabel.font = UIFont.fw.font14(weight: .regular)
+            infoLabelHeight.constant = 18
+        }
+        switch data.getCodeButtonStatus {
+        case .normal:
+            getCodeButton.setTitle(R.string.localizable.getCode(), for: .normal)
+        case .countDown:
+            if isCountDowning {
+                break
+            } else {
+                startCountDown()
+            }
+        }
     }
 }

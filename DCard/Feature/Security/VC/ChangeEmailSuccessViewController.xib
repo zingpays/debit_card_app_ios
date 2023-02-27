@@ -26,6 +26,7 @@
                 <outlet property="contactUsLabel" destination="6HX-uE-ugI" id="ZqV-Bg-4YP"/>
                 <outlet property="contentLabel" destination="je7-HW-qtR" id="5wg-BT-AUW"/>
                 <outlet property="emailButton" destination="VUB-yO-uIK" id="U1y-U2-v0o"/>
+                <outlet property="gotItButton" destination="gxb-7u-m9J" id="ZKd-kG-KbT"/>
                 <outlet property="subTitleLabel" destination="KXh-A6-bKT" id="2hu-pS-yM1"/>
                 <outlet property="titleLabel" destination="otL-aI-xbw" id="uxb-CL-U9K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,7 +45,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your application has been received ! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otL-aI-xbw">
-                    <rect key="frame" x="46.666666666666657" y="261" width="300" height="56"/>
+                    <rect key="frame" x="46.666666666666657" y="261" width="300" height="56.333333333333314"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="MkR-Lq-gSk"/>
                     </constraints>
@@ -53,7 +54,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYA-c7-vvE">
-                    <rect key="frame" x="16" y="347" width="361" height="150"/>
+                    <rect key="frame" x="16" y="347.33333333333331" width="361" height="150"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Next You Need To Do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXh-A6-bKT">
                             <rect key="frame" x="16" y="20" width="329" height="19"/>
@@ -87,7 +88,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atJ-E9-Ok6">
-                    <rect key="frame" x="16" y="513" width="359" height="50"/>
+                    <rect key="frame" x="16" y="513.33333333333337" width="359" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HX-uE-ugI">
                             <rect key="frame" x="15" y="15.666666666666629" width="78" height="19"/>
@@ -134,7 +135,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-7u-m9J">
-                    <rect key="frame" x="26" y="595" width="341" height="46"/>
+                    <rect key="frame" x="26" y="595.33333333333337" width="341" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="kgk-Zv-ZBF"/>

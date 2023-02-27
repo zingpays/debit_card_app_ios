@@ -29,6 +29,7 @@ class AuthSettingViewController: BaseViewController {
     }
     
     @IBOutlet weak var authSwitch: UISwitch!
+    var isBindAuth: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,8 @@ class AuthSettingViewController: BaseViewController {
     @IBAction func authAction(_ sender: UIButton) {
         if authSwitch.isOn {
             let vc = SecurityVerificationViewController()
-            vc.style = .allWithoutAuthReset
+//            vc.style = .allWithoutAuthReset
+            vc.dataStyle = isBindAuth ? [.email, .phone] : [.email, .phone, .twofaWithoutReset]
             vc.source = .closeAuth
             navigationController?.pushViewController(vc, animated: true)
         } else {

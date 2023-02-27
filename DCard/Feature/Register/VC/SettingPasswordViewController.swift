@@ -41,15 +41,15 @@ class SettingPasswordViewController: BaseViewController {
             nextButton.setTitle(R.string.localizable.next(), for: .normal)
         }
     }
-//    private lazy var loginItem: UIBarButtonItem = {
-//        let btn = UIButton()
-//        btn.frame = CGRect(x: 0, y: 4, width: 84, height: 36)
-//        btn.backgroundColor = R.color.fw00A8BB()
-//        btn.layer.cornerRadius = 18
-//        btn.setTitle(R.string.localizable.loginTitle(), for: .normal)
-//        btn.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
-//        return UIBarButtonItem(customView: btn)
-//    }()
+    //    private lazy var loginItem: UIBarButtonItem = {
+    //        let btn = UIButton()
+    //        btn.frame = CGRect(x: 0, y: 4, width: 84, height: 36)
+    //        btn.backgroundColor = R.color.fw00A8BB()
+    //        btn.layer.cornerRadius = 18
+    //        btn.setTitle(R.string.localizable.loginTitle(), for: .normal)
+    //        btn.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
+    //        return UIBarButtonItem(customView: btn)
+    //    }()
     
     private let tipsDatas: [String] = {
         if LocalizationManager.shared.currentLanguage() == .zh {
@@ -92,16 +92,16 @@ class SettingPasswordViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
-//        setupRightItem()
+        //        setupRightItem()
         setupTitle()
         setupSubviews()
         setupTableview()
     }
     
-//    private func setupRightItem() {
-//        self.gk_navRightBarButtonItem = loginItem
-//        self.gk_navItemRightSpace = 17
-//    }
+    //    private func setupRightItem() {
+    //        self.gk_navRightBarButtonItem = loginItem
+    //        self.gk_navItemRightSpace = 17
+    //    }
     
     private func setupSubviews() {
         titleLabel.font = UIFont.fw.font28(weight: .bold)
@@ -184,7 +184,7 @@ class SettingPasswordViewController: BaseViewController {
         let regex = try! NSRegularExpression(pattern: "[^0-9a-zA-Z\n ]", options: [])
         return regex.firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count)) != nil
     }
-
+    
     @discardableResult
     private func updateNextStatus() -> Bool {
         var checkedCount = 0
@@ -216,6 +216,29 @@ class SettingPasswordViewController: BaseViewController {
         textField.layer.borderWidth = 0
     }
     
+    private func changedPasswordAction() {
+        UserManager.shared.clearUserData()
+        UIApplication.shared.keyWindow()?.rootViewController = nil
+        let vc = LoginViewController()
+        let loginNavVC = UINavigationController(rootViewController: vc)
+        UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+    }
+    
+    // MARK: - Network
+    
+    private func requestChangePassword(password: String, confirmPassword: String) {
+        indicator.startAnimating()
+        PasswordRequest.changePassword(password: password, confirmPassword: confirmPassword) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.changedPasswordAction()
+            } else {
+                this.view.makeToast(message)
+            }
+        }
+    }
+    
     // MARK: - Actions
     
     @objc private func passwordEyeAction(sender: UIButton) {
@@ -234,11 +257,9 @@ class SettingPasswordViewController: BaseViewController {
             case .register:
                 requestRegister(email: email, code: code, password: passwordTextField.text ?? "")
             case .change:
-                UserManager.shared.clearUserData()
-                UIApplication.shared.keyWindow()?.rootViewController = nil
-                let vc = LoginViewController()
-                let loginNavVC = UINavigationController(rootViewController: vc)
-                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+                guard let password = passwordTextField.text,
+                      let confirmPassword = againPasswordTextField.text else { return }
+                requestChangePassword(password: password, confirmPassword: confirmPassword)
             case .forgot:
                 UserManager.shared.clearUserData()
                 UIApplication.shared.keyWindow()?.rootViewController = nil

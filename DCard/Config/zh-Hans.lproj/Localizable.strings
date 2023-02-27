@@ -119,6 +119,10 @@
 "securityChangeEmailSuccessContent" = "请联系我们的客服，并通过电子邮件发送一张您手持身份证件的照片和一张写着“我自愿在恒星支付平台上重置我的谷歌验证”的白纸。 ";
 "changePasswordSubTitle" = "验证你的原密码";
 "enterOldPassword" = "请填写原密码";
+"faceIdLogin" = "人脸登录";
+"touchIdLogin" = "指纹登录";
+"faceIDLoginSubTitle" = "点击进行人脸认证";
+"touchIDLoginSubTitle" = "点击进行指纹识别";
 
 /// User
 "logout" = "退出";

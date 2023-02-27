@@ -9,7 +9,7 @@
 import UIKit
 
 class ChangePasswordViewController: BaseViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = R.string.localizable.securitySettingsChangePassword()
@@ -70,14 +70,34 @@ class ChangePasswordViewController: BaseViewController {
         sender.isSelected = !sender.isSelected
         passwordTextField.isSecureTextEntry = !sender.isSelected
     }
+    
+    private func gotoSettingPasswordPage() {
+        let vc = SettingPasswordViewController()
+        vc.style = .change
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // MARK: - Network
+    
+    private func requestVerifyPassword(password: String) {
+        indicator.startAnimating()
+        PasswordRequest.verifyOldPassword(password: password) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.gotoSettingPasswordPage()
+            } else {
+                this.view.makeToast(message)
+            }
+        }
+    }
 
     // MARK: - Actions
     
     @IBAction func nextAction(_ sender: Any) {
         if nextButton.alpha == 1 {
-            let vc = SettingPasswordViewController()
-            vc.style = .change
-            navigationController?.pushViewController(vc, animated: true)
+            guard let password = passwordTextField.text else { return }
+            requestVerifyPassword(password: password)
         }
     }
     

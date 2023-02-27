@@ -28,6 +28,7 @@ class AuthSettingGuideViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var downloadCollectionViewHeight: NSLayoutConstraint!
     
     private lazy var flowLayout: UICollectionViewFlowLayout = {
@@ -53,6 +54,7 @@ class AuthSettingGuideViewController: BaseViewController {
         }
         downloadCollectionView.fw.registerCellNib(AuthDownloadCollectionViewCell.self)
         downloadCollectionViewHeight.constant = (SCREENWIDTH-32-12)*0.5
+        nextButton.setTitle(R.string.localizable.patternAuthNext(), for: .normal)
     }
     
     // MARK: - Actions
@@ -75,6 +77,10 @@ extension AuthSettingGuideViewController: UICollectionViewDelegate, UICollection
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let url = URL(string: "itms-apps://itunes.apple.com/app/id388497605")
+        guard UIApplication.shared.canOpenURL(url!) else { return }
+        UIApplication.shared.open(url!)
+    }
     
 }

@@ -9,11 +9,10 @@
 import UIKit
 
 enum SecurityVerificationType {
-    case all
-    case allWithoutAuthReset
     case email
     case twofa
     case phone
+    case twofaWithoutReset
 }
 
 enum SecurityVerificationSource {
@@ -21,12 +20,13 @@ enum SecurityVerificationSource {
     case changeEmail
     case closeAuth
     case forgotPassword
+    case login
     case none
 }
 
 class SecurityVerificationViewController: BaseViewController {
 
-    var style: SecurityVerificationType = .email
+    var dataStyle: [SecurityVerificationType] = []
     var source: SecurityVerificationSource = .none
     var uniqueId: String?
     var authToken: String?
@@ -46,9 +46,10 @@ class SecurityVerificationViewController: BaseViewController {
         }
         btn.layer.cornerRadius = 23
         btn.backgroundColor = R.color.fw00A8BB()
-        if source == .forgotPattern {
+        switch source {
+        case .forgotPattern, .changeEmail:
             btn.setTitle(R.string.localizable.next(), for: .normal)
-        } else {
+        case .closeAuth, .forgotPassword, .login, .none:
             btn.setTitle(R.string.localizable.submit(), for: .normal)
         }
         btn.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
@@ -78,7 +79,8 @@ class SecurityVerificationViewController: BaseViewController {
         let item = SecurityVerificationItemModel(title: R.string.localizable.authenticatorCode(),
                                                  info: R.string.localizable.authenticatorCodeInfo(),
                                                  inputPlaceholder: R.string.localizable.authenticatorCodePlaceholder(),
-                                                 style: .auth)
+                                                 style: .auth,
+                                                 infoStyle: .tips)
         
         return item
     }()
@@ -87,24 +89,27 @@ class SecurityVerificationViewController: BaseViewController {
         let item = SecurityVerificationItemModel(title: R.string.localizable.authenticatorCode(),
                                                  info: R.string.localizable.authenticatorCodeInfo(),
                                                  inputPlaceholder: R.string.localizable.authenticatorCodePlaceholder(),
-                                                 style: .authWithoutReset)
+                                                 style: .authWithoutReset,
+                                                 infoStyle: .tips)
         
         return item
     }()
     
     private lazy var datasource: [SecurityVerificationItemModel] = {
-        switch style {
-        case .all:
-            return [emailItem, phoneNumItem, authItem]
-        case .email:
-            return [emailItem]
-        case .twofa:
-            return [authItem]
-        case .phone:
-            return [phoneNumItem]
-        case .allWithoutAuthReset:
-            return [emailItem, phoneNumItem, authWithoutResetItem]
+        var list: [SecurityVerificationItemModel] = []
+        for style in dataStyle {
+            switch style {
+            case .email:
+                list.append(emailItem)
+            case .twofa:
+                list.append(authItem)
+            case .phone:
+                list.append(phoneNumItem)
+            case .twofaWithoutReset:
+                list.append(authWithoutResetItem)
+            }
         }
+        return list
     }()
     
     private var authCode: String?
@@ -129,35 +134,93 @@ class SecurityVerificationViewController: BaseViewController {
     }
     
     private func setupData() {
-        if style == .email {
-            requestSendEmailCode()
+        
+    }
+    
+    private func securityVerifySuccessAction() {
+        switch source {
+        case .forgotPattern:
+            print("")
+        case .changeEmail:
+            let vc = ChangeEmailSuccessViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case .closeAuth:
+            print("")
+        case .forgotPassword:
+            print("")
+        case .login:
+            print("")
+        case .none:
+            print("")
         }
     }
     
     // MARK: - Actions
     
     @objc private func nextAction() {
-        switch style {
-        case .all, .allWithoutAuthReset:
-            requestAllVerify()
-        case .email:
+        switch source {
+        case .forgotPattern:
+            print("")
+        case .changeEmail:
+            guard let emailCode = emailCode,
+                  let phoneCode = phoneCode else { return }
+            requestSecurityVerify(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
+        case .closeAuth:
+            print("")
+        case .forgotPassword:
+            print("")
+        case .login:
             requestMailVerify()
-        case .twofa:
-            requestAuthVerify()
-        case .phone:
+        case .none:
             print("")
         }
     }
     
     // MARK: - Network
     
-    private func requestSendEmailCode() {
+    private func requestSendEmailCode(_ email: String) {
         indicator.startAnimating()
-        MailRequest.sendCode(email: "", type: .login) { isSuccess, message in
+        MailRequest.sendCode(email: email, type: .login) { isSuccess, message in
             self.indicator.stopAnimating()
-            if !isSuccess {
-                self.view.makeToast(message, position: .center)
+            if isSuccess {
+                for item in self.datasource {
+                    if item.style == .email {
+                        item.infoStyle = .tips
+                        item.getCodeButtonStatus = .countDown
+                    }
+                }
+            } else {
+                for item in self.datasource {
+                    if item.style == .email {
+                        item.infoStyle = .error
+                        item.info = message
+                    }
+                }
             }
+            self.securityTableView.reloadData()
+        }
+    }
+    
+    private func requestSendPhoneCode(_ num: String) {
+        indicator.startAnimating()
+        PhoneRequest.sendCode(number: num) { isSuccess, message in
+            self.indicator.stopAnimating()
+            if isSuccess {
+                for item in self.datasource {
+                    if item.style == .phone {
+                        item.infoStyle = .tips
+                        item.getCodeButtonStatus = .countDown
+                    }
+                }
+            } else {
+                for item in self.datasource {
+                    if item.style == .phone {
+                        item.infoStyle = .error
+                        item.info = message
+                    }
+                }
+            }
+            self.securityTableView.reloadData()
         }
     }
     
@@ -189,6 +252,19 @@ class SecurityVerificationViewController: BaseViewController {
         }
     }
     
+    private func requestSecurityVerify(emailCode: String, phoneCode: String, authCode: String?) {
+        indicator.startAnimating()
+        MailRequest.setEmail(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.securityVerifySuccessAction()
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
     private func requestAllVerify() {
         // TODO: 成功后跳转新的页面
         // request ...
@@ -212,6 +288,9 @@ class SecurityVerificationViewController: BaseViewController {
             vc.style = .forgot
             navigationController?.pushViewController(vc, animated: true)
         }
+        if source == .changeEmail {
+            
+        }
     }
 }
 
@@ -221,7 +300,8 @@ extension SecurityVerificationViewController: UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SecurityVerificationItemTableViewCell.height(style: datasource[indexPath.row].style)
+        let data = datasource[indexPath.row]
+        return SecurityVerificationItemTableViewCell.height(style: data.style, infoStyle: data.infoStyle)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -235,20 +315,7 @@ extension SecurityVerificationViewController: UITableViewDelegate, UITableViewDa
 }
 
 extension SecurityVerificationViewController: SecurityVerificationItemTableViewCellDelegate {
-    func inputTextFieldEditing(_ text: String?, data: SecurityVerificationItemModel?) {
-        switch data?.style {
-        case .auth, .authWithoutReset:
-            authCode = text
-        case .email:
-            emailCode = text
-        case .phone:
-            phoneCode = text
-        case .none:
-            break
-        }
-    }
-    
-    func didSelectedAuthUnavailable() {
+    func didSelectedAuthUnavailable(_ cell: SecurityVerificationItemTableViewCell) {
         let alert = UIAlertController(title: R.string.localizable.tips(),
                                       message: R.string.localizable.resetAuthTips(),
                                       preferredStyle: .alert)
@@ -262,4 +329,31 @@ extension SecurityVerificationViewController: SecurityVerificationItemTableViewC
         alert.addAction(continuneAction)
         self.present(alert, animated: true)
     }
+    
+    func didSelectedSendCode(_ cell: SecurityVerificationItemTableViewCell, data: SecurityVerificationItemModel) {
+        switch data.style {
+        case .email:
+            guard let email = UserManager.shared.email, !email.isEmpty else { return }
+            requestSendEmailCode(email)
+        case .phone:
+            guard let phone = UserManager.shared.phoneNum, !phone.isEmpty else { return }
+            requestSendPhoneCode(phone)
+        case .auth, .authWithoutReset:
+            break
+        }
+    }
+    
+    func inputTextFieldEditing(_ cell: SecurityVerificationItemTableViewCell, _ text: String?, data: SecurityVerificationItemModel?) {
+        switch data?.style {
+        case .auth, .authWithoutReset:
+            authCode = text
+        case .email:
+            emailCode = text
+        case .phone:
+            phoneCode = text
+        case .none:
+            break
+        }
+    }
+    
 }

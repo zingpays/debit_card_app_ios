@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 141 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 145 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -319,6 +319,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var faceID: RswiftResources.StringResource { .init(key: "faceID", tableName: "Localizable", source: source, developmentValue: "Face ID", comment: nil) }
+
+      /// en translation: Click to verify Face ID
+      ///
+      /// Key: faceIDLoginSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var faceIDLoginSubTitle: RswiftResources.StringResource { .init(key: "faceIDLoginSubTitle", tableName: "Localizable", source: source, developmentValue: "Click to verify Face ID", comment: nil) }
+
+      /// en translation: Face ID Login
+      ///
+      /// Key: faceIdLogin
+      ///
+      /// Locales: en, zh-Hans
+      var faceIdLogin: RswiftResources.StringResource { .init(key: "faceIdLogin", tableName: "Localizable", source: source, developmentValue: "Face ID Login", comment: nil) }
 
       /// en translation: Forgot password?
       ///
@@ -1027,6 +1041,20 @@ struct _R {
       /// Locales: en, zh-Hans
       var touchID: RswiftResources.StringResource { .init(key: "touchID", tableName: "Localizable", source: source, developmentValue: "Touch ID", comment: nil) }
 
+      /// en translation: Click to verify Touch ID
+      ///
+      /// Key: touchIDLoginSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var touchIDLoginSubTitle: RswiftResources.StringResource { .init(key: "touchIDLoginSubTitle", tableName: "Localizable", source: source, developmentValue: "Click to verify Touch ID", comment: nil) }
+
+      /// en translation: Touch ID Login
+      ///
+      /// Key: touchIdLogin
+      ///
+      /// Locales: en, zh-Hans
+      var touchIdLogin: RswiftResources.StringResource { .init(key: "touchIdLogin", tableName: "Localizable", source: source, developmentValue: "Touch ID Login", comment: nil) }
+
       /// en translation: Transactions
       ///
       /// Key: transactions
@@ -1159,7 +1187,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 97 images.
+  /// This `_R.image` struct is generated, and contains static references to 100 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -1171,6 +1199,9 @@ struct _R {
 
     /// Image `bg_thanks`.
     var bg_thanks: RswiftResources.ImageResource { .init(name: "bg_thanks", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `bgbitcoinCircle`.
+    var bgbitcoinCircle: RswiftResources.ImageResource { .init(name: "bgbitcoinCircle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `guide_bg_intro_1`.
     var guide_bg_intro_1: RswiftResources.ImageResource { .init(name: "guide_bg_intro_1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1256,8 +1287,14 @@ struct _R {
     /// Image `iconExactitudeButton`.
     var iconExactitudeButton: RswiftResources.ImageResource { .init(name: "iconExactitudeButton", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconExactitudeLight`.
+    var iconExactitudeLight: RswiftResources.ImageResource { .init(name: "iconExactitudeLight", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconExactitudeWhite`.
     var iconExactitudeWhite: RswiftResources.ImageResource { .init(name: "iconExactitudeWhite", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconFaceid`.
+    var iconFaceid: RswiftResources.ImageResource { .init(name: "iconFaceid", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconFilterButtonNormal`.
     var iconFilterButtonNormal: RswiftResources.ImageResource { .init(name: "iconFilterButtonNormal", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1427,6 +1464,9 @@ struct _R {
     /// Image `iconTimer`.
     var iconTimer: RswiftResources.ImageResource { .init(name: "iconTimer", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `iconTouchid`.
+    var iconTouchid: RswiftResources.ImageResource { .init(name: "iconTouchid", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `iconUsdt`.
     var iconUsdt: RswiftResources.ImageResource { .init(name: "iconUsdt", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -1441,9 +1481,6 @@ struct _R {
 
     /// Image `iconWithdrawWhite`.
     var iconWithdrawWhite: RswiftResources.ImageResource { .init(name: "iconWithdrawWhite", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `icon_faceid`.
-    var icon_faceid: RswiftResources.ImageResource { .init(name: "icon_faceid", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `lanuchscreen_bg`.
     var lanuchscreen_bg: RswiftResources.ImageResource { .init(name: "lanuchscreen_bg", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1824,7 +1861,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
-      if UIKit.UIImage(named: "icon_faceid", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'icon_faceid' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconFaceid", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconFaceid' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconBackInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBackInfo' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconCardDetail", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconCardDetail' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconDeposit", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDeposit' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
@@ -1907,6 +1944,8 @@ struct _R {
       if UIKit.UIColor(named: "colorFFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'colorFFFFFF' is used in nib 'GuideViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A9B5", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A9B5' is used in nib 'GuideViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'HomeMarketTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "bgDollarCircle", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'bgDollarCircle' is used in nib 'HomeOverviewTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "bgbitcoinCircle", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'bgbitcoinCircle' is used in nib 'HomeOverviewTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconAddWhite", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconAddWhite' is used in nib 'HomeOverviewTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconRightArrowRed", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowRed' is used in nib 'HomeOverviewTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconRightArrowWhite", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowWhite' is used in nib 'HomeOverviewTableViewCell', but couldn't be loaded.") }
@@ -1940,7 +1979,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'LanguageSettingViewController', but couldn't be loaded.") }
-      if UIKit.UIImage(named: "iconExactitude", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconExactitude' is used in nib 'LanguageTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconExactitudeLight", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconExactitudeLight' is used in nib 'LanguageTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'LanguageTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'LoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'LoginViewController', but couldn't be loaded.") }
@@ -1979,7 +2018,6 @@ struct _R {
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'SecuritySettingsViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconRightArrowBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowBlue' is used in nib 'SecuritySettingsViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'SecuritySettingsViewController', but couldn't be loaded.") }
-      if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'SecurityVerificationItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'SecurityVerificationItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SecurityVerificationItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SecurityVerificationItemTableViewCell', but couldn't be loaded.") }

@@ -31,12 +31,17 @@ class ChangeEmailSuccessViewController: BaseViewController {
         }
     }
     @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var gotItButton: UIButton! {
+        didSet {
+            gotItButton.setTitle(R.string.localizable.gotIt(), for: .normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
+    override func setupNavBar() {}
     // MARK: - Actions
     
     

@@ -179,7 +179,7 @@ class PasswordLoginViewController: BaseViewController {
     
     private func continueLogin(authType: AuthType, authToken: String, uniqueId: String) {
         let vc = SecurityVerificationViewController()
-        vc.style = authType == .email ? .email : .twofa
+        vc.dataStyle = authType == .email ? [.email] : [.twofa]
         vc.uniqueId = uniqueId
         vc.authToken = authToken
         navigationController?.pushViewController(vc, animated: true)

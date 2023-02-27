@@ -29,11 +29,21 @@ struct MailRequest {
         provider.requestStatus(.verifyCode(email: email, code: code, authToken: authToken),
                                completion: completion)
     }
+    
+    static func setEmail(emailCode: String,
+                         phoneCode: String,
+                         authCode: String?,
+                         completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<MailTarget>()
+        provider.requestStatus(.setEmail(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode),
+                               completion: completion)
+    }
 }
 
 enum MailTarget {
     case sendCode(email: String, type: MailCodeType)
     case verifyCode(email: String, code: String, authToken: String?)
+    case setEmail(emailCode: String, phoneCode: String, authCode: String?)
 }
 
 extension MailTarget: BaseTargetType {
@@ -43,6 +53,8 @@ extension MailTarget: BaseTargetType {
             return "/user/send-email-code"
         case .verifyCode:
             return "/user/verify-email-code"
+        case .setEmail:
+            return "/user/set-email"
         }
     }
     
@@ -56,6 +68,10 @@ extension MailTarget: BaseTargetType {
             params["email"] = email
             params["code"] = code
             params["auth_token"] = authToken
+        case .setEmail(let emailCode, let phoneCode, let authCode):
+            params["email_code"] = emailCode
+            params["phone_code"] = phoneCode
+            params["secret"] = authCode
         }
         return params
     }

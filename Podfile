@@ -52,6 +52,9 @@ target 'DCard' do
   
   # Date parse lib https://github.com/malcommac/SwiftDate
   pod 'SwiftDate'
+  
+  # https://developers.veriff.com/#adding-the-sdk-to-the-project
+  pod 'VeriffSDK'
 
   target 'DCardTests' do
     inherit! :search_paths
