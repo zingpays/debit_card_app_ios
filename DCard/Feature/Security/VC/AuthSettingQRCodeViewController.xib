@@ -24,9 +24,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthSettingQRCodeViewController" customModule="DCard" customModuleProvider="target">
             <connections>
                 <outlet property="codeLabel" destination="rqk-Kv-ogd" id="YxD-Tp-ulL"/>
+                <outlet property="copyCodeButton" destination="gnz-65-oOK" id="WSD-6J-vgk"/>
+                <outlet property="nextButton" destination="psP-7F-EXp" id="xBJ-Ew-qak"/>
                 <outlet property="numLabel" destination="2oq-vd-fiC" id="pJb-Wx-Kw6"/>
                 <outlet property="qrCodeImageView" destination="gtD-1I-FsE" id="jN3-Z3-cmk"/>
                 <outlet property="qrCodeTipsLabel" destination="vdr-1B-ocx" id="xhu-y5-4du"/>
+                <outlet property="refreshLabel" destination="fcO-cX-hD9" id="BaN-7t-7dQ"/>
+                <outlet property="refreshView" destination="3iz-9t-dDt" id="1i2-g1-hqg"/>
                 <outlet property="secondLine" destination="EWg-Gr-ZaG" id="A9J-7T-rAc"/>
                 <outlet property="subTitleLabel" destination="5Ii-J1-Gw8" id="Lax-mE-UJR"/>
                 <outlet property="thirdLine" destination="i2o-jI-H3X" id="ZHX-9n-WPY"/>
@@ -95,7 +99,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31k-qP-JfS">
-                    <rect key="frame" x="23" y="190" width="80.666666666666686" height="3"/>
+                    <rect key="frame" x="23" y="190" width="80.666666666666671" height="3"/>
                     <color key="backgroundColor" name="fw#76A4A7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="3" id="yHm-Ti-L96"/>
@@ -119,14 +123,17 @@
                                         <constraint firstAttribute="height" constant="160" id="tZf-l9-AzK"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VMGHDYS5ZXBFVEKZC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqk-Kv-ogd">
-                                    <rect key="frame" x="84" y="206" width="173" height="19"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqk-Kv-ogd">
+                                    <rect key="frame" x="170.66666666666666" y="206" width="0.0" height="19"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="19" id="hxf-7E-92s"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                     <color key="textColor" name="fw#001214"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-65-oOK">
-                                    <rect key="frame" x="265" y="206" width="20" height="20"/>
+                                    <rect key="frame" x="178.66666666666666" y="206" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="gNx-OO-4w6"/>
                                         <constraint firstAttribute="height" constant="20" id="pci-X9-Zjj"/>
@@ -143,16 +150,55 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iz-9t-dDt">
+                                    <rect key="frame" x="100.66666666666669" y="32" width="160" height="160"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijw-GM-ZXz">
+                                            <rect key="frame" x="59.999999999999986" y="48" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="0vm-jC-50P"/>
+                                                <constraint firstAttribute="width" constant="40" id="Ee5-Nb-sT2"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="iconRefreshCircle" title=" "/>
+                                            <connections>
+                                                <action selector="refreshAction:" destination="-1" eventType="touchUpInside" id="2Pp-Qc-pZH"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refresh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcO-cX-hD9">
+                                            <rect key="frame" x="59.333333333333329" y="90" width="41.333333333333329" height="15.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                            <color key="textColor" name="fw#76A4A7"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="fcO-cX-hD9" firstAttribute="top" secondItem="Ijw-GM-ZXz" secondAttribute="bottom" constant="2" id="27B-lT-xXT"/>
+                                        <constraint firstItem="Ijw-GM-ZXz" firstAttribute="top" secondItem="3iz-9t-dDt" secondAttribute="top" constant="48" id="2Ud-SJ-cuH"/>
+                                        <constraint firstItem="fcO-cX-hD9" firstAttribute="centerX" secondItem="3iz-9t-dDt" secondAttribute="centerX" id="7uV-aj-Grr"/>
+                                        <constraint firstAttribute="width" constant="160" id="J5e-T2-maM"/>
+                                        <constraint firstAttribute="height" constant="160" id="bgy-c4-G53"/>
+                                        <constraint firstItem="Ijw-GM-ZXz" firstAttribute="centerX" secondItem="3iz-9t-dDt" secondAttribute="centerX" id="lqI-CV-dIf"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" name="fw#FFFFFF"/>
                             <constraints>
                                 <constraint firstItem="gtD-1I-FsE" firstAttribute="top" secondItem="pZe-Mf-cHw" secondAttribute="top" constant="32" id="1GG-2f-Xz9"/>
+                                <constraint firstItem="3iz-9t-dDt" firstAttribute="top" secondItem="pZe-Mf-cHw" secondAttribute="top" constant="32" id="1Xw-ja-jVU"/>
                                 <constraint firstItem="vdr-1B-ocx" firstAttribute="centerX" secondItem="pZe-Mf-cHw" secondAttribute="centerX" id="8wP-Pq-H0b"/>
                                 <constraint firstItem="rqk-Kv-ogd" firstAttribute="top" secondItem="gtD-1I-FsE" secondAttribute="bottom" constant="14" id="9lJ-0o-gQF"/>
                                 <constraint firstItem="gtD-1I-FsE" firstAttribute="centerX" secondItem="pZe-Mf-cHw" secondAttribute="centerX" id="Ew3-kt-UNo"/>
                                 <constraint firstAttribute="trailing" secondItem="vdr-1B-ocx" secondAttribute="trailing" constant="31" id="G7b-pa-l0i"/>
                                 <constraint firstItem="rqk-Kv-ogd" firstAttribute="centerX" secondItem="pZe-Mf-cHw" secondAttribute="centerX" constant="-10" id="LOt-fD-meV"/>
                                 <constraint firstItem="gnz-65-oOK" firstAttribute="leading" secondItem="rqk-Kv-ogd" secondAttribute="trailing" constant="8" id="OE7-Se-ZIf"/>
+                                <constraint firstItem="3iz-9t-dDt" firstAttribute="centerX" secondItem="pZe-Mf-cHw" secondAttribute="centerX" id="Smc-8l-zwx"/>
                                 <constraint firstItem="gnz-65-oOK" firstAttribute="top" secondItem="gtD-1I-FsE" secondAttribute="bottom" constant="14" id="XfK-CI-Xtc"/>
                                 <constraint firstItem="vdr-1B-ocx" firstAttribute="top" secondItem="rqk-Kv-ogd" secondAttribute="bottom" constant="12" id="Zb4-yM-yug"/>
                                 <constraint firstAttribute="height" constant="310" id="lmb-RH-iCs"/>
@@ -233,6 +279,7 @@
     <resources>
         <image name="iconCopy" width="20" height="20"/>
         <image name="iconQrcodeShieldSecurity" width="96" height="96"/>
+        <image name="iconRefreshCircle" width="40" height="40"/>
         <namedColor name="fw#001214">
             <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

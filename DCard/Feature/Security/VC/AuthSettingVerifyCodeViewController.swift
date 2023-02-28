@@ -70,6 +70,23 @@ class AuthSettingVerifyCodeViewController: BaseViewController {
         setupUI()
     }
     
+    // MARK: - Network
+    
+    private func requestsetupTwofa() {
+        guard let authCode = boxInputView.textValue, !authCode.isEmpty else { return }
+        indicator.startAnimating()
+        AuthRequest.setupTwofa(authCode: authCode) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                let vc = AuthSettingSuccessViewController()
+                this.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                this.view.makeToast(message)
+            }
+        }
+    }
+    
     // MARK: - Private
     
     private func setupUI() {
@@ -85,7 +102,6 @@ class AuthSettingVerifyCodeViewController: BaseViewController {
     }
 
     @IBAction func submitAction(_ sender: Any) {
-        let vc = AuthSettingSuccessViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        requestsetupTwofa()
     }
 }

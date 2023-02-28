@@ -124,16 +124,20 @@
 "touchIdLogin" = "Touch ID Login";
 "faceIDLoginSubTitle" = "Click to verify Face ID";
 "touchIDLoginSubTitle" = "Click to verify Touch ID";
+"authQrcodeTips" = "If you are unable to scan the QR code, please enter this code manually into the app.";
 
 /// User
 "logout" = "Log out";
-"notVerified" = "Not Verified";
-"verified" = "Verified";
 "securitySetting" = "Security Settings";
 "language" = "Language";
 "contractUs" = "Contract Us";
 "about" = "About";
 "hello" = "Hello!";
+"notVerified" = "Not Verified";
+"verificationInReview" = "Verification In Review";
+"resubmitVerification" = "Resubmit Verification";
+"verified" = "Verified";
+"rejected" = "Rejected";
 
 /// Home
 "totalBalance" = "Total Balance";
@@ -167,3 +171,4 @@
 "skip" = "Skip";
 "gotIt" = "Got It";
 "email" = "Email";
+"refresh" = "Refresh";

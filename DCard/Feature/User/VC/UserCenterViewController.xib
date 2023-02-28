@@ -21,8 +21,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserCenterViewController" customModule="DCard" customModuleProvider="target">
             <connections>
                 <outlet property="aboutLabel" destination="hAO-kU-zvt" id="do3-Gv-KsA"/>
+                <outlet property="accessImageView" destination="kLe-01-3Kg" id="k8g-uJ-8pd"/>
                 <outlet property="avatorImageView" destination="jVc-xF-jzT" id="p5i-cg-4WE"/>
                 <outlet property="contractUsLabel" destination="qRL-lp-nTK" id="Rvs-xP-Px7"/>
+                <outlet property="emailLabel" destination="VUk-kr-P90" id="a2C-qS-wGU"/>
                 <outlet property="helloLabel" destination="iVI-SA-FrQ" id="023-jb-iGV"/>
                 <outlet property="languageLabel" destination="bgu-dr-whw" id="n8v-NV-l9a"/>
                 <outlet property="languageTitleLabel" destination="F4L-NS-QnC" id="UmM-ng-NBG"/>
@@ -75,7 +77,7 @@
                                 <constraint firstAttribute="width" constant="16" id="Ink-b9-1PK"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Verified" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IU-6l-q0F">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Verified" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IU-6l-q0F">
                             <rect key="frame" x="26" y="5" width="73.666666666666671" height="16"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                             <color key="textColor" name="fw#FFFFFF"/>
@@ -109,9 +111,9 @@
                         <constraint firstItem="b6a-y2-gQj" firstAttribute="centerY" secondItem="0Lv-Xs-lQN" secondAttribute="centerY" id="Xux-vd-QWl"/>
                         <constraint firstAttribute="height" constant="26" id="YIt-tP-ayf"/>
                         <constraint firstAttribute="trailing" secondItem="lbi-iY-ja7" secondAttribute="trailing" id="dNS-5i-yMc"/>
-                        <constraint firstAttribute="width" constant="120" id="epI-Fj-os1"/>
                         <constraint firstAttribute="bottom" secondItem="9IU-6l-q0F" secondAttribute="bottom" constant="5" id="he1-kn-eco"/>
                         <constraint firstItem="9IU-6l-q0F" firstAttribute="top" secondItem="0Lv-Xs-lQN" secondAttribute="top" constant="5" id="oal-wV-Q07"/>
+                        <constraint firstItem="kLe-01-3Kg" firstAttribute="leading" secondItem="9IU-6l-q0F" secondAttribute="trailing" constant="4.3300000000000001" id="pAq-jV-6Ym"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -319,7 +321,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title=" "/>
                         </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-hf-lYM">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-hf-lYM">
                             <rect key="frame" x="248.33333333333331" y="24" width="8" height="8"/>
                             <color key="backgroundColor" name="fw#ED4949"/>
                             <constraints>

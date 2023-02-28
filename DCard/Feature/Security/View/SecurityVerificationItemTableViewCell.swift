@@ -25,7 +25,7 @@ protocol SecurityVerificationItemTableViewCellDelegate: NSObject {
 }
 
 class SecurityVerificationItemTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
@@ -40,7 +40,6 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     weak var delegate: SecurityVerificationItemTableViewCellDelegate?
     
     private var itemModel: SecurityVerificationItemModel?
-    private var time = DispatchSource.makeTimerSource()
     private lazy var getCodeButton: UIButton = {
         let btn = UIButton()
         btn.setTitle(R.string.localizable.getCode(), for: .normal)
@@ -80,6 +79,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     }
     
     private func startCountDown() {
+        let time = DispatchSource.makeTimerSource()
         isCountDowning = true
         var times = 60
         time.schedule(deadline: .now(), repeating: 1)
@@ -88,7 +88,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
             if times <= 0 {
                 DispatchQueue.main.async {
                     this.getCodeButton.setTitle(R.string.localizable.resend(), for: .normal)
-                    this.time.suspend()
+                    time.suspend()
                     this.isCountDowning = false
                 }
             } else {

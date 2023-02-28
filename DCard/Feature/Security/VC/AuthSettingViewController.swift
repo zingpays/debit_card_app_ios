@@ -66,8 +66,7 @@ class AuthSettingViewController: BaseViewController {
     @IBAction func authAction(_ sender: UIButton) {
         if authSwitch.isOn {
             let vc = SecurityVerificationViewController()
-//            vc.style = .allWithoutAuthReset
-            vc.dataStyle = isBindAuth ? [.email, .phone] : [.email, .phone, .twofaWithoutReset]
+            vc.dataStyle = [.email, .phone, .twofaWithoutReset]
             vc.source = .closeAuth
             navigationController?.pushViewController(vc, animated: true)
         } else {

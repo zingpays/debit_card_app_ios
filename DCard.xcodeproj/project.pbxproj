@@ -106,6 +106,9 @@
 		5473857529A9C6ED00924AD8 /* RegionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473857429A9C6ED00924AD8 /* RegionRequest.swift */; };
 		5473857829A9C83100924AD8 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473857729A9C83100924AD8 /* RegionModel.swift */; };
 		547385DC29AC87F500924AD8 /* PasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547385DB29AC87F500924AD8 /* PasswordRequest.swift */; };
+		547385DE29ADA0AD00924AD8 /* TwoFactorAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547385DD29ADA0AD00924AD8 /* TwoFactorAuthModel.swift */; };
+		547385E029ADDE8800924AD8 /* SecurityStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547385DF29ADDE8800924AD8 /* SecurityStatusModel.swift */; };
+		547385E229AE0F1D00924AD8 /* VerifyMailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547385E129AE0F1D00924AD8 /* VerifyMailModel.swift */; };
 		547F4D0929640392007B05B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F4D0829640392007B05B9 /* AppDelegate.swift */; };
 		547F4D1229640392007B05B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1129640392007B05B9 /* Assets.xcassets */; };
 		547F4D1529640392007B05B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F4D1329640392007B05B9 /* LaunchScreen.storyboard */; };
@@ -357,6 +360,9 @@
 		5473857429A9C6ED00924AD8 /* RegionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRequest.swift; sourceTree = "<group>"; };
 		5473857729A9C83100924AD8 /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 		547385DB29AC87F500924AD8 /* PasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRequest.swift; sourceTree = "<group>"; };
+		547385DD29ADA0AD00924AD8 /* TwoFactorAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorAuthModel.swift; sourceTree = "<group>"; };
+		547385DF29ADDE8800924AD8 /* SecurityStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityStatusModel.swift; sourceTree = "<group>"; };
+		547385E129AE0F1D00924AD8 /* VerifyMailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyMailModel.swift; sourceTree = "<group>"; };
 		547F4D0529640392007B05B9 /* DCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547F4D0829640392007B05B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547F4D1129640392007B05B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -636,6 +642,7 @@
 			children = (
 				541A8D3629641FC300C59026 /* UserModel.swift */,
 				546BD3FA299A3B88003C15D8 /* LoginUserInfo.swift */,
+				547385DF29ADDE8800924AD8 /* SecurityStatusModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -818,6 +825,8 @@
 			isa = PBXGroup;
 			children = (
 				546BD401299B5BFD003C15D8 /* SecurityVerificationItemModel.swift */,
+				547385DD29ADA0AD00924AD8 /* TwoFactorAuthModel.swift */,
+				547385E129AE0F1D00924AD8 /* VerifyMailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1543,8 +1552,10 @@
 				5495F8F129A754A00073EA48 /* TopupHistoryViewController.swift in Sources */,
 				541A8D3429641F8B00C59026 /* UserManager.swift in Sources */,
 				541A8D2C29641F1F00C59026 /* DLog.swift in Sources */,
+				547385E029ADDE8800924AD8 /* SecurityStatusModel.swift in Sources */,
 				5482975429A4B16400F82611 /* AuthSettingViewController.swift in Sources */,
 				5482975829A4B5FC00F82611 /* AuthSettingQRCodeViewController.swift in Sources */,
+				547385DE29ADA0AD00924AD8 /* TwoFactorAuthModel.swift in Sources */,
 				54C313142996120900DBF373 /* ChooseCryptoNetworkView.swift in Sources */,
 				54C3131D299625D800DBF373 /* DepositViewController.swift in Sources */,
 				5422268629939AC600447A1A /* TransactionsDetailViewController.swift in Sources */,
@@ -1591,6 +1602,7 @@
 				5482974629A35F2B00F82611 /* QuickUnlockTableViewCell.swift in Sources */,
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
 				5495F8ED29A74DDD0073EA48 /* TopupViewController.swift in Sources */,
+				547385E229AE0F1D00924AD8 /* VerifyMailModel.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				546BD3FB299A3B88003C15D8 /* LoginUserInfo.swift in Sources */,
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,

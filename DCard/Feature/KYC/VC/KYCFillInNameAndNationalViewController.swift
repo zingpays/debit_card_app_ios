@@ -9,6 +9,9 @@
 import UIKit
 
 class KYCFillInNameAndNationalViewController: BaseViewController {
+    
+    var source: VerifyYourIdentitySource = .home
+    
     @IBOutlet weak var tipsView: UIView!
     @IBOutlet weak var tipsTitleLabel: UILabel!
     @IBOutlet weak var tipsContentLabel: UILabel!

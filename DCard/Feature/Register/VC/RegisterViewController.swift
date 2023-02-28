@@ -271,10 +271,10 @@ class RegisterViewController: BaseViewController {
     
     private func registerRequest(email: String, code: String) {
         indicator.startAnimating()
-        MailRequest.verifyCode(email: email, code: code) { [weak self] isSuccess, message in
+        MailRequest.verifyEmail(email: email, code: code) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
-            if isSuccess {
+            if isSuccess, let code = data?.verifyCode {
                 let vc = SettingPasswordViewController(email: email, code: code)
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {

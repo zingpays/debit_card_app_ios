@@ -11,6 +11,7 @@ import UIKit
 enum VerifyYourIdentitySource {
     case home
     case register
+    case userCenter
 }
 
 class VerifyYourIdentityGuideViewController: BaseViewController {
@@ -77,10 +78,15 @@ class VerifyYourIdentityGuideViewController: BaseViewController {
     override func setupNavBar() {
         super.setupNavBar()
         self.gk_navLineHidden = false
-        self.gk_navLeftBarButtonItem = nil
-        if source == .register {
+        switch source {
+        case .home:
+            self.gk_navRightBarButtonItem = nil
+        case .register:
+            self.gk_navLeftBarButtonItem = nil
             self.gk_navRightBarButtonItem = rightItem
             self.gk_navItemRightSpace = 16
+        case .userCenter:
+            self.gk_navRightBarButtonItem = nil
         }
     }
     

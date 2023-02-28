@@ -20,10 +20,26 @@ struct UserRequest {
                                     type: LoginInfoModel.self,
                                     completion: completion)
     }
+    
+    static func securityStatus(completion: @escaping ((Bool, String, SecurityStatusModel?) -> Void)) {
+        let loginProvider = MoyaProvider<UserTarget>()
+        loginProvider.requestObject(.securityStatus,
+                                    type: SecurityStatusModel.self,
+                                    completion: completion)
+    }
+    
+    static func status(completion: @escaping ((Bool, String, UserStatusModel?) -> Void)) {
+        let loginProvider = MoyaProvider<UserTarget>()
+        loginProvider.requestObject(.status,
+                                    type: UserStatusModel.self,
+                                    completion: completion)
+    }
 }
 
 enum UserTarget {
     case loginInfo
+    case securityStatus
+    case status
 }
 
 extension UserTarget: BaseTargetType {
@@ -31,6 +47,10 @@ extension UserTarget: BaseTargetType {
         switch self {
         case .loginInfo:
             return "/user/login-info"
+        case .securityStatus:
+            return "/user/security-status"
+        case .status:
+            return "/user/status"
         }
     }
 

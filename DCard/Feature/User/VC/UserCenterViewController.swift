@@ -9,7 +9,7 @@
 import UIKit
 
 class UserCenterViewController: BaseViewController {
-
+    
     private lazy var rightItem: UIBarButtonItem = {
         let btn = UIButton()
         btn.frame = CGRect(x: 0, y: 4, width: 36, height: 36)
@@ -27,8 +27,10 @@ class UserCenterViewController: BaseViewController {
             helloLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.4)
         }
     }
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var verifiedImageView: UIImageView!
+    @IBOutlet weak var accessImageView: UIImageView!
     @IBOutlet weak var statusTextLabel: UILabel!
     @IBOutlet weak var securitySettingLabel: UILabel! {
         didSet {
@@ -56,16 +58,25 @@ class UserCenterViewController: BaseViewController {
         }
     }
     
+    private var kycStatus: KycStatus = .notStarted
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupUI()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        statusView.snp.remakeConstraints { make in
-            make.width.equalTo(104)
+    // MARK: - Private
+    
+    private func setupData() {
+        indicator.startAnimating()
+        UserRequest.status { isSuccess, message, data in
+            self.indicator.stopAnimating()
+            if isSuccess, let status = data?.kycStatus {
+                self.updateKycStatus(status)
+            } else {
+                // ....
+            }
         }
     }
     
@@ -88,8 +99,92 @@ class UserCenterViewController: BaseViewController {
         verifiedImageView.snp.remakeConstraints { make in
             make.width.equalTo(0)
         }
+        emailLabel.text = UserManager.shared.email
+        helloLabel.text = R.string.localizable.hello()
+        statusView.isHidden = true
         statusView.backgroundColor = R.color.fw76A4A7()?.withAlphaComponent(0.16)
         statusTextLabel.textColor = R.color.fw76A4A7()
+    }
+    
+    private func updateKycStatus(_ status: KycStatus) {
+        self.kycStatus = status
+        // Not Verified: .notStarted, .start, .inProgress
+        // Verification In Review: .submitted, .inReview
+        // Resubmit Verification: .resubmitted
+        // Verified: .approved
+        // Rejected: .rejected
+        statusView.isHidden = false
+        var kycText = ""
+        var bufferWidth: CGFloat = 0
+        switch status {
+        case .notStarted, .start, .inProgress:
+            kycText = R.string.localizable.notVerified()
+            verifiedImageView.snp.remakeConstraints { make in
+                make.width.equalTo(0)
+            }
+            accessImageView.snp.remakeConstraints { make in
+                make.width.equalTo(10)
+            }
+            statusView.backgroundColor = R.color.fw76A4A7()?.withAlphaComponent(0.16)
+            statusTextLabel.textColor = R.color.fw76A4A7()
+            bufferWidth = 34
+        case .submitted, .inReview:
+            kycText = R.string.localizable.verificationInReview()
+            verifiedImageView.snp.remakeConstraints { make in
+                make.width.equalTo(0)
+            }
+            accessImageView.snp.remakeConstraints { make in
+                make.width.equalTo(0)
+            }
+            statusView.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.1)
+            statusTextLabel.textColor = R.color.fw00A8BB()
+            bufferWidth = 24
+        case .approved:
+            kycText = R.string.localizable.verified()
+            verifiedImageView.snp.remakeConstraints { make in
+                make.width.equalTo(16)
+            }
+            accessImageView.snp.remakeConstraints { make in
+                make.width.equalTo(0)
+            }
+            statusView.backgroundColor = R.color.fw20B085()
+            statusTextLabel.textColor = R.color.fwFFFFFF()
+            bufferWidth = 38
+        case .rejected:
+            kycText = R.string.localizable.rejected()
+            verifiedImageView.snp.remakeConstraints { make in
+                make.width.equalTo(0)
+            }
+            accessImageView.snp.remakeConstraints { make in
+                make.width.equalTo(0)
+            }
+            statusView.backgroundColor = R.color.fwED4949()
+            statusTextLabel.textColor = R.color.fwFFFFFF()
+            bufferWidth = 24
+        case .resubmitted:
+            kycText = R.string.localizable.resubmitVerification()
+            verifiedImageView.snp.remakeConstraints { make in
+                make.width.equalTo(0)
+            }
+            accessImageView.snp.remakeConstraints { make in
+                make.width.equalTo(10)
+            }
+            statusView.backgroundColor = R.color.fwED4949()?.withAlphaComponent(0.1)
+            statusTextLabel.textColor = R.color.fwED4949()
+            bufferWidth = 34
+        }
+        let dic = [NSAttributedString.Key.font: UIFont.fw.font14()]
+        let size = CGSize(width: CGFloat(MAXFLOAT), height: 20)
+        let width = NSString(string: kycText).boundingRect(with: size,
+                                     options: .usesLineFragmentOrigin,
+                                     attributes: dic,
+                                     context: nil).size.width
+        let calWidth = width + bufferWidth
+        statusView.snp.remakeConstraints { make in
+            make.width.equalTo(calWidth)
+        }
+        statusTextLabel.text = kycText
+        accessImageView.image = status == .resubmitted ? R.image.iconRightArrowRed() : R.image.iconRightArrowGreen()
     }
     
     // MARK: - Network
@@ -122,7 +217,18 @@ class UserCenterViewController: BaseViewController {
     }
     
     @IBAction func statusAction(_ sender: Any) {
-        
+        switch kycStatus {
+        case .notStarted, .start, .inProgress:
+            let vc = VerifyYourIdentityGuideViewController()
+            vc.source = .userCenter
+            navigationController?.pushViewController(vc, animated: true)
+        case .resubmitted:
+            let vc = KYCFillInNameAndNationalViewController()
+            vc.source = .userCenter
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 
     @IBAction func securitySettingAction(_ sender: Any) {

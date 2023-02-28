@@ -16,6 +16,7 @@ enum AuthSettingQRCodeStatus {
 class AuthSettingQRCodeViewController: BaseViewController {
     
     var status: AuthSettingQRCodeStatus = .progress
+    var codeText: String?
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -28,6 +29,7 @@ class AuthSettingQRCodeViewController: BaseViewController {
     @IBOutlet weak var qrCodeTipsLabel: UILabel! {
         didSet {
             qrCodeTipsLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.6)
+            qrCodeTipsLabel.text = R.string.localizable.authQrcodeTips()
         }
     }
     
@@ -36,18 +38,34 @@ class AuthSettingQRCodeViewController: BaseViewController {
     @IBOutlet weak var thirdLine: UIView!
     @IBOutlet weak var qrCodeImageView: UIImageView!
     @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var copyCodeButton: UIButton!
+    @IBOutlet weak var refreshView: UIView!
+    @IBOutlet weak var refreshLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupUI()
     }
 
     // MARK: - Private
     
+    private func setupData() {
+        if status == .progress {
+            requestTwofaData()
+        }
+    }
+    
     private func setupUI() {
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
+        refreshView.backgroundColor = R.color.fw76A4A7()?.withAlphaComponent(0.1)
+        refreshView.isHidden = true
+        refreshLabel.text = R.string.localizable.refresh()
+        codeLabel.text = codeText
+        nextButton.setTitle(R.string.localizable.next(), for: .normal)
         switch status {
         case .progress:
             secondLine.alpha = 1
@@ -56,8 +74,8 @@ class AuthSettingQRCodeViewController: BaseViewController {
             thirdLine.backgroundColor = R.color.fw76A4A7()
             numLabel.text = "2"
             subTitleLabel.text = R.string.localizable.patternAuthQrCodeSubTitle()
-            // TODO: set qrcode image
             qrCodeImageView.image = nil
+            nextButton.alpha = 0.4
         case .done:
             secondLine.alpha = 0.2
             secondLine.backgroundColor = R.color.fw76A4A7()
@@ -69,15 +87,46 @@ class AuthSettingQRCodeViewController: BaseViewController {
         }
     }
     
+    // MARK: - Network
+    
+    private func requestTwofaData() {
+        indicator.startAnimating()
+        AuthRequest.twofa { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            this.refreshView.isHidden = isSuccess
+            if isSuccess {
+                if let url = data?.url,
+                   let dataDecoded = Data(base64Encoded: url.removingPrefix("data:image/png;base64,")),
+                   let image = UIImage(data: dataDecoded) {
+                    this.qrCodeImageView.image = image
+                    this.nextButton.alpha = 1
+                } else {
+                    this.refreshView.isHidden = false
+                }
+                this.codeText = data?.secret
+                this.codeLabel.text = data?.secret
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func refreshAction(_ sender: Any) {
+        requestTwofaData()
+    }
+    
     @IBAction func copyAction(_ sender: Any) {
         
     }
     
     @IBAction func nextAction(_ sender: Any) {
+        guard nextButton.alpha == 1 else { return }
         switch status {
         case .progress:
             let vc = AuthSettingQRCodeViewController()
             vc.status = .done
+            vc.codeText = codeText
             navigationController?.pushViewController(vc, animated: true)
         case .done:
             let vc = AuthSettingVerifyCodeViewController()

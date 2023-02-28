@@ -9,7 +9,7 @@
 import UIKit
 
 class SecuritySettingsViewController: BaseViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = R.string.localizable.securitySettingsTitle()
@@ -53,37 +53,28 @@ class SecuritySettingsViewController: BaseViewController {
         let bioItem = SecurityCollectionViewCellModel(icon: bioIcon,
                                                       title: R.string.localizable.securitySettingsQuickUnlock(),
                                                       status: bioStatus)
-        let authStatus = LockScreenManager.shared.isOn
-        let authIcon = authStatus ? R.image.iconSecurityGa() : R.image.iconSecurityGaNotActivated()
-        let authItem = SecurityCollectionViewCellModel(icon: authIcon,
-                                                       title: R.string.localizable.securitySettingsAuth(),
-                                                       status: authStatus)
-        let emailTitle = "\(R.string.localizable.securitySettingsEmail()) \(UserManager.shared.email ?? "")"
-        let emailItem = SecurityCollectionViewCellModel(icon: R.image.iconSecurityEmail(),
-                                                       title: emailTitle,
-                                                       status: true)
-        let smsTitle = "\(R.string.localizable.securitySettingsSms()) \(UserManager.shared.phoneNum ?? "")"
-        let smsItem = SecurityCollectionViewCellModel(icon: R.image.iconSecuritySms(),
-                                                       title: smsTitle,
-                                                      status: true,
-                                                      isAccess: false)
-        return [bioItem, authItem, emailItem, smsItem]
+        
+        return [bioItem]
     }()
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateQuickUnlock()
-        updateAuthStatus()
+        requestStatusData()
     }
     
     // MARK: - Private
+    
+    private func setupData() {
+        requestStatusData()
+    }
     
     private func setupUI() {
         titleLabel.snp.remakeConstraints { make in
@@ -91,7 +82,7 @@ class SecuritySettingsViewController: BaseViewController {
         }
         securityCollectionView.fw.registerCellNib(SecurityCollectionViewCell.self)
     }
-
+    
     private func updateQuickUnlock() {
         var unlockData = datasource.first
         if LocalAuthenManager.shared.isBind && !(LockScreenManager.shared.password?.isEmpty ?? true) {
@@ -118,6 +109,51 @@ class SecuritySettingsViewController: BaseViewController {
         }
         datasource[1] = authData
         securityCollectionView.reloadData()
+    }
+    
+    private func handleSecurityData(_ data: SecurityStatusModel?) {
+        if let data = data {
+            LockScreenManager.shared.isOn = data.twoFa?.status == 1
+            let authStatus = data.twoFa?.status == 1
+            let authIcon = authStatus ? R.image.iconSecurityGa() : R.image.iconSecurityGaNotActivated()
+            let authItem = SecurityCollectionViewCellModel(icon: authIcon,
+                                                           title: R.string.localizable.securitySettingsAuth(),
+                                                           status: authStatus)
+            datasource.append(authItem)
+            let emailStatus = data.email?.status == 1
+            let emailIcon = emailStatus ? R.image.iconSecurityEmail() : R.image.iconSecurityEmailNotActivated()
+            let emailTitle = "\(R.string.localizable.securitySettingsEmail()) \(data.email?.value ?? "")"
+            let emailItem = SecurityCollectionViewCellModel(icon: emailIcon,
+                                                            title: emailTitle,
+                                                            status: emailStatus)
+            datasource.append(emailItem)
+            let smsStatus = data.phone?.status == 1
+            let smsIcon = smsStatus ? R.image.iconSecuritySms() : R.image.iconSecuritySmsNotActivated()
+            let smsTitle = "\(R.string.localizable.securitySettingsSms()) \(data.phone?.value ?? "")"
+            let smsItem = SecurityCollectionViewCellModel(icon: smsIcon,
+                                                          title: smsTitle,
+                                                          status: smsStatus,
+                                                          isAccess: false)
+            datasource.append(smsItem)
+            securityCollectionView.reloadData()
+        } else {
+            //...
+        }
+    }
+    
+    // MARK: - Network
+    
+    private func requestStatusData() {
+        indicator.startAnimating()
+        UserRequest.securityStatus { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.handleSecurityData(data)
+            } else {
+                this.view.makeToast(message)
+            }
+        }
     }
     
     // MARK: - Actions

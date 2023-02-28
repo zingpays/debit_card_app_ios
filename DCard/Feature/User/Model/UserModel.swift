@@ -28,3 +28,24 @@ class UserModel: Mappable {
     }
 
 }
+
+enum KycStatus: String {
+    case notStarted = "Not Started"
+    case start = "Started"
+    case inProgress = "In Progress"
+    case submitted = "Submitted"
+    case inReview = "In Review"
+    case approved = "Approved"
+    case rejected = "Rejected"
+    case resubmitted = "Resubmitted"
+}
+
+struct UserStatusModel: Mappable {
+    var kycStatus: KycStatus = .notStarted
+    
+    init?(map: ObjectMapper.Map) {}
+
+    mutating func mapping(map: Map) {
+        kycStatus    <- map["kyc_status"]
+    }
+}

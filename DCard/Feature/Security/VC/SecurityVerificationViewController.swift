@@ -25,7 +25,7 @@ enum SecurityVerificationSource {
 }
 
 class SecurityVerificationViewController: BaseViewController {
-
+    
     var dataStyle: [SecurityVerificationType] = []
     var source: SecurityVerificationSource = .none
     var uniqueId: String?
@@ -59,7 +59,7 @@ class SecurityVerificationViewController: BaseViewController {
     private lazy var emailItem: SecurityVerificationItemModel = {
         let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位已经发送到\(UserManager.shared.email ?? "")的验证码" : "Enter the 6-digit code sent to \(UserManager.shared.email ?? "")"
         let item = SecurityVerificationItemModel(title: R.string.localizable.emailVerificationCode(),
-                                                      info: info,
+                                                 info: info,
                                                  inputPlaceholder: R.string.localizable.emialInputPlaceholder(),
                                                  style: .email)
         
@@ -69,7 +69,7 @@ class SecurityVerificationViewController: BaseViewController {
     private lazy var phoneNumItem: SecurityVerificationItemModel = {
         let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位发送到\(UserManager.shared.phoneNum ?? "")的验证码" : "Enter the 6 digit code sent to \(UserManager.shared.phoneNum ?? "")"
         let item = SecurityVerificationItemModel(title: R.string.localizable.phoneVerificationCode(),
-                                                      info: info,
+                                                 info: info,
                                                  inputPlaceholder: R.string.localizable.phoneVerificationCodePlaceholder(),
                                                  style: .phone)
         return item
@@ -121,7 +121,7 @@ class SecurityVerificationViewController: BaseViewController {
         setupUI()
         setupData()
     }
-
+    
     // MARK: - Private
     
     private func setupUI() {
@@ -145,7 +145,15 @@ class SecurityVerificationViewController: BaseViewController {
             let vc = ChangeEmailSuccessViewController()
             navigationController?.pushViewController(vc, animated: true)
         case .closeAuth:
-            print("")
+            if let vc = navigationController?.viewControllers.filter({ subVC in
+                if subVC.isMember(of: AuthSettingViewController.self) {
+                    return true
+                } else {
+                    return false
+                }
+            }).first {
+                navigationController?.popToViewController(vc, animated: true)
+            }
         case .forgotPassword:
             print("")
         case .login:
@@ -166,7 +174,10 @@ class SecurityVerificationViewController: BaseViewController {
                   let phoneCode = phoneCode else { return }
             requestSecurityVerify(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
         case .closeAuth:
-            print("")
+            guard let emailCode = emailCode,
+                  let phoneCode = phoneCode,
+                  let authCode = authCode else { return }
+            requestUnsetTwofa(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
         case .forgotPassword:
             print("")
         case .login:
@@ -259,6 +270,20 @@ class SecurityVerificationViewController: BaseViewController {
             this.indicator.stopAnimating()
             if isSuccess {
                 this.securityVerifySuccessAction()
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func requestUnsetTwofa(emailCode: String, phoneCode: String, authCode: String) {
+        indicator.startAnimating()
+        AuthRequest.unsetTwofa(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                LockScreenManager.shared.isOn = false
+                this.navigationController?.popViewController()
             } else {
                 this.view.makeToast(message, position: .center)
             }

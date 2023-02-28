@@ -123,16 +123,20 @@
 "touchIdLogin" = "指纹登录";
 "faceIDLoginSubTitle" = "点击进行人脸认证";
 "touchIDLoginSubTitle" = "点击进行指纹识别";
+"authQrcodeTips" = "如果不能扫描二维码，请输入那串文字到谷歌验证器里";
 
 /// User
 "logout" = "退出";
-"notVerified" = "未认证";
-"verified" = "已认证";
 "securitySetting" = "安全设置";
 "language" = "语言";
 "contractUs" = "联系我们";
 "about" = "关于";
 "hello" = "你好!";
+"notVerified" = "未认证";
+"verificationInReview" = "审核中";
+"resubmitVerification" = "重新提交认证";
+"verified" = "已认证";
+"rejected" = "已拒绝";
 
 /// Home
 "totalBalance" = "总余额";
@@ -167,3 +171,4 @@
 "skip" = "跳过";
 "gotIt" = "了解";
 "email" = "邮件";
+"refresh" = "刷新";
