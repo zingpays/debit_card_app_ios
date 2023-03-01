@@ -10,23 +10,25 @@ import Moya
 import Moya_ObjectMapper
 
 struct PasswordRequest {
-    static func verifyOldPassword(password: String, completion: @escaping ResponseNormalCompletion) {
+    static func verifyOldPassword(password: String,
+                                  completion: @escaping ((Bool, String, VerifyMailModel?) -> Void)) {
         let provider = MoyaProvider<PasswordTarget>()
-        provider.requestStatus(.verifyOldPassword(password: password), completion: completion)
+        provider.requestObject(.verifyOldPassword(password: password), type: VerifyMailModel.self, completion: completion)
     }
     
     static func changePassword(password: String,
                                confirmPassword: String,
+                               verifyCode: String,
                                completion: @escaping ResponseNormalCompletion) {
         let provider = MoyaProvider<PasswordTarget>()
-        provider.requestStatus(.changePassword(password: password, confirmPassword: confirmPassword),
+        provider.requestStatus(.changePassword(password: password, confirmPassword: confirmPassword, verifyCode: verifyCode),
                                completion: completion)
     }
 }
 
 enum PasswordTarget {
     case verifyOldPassword(password: String)
-    case changePassword(password: String, confirmPassword: String)
+    case changePassword(password: String, confirmPassword: String, verifyCode: String)
 }
 
 extension PasswordTarget: BaseTargetType {
@@ -44,9 +46,10 @@ extension PasswordTarget: BaseTargetType {
         switch self {
         case .verifyOldPassword(let password):
             params["current_password"] = password
-        case .changePassword(let password, let confirmPassword):
+        case .changePassword(let password, let confirmPassword, let verifyCode):
             params["password"] = password
             params["password_confirmation"] = confirmPassword
+            params["verify_code"] = verifyCode
         }
         return params
     }

@@ -12,6 +12,12 @@ import Moya_ObjectMapper
 enum MailCodeType: String {
     case login = "Login"
     case register = "Register"
+    case resetEmail = "Reset Email"
+    case transfer = "Transfer"
+    case unsetTwoFa = "Unset Twofa"
+    case resetTwoFa = "Reset Twofa"
+    case individual = "Individual"
+    case isIndividual = "is_individual"
 }
 
 struct MailRequest {

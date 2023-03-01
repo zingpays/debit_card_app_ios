@@ -6,6 +6,16 @@
   Copyright © 2023 Flashwire. All rights reserved.
 */
 
+/// Guide
+"guide1Title" = "Your Debit Card,Cashback";
+"guide1SubTitle" = "Up to 2% cashback on spending on your Stella debit card";
+"guide2Title" = "Meet Your Global Payment Needs";
+"guide2SubTitle" = "With Stella credit card, you can pay easily include Online purchases";
+"guide3Title" = "Your International Travel, Easily";
+"guide3SubTitle" = "Travel the world with one card, no need to exchange currency, can easily support your travel expenses";
+"guide4Title" = "Your Crypto, Pay for Everything";
+"guide4SubTitle" = "You can sell crypto to the money in the debit card for consumption";
+
 /// Login
 "loginTitle" = "Login";
 "emialInputPlaceholder" = "Enter your E-mail";

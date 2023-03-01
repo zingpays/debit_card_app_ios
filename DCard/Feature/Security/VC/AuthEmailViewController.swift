@@ -46,7 +46,8 @@ class AuthEmailViewController: BaseViewController {
     }
 
     @IBAction func changeEmailAction(_ sender: Any) {
-        let vc = SecurityVerificationViewController()
+        guard let email = emailLabel.text else { return }
+        let vc = SecurityVerificationViewController(email: email)
         vc.dataStyle = isBindAuth ? [.email, .phone, .twofaWithoutReset] : [.email, .phone]
         vc.source = .changeEmail
         navigationController?.pushViewController(vc, animated: true)

@@ -224,7 +224,8 @@ class NineGraphLockScreenViewController: BaseViewController {
     }
     
     @objc private func forgotParttenAction() {
-        let vc = SecurityVerificationViewController()
+        guard let email = UserManager.shared.email else { return }
+        let vc = SecurityVerificationViewController(email: email)
         vc.dataStyle = [.email, .phone]
         vc.source = .forgotPattern
         navigationController?.pushViewController(vc, animated: true)

@@ -228,7 +228,7 @@ class SettingPasswordViewController: BaseViewController {
     
     private func requestChangePassword(password: String, confirmPassword: String) {
         indicator.startAnimating()
-        PasswordRequest.changePassword(password: password, confirmPassword: confirmPassword) { [weak self] isSuccess, message in
+        PasswordRequest.changePassword(password: password, confirmPassword: confirmPassword, verifyCode: code) { [weak self] isSuccess, message in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {

@@ -65,7 +65,8 @@ class AuthSettingViewController: BaseViewController {
     
     @IBAction func authAction(_ sender: UIButton) {
         if authSwitch.isOn {
-            let vc = SecurityVerificationViewController()
+            guard let email = UserManager.shared.email else { return }
+            let vc = SecurityVerificationViewController(email: email)
             vc.dataStyle = [.email, .phone, .twofaWithoutReset]
             vc.source = .closeAuth
             navigationController?.pushViewController(vc, animated: true)

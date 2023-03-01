@@ -79,13 +79,11 @@ class VerifyYourIdentityGuideViewController: BaseViewController {
         super.setupNavBar()
         self.gk_navLineHidden = false
         switch source {
-        case .home:
-            self.gk_navRightBarButtonItem = nil
         case .register:
             self.gk_navLeftBarButtonItem = nil
             self.gk_navRightBarButtonItem = rightItem
             self.gk_navItemRightSpace = 16
-        case .userCenter:
+        default:
             self.gk_navRightBarButtonItem = nil
         }
     }

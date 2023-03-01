@@ -17,7 +17,6 @@ class GuidePagerViewCell: FSPagerViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.backgroundColor = .clear
-        titleLabel.font = UIFont.fw.font32(type: .roboto, weight: .bold)
-        descLabel.font = .fw.font14(type: .roboto, weight: .light)
+        descLabel.textColor = R.color.fwFFFFFF()?.withAlphaComponent(0.5)
     }
 }

@@ -26,6 +26,7 @@ enum SecurityVerificationSource {
 
 class SecurityVerificationViewController: BaseViewController {
     
+    var email: String
     var dataStyle: [SecurityVerificationType] = []
     var source: SecurityVerificationSource = .none
     var uniqueId: String?
@@ -57,7 +58,7 @@ class SecurityVerificationViewController: BaseViewController {
     }()
     
     private lazy var emailItem: SecurityVerificationItemModel = {
-        let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位已经发送到\(UserManager.shared.email ?? "")的验证码" : "Enter the 6-digit code sent to \(UserManager.shared.email ?? "")"
+        let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位已经发送到\(self.email)的验证码" : "Enter the 6-digit code sent to \(self.email)"
         let item = SecurityVerificationItemModel(title: R.string.localizable.emailVerificationCode(),
                                                  info: info,
                                                  inputPlaceholder: R.string.localizable.emialInputPlaceholder(),
@@ -116,6 +117,15 @@ class SecurityVerificationViewController: BaseViewController {
     private var emailCode: String?
     private var phoneCode: String?
     
+    init(email: String) {
+        self.email = email
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -168,7 +178,8 @@ class SecurityVerificationViewController: BaseViewController {
     @objc private func nextAction() {
         switch source {
         case .forgotPattern:
-            print("")
+            let vc = SettingNewPasswordViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case .changeEmail:
             guard let emailCode = emailCode,
                   let phoneCode = phoneCode else { return }
@@ -191,7 +202,23 @@ class SecurityVerificationViewController: BaseViewController {
     
     private func requestSendEmailCode(_ email: String) {
         indicator.startAnimating()
-        MailRequest.sendCode(email: email, type: .login) { isSuccess, message in
+        let type: MailCodeType = {
+            switch source {
+            case .forgotPattern:
+                return .login
+            case .changeEmail:
+                return .resetEmail
+            case .closeAuth:
+                return .unsetTwoFa
+            case .forgotPassword:
+                return .individual
+            case .login:
+                return .login
+            case .none:
+                return .individual
+            }
+        }()
+        MailRequest.sendCode(email: email, type: type) { isSuccess, message in
             self.indicator.stopAnimating()
             if isSuccess {
                 for item in self.datasource {
@@ -358,7 +385,6 @@ extension SecurityVerificationViewController: SecurityVerificationItemTableViewC
     func didSelectedSendCode(_ cell: SecurityVerificationItemTableViewCell, data: SecurityVerificationItemModel) {
         switch data.style {
         case .email:
-            guard let email = UserManager.shared.email, !email.isEmpty else { return }
             requestSendEmailCode(email)
         case .phone:
             guard let phone = UserManager.shared.phoneNum, !phone.isEmpty else { return }

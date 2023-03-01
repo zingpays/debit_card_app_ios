@@ -113,7 +113,8 @@ class LoginViewController: BaseViewController {
     }
     
     private func continueLogin(authType: AuthType, authToken: String, uniqueId: String) {
-        let vc = SecurityVerificationViewController()
+        guard let email = emailTextfield.text else { return }
+        let vc = SecurityVerificationViewController(email: email)
         vc.dataStyle = authType == .email ? [.email] : [.twofa]
         vc.source = .login
         vc.uniqueId = uniqueId

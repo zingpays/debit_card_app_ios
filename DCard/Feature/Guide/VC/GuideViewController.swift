@@ -60,10 +60,10 @@ class GuideViewController: UIViewController {
     }
     
     private func setupData() {
-        let guideData1 = GuideCollectionModel(title: "Your debit card, Cashback", imageName: "guide_bg_intro_1", desc: "Up to 2% cashback on spending on your AURO debit card.")
-        let guideData2 = GuideCollectionModel(title: "Meet your global payment needs", imageName: "guide_bg_intro_2", desc: "With AURO credit card, you can pay easily include Online purchases.")
-        let guideData3 = GuideCollectionModel(title: "Your international travel, Easily", imageName: "guide_bg_intro_3", desc: "Travel the world with one card, no need to exchange currency, can easily support your travel expenses.")
-        let guideData4 = GuideCollectionModel(title: "Your Crypto, Pay for Everything", imageName: "guide_bg_intro_4", desc: "You can sell crypto to the money in the debit card for consumption.")
+        let guideData1 = GuideCollectionModel(title: R.string.localizable.guide1Title(), imageName: "guide_bg_intro_1", desc: R.string.localizable.guide1SubTitle())
+        let guideData2 = GuideCollectionModel(title: R.string.localizable.guide2Title(), imageName: "guide_bg_intro_2", desc: R.string.localizable.guide2SubTitle())
+        let guideData3 = GuideCollectionModel(title: R.string.localizable.guide3Title(), imageName: "guide_bg_intro_3", desc: R.string.localizable.guide3SubTitle())
+        let guideData4 = GuideCollectionModel(title: R.string.localizable.guide4Title(), imageName: "guide_bg_intro_4", desc: R.string.localizable.guide4SubTitle())
         guideDatas = [guideData1, guideData2, guideData3, guideData4]
     }
     

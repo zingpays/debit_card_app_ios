@@ -6,6 +6,16 @@
   Copyright © 2023 Flashwire. All rights reserved.
 */
 
+/// Guide
+"guide1Title" = "借记卡返现";
+"guide1SubTitle" = "高达2%的消费返现会返到您的恒星支付借记卡里";
+"guide2Title" = "满足您全球性的支付需求";
+"guide2SubTitle" = "拥有恒星支付借记卡，你可以轻松支付包括线上购物";
+"guide3Title" = "您的国际旅游，变得很简单";
+"guide3SubTitle" = "一张卡就可以支持您旅游全世界，不需要兑换现金，轻松支付您的旅游花销";
+"guide4Title" = "您的数字资产可以支付任何东西";
+"guide4SubTitle" = "您可以卖掉您的数字资产换成钱到借记卡里进行消费";
+
 /// Login
 "loginTitle" = "登录";
 "emialInputPlaceholder" = "请输入邮箱";

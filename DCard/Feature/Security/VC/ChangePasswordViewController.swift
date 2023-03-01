@@ -71,8 +71,8 @@ class ChangePasswordViewController: BaseViewController {
         passwordTextField.isSecureTextEntry = !sender.isSelected
     }
     
-    private func gotoSettingPasswordPage() {
-        let vc = SettingPasswordViewController()
+    private func gotoSettingPasswordPage(code: String) {
+        let vc = SettingPasswordViewController(code: code)
         vc.style = .change
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -81,11 +81,11 @@ class ChangePasswordViewController: BaseViewController {
     
     private func requestVerifyPassword(password: String) {
         indicator.startAnimating()
-        PasswordRequest.verifyOldPassword(password: password) { [weak self] isSuccess, message in
+        PasswordRequest.verifyOldPassword(password: password) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
-            if isSuccess {
-                this.gotoSettingPasswordPage()
+            if isSuccess, let code = data?.verifyCode {
+                this.gotoSettingPasswordPage(code: code)
             } else {
                 this.view.makeToast(message)
             }

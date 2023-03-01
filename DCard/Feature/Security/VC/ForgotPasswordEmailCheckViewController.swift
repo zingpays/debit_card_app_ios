@@ -12,6 +12,7 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +27,27 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
         }
         emailTextField.leftViewMode = .always
         emailTextField.leftView = textFiledLeftView()
+        emailTextField.delegate = self
     }
     
     // MARK: - Actions
     
     @IBAction func nextAction(_ sender: Any) {
-        let vc = SecurityVerificationViewController()
-//        vc.style = .allWithoutAuthReset
+        guard let email = emailTextField.text else { return }
+        let vc = SecurityVerificationViewController(email: email)
         vc.dataStyle = [.email, .phone]
         vc.source = .forgotPassword
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension ForgotPasswordEmailCheckViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField.isEmpty {
+            nextButton.alpha = 0.4
+        } else {
+            nextButton.alpha = 1
+        }
+    }
 }

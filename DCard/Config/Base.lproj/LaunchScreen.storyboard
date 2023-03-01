@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanuchscreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="vIX-Gz-NHn">
-                                <rect key="frame" x="170" y="405.66666666666669" width="90" height="121.00000000000006"/>
+                                <rect key="frame" x="142.66666666666666" y="390" width="144.99999999999997" height="152"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,7 +47,7 @@
     </scenes>
     <resources>
         <image name="lanuchscreen_bg" width="375" height="812"/>
-        <image name="lanuchscreen_logo" width="90" height="121"/>
+        <image name="lanuchscreen_logo" width="145" height="152"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

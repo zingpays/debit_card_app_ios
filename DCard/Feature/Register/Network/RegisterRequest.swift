@@ -36,7 +36,7 @@ extension RegisterTarget: BaseTargetType {
         case .register(let email, let password, let code):
             params["email"] = email
             params["password"] = password
-            params["code"] = code
+            params["verify_code"] = code
         }
         return params
     }

@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 150 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 158 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -389,6 +389,62 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var gotIt: RswiftResources.StringResource { .init(key: "gotIt", tableName: "Localizable", source: source, developmentValue: "Got It", comment: nil) }
+
+      /// en translation: Up to 2% cashback on spending on your Stella debit card
+      ///
+      /// Key: guide1SubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guide1SubTitle: RswiftResources.StringResource { .init(key: "guide1SubTitle", tableName: "Localizable", source: source, developmentValue: "Up to 2% cashback on spending on your Stella debit card", comment: nil) }
+
+      /// en translation: Your Debit Card,Cashback
+      ///
+      /// Key: guide1Title
+      ///
+      /// Locales: en, zh-Hans
+      var guide1Title: RswiftResources.StringResource { .init(key: "guide1Title", tableName: "Localizable", source: source, developmentValue: "Your Debit Card,Cashback", comment: nil) }
+
+      /// en translation: With Stella credit card, you can pay easily include Online purchases
+      ///
+      /// Key: guide2SubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guide2SubTitle: RswiftResources.StringResource { .init(key: "guide2SubTitle", tableName: "Localizable", source: source, developmentValue: "With Stella credit card, you can pay easily include Online purchases", comment: nil) }
+
+      /// en translation: Meet Your Global Payment Needs
+      ///
+      /// Key: guide2Title
+      ///
+      /// Locales: en, zh-Hans
+      var guide2Title: RswiftResources.StringResource { .init(key: "guide2Title", tableName: "Localizable", source: source, developmentValue: "Meet Your Global Payment Needs", comment: nil) }
+
+      /// en translation: Travel the world with one card, no need to exchange currency, can easily support your travel expenses
+      ///
+      /// Key: guide3SubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guide3SubTitle: RswiftResources.StringResource { .init(key: "guide3SubTitle", tableName: "Localizable", source: source, developmentValue: "Travel the world with one card, no need to exchange currency, can easily support your travel expenses", comment: nil) }
+
+      /// en translation: Your International Travel, Easily
+      ///
+      /// Key: guide3Title
+      ///
+      /// Locales: en, zh-Hans
+      var guide3Title: RswiftResources.StringResource { .init(key: "guide3Title", tableName: "Localizable", source: source, developmentValue: "Your International Travel, Easily", comment: nil) }
+
+      /// en translation: You can sell crypto to the money in the debit card for consumption
+      ///
+      /// Key: guide4SubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guide4SubTitle: RswiftResources.StringResource { .init(key: "guide4SubTitle", tableName: "Localizable", source: source, developmentValue: "You can sell crypto to the money in the debit card for consumption", comment: nil) }
+
+      /// en translation: Your Crypto, Pay for Everything
+      ///
+      /// Key: guide4Title
+      ///
+      /// Locales: en, zh-Hans
+      var guide4Title: RswiftResources.StringResource { .init(key: "guide4Title", tableName: "Localizable", source: source, developmentValue: "Your Crypto, Pay for Everything", comment: nil) }
 
       /// en translation: Hello!
       ///
