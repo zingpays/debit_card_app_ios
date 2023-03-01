@@ -69,7 +69,7 @@ class WithdrawViewController: BaseViewController {
     
     @IBAction func withdrawAction(_ sender: Any) {
         guard let email = UserManager.shared.email else { return }
-        let vc = SecurityVerificationViewController(email: email)
+        let vc = SecurityVerificationViewController(email: email, phone: UserManager.shared.phoneNum)
         navigationController?.pushViewController(vc, animated: true)
     }
     

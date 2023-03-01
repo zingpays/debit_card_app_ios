@@ -10,10 +10,9 @@ import Moya
 import Moya_ObjectMapper
 
 struct AuthRequest {
-    static func verifyCode(uniqueId: String, authToken: String, completion: @escaping ResponseNormalCompletion) {
+    static func verifyCode(uniqueId: String, authToken: String, completion: @escaping ((Bool, String, LoginModel?) -> Void)) {
         let provider = MoyaProvider<AuthTarget>()
-        provider.requestStatus(.verifyCode(uniqueId: uniqueId, authToken: authToken),
-                               completion: completion)
+        provider.requestObject(.verifyCode(uniqueId: uniqueId, authToken: authToken), type: LoginModel.self, completion: completion)
     }
 
     static func twofa(completion: @escaping ((Bool, String, TwoFactorAuthModel?) -> Void)) {
@@ -33,6 +32,12 @@ struct AuthRequest {
         let provider = MoyaProvider<AuthTarget>()
         provider.requestStatus(.unsetTwofa(emailCode: emailCode, phoneCode: phoneCode,authCode: authCode), completion: completion)
     }
+    
+    static func resetTwoFa(emailCode: String, phoneCode: String, authToken: String, completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<AuthTarget>()
+        provider.requestStatus(.resetTwoFa(emailCode: emailCode, phoneCode: phoneCode, authToken: authToken),
+                               completion: completion)
+    }
 }
 
 enum AuthTarget {
@@ -40,6 +45,7 @@ enum AuthTarget {
     case twofa
     case settwofa(authCode: String)
     case unsetTwofa(emailCode: String, phoneCode: String, authCode: String)
+    case resetTwoFa(emailCode: String, phoneCode: String, authToken: String)
 }
 
 extension AuthTarget: BaseTargetType {
@@ -53,6 +59,8 @@ extension AuthTarget: BaseTargetType {
             return "/security/set2fa"
         case .unsetTwofa:
             return "/security/unset2fa"
+        case .resetTwoFa:
+            return "/security/reset2fa"
         }
     }
     
@@ -70,6 +78,10 @@ extension AuthTarget: BaseTargetType {
             params["email_code"] = emailCode
             params["phone_code"] = phoneCode
             params["one_time_password"] = authCode
+        case .resetTwoFa(let emailCode, let phoneCode, let authCode):
+            params["auth_token"] = authCode
+            params["email_code"] = emailCode
+            params["phone_code"] = phoneCode
         }
         return params
     }

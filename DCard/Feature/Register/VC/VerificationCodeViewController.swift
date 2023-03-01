@@ -153,7 +153,7 @@ class VerificationCodeViewController: BaseViewController {
             if isSuccess {
                 if let email = data?.user?.email,
                    let phoneNum = data?.user?.phoneNumber,
-                    let expireDate = data?.expireAt,
+                    let expireDate = data?.accessTokenExpireDate,
                     let token = data?.accessToken {
                     if let date = expireDate.toDate()?.date {
                         UserManager.shared.saveToken(token, expireDate: date)

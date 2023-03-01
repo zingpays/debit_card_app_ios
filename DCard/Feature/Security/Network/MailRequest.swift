@@ -16,8 +16,7 @@ enum MailCodeType: String {
     case transfer = "Transfer"
     case unsetTwoFa = "Unset Twofa"
     case resetTwoFa = "Reset Twofa"
-    case individual = "Individual"
-    case isIndividual = "is_individual"
+    case forgotPassword = "Forgot Password"
 }
 
 struct MailRequest {
@@ -50,6 +49,11 @@ struct MailRequest {
         let provider = MoyaProvider<MailTarget>()
         provider.requestObject(.verifyEmail(email: email, code: code), type: VerifyMailModel.self, completion: completion)
     }
+    
+    static func securityStatus(email: String, completion: @escaping ((Bool, String, SecurityStatusModel?) -> Void)) {
+        let provider = MoyaProvider<MailTarget>()
+        provider.requestObject(.securityStatus(email: email), type: SecurityStatusModel.self, completion: completion)
+    }
 }
 
 enum MailTarget {
@@ -57,6 +61,7 @@ enum MailTarget {
     case verifyCode(email: String, code: String, authToken: String?)
     case setEmail(emailCode: String, phoneCode: String, authCode: String?)
     case verifyEmail(email: String, code: String)
+    case securityStatus(email: String)
 }
 
 extension MailTarget: BaseTargetType {
@@ -70,6 +75,8 @@ extension MailTarget: BaseTargetType {
             return "/user/set-email"
         case .verifyEmail:
             return "/user/verify-email"
+        case .securityStatus:
+            return "/user/get-user-by-email"
         }
     }
     
@@ -90,6 +97,8 @@ extension MailTarget: BaseTargetType {
         case .verifyEmail(let email, let code):
             params["email"] = email
             params["code"] = code
+        case .securityStatus(let email):
+            params["email"] = email
         }
         return params
     }

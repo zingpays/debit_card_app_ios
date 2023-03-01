@@ -61,7 +61,6 @@ class SecuritySettingsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
         setupUI()
     }
     
@@ -71,10 +70,6 @@ class SecuritySettingsViewController: BaseViewController {
     }
     
     // MARK: - Private
-    
-    private func setupData() {
-        requestStatusData()
-    }
     
     private func setupUI() {
         titleLabel.snp.remakeConstraints { make in
@@ -113,21 +108,21 @@ class SecuritySettingsViewController: BaseViewController {
     
     private func handleSecurityData(_ data: SecurityStatusModel?) {
         if let data = data {
-            LockScreenManager.shared.isOn = data.twoFa?.status == 1
-            let authStatus = data.twoFa?.status == 1
+            LockScreenManager.shared.isOn = data.twoFa?.status ?? false
+            let authStatus = data.twoFa?.status ?? false
             let authIcon = authStatus ? R.image.iconSecurityGa() : R.image.iconSecurityGaNotActivated()
             let authItem = SecurityCollectionViewCellModel(icon: authIcon,
                                                            title: R.string.localizable.securitySettingsAuth(),
                                                            status: authStatus)
             datasource.append(authItem)
-            let emailStatus = data.email?.status == 1
+            let emailStatus = data.email?.status ?? false
             let emailIcon = emailStatus ? R.image.iconSecurityEmail() : R.image.iconSecurityEmailNotActivated()
             let emailTitle = "\(R.string.localizable.securitySettingsEmail()) \(data.email?.value ?? "")"
             let emailItem = SecurityCollectionViewCellModel(icon: emailIcon,
                                                             title: emailTitle,
                                                             status: emailStatus)
             datasource.append(emailItem)
-            let smsStatus = data.phone?.status == 1
+            let smsStatus = data.phone?.status ?? false
             let smsIcon = smsStatus ? R.image.iconSecuritySms() : R.image.iconSecuritySmsNotActivated()
             let smsTitle = "\(R.string.localizable.securitySettingsSms()) \(data.phone?.value ?? "")"
             let smsItem = SecurityCollectionViewCellModel(icon: smsIcon,

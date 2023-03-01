@@ -12,7 +12,9 @@ import SwifterSwift
 // swiftlint:disable line_length
 class UserManager {
     let TOKEN_KEY: String = "USER_TOKEN_KEY"
+    let REFRESH_TOKEN_KEY: String = "REFRESH_TOKEN_KEY"
     let TOKEN_EXPIRE_DATE_KEY = "UESR_TOKEN_EXPIRE_DATE_KEY"
+    let REFRESH_TOKEN_EXPIRE_DATE_KEY = "UESR_REFRESH_TOKEN_EXPIRE_DATE_KEY"
     let USER_EMAIL_KEY = "USER_EMAIL_KEY"
     let USER_PHONENUM_KEY = "USER_PHONENUM_KEY"
     let USER_INFO_KEY = "USER_INFO_KEY"
@@ -23,6 +25,13 @@ class UserManager {
     var token: String? {
         get {
             return UserDefaults.standard.string(forKey: TOKEN_KEY)
+        }
+    }
+    
+    /// 用户access token
+    var refreshToken: String? {
+        get {
+            return UserDefaults.standard.string(forKey: REFRESH_TOKEN_KEY)
         }
     }
     /// 用户信息
@@ -62,8 +71,19 @@ class UserManager {
         UserDefaults.standard.synchronize()
     }
     
+    func saveRefreshToken(_ value: String, expireDate: Date) {
+        UserDefaults.standard.set(value, forKey: REFRESH_TOKEN_KEY)
+        UserDefaults.standard.set(expireDate, forKey: REFRESH_TOKEN_EXPIRE_DATE_KEY)
+        UserDefaults.standard.synchronize()
+    }
+    
     func isExpireToken() -> Bool {
         let date = UserDefaults.standard.date(forKey: TOKEN_EXPIRE_DATE_KEY)
+        return date?.isInPast ?? true
+    }
+    
+    func isRefreshExpireToken() -> Bool {
+        let date = UserDefaults.standard.date(forKey: REFRESH_TOKEN_EXPIRE_DATE_KEY)
         return date?.isInPast ?? true
     }
     

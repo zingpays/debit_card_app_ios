@@ -33,13 +33,36 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func nextAction(_ sender: Any) {
-        guard let email = emailTextField.text else { return }
-        let vc = SecurityVerificationViewController(email: email)
-        vc.dataStyle = [.email, .phone]
-        vc.source = .forgotPassword
-        navigationController?.pushViewController(vc, animated: true)
+        guard let email = emailTextField.text, !email.isEmpty else { return }
+        requestSecurityStatus()
     }
     
+    // MARK: - Network
+    
+    private func requestSecurityStatus() {
+        guard let email = emailTextField.text else { return }
+        indicator.startAnimating()
+        MailRequest.securityStatus(email: email) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess, let data = data {
+                var styles: [SecurityVerificationType] = [.email]
+                if data.phone?.status == true {
+                    styles.append(.phone)
+                }
+                if data.twoFa?.status == true {
+                    styles.append(.twofa)
+                }
+                let vc = SecurityVerificationViewController(email: email, phone: data.phone?.value)
+                vc.dataStyle = styles
+                vc.source = .forgotPassword
+                vc.securityData = data
+                this.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                this.view.makeToast(message)
+            }
+        }
+    }
 }
 
 extension ForgotPasswordEmailCheckViewController: UITextFieldDelegate {

@@ -24,11 +24,34 @@ struct PasswordRequest {
         provider.requestStatus(.changePassword(password: password, confirmPassword: confirmPassword, verifyCode: verifyCode),
                                completion: completion)
     }
+    
+    static func securityVerify(email: String,
+                               emailCode: String,
+                               phoneCode: String?,
+                               authCode: String?,
+                               completion: @escaping ((Bool, String, VerifyMailModel?) -> Void)) {
+        let provider = MoyaProvider<PasswordTarget>()
+        provider.requestObject(.securityVerify(email: email, emailCode: emailCode, phoneCode: phoneCode, authCode: authCode),
+                               type: VerifyMailModel.self,
+                               completion: completion)
+    }
+    
+    static func forgotPassword(email: String,
+                               password: String,
+                               confirmPassword: String,
+                               verifyCode: String,
+                               completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<PasswordTarget>()
+        provider.requestStatus(.forgotPassword(email: email, password: password, confirmPassword: confirmPassword, verifyCode: verifyCode),
+                               completion: completion)
+    }
 }
 
 enum PasswordTarget {
     case verifyOldPassword(password: String)
     case changePassword(password: String, confirmPassword: String, verifyCode: String)
+    case securityVerify(email: String, emailCode: String?, phoneCode: String?, authCode: String?)
+    case forgotPassword(email: String, password: String, confirmPassword: String, verifyCode: String)
 }
 
 extension PasswordTarget: BaseTargetType {
@@ -38,6 +61,23 @@ extension PasswordTarget: BaseTargetType {
             return "/user/change-password2"
         case .verifyOldPassword:
             return "/user/change-password"
+        case .securityVerify:
+            return "/user/forgot-password"
+        case .forgotPassword:
+            return "/user/forgot-password2"
+        }
+    }
+    
+    var needAuthorization: Bool {
+        switch self {
+        case .verifyOldPassword:
+            return true
+        case .changePassword:
+            return true
+        case .securityVerify:
+            return false
+        case .forgotPassword:
+            return false
         }
     }
     
@@ -47,6 +87,16 @@ extension PasswordTarget: BaseTargetType {
         case .verifyOldPassword(let password):
             params["current_password"] = password
         case .changePassword(let password, let confirmPassword, let verifyCode):
+            params["password"] = password
+            params["password_confirmation"] = confirmPassword
+            params["verify_code"] = verifyCode
+        case .securityVerify(let email, let emailCode, let phoneCode, let authCode):
+            params["email"] = email
+            params["email_code"] = emailCode
+            params["phone_code"] = phoneCode
+            params["secret"] = authCode
+        case .forgotPassword(let email, let password, let confirmPassword, let verifyCode):
+            params["email"] = email
             params["password"] = password
             params["password_confirmation"] = confirmPassword
             params["verify_code"] = verifyCode

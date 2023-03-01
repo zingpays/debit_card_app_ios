@@ -20,17 +20,21 @@ enum SecurityVerificationSource {
     case changeEmail
     case closeAuth
     case forgotPassword
-    case login
+    case loginViaEmail
+    case loginViaTwoFa
+    case resetTwoFa
     case none
 }
 
 class SecurityVerificationViewController: BaseViewController {
     
     var email: String
+    var phone: String?
     var dataStyle: [SecurityVerificationType] = []
     var source: SecurityVerificationSource = .none
     var uniqueId: String?
     var authToken: String?
+    var securityData: SecurityStatusModel?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var securityTableView: UITableView!
@@ -48,9 +52,9 @@ class SecurityVerificationViewController: BaseViewController {
         btn.layer.cornerRadius = 23
         btn.backgroundColor = R.color.fw00A8BB()
         switch source {
-        case .forgotPattern, .changeEmail:
+        case .forgotPattern, .changeEmail, .forgotPassword:
             btn.setTitle(R.string.localizable.next(), for: .normal)
-        case .closeAuth, .forgotPassword, .login, .none:
+        case .closeAuth, .loginViaEmail, .loginViaTwoFa, .resetTwoFa, .none:
             btn.setTitle(R.string.localizable.submit(), for: .normal)
         }
         btn.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
@@ -117,8 +121,9 @@ class SecurityVerificationViewController: BaseViewController {
     private var emailCode: String?
     private var phoneCode: String?
     
-    init(email: String) {
+    init(email: String, phone: String?) {
         self.email = email
+        self.phone = phone
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -166,9 +171,13 @@ class SecurityVerificationViewController: BaseViewController {
             }
         case .forgotPassword:
             print("")
-        case .login:
+        case .loginViaEmail:
+            print("")
+        case .loginViaTwoFa:
             print("")
         case .none:
+            print("")
+        case .resetTwoFa:
             print("")
         }
     }
@@ -190,11 +199,20 @@ class SecurityVerificationViewController: BaseViewController {
                   let authCode = authCode else { return }
             requestUnsetTwofa(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
         case .forgotPassword:
+            guard let email = securityData?.email?.value,
+                  let emailCode = emailCode else { return }
+            requestForgotPassword(email: email, emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
             print("")
-        case .login:
+        case .loginViaEmail:
             requestMailVerify()
+        case .loginViaTwoFa:
+            requestAuthVerify()
         case .none:
             print("")
+        case .resetTwoFa:
+            guard let emailCode = emailCode,
+                  let phoneCode = phoneCode else { return }
+            requestResetAuth(emailCode: emailCode, phoneCode: phoneCode, authToken: authToken ?? "")
         }
     }
     
@@ -211,11 +229,15 @@ class SecurityVerificationViewController: BaseViewController {
             case .closeAuth:
                 return .unsetTwoFa
             case .forgotPassword:
-                return .individual
-            case .login:
+                return .forgotPassword
+            case .loginViaEmail:
+                return .login
+            case .loginViaTwoFa:
                 return .login
             case .none:
-                return .individual
+                return .login
+            case .resetTwoFa:
+                return .login
             }
         }()
         MailRequest.sendCode(email: email, type: type) { isSuccess, message in
@@ -264,7 +286,7 @@ class SecurityVerificationViewController: BaseViewController {
     
     private func requestMailVerify() {
         indicator.startAnimating()
-        MailRequest.verifyCode(email: "", code: emailCode ?? "", authToken: "") { [weak self] isSuccess, message in
+        MailRequest.verifyCode(email: email, code: emailCode ?? "", authToken: authToken) { [weak self] isSuccess, message in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
@@ -278,12 +300,23 @@ class SecurityVerificationViewController: BaseViewController {
     
     private func requestAuthVerify() {
         indicator.startAnimating()
-        AuthRequest.verifyCode(uniqueId: uniqueId ?? "", authToken: authToken ?? "") { [weak self] isSuccess, message in
+        AuthRequest.verifyCode(uniqueId: uniqueId ?? "", authToken: authToken ?? "") { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
-                UIApplication.shared.keyWindow()?.rootViewController = nil
-                UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+                if let token = data?.accessToken,
+                    let accessTokenExpireDate = data?.accessTokenExpireDate?.toDate()?.date,
+                    let email = data?.user?.email,
+                    let phoneNum = data?.user?.phoneNumber {
+                    LocalAuthenManager.shared.isAuthorized = true
+                    // save user token
+                    UserManager.shared.saveToken(token, expireDate: accessTokenExpireDate)
+                    UserManager.shared.saveUserEmail(email)
+                    UserManager.shared.saveUserPhoneNum(phoneNum)
+                    // change application root viewController to tabbar viewController
+                    UIApplication.shared.keyWindow()?.rootViewController = nil
+                    UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+                }
             } else {
                 this.view.makeToast(message, position: .center)
             }
@@ -317,6 +350,23 @@ class SecurityVerificationViewController: BaseViewController {
         }
     }
     
+    private func requestForgotPassword(email: String, emailCode: String, phoneCode: String?, authCode: String?) {
+        indicator.startAnimating()
+        PasswordRequest.securityVerify(email: email, emailCode: emailCode, phoneCode: phoneCode, authCode: authCode) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                UserManager.shared.clearUserData()
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                let vc = LoginViewController()
+                let loginNavVC = UINavigationController(rootViewController: vc)
+                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+            } else {
+                this.view.makeToast(message)
+            }
+        }
+    }
+    
     private func requestAllVerify() {
         // TODO: 成功后跳转新的页面
         // request ...
@@ -342,6 +392,21 @@ class SecurityVerificationViewController: BaseViewController {
         }
         if source == .changeEmail {
             
+        }
+    }
+    
+    private func requestResetAuth(emailCode: String, phoneCode:String, authToken: String) {
+        indicator.startAnimating()
+        AuthRequest.resetTwoFa(emailCode: emailCode, phoneCode: phoneCode, authToken: authToken) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                let vc = ChangeEmailSuccessViewController()
+                vc.isFromResetTwoFa = true
+                this.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                this.view.makeToast(message)
+            }
         }
     }
 }
@@ -373,7 +438,12 @@ extension SecurityVerificationViewController: SecurityVerificationItemTableViewC
                                       preferredStyle: .alert)
         let continuneAction = UIAlertAction(title: R.string.localizable.continue(),
                                             style: .default) { action in
-            // TODO: go to reset authenticator
+            let vc = SecurityVerificationViewController(email: self.email, phone: self.phone)
+            vc.dataStyle = [.email, .phone]
+            vc.source = .resetTwoFa
+            vc.uniqueId = self.uniqueId
+            vc.authToken = self.authToken
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         let cancelAction = UIAlertAction(title: R.string.localizable.cancel(),
                                          style: .cancel)
@@ -387,8 +457,8 @@ extension SecurityVerificationViewController: SecurityVerificationItemTableViewC
         case .email:
             requestSendEmailCode(email)
         case .phone:
-            guard let phone = UserManager.shared.phoneNum, !phone.isEmpty else { return }
-            requestSendPhoneCode(phone)
+            guard let phoneNum = phone else { return }
+            requestSendPhoneCode(phoneNum)
         case .auth, .authWithoutReset:
             break
         }

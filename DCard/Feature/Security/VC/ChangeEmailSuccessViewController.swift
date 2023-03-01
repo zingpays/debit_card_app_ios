@@ -9,6 +9,8 @@
 import UIKit
 
 class ChangeEmailSuccessViewController: BaseViewController {
+    
+    var isFromResetTwoFa: Bool = false
 
     @IBOutlet weak var titleLabel: UILabel!{
         didSet {
@@ -58,14 +60,22 @@ class ChangeEmailSuccessViewController: BaseViewController {
     }
     
     @IBAction func gotItAction(_ sender: Any) {
-        if let vc = navigationController?.viewControllers.filter({ subVC in
-            if subVC.isMember(of: SecuritySettingsViewController.self) {
-                return true
-            } else {
-                return false
+        if isFromResetTwoFa {
+            UserManager.shared.clearUserData()
+            UIApplication.shared.keyWindow()?.rootViewController = nil
+            let vc = LoginViewController()
+            let loginNavVC = UINavigationController(rootViewController: vc)
+            UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+        } else {
+            if let vc = navigationController?.viewControllers.filter({ subVC in
+                if subVC.isMember(of: SecuritySettingsViewController.self) {
+                    return true
+                } else {
+                    return false
+                }
+            }).first {
+                navigationController?.popToViewController(vc, animated: true)
             }
-        }).first {
-            navigationController?.popToViewController(vc, animated: true)
         }
     }
 }

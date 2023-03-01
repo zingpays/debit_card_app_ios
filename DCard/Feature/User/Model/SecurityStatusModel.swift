@@ -10,7 +10,7 @@ import ObjectMapper
 
 struct SecurityStatusItemModel: Mappable {
     var value: String?
-    var status: Int?
+    var status: Bool = false
     
     init?(map: ObjectMapper.Map) {}
 

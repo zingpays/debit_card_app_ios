@@ -45,7 +45,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
         btn.setTitle(R.string.localizable.getCode(), for: .normal)
         btn.titleLabel?.font = .fw.font16()
         btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
-        btn.frame = CGRect(origin: CGPoint(x: 0, y: 11), size: CGSize(width: 100, height: 28))
+        btn.frame = CGRect(origin: CGPoint(x: 0, y: 11), size: CGSize(width: 140, height: 28))
         btn.contentMode = .right
         return btn
     }()
@@ -70,7 +70,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     }
     
     private func textFieldRightView(_ action: Selector) -> UIView {
-        let size = CGSize(width: 100, height: 50)
+        let size = CGSize(width: 140, height: 50)
         let v = UIView(frame: CGRect(origin: .zero, size: size))
         v.backgroundColor = .clear
         getCodeButton.addTarget(self, action: action, for: .touchUpInside)

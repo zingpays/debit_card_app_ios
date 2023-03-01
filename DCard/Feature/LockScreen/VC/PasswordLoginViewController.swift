@@ -168,19 +168,21 @@ class PasswordLoginViewController: BaseViewController {
         if loginData.furtherAuth {
             continueLogin(authType: loginData.authType,
                           authToken: loginData.authToken ?? "",
-                          uniqueId: loginData.user?.uniqueId ?? "")
+                          uniqueId: loginData.user?.uniqueId ?? "",
+                          email: loginData.user?.email ?? "",
+                          phone: loginData.user?.phoneNumber)
         } else {
             loginFinish(token: loginData.accessToken,
-                        expireDate: loginData.expireAt ?? "",
+                        expireDate: loginData.accessTokenExpireDate ?? "",
                         email: loginData.user?.email ?? "",
                         phoneNum: loginData.user?.phoneNumber ?? "")
         }
     }
     
-    private func continueLogin(authType: AuthType, authToken: String, uniqueId: String) {
-        guard let email = UserManager.shared.email else { return }
-        let vc = SecurityVerificationViewController(email: email)
+    private func continueLogin(authType: AuthType, authToken: String, uniqueId: String, email: String, phone: String?) {
+        let vc = SecurityVerificationViewController(email: email, phone: phone)
         vc.dataStyle = authType == .email ? [.email] : [.twofa]
+        vc.source = authType == .email ? .loginViaEmail : .loginViaTwoFa
         vc.uniqueId = uniqueId
         vc.authToken = authToken
         navigationController?.pushViewController(vc, animated: true)

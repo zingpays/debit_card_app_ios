@@ -10,6 +10,9 @@ import UIKit
 
 class SettingNewPasswordViewController: BaseViewController {
 
+    var email: String?
+    var verifyCode: String?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextfield: UITextField!
@@ -48,6 +51,31 @@ class SettingNewPasswordViewController: BaseViewController {
         return v
     }
     
+    // MARK: - Network
+    
+    private func requestForgotPassword(email: String,
+                                       password: String,
+                                       confirmPassword: String,
+                                       verifyCode: String) {
+        indicator.startAnimating()
+        PasswordRequest.forgotPassword(email: email,
+                                       password: password,
+                                       confirmPassword: confirmPassword,
+                                       verifyCode: verifyCode) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                UserManager.shared.clearUserData()
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                let vc = LoginViewController()
+                let loginNavVC = UINavigationController(rootViewController: vc)
+                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+            } else {
+                this.view.makeToast(message)
+            }
+        }
+    }
+    
     // MARK: - Actions
     
     @objc private func newPasswordEyeAction(sender: UIButton) {
@@ -61,7 +89,11 @@ class SettingNewPasswordViewController: BaseViewController {
     }
     
     @IBAction func submitAction(_ sender: Any) {
-        
+        guard let email = email,
+              let password = newPasswordTextField.text,
+              let confirmPassword = confirmPasswordTextfield.text,
+              let verifyCode: String else { return }
+        requestForgotPassword(email: email, password: password, confirmPassword: confirmPassword, verifyCode: verifyCode)
     }
     
 }
