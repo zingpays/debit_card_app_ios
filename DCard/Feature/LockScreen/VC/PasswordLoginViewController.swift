@@ -165,6 +165,12 @@ class PasswordLoginViewController: BaseViewController {
             view.makeToast("data error~")
             return
         }
+        guard ((loginData.user?.phoneNumber) != nil), loginData.user?.phoneNumber?.count ?? 0 > 0 else {
+            let vc = RegisterSuccessViewController()
+            vc.uniqueId = loginData.user?.uniqueId
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        }
         if loginData.furtherAuth {
             continueLogin(authType: loginData.authType,
                           authToken: loginData.authToken ?? "",

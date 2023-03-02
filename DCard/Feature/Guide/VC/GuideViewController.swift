@@ -27,9 +27,9 @@ class GuideViewController: UIViewController {
     }
     @IBOutlet weak var registerButton: UIButton! {
         didSet {
-            registerButton.setTitleColor(R.color.fwFFFFFF()?.withAlphaComponent(0.2), for: .normal)
-            registerButton.tintColor = R.color.fwFFFFFF()?.withAlphaComponent(0.2)
-            registerButton.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.12)
+            registerButton.setTitleColor(R.color.fwFFFFFF()?.withAlphaComponent(0.8), for: .normal)
+            registerButton.tintColor = R.color.fwFFFFFF()?.withAlphaComponent(0.8)
+            registerButton.backgroundColor = R.color.fw00A8BB()?.withAlphaComponent(0.2)
             registerButton.setTitle(R.string.localizable.registerTitle(), for: .normal)
         }
     }
