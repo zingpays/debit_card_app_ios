@@ -15,6 +15,16 @@
 "guide3SubTitle" = "Travel the world with one card, no need to exchange currency, can easily support your travel expenses";
 "guide4Title" = "Your Crypto, Pay for Everything";
 "guide4SubTitle" = "You can sell crypto to the money in the debit card for consumption";
+"guideFaceIDTitle" = "Set up Face ID";
+"guideFaceIDSubTitle" = "Easy and secure login";
+"guideTouchIDTitle" = "Set up Touch ID";
+"guideTouchIDSubTitle" = "Easy and secure login";
+"guidePatternTitle" = "Set Pattern For Login";
+"guidePatternSubTitle" = "Please draw the pattern";
+"guidePatternAgainSubTitle" = "Please draw the pattern again";
+"clickToFaceIdTips" = "Click to set face login";
+"clickToTouchIdTips" = "Click to set touch login";
+"guideDonotRemindAgain" = "Don't remind again";
 
 /// Login
 "loginTitle" = "Login";

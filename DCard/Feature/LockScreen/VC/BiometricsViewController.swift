@@ -12,10 +12,28 @@ class BiometricsViewController: BaseViewController {
     var source: LockScreenSource = .none
     /// 是否有存在切换其他方式的按钮
     var isHasChangeToOtherLoginMethod: Bool = false
-
+    /// 是否是引导用户设置
+    var isGuide: Bool = false
+    
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var guideTitleLabel: UILabel!
+    @IBOutlet weak var guideSubtitleLabel: UILabel!
+    
+    @IBOutlet weak var guideTipsButton: UIButton! {
+        didSet {
+            guideTipsButton.setImage(R.image.iconCheckBoxOff(), for: .normal)
+            guideTipsButton.setImage(R.image.iconCheckBoxOn(), for: .selected)
+            guideTipsButton.isHidden = !self.isGuide
+        }
+    }
+    @IBOutlet weak var guideTipsLabel: UILabel! {
+        didSet {
+            guideTipsLabel.textColor = R.color.fw000000()?.withAlphaComponent(0.5)
+            guideTipsLabel.isHidden = !self.isGuide
+        }
+    }
     
     private lazy var loginStatckView: UIStackView = {
         let v = UIStackView()
@@ -47,13 +65,29 @@ class BiometricsViewController: BaseViewController {
         return btn
     }()
     
+    private lazy var rightItem: UIBarButtonItem = {
+        let btn = UIButton()
+        btn.frame = CGRect(x: 0, y: 4, width: 36, height: 36)
+        btn.setTitle(R.string.localizable.skip(), for: .normal)
+        btn.backgroundColor = .clear
+        btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
+        btn.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
+        return UIBarButtonItem(customView: btn)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        startAuth()
+        if !isGuide {
+            startAuth()
+        } else {
+            gk_navItemRightSpace = 16
+            gk_navRightBarButtonItem = rightItem
+        }
         if source == .none {
             setupNotification()
         }
+        
     }
     
     deinit {
@@ -89,10 +123,23 @@ class BiometricsViewController: BaseViewController {
         }
         let image = LocalAuthenManager.shared.type == .faceID ? R.image.iconFaceid() : R.image.iconTouchid()
         iconButton.setImage(image, for: .normal)
-        let title = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.faceIdLogin() :  R.string.localizable.touchIdLogin()
+        let title: String = {
+            if isGuide {
+                return LocalAuthenManager.shared.type == .faceID ? R.string.localizable.clickToFaceIdTips() :  R.string.localizable.clickToTouchIdTips()
+            } else {
+                return LocalAuthenManager.shared.type == .faceID ? R.string.localizable.faceIdLogin() :  R.string.localizable.touchIdLogin()
+            }
+        }()
         let subtitle = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.faceIDLoginSubTitle() :  R.string.localizable.touchIDLoginSubTitle()
         titleLabel.text = title
         subTitleLabel.text = subtitle
+        guideTitleLabel.isHidden = !isGuide
+        guideSubtitleLabel.isHidden = !isGuide
+        titleLabel.isHidden = isGuide
+        subTitleLabel.textColor = isGuide ? R.color.fw00A8BB() : R.color.fw001214()
+        guideTitleLabel.text = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.guideFaceIDTitle() : R.string.localizable.guideTouchIDTitle()
+        guideSubtitleLabel.text = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.guideFaceIDSubTitle() : R.string.localizable.guideTouchIDSubTitle()
+        guideTipsLabel.text = R.string.localizable.guideDonotRemindAgain()
     }
     
     private func setupNotification() {
@@ -107,6 +154,7 @@ class BiometricsViewController: BaseViewController {
             LocalAuthenManager.shared.evaluate { isSuccess, errCode in
                 if isSuccess {
                     LocalAuthenManager.shared.isAuthorized = true
+                    LocalAuthenManager.shared.isBind = true
                     if self.source != .none {
                         DispatchQueue.main.async {
                             NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
@@ -163,5 +211,16 @@ class BiometricsViewController: BaseViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    @objc private func skipAction() {
+        LocalAuthenManager.shared.isSkiped = true
+        self.dismiss(animated: true)
+    }
 
+    @IBAction func remindCheckAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        let color = sender.isSelected ? R.color.fw00A8BB() : R.color.fw000000()?.withAlphaComponent(0.5)
+        guideTipsLabel.textColor = color
+    }
+    
 }

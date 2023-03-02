@@ -30,13 +30,26 @@ class HomeViewController: BaseViewController {
             let loginNavVC = UINavigationController(rootViewController: vc)
             UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
         } else {
-            if LocalAuthenManager.shared.isBind && !LocalAuthenManager.shared.isAuthorized {
-                let lockScreenVC = BiometricsViewController()
-                lockScreenVC.isHasChangeToOtherLoginMethod = true
-                let navVC = UINavigationController(rootViewController: lockScreenVC)
-                navVC.modalPresentationStyle = .fullScreen
-                self.present(navVC, animated: false)
-            } else if !LocalAuthenManager.shared.isAuthorized {
+            if LocalAuthenManager.shared.isAvailable {
+                if LocalAuthenManager.shared.isBind {
+                    if !LocalAuthenManager.shared.isAuthorized {
+                        let lockScreenVC = BiometricsViewController()
+                        lockScreenVC.isHasChangeToOtherLoginMethod = true
+                        let navVC = UINavigationController(rootViewController: lockScreenVC)
+                        navVC.modalPresentationStyle = .fullScreen
+                        self.present(navVC, animated: false)
+                    }
+                } else {
+                    if !LocalAuthenManager.shared.isSkiped {
+                        let lockScreenVC = BiometricsViewController()
+                        lockScreenVC.isGuide = true
+                        lockScreenVC.isHasChangeToOtherLoginMethod = false
+                        let navVC = UINavigationController(rootViewController: lockScreenVC)
+                        navVC.modalPresentationStyle = .fullScreen
+                        self.present(navVC, animated: false)
+                    }
+                }
+            } else {
                 let vc = PasswordLoginViewController()
                 vc.isHasChangeToOtherLoginMethod = true
                 let navVC = UINavigationController(rootViewController: vc)

@@ -15,6 +15,16 @@
 "guide3SubTitle" = "一张卡就可以支持您旅游全世界，不需要兑换现金，轻松支付您的旅游花销";
 "guide4Title" = "您的数字资产可以支付任何东西";
 "guide4SubTitle" = "您可以卖掉您的数字资产换成钱到借记卡里进行消费";
+"guideFaceIDTitle" = "设置人脸识别";
+"guideFaceIDSubTitle" = "快捷安全登录";
+"guideTouchIDTitle" = "设置指纹识别";
+"guideTouchIDSubTitle" = "快捷安全登录";
+"guidePatternTitle" = "设置手绘快捷登录";
+"guidePatternSubTitle" = "请绘制解锁图案";
+"guidePatternAgainSubTitle" = "请再次绘制解锁图案";
+"clickToFaceIdTips" = "点击设置人脸识别登录";
+"clickToTouchIdTips" = "点击设置人脸识别登录";
+"guideDonotRemindAgain" = "不再提醒";
 
 /// Login
 "loginTitle" = "登录";

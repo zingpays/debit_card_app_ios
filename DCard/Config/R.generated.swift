@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 158 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 168 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -200,6 +200,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var chooseYourCountryTitle: RswiftResources.StringResource { .init(key: "chooseYourCountryTitle", tableName: "Localizable", source: source, developmentValue: "Choose Your Country", comment: nil) }
+
+      /// en translation: Click to set face login
+      ///
+      /// Key: clickToFaceIdTips
+      ///
+      /// Locales: en, zh-Hans
+      var clickToFaceIdTips: RswiftResources.StringResource { .init(key: "clickToFaceIdTips", tableName: "Localizable", source: source, developmentValue: "Click to set face login", comment: nil) }
+
+      /// en translation: Click to set touch login
+      ///
+      /// Key: clickToTouchIdTips
+      ///
+      /// Locales: en, zh-Hans
+      var clickToTouchIdTips: RswiftResources.StringResource { .init(key: "clickToTouchIdTips", tableName: "Localizable", source: source, developmentValue: "Click to set touch login", comment: nil) }
 
       /// en translation: Confirm new password
       ///
@@ -445,6 +459,62 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var guide4Title: RswiftResources.StringResource { .init(key: "guide4Title", tableName: "Localizable", source: source, developmentValue: "Your Crypto, Pay for Everything", comment: nil) }
+
+      /// en translation: Don't remind again
+      ///
+      /// Key: guideDonotRemindAgain
+      ///
+      /// Locales: en, zh-Hans
+      var guideDonotRemindAgain: RswiftResources.StringResource { .init(key: "guideDonotRemindAgain", tableName: "Localizable", source: source, developmentValue: "Don't remind again", comment: nil) }
+
+      /// en translation: Easy and secure login
+      ///
+      /// Key: guideFaceIDSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guideFaceIDSubTitle: RswiftResources.StringResource { .init(key: "guideFaceIDSubTitle", tableName: "Localizable", source: source, developmentValue: "Easy and secure login", comment: nil) }
+
+      /// en translation: Set up Face ID
+      ///
+      /// Key: guideFaceIDTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guideFaceIDTitle: RswiftResources.StringResource { .init(key: "guideFaceIDTitle", tableName: "Localizable", source: source, developmentValue: "Set up Face ID", comment: nil) }
+
+      /// en translation: Please draw the pattern again
+      ///
+      /// Key: guidePatternAgainSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guidePatternAgainSubTitle: RswiftResources.StringResource { .init(key: "guidePatternAgainSubTitle", tableName: "Localizable", source: source, developmentValue: "Please draw the pattern again", comment: nil) }
+
+      /// en translation: Please draw the pattern
+      ///
+      /// Key: guidePatternSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guidePatternSubTitle: RswiftResources.StringResource { .init(key: "guidePatternSubTitle", tableName: "Localizable", source: source, developmentValue: "Please draw the pattern", comment: nil) }
+
+      /// en translation: Set Pattern For Login
+      ///
+      /// Key: guidePatternTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guidePatternTitle: RswiftResources.StringResource { .init(key: "guidePatternTitle", tableName: "Localizable", source: source, developmentValue: "Set Pattern For Login", comment: nil) }
+
+      /// en translation: Easy and secure login
+      ///
+      /// Key: guideTouchIDSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guideTouchIDSubTitle: RswiftResources.StringResource { .init(key: "guideTouchIDSubTitle", tableName: "Localizable", source: source, developmentValue: "Easy and secure login", comment: nil) }
+
+      /// en translation: Set up Touch ID
+      ///
+      /// Key: guideTouchIDTitle
+      ///
+      /// Locales: en, zh-Hans
+      var guideTouchIDTitle: RswiftResources.StringResource { .init(key: "guideTouchIDTitle", tableName: "Localizable", source: source, developmentValue: "Set up Touch ID", comment: nil) }
 
       /// en translation: Hello!
       ///
@@ -1278,7 +1348,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 101 images.
+  /// This `_R.image` struct is generated, and contains static references to 103 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -1350,6 +1420,12 @@ struct _R {
 
     /// Image `iconChangeCircle`.
     var iconChangeCircle: RswiftResources.ImageResource { .init(name: "iconChangeCircle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconCheckBoxOff`.
+    var iconCheckBoxOff: RswiftResources.ImageResource { .init(name: "iconCheckBoxOff", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconCheckBoxOn`.
+    var iconCheckBoxOn: RswiftResources.ImageResource { .init(name: "iconCheckBoxOn", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconCloseButton`.
     var iconCloseButton: RswiftResources.ImageResource { .init(name: "iconCloseButton", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1956,7 +2032,10 @@ struct _R {
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'BindPhoneViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconCheckBoxOff", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconCheckBoxOff' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconFaceid", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconFaceid' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'BiometricsViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconBackInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBackInfo' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconCardDetail", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconCardDetail' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconDeposit", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDeposit' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }

@@ -4,13 +4,26 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BiometricsViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="guideSubtitleLabel" destination="IHu-Dd-PtJ" id="kNQ-ma-qQQ"/>
+                <outlet property="guideTipsButton" destination="jQf-df-LsE" id="B6A-if-pcG"/>
+                <outlet property="guideTipsLabel" destination="ciP-3t-uQy" id="z7s-pW-w61"/>
+                <outlet property="guideTitleLabel" destination="qMw-e7-Zgy" id="uCJ-Wc-L1W"/>
                 <outlet property="iconButton" destination="NKB-dM-f94" id="utb-wO-TGj"/>
                 <outlet property="subTitleLabel" destination="1e5-st-k10" id="AU4-hT-E7e"/>
                 <outlet property="titleLabel" destination="B13-se-j2M" id="hme-oY-hjn"/>
@@ -58,25 +71,72 @@
                         <action selector="againFaceId:" destination="-1" eventType="touchUpInside" id="SBH-Xh-9nZ"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't remind again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-3t-uQy">
+                    <rect key="frame" x="144.33333333333337" y="769" width="132.66666666666663" height="19"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                    <color key="textColor" name="fw#000000"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQf-df-LsE">
+                    <rect key="frame" x="116.33333333333333" y="768.66666666666663" width="19.999999999999986" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Jiw-N5-p16"/>
+                        <constraint firstAttribute="width" constant="20" id="Ud2-8d-MAN"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="iconCheckBoxOff" title=" "/>
+                    <connections>
+                        <action selector="remindCheckAction:" destination="-1" eventType="touchUpInside" id="q1v-P3-nyH"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set up Face ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-e7-Zgy">
+                    <rect key="frame" x="119.33333333333333" y="139" width="154.66666666666669" height="28.333333333333343"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                    <color key="textColor" name="fw#001214"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy and secure login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHu-Dd-PtJ">
+                    <rect key="frame" x="120.33333333333333" y="175.33333333333334" width="152.66666666666669" height="19"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="qMw-e7-Zgy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FyU-lD-tqe"/>
+                <constraint firstItem="jQf-df-LsE" firstAttribute="centerY" secondItem="ciP-3t-uQy" secondAttribute="centerY" id="G0A-pt-s22"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YNM-kb-ODI" secondAttribute="trailing" id="GMy-6l-JHb"/>
+                <constraint firstItem="IHu-Dd-PtJ" firstAttribute="top" secondItem="qMw-e7-Zgy" secondAttribute="bottom" constant="8" id="Jos-Of-vJB"/>
                 <constraint firstItem="NKB-dM-f94" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NB1-eX-GXJ"/>
+                <constraint firstItem="ciP-3t-uQy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="14" id="UhE-6s-ioI"/>
                 <constraint firstItem="B13-se-j2M" firstAttribute="top" secondItem="NKB-dM-f94" secondAttribute="bottom" constant="28" id="VQB-bL-hTW"/>
                 <constraint firstItem="1e5-st-k10" firstAttribute="top" secondItem="B13-se-j2M" secondAttribute="bottom" constant="8" id="Wvc-2i-16D"/>
+                <constraint firstItem="IHu-Dd-PtJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dZt-b6-rV9"/>
                 <constraint firstItem="NKB-dM-f94" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="250" id="hba-92-zYD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ciP-3t-uQy" secondAttribute="bottom" constant="30" id="n1a-pP-52b"/>
+                <constraint firstItem="qMw-e7-Zgy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="sg4-X7-JrN"/>
                 <constraint firstItem="YNM-kb-ODI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="siG-rz-gdf"/>
                 <constraint firstItem="1e5-st-k10" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vBp-AF-Tkr"/>
+                <constraint firstItem="ciP-3t-uQy" firstAttribute="leading" secondItem="jQf-df-LsE" secondAttribute="trailing" constant="8" id="w5N-YR-fp2"/>
                 <constraint firstItem="B13-se-j2M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xfW-1w-YUc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YNM-kb-ODI" secondAttribute="bottom" constant="24" id="xoa-wQ-fHk"/>
             </constraints>
-            <point key="canvasLocation" x="-5" y="18"/>
+            <point key="canvasLocation" x="-334" y="-15"/>
         </view>
     </objects>
     <resources>
+        <image name="iconCheckBoxOff" width="20" height="20"/>
         <image name="iconFaceid" width="90" height="90"/>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

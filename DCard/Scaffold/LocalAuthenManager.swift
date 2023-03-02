@@ -36,6 +36,7 @@ class LocalAuthenManager {
             return UserDefaults.standard.bool(forKey: kBiometricsBindKey)
         }
     }
+    var isSkiped: Bool = false
     
     init() {
         var error: NSError? = nil
