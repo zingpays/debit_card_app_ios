@@ -91,6 +91,9 @@
 		545C569D2986142F00D7F058 /* FillInAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545C569B2986142F00D7F058 /* FillInAddressViewController.swift */; };
 		545C569E2986142F00D7F058 /* FillInAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545C569C2986142F00D7F058 /* FillInAddressViewController.xib */; };
 		545E624629AF5311007D724E /* TokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624529AF5311007D724E /* TokenRequest.swift */; };
+		545E624929B0B297007D724E /* CardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624829B0B297007D724E /* CardRequest.swift */; };
+		545E624E29B0B48B007D724E /* SuppportCardInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624D29B0B48B007D724E /* SuppportCardInfoModel.swift */; };
+		545E625029B193FB007D724E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624F29B193FB007D724E /* CardModel.swift */; };
 		546BD3F5299A2183003C15D8 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F4299A2183003C15D8 /* LoginRequest.swift */; };
 		546BD3F7299A21A2003C15D8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F6299A21A2003C15D8 /* LoginModel.swift */; };
 		546BD3F9299A3A66003C15D8 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F8299A3A66003C15D8 /* UserRequest.swift */; };
@@ -346,6 +349,9 @@
 		545C569B2986142F00D7F058 /* FillInAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillInAddressViewController.swift; sourceTree = "<group>"; };
 		545C569C2986142F00D7F058 /* FillInAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillInAddressViewController.xib; sourceTree = "<group>"; };
 		545E624529AF5311007D724E /* TokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequest.swift; sourceTree = "<group>"; };
+		545E624829B0B297007D724E /* CardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRequest.swift; sourceTree = "<group>"; };
+		545E624D29B0B48B007D724E /* SuppportCardInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppportCardInfoModel.swift; sourceTree = "<group>"; };
+		545E624F29B193FB007D724E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		546BD3F4299A2183003C15D8 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		546BD3F6299A21A2003C15D8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		546BD3F8299A3A66003C15D8 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -823,6 +829,23 @@
 			path = KYC;
 			sourceTree = "<group>";
 		};
+		545E624729B0B264007D724E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				545E624829B0B297007D724E /* CardRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		545E624A29B0B464007D724E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				545E624D29B0B48B007D724E /* SuppportCardInfoModel.swift */,
+				545E624F29B193FB007D724E /* CardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		546BD400299B5BEB003C15D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,6 +1045,8 @@
 		54D082D92986590B008B0FBC /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				545E624A29B0B464007D724E /* Model */,
+				545E624729B0B264007D724E /* Network */,
 				54D48091298A3F020068671E /* VC */,
 				54D48090298A3EF70068671E /* View */,
 			);
@@ -1605,6 +1630,7 @@
 				549D4626298A6C3F009AEB13 /* RecentTransactionsTableViewCell.swift in Sources */,
 				5482974629A35F2B00F82611 /* QuickUnlockTableViewCell.swift in Sources */,
 				542BC18F297008EB00133659 /* ChooseRegionTableViewCell.swift in Sources */,
+				545E625029B193FB007D724E /* CardModel.swift in Sources */,
 				5495F8ED29A74DDD0073EA48 /* TopupViewController.swift in Sources */,
 				547385E229AE0F1D00924AD8 /* VerifyMailModel.swift in Sources */,
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
@@ -1639,6 +1665,8 @@
 				54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				54BBA10C296C0E0600EB316F /* RegisterSuccessViewController.swift in Sources */,
+				545E624E29B0B48B007D724E /* SuppportCardInfoModel.swift in Sources */,
+				545E624929B0B297007D724E /* CardRequest.swift in Sources */,
 				546BD3F7299A21A2003C15D8 /* LoginModel.swift in Sources */,
 				54A4551D298CEC5B00621311 /* CardSettingViewController.swift in Sources */,
 				541A8D5129655DAE00C59026 /* LocalAuthenManager.swift in Sources */,

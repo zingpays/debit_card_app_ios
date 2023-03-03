@@ -12,14 +12,13 @@ import JFPopup
 class CardViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cardTableView: UITableView!
+    /// 卡片类型数据
+    private var cardTypeData: SuppportCardInfoModel?
     
-    @IBOutlet weak var cardTableView: UITableView! {
-        didSet {
-//            cardTableView.bounces = false
-            cardTableView.showsVerticalScrollIndicator = false
-        }
-    }
+    private var numberOfRowsInTable: Int = 0
     
+    private var cardList: [CardModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +38,14 @@ class CardViewController: BaseViewController {
     
     private func setupUI() {
         titleLabel.font = UIFont.fw.font20(weight: .bold)
+        titleLabel.text = R.string.localizable.debitCard()
         cardTableView.fw.registerCellNib(EmptyCardTableViewCell.self)
         cardTableView.fw.registerCellNib(CardBagTableViewCell.self)
         cardTableView.fw.registerCellNib(RecentTransactionsTableViewCell.self)
     }
     
     private func setupData() {
-        
+        requestCardList()
     }
     
     private func setupNotification() {
@@ -67,36 +67,80 @@ class CardViewController: BaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    // MARK: - Request
+    
+    private func requestCardSupportType() {
+        indicator.startAnimating()
+        CardRequest.supportType { [weak self] isSuccess, message, datas in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess, let datas = datas {
+                this.cardTypeData = datas.first
+                this.cardTableView.reloadData()
+            }
+        }
+    }
+    
+    private func requestCardList() {
+        indicator.startAnimating()
+        CardRequest.list(uniqueId: "6648244") { [weak self] isSuccess, message, list in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                if let list = list, !list.isEmpty {
+                    this.cardList = list
+                    this.cardTableView.reloadData()
+                } else {
+                    this.requestCardSupportType()
+                }
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
 }
 
 extension CardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if cardList.count > 0 {
+            return 2
+        } else {
+            return cardTypeData == nil ? 0 : 1
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 { return 314 + 20 }
-        if indexPath.row == 0 { return 282 + 10}
-        return 417
+        if indexPath.row == 0 {
+            if cardList.isEmpty {
+                return EmptyCardTableViewCell.height()
+            } else {
+                return CardBagTableViewCell.height()
+            }
+        } else {
+            return RecentTransactionsTableViewCell.height()
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.fw.dequeueReusableCell(withIdentifier: CardBagTableViewCell.description()) as! CardBagTableViewCell
+            if cardList.isEmpty {
+                let cell = tableView.fw.dequeue(cellType: EmptyCardTableViewCell.self, for: indexPath)
+                cell.selectionStyle = .none
+                cell.delegate = self
+                cell.update(currency: cardTypeData?.currency)
+                return cell
+            } else {
+                let cell = tableView.fw.dequeue(cellType: CardBagTableViewCell.self, for: indexPath)
+                cell.selectionStyle = .none
+                cell.delegate = self
+                return cell
+            }
+        } else {
+            let cell = tableView.fw.dequeue(cellType: RecentTransactionsTableViewCell.self, for: indexPath)
             cell.selectionStyle = .none
             cell.delegate = self
             return cell
         }
-        if indexPath.row == 1 {
-            let cell = tableView.fw.dequeueReusableCell(withIdentifier: RecentTransactionsTableViewCell.description()) as! RecentTransactionsTableViewCell
-            cell.selectionStyle = .none
-            cell.delegate = self
-            return cell
-        }
-        let cell = tableView.fw.dequeueReusableCell(withIdentifier: EmptyCardTableViewCell.description()) as! EmptyCardTableViewCell
-        cell.selectionStyle = .none
-        cell.delegate = self
-        return cell
     }
 }
 

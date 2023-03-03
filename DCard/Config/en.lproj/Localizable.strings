@@ -175,6 +175,13 @@
 "makeADeposit" = "Make A Deposit";
 "makeDepositInfo" = "Insufficient balance, don't have sufficient crypto ?";
 
+//// Card
+"applyCard" = "Apply Card";
+"cardInformation" = "Card Information";
+"cardType" = "Card Type";
+"cardTypeValue" = "Visa virtual debit card";
+"cardBaseCurrency" = "Card Base Currency";
+
 /// Tabbar
 "home" = "HOME";
 "card" = "CARD";

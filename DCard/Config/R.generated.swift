@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 168 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 173 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -138,6 +138,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var agreement: RswiftResources.StringResource { .init(key: "agreement", tableName: "Localizable", source: source, developmentValue: "I have read and agree with the Privacy Policy and Terms and Conditions. I also agree to not use Stella Pay to transact on behalf of someone else.", comment: nil) }
 
+      /// en translation: Apply Card
+      ///
+      /// Key: applyCard
+      ///
+      /// Locales: en, zh-Hans
+      var applyCard: RswiftResources.StringResource { .init(key: "applyCard", tableName: "Localizable", source: source, developmentValue: "Apply Card", comment: nil) }
+
       /// en translation: If you are unable to scan the QR code, please enter this code manually into the app.
       ///
       /// Key: authQrcodeTips
@@ -179,6 +186,34 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var card: RswiftResources.StringResource { .init(key: "card", tableName: "Localizable", source: source, developmentValue: "CARD", comment: nil) }
+
+      /// en translation: Card Base Currency
+      ///
+      /// Key: cardBaseCurrency
+      ///
+      /// Locales: en, zh-Hans
+      var cardBaseCurrency: RswiftResources.StringResource { .init(key: "cardBaseCurrency", tableName: "Localizable", source: source, developmentValue: "Card Base Currency", comment: nil) }
+
+      /// en translation: Card Information
+      ///
+      /// Key: cardInformation
+      ///
+      /// Locales: en, zh-Hans
+      var cardInformation: RswiftResources.StringResource { .init(key: "cardInformation", tableName: "Localizable", source: source, developmentValue: "Card Information", comment: nil) }
+
+      /// en translation: Card Type
+      ///
+      /// Key: cardType
+      ///
+      /// Locales: en, zh-Hans
+      var cardType: RswiftResources.StringResource { .init(key: "cardType", tableName: "Localizable", source: source, developmentValue: "Card Type", comment: nil) }
+
+      /// en translation: Visa virtual debit card
+      ///
+      /// Key: cardTypeValue
+      ///
+      /// Locales: en, zh-Hans
+      var cardTypeValue: RswiftResources.StringResource { .init(key: "cardTypeValue", tableName: "Localizable", source: source, developmentValue: "Visa virtual debit card", comment: nil) }
 
       /// en translation: Verify your old password
       ///

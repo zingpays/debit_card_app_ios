@@ -29,9 +29,9 @@ class RecentTransactionsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setupSubviews()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    static func height() -> CGFloat {
+        return 314 + 20
     }
     
     // MARK: - Private
