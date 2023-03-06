@@ -50,11 +50,13 @@ class HomeViewController: BaseViewController {
                     }
                 }
             } else {
-                let vc = PasswordLoginViewController()
-                vc.isHasChangeToOtherLoginMethod = true
-                let navVC = UINavigationController(rootViewController: vc)
-                navVC.modalPresentationStyle = .fullScreen
-                self.present(navVC, animated: false)
+                if !LocalAuthenManager.shared.isAuthorized {
+                    let vc = PasswordLoginViewController()
+                    vc.isHasChangeToOtherLoginMethod = true
+                    let navVC = UINavigationController(rootViewController: vc)
+                    navVC.modalPresentationStyle = .fullScreen
+                    self.present(navVC, animated: false)
+                }
             }
         }
     }
@@ -116,7 +118,7 @@ extension HomeViewController: HomeOverviewTableViewCellDelegate, HomeRecentTrans
     }
     
     func didSelectedVerify(_ cell: HomeOverviewTableViewCell) {
-        let vc = VerifyYourIdentityGuideViewController()
+        let vc = KYCUnAvailableViewController()
         vc.hidesBottomBarWhenPushed = true
         vc.source = .home
         navigationController?.pushViewController(vc, animated: true)

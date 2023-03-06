@@ -13,6 +13,7 @@ import SwiftDate
 class VerificationCodeViewController: BaseViewController {
     ///  phone number
     var phoneNum: String?
+    var phoneCountryCode: String?
     var uniqueId: String?
     
     @IBOutlet weak var titleLabel: UILabel! {
@@ -145,9 +146,9 @@ class VerificationCodeViewController: BaseViewController {
         // TODO: phone code request
     }
     
-    private func requestVerifyPhoneCode(_ code: String, uniId: String, num: String) {
+    private func requestVerifyPhoneCode(_ code: String, uniId: String, num: String, phoneCountryCode: String) {
         indicator.startAnimating()
-        PhoneRequest.setPhone(code: code, uniId: uniId, number: num) { [weak self] isSuccess, message, data in
+        PhoneRequest.setPhone(code: code, uniId: uniId, number: num, phoneCountryCode: phoneCountryCode) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
@@ -194,7 +195,7 @@ class VerificationCodeViewController: BaseViewController {
         boxInputView.textDidChangeblock = { [weak self] text, isFinish in
             guard let this = self else { return }
             if isFinish {
-                this.requestVerifyPhoneCode(text ?? "", uniId: this.uniqueId ?? "", num: this.phoneNum ?? "")
+                this.requestVerifyPhoneCode(text ?? "", uniId: this.uniqueId ?? "", num: this.phoneNum ?? "", phoneCountryCode: "")
             }
         }
     }

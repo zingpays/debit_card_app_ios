@@ -13,6 +13,7 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var subTitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
         emailTextField.leftViewMode = .always
         emailTextField.leftView = textFiledLeftView()
         emailTextField.delegate = self
+        titleLabel.text = R.string.localizable.securityForgotPassword()
+        subTitleLabel.text = R.string.localizable.securityForgotPasswordSubTitle()
     }
     
     // MARK: - Actions

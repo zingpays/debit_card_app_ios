@@ -9,6 +9,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCFillInNameAndNationalViewController" customModule="DCard" customModuleProvider="target">
             <connections>
@@ -37,14 +48,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconInfo" translatesAutoresizingMaskIntoConstraints="NO" id="lgM-Or-jaW">
-                    <rect key="frame" x="16" y="313.33333333333331" width="18" height="18"/>
+                    <rect key="frame" x="16" y="313" width="18" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="18" id="Ic6-8U-cFu"/>
                         <constraint firstAttribute="height" constant="18" id="fqu-xp-NLV"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hfP-0P-z9f">
-                    <rect key="frame" x="16" y="371" width="360" height="50"/>
+                    <rect key="frame" x="16" y="370" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="k10-VH-nPe"/>
@@ -61,7 +72,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tAn-u2-Qio">
-                    <rect key="frame" x="16" y="511" width="360" height="50"/>
+                    <rect key="frame" x="16" y="510" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="evw-GJ-NWR"/>
@@ -78,9 +89,9 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm your name and nationality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZx-pT-NNL">
-                    <rect key="frame" x="16" y="286" width="360" height="19.333333333333314"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="16" y="286" width="360" height="19"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your identity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAq-Re-Irh">
@@ -88,12 +99,12 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="P47-0x-aIP"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <color key="textColor" name="fw#000000"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your nationality" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Uv-Ry-Mu9">
-                    <rect key="frame" x="16" y="581" width="360" height="50"/>
+                    <rect key="frame" x="16" y="580" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="7Cc-9d-iuM"/>
@@ -107,7 +118,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kx-By-MIf">
-                    <rect key="frame" x="27" y="655" width="338" height="46"/>
+                    <rect key="frame" x="27" y="654" width="338" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Bkr-A8-oWf"/>
@@ -125,13 +136,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your full legal name as shown on your passport in English" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77N-wq-JVA">
-                    <rect key="frame" x="40" y="313.33333333333331" width="336" height="33.666666666666686"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" name="fw#000000"/>
+                    <rect key="frame" x="40" y="313" width="336" height="33"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="· Your last name is wrong, please enter again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-O7-UQz">
-                    <rect key="frame" x="16" y="429" width="360" height="0.0"/>
+                    <rect key="frame" x="16" y="428" width="360" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" id="Taj-rG-SkA"/>
                     </constraints>
@@ -140,7 +151,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="· Your last name is wrong, please enter again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIm-nx-a2l">
-                    <rect key="frame" x="16" y="499" width="360" height="0.0"/>
+                    <rect key="frame" x="16" y="498" width="360" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" id="eVR-j8-mAO"/>
                     </constraints>
@@ -149,7 +160,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="· Your last name is wrong, please enter again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2My-ig-SjA">
-                    <rect key="frame" x="16" y="569" width="360" height="0.0"/>
+                    <rect key="frame" x="16" y="568" width="360" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" id="3fO-HV-b3z"/>
                     </constraints>
@@ -161,17 +172,17 @@
                     <rect key="frame" x="16" y="190" width="360" height="80"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2c-8a-OaV">
-                            <rect key="frame" x="11.999999999999996" y="12" width="53.666666666666657" height="19"/>
+                            <rect key="frame" x="12" y="12" width="54" height="19"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="19" id="Xg2-qK-wfW"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                             <color key="textColor" name="fw#ED4949"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your identity verification need your action, you have an error in the information you filled in." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqG-47-zqh">
-                            <rect key="frame" x="12" y="35" width="336" height="33.666666666666657"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <rect key="frame" x="12" y="35" width="336" height="33"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                             <color key="textColor" name="fw#ED4949"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -192,7 +203,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your middle name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mhU-lu-dc8">
-                    <rect key="frame" x="16" y="441" width="360" height="50"/>
+                    <rect key="frame" x="16" y="440" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="nvr-hO-aON"/>
@@ -209,7 +220,7 @@
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KM-7V-hIk">
-                    <rect key="frame" x="16" y="581" width="360" height="50"/>
+                    <rect key="frame" x="16" y="580" width="360" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="3ke-OP-weZ"/>
                     </constraints>
@@ -265,13 +276,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2My-ig-SjA" secondAttribute="trailing" constant="17" id="wq8-kp-lB4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Uv-Ry-Mu9" secondAttribute="trailing" constant="17" id="wuZ-1B-Mif"/>
             </constraints>
-            <point key="canvasLocation" x="55.725190839694655" y="-42.253521126760567"/>
+            <point key="canvasLocation" x="289" y="-1"/>
         </view>
     </objects>
     <resources>
         <image name="iconInfo" width="18" height="18"/>
-        <namedColor name="fw#000000">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fw#00191C">
             <color red="0.50999999046325684" green="0.54500001668930054" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

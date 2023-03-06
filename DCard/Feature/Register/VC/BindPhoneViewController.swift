@@ -40,7 +40,7 @@ class BindPhoneViewController: BaseViewController {
         }
     }
     
-    var datasource: [ChooseRegionModel] = []
+    var datasource: [RegionModel] = []
     
     // MARK: - Init
     
@@ -71,11 +71,11 @@ class BindPhoneViewController: BaseViewController {
     }
     
     private func gotoRegionPage() {
-        let vc = ChooseRegionViewController()
+        let vc = ChooseRegionViewController(style: .code)
         vc.pageTitle = R.string.localizable.chooseYourCountryTitle()
         vc.datasource = datasource
         vc.didSelectedCompletion = { data in
-            self.phoneRegionLabel.text = data.subTitle
+            self.phoneRegionLabel.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
         }
         self.present(vc, animated: true)
     }
@@ -85,11 +85,8 @@ class BindPhoneViewController: BaseViewController {
     private func requestRegion() {
         RegionRequest.list { isSuccess, message, list in
             if isSuccess, let regionList = list {
-                for data in regionList {
-                    let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
-                    let region = ChooseRegionModel(title: title, subTitle: data.phoneCode ?? "")
-                    self.datasource.append(region)
-                }
+                self.datasource = regionList
+                self.gotoRegionPage()
             }
         }
     }
@@ -109,11 +106,8 @@ class BindPhoneViewController: BaseViewController {
         if datasource.isEmpty {
             RegionRequest.list { isSuccess, message, list in
                 if isSuccess, let regionList = list {
-                    for data in regionList {
-                        let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
-                        let region = ChooseRegionModel(title: title, subTitle: data.phoneCode ?? "")
-                        self.datasource.append(region)
-                    }
+                    self.datasource = regionList
+                    self.gotoRegionPage()
                 }
                 self.gotoRegionPage()
             }
@@ -124,12 +118,13 @@ class BindPhoneViewController: BaseViewController {
     
     @IBAction func sendVerifyCode(_ sender: Any) {
         if sendButton.alpha == 1 {
-            let phoneNum = "\(phoneRegionLabel.text ?? "")\(phoneTextField.text ?? "")"
+            let phoneNum = phoneTextField.text ?? ""
             PhoneRequest.sendCode(number: phoneNum) { [weak self] isSuccess, message  in
                 guard let this = self else { return }
                 if isSuccess {
                     let vc = VerificationCodeViewController()
                     vc.phoneNum = phoneNum
+                    vc.phoneCountryCode = this.phoneRegionLabel.text
                     vc.uniqueId = this.uniqueId
                     this.navigationController?.pushViewController(vc, animated: true)
                 } else {

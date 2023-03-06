@@ -94,6 +94,8 @@
 		545E624929B0B297007D724E /* CardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624829B0B297007D724E /* CardRequest.swift */; };
 		545E624E29B0B48B007D724E /* SuppportCardInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624D29B0B48B007D724E /* SuppportCardInfoModel.swift */; };
 		545E625029B193FB007D724E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624F29B193FB007D724E /* CardModel.swift */; };
+		545E625329B1F4F5007D724E /* KYCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E625229B1F4F5007D724E /* KYCRequest.swift */; };
+		545E625529B1F639007D724E /* KYCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E625429B1F639007D724E /* KYCModel.swift */; };
 		546BD3F5299A2183003C15D8 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F4299A2183003C15D8 /* LoginRequest.swift */; };
 		546BD3F7299A21A2003C15D8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F6299A21A2003C15D8 /* LoginModel.swift */; };
 		546BD3F9299A3A66003C15D8 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F8299A3A66003C15D8 /* UserRequest.swift */; };
@@ -352,6 +354,8 @@
 		545E624829B0B297007D724E /* CardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRequest.swift; sourceTree = "<group>"; };
 		545E624D29B0B48B007D724E /* SuppportCardInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppportCardInfoModel.swift; sourceTree = "<group>"; };
 		545E624F29B193FB007D724E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		545E625229B1F4F5007D724E /* KYCRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCRequest.swift; sourceTree = "<group>"; };
+		545E625429B1F639007D724E /* KYCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCModel.swift; sourceTree = "<group>"; };
 		546BD3F4299A2183003C15D8 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		546BD3F6299A21A2003C15D8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		546BD3F8299A3A66003C15D8 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -872,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				5473857429A9C6ED00924AD8 /* RegionRequest.swift */,
+				545E625229B1F4F5007D724E /* KYCRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -897,6 +902,7 @@
 			isa = PBXGroup;
 			children = (
 				5473857729A9C83100924AD8 /* RegionModel.swift */,
+				545E625429B1F639007D724E /* KYCModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1636,6 +1642,7 @@
 				541A8D582965702200C59026 /* R.generated.swift in Sources */,
 				546BD3FB299A3B88003C15D8 /* LoginUserInfo.swift in Sources */,
 				542BC1932970F86A00133659 /* VerificationCodeViewController.swift in Sources */,
+				545E625329B1F4F5007D724E /* KYCRequest.swift in Sources */,
 				54222679299257F800447A1A /* SellCryptoConfirmView.swift in Sources */,
 				542BC19F2977026900133659 /* LoginViewController.swift in Sources */,
 				54BBA116296D0B9200EB316F /* RegisterViewController.swift in Sources */,
@@ -1663,6 +1670,7 @@
 				54D082DD29865955008B0FBC /* WalletViewController.swift in Sources */,
 				5495F8E929A743CA0073EA48 /* HomeRecentTransactionsTableViewCell.swift in Sources */,
 				54A45519298CDE1400621311 /* CardTableViewCell.swift in Sources */,
+				545E625529B1F639007D724E /* KYCModel.swift in Sources */,
 				541A8D1B2964164600C59026 /* HomeViewController.swift in Sources */,
 				54BBA10C296C0E0600EB316F /* RegisterSuccessViewController.swift in Sources */,
 				545E624E29B0B48B007D724E /* SuppportCardInfoModel.swift in Sources */,

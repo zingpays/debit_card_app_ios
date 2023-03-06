@@ -9,11 +9,20 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCUnAvailableViewController" customModule="DCard" customModuleProvider="target">
             <connections>
                 <outlet property="subTitleLabel" destination="vkl-co-zku" id="JoB-Ff-Gm7"/>
                 <outlet property="titleLabel" destination="b9w-ji-Mtj" id="TBp-Tq-6GK"/>
+                <outlet property="toVerifyButton" destination="gIb-lx-69i" id="TLk-W4-XlS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIb-lx-69i">
-                    <rect key="frame" x="27" y="417.66666666666669" width="338" height="46"/>
+                    <rect key="frame" x="27" y="419" width="338" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="0QA-ha-KDt"/>
@@ -41,15 +50,15 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Feature Is Not Available Yet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9w-ji-Mtj">
-                    <rect key="frame" x="32" y="293" width="329" height="28.666666666666686"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" name="fw#000000"/>
+                    <rect key="frame" x="22" y="293" width="349" height="28.333333333333314"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please complete your identity verification application to access this feature" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkl-co-zku">
-                    <rect key="frame" x="27" y="333.66666666666669" width="338" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" name="fw#000000"/>
+                    <rect key="frame" x="27" y="333.33333333333331" width="338" height="37.666666666666686"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtU-Hj-BPE">
@@ -84,13 +93,13 @@
                 <constraint firstItem="WtU-Hj-BPE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="128" id="x9o-yI-k2i"/>
                 <constraint firstItem="vkl-co-zku" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="zTu-Qt-Lil"/>
             </constraints>
-            <point key="canvasLocation" x="48" y="-11"/>
+            <point key="canvasLocation" x="297" y="-65"/>
         </view>
     </objects>
     <resources>
         <image name="iconProfile" width="82" height="82"/>
-        <namedColor name="fw#000000">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

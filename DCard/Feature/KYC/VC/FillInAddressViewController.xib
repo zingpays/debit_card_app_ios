@@ -9,6 +9,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular-14.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FillInAddressViewController" customModule="DCard" customModuleProvider="target">
             <connections>
@@ -30,19 +38,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your identity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnx-bW-Bjc">
-                    <rect key="frame" x="16" y="133" width="224" height="33.666666666666657"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="16" y="133" width="238" height="33"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill in your address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ni-Dy-DzF">
-                    <rect key="frame" x="16" y="190.66666666666666" width="135.33333333333334" height="19.333333333333343"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="16" y="190" width="135.33333333333334" height="19"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your country of residence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6qt-Hv-dXS">
-                    <rect key="frame" x="16" y="230" width="360" height="50"/>
+                    <rect key="frame" x="16" y="229" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="HdS-0I-KOn"/>
@@ -56,7 +64,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your state of residence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-u7-eCz">
-                    <rect key="frame" x="16" y="296" width="360" height="50"/>
+                    <rect key="frame" x="16" y="295" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="xvN-66-40L"/>
@@ -70,7 +78,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your city of residence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-oc-EUJ">
-                    <rect key="frame" x="16" y="362" width="360" height="50"/>
+                    <rect key="frame" x="16" y="361" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="gKj-lD-I0C"/>
@@ -84,7 +92,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your detail address 1" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vDH-3r-Ylq">
-                    <rect key="frame" x="16" y="428" width="360" height="50"/>
+                    <rect key="frame" x="16" y="427" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="yoz-5P-mMH"/>
@@ -98,7 +106,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your detail address 2" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6wG-og-JX8">
-                    <rect key="frame" x="16" y="494" width="360" height="50"/>
+                    <rect key="frame" x="16" y="493" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="QRI-Ns-9Po"/>
@@ -112,7 +120,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your post code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7kK-Lq-gfD">
-                    <rect key="frame" x="16" y="560" width="360" height="50"/>
+                    <rect key="frame" x="16" y="559" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="R0p-Br-wKH"/>
@@ -126,7 +134,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIb-in-0mb">
-                    <rect key="frame" x="26" y="642" width="340" height="46"/>
+                    <rect key="frame" x="26" y="641" width="340" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Etw-BC-EkL"/>
@@ -144,7 +152,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc8-vf-xwU">
-                    <rect key="frame" x="16" y="230" width="360" height="50"/>
+                    <rect key="frame" x="16" y="229" width="360" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="osb-D6-QCE"/>
                     </constraints>
@@ -155,7 +163,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmv-fm-30j">
-                    <rect key="frame" x="16" y="296" width="360" height="50"/>
+                    <rect key="frame" x="16" y="295" width="360" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="u92-ri-sw6"/>
                     </constraints>
@@ -166,7 +174,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pH-XW-6w1">
-                    <rect key="frame" x="16" y="362" width="360" height="50"/>
+                    <rect key="frame" x="16" y="361" width="360" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="yic-9s-MdH"/>
                     </constraints>
@@ -219,6 +227,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

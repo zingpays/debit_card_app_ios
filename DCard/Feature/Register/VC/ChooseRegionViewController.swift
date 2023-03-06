@@ -8,14 +8,21 @@
 
 import UIKit
 
+enum ChooseRegionStyle {
+    case code
+    case noCode
+}
+
 class ChooseRegionViewController: UIViewController {
 
     /// selected callback
-    var didSelectedCompletion: ((ChooseRegionModel) -> Void)? = nil
+    var didSelectedCompletion: ((RegionModel) -> Void)? = nil
     /// page title
     var pageTitle: String? = nil
     /// data source
-    var datasource: [ChooseRegionModel] = []
+    var datasource: [RegionModel] = []
+    
+    var style: ChooseRegionStyle = .code
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar! {
@@ -26,6 +33,15 @@ class ChooseRegionViewController: UIViewController {
     @IBOutlet weak var resultTableview: UITableView!
     
     // MARK: - Init
+    
+    init(style: ChooseRegionStyle) {
+        self.style = style
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +69,8 @@ extension ChooseRegionViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeue(cellType: ChooseRegionTableViewCell.self, for: indexPath)
         let data = datasource[indexPath.row]
-        cell.countryLabel.text = data.title
-        cell.codeLabel.text = data.subTitle
+        cell.countryLabel.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+        cell.codeLabel.text = style == .noCode ? "" : data.phoneCode
         return cell
     }
     

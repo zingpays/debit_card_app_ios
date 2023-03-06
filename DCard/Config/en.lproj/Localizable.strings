@@ -75,6 +75,22 @@
 "selfie" = "Selfie";
 "address" = "Address";
 "verifyNow" = "Verify Now";
+"featureIsNotAvailableYet" = "This Feature Is Not Available Yet";
+"featureIsNotAvailableYetTips" = "Please complete your identity verification application to access this feature";
+"toVerify" = "To Verify";
+"tellYourNameAndNation" = "Please tell us your name and nationality";
+"enterFullLegalNameTips" = "Enter your full legal name as shown on your passport in English";
+"enterYourName" = "Enter your name";
+"enterYourMiddleName" = "Enter your middle name(optional)";
+"enterYourLastName" = "Enter your last name";
+"chooseYourNationality" = "Choose your nationality";
+"enterYourAddress" = "Enter your address";
+"chooseYourContryOfResidence" = "Choose your country of residence";
+"chooseYourStateOfResidence" = "Choose your state of residence";
+"chooseYourCityOfResidence" = "Choose your city of residence";
+"enterYourDetailAddressOne" = "Enter your detail address 1";
+"enterYourDetailAddressTwo" = "Enter your detail address 2 (optional)";
+"enterYourPostCode" = "Enter your post code";
 
 /// Security
 "securityVerificationTitle" = "Security Verification";
@@ -145,6 +161,8 @@
 "faceIDLoginSubTitle" = "Click to verify Face ID";
 "touchIDLoginSubTitle" = "Click to verify Touch ID";
 "authQrcodeTips" = "If you are unable to scan the QR code, please enter this code manually into the app.";
+"securityForgotPassword" = "Forgot Password";
+"securityForgotPasswordSubTitle" = "Please Enter Your E-mail";
 
 /// User
 "logout" = "Log out";

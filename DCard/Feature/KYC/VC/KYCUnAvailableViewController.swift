@@ -10,8 +10,10 @@ import UIKit
 
 class KYCUnAvailableViewController: BaseViewController {
     
+    var source: VerifyYourIdentitySource = .home
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var toVerifyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +23,16 @@ class KYCUnAvailableViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
-        titleLabel.font = UIFont.fw.font24(weight: .bold)
-        subTitleLabel.font = UIFont.fw.font15(weight: .light)
+        titleLabel.text = R.string.localizable.featureIsNotAvailableYet()
+        subTitleLabel.text = R.string.localizable.featureIsNotAvailableYetTips()
+        toVerifyButton.setTitle(R.string.localizable.toVerify(), for: .normal)
     }
     
     // MARK: - Actions
 
     @IBAction func toVerifyAction(_ sender: Any) {
-        
+        let vc = VerifyYourIdentityGuideViewController()
+        vc.source = source
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

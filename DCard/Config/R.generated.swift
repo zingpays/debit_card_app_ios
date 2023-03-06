@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 173 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 191 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -222,6 +222,20 @@ struct _R {
       /// Locales: en, zh-Hans
       var changePasswordSubTitle: RswiftResources.StringResource { .init(key: "changePasswordSubTitle", tableName: "Localizable", source: source, developmentValue: "Verify your old password", comment: nil) }
 
+      /// en translation: Choose your city of residence
+      ///
+      /// Key: chooseYourCityOfResidence
+      ///
+      /// Locales: en, zh-Hans
+      var chooseYourCityOfResidence: RswiftResources.StringResource { .init(key: "chooseYourCityOfResidence", tableName: "Localizable", source: source, developmentValue: "Choose your city of residence", comment: nil) }
+
+      /// en translation: Choose your country of residence
+      ///
+      /// Key: chooseYourContryOfResidence
+      ///
+      /// Locales: en, zh-Hans
+      var chooseYourContryOfResidence: RswiftResources.StringResource { .init(key: "chooseYourContryOfResidence", tableName: "Localizable", source: source, developmentValue: "Choose your country of residence", comment: nil) }
+
       /// en translation: Enter the initial letter
       ///
       /// Key: chooseYourCountryInputPlaceholder
@@ -235,6 +249,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var chooseYourCountryTitle: RswiftResources.StringResource { .init(key: "chooseYourCountryTitle", tableName: "Localizable", source: source, developmentValue: "Choose Your Country", comment: nil) }
+
+      /// en translation: Choose your nationality
+      ///
+      /// Key: chooseYourNationality
+      ///
+      /// Locales: en, zh-Hans
+      var chooseYourNationality: RswiftResources.StringResource { .init(key: "chooseYourNationality", tableName: "Localizable", source: source, developmentValue: "Choose your nationality", comment: nil) }
+
+      /// en translation: Choose your state of residence
+      ///
+      /// Key: chooseYourStateOfResidence
+      ///
+      /// Locales: en, zh-Hans
+      var chooseYourStateOfResidence: RswiftResources.StringResource { .init(key: "chooseYourStateOfResidence", tableName: "Localizable", source: source, developmentValue: "Choose your state of residence", comment: nil) }
 
       /// en translation: Click to set face login
       ///
@@ -341,6 +369,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var enterEmailInputPlaceholder: RswiftResources.StringResource { .init(key: "enterEmailInputPlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter your E-mail", comment: nil) }
 
+      /// en translation: Enter your full legal name as shown on your passport in English
+      ///
+      /// Key: enterFullLegalNameTips
+      ///
+      /// Locales: en, zh-Hans
+      var enterFullLegalNameTips: RswiftResources.StringResource { .init(key: "enterFullLegalNameTips", tableName: "Localizable", source: source, developmentValue: "Enter your full legal name as shown on your passport in English", comment: nil) }
+
       /// en translation: Enter old password
       ///
       /// Key: enterOldPassword
@@ -369,6 +404,55 @@ struct _R {
       /// Locales: en, zh-Hans
       var enterVerificationCodePlaceholder: RswiftResources.StringResource { .init(key: "enterVerificationCodePlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter verification code", comment: nil) }
 
+      /// en translation: Enter your address
+      ///
+      /// Key: enterYourAddress
+      ///
+      /// Locales: en, zh-Hans
+      var enterYourAddress: RswiftResources.StringResource { .init(key: "enterYourAddress", tableName: "Localizable", source: source, developmentValue: "Enter your address", comment: nil) }
+
+      /// en translation: Enter your detail address 1
+      ///
+      /// Key: enterYourDetailAddressOne
+      ///
+      /// Locales: en, zh-Hans
+      var enterYourDetailAddressOne: RswiftResources.StringResource { .init(key: "enterYourDetailAddressOne", tableName: "Localizable", source: source, developmentValue: "Enter your detail address 1", comment: nil) }
+
+      /// en translation: Enter your detail address 2 (optional)
+      ///
+      /// Key: enterYourDetailAddressTwo
+      ///
+      /// Locales: en, zh-Hans
+      var enterYourDetailAddressTwo: RswiftResources.StringResource { .init(key: "enterYourDetailAddressTwo", tableName: "Localizable", source: source, developmentValue: "Enter your detail address 2 (optional)", comment: nil) }
+
+      /// en translation: Enter your last name
+      ///
+      /// Key: enterYourLastName
+      ///
+      /// Locales: en, zh-Hans
+      var enterYourLastName: RswiftResources.StringResource { .init(key: "enterYourLastName", tableName: "Localizable", source: source, developmentValue: "Enter your last name", comment: nil) }
+
+      /// en translation: Enter your middle name(optional)
+      ///
+      /// Key: enterYourMiddleName
+      ///
+      /// Locales: en, zh-Hans
+      var enterYourMiddleName: RswiftResources.StringResource { .init(key: "enterYourMiddleName", tableName: "Localizable", source: source, developmentValue: "Enter your middle name(optional)", comment: nil) }
+
+      /// en translation: Enter your name
+      ///
+      /// Key: enterYourName
+      ///
+      /// Locales: en, zh-Hans
+      var enterYourName: RswiftResources.StringResource { .init(key: "enterYourName", tableName: "Localizable", source: source, developmentValue: "Enter your name", comment: nil) }
+
+      /// en translation: Enter your post code
+      ///
+      /// Key: enterYourPostCode
+      ///
+      /// Locales: en, zh-Hans
+      var enterYourPostCode: RswiftResources.StringResource { .init(key: "enterYourPostCode", tableName: "Localizable", source: source, developmentValue: "Enter your post code", comment: nil) }
+
       /// en translation: Face ID
       ///
       /// Key: faceID
@@ -389,6 +473,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var faceIdLogin: RswiftResources.StringResource { .init(key: "faceIdLogin", tableName: "Localizable", source: source, developmentValue: "Face ID Login", comment: nil) }
+
+      /// en translation: This Feature Is Not Available Yet
+      ///
+      /// Key: featureIsNotAvailableYet
+      ///
+      /// Locales: en, zh-Hans
+      var featureIsNotAvailableYet: RswiftResources.StringResource { .init(key: "featureIsNotAvailableYet", tableName: "Localizable", source: source, developmentValue: "This Feature Is Not Available Yet", comment: nil) }
+
+      /// en translation: Please complete your identity verification application to access this feature
+      ///
+      /// Key: featureIsNotAvailableYetTips
+      ///
+      /// Locales: en, zh-Hans
+      var featureIsNotAvailableYetTips: RswiftResources.StringResource { .init(key: "featureIsNotAvailableYetTips", tableName: "Localizable", source: source, developmentValue: "Please complete your identity verification application to access this feature", comment: nil) }
 
       /// en translation: Forgot password?
       ///
@@ -1048,6 +1146,20 @@ struct _R {
       /// Locales: en
       var securityChangeEmailTitle: RswiftResources.StringResource { .init(key: "securityChangeEmailTitle", tableName: "Localizable", source: source, developmentValue: "Email", comment: nil) }
 
+      /// en translation: Forgot Password
+      ///
+      /// Key: securityForgotPassword
+      ///
+      /// Locales: en, zh-Hans
+      var securityForgotPassword: RswiftResources.StringResource { .init(key: "securityForgotPassword", tableName: "Localizable", source: source, developmentValue: "Forgot Password", comment: nil) }
+
+      /// en translation: Please Enter Your E-mail
+      ///
+      /// Key: securityForgotPasswordSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var securityForgotPasswordSubTitle: RswiftResources.StringResource { .init(key: "securityForgotPasswordSubTitle", tableName: "Localizable", source: source, developmentValue: "Please Enter Your E-mail", comment: nil) }
+
       /// en translation: Security Settings
       ///
       /// Key: securitySetting
@@ -1160,12 +1272,26 @@ struct _R {
       /// Locales: en, zh-Hans
       var switchNewAccountLogin: RswiftResources.StringResource { .init(key: "switchNewAccountLogin", tableName: "Localizable", source: source, developmentValue: "Switch New Account Login", comment: nil) }
 
+      /// en translation: Please tell us your name and nationality
+      ///
+      /// Key: tellYourNameAndNation
+      ///
+      /// Locales: en, zh-Hans
+      var tellYourNameAndNation: RswiftResources.StringResource { .init(key: "tellYourNameAndNation", tableName: "Localizable", source: source, developmentValue: "Please tell us your name and nationality", comment: nil) }
+
       /// en translation: Tips
       ///
       /// Key: tips
       ///
       /// Locales: en, zh-Hans
       var tips: RswiftResources.StringResource { .init(key: "tips", tableName: "Localizable", source: source, developmentValue: "Tips", comment: nil) }
+
+      /// en translation: To Verify
+      ///
+      /// Key: toVerify
+      ///
+      /// Locales: en, zh-Hans
+      var toVerify: RswiftResources.StringResource { .init(key: "toVerify", tableName: "Localizable", source: source, developmentValue: "To Verify", comment: nil) }
 
       /// en translation: Verify Phone Number
       ///
@@ -2135,6 +2261,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'EmptyCardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'EmptyCardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'EmptyCardTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
@@ -2173,7 +2300,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'HomeTransactionsViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconMeSet", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconMeSet' is used in nib 'HomeViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00191C", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00191C' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#ED4949", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#ED4949' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
@@ -2184,7 +2311,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconProfile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconProfile' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'LanguageSettingViewController', but couldn't be loaded.") }

@@ -19,6 +19,9 @@ class FillInAddressViewController: BaseViewController {
     @IBOutlet weak var addressTwoTextField: UITextField!
     @IBOutlet weak var postcodeTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
+
+    /// data source
+    var datasource: [RegionModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +31,9 @@ class FillInAddressViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
-        titleLabel.font = UIFont.fw.font28(weight: .bold)
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
-        subTitleLabel.font = UIFont.fw.font16()
         countryTextField.leftViewMode = .always
         countryTextField.leftView = textFiledLeftView()
         countryTextField.rightViewMode = .always
@@ -51,6 +52,19 @@ class FillInAddressViewController: BaseViewController {
         addressTwoTextField.leftView = textFiledLeftView()
         postcodeTextField.leftViewMode = .always
         postcodeTextField.leftView = textFiledLeftView()
+        titleLabel.text = R.string.localizable.verifyYourIdentityTitle()
+        subTitleLabel.text = R.string.localizable.enterYourAddress()
+        countryTextField.placeholder = R.string.localizable.chooseYourContryOfResidence()
+        stateTextField.placeholder = R.string.localizable.chooseYourStateOfResidence()
+        cityTextField.placeholder = R.string.localizable.chooseYourCityOfResidence()
+        addressOneTextField.placeholder = R.string.localizable.enterYourDetailAddressOne()
+        addressTwoTextField.placeholder = R.string.localizable.enterYourDetailAddressTwo()
+        postcodeTextField.placeholder = R.string.localizable.enterYourPostCode()
+        continueButton.setTitle(R.string.localizable.continue(), for: .normal)
+    }
+    
+    private func setupData() {
+        requestRegion()
     }
     
     private func textFieldRightView() -> UIView {
@@ -64,6 +78,29 @@ class FillInAddressViewController: BaseViewController {
         v.addSubview(btn)
         return v
     }
+    
+    private func gotoRegionPage() {
+        let vc = ChooseRegionViewController(style: .noCode)
+        vc.pageTitle = R.string.localizable.chooseYourCountryTitle()
+        vc.datasource = datasource
+        vc.didSelectedCompletion = { data in
+            self.countryTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+        }
+        self.present(vc, animated: true)
+    }
+    
+    // MARK: - Network
+    
+    private func requestRegion(isGotoAction: Bool = false) {
+        RegionRequest.list { isSuccess, message, list in
+            if isSuccess, let regionList = list {
+                self.datasource = regionList
+                if isGotoAction {
+                    self.gotoRegionPage()
+                }
+            }
+        }
+    }
 
     // MARK: - Actions
     
@@ -73,28 +110,22 @@ class FillInAddressViewController: BaseViewController {
     }
     
     @IBAction func countryAction(_ sender: Any) {
-        UIApplication.shared.keyWindow()?.endEditing(true)
-        let vc = ChooseRegionViewController()
-        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
-        vc.pageTitle = "choose your country"
-        vc.datasource = datas
-        vc.didSelectedCompletion = { data in
-            DispatchQueue.main.async {
-                self.countryTextField.text = data.title
-            }
+        if datasource.isEmpty {
+            requestRegion(isGotoAction: true)
+        } else {
+            gotoRegionPage()
         }
-        self.present(vc, animated: true)
     }
     
     @IBAction func stateAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
-        let vc = ChooseRegionViewController()
-        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
-        vc.pageTitle = "choose your country"
-        vc.datasource = datas
+        let vc = ChooseRegionViewController(style: .noCode)
+//        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
+//        vc.pageTitle = "choose your country"
+//        vc.datasource = datas
         vc.didSelectedCompletion = { data in
             DispatchQueue.main.async {
-                self.stateTextField.text = data.title
+                self.stateTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
             }
         }
         self.present(vc, animated: true)
@@ -102,13 +133,13 @@ class FillInAddressViewController: BaseViewController {
     
     @IBAction func cityAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
-        let vc = ChooseRegionViewController()
-        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
-        vc.pageTitle = "choose your country"
-        vc.datasource = datas
+        let vc = ChooseRegionViewController(style: .noCode)
+//        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
+//        vc.pageTitle = "choose your country"
+//        vc.datasource = datas
         vc.didSelectedCompletion = { data in
             DispatchQueue.main.async {
-                self.cityTextField.text = data.title
+                self.cityTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
             }
         }
         self.present(vc, animated: true)

@@ -30,7 +30,7 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     @IBOutlet weak var tipsViewTopConstraint: NSLayoutConstraint!
     
     private var tipsCheckedDic: [Int : Bool] = [:]
-    var datasource: [ChooseRegionModel] = []
+    var datasource: [RegionModel] = []
     
     // MARK: - Init
     
@@ -51,14 +51,9 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         tipsViewHeightConstraint.constant = 0
         tipsViewTopConstraint.constant = 4 //default is 20
         tipsView.backgroundColor = R.color.fwED4949()?.withAlphaComponent(0.1)
-        tipsTitleLabel.font = UIFont.fw.font16(weight: .bold)
-        tipsContentLabel.font = UIFont.fw.font14()
-        titleLabel.font = UIFont.fw.font28(weight: .bold)
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
-        subTitleLabel.font = UIFont.fw.font16()
-        infoLabell.font = .fw.font14()
         nameTextField.leftViewMode = .always
         nameTextField.leftView = textFiledLeftView()
         midleNameTextField.leftViewMode = .always
@@ -69,6 +64,14 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         chooseNationalTextField.leftView = textFiledLeftView()
         chooseNationalTextField.rightViewMode = .always
         chooseNationalTextField.rightView = textFieldRightView(#selector(chooseNationality))
+        titleLabel.text = R.string.localizable.verifyYourIdentityTitle()
+        subTitleLabel.text = R.string.localizable.tellYourNameAndNation()
+        infoLabell.text = R.string.localizable.enterFullLegalNameTips()
+        nameTextField.placeholder = R.string.localizable.enterYourName()
+        midleNameTextField.placeholder = R.string.localizable.enterYourMiddleName()
+        lastNameTextField.placeholder = R.string.localizable.enterYourLastName()
+        chooseNationalTextField.placeholder = R.string.localizable.chooseYourNationality()
+        continueNextButton.setTitle(R.string.localizable.continue(), for: .normal)
     }
     
     private func textFieldRightView(_ action: Selector) -> UIView {
@@ -130,39 +133,53 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     private func requestRegion() {
         RegionRequest.list { isSuccess, message, list in
             if isSuccess, let regionList = list {
-                for data in regionList {
-                    let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
-                    let region = ChooseRegionModel(title: title, subTitle: "")
-                    self.datasource.append(region)
-                }
+                self.datasource = regionList
             }
         }
     }
     
     private func gotoRegionPage() {
-        let vc = ChooseRegionViewController()
-        vc.pageTitle = "choose your nationality"
+        let vc = ChooseRegionViewController(style: .noCode)
+        vc.pageTitle = R.string.localizable.chooseYourNationality()
         vc.datasource = datasource
+        vc.style = .noCode
         vc.didSelectedCompletion = { data in
             DispatchQueue.main.async {
-                self.chooseNationalTextField.text = data.title
+                self.chooseNationalTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
             }
         }
         self.present(vc, animated: true)
+    }
+    
+    // MARK: - Network
+    
+    private func requestSaveKYCStepOne(firstName: String, middleName: String?, lastName: String, nationality: String) {
+        indicator.startAnimating()
+        KYCRequest.saveStepOne(firstName: firstName,
+                               middleName: middleName,
+                               lastName: lastName,
+                               nationality: nationality) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                let vc = FillInAddressViewController()
+                this.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
     }
     
     // MARK: - Action
     
     @objc @IBAction func chooseNationality() {
         if datasource.isEmpty {
+            indicator.startAnimating()
             RegionRequest.list { isSuccess, message, list in
+                self.indicator.stopAnimating()
                 if isSuccess, let regionList = list {
-                    for data in regionList {
-                        let title = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
-                        let region = ChooseRegionModel(title: title, subTitle: data.phoneCode ?? "")
-                        self.datasource.append(region)
-                        self.gotoRegionPage()
-                    }
+                    self.datasource = regionList
+                    self.gotoRegionPage()
                 }
             }
         } else {
@@ -171,8 +188,11 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     }
     
     @IBAction func continueNext(_ sender: UIButton) {
-        let vc = FillInAddressViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let firstName = nameTextField.text,
+                let middleName = midleNameTextField.text,
+                let lastName = lastNameTextField.text,
+                let nationality = chooseNationalTextField.text else { return }
+        requestSaveKYCStepOne(firstName: firstName, middleName: middleName, lastName: lastName, nationality: nationality)
     }
     
 }

@@ -16,10 +16,10 @@ struct PhoneRequest {
         provider.requestStatus(.sendCode(number: number), completion: completion)
     }
     
-    static func setPhone(code: String, uniId: String, number: String,
+    static func setPhone(code: String, uniId: String, number: String, phoneCountryCode: String,
                          completion: @escaping ((Bool, String, LoginModel?) -> Void)) {
         let provider = MoyaProvider<PhoneTarget>()
-        provider.requestObject(.setPhone(code: code, uniId: uniId, number: number),
+        provider.requestObject(.setPhone(code: code, uniId: uniId, number: number, phoneCountryCode: phoneCountryCode),
                                type: LoginModel.self,
                                completion: completion)
     }
@@ -27,7 +27,7 @@ struct PhoneRequest {
 
 enum PhoneTarget {
     case sendCode(number: String)
-    case setPhone(code: String, uniId: String, number: String)
+    case setPhone(code: String, uniId: String, number: String, phoneCountryCode: String)
 }
 
 extension PhoneTarget: BaseTargetType {
@@ -45,10 +45,11 @@ extension PhoneTarget: BaseTargetType {
         switch self {
         case .sendCode(let number):
             params["phone_number"] = number
-        case .setPhone(let code, let uniId, let number):
+        case .setPhone(let code, let uniId, let number, let phoneCountryCode):
             params["phone_code"] = code
             params["user_id"] = uniId
             params["phone_number"] = number
+            params["phone_country_code"] = phoneCountryCode
         }
         return params
     }
