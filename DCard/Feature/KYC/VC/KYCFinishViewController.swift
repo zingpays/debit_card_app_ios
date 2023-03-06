@@ -31,11 +31,7 @@ class KYCFinishViewController: BaseViewController {
 
     @IBAction func gotItAction(_ sender: Any) {
         if let vc = navigationController?.viewControllers.filter({ subVC in
-            if subVC.isMember(of: HomeViewController.self) {
-                return true
-            } else {
-                return false
-            }
+            return subVC.isMember(of: HomeViewController.self)
         }).first {
             navigationController?.popToViewController(vc, animated: true)
         }

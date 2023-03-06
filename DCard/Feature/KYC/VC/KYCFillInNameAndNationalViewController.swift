@@ -140,8 +140,8 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         vc.style = .noCode
         vc.didSelectedCompletion = { data in
             DispatchQueue.main.async {
-                self.updateNextStatus()
                 self.chooseNationalTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                self.inputEndEditing(self.chooseNationalTextField)
             }
         }
         self.present(vc, animated: true)
@@ -184,6 +184,7 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     }
     
     @IBAction func continueNext(_ sender: UIButton) {
+        guard sender.alpha == 1 else { return }
         guard let firstName = nameTextField.text,
                 let middleName = midleNameTextField.text,
                 let lastName = lastNameTextField.text,
@@ -200,6 +201,10 @@ extension KYCFillInNameAndNationalViewController: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        inputEndEditing(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
         inputEndEditing(textField)
     }
 }

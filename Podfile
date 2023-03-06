@@ -54,7 +54,7 @@ target 'DCard' do
   pod 'SwiftDate'
   
   # https://developers.veriff.com/#adding-the-sdk-to-the-project
-#  pod 'VeriffSDK'
+  pod 'VeriffSDK'
 
   target 'DCardTests' do
     inherit! :search_paths

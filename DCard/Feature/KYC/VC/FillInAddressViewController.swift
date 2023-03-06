@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Veriff
 
 class FillInAddressViewController: BaseViewController {
     
@@ -21,6 +22,18 @@ class FillInAddressViewController: BaseViewController {
     @IBOutlet weak var continueButton: UIButton!
     
     private var tipsCheckedDic: [Int : Bool] = [:]
+    
+    private var countryCode: Int? = 0
+    private var stateCode: Int?
+    
+    private let configuration: VeriffSdk.Configuration = {
+        let branding = VeriffSdk.Branding()
+        branding.logo = UIImage(named: "AppIcon.png")
+        let identif = LocalizationManager.shared.currentLanguage() == .zh ? "Zh" : "en"
+        let locale = Locale(identifier: identif)
+        let config = VeriffSdk.Configuration(branding: branding, languageLocale: locale)
+        return config
+    }()
 
     /// data source
     var datasource: [RegionModel] = []
@@ -67,7 +80,7 @@ class FillInAddressViewController: BaseViewController {
     }
     
     private func setupData() {
-        requestRegion()
+        requestRegion(actionTextField: countryTextField)
     }
     
     private func textFieldRightView() -> UIView {
@@ -130,26 +143,49 @@ class FillInAddressViewController: BaseViewController {
         return checkedCount == 5
     }
     
-    private func gotoRegionPage() {
+    private func gotoRegionPage(actionTextField: UITextField, datas: [RegionModel]) {
         let vc = ChooseRegionViewController(style: .noCode)
         vc.pageTitle = R.string.localizable.chooseYourContryOfResidence()
-        vc.datasource = datasource
-        vc.didSelectedCompletion = { data in
-            self.countryTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+        vc.datasource = datas
+        vc.didSelectedCompletion = { [weak self] data in
+            guard let this = self else { return }
+            actionTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+            if actionTextField == this.countryTextField { this.countryCode = data.id }
+            if actionTextField == this.stateTextField { this.stateCode = data.id }
+            this.inputEndEditing(actionTextField)
         }
         self.present(vc, animated: true)
     }
     
+    private func handleSavedKYCAction() {
+        indicator.startAnimating()
+        KYCRequest.urlSession { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess, let sessionUrl = data?.url {
+                DispatchQueue.main.async {
+                    let veriff = VeriffSdk.shared
+                    veriff.delegate = self
+                    veriff.startAuthentication(sessionUrl: sessionUrl, configuration: this.configuration, presentingFrom: this)
+                }
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
     // MARK: - Network
     
-    private func requestRegion(isGotoAction: Bool = false) {
+    private func requestRegion(id: Int? = nil, isGotoAction: Bool = false, actionTextField: UITextField) {
         if isGotoAction { indicator.startAnimating() }
-        RegionRequest.list { isSuccess, message, list in
+        RegionRequest.list(id: id) { isSuccess, message, list in
             self.indicator.stopAnimating()
             if isSuccess, let regionList = list {
-                self.datasource = regionList
+                if actionTextField == self.countryTextField {
+                    self.datasource = regionList
+                }
                 if isGotoAction {
-                    self.gotoRegionPage()
+                    self.gotoRegionPage(actionTextField: actionTextField, datas: regionList)
                 }
             }
         }
@@ -161,59 +197,75 @@ class FillInAddressViewController: BaseViewController {
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
-                let vc = KYCFinishViewController()
-                this.navigationController?.pushViewController(vc, animated: true)
+                this.handleSavedKYCAction()
             } else {
                 this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func requestSaveKYCStepThree(isVeriffPass: Bool) {
+        indicator.startAnimating()
+        let veriffSubmitted = isVeriffPass ? "Yes" : "No"
+        KYCRequest.saveStepThree(veriffSubmitted: veriffSubmitted) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.submitRequest()
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func submitRequest() {
+        indicator.startAnimating()
+        KYCRequest.submit { isSuccess, message in
+            if isSuccess {
+                let vc = KYCFinishViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.view.makeToast(message, position: .center)
             }
         }
     }
 
     // MARK: - Actions
     
-    @IBAction func continueAction(_ sender: Any) {
+    @IBAction func continueAction(_ sender: UIButton) {
+        UIApplication.shared.keyWindow()?.endEditing(true)
+        guard sender.alpha == 1 else { return }
         guard let country = countryTextField.text,
                 let state = stateTextField.text,
                 let city = cityTextField.text,
                 let zipCode = postcodeTextField.text,
                 let address1 = addressOneTextField.text else { return }
-        requestSaveKYCStepTwo(country: country, state: state, city: city, zipCode: zipCode, address1: address1, address2: addressTwoTextField.text)
+        requestSaveKYCStepTwo(country: country,
+                              state: state,
+                              city: city,
+                              zipCode: zipCode,
+                              address1: address1,
+                              address2: addressTwoTextField.text)
     }
     
     @IBAction func countryAction(_ sender: Any) {
         if datasource.isEmpty {
-            requestRegion(isGotoAction: true)
+            requestRegion(isGotoAction: true, actionTextField: countryTextField)
         } else {
-            gotoRegionPage()
+            gotoRegionPage(actionTextField: countryTextField, datas: datasource)
         }
     }
     
     @IBAction func stateAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
-        let vc = ChooseRegionViewController(style: .noCode)
-//        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
-//        vc.pageTitle = "choose your country"
-//        vc.datasource = datas
-        vc.didSelectedCompletion = { data in
-            DispatchQueue.main.async {
-                self.stateTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
-            }
-        }
-        self.present(vc, animated: true)
+        guard let id = countryCode else { return }
+        requestRegion(id: id, isGotoAction: true, actionTextField: stateTextField)
     }
     
     @IBAction func cityAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
-        let vc = ChooseRegionViewController(style: .noCode)
-//        let datas = [ChooseRegionModel(title: "China", subTitle: ""), ChooseRegionModel(title: "Singpore", subTitle: "")]
-//        vc.pageTitle = "choose your country"
-//        vc.datasource = datas
-        vc.didSelectedCompletion = { data in
-            DispatchQueue.main.async {
-                self.cityTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
-            }
-        }
-        self.present(vc, animated: true)
+        guard let id = stateCode else { return }
+        requestRegion(id: id, isGotoAction: true, actionTextField: cityTextField)
     }
 }
 
@@ -225,5 +277,50 @@ extension FillInAddressViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         inputEndEditing(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        inputEndEditing(textField)
+    }
+}
+
+extension FillInAddressViewController: VeriffSdkDelegate {
+    func sessionDidEndWithResult(_ result: Veriff.VeriffSdk.Result) {
+        switch result.status {
+        case .done:
+            // The user successfully submitted the session
+            requestSaveKYCStepThree(isVeriffPass: true)
+            break
+        case .canceled:
+            // The user canceled the verification process.
+            requestSaveKYCStepThree(isVeriffPass: false)
+            DLog.error("cancel!!!")
+            break
+        case .error(let error):
+            switch error {
+            case .cameraUnavailable:
+                DLog.error("cameraUnavailable")
+            case .microphoneUnavailable:
+                DLog.error("microphoneUnavailable")
+            case .serverError:
+                DLog.error("serverError")
+            case .localError:
+                DLog.error("localError")
+            case .networkError:
+                DLog.error("networkError")
+            case .uploadError:
+                DLog.error("uploadError")
+            case .videoFailed:
+                DLog.error("videoFailed")
+            case .deprecatedSDKVersion:
+                DLog.error("deprecatedSDKVersion")
+            case .unknown:
+                DLog.error("unknown")
+            @unknown default:
+                DLog.error("default")
+            }
+        @unknown default:
+            DLog.error("default")
+        }
     }
 }

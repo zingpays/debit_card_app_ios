@@ -73,7 +73,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.infoPlist` struct is generated, and contains static references to 2 localization keys.
+    /// This `_R.string.infoPlist` struct is generated, and contains static references to 5 localization keys.
     struct infoPlist {
       let source: RswiftResources.StringResource.Source
 
@@ -84,12 +84,33 @@ struct _R {
       /// Locales: en, zh-Hans
       var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "InfoPlist", source: source, developmentValue: "Stella Pay", comment: nil) }
 
+      /// en translation: We need use your Camera
+      ///
+      /// Key: NSCameraUsageDescription
+      ///
+      /// Locales: en, zh-Hans
+      var nsCameraUsageDescription: RswiftResources.StringResource { .init(key: "NSCameraUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your Camera", comment: nil) }
+
       /// en translation: Need to use your biometric information to lock in your app.
       ///
       /// Key: NSFaceIDUsageDescription
       ///
       /// Locales: en, zh-Hans
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
+
+      /// en translation: We need use your microphone
+      ///
+      /// Key: NSMicrophoneUsageDescription
+      ///
+      /// Locales: en, zh-Hans
+      var nsMicrophoneUsageDescription: RswiftResources.StringResource { .init(key: "NSMicrophoneUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your microphone", comment: nil) }
+
+      /// en translation: We need use your photo library
+      ///
+      /// Key: NSPhotoLibraryUsageDescription
+      ///
+      /// Locales: en, zh-Hans
+      var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
     /// This `_R.string.localizable` struct is generated, and contains static references to 194 localization keys.

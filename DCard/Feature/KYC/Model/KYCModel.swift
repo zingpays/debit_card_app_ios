@@ -40,6 +40,7 @@ struct KYCModel: Mappable {
     var uniqueId: Int = 0
     var updatedAt: String?
     var zipcode: String?
+    var veriffSession: KYCUrlSessionModel?
 
     init?(map: Map) {}
 
@@ -74,6 +75,7 @@ struct KYCModel: Mappable {
         uniqueId         <- map["unique_id"]
         updatedAt        <- map["updated_at"]
         zipcode          <- map["zipcode"]
+        veriffSession    <- map["veriff_session"]
     }
 
 }

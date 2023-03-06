@@ -10,6 +10,7 @@ import ObjectMapper
 
 struct RegionModel: Mappable {
     
+    var id: Int?
     var nameEn: String?
     var nameZh: String?
     var phoneCode: String?
@@ -17,6 +18,7 @@ struct RegionModel: Mappable {
     init?(map: ObjectMapper.Map) {}
 
     mutating func mapping(map: Map) {
+        id             <- map["id"]
         nameEn         <- map["name_en"]
         nameZh         <- map["name_zh"]
         phoneCode      <- map["phone_code"]

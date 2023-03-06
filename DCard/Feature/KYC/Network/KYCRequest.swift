@@ -33,11 +33,32 @@ struct KYCRequest {
                                type: KYCModel.self,
                                completion: completion)
     }
+    
+    static func saveStepThree(veriffSubmitted: String,
+                            completion: @escaping ((Bool, String, KYCModel?) -> Void)) {
+        let provider = MoyaProvider<KYCTarget>()
+        provider.requestObject(.stepThree(veriffSubmitted: veriffSubmitted),
+                               type: KYCModel.self,
+                               completion: completion)
+    }
+    
+    static func urlSession(completion: @escaping ((Bool, String, KYCUrlSessionModel?) -> Void)) {
+        let provider = MoyaProvider<KYCTarget>()
+        provider.requestObject(.veriffSession, type: KYCUrlSessionModel.self, completion: completion)
+    }
+    
+    static func submit(completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<KYCTarget>()
+        provider.requestStatus(.submit, completion: completion)
+    }
 }
 
 enum KYCTarget {
     case stepOne(firstName: String, middleName: String?, lastName: String, nationality: String)
     case stepTwo(country: String, state: String, city: String, address1: String, address2: String?, zipCode: String)
+    case stepThree(veriffSubmitted: String)
+    case veriffSession
+    case submit
 }
 
 extension KYCTarget: BaseTargetType {
@@ -47,6 +68,12 @@ extension KYCTarget: BaseTargetType {
             return "/kyc/save-step1"
         case .stepTwo:
             return "/kyc/save-step2"
+        case .stepThree:
+            return "/kyc/save-step3"
+        case .veriffSession:
+            return "/kyc/get-veriff-session"
+        case .submit:
+            return "/kyc/submit"
         }
     }
     
@@ -67,6 +94,12 @@ extension KYCTarget: BaseTargetType {
             params["address1"] = address1
             params["address2"] = address2
             params["zipcode"] = zipCode
+            params["unique_id"] = "6648244"
+        case .stepThree(let veriffSubmitted):
+            params["veriff_submitted"] = veriffSubmitted
+        case .veriffSession:
+            params["unique_id"] = "6648244"
+        case .submit:
             params["unique_id"] = "6648244"
         }
         return params

@@ -63,7 +63,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="广东" placeholder="Choose your state of residence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-u7-eCz">
+                <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your state of residence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-u7-eCz">
                     <rect key="frame" x="16" y="295" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
@@ -77,7 +77,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="深圳" placeholder="Choose your city of residence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-oc-EUJ">
+                <textField opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your city of residence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-oc-EUJ">
                     <rect key="frame" x="16" y="361" width="360" height="50"/>
                     <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
@@ -157,7 +157,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="Npe-Rs-tUt"/>
+                        <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="jay-Vo-vDk"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc8-vf-xwU">

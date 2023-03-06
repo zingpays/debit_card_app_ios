@@ -10,14 +10,14 @@ import Moya
 import Moya_ObjectMapper
 
 struct RegionRequest {
-    static func list(completion: @escaping ((Bool, String, [RegionModel]?) -> Void)) {
+    static func list(id: Int? = nil, completion: @escaping ((Bool, String, [RegionModel]?) -> Void)) {
         let provider = MoyaProvider<RegionTarget>()
-        provider.requestObjects(.list, type: RegionModel.self, completion: completion)
+        provider.requestObjects(.list(id: id), type: RegionModel.self, completion: completion)
     }
 }
 
 enum RegionTarget {
-    case list
+    case list(id: Int?)
 }
 
 extension RegionTarget: BaseTargetType {
@@ -35,8 +35,8 @@ extension RegionTarget: BaseTargetType {
     var parameters: [String : Any]? {
         var params: [String : Any] = [:]
         switch self {
-        case .list:
-            break
+        case .list(let id):
+            params["id"] = id
         }
         return params
     }

@@ -8,3 +8,6 @@
 
 "CFBundleDisplayName" = "Stella Pay";
 "NSFaceIDUsageDescription" = "Need to use your biometric information to lock in your app.";
+"NSCameraUsageDescription" = "We need use your Camera";
+"NSMicrophoneUsageDescription" = "We need use your microphone";
+"NSPhotoLibraryUsageDescription" = "We need use your photo library";

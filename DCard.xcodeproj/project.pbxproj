@@ -96,6 +96,7 @@
 		545E625029B193FB007D724E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E624F29B193FB007D724E /* CardModel.swift */; };
 		545E625329B1F4F5007D724E /* KYCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E625229B1F4F5007D724E /* KYCRequest.swift */; };
 		545E625529B1F639007D724E /* KYCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E625429B1F639007D724E /* KYCModel.swift */; };
+		545E625729B5E921007D724E /* KYCUrlSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E625629B5E921007D724E /* KYCUrlSessionModel.swift */; };
 		546BD3F5299A2183003C15D8 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F4299A2183003C15D8 /* LoginRequest.swift */; };
 		546BD3F7299A21A2003C15D8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F6299A21A2003C15D8 /* LoginModel.swift */; };
 		546BD3F9299A3A66003C15D8 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD3F8299A3A66003C15D8 /* UserRequest.swift */; };
@@ -356,6 +357,7 @@
 		545E624F29B193FB007D724E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		545E625229B1F4F5007D724E /* KYCRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCRequest.swift; sourceTree = "<group>"; };
 		545E625429B1F639007D724E /* KYCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCModel.swift; sourceTree = "<group>"; };
+		545E625629B5E921007D724E /* KYCUrlSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCUrlSessionModel.swift; sourceTree = "<group>"; };
 		546BD3F4299A2183003C15D8 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		546BD3F6299A21A2003C15D8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		546BD3F8299A3A66003C15D8 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 			children = (
 				5473857729A9C83100924AD8 /* RegionModel.swift */,
 				545E625429B1F639007D724E /* KYCModel.swift */,
+				545E625629B5E921007D724E /* KYCUrlSessionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1597,6 +1600,7 @@
 				545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */,
 				545C569D2986142F00D7F058 /* FillInAddressViewController.swift in Sources */,
 				54CD895829A6106C0038E822 /* ChangePasswordViewController.swift in Sources */,
+				545E625729B5E921007D724E /* KYCUrlSessionModel.swift in Sources */,
 				542BC18B297001DD00133659 /* ChooseRegionViewController.swift in Sources */,
 				541A8D87296BFEC600C59026 /* UIFont+Extension.swift in Sources */,
 				542BC183296E8D2B00133659 /* SettingPasswordTipsTableViewCell.swift in Sources */,
