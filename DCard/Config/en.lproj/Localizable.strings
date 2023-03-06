@@ -91,6 +91,9 @@
 "enterYourDetailAddressOne" = "Enter your detail address 1";
 "enterYourDetailAddressTwo" = "Enter your detail address 2 (optional)";
 "enterYourPostCode" = "Enter your post code";
+"thanksForYourVerification" = "Thanks For Your Verification !";
+"thanksForYourVerificationSubTitle" = "Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.";
+"thanksForYourVerificationGotIt" = "Got It";
 
 /// Security
 "securityVerificationTitle" = "Security Verification";

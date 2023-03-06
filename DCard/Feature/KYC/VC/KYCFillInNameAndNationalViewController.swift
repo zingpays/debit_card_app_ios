@@ -98,22 +98,17 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         if nameTextField.text?.count ?? 0 > 0 {
             tipsCheckedDic[0] = true
         } else {
-            tipsCheckedDic[0] = true
-        }
-        if midleNameTextField.text?.count ?? 0 > 0 {
-            tipsCheckedDic[1] = true
-        } else {
-            tipsCheckedDic[1] = true
+            tipsCheckedDic[0] = false
         }
         if lastNameTextField.text?.count ?? 0 > 0 {
-            tipsCheckedDic[2] = true
+            tipsCheckedDic[1] = true
         } else {
-            tipsCheckedDic[2] = true
+            tipsCheckedDic[1] = false
         }
         if chooseNationalTextField.text?.count ?? 0 > 0 {
-            tipsCheckedDic[3] = true
+            tipsCheckedDic[2] = true
         } else {
-            tipsCheckedDic[3] = true
+            tipsCheckedDic[2] = false
         }
         updateNextStatus()
     }
@@ -126,8 +121,8 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
                 checkedCount += 1
             }
         }
-        continueNextButton.alpha = checkedCount == 4 ? 1 : 0.4
-        return checkedCount == 4
+        continueNextButton.alpha = checkedCount == 3 ? 1 : 0.4
+        return checkedCount == 3
     }
     
     private func requestRegion() {
@@ -145,6 +140,7 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         vc.style = .noCode
         vc.didSelectedCompletion = { data in
             DispatchQueue.main.async {
+                self.updateNextStatus()
                 self.chooseNationalTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
             }
         }
@@ -203,7 +199,7 @@ extension KYCFillInNameAndNationalViewController: UITextFieldDelegate {
         inputBeginEditing(textField)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         inputEndEditing(textField)
     }
 }

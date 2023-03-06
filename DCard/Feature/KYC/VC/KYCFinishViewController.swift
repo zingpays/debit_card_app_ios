@@ -12,6 +12,7 @@ class KYCFinishViewController: BaseViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var gitItButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +22,22 @@ class KYCFinishViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
-        titleLabel.font = UIFont.fw.font24(weight: .bold)
-        subTitleLabel.font = UIFont.fw.font15(weight: .light)
+        titleLabel.text = R.string.localizable.thanksForYourVerification()
+        subTitleLabel.text = R.string.localizable.securityForgotPasswordSubTitle()
+        gitItButton.setTitle(R.string.localizable.thanksForYourVerificationGotIt(), for: .normal)
     }
     
     // MARK: - Actions
 
     @IBAction func gotItAction(_ sender: Any) {
-        
+        if let vc = navigationController?.viewControllers.filter({ subVC in
+            if subVC.isMember(of: HomeViewController.self) {
+                return true
+            } else {
+                return false
+            }
+        }).first {
+            navigationController?.popToViewController(vc, animated: true)
+        }
     }
 }

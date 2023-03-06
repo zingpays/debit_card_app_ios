@@ -20,10 +20,24 @@ struct KYCRequest {
                                type: KYCModel.self,
                                completion: completion)
     }
+    
+    static func saveStepTwo(country: String,
+                            state: String,
+                            city: String,
+                            address1: String,
+                            address2: String?,
+                            zipCode: String,
+                            completion: @escaping ((Bool, String, KYCModel?) -> Void)) {
+        let provider = MoyaProvider<KYCTarget>()
+        provider.requestObject(.stepTwo(country: country, state: state, city: city, address1: address1, address2: address2, zipCode: zipCode),
+                               type: KYCModel.self,
+                               completion: completion)
+    }
 }
 
 enum KYCTarget {
     case stepOne(firstName: String, middleName: String?, lastName: String, nationality: String)
+    case stepTwo(country: String, state: String, city: String, address1: String, address2: String?, zipCode: String)
 }
 
 extension KYCTarget: BaseTargetType {
@@ -31,6 +45,8 @@ extension KYCTarget: BaseTargetType {
         switch self {
         case .stepOne:
             return "/kyc/save-step1"
+        case .stepTwo:
+            return "/kyc/save-step2"
         }
     }
     
@@ -43,6 +59,14 @@ extension KYCTarget: BaseTargetType {
             params["last_name"] = lastName
             params["nationality"] = nationality
             params["date_of_birth"] = "1990-11-30"
+            params["unique_id"] = "6648244"
+        case .stepTwo(let country, let state, let city, let address1, let address2, let zipCode):
+            params["country"] = country
+            params["state"] = state
+            params["city"] = city
+            params["address1"] = address1
+            params["address2"] = address2
+            params["zipcode"] = zipCode
             params["unique_id"] = "6648244"
         }
         return params

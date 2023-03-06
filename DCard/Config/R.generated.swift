@@ -92,7 +92,7 @@ struct _R {
       var nsFaceIDUsageDescription: RswiftResources.StringResource { .init(key: "NSFaceIDUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Need to use your biometric information to lock in your app.", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 191 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 194 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -1279,6 +1279,27 @@ struct _R {
       /// Locales: en, zh-Hans
       var tellYourNameAndNation: RswiftResources.StringResource { .init(key: "tellYourNameAndNation", tableName: "Localizable", source: source, developmentValue: "Please tell us your name and nationality", comment: nil) }
 
+      /// en translation: Thanks For Your Verification !
+      ///
+      /// Key: thanksForYourVerification
+      ///
+      /// Locales: en, zh-Hans
+      var thanksForYourVerification: RswiftResources.StringResource { .init(key: "thanksForYourVerification", tableName: "Localizable", source: source, developmentValue: "Thanks For Your Verification !", comment: nil) }
+
+      /// en translation: Got It
+      ///
+      /// Key: thanksForYourVerificationGotIt
+      ///
+      /// Locales: en, zh-Hans
+      var thanksForYourVerificationGotIt: RswiftResources.StringResource { .init(key: "thanksForYourVerificationGotIt", tableName: "Localizable", source: source, developmentValue: "Got It", comment: nil) }
+
+      /// en translation: Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.
+      ///
+      /// Key: thanksForYourVerificationSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var thanksForYourVerificationSubTitle: RswiftResources.StringResource { .init(key: "thanksForYourVerificationSubTitle", tableName: "Localizable", source: source, developmentValue: "Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.", comment: nil) }
+
       /// en translation: Tips
       ///
       /// Key: tips
@@ -2307,7 +2328,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCFillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconProfile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconProfile' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconTick", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconTick' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'KYCFinishViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconProfile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconProfile' is used in nib 'KYCUnAvailableViewController', but couldn't be loaded.") }

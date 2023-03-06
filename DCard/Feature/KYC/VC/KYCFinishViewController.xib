@@ -9,9 +9,18 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCFinishViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="gitItButton" destination="xnx-x3-EVE" id="hQW-Nq-XTr"/>
                 <outlet property="subTitleLabel" destination="EyB-WK-10b" id="tHA-gz-7Pg"/>
                 <outlet property="titleLabel" destination="wV8-rx-i07" id="suE-aW-i3Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,20 +32,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks For Your Verification ! " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV8-rx-i07">
-                    <rect key="frame" x="44" y="293" width="305" height="28.666666666666686"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" name="fw#000000"/>
+                    <rect key="frame" x="34.333333333333343" y="293" width="324.66666666666663" height="28.333333333333314"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyB-WK-10b">
-                    <rect key="frame" x="27" y="333.66666666666669" width="338" height="54"/>
+                    <rect key="frame" x="27" y="333.33333333333331" width="338" height="53"/>
                     <string key="text">Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly. </string>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" name="fw#000000"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                    <color key="textColor" name="fw#001214"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnx-x3-EVE">
-                    <rect key="frame" x="27" y="435.66666666666669" width="338" height="46"/>
+                    <rect key="frame" x="27" y="434.33333333333331" width="338" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="ylb-Dc-JT9"/>
@@ -94,14 +103,14 @@
                 <constraint firstItem="wV8-rx-i07" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ubN-QN-nDb"/>
                 <constraint firstItem="0Be-xU-S1O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zOS-Kn-BZC"/>
             </constraints>
-            <point key="canvasLocation" x="362.59541984732823" y="-101.40845070422536"/>
+            <point key="canvasLocation" x="120" y="-94"/>
         </view>
     </objects>
     <resources>
         <image name="iconProfile" width="82" height="82"/>
         <image name="iconTick" width="28" height="28"/>
-        <namedColor name="fw#000000">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

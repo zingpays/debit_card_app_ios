@@ -19,6 +19,8 @@ class FillInAddressViewController: BaseViewController {
     @IBOutlet weak var addressTwoTextField: UITextField!
     @IBOutlet weak var postcodeTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
+    
+    private var tipsCheckedDic: [Int : Bool] = [:]
 
     /// data source
     var datasource: [RegionModel] = []
@@ -26,6 +28,7 @@ class FillInAddressViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupData()
     }
     
     // MARK: - Private
@@ -79,9 +82,57 @@ class FillInAddressViewController: BaseViewController {
         return v
     }
     
+    private func inputBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = R.color.fw00A8BB()?.cgColor
+        textField.layer.borderWidth = 2
+    }
+    
+    private func inputEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.clear.cgColor
+        textField.layer.borderWidth = 0
+        if countryTextField.text?.count ?? 0 > 0 {
+            tipsCheckedDic[0] = true
+        } else {
+            tipsCheckedDic[0] = false
+        }
+        if stateTextField.text?.count ?? 0 > 0 {
+            tipsCheckedDic[1] = true
+        } else {
+            tipsCheckedDic[1] = false
+        }
+        if cityTextField.text?.count ?? 0 > 0 {
+            tipsCheckedDic[2] = true
+        } else {
+            tipsCheckedDic[2] = false
+        }
+        if addressOneTextField.text?.count ?? 0 > 0 {
+            tipsCheckedDic[3] = true
+        } else {
+            tipsCheckedDic[3] = false
+        }
+        if postcodeTextField.text?.count ?? 0 > 0 {
+            tipsCheckedDic[4] = true
+        } else {
+            tipsCheckedDic[4] = false
+        }
+        updateNextStatus()
+    }
+    
+    @discardableResult
+    private func updateNextStatus() -> Bool {
+        var checkedCount = 0
+        for (_, status) in tipsCheckedDic {
+            if status {
+                checkedCount += 1
+            }
+        }
+        continueButton.alpha = checkedCount == 5 ? 1 : 0.4
+        return checkedCount == 5
+    }
+    
     private func gotoRegionPage() {
         let vc = ChooseRegionViewController(style: .noCode)
-        vc.pageTitle = R.string.localizable.chooseYourCountryTitle()
+        vc.pageTitle = R.string.localizable.chooseYourContryOfResidence()
         vc.datasource = datasource
         vc.didSelectedCompletion = { data in
             self.countryTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
@@ -92,7 +143,9 @@ class FillInAddressViewController: BaseViewController {
     // MARK: - Network
     
     private func requestRegion(isGotoAction: Bool = false) {
+        if isGotoAction { indicator.startAnimating() }
         RegionRequest.list { isSuccess, message, list in
+            self.indicator.stopAnimating()
             if isSuccess, let regionList = list {
                 self.datasource = regionList
                 if isGotoAction {
@@ -101,12 +154,30 @@ class FillInAddressViewController: BaseViewController {
             }
         }
     }
+    
+    private func requestSaveKYCStepTwo(country: String, state: String, city: String, zipCode: String, address1: String, address2: String?) {
+        indicator.startAnimating()
+        KYCRequest.saveStepTwo(country: country, state: state, city: city, address1: address1, address2: address2, zipCode: zipCode) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                let vc = KYCFinishViewController()
+                this.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
 
     // MARK: - Actions
     
     @IBAction func continueAction(_ sender: Any) {
-        let vc = KYCFinishViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let country = countryTextField.text,
+                let state = stateTextField.text,
+                let city = cityTextField.text,
+                let zipCode = postcodeTextField.text,
+                let address1 = addressOneTextField.text else { return }
+        requestSaveKYCStepTwo(country: country, state: state, city: city, zipCode: zipCode, address1: address1, address2: addressTwoTextField.text)
     }
     
     @IBAction func countryAction(_ sender: Any) {
@@ -143,5 +214,16 @@ class FillInAddressViewController: BaseViewController {
             }
         }
         self.present(vc, animated: true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension FillInAddressViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        inputBeginEditing(textField)
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        inputEndEditing(textField)
     }
 }
