@@ -71,7 +71,7 @@ struct KYCModel: Mappable {
     var updatedAt: String?
     var zipcode: String?
     var veriffSession: KYCUrlSessionModel?
-    var resubmitted_fields: KYCResubmittedFieldsModel?
+    var resubmittedFields: KYCResubmittedFieldsModel?
 
     init?(map: Map) {}
 
@@ -107,7 +107,7 @@ struct KYCModel: Mappable {
         updatedAt          <- map["updated_at"]
         zipcode            <- map["zipcode"]
         veriffSession      <- map["veriff_session"]
-        resubmitted_fields <- map["resubmitted_fields"]
+        resubmittedFields  <- map["resubmitted_fields"]
     }
 
 }

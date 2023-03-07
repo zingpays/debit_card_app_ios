@@ -26,12 +26,17 @@
                 <outlet property="chooseNationalTextField" destination="3Uv-Ry-Mu9" id="onc-Ll-gta"/>
                 <outlet property="continueNextButton" destination="4kx-By-MIf" id="Vyf-lv-ERl"/>
                 <outlet property="infoLabell" destination="77N-wq-JVA" id="FS1-nY-b3X"/>
+                <outlet property="lastNameErrorTipsLabel" destination="2My-ig-SjA" id="INv-VP-K0F"/>
                 <outlet property="lastNameTextField" destination="tAn-u2-Qio" id="rfq-GC-6JJ"/>
                 <outlet property="lastNameTipsHeightConstraint" destination="3fO-HV-b3z" id="Xkn-Pn-eme"/>
+                <outlet property="middleNameErrorTipsLabel" destination="EIm-nx-a2l" id="pp7-Bn-0GV"/>
                 <outlet property="middleNameTipsHeightConstraint" destination="eVR-j8-mAO" id="fzK-dN-fwh"/>
                 <outlet property="midleNameTextField" destination="mhU-lu-dc8" id="Oyp-PI-fXC"/>
+                <outlet property="nameErrorTipsLabel" destination="7iW-O7-UQz" id="gR7-t8-lcS"/>
                 <outlet property="nameTextField" destination="hfP-0P-z9f" id="M8Y-wI-p24"/>
                 <outlet property="nameTipsHeightConstraint" destination="Taj-rG-SkA" id="7Br-ZK-jji"/>
+                <outlet property="nationalErrorTipsLabel" destination="tiH-cR-WUe" id="Hv9-Le-xog"/>
+                <outlet property="nationalTipsHeightConstraint" destination="3OD-Hx-aas" id="KiM-sh-eQm"/>
                 <outlet property="subTitleLabel" destination="oZx-pT-NNL" id="dgk-ga-0ud"/>
                 <outlet property="tipsContentLabel" destination="gqG-47-zqh" id="e2K-9C-9gb"/>
                 <outlet property="tipsTitleLabel" destination="e2c-8a-OaV" id="giu-dZ-1xD"/>
@@ -118,7 +123,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kx-By-MIf">
-                    <rect key="frame" x="27" y="654" width="338" height="46"/>
+                    <rect key="frame" x="27" y="650" width="338" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Bkr-A8-oWf"/>
@@ -230,11 +235,21 @@
                         <action selector="chooseNationality" destination="-1" eventType="touchUpInside" id="kFG-DF-Fx1"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="· Your last name is wrong, please enter again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiH-cR-WUe">
+                    <rect key="frame" x="16" y="638" width="361" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="3OD-Hx-aas"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" name="fw#ED4949"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="mhU-lu-dc8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0a0-36-nTS"/>
+                <constraint firstItem="tiH-cR-WUe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3EY-6h-NTP"/>
                 <constraint firstAttribute="trailing" secondItem="77N-wq-JVA" secondAttribute="trailing" constant="17" id="4wI-wd-KyV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7iW-O7-UQz" secondAttribute="trailing" constant="17" id="87b-YD-SG2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oZx-pT-NNL" secondAttribute="trailing" constant="17" id="9Sg-eM-moO"/>
@@ -258,6 +273,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RAq-Re-Irh" secondAttribute="trailing" constant="17" id="KeU-L5-Gbx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TKH-6l-6uN" secondAttribute="trailing" constant="17" id="LIA-4n-mmC"/>
                 <constraint firstItem="7iW-O7-UQz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LJU-xd-F3w"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tiH-cR-WUe" secondAttribute="trailing" constant="16" id="MR5-Ry-TCY"/>
                 <constraint firstItem="1KM-7V-hIk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Mp1-mT-xe2"/>
                 <constraint firstItem="tAn-u2-Qio" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NdA-J2-8eq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EIm-nx-a2l" secondAttribute="trailing" constant="17" id="O4k-LA-MQz"/>
@@ -266,17 +282,18 @@
                 <constraint firstItem="3Uv-Ry-Mu9" firstAttribute="top" secondItem="2My-ig-SjA" secondAttribute="bottom" constant="12" id="SOf-66-Dr0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hfP-0P-z9f" secondAttribute="trailing" constant="17" id="WnS-st-dhb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mhU-lu-dc8" secondAttribute="trailing" constant="17" id="fdm-2X-O8o"/>
+                <constraint firstItem="tiH-cR-WUe" firstAttribute="top" secondItem="3Uv-Ry-Mu9" secondAttribute="bottom" constant="8" id="hTv-SU-iQS"/>
                 <constraint firstItem="3Uv-Ry-Mu9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kRE-MA-yh6"/>
                 <constraint firstItem="4kx-By-MIf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="27" id="pGh-v3-1X7"/>
                 <constraint firstItem="hfP-0P-z9f" firstAttribute="top" secondItem="77N-wq-JVA" secondAttribute="bottom" constant="24" id="pQK-MK-8OT"/>
                 <constraint firstItem="RAq-Re-Irh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="78" id="pq8-2Q-hX8"/>
                 <constraint firstItem="oZx-pT-NNL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ro0-Pd-Z9z"/>
                 <constraint firstItem="lgM-Or-jaW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sqd-mU-RjE"/>
-                <constraint firstItem="4kx-By-MIf" firstAttribute="top" secondItem="3Uv-Ry-Mu9" secondAttribute="bottom" constant="24" id="uns-w5-uTQ"/>
+                <constraint firstItem="4kx-By-MIf" firstAttribute="top" secondItem="tiH-cR-WUe" secondAttribute="bottom" constant="12" id="u1h-NB-5Hz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2My-ig-SjA" secondAttribute="trailing" constant="17" id="wq8-kp-lB4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Uv-Ry-Mu9" secondAttribute="trailing" constant="17" id="wuZ-1B-Mif"/>
             </constraints>
-            <point key="canvasLocation" x="372" y="-25"/>
+            <point key="canvasLocation" x="371.75572519083966" y="-25.35211267605634"/>
         </view>
     </objects>
     <resources>

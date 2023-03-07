@@ -30,9 +30,15 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     @IBOutlet weak var lastNameTipsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tipsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tipsViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nationalTipsHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nameErrorTipsLabel: UILabel!
+    @IBOutlet weak var middleNameErrorTipsLabel: UILabel!
+    @IBOutlet weak var lastNameErrorTipsLabel: UILabel!
+    @IBOutlet weak var nationalErrorTipsLabel: UILabel!
     
     private var tipsCheckedDic: [Int : Bool] = [:]
     var datasource: [RegionModel] = []
+    private var kycData: KYCModel?
     
     // MARK: - Init
     
@@ -96,6 +102,11 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         return v
     }
     
+    private func inputError(_ textField: UITextField) {
+        textField.layer.borderColor = R.color.fwED4949()?.cgColor
+        textField.layer.borderWidth = 2
+    }
+    
     private func inputBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = R.color.fw00A8BB()?.cgColor
         textField.layer.borderWidth = 2
@@ -155,16 +166,47 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     
     private func handleKycInfoAction(_ data: KYCModel?) {
         guard let kyc = data else { return }
+        kycData = data
         nameTextField.text = kyc.firstName
         midleNameTextField.text = kyc.middleName
         lastNameTextField.text = kyc.lastName
         chooseNationalTextField.text = kyc.country
+        inputEndEditing(nameTextField)
         if let resubmittedNote = data?.resubmittedNote, !resubmittedNote.isEmpty {
             tipsViewHeightConstraint.constant = 80
         } else {
             tipsViewHeightConstraint.constant = 0
         }
-        updateNextStatus()
+        if let resubmittedFidlds = data?.resubmittedFields {
+            if resubmittedFidlds.firstName != nil {
+                nameTipsHeightConstraint.constant = 16
+                inputError(nameTextField)
+                nameErrorTipsLabel.text = "· Your first name is wrong, please enter again"
+            } else {
+                nameTipsHeightConstraint.constant = 0
+            }
+            if resubmittedFidlds.middleName != nil {
+                middleNameTipsHeightConstraint.constant = 16
+                inputError(midleNameTextField)
+                middleNameErrorTipsLabel.text = "· Your middle name is wrong, please enter again"
+            } else {
+                middleNameTipsHeightConstraint.constant = 0
+            }
+            if resubmittedFidlds.lastName != nil {
+                lastNameTipsHeightConstraint.constant = 16
+                inputError(lastNameTextField)
+                lastNameErrorTipsLabel.text = "· Your last name is wrong, please enter again"
+            } else {
+                lastNameTipsHeightConstraint.constant = 0
+            }
+            if resubmittedFidlds.nationality != nil {
+                nationalTipsHeightConstraint.constant = 16
+                inputError(chooseNationalTextField)
+                nationalErrorTipsLabel.text = "· Your nationality is wrong, please enter again"
+            } else {
+                nationalTipsHeightConstraint.constant = 0
+            }
+        }
     }
     
     // MARK: - Network
@@ -200,6 +242,8 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
             this.indicator.stopAnimating()
             if isSuccess {
                 let vc = FillInAddressViewController()
+                vc.kycStatus = this.kycStatus
+                vc.kycData = this.kycData
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
                 this.view.makeToast(message, position: .center)

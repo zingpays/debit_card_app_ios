@@ -21,10 +21,27 @@ class FillInAddressViewController: BaseViewController {
     @IBOutlet weak var postcodeTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
     
+    @IBOutlet weak var countryTipsLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stateTipsLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var cityTipsLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var address1TipsLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var address2TipsLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var postcodeTipsLabelConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var countryTipsLabel: UILabel!
+    @IBOutlet weak var stateTipsLabel: UILabel!
+    @IBOutlet weak var cityTipsLabel: UILabel!
+    @IBOutlet weak var address1TipsLabel: UILabel!
+    @IBOutlet weak var address2TipsLabel: UILabel!
+    @IBOutlet weak var postcodeTipsLabel: UILabel!
+    
     private var tipsCheckedDic: [Int : Bool] = [:]
     
     private var countryCode: Int? = 0
     private var stateCode: Int?
+    var kycStatus: KycStatus = .notStarted
+    var kycData: KYCModel?
     
     private let configuration: VeriffSdk.Configuration = {
         let branding = VeriffSdk.Branding()
@@ -81,6 +98,58 @@ class FillInAddressViewController: BaseViewController {
     
     private func setupData() {
         requestRegion(title: R.string.localizable.chooseYourContryOfResidence(), actionTextField: countryTextField)
+        if kycStatus == .resubmitted {
+            guard let data = kycData?.resubmittedFields else { return }
+            countryTextField.text = kycData?.country
+            stateTextField.text = kycData?.state
+            cityTextField.text = kycData?.city
+            addressOneTextField.text = kycData?.address1
+            addressTwoTextField.text = kycData?.address2
+            postcodeTextField.text = kycData?.zipcode
+            inputEndEditing(countryTextField)
+            if data.country != nil {
+                countryTipsLabelConstraint.constant = 16
+                inputError(countryTextField)
+                countryTipsLabel.text = "· Your coutry is wrong, please enter again"
+            } else {
+                countryTipsLabelConstraint.constant = 0
+            }
+            if data.state != nil {
+                stateTipsLabelConstraint.constant = 16
+                inputError(stateTextField)
+                stateTipsLabel.text = "· Your state is wrong, please enter again"
+            } else {
+                stateTipsLabelConstraint.constant = 0
+            }
+            if data.city != nil {
+                cityTipsLabelConstraint.constant = 16
+                inputError(cityTextField)
+                cityTextField.text = "· Your city is wrong, please enter again"
+            } else {
+                cityTipsLabelConstraint.constant = 0
+            }
+            if data.address1 != nil {
+                address1TipsLabelConstraint.constant = 16
+                inputError(addressOneTextField)
+                address1TipsLabel.text = "· Your address 1 is wrong, please enter again"
+            } else {
+                address1TipsLabelConstraint.constant = 0
+            }
+            if data.address2 != nil {
+                address2TipsLabelConstraint.constant = 16
+                inputError(addressTwoTextField)
+                address2TipsLabel.text = "· Your address 2 is wrong, please enter again"
+            } else {
+                address2TipsLabelConstraint.constant = 0
+            }
+            if data.zipcode != nil {
+                postcodeTipsLabelConstraint.constant = 16
+                inputError(postcodeTextField)
+                postcodeTipsLabel.text = "· Your postcode is wrong, please enter again"
+            } else {
+                postcodeTipsLabelConstraint.constant = 0
+            }
+        }
     }
     
     private func textFieldRightView() -> UIView {
@@ -181,6 +250,11 @@ class FillInAddressViewController: BaseViewController {
                 this.view.makeToast(message, position: .center)
             }
         }
+    }
+    
+    private func inputError(_ textField: UITextField) {
+        textField.layer.borderColor = R.color.fwED4949()?.cgColor
+        textField.layer.borderWidth = 2
     }
     
     // MARK: - Network
