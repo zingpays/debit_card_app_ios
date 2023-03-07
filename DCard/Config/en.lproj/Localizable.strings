@@ -202,6 +202,15 @@
 "cardType" = "Card Type";
 "cardTypeValue" = "Visa virtual debit card";
 "cardBaseCurrency" = "Card Base Currency";
+"cardSetting" = "Card Setting";
+"freezeCard" = "Freeze Card";
+"writeOffCard" = "Write-off Card";
+"cardSettingFreezeCardTitle" = "Are you sure freeze this debit card ?";
+"cardSettingFreezeCardDesc" = "If your card is frozen, your card cannot be used until you unfreeze it";
+"cardSettingWriteOffCardTitle" = "Are you sure Write-off this debit card ?";
+"cardSettingWriteOffCardDesc" = "If you Write-off your card, your card will not be used, nor can it be restored, and the balance must be 0 to Write-off.";
+"sureToWriteOff" = "Sure to Write-off";
+"sureToFreeze" = "Sure to freeze";
 
 /// Tabbar
 "home" = "HOME";

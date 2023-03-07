@@ -13,7 +13,8 @@ class CardSettingViewController: BaseViewController {
     @IBOutlet weak var cardTableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var titles = ["Freeze Card", "Write-off  Card", "Cashback Percentage"]
+    // , R.string.localizable.writeOffCard() 卡注销暂时隐藏
+    var titles = [R.string.localizable.freezeCard()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class CardSettingViewController: BaseViewController {
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
+        titleLabel.text = R.string.localizable.cardSetting()
         cardTableView.fw.registerCellNib(CardSettingTableViewCell.self)
     }
 
@@ -42,9 +44,9 @@ extension CardSettingViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeue(cellType: CardSettingTableViewCell.self, for: indexPath)
-        if indexPath.row == 2 {
-            cell.updateData(type: .content)
-        }
+//        if indexPath.row == 2 {
+//            cell.updateData(type: .content)
+//        }
         cell.titleLabel.text = titles[indexPath.row]
         cell.selectionStyle = .none
         return cell
@@ -52,12 +54,39 @@ extension CardSettingViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 || indexPath.row == 1 {
-            let alert = UIAlertController(title: "Are you sure freeze this debit card ?", message: "If your card is frozen, your card cannot be used until you unfreeze it.", preferredStyle: .alert)
-            let toFreezeAction = UIAlertAction(title: "Sure to freeze", style: .default) { action in
+            let title: String = {
+                if indexPath.row == 0 {
+                    return R.string.localizable.cardSettingFreezeCardTitle()
+                }
+                if indexPath.row == 1 {
+                    return R.string.localizable.cardSettingWriteOffCardTitle()
+                }
+                return ""
+            }()
+            let subTitle: String = {
+                if indexPath.row == 0 {
+                    return R.string.localizable.cardSettingFreezeCardDesc()
+                }
+                if indexPath.row == 1 {
+                    return R.string.localizable.cardSettingWriteOffCardDesc()
+                }
+                return ""
+            }()
+            let sureActionText: String = {
+                if indexPath.row == 0 {
+                    return R.string.localizable.sureToFreeze()
+                }
+                if indexPath.row == 1 {
+                    return R.string.localizable.sureToWriteOff()
+                }
+                return ""
+            }()
+            let alert = UIAlertController(title: title, message: subTitle, preferredStyle: .alert)
+            let toFreezeAction = UIAlertAction(title: sureActionText, style: .default) { action in
                 let vc = FreezeSuccessViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-            let cancelAction = UIAlertAction(title: "Canel", style: .cancel)
+            let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
             alert.addAction(cancelAction)
             alert.addAction(toFreezeAction)
             self.present(alert, animated: true)

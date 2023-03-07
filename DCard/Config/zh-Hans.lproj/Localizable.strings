@@ -201,6 +201,15 @@
 "cardType" = "卡类型";
 "cardTypeValue" = "VISA虚拟借记卡";
 "cardBaseCurrency" = "卡币种";
+"cardSetting" = "卡设置";
+"freezeCard" = "冻结卡";
+"writeOffCard" = "注销卡";
+"cardSettingFreezeCardTitle" = "确定要冻结这张卡吗？";
+"cardSettingFreezeCardDesc" = "如果您的卡被冻结了，卡将不能使用直到解冻它";
+"cardSettingWriteOffCardTitle" = "确定要注销这张借记卡吗？";
+"cardSettingWriteOffCardDesc" = "如果你注销卡，你的卡将不能使用，也不能被恢复，且卡余额需为0才能注销";
+"sureToFreeze" = "确定冻结";
+"sureToWriteOff" = "确定注销";
 
 /// Tabbar
 "home" = "首页";

@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 194 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 203 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -221,6 +221,41 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cardInformation: RswiftResources.StringResource { .init(key: "cardInformation", tableName: "Localizable", source: source, developmentValue: "Card Information", comment: nil) }
+
+      /// en translation: Card Setting
+      ///
+      /// Key: cardSetting
+      ///
+      /// Locales: en, zh-Hans
+      var cardSetting: RswiftResources.StringResource { .init(key: "cardSetting", tableName: "Localizable", source: source, developmentValue: "Card Setting", comment: nil) }
+
+      /// en translation: If your card is frozen, your card cannot be used until you unfreeze it
+      ///
+      /// Key: cardSettingFreezeCardDesc
+      ///
+      /// Locales: en, zh-Hans
+      var cardSettingFreezeCardDesc: RswiftResources.StringResource { .init(key: "cardSettingFreezeCardDesc", tableName: "Localizable", source: source, developmentValue: "If your card is frozen, your card cannot be used until you unfreeze it", comment: nil) }
+
+      /// en translation: Are you sure freeze this debit card ?
+      ///
+      /// Key: cardSettingFreezeCardTitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardSettingFreezeCardTitle: RswiftResources.StringResource { .init(key: "cardSettingFreezeCardTitle", tableName: "Localizable", source: source, developmentValue: "Are you sure freeze this debit card ?", comment: nil) }
+
+      /// en translation: If you Write-off your card, your card will not be used, nor can it be restored, and the balance must be 0 to Write-off.
+      ///
+      /// Key: cardSettingWriteOffCardDesc
+      ///
+      /// Locales: en, zh-Hans
+      var cardSettingWriteOffCardDesc: RswiftResources.StringResource { .init(key: "cardSettingWriteOffCardDesc", tableName: "Localizable", source: source, developmentValue: "If you Write-off your card, your card will not be used, nor can it be restored, and the balance must be 0 to Write-off.", comment: nil) }
+
+      /// en translation: Are you sure Write-off this debit card ?
+      ///
+      /// Key: cardSettingWriteOffCardTitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardSettingWriteOffCardTitle: RswiftResources.StringResource { .init(key: "cardSettingWriteOffCardTitle", tableName: "Localizable", source: source, developmentValue: "Are you sure Write-off this debit card ?", comment: nil) }
 
       /// en translation: Card Type
       ///
@@ -529,6 +564,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var forgotPasswordTitle: RswiftResources.StringResource { .init(key: "forgotPasswordTitle", tableName: "Localizable", source: source, developmentValue: "Forgot Password", comment: nil) }
+
+      /// en translation: Freeze Card
+      ///
+      /// Key: freezeCard
+      ///
+      /// Locales: en, zh-Hans
+      var freezeCard: RswiftResources.StringResource { .init(key: "freezeCard", tableName: "Localizable", source: source, developmentValue: "Freeze Card", comment: nil) }
 
       /// en translation: Full Name And Nationality
       ///
@@ -1286,6 +1328,20 @@ struct _R {
       /// Locales: en, zh-Hans
       var submit: RswiftResources.StringResource { .init(key: "submit", tableName: "Localizable", source: source, developmentValue: "Submit", comment: nil) }
 
+      /// en translation: Sure to freeze
+      ///
+      /// Key: sureToFreeze
+      ///
+      /// Locales: en, zh-Hans
+      var sureToFreeze: RswiftResources.StringResource { .init(key: "sureToFreeze", tableName: "Localizable", source: source, developmentValue: "Sure to freeze", comment: nil) }
+
+      /// en translation: Sure to Write-off
+      ///
+      /// Key: sureToWriteOff
+      ///
+      /// Locales: en, zh-Hans
+      var sureToWriteOff: RswiftResources.StringResource { .init(key: "sureToWriteOff", tableName: "Localizable", source: source, developmentValue: "Sure to Write-off", comment: nil) }
+
       /// en translation: Switch New Account Login
       ///
       /// Key: switchNewAccountLogin
@@ -1460,6 +1516,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var wallet: RswiftResources.StringResource { .init(key: "wallet", tableName: "Localizable", source: source, developmentValue: "WALLET", comment: nil) }
+
+      /// en translation: Write-off Card
+      ///
+      /// Key: writeOffCard
+      ///
+      /// Locales: en, zh-Hans
+      var writeOffCard: RswiftResources.StringResource { .init(key: "writeOffCard", tableName: "Localizable", source: source, developmentValue: "Write-off Card", comment: nil) }
 
       /// en translation: Your phone number
       ///
