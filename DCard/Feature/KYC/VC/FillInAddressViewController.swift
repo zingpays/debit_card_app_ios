@@ -301,11 +301,23 @@ extension FillInAddressViewController: VeriffSdkDelegate {
             requestSaveKYCStepThree(isVeriffPass: true)
             break
         case .canceled:
+            self.dismiss(animated: true)
             // The user canceled the verification process.
-            if let vc = navigationController?.viewControllers.filter({ subVC in
-                return subVC.isMember(of: HomeViewController.self)
-            }).first {
-                navigationController?.popToViewController(vc, animated: true)
+            if let vcs = navigationController?.viewControllers.filter({ subVC in
+                return subVC.isMember(of: UserCenterViewController.self) || subVC.isMember(of: HomeViewController.self)
+            }) {
+                for vc in vcs {
+                    if vc.isMember(of: UserCenterViewController.self) {
+                        navigationController?.popToViewController(vc, animated: true)
+                        return
+                    }
+                }
+                for vc in vcs {
+                    if vc.isMember(of: HomeViewController.self) {
+                        navigationController?.popToViewController(vc, animated: true)
+                        return
+                    }
+                }
             }
             DLog.error("cancel!!!")
             break

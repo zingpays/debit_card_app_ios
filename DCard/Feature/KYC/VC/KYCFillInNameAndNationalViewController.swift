@@ -210,6 +210,7 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     // MARK: - Action
     
     @objc @IBAction func chooseNationality() {
+        UIApplication.shared.keyWindow()?.endEditing(true)
         if datasource.isEmpty {
             indicator.startAnimating()
             RegionRequest.list { isSuccess, message, list in

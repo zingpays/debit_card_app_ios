@@ -87,7 +87,7 @@ class ChangePasswordViewController: BaseViewController {
             if isSuccess, let code = data?.verifyCode {
                 this.gotoSettingPasswordPage(code: code)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

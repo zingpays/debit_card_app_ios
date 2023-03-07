@@ -30,10 +30,21 @@ class KYCFinishViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func gotItAction(_ sender: Any) {
-        if let vc = navigationController?.viewControllers.filter({ subVC in
-            return subVC.isMember(of: HomeViewController.self)
-        }).first {
-            navigationController?.popToViewController(vc, animated: true)
+        if let vcs = navigationController?.viewControllers.filter({ subVC in
+            return subVC.isMember(of: UserCenterViewController.self) || subVC.isMember(of: HomeViewController.self)
+        }) {
+            for vc in vcs {
+                if vc.isMember(of: UserCenterViewController.self) {
+                    navigationController?.popToViewController(vc, animated: true)
+                    return
+                }
+            }
+            for vc in vcs {
+                if vc.isMember(of: HomeViewController.self) {
+                    navigationController?.popToViewController(vc, animated: true)
+                    return
+                }
+            }
         }
     }
 }
