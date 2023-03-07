@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 203 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 204 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -529,6 +529,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var faceIdLogin: RswiftResources.StringResource { .init(key: "faceIdLogin", tableName: "Localizable", source: source, developmentValue: "Face ID Login", comment: nil) }
+
+      /// en translation: Your identity verification was rejected and cannot be re-verified
+      ///
+      /// Key: featureIsNotAvailableRejectTips
+      ///
+      /// Locales: en, zh-Hans
+      var featureIsNotAvailableRejectTips: RswiftResources.StringResource { .init(key: "featureIsNotAvailableRejectTips", tableName: "Localizable", source: source, developmentValue: "Your identity verification was rejected and cannot be re-verified", comment: nil) }
 
       /// en translation: This Feature Is Not Available Yet
       ///

@@ -69,7 +69,12 @@ extension ChooseRegionViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeue(cellType: ChooseRegionTableViewCell.self, for: indexPath)
         let data = datasource[indexPath.row]
-        cell.countryLabel.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+        let text = {
+            var value = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+            if value.isEmpty { value = data.nameEn ?? "" }
+            return value
+        }()
+        cell.countryLabel.text = text
         cell.codeLabel.text = style == .noCode ? "" : data.phoneCode
         return cell
     }

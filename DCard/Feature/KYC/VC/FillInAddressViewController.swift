@@ -80,7 +80,7 @@ class FillInAddressViewController: BaseViewController {
     }
     
     private func setupData() {
-        requestRegion(actionTextField: countryTextField)
+        requestRegion(title: R.string.localizable.chooseYourContryOfResidence(), actionTextField: countryTextField)
     }
     
     private func textFieldRightView() -> UIView {
@@ -143,14 +143,23 @@ class FillInAddressViewController: BaseViewController {
         return checkedCount == 5
     }
     
-    private func gotoRegionPage(actionTextField: UITextField, datas: [RegionModel]) {
+    private func gotoRegionPage(title: String, actionTextField: UITextField, datas: [RegionModel]) {
         let vc = ChooseRegionViewController(style: .noCode)
-        vc.pageTitle = R.string.localizable.chooseYourContryOfResidence()
+        vc.pageTitle = title
         vc.datasource = datas
         vc.didSelectedCompletion = { [weak self] data in
             guard let this = self else { return }
-            actionTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
-            if actionTextField == this.countryTextField { this.countryCode = data.id }
+            let text = {
+                var value = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                if value.isEmpty { value = data.nameEn ?? "" }
+                return value
+            }()
+            actionTextField.text = text
+            if actionTextField == this.countryTextField {
+                this.countryCode = data.id
+                this.stateTextField.text = nil
+                this.cityTextField.text = nil
+            }
             if actionTextField == this.stateTextField { this.stateCode = data.id }
             this.inputEndEditing(actionTextField)
         }
@@ -176,7 +185,7 @@ class FillInAddressViewController: BaseViewController {
     
     // MARK: - Network
     
-    private func requestRegion(id: Int? = nil, isGotoAction: Bool = false, actionTextField: UITextField) {
+    private func requestRegion(id: Int? = nil, isGotoAction: Bool = false, title: String, actionTextField: UITextField) {
         if isGotoAction { indicator.startAnimating() }
         RegionRequest.list(id: id) { isSuccess, message, list in
             self.indicator.stopAnimating()
@@ -185,7 +194,7 @@ class FillInAddressViewController: BaseViewController {
                     self.datasource = regionList
                 }
                 if isGotoAction {
-                    self.gotoRegionPage(actionTextField: actionTextField, datas: regionList)
+                    self.gotoRegionPage(title: title, actionTextField: actionTextField, datas: regionList)
                 }
             }
         }
@@ -250,22 +259,22 @@ class FillInAddressViewController: BaseViewController {
     
     @IBAction func countryAction(_ sender: Any) {
         if datasource.isEmpty {
-            requestRegion(isGotoAction: true, actionTextField: countryTextField)
+            requestRegion(isGotoAction: true, title: R.string.localizable.chooseYourContryOfResidence(), actionTextField: countryTextField)
         } else {
-            gotoRegionPage(actionTextField: countryTextField, datas: datasource)
+            gotoRegionPage(title: R.string.localizable.chooseYourContryOfResidence(), actionTextField: countryTextField, datas: datasource)
         }
     }
     
     @IBAction func stateAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
         guard let id = countryCode else { return }
-        requestRegion(id: id, isGotoAction: true, actionTextField: stateTextField)
+        requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourStateOfResidence(), actionTextField: stateTextField)
     }
     
     @IBAction func cityAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
         guard let id = stateCode else { return }
-        requestRegion(id: id, isGotoAction: true, actionTextField: cityTextField)
+        requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourCityOfResidence(), actionTextField: cityTextField)
     }
 }
 
@@ -293,7 +302,11 @@ extension FillInAddressViewController: VeriffSdkDelegate {
             break
         case .canceled:
             // The user canceled the verification process.
-            requestSaveKYCStepThree(isVeriffPass: false)
+            if let vc = navigationController?.viewControllers.filter({ subVC in
+                return subVC.isMember(of: HomeViewController.self)
+            }).first {
+                navigationController?.popToViewController(vc, animated: true)
+            }
             DLog.error("cancel!!!")
             break
         case .error(let error):

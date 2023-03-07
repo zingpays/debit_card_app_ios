@@ -94,6 +94,7 @@
 "thanksForYourVerification" = "谢谢您的认证";
 "thanksForYourVerificationSubTitle" = "已经收到您的身份认证信息，我们会在1~2个工作日内进行审核，我们将尽快通知你审核结果";
 "thanksForYourVerificationGotIt" = "已知晓";
+"featureIsNotAvailableRejectTips" = "你的身份认证已被拒绝，无法再进行验证";
 
 /// Security
 "securityVerificationTitle" = "安全认证";

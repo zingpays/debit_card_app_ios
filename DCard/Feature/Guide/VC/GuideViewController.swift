@@ -60,7 +60,9 @@ class GuideViewController: UIViewController {
     }
     
     private func setupData() {
-        let guideData1 = GuideCollectionModel(title: R.string.localizable.guide1Title(), imageName: "guide_bg_intro_1", desc: R.string.localizable.guide1SubTitle())
+        // title1中的
+        let title1 = LocalizationManager.shared.currentLanguage() == .zh ? "高达2%的消费返现会返到您的恒星支付借记卡里" : "Up to 2% cashback on spending on your Stella debit card";
+        let guideData1 = GuideCollectionModel(title: R.string.localizable.guide1Title(), imageName: "guide_bg_intro_1", desc: title1)
         let guideData2 = GuideCollectionModel(title: R.string.localizable.guide2Title(), imageName: "guide_bg_intro_2", desc: R.string.localizable.guide2SubTitle())
         let guideData3 = GuideCollectionModel(title: R.string.localizable.guide3Title(), imageName: "guide_bg_intro_3", desc: R.string.localizable.guide3SubTitle())
         let guideData4 = GuideCollectionModel(title: R.string.localizable.guide4Title(), imageName: "guide_bg_intro_4", desc: R.string.localizable.guide4SubTitle())

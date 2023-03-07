@@ -107,6 +107,7 @@ class UserCenterViewController: BaseViewController {
     }
     
     private func updateKycStatus(_ status: KycStatus) {
+        UserManager.shared.kycStatus = status
         self.kycStatus = status
         // Not Verified: .notStarted, .start, .inProgress
         // Verification In Review: .submitted, .inReview
@@ -217,18 +218,10 @@ class UserCenterViewController: BaseViewController {
     }
     
     @IBAction func statusAction(_ sender: Any) {
-        switch kycStatus {
-        case .notStarted, .start, .inProgress:
-            let vc = VerifyYourIdentityGuideViewController()
-            vc.source = .userCenter
-            navigationController?.pushViewController(vc, animated: true)
-        case .resubmitted:
-            let vc = KYCFillInNameAndNationalViewController()
-            vc.source = .userCenter
-            navigationController?.pushViewController(vc, animated: true)
-        default:
-            break
-        }
+        let vc = KYCUnAvailableViewController()
+        vc.source = .userCenter
+        vc.kycStatus = kycStatus
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func securitySettingAction(_ sender: Any) {

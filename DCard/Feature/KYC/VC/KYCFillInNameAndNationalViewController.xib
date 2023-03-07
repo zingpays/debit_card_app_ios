@@ -23,11 +23,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCFillInNameAndNationalViewController" customModule="DCard" customModuleProvider="target">
             <connections>
-                <outlet property="LastNameTipsHeightConstraint" destination="3fO-HV-b3z" id="1y1-TQ-EwT"/>
                 <outlet property="chooseNationalTextField" destination="3Uv-Ry-Mu9" id="onc-Ll-gta"/>
                 <outlet property="continueNextButton" destination="4kx-By-MIf" id="Vyf-lv-ERl"/>
                 <outlet property="infoLabell" destination="77N-wq-JVA" id="FS1-nY-b3X"/>
                 <outlet property="lastNameTextField" destination="tAn-u2-Qio" id="rfq-GC-6JJ"/>
+                <outlet property="lastNameTipsHeightConstraint" destination="3fO-HV-b3z" id="Xkn-Pn-eme"/>
                 <outlet property="middleNameTipsHeightConstraint" destination="eVR-j8-mAO" id="fzK-dN-fwh"/>
                 <outlet property="midleNameTextField" destination="mhU-lu-dc8" id="Oyp-PI-fXC"/>
                 <outlet property="nameTextField" destination="hfP-0P-z9f" id="M8Y-wI-p24"/>

@@ -12,6 +12,8 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     
     var source: VerifyYourIdentitySource = .home
     
+    var kycStatus: KycStatus = .notStarted
+    
     @IBOutlet weak var tipsView: UIView!
     @IBOutlet weak var tipsTitleLabel: UILabel!
     @IBOutlet weak var tipsContentLabel: UILabel!
@@ -37,7 +39,7 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        requestRegion()
+        setupData()
     }
     
     // MARK: - Private
@@ -45,6 +47,13 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     private func setupUI() {
         setupNavBar()
         setupSubviews()
+    }
+    
+    private func setupData() {
+        requestRegion()
+        if kycStatus == .resubmitted {
+            requestKycData()
+        }
     }
     
     private func setupSubviews() {
@@ -125,14 +134,6 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         return checkedCount == 3
     }
     
-    private func requestRegion() {
-        RegionRequest.list { isSuccess, message, list in
-            if isSuccess, let regionList = list {
-                self.datasource = regionList
-            }
-        }
-    }
-    
     private func gotoRegionPage() {
         let vc = ChooseRegionViewController(style: .noCode)
         vc.pageTitle = R.string.localizable.chooseYourNationality()
@@ -140,14 +141,54 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         vc.style = .noCode
         vc.didSelectedCompletion = { data in
             DispatchQueue.main.async {
-                self.chooseNationalTextField.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                let text = {
+                    var value = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+                    if value.isEmpty { value = data.nameEn ?? "" }
+                    return value
+                }()
+                self.chooseNationalTextField.text = text
                 self.inputEndEditing(self.chooseNationalTextField)
             }
         }
         self.present(vc, animated: true)
     }
     
+    private func handleKycInfoAction(_ data: KYCModel?) {
+        guard let kyc = data else { return }
+        nameTextField.text = kyc.firstName
+        midleNameTextField.text = kyc.middleName
+        lastNameTextField.text = kyc.lastName
+        chooseNationalTextField.text = kyc.country
+        if let resubmittedNote = data?.resubmittedNote, !resubmittedNote.isEmpty {
+            tipsViewHeightConstraint.constant = 80
+        } else {
+            tipsViewHeightConstraint.constant = 0
+        }
+        updateNextStatus()
+    }
+    
     // MARK: - Network
+    
+    private func requestKycData() {
+        indicator.startAnimating()
+        KYCRequest.info { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                this.handleKycInfoAction(data)
+            } else {
+                // TODO: 显示错误页面
+            }
+        }
+    }
+    
+    private func requestRegion() {
+        RegionRequest.list { isSuccess, message, list in
+            if isSuccess, let regionList = list {
+                self.datasource = regionList
+            }
+        }
+    }
     
     private func requestSaveKYCStepOne(firstName: String, middleName: String?, lastName: String, nationality: String) {
         indicator.startAnimating()

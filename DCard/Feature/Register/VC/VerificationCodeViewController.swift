@@ -85,7 +85,6 @@ class VerificationCodeViewController: BaseViewController {
     
     private func setupData() {
         startCountDown()
-        requestPhoneCode()
         boxAction()
         phoneNumLabel.text = phoneNum
     }
@@ -142,9 +141,6 @@ class VerificationCodeViewController: BaseViewController {
     }
     
     // MARK: - Network
-    private func requestPhoneCode() {
-        // TODO: phone code request
-    }
     
     private func requestVerifyPhoneCode(_ code: String, uniId: String, num: String, phoneCountryCode: String) {
         indicator.startAnimating()
@@ -161,9 +157,9 @@ class VerificationCodeViewController: BaseViewController {
                         UserManager.shared.saveUserEmail(email)
                         UserManager.shared.saveUserPhoneNum(phoneNum)
                         LocalAuthenManager.shared.isAuthorized = true
-                        let vc = VerifyYourIdentityGuideViewController()
-                        vc.source = .register
-                        this.navigationController?.pushViewController(vc, animated: true)
+                        // change application root viewController to tabbar viewController
+                        UIApplication.shared.keyWindow()?.rootViewController = nil
+                        UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
                     } else {
                         this.updateErrorTips(isShow: true, text: "date parse error")
                     }

@@ -11,6 +11,9 @@ import UIKit
 class KYCUnAvailableViewController: BaseViewController {
     
     var source: VerifyYourIdentitySource = .home
+    
+    var kycStatus: KycStatus = .notStarted
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var toVerifyButton: UIButton!
@@ -31,8 +34,28 @@ class KYCUnAvailableViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func toVerifyAction(_ sender: Any) {
-        let vc = VerifyYourIdentityGuideViewController()
-        vc.source = source
-        navigationController?.pushViewController(vc, animated: true)
+        switch kycStatus {
+        case .notStarted, .start, .inProgress:
+            let vc = VerifyYourIdentityGuideViewController()
+            vc.source = source
+            navigationController?.pushViewController(vc, animated: true)
+        case .submitted, .inReview:
+            let vc = KYCFinishViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case .approved:
+            // 不会到这个页面
+            break
+        case .rejected:
+            let alert = UIAlertController(title: "Tips", message: R.string.localizable.featureIsNotAvailableRejectTips(), preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Got It", style: .cancel)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+        case .resubmitted:
+            let vc = KYCFillInNameAndNationalViewController()
+            vc.kycStatus = kycStatus
+            vc.source = source
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
 }

@@ -94,6 +94,7 @@
 "thanksForYourVerification" = "Thanks For Your Verification !";
 "thanksForYourVerificationSubTitle" = "Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.";
 "thanksForYourVerificationGotIt" = "Got It";
+"featureIsNotAvailableRejectTips" = "Your identity verification was rejected and cannot be re-verified";
 
 /// Security
 "securityVerificationTitle" = "Security Verification";

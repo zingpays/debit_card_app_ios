@@ -69,6 +69,25 @@ class HomeViewController: BaseViewController {
         homeTableView.fw.registerCellNib(HomeRecentTransactionsTableViewCell.self)
     }
     
+    private func verifyKycAction() {
+        indicator.startAnimating()
+        KYCRequest.info { isSuccess, message, data in
+            self.indicator.stopAnimating()
+            if isSuccess {
+                let vc = KYCUnAvailableViewController()
+                vc.hidesBottomBarWhenPushed = true
+                vc.source = .home
+                vc.kycStatus = data?.kycStatus ?? .notStarted
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc = KYCUnAvailableViewController()
+                vc.hidesBottomBarWhenPushed = true
+                vc.source = .home
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func personalCenterAction(_ sender: Any) {
@@ -118,10 +137,7 @@ extension HomeViewController: HomeOverviewTableViewCellDelegate, HomeRecentTrans
     }
     
     func didSelectedVerify(_ cell: HomeOverviewTableViewCell) {
-        let vc = KYCUnAvailableViewController()
-        vc.hidesBottomBarWhenPushed = true
-        vc.source = .home
-        navigationController?.pushViewController(vc, animated: true)
+        verifyKycAction()
     }
     
     func didSelectedAddCard(_ cell: HomeOverviewTableViewCell) {

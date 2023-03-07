@@ -23,7 +23,7 @@ class KYCFinishViewController: BaseViewController {
     
     private func setupUI() {
         titleLabel.text = R.string.localizable.thanksForYourVerification()
-        subTitleLabel.text = R.string.localizable.securityForgotPasswordSubTitle()
+        subTitleLabel.text = R.string.localizable.thanksForYourVerificationSubTitle()
         gitItButton.setTitle(R.string.localizable.thanksForYourVerificationGotIt(), for: .normal)
     }
     
