@@ -20,6 +20,7 @@ class SettingPasswordViewController: BaseViewController {
     private var email: String
     private var code: String
     var style: SettingPasswordStyle = .register
+    var verifyCode: String?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
@@ -41,15 +42,6 @@ class SettingPasswordViewController: BaseViewController {
             nextButton.setTitle(R.string.localizable.next(), for: .normal)
         }
     }
-    //    private lazy var loginItem: UIBarButtonItem = {
-    //        let btn = UIButton()
-    //        btn.frame = CGRect(x: 0, y: 4, width: 84, height: 36)
-    //        btn.backgroundColor = R.color.fw00A8BB()
-    //        btn.layer.cornerRadius = 18
-    //        btn.setTitle(R.string.localizable.loginTitle(), for: .normal)
-    //        btn.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
-    //        return UIBarButtonItem(customView: btn)
-    //    }()
     
     private let tipsDatas: [String] = {
         if LocalizationManager.shared.currentLanguage() == .zh {
@@ -92,16 +84,10 @@ class SettingPasswordViewController: BaseViewController {
     // MARK: - Private
     
     private func setupUI() {
-        //        setupRightItem()
         setupTitle()
         setupSubviews()
         setupTableview()
     }
-    
-    //    private func setupRightItem() {
-    //        self.gk_navRightBarButtonItem = loginItem
-    //        self.gk_navItemRightSpace = 17
-    //    }
     
     private func setupSubviews() {
         titleLabel.font = UIFont.fw.font28(weight: .bold)
@@ -239,6 +225,29 @@ class SettingPasswordViewController: BaseViewController {
         }
     }
     
+    private func requestForgotPassword(email: String,
+                                       password: String,
+                                       confirmPassword: String,
+                                       verifyCode: String) {
+        indicator.startAnimating()
+        PasswordRequest.forgotPassword(email: email,
+                                       password: password,
+                                       confirmPassword: confirmPassword,
+                                       verifyCode: verifyCode) { [weak self] isSuccess, message in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                UserManager.shared.clearUserData()
+                UIApplication.shared.keyWindow()?.rootViewController = nil
+                let vc = LoginViewController()
+                let loginNavVC = UINavigationController(rootViewController: vc)
+                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
     // MARK: - Actions
     
     @objc private func passwordEyeAction(sender: UIButton) {
@@ -261,11 +270,10 @@ class SettingPasswordViewController: BaseViewController {
                       let confirmPassword = againPasswordTextField.text else { return }
                 requestChangePassword(password: password, confirmPassword: confirmPassword)
             case .forgot:
-                UserManager.shared.clearUserData()
-                UIApplication.shared.keyWindow()?.rootViewController = nil
-                let vc = LoginViewController()
-                let loginNavVC = UINavigationController(rootViewController: vc)
-                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+                guard let password = passwordTextField.text,
+                      let confirmPassword = againPasswordTextField.text,
+                      let verifyCode = verifyCode else { return }
+                requestForgotPassword(email: email, password: password, confirmPassword: confirmPassword, verifyCode: verifyCode)
             }
         }
     }
@@ -411,19 +419,21 @@ extension SettingPasswordViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == passwordTextField, textField.text?.count ?? 0 > 0 {
+        if textField == passwordTextField {
             tipsTableView.snp.remakeConstraints { make in
                 make.height.equalTo(0)
             }
-            if !checkPasswordFormat() {
-                passwordErrorTipsLabel.snp.remakeConstraints { make in
-                    make.height.equalTo(16)
-                    make.top.equalTo(passwordTextField.snp.bottom).offset(12)
-                }
-            } else {
-                passwordErrorTipsLabel.snp.remakeConstraints { make in
-                    make.height.equalTo(0)
-                    make.top.equalTo(passwordTextField.snp.bottom).offset(0)
+            if textField.text?.count ?? 0 > 0  {
+                if !checkPasswordFormat() {
+                    passwordErrorTipsLabel.snp.remakeConstraints { make in
+                        make.height.equalTo(16)
+                        make.top.equalTo(passwordTextField.snp.bottom).offset(12)
+                    }
+                } else {
+                    passwordErrorTipsLabel.snp.remakeConstraints { make in
+                        make.height.equalTo(0)
+                        make.top.equalTo(passwordTextField.snp.bottom).offset(0)
+                    }
                 }
             }
         }

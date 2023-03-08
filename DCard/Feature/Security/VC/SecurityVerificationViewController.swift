@@ -72,7 +72,14 @@ class SecurityVerificationViewController: BaseViewController {
     }()
     
     private lazy var phoneNumItem: SecurityVerificationItemModel = {
-        let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位发送到\(UserManager.shared.phoneNum ?? "")的验证码" : "Enter the 6 digit code sent to \(UserManager.shared.phoneNum ?? "")"
+        let phoneNum: String = {
+            if self.phone == nil {
+                return UserManager.shared.phoneNum ?? ""
+            } else {
+                return self.phone ?? ""
+            }
+        }()
+        let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位发送到\(phoneNum)的验证码" : "Enter the 6 digit code sent to \(UserManager.shared.phoneNum ?? "")"
         let item = SecurityVerificationItemModel(title: R.string.localizable.phoneVerificationCode(),
                                                  info: info,
                                                  inputPlaceholder: R.string.localizable.phoneVerificationCodePlaceholder(),
@@ -356,11 +363,10 @@ class SecurityVerificationViewController: BaseViewController {
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
-                UserManager.shared.clearUserData()
-                UIApplication.shared.keyWindow()?.rootViewController = nil
-                let vc = LoginViewController()
-                let loginNavVC = UINavigationController(rootViewController: vc)
-                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+                let vc = SettingPasswordViewController(email: email, code: emailCode)
+                vc.style = .forgot
+                vc.verifyCode = data?.verifyCode
+                this.navigationController?.pushViewController(vc, animated: true)
             } else {
                 this.view.makeToast(message, position: .center)
             }

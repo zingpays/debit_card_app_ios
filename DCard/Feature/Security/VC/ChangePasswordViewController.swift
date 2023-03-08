@@ -72,8 +72,10 @@ class ChangePasswordViewController: BaseViewController {
     }
     
     private func gotoSettingPasswordPage(code: String) {
-        let vc = SettingPasswordViewController(code: code)
+        guard let mail = UserManager.shared.email else { return }
+        let vc = SettingPasswordViewController(email: mail)
         vc.style = .change
+        vc.verifyCode = code
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -102,8 +104,28 @@ class ChangePasswordViewController: BaseViewController {
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
-        let vc = ForgotPasswordEmailCheckViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let email = UserManager.shared.email else { return }
+        indicator.startAnimating()
+        MailRequest.securityStatus(email: email) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess, let data = data {
+                var styles: [SecurityVerificationType] = [.email]
+                if data.phone?.status == true {
+                    styles.append(.phone)
+                }
+                if data.twoFa?.status == true {
+                    styles.append(.twofa)
+                }
+                let vc = SecurityVerificationViewController(email: email, phone: data.phone?.value)
+                vc.dataStyle = styles
+                vc.source = .forgotPassword
+                vc.securityData = data
+                this.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
     }
     
 }
