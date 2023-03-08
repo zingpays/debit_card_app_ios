@@ -245,7 +245,7 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
         case .set:
             if isAgain {
                 if passwordFirst == password {
-                    view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.5) { [weak self] didTap in
+                    view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.5, position: .center) { [weak self] didTap in
                         guard let this = self else { return }
                         LockScreenManager.shared.password = this.password
                         NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
@@ -268,7 +268,7 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
         case .change:
             if isAgain {
                 if passwordFirst == password {
-                    view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.8) { [weak self] didTap in
+                    view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.8, position: .center) { [weak self] didTap in
                         guard let this = self else { return }
                         LockScreenManager.shared.password = this.password
                         NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
@@ -293,7 +293,7 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
         case .forgot:
             if isAgain {
                 if passwordFirst == password {
-                    view.makeToast(R.string.localizable.patternForgotSuccess(), duration: 0.8) { [weak self] didTap in
+                    view.makeToast(R.string.localizable.patternForgotSuccess(), duration: 0.8, position: .center) { [weak self] didTap in
                         guard let this = self else { return }
                         LockScreenManager.shared.password = this.password
                         NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
@@ -323,8 +323,14 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
                 }
             }
         case .verify:
-            LocalAuthenManager.shared.isAuthorized = true
-            NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
+            if password == LockScreenManager.shared.password {
+                LocalAuthenManager.shared.isAuthorized = true
+                NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
+                self.dismiss(animated: true)
+            } else {
+                updateTips(R.string.localizable.gesturePatternIncorrect(), isError: true)
+            }
+            password = ""
         }
         
     }

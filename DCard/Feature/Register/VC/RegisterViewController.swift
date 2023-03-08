@@ -264,7 +264,7 @@ class RegisterViewController: BaseViewController {
             if isSuccess {
                 this.startCountDown()
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }
@@ -278,7 +278,7 @@ class RegisterViewController: BaseViewController {
                 let vc = SettingPasswordViewController(email: email, code: code)
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

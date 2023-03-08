@@ -110,42 +110,42 @@ class FillInAddressViewController: BaseViewController {
             if data.country != nil {
                 countryTipsLabelConstraint.constant = 16
                 inputError(countryTextField)
-                countryTipsLabel.text = "· Your coutry is wrong, please enter again"
+                countryTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 countryTipsLabelConstraint.constant = 0
             }
             if data.state != nil {
                 stateTipsLabelConstraint.constant = 16
                 inputError(stateTextField)
-                stateTipsLabel.text = "· Your state is wrong, please enter again"
+                stateTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 stateTipsLabelConstraint.constant = 0
             }
             if data.city != nil {
                 cityTipsLabelConstraint.constant = 16
                 inputError(cityTextField)
-                cityTextField.text = "· Your city is wrong, please enter again"
+                cityTextField.text = R.string.localizable.resubmitErrorTips()
             } else {
                 cityTipsLabelConstraint.constant = 0
             }
             if data.address1 != nil {
                 address1TipsLabelConstraint.constant = 16
                 inputError(addressOneTextField)
-                address1TipsLabel.text = "· Your address 1 is wrong, please enter again"
+                address1TipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 address1TipsLabelConstraint.constant = 0
             }
             if data.address2 != nil {
                 address2TipsLabelConstraint.constant = 16
                 inputError(addressTwoTextField)
-                address2TipsLabel.text = "· Your address 2 is wrong, please enter again"
+                address2TipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 address2TipsLabelConstraint.constant = 0
             }
             if data.zipcode != nil {
                 postcodeTipsLabelConstraint.constant = 16
                 inputError(postcodeTextField)
-                postcodeTipsLabel.text = "· Your postcode is wrong, please enter again"
+                postcodeTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 postcodeTipsLabelConstraint.constant = 0
             }

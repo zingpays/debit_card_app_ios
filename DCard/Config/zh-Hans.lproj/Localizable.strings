@@ -41,6 +41,7 @@
 "newPassword" = "新密码";
 "confirmNewPassword" = "确认你的新密码";
 "forgotPasswordTitle" = "忘记密码";
+"gesturePatternIncorrect" = "解锁图案不正确";
 
 /// Register
 "registerTitle" = "注册";
@@ -95,6 +96,8 @@
 "thanksForYourVerificationSubTitle" = "已经收到您的身份认证信息，我们会在1~2个工作日内进行审核，我们将尽快通知你审核结果";
 "thanksForYourVerificationGotIt" = "已知晓";
 "featureIsNotAvailableRejectTips" = "你的身份认证已被拒绝，无法再进行验证";
+"resubmitErrorTips" = "该信息有误，请重新填写";
+"reason" = "修改理由";
 
 /// Security
 "securityVerificationTitle" = "安全认证";
@@ -166,6 +169,7 @@
 "authQrcodeTips" = "如果不能扫描二维码，请输入那串文字到谷歌验证器里";
 "securityForgotPassword" = "忘记密码";
 "securityForgotPasswordSubTitle" = "请输入你的e-mail";
+"copySuccessfully" = "复制成功";
 
 /// User
 "logout" = "退出";

@@ -87,6 +87,7 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         lastNameTextField.placeholder = R.string.localizable.enterYourLastName()
         chooseNationalTextField.placeholder = R.string.localizable.chooseYourNationality()
         continueNextButton.setTitle(R.string.localizable.continue(), for: .normal)
+        tipsTitleLabel.text = R.string.localizable.reason()
     }
     
     private func textFieldRightView(_ action: Selector) -> UIView {
@@ -181,28 +182,28 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
             if resubmittedFidlds.firstName != nil {
                 nameTipsHeightConstraint.constant = 16
                 inputError(nameTextField)
-                nameErrorTipsLabel.text = "· Your first name is wrong, please enter again"
+                nameErrorTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 nameTipsHeightConstraint.constant = 0
             }
             if resubmittedFidlds.middleName != nil {
                 middleNameTipsHeightConstraint.constant = 16
                 inputError(midleNameTextField)
-                middleNameErrorTipsLabel.text = "· Your middle name is wrong, please enter again"
+                middleNameErrorTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 middleNameTipsHeightConstraint.constant = 0
             }
             if resubmittedFidlds.lastName != nil {
                 lastNameTipsHeightConstraint.constant = 16
                 inputError(lastNameTextField)
-                lastNameErrorTipsLabel.text = "· Your last name is wrong, please enter again"
+                lastNameErrorTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 lastNameTipsHeightConstraint.constant = 0
             }
             if resubmittedFidlds.nationality != nil {
                 nationalTipsHeightConstraint.constant = 16
                 inputError(chooseNationalTextField)
-                nationalErrorTipsLabel.text = "· Your nationality is wrong, please enter again"
+                nationalErrorTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 nationalTipsHeightConstraint.constant = 0
             }

@@ -62,7 +62,7 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
                 vc.securityData = data
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

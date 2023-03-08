@@ -362,7 +362,7 @@ class SecurityVerificationViewController: BaseViewController {
                 let loginNavVC = UINavigationController(rootViewController: vc)
                 UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }
@@ -405,7 +405,7 @@ class SecurityVerificationViewController: BaseViewController {
                 vc.isFromResetTwoFa = true
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

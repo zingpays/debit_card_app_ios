@@ -41,6 +41,7 @@
 "newPassword" = "New password";
 "confirmNewPassword" = "Confirm new password";
 "forgotPasswordTitle" = "Forgot Password";
+"gesturePatternIncorrect" = "Gesture pattern is incorrect";
 
 /// Register
 "registerTitle" = "Register";
@@ -95,6 +96,8 @@
 "thanksForYourVerificationSubTitle" = "Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.";
 "thanksForYourVerificationGotIt" = "Got It";
 "featureIsNotAvailableRejectTips" = "Your identity verification was rejected and cannot be re-verified";
+"resubmitErrorTips" = "The information is wrong，please enter again";
+"reason" = "Reason";
 
 /// Security
 "securityVerificationTitle" = "Security Verification";
@@ -167,7 +170,7 @@
 "authQrcodeTips" = "If you are unable to scan the QR code, please enter this code manually into the app.";
 "securityForgotPassword" = "Forgot Password";
 "securityForgotPasswordSubTitle" = "Please Enter Your E-mail";
-
+"copySuccessfully" = "Copy successfully";
 
 /// User
 "logout" = "Log out";

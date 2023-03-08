@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 204 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 208 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -355,6 +355,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var contractUs: RswiftResources.StringResource { .init(key: "contractUs", tableName: "Localizable", source: source, developmentValue: "Contract Us", comment: nil) }
 
+      /// en translation: Copy successfully
+      ///
+      /// Key: copySuccessfully
+      ///
+      /// Locales: en, zh-Hans
+      var copySuccessfully: RswiftResources.StringResource { .init(key: "copySuccessfully", tableName: "Localizable", source: source, developmentValue: "Copy successfully", comment: nil) }
+
       /// en translation: Crypto Balance
       ///
       /// Key: cryptoBalance
@@ -585,6 +592,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var fullNameAndNationality: RswiftResources.StringResource { .init(key: "fullNameAndNationality", tableName: "Localizable", source: source, developmentValue: "Full Name And Nationality", comment: nil) }
+
+      /// en translation: Gesture pattern is incorrect
+      ///
+      /// Key: gesturePatternIncorrect
+      ///
+      /// Locales: en, zh-Hans
+      var gesturePatternIncorrect: RswiftResources.StringResource { .init(key: "gesturePatternIncorrect", tableName: "Localizable", source: source, developmentValue: "Gesture pattern is incorrect", comment: nil) }
 
       /// en translation: Get Code
       ///
@@ -1118,6 +1132,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var quickUnlockTouchID: RswiftResources.StringResource { .init(key: "quickUnlockTouchID", tableName: "Localizable", source: source, developmentValue: "Touch ID", comment: nil) }
 
+      /// en translation: Reason
+      ///
+      /// Key: reason
+      ///
+      /// Locales: en, zh-Hans
+      var reason: RswiftResources.StringResource { .init(key: "reason", tableName: "Localizable", source: source, developmentValue: "Reason", comment: nil) }
+
       /// en translation: Recent Transactions
       ///
       /// Key: recentTransactions
@@ -1166,6 +1187,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var resetAuthTips: RswiftResources.StringResource { .init(key: "resetAuthTips", tableName: "Localizable", source: source, developmentValue: "Are you sure to reset Google Authenticator?", comment: nil) }
+
+      /// en translation: The information is wrong，please enter again
+      ///
+      /// Key: resubmitErrorTips
+      ///
+      /// Locales: en, zh-Hans
+      var resubmitErrorTips: RswiftResources.StringResource { .init(key: "resubmitErrorTips", tableName: "Localizable", source: source, developmentValue: "The information is wrong，please enter again", comment: nil) }
 
       /// en translation: Resubmit Verification
       ///
@@ -2375,6 +2403,7 @@ struct _R {
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'EmptyCardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#ED4949", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#ED4949' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'FillInAddressViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'FillInNameAndNationalViewController', but couldn't be loaded.") }

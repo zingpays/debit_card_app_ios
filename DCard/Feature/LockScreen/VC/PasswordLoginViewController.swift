@@ -162,7 +162,7 @@ class PasswordLoginViewController: BaseViewController {
     
     private func handleLogin(data: LoginModel?) {
         guard let loginData = data else {
-            view.makeToast("data error~")
+            view.makeToast("data error~", position: .center)
             return
         }
         guard ((loginData.user?.phoneNumber) != nil), loginData.user?.phoneNumber?.count ?? 0 > 0 else {
@@ -225,7 +225,7 @@ class PasswordLoginViewController: BaseViewController {
             if isSuccess {
                 this.handleLogin(data: data)
             } else {
-                this.view.makeToast(message, duration: 1, position: .top)
+                this.view.makeToast(message, duration: 1, position: .center)
             }
         }
     }

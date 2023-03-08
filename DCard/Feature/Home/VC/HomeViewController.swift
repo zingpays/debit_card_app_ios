@@ -30,17 +30,28 @@ class HomeViewController: BaseViewController {
             let loginNavVC = UINavigationController(rootViewController: vc)
             UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
         } else {
-            if LocalAuthenManager.shared.isAvailable {
-                if LocalAuthenManager.shared.isBind {
-                    if !LocalAuthenManager.shared.isAuthorized {
+            // 首先检测是否解锁
+            // 没解锁
+            // 先检测是否绑定生物识别，然后检测师傅绑定手势
+            // 如果绑定了，就展示对应的锁屏页面
+            // 如果没有绑定，就展示密码锁屏
+            // 解除锁屏后，检测是否展示过引导页
+            // 如果没有展示过引导页，先检测生物识别是否可用，可用展示生物识别的引导，否则展示手势引导
+            // 如果展示过，就展示首页
+            
+            if LocalAuthenManager.shared.isAuthorized {
+                // 已解锁
+                if !LocalAuthenManager.shared.isSkiped {
+                    if LocalAuthenManager.shared.isAvailable && !LocalAuthenManager.shared.isBind {
+                        // 生物识别引导
                         let lockScreenVC = BiometricsViewController()
-                        lockScreenVC.isHasChangeToOtherLoginMethod = true
+                        lockScreenVC.isGuide = true
+                        lockScreenVC.isHasChangeToOtherLoginMethod = false
                         let navVC = UINavigationController(rootViewController: lockScreenVC)
                         navVC.modalPresentationStyle = .fullScreen
                         self.present(navVC, animated: false)
-                    }
-                } else {
-                    if !LocalAuthenManager.shared.isSkiped {
+                    } else if LockScreenManager.shared.password == nil {
+                        // 手势引导
                         let lockScreenVC = BiometricsViewController()
                         lockScreenVC.isGuide = true
                         lockScreenVC.isHasChangeToOtherLoginMethod = false
@@ -50,7 +61,22 @@ class HomeViewController: BaseViewController {
                     }
                 }
             } else {
-                if !LocalAuthenManager.shared.isAuthorized {
+                // 未解锁
+                if LocalAuthenManager.shared.isAvailable && LocalAuthenManager.shared.isBind {
+                    let lockScreenVC = BiometricsViewController()
+                    lockScreenVC.isHasChangeToOtherLoginMethod = true
+                    let navVC = UINavigationController(rootViewController: lockScreenVC)
+                    navVC.modalPresentationStyle = .fullScreen
+                    self.present(navVC, animated: false)
+                } else if (LockScreenManager.shared.password?.count ?? 0) > 0 {
+                    let vc = NineGraphLockScreenViewController()
+                    vc.patternTitle = R.string.localizable.patternLogin()
+                    vc.style = .verify
+                    vc.isHasChangeToOtherLoginMethod = true
+                    let navVC = UINavigationController(rootViewController: vc)
+                    navVC.modalPresentationStyle = .fullScreen
+                    self.present(navVC, animated: false)
+                } else {
                     let vc = PasswordLoginViewController()
                     vc.isHasChangeToOtherLoginMethod = true
                     let navVC = UINavigationController(rootViewController: vc)

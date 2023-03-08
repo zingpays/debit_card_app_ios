@@ -234,7 +234,7 @@ class SettingPasswordViewController: BaseViewController {
             if isSuccess {
                 this.changedPasswordAction()
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }
@@ -344,7 +344,7 @@ class SettingPasswordViewController: BaseViewController {
                 vc.uniqueId = data?.uniqueId
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
-                this.view.makeToast(message, position: .top)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

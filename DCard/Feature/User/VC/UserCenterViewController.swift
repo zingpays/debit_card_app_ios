@@ -199,7 +199,7 @@ class UserCenterViewController: BaseViewController {
                 let loginNavVC = UINavigationController(rootViewController: vc)
                 UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
             } else {
-                self.view.makeToast(message)
+                self.view.makeToast(message, position: .center)
             }
         }
     }

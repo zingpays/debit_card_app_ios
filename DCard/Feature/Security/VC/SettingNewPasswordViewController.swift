@@ -71,7 +71,7 @@ class SettingNewPasswordViewController: BaseViewController {
                 let loginNavVC = UINavigationController(rootViewController: vc)
                 UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

@@ -117,7 +117,8 @@ class AuthSettingQRCodeViewController: BaseViewController {
     }
     
     @IBAction func copyAction(_ sender: Any) {
-        
+        view.makeToast(R.string.localizable.copySuccessfully(), position: .center)
+        UIPasteboard.general.string = codeText
     }
     
     @IBAction func nextAction(_ sender: Any) {

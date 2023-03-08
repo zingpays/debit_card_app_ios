@@ -82,7 +82,7 @@ class AuthSettingVerifyCodeViewController: BaseViewController {
                 let vc = AuthSettingSuccessViewController()
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

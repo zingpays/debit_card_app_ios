@@ -67,6 +67,7 @@ class SecuritySettingsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         requestStatusData()
+        updateQuickUnlock()
     }
     
     // MARK: - Private
@@ -80,7 +81,7 @@ class SecuritySettingsViewController: BaseViewController {
     
     private func updateQuickUnlock() {
         var unlockData = datasource.first
-        if LocalAuthenManager.shared.isBind && !(LockScreenManager.shared.password?.isEmpty ?? true) {
+        if LocalAuthenManager.shared.isBind || !(LockScreenManager.shared.password?.isEmpty ?? true) {
             unlockData?.status = true
             unlockData?.icon = R.image.iconBiometrics()
         } else {
@@ -146,7 +147,7 @@ class SecuritySettingsViewController: BaseViewController {
             if isSuccess {
                 this.handleSecurityData(data)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }

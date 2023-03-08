@@ -128,7 +128,7 @@ class BindPhoneViewController: BaseViewController {
                     vc.uniqueId = this.uniqueId
                     this.navigationController?.pushViewController(vc, animated: true)
                 } else {
-                    this.view.makeToast(message)
+                    this.view.makeToast(message, position: .center)
                 }
             }
         }

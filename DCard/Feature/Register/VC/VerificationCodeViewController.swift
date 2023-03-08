@@ -182,7 +182,7 @@ class VerificationCodeViewController: BaseViewController {
             if isSuccess {
                 this.boxInputView.clearAll(withBeginEdit: true)
             } else {
-                this.view.makeToast(message)
+                this.view.makeToast(message, position: .center)
             }
         }
     }
