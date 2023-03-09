@@ -111,6 +111,10 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     private func inputBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = R.color.fw00A8BB()?.cgColor
         textField.layer.borderWidth = 2
+        if textField == nameTextField { nameTipsHeightConstraint.constant = 0 }
+        if textField == midleNameTextField { middleNameTipsHeightConstraint.constant = 0 }
+        if textField == lastNameTextField { lastNameTipsHeightConstraint.constant = 0 }
+        if textField == chooseNationalTextField { nationalTipsHeightConstraint.constant = 0 }
     }
     
     private func inputEndEditing(_ textField: UITextField) {
@@ -175,8 +179,10 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
         inputEndEditing(nameTextField)
         if let resubmittedNote = data?.resubmittedNote, !resubmittedNote.isEmpty {
             tipsViewHeightConstraint.constant = 80
+            tipsViewTopConstraint.constant = 20
         } else {
             tipsViewHeightConstraint.constant = 0
+            tipsViewTopConstraint.constant = 4
         }
         if let resubmittedFidlds = data?.resubmittedFields {
             if resubmittedFidlds.firstName != nil {
@@ -256,6 +262,7 @@ class KYCFillInNameAndNationalViewController: BaseViewController {
     
     @objc @IBAction func chooseNationality() {
         UIApplication.shared.keyWindow()?.endEditing(true)
+        inputBeginEditing(chooseNationalTextField)
         if datasource.isEmpty {
             indicator.startAnimating()
             RegionRequest.list { isSuccess, message, list in

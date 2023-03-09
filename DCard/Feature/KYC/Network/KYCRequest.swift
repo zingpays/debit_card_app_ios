@@ -56,6 +56,11 @@ struct KYCRequest {
         let provider = MoyaProvider<KYCTarget>()
         provider.requestObject(.info, type: KYCModel.self, completion: completion)
     }
+    
+    static func status(completion: @escaping ((Bool, String, UserStatusModel?) -> Void)) {
+        let provider = MoyaProvider<KYCTarget>()
+        provider.requestObject(.status, type: UserStatusModel.self, completion: completion)
+    }
 }
 
 enum KYCTarget {
@@ -65,6 +70,7 @@ enum KYCTarget {
     case veriffSession
     case submit
     case info
+    case status
 }
 
 extension KYCTarget: BaseTargetType {
@@ -82,6 +88,8 @@ extension KYCTarget: BaseTargetType {
             return "/kyc/submit"
         case .info:
             return "/kyc/info"
+        case .status:
+            return "/kyc/status"
         }
     }
     
@@ -110,6 +118,9 @@ extension KYCTarget: BaseTargetType {
         case .submit:
             params["unique_id"] = "6648244"
         case .info:
+            params["unique_id"] = "6648244"
+            params["_skip_auth"] = 1
+        case .status:
             params["unique_id"] = "6648244"
             params["_skip_auth"] = 1
         }

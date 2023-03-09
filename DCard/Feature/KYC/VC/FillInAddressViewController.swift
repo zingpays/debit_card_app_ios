@@ -51,7 +51,7 @@ class FillInAddressViewController: BaseViewController {
         let config = VeriffSdk.Configuration(branding: branding, languageLocale: locale)
         return config
     }()
-
+    
     /// data source
     var datasource: [RegionModel] = []
     
@@ -107,6 +107,16 @@ class FillInAddressViewController: BaseViewController {
             addressTwoTextField.text = kycData?.address2
             postcodeTextField.text = kycData?.zipcode
             inputEndEditing(countryTextField)
+            if let country = kycData?.country {
+                RegionRequest.info(name: country) { isSuccess, _, data in
+                    if isSuccess { self.countryCode = data?.id }
+                }
+            }
+            if let state = kycData?.state {
+                RegionRequest.info(name: state) { isSuccess, _, data in
+                    if isSuccess { self.stateCode = data?.id }
+                }
+            }
             if data.country != nil {
                 countryTipsLabelConstraint.constant = 16
                 inputError(countryTextField)
@@ -167,6 +177,12 @@ class FillInAddressViewController: BaseViewController {
     private func inputBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = R.color.fw00A8BB()?.cgColor
         textField.layer.borderWidth = 2
+        if textField == countryTextField { countryTipsLabelConstraint.constant = 0 }
+        if textField == stateTextField { stateTipsLabelConstraint.constant = 0 }
+        if textField == cityTextField { cityTipsLabelConstraint.constant = 0 }
+        if textField == addressOneTextField { address1TipsLabelConstraint.constant = 0 }
+        if textField == addressTwoTextField { address2TipsLabelConstraint.constant = 0 }
+        if textField == postcodeTextField { postcodeTipsLabelConstraint.constant = 0 }
     }
     
     private func inputEndEditing(_ textField: UITextField) {
@@ -235,7 +251,7 @@ class FillInAddressViewController: BaseViewController {
         self.present(vc, animated: true)
     }
     
-    private func handleSavedKYCAction() {
+    private func handleVeriffAction() {
         indicator.startAnimating()
         KYCRequest.urlSession { [weak self] isSuccess, message, data in
             guard let this = self else { return }
@@ -280,7 +296,7 @@ class FillInAddressViewController: BaseViewController {
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
-                this.handleSavedKYCAction()
+                this.requestStatus()
             } else {
                 this.view.makeToast(message, position: .center)
             }
@@ -312,6 +328,24 @@ class FillInAddressViewController: BaseViewController {
             }
         }
     }
+    
+    private func requestStatus() {
+        indicator.startAnimating()
+        KYCRequest.status { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess, let veriffStatus = data?.veriffStatus {
+                switch veriffStatus {
+                case .created, .expired, .resubmissionRequested, .abandoned:
+                    this.handleVeriffAction()
+                default:
+                    this.requestSaveKYCStepThree(isVeriffPass: true)
+                }
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
 
     // MARK: - Actions
     
@@ -332,6 +366,7 @@ class FillInAddressViewController: BaseViewController {
     }
     
     @IBAction func countryAction(_ sender: Any) {
+        inputBeginEditing(countryTextField)
         if datasource.isEmpty {
             requestRegion(isGotoAction: true, title: R.string.localizable.chooseYourContryOfResidence(), actionTextField: countryTextField)
         } else {
@@ -341,14 +376,40 @@ class FillInAddressViewController: BaseViewController {
     
     @IBAction func stateAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
-        guard let id = countryCode else { return }
-        requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourStateOfResidence(), actionTextField: stateTextField)
+        inputBeginEditing(stateTextField)
+        if countryCode == nil, let country = countryTextField.text {
+            RegionRequest.info(name: country) { [weak self] isSuccess, message, data in
+                guard let this = self else { return }
+                if isSuccess, let id = data?.id {
+                    this.countryCode = id
+                    this.requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourStateOfResidence(), actionTextField: this.stateTextField)
+                } else {
+                    this.view.makeToast(message, position: .center)
+                }
+            }
+        } else {
+            guard let id = countryCode else { return }
+            requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourStateOfResidence(), actionTextField: stateTextField)
+        }
     }
     
     @IBAction func cityAction(_ sender: Any) {
         UIApplication.shared.keyWindow()?.endEditing(true)
-        guard let id = stateCode else { return }
-        requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourCityOfResidence(), actionTextField: cityTextField)
+        inputBeginEditing(cityTextField)
+        if stateCode == nil, let state = stateTextField.text {
+            RegionRequest.info(name: state) { [weak self] isSuccess, message, data in
+                guard let this = self else { return }
+                if isSuccess, let id = data?.id {
+                    this.stateCode = id
+                    this.requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourCityOfResidence(), actionTextField: this.cityTextField)
+                } else {
+                    this.view.makeToast(message, position: .center)
+                }
+            }
+        } else {
+            guard let id = stateCode else { return }
+            requestRegion(id: id, isGotoAction: true, title: R.string.localizable.chooseYourCityOfResidence(), actionTextField: cityTextField)
+        }
     }
 }
 

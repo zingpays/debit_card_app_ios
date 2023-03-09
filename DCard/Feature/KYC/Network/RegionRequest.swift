@@ -14,10 +14,16 @@ struct RegionRequest {
         let provider = MoyaProvider<RegionTarget>()
         provider.requestObjects(.list(id: id), type: RegionModel.self, completion: completion)
     }
+    
+    static func info(name: String, completion: @escaping ((Bool, String, RegionItemModel?) -> Void)) {
+        let provider = MoyaProvider<RegionTarget>()
+        provider.requestObject(.info(name: name), type: RegionItemModel.self, completion: completion)
+    }
 }
 
 enum RegionTarget {
     case list(id: Int?)
+    case info(name: String)
 }
 
 extension RegionTarget: BaseTargetType {
@@ -25,6 +31,8 @@ extension RegionTarget: BaseTargetType {
         switch self {
         case .list:
             return "/region/list"
+        case .info:
+            return "/region/get-info-by-name"
         }
     }
     
@@ -37,6 +45,8 @@ extension RegionTarget: BaseTargetType {
         switch self {
         case .list(let id):
             params["id"] = id
+        case .info(let name):
+            params["name"] = name
         }
         return params
     }

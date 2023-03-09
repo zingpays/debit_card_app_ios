@@ -40,12 +40,25 @@ enum KycStatus: String {
     case resubmitted = "Resubmitted"
 }
 
+// created, resubmissionRequested, expired, abandoned 需要重新验证veriff
+enum VeriffStatus: String {
+    case created = "created"
+    case approved = "approved"
+    case resubmissionRequested = "resubmission_requested"
+    case review = "review"
+    case declined = "declined"
+    case expired = "expired"
+    case abandoned = "abandoned"
+}
+
 struct UserStatusModel: Mappable {
     var kycStatus: KycStatus = .notStarted
+    var veriffStatus: VeriffStatus = .expired
     
-    init?(map: ObjectMapper.Map) {}
-
+    init?(map: Map) {}
+    
     mutating func mapping(map: Map) {
-        kycStatus    <- map["kyc_status"]
+        kycStatus         <- map["kyc_status"]
+        veriffStatus      <- map["veriff_status"]
     }
 }

@@ -218,10 +218,19 @@ class UserCenterViewController: BaseViewController {
     }
     
     @IBAction func statusAction(_ sender: Any) {
-        let vc = KYCUnAvailableViewController()
-        vc.source = .userCenter
-        vc.kycStatus = kycStatus
-        navigationController?.pushViewController(vc, animated: true)
+        switch kycStatus {
+        case .notStarted, .start, .inProgress:
+            let vc = VerifyYourIdentityGuideViewController()
+            vc.source = .userCenter
+            navigationController?.pushViewController(vc, animated: true)
+        case .submitted, .inReview, .approved, .rejected:
+            break
+        case .resubmitted:
+            let vc = KYCFillInNameAndNationalViewController()
+            vc.source = .userCenter
+            vc.kycStatus = .resubmitted
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     @IBAction func securitySettingAction(_ sender: Any) {
