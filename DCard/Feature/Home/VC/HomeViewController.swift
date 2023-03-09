@@ -50,12 +50,15 @@ class HomeViewController: BaseViewController {
                         let navVC = UINavigationController(rootViewController: lockScreenVC)
                         navVC.modalPresentationStyle = .fullScreen
                         self.present(navVC, animated: false)
-                    } else if LockScreenManager.shared.password == nil {
+                    } else if LockScreenManager.shared.password == nil && !LocalAuthenManager.shared.isAvailable {
                         // 手势引导
-                        let lockScreenVC = BiometricsViewController()
-                        lockScreenVC.isGuide = true
-                        lockScreenVC.isHasChangeToOtherLoginMethod = false
-                        let navVC = UINavigationController(rootViewController: lockScreenVC)
+                        let vc = NineGraphLockScreenViewController()
+                        vc.isGuide = true
+                        vc.style = .set
+                        vc.isHasChangeToOtherLoginMethod = false
+                        vc.patternTitle = R.string.localizable.guidePatternTitle()
+                        vc.tips = R.string.localizable.patternForgotTips()
+                        let navVC = UINavigationController(rootViewController: vc)
                         navVC.modalPresentationStyle = .fullScreen
                         self.present(navVC, animated: false)
                     }

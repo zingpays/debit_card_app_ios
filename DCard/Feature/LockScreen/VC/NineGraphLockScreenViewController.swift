@@ -25,7 +25,8 @@ class NineGraphLockScreenViewController: BaseViewController {
     var style: LockScreenStyle = .set
     var patternTitle: String = "Pattern"
     var tips: String = ""
-    
+    /// 是否是引导用户设置
+    var isGuide: Bool = false
     /// 是否有存在切换其他方式的按钮
     var isHasChangeToOtherLoginMethod: Bool = false
     
@@ -95,6 +96,48 @@ class NineGraphLockScreenViewController: BaseViewController {
         return btn
     }()
     
+    private lazy var checkButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(R.image.iconCheckBoxOff(), for: .normal)
+        btn.setImage(R.image.iconCheckBoxOn(), for: .selected)
+        btn.addTarget(self, action: #selector(checkAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    private lazy var checkLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = R.color.fw000000()?.withAlphaComponent(0.5)
+        label.text = R.string.localizable.guideDonotRemindAgain()
+        return label
+    }()
+    
+    private lazy var checkView: UIView = {
+        let v = UIView()
+        v.backgroundColor = .clear
+        v.addSubview(checkLabel)
+        checkLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview().offset(14)
+            make.centerY.equalToSuperview()
+        }
+        v.addSubview(checkButton)
+        checkButton.snp.makeConstraints { make in
+            make.width.equalTo(20)
+            make.right.equalTo(checkLabel.snp.left).offset(-8)
+            make.top.bottom.equalToSuperview()
+        }
+        return v
+    }()
+    
+    private lazy var rightItem: UIBarButtonItem = {
+        let btn = UIButton()
+        btn.frame = CGRect(x: 0, y: 4, width: 36, height: 36)
+        btn.setTitle(R.string.localizable.skip(), for: .normal)
+        btn.backgroundColor = .clear
+        btn.setTitleColor(R.color.fw00A8BB(), for: .normal)
+        btn.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
+        return UIBarButtonItem(customView: btn)
+    }()
+    
     private var password: String = ""
     private var passwordFirst: String = ""
     private var isAgain: Bool = false
@@ -111,6 +154,17 @@ class NineGraphLockScreenViewController: BaseViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
+        if isGuide {
+            gk_navItemRightSpace = 16
+            gk_navRightBarButtonItem = rightItem
+            gk_navLeftBarButtonItem = nil
+            view.addSubview(checkView)
+            checkView.snp.makeConstraints { make in
+                make.height.equalTo(20)
+                make.left.right.equalToSuperview().inset(20)
+                make.bottom.equalToSuperview().inset(48)
+            }
+        }
         if style == .verify {
             self.gk_navLeftBarButtonItem = nil
         }
@@ -230,7 +284,17 @@ class NineGraphLockScreenViewController: BaseViewController {
         vc.source = .forgotPattern
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc private func skipAction() {
+        LocalAuthenManager.shared.isSkiped = true
+        self.dismiss(animated: true)
+    }
 
+    @objc private func checkAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        let color = sender.isSelected ? R.color.fw00A8BB() : R.color.fw000000()?.withAlphaComponent(0.5)
+        checkLabel.textColor = color
+    }
 }
 
 // MARK: - GPasswordEventDelegate
@@ -249,7 +313,11 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
                         guard let this = self else { return }
                         LockScreenManager.shared.password = this.password
                         NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
-                        this.navigationController?.popViewController()
+                        if this.isGuide {
+                            this.dismiss(animated: true)
+                        } else {
+                            this.navigationController?.popViewController()
+                        }
                     }
                 } else {
                     password = ""
