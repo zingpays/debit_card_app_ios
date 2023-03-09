@@ -69,18 +69,18 @@
 
 /// KYC
 "verifyYourIdentityTitle" = "身份认证";
-"verifyYourIdentitySubTitle" = "政策要求我们了解您多一点";
+"verifyYourIdentitySubTitle" = "为了您的账户及资产安全，请您先进行身份认证。";
 "informationRequired" = "需要的信息";
 "fullNameAndNationality" = "名字和国籍";
 "passport" = "护照 ";
 "selfie" = "自拍照";
 "address" = "住址";
 "verifyNow" = "去认证";
-"featureIsNotAvailableYet" = "该功能暂不能使用";
-"featureIsNotAvailableYetTips" = "请完成您的身份认证以使用该功能";
+"featureIsNotAvailableYet" = "请先完成您的身份认证";
+"featureIsNotAvailableYetTips" = "为了您的账户及资产安全，在您使用该服务前，请先完成身份验证。";
 "toVerify" = "去认证";
 "tellYourNameAndNation" = "确认您的名字和国籍";
-"enterFullLegalNameTips" = "输入您的护照上英文的全名";
+"enterFullLegalNameTips" = "请用英文输入您护照或ID上面的法定姓名";
 "enterYourName" = "输入您的名 ";
 "enterYourMiddleName" = "输入您的中间名（选填）";
 "enterYourLastName" = "输入您的姓";
@@ -93,7 +93,7 @@
 "enterYourDetailAddressTwo" = "请输入你的详细地址2（选填）";
 "enterYourPostCode" = "请输入您的邮政编码";
 "thanksForYourVerification" = "谢谢您的认证";
-"thanksForYourVerificationSubTitle" = "已经收到您的身份认证信息，我们会在1~2个工作日内进行审核，我们将尽快通知你审核结果";
+"thanksForYourVerificationSubTitle" = "您的身份认证信息已提交。我们会在1-2个工作日完成审核。感谢您的耐心等待。";
 "thanksForYourVerificationGotIt" = "已知晓";
 "featureIsNotAvailableRejectTips" = "你的身份认证已被拒绝，无法再进行验证";
 "resubmitErrorTips" = "该信息有误，请重新填写";

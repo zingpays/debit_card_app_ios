@@ -432,12 +432,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var enterEmailInputPlaceholder: RswiftResources.StringResource { .init(key: "enterEmailInputPlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter your E-mail", comment: nil) }
 
-      /// en translation: Enter your full legal name as shown on your passport in English
+      /// en translation: Please enter your legal name on your passport or ID in English
       ///
       /// Key: enterFullLegalNameTips
       ///
       /// Locales: en, zh-Hans
-      var enterFullLegalNameTips: RswiftResources.StringResource { .init(key: "enterFullLegalNameTips", tableName: "Localizable", source: source, developmentValue: "Enter your full legal name as shown on your passport in English", comment: nil) }
+      var enterFullLegalNameTips: RswiftResources.StringResource { .init(key: "enterFullLegalNameTips", tableName: "Localizable", source: source, developmentValue: "Please enter your legal name on your passport or ID in English", comment: nil) }
 
       /// en translation: Enter old password
       ///
@@ -544,19 +544,19 @@ struct _R {
       /// Locales: en, zh-Hans
       var featureIsNotAvailableRejectTips: RswiftResources.StringResource { .init(key: "featureIsNotAvailableRejectTips", tableName: "Localizable", source: source, developmentValue: "Your identity verification was rejected and cannot be re-verified", comment: nil) }
 
-      /// en translation: This Feature Is Not Available Yet
+      /// en translation: Please Verify Your Identity First
       ///
       /// Key: featureIsNotAvailableYet
       ///
       /// Locales: en, zh-Hans
-      var featureIsNotAvailableYet: RswiftResources.StringResource { .init(key: "featureIsNotAvailableYet", tableName: "Localizable", source: source, developmentValue: "This Feature Is Not Available Yet", comment: nil) }
+      var featureIsNotAvailableYet: RswiftResources.StringResource { .init(key: "featureIsNotAvailableYet", tableName: "Localizable", source: source, developmentValue: "Please Verify Your Identity First", comment: nil) }
 
-      /// en translation: Please complete your identity verification application to access this feature
+      /// en translation: For the security of your account and assets, please verify your identity before using this service.
       ///
       /// Key: featureIsNotAvailableYetTips
       ///
       /// Locales: en, zh-Hans
-      var featureIsNotAvailableYetTips: RswiftResources.StringResource { .init(key: "featureIsNotAvailableYetTips", tableName: "Localizable", source: source, developmentValue: "Please complete your identity verification application to access this feature", comment: nil) }
+      var featureIsNotAvailableYetTips: RswiftResources.StringResource { .init(key: "featureIsNotAvailableYetTips", tableName: "Localizable", source: source, developmentValue: "For the security of your account and assets, please verify your identity before using this service.", comment: nil) }
 
       /// en translation: Forgot password?
       ///
@@ -1405,12 +1405,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var thanksForYourVerificationGotIt: RswiftResources.StringResource { .init(key: "thanksForYourVerificationGotIt", tableName: "Localizable", source: source, developmentValue: "Got It", comment: nil) }
 
-      /// en translation: Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.
+      /// en translation: We have received your identity verification and will complete the review in 1-2 working days. Thank you for your patience!
       ///
       /// Key: thanksForYourVerificationSubTitle
       ///
       /// Locales: en, zh-Hans
-      var thanksForYourVerificationSubTitle: RswiftResources.StringResource { .init(key: "thanksForYourVerificationSubTitle", tableName: "Localizable", source: source, developmentValue: "Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.", comment: nil) }
+      var thanksForYourVerificationSubTitle: RswiftResources.StringResource { .init(key: "thanksForYourVerificationSubTitle", tableName: "Localizable", source: source, developmentValue: "We have received your identity verification and will complete the review in 1-2 working days. Thank you for your patience!", comment: nil) }
 
       /// en translation: Tips
       ///
@@ -1531,12 +1531,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var verifyNow: RswiftResources.StringResource { .init(key: "verifyNow", tableName: "Localizable", source: source, developmentValue: "Verify Now", comment: nil) }
 
-      /// en translation: Government regulations require us to know more about you
+      /// en translation: For the security of your account and assets, please verify your identity first.
       ///
       /// Key: verifyYourIdentitySubTitle
       ///
       /// Locales: en, zh-Hans
-      var verifyYourIdentitySubTitle: RswiftResources.StringResource { .init(key: "verifyYourIdentitySubTitle", tableName: "Localizable", source: source, developmentValue: "Government regulations require us to know more about you", comment: nil) }
+      var verifyYourIdentitySubTitle: RswiftResources.StringResource { .init(key: "verifyYourIdentitySubTitle", tableName: "Localizable", source: source, developmentValue: "For the security of your account and assets, please verify your identity first.", comment: nil) }
 
       /// en translation: Verify Your Identity
       ///

@@ -69,18 +69,18 @@
 
 /// KYC
 "verifyYourIdentityTitle" = "Verify Your Identity";
-"verifyYourIdentitySubTitle" = "Government regulations require us to know more about you";
+"verifyYourIdentitySubTitle" = "For the security of your account and assets, please verify your identity first.";
 "informationRequired" = "Information Required";
 "fullNameAndNationality" = "Full Name And Nationality";
 "passport" = "Passport";
 "selfie" = "Selfie";
 "address" = "Address";
 "verifyNow" = "Verify Now";
-"featureIsNotAvailableYet" = "This Feature Is Not Available Yet";
-"featureIsNotAvailableYetTips" = "Please complete your identity verification application to access this feature";
+"featureIsNotAvailableYet" = "Please Verify Your Identity First";
+"featureIsNotAvailableYetTips" = "For the security of your account and assets, please verify your identity before using this service.";
 "toVerify" = "To Verify";
 "tellYourNameAndNation" = "Please tell us your name and nationality";
-"enterFullLegalNameTips" = "Enter your full legal name as shown on your passport in English";
+"enterFullLegalNameTips" = "Please enter your legal name on your passport or ID in English";
 "enterYourName" = "Enter your name";
 "enterYourMiddleName" = "Enter your middle name(optional)";
 "enterYourLastName" = "Enter your last name";
@@ -93,7 +93,7 @@
 "enterYourDetailAddressTwo" = "Enter your detail address 2 (optional)";
 "enterYourPostCode" = "Enter your post code";
 "thanksForYourVerification" = "Thanks For Your Verification !";
-"thanksForYourVerificationSubTitle" = "Your identity verification has been received and will be reviewed in 1~2 business day. we will then get back to you with the results shortly.";
+"thanksForYourVerificationSubTitle" = "We have received your identity verification and will complete the review in 1-2 working days. Thank you for your patience!";
 "thanksForYourVerificationGotIt" = "Got It";
 "featureIsNotAvailableRejectTips" = "Your identity verification was rejected and cannot be re-verified";
 "resubmitErrorTips" = "The information is wrong，please enter again";
