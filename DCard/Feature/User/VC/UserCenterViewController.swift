@@ -73,6 +73,7 @@ class UserCenterViewController: BaseViewController {
         UserRequest.status { isSuccess, message, data in
             self.indicator.stopAnimating()
             if isSuccess, let status = data?.kycStatus {
+                UserManager.shared.status = data
                 self.updateKycStatus(status)
             } else {
                 // ....
@@ -107,7 +108,6 @@ class UserCenterViewController: BaseViewController {
     }
     
     private func updateKycStatus(_ status: KycStatus) {
-        UserManager.shared.kycStatus = status
         self.kycStatus = status
         // Not Verified: .notStarted, .start, .inProgress
         // Verification In Review: .submitted, .inReview

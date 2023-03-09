@@ -23,6 +23,8 @@ enum SecurityVerificationSource {
     case loginViaEmail
     case loginViaTwoFa
     case resetTwoFa
+    case freezeCard
+    case unFreezeCard
     case none
 }
 
@@ -51,12 +53,7 @@ class SecurityVerificationViewController: BaseViewController {
         }
         btn.layer.cornerRadius = 23
         btn.backgroundColor = R.color.fw00A8BB()
-        switch source {
-        case .forgotPattern, .changeEmail, .forgotPassword:
-            btn.setTitle(R.string.localizable.next(), for: .normal)
-        case .closeAuth, .loginViaEmail, .loginViaTwoFa, .resetTwoFa, .none:
-            btn.setTitle(R.string.localizable.submit(), for: .normal)
-        }
+        btn.setTitle(R.string.localizable.submit(), for: .normal)
         btn.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
         return v
     }()
@@ -156,7 +153,28 @@ class SecurityVerificationViewController: BaseViewController {
     }
     
     private func setupData() {
-        
+        if dataStyle.isEmpty {
+            indicator.startAnimating()
+            UserRequest.securityStatus { isSuccess, message, data in
+                self.indicator.stopAnimating()
+                if isSuccess {
+                    if data?.email?.status == true, let email = data?.email?.value {
+                        self.email = email
+                        self.datasource.append(self.emailItem)
+                    }
+                    if data?.phone?.status == true, let phone = data?.phone?.value {
+                        self.phone = phone
+                        self.datasource.append(self.phoneNumItem)
+                    }
+                    if data?.twoFa?.status == true {
+                        self.datasource.append(self.authItem)
+                    }
+                    self.securityTableView.reloadData()
+                } else {
+                    self.view.makeToast(message, position: .center)
+                }
+            }
+        }
     }
     
     private func securityVerifySuccessAction() {
@@ -185,6 +203,8 @@ class SecurityVerificationViewController: BaseViewController {
         case .none:
             print("")
         case .resetTwoFa:
+            print("")
+        case .freezeCard, .unFreezeCard:
             print("")
         }
     }
@@ -220,10 +240,35 @@ class SecurityVerificationViewController: BaseViewController {
             guard let emailCode = emailCode,
                   let phoneCode = phoneCode else { return }
             requestResetAuth(emailCode: emailCode, phoneCode: phoneCode, authToken: authToken ?? "")
+        case .freezeCard, .unFreezeCard:
+            requestSecurityCheck(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
+        }
+    }
+    
+    private func checkSuccessAction() {
+        switch source {
+        case .freezeCard:
+            requestFreeze()
+        case .unFreezeCard:
+            requestUnfreeze()
+        default:
+            break
         }
     }
     
     // MARK: - Network
+    
+    private func requestSecurityCheck(emailCode: String?, phoneCode: String?, authCode: String?) {
+        indicator.startAnimating()
+        UserRequest.securityCheck(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode) { isSuccess, message in
+            self.indicator.stopAnimating()
+            if isSuccess {
+                self.checkSuccessAction()
+            } else {
+                self.view.makeToast(message, position: .center)
+            }
+        }
+    }
     
     private func requestSendEmailCode(_ email: String) {
         indicator.startAnimating()
@@ -244,6 +289,8 @@ class SecurityVerificationViewController: BaseViewController {
             case .none:
                 return .login
             case .resetTwoFa:
+                return .login
+            default:
                 return .login
             }
         }()
@@ -373,34 +420,6 @@ class SecurityVerificationViewController: BaseViewController {
         }
     }
     
-    private func requestAllVerify() {
-        // TODO: 成功后跳转新的页面
-        // request ...
-        if source == .forgotPattern {
-            let vc = NineGraphLockScreenViewController()
-            vc.style = .forgot
-            vc.patternTitle = R.string.localizable.patternForgot()
-            vc.tips = R.string.localizable.patternForgotTips()
-            navigationController?.pushViewController(vc, animated: true)
-        }
-        if source == .changeEmail {
-            let vc = ChangeEmailSuccessViewController()
-            navigationController?.pushViewController(vc, animated: true)
-        }
-        if source == .closeAuth {
-            LockScreenManager.shared.isOn = false
-            navigationController?.popViewController(animated: true)
-        }
-        if source == .forgotPassword {
-            let vc = SettingPasswordViewController()
-            vc.style = .forgot
-            navigationController?.pushViewController(vc, animated: true)
-        }
-        if source == .changeEmail {
-            
-        }
-    }
-    
     private func requestResetAuth(emailCode: String, phoneCode:String, authToken: String) {
         indicator.startAnimating()
         AuthRequest.resetTwoFa(emailCode: emailCode, phoneCode: phoneCode, authToken: authToken) { [weak self] isSuccess, message in
@@ -412,6 +431,30 @@ class SecurityVerificationViewController: BaseViewController {
                 this.navigationController?.pushViewController(vc, animated: true)
             } else {
                 this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func requestFreeze() {
+        CardRequest.freeze { isSuccess, message, data in
+            if isSuccess {
+                let vc = FreezeSuccessViewController(title: R.string.localizable.cardFreezeSuccessfullyTitle(),
+                                                     subTitle: R.string.localizable.cardFreezeSuccessfullySubtitle())
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func requestUnfreeze() {
+        CardRequest.unfreeze { isSuccess, message, data in
+            if isSuccess {
+                let vc = FreezeSuccessViewController(title: R.string.localizable.cardUnfreezeSuccessfullyTitle(),
+                                                     subTitle: R.string.localizable.cardUnfreezeSuccessfullySubtitle())
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.view.makeToast(message, position: .center)
             }
         }
     }

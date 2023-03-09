@@ -200,6 +200,9 @@
 "max" = "Max";
 "makeADeposit" = "Make A Deposit";
 "makeDepositInfo" = "Insufficient balance, don't have sufficient crypto ?";
+"homeKycResubmitTips" = "Please resubmit your identity verification first. For the security of your account and assets, this function is unavailable until your identity is verified. Thank you for your patience and we apologize for the inconvenience";
+"homeKycInreviewTips" = "Your identity verification is under review and it is expected to take 1-2 working days to complete. For the security of your account and assets, this function is unavailable until your identity is verified. Thank you for your patience and we apologize for the inconvenience";
+"homeKycRejectTips" = "We regret that our services are not available for your account due to your identity verification failure";
 
 //// Card
 "applyCard" = "Apply Card";
@@ -212,10 +215,16 @@
 "writeOffCard" = "Write-off Card";
 "cardSettingFreezeCardTitle" = "Are you sure freeze this debit card ?";
 "cardSettingFreezeCardDesc" = "If your card is frozen, your card cannot be used until you unfreeze it";
+"cardSettingUnFreezeCardDesc" = "Your card has been frozen, do you want to unfrozen?";
 "cardSettingWriteOffCardTitle" = "Are you sure Write-off this debit card ?";
 "cardSettingWriteOffCardDesc" = "If you Write-off your card, your card will not be used, nor can it be restored, and the balance must be 0 to Write-off.";
 "sureToWriteOff" = "Sure to Write-off";
 "sureToFreeze" = "Sure to freeze";
+"unfreeze" = "Unfrozen";
+"cardFreezeSuccessfullyTitle" = "Freeze Successfully";
+"cardFreezeSuccessfullySubtitle" = "Your card is frozen";
+"cardUnfreezeSuccessfullyTitle" = "Freeze Successfully";
+"cardUnfreezeSuccessfullySubtitle" = "Your card is frozen";
 
 /// Tabbar
 "home" = "HOME";
@@ -234,3 +243,4 @@
 "gotIt" = "Got It";
 "email" = "Email";
 "refresh" = "Refresh";
+"sorry" = "Sorry";

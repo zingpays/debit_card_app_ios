@@ -199,6 +199,9 @@
 "max" = "全部";
 "makeADeposit" = "用数字货币进行充值";
 "makeDepositInfo" = "余额不足，没有足够的数字货币？";
+"homeKycResubmitTips" = "请先重新提交你的身份认证；为了你的账号和资产安全，这个功能暂不可用直到你的身份认证通过了，谢谢你的耐心，给你带来不便请谅解。";
+"homeKycInreviewTips" = "Your identity verification is under review and it is expected to take 1-2 working days to complete. For the security of your account and assets, this function is unavailable until your identity is verified. Thank you for your patience and we apologize for the inconvenience";
+"homeKycRejectTips" = "We regret that our services are not available for your account due to your identity verification failure";
 
 //// Card
 "applyCard" = "申请卡";
@@ -211,10 +214,16 @@
 "writeOffCard" = "注销卡";
 "cardSettingFreezeCardTitle" = "确定要冻结这张卡吗？";
 "cardSettingFreezeCardDesc" = "如果您的卡被冻结了，卡将不能使用直到解冻它";
+"cardSettingUnFreezeCardDesc" = "您的卡已被冻结，您确定要解冻吗？";
 "cardSettingWriteOffCardTitle" = "确定要注销这张借记卡吗？";
 "cardSettingWriteOffCardDesc" = "如果你注销卡，你的卡将不能使用，也不能被恢复，且卡余额需为0才能注销";
 "sureToFreeze" = "确定冻结";
+"unfreeze" = "解冻";
 "sureToWriteOff" = "确定注销";
+"cardFreezeSuccessfullyTitle" = "冻结成功";
+"cardFreezeSuccessfullySubtitle" = "您的卡已被冻结";
+"cardUnfreezeSuccessfullyTitle" = "解冻成功";
+"cardUnfreezeSuccessfullySubtitle" = "你的卡已解冻";
 
 /// Tabbar
 "home" = "首页";
@@ -233,3 +242,4 @@
 "gotIt" = "了解";
 "email" = "邮件";
 "refresh" = "刷新";
+"sorry" = "抱歉";

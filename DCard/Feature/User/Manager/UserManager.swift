@@ -59,8 +59,8 @@ class UserManager {
             return UserDefaults.standard.string(forKey: USER_PHONENUM_KEY)
         }
     }
-    
-    var kycStatus: KycStatus = .notStarted
+  
+    var status: UserStatusModel?
     
     func saveUserInfo(_ value: LoginModel) {
         UserDefaults.standard.set(value, forKey: USER_INFO_KEY)

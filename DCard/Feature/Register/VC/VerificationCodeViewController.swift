@@ -122,7 +122,7 @@ class VerificationCodeViewController: BaseViewController {
         time.schedule(deadline: .now(), repeating: 1)
         time.setEventHandler(handler: { [weak self] in
             guard let this = self else { return }
-            if times < 0 {
+            if times <= 0 {
                 DispatchQueue.main.async {
                     this.resendButton.alpha = 1
                     this.resendButton.setTitle(R.string.localizable.resend(), for: .normal)

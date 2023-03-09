@@ -23,7 +23,7 @@ struct CardModel: Mappable {
     var expireDate: String?
     var externalCardId: String?
     var partnerName: String?
-    var status: String?
+    var status: CardStatus = .normal
     var updatedAt: String?
 
     init?(map: Map) {}
@@ -44,5 +44,22 @@ struct CardModel: Mappable {
         status           <- map["status"]
         uniqueId         <- map["unique_id"]
         updatedAt        <- map["updated_at"]
+    }
+}
+
+enum CardStatus: String {
+    case normal = "Normal"
+    case frozen = "Frozen"
+    case closed = "Closed"
+}
+
+struct CardStatusModel: Mappable {
+    
+    var status: CardStatus = .normal
+
+    init?(map: Map) {}
+
+    mutating func mapping(map: Map) {
+        status           <- map["status"]
     }
 }

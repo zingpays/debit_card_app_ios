@@ -146,9 +146,50 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CardViewController: EmptyCardTableViewCellDelegate {
     func didSelectedAddCard(_ cell: EmptyCardTableViewCell) {
-        let vc = ApplyCardViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        guard let kycStatus = UserManager.shared.status?.kycStatus else { return }
+        switch kycStatus {
+        case .notStarted, .start, .inProgress:
+            let vc = KYCUnAvailableViewController()
+            vc.hidesBottomBarWhenPushed = true
+            vc.source = .home
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .submitted, .inReview:
+            let alert = UIAlertController(title: R.string.localizable.sorry(),
+                                          message: R.string.localizable.homeKycInreviewTips(),
+                                          preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: R.string.localizable.gotIt(),
+                                             style: .cancel)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+        case .approved:
+            let vc = ApplyCardViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case .rejected:
+            let alert = UIAlertController(title: R.string.localizable.sorry(),
+                                          message: R.string.localizable.homeKycRejectTips(),
+                                          preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: R.string.localizable.gotIt(),
+                                             style: .cancel)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+        case .resubmitted:
+            let alert = UIAlertController(title: R.string.localizable.sorry(),
+                                          message: R.string.localizable.homeKycResubmitTips(),
+                                          preferredStyle: .alert)
+            let continuneAction = UIAlertAction(title: R.string.localizable.toVerify(),
+                                                style: .default) { action in
+                let vc = KYCFillInNameAndNationalViewController()
+                vc.kycStatus = .resubmitted
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            let cancelAction = UIAlertAction(title: R.string.localizable.cancel(),
+                                             style: .cancel)
+            alert.addAction(cancelAction)
+            alert.addAction(continuneAction)
+            self.present(alert, animated: true)
+        }
     }
 }
 

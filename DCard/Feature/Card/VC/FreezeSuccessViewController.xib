@@ -20,6 +20,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FreezeSuccessViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="subtitleLabel" destination="KWz-J3-J70" id="FUW-MC-rue"/>
+                <outlet property="titleLabel" destination="5IP-de-Lns" id="D9D-lE-Nai"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,13 +31,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freeze Successfully" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IP-de-Lns">
-                    <rect key="frame" x="89.333333333333329" y="313" width="214.66666666666669" height="28.333333333333314"/>
+                    <rect key="frame" x="89.333333333333329" y="313" width="214.66666666666669" height="28"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                     <color key="textColor" name="fw#000000"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your card is frozen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWz-J3-J70">
-                    <rect key="frame" x="20" y="353.33333333333331" width="353" height="19"/>
+                    <rect key="frame" x="20" y="353" width="353" height="19"/>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
                     <color key="textColor" name="fw#000000"/>
                     <nil key="highlightedColor"/>
@@ -58,7 +60,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gt-5A-bYx">
-                    <rect key="frame" x="26" y="420.33333333333331" width="341" height="46"/>
+                    <rect key="frame" x="26" y="420" width="341" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="tGx-VB-C1t"/>
@@ -91,7 +93,7 @@
                 <constraint firstItem="2jD-qs-hpG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="148" id="l18-Vj-l94"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KWz-J3-J70" secondAttribute="trailing" constant="20" id="rXB-ow-h5b"/>
             </constraints>
-            <point key="canvasLocation" x="66" y="12"/>
+            <point key="canvasLocation" x="195" y="-39"/>
         </view>
     </objects>
     <resources>

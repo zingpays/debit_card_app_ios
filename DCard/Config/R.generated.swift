@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 208 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 218 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -215,6 +215,20 @@ struct _R {
       /// Locales: en, zh-Hans
       var cardBaseCurrency: RswiftResources.StringResource { .init(key: "cardBaseCurrency", tableName: "Localizable", source: source, developmentValue: "Card Base Currency", comment: nil) }
 
+      /// en translation: Your card is frozen
+      ///
+      /// Key: cardFreezeSuccessfullySubtitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardFreezeSuccessfullySubtitle: RswiftResources.StringResource { .init(key: "cardFreezeSuccessfullySubtitle", tableName: "Localizable", source: source, developmentValue: "Your card is frozen", comment: nil) }
+
+      /// en translation: Freeze Successfully
+      ///
+      /// Key: cardFreezeSuccessfullyTitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardFreezeSuccessfullyTitle: RswiftResources.StringResource { .init(key: "cardFreezeSuccessfullyTitle", tableName: "Localizable", source: source, developmentValue: "Freeze Successfully", comment: nil) }
+
       /// en translation: Card Information
       ///
       /// Key: cardInformation
@@ -243,6 +257,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var cardSettingFreezeCardTitle: RswiftResources.StringResource { .init(key: "cardSettingFreezeCardTitle", tableName: "Localizable", source: source, developmentValue: "Are you sure freeze this debit card ?", comment: nil) }
 
+      /// en translation: Your card has been frozen, do you want to unfrozen?
+      ///
+      /// Key: cardSettingUnFreezeCardDesc
+      ///
+      /// Locales: en, zh-Hans
+      var cardSettingUnFreezeCardDesc: RswiftResources.StringResource { .init(key: "cardSettingUnFreezeCardDesc", tableName: "Localizable", source: source, developmentValue: "Your card has been frozen, do you want to unfrozen?", comment: nil) }
+
       /// en translation: If you Write-off your card, your card will not be used, nor can it be restored, and the balance must be 0 to Write-off.
       ///
       /// Key: cardSettingWriteOffCardDesc
@@ -270,6 +291,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cardTypeValue: RswiftResources.StringResource { .init(key: "cardTypeValue", tableName: "Localizable", source: source, developmentValue: "Visa virtual debit card", comment: nil) }
+
+      /// en translation: Your card is frozen
+      ///
+      /// Key: cardUnfreezeSuccessfullySubtitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardUnfreezeSuccessfullySubtitle: RswiftResources.StringResource { .init(key: "cardUnfreezeSuccessfullySubtitle", tableName: "Localizable", source: source, developmentValue: "Your card is frozen", comment: nil) }
+
+      /// en translation: Freeze Successfully
+      ///
+      /// Key: cardUnfreezeSuccessfullyTitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardUnfreezeSuccessfullyTitle: RswiftResources.StringResource { .init(key: "cardUnfreezeSuccessfullyTitle", tableName: "Localizable", source: source, developmentValue: "Freeze Successfully", comment: nil) }
 
       /// en translation: Verify your old password
       ///
@@ -746,6 +781,27 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var home: RswiftResources.StringResource { .init(key: "home", tableName: "Localizable", source: source, developmentValue: "HOME", comment: nil) }
+
+      /// en translation: Your identity verification is under review and it is expected to take 1-2 working days to complete. For the security of your account and assets, this function is unavailable until your identity is verified. Thank you for your patience and we apologize for the inconvenience
+      ///
+      /// Key: homeKycInreviewTips
+      ///
+      /// Locales: en, zh-Hans
+      var homeKycInreviewTips: RswiftResources.StringResource { .init(key: "homeKycInreviewTips", tableName: "Localizable", source: source, developmentValue: "Your identity verification is under review and it is expected to take 1-2 working days to complete. For the security of your account and assets, this function is unavailable until your identity is verified. Thank you for your patience and we apologize for the inconvenience", comment: nil) }
+
+      /// en translation: We regret that our services are not available for your account due to your identity verification failure
+      ///
+      /// Key: homeKycRejectTips
+      ///
+      /// Locales: en, zh-Hans
+      var homeKycRejectTips: RswiftResources.StringResource { .init(key: "homeKycRejectTips", tableName: "Localizable", source: source, developmentValue: "We regret that our services are not available for your account due to your identity verification failure", comment: nil) }
+
+      /// en translation: Please resubmit your identity verification first. For the security of your account and assets, this function is unavailable until your identity is verified. Thank you for your patience and we apologize for the inconvenience
+      ///
+      /// Key: homeKycResubmitTips
+      ///
+      /// Locales: en, zh-Hans
+      var homeKycResubmitTips: RswiftResources.StringResource { .init(key: "homeKycResubmitTips", tableName: "Localizable", source: source, developmentValue: "Please resubmit your identity verification first. For the security of your account and assets, this function is unavailable until your identity is verified. Thank you for your patience and we apologize for the inconvenience", comment: nil) }
 
       /// en translation: Information Required
       ///
@@ -1356,6 +1412,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var skip: RswiftResources.StringResource { .init(key: "skip", tableName: "Localizable", source: source, developmentValue: "Skip", comment: nil) }
 
+      /// en translation: Sorry
+      ///
+      /// Key: sorry
+      ///
+      /// Locales: en, zh-Hans
+      var sorry: RswiftResources.StringResource { .init(key: "sorry", tableName: "Localizable", source: source, developmentValue: "Sorry", comment: nil) }
+
       /// en translation: Submit
       ///
       /// Key: submit
@@ -1509,6 +1572,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var transactions: RswiftResources.StringResource { .init(key: "transactions", tableName: "Localizable", source: source, developmentValue: "Transactions", comment: nil) }
+
+      /// en translation: Unfrozen
+      ///
+      /// Key: unfreeze
+      ///
+      /// Locales: en, zh-Hans
+      var unfreeze: RswiftResources.StringResource { .init(key: "unfreeze", tableName: "Localizable", source: source, developmentValue: "Unfrozen", comment: nil) }
 
       /// en translation: Verification In Review
       ///

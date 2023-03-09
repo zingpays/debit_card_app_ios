@@ -34,12 +34,18 @@ struct UserRequest {
                                     type: UserStatusModel.self,
                                     completion: completion)
     }
+    
+    static func securityCheck(emailCode: String?, phoneCode: String?, authCode: String?, completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<UserTarget>()
+        provider.requestStatus(.securityCheck(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode), completion: completion)
+    }
 }
 
 enum UserTarget {
     case loginInfo
     case securityStatus
     case status
+    case securityCheck(emailCode: String?, phoneCode: String?, authCode: String?)
 }
 
 extension UserTarget: BaseTargetType {
@@ -51,11 +57,22 @@ extension UserTarget: BaseTargetType {
             return "/user/security-status"
         case .status:
             return "/user/status"
+        case .securityCheck:
+            return "/user/public-verify"
         }
     }
 
     var parameters: [String: Any]? {
-        return nil
+        var params: [String: Any] = [:]
+        switch self {
+        case .securityCheck(let emailCode, let phoneCode, let authCode):
+            params["email_code"] = emailCode
+            params["phone_code"] = phoneCode
+            params["secret"] = authCode
+        default:
+            break
+        }
+        return params
     }
 }
 
