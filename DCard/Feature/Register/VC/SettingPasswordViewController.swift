@@ -380,13 +380,6 @@ extension SettingPasswordViewController: UITableViewDelegate, UITableViewDataSou
 // MARK: - UITextViewDelegate
 
 extension SettingPasswordViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField.text?.count ?? 0 >= 20 {
-            return false
-        } else {
-            return true
-        }
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == passwordTextField {
