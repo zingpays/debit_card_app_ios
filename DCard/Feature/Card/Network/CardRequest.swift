@@ -35,6 +35,11 @@ struct CardRequest {
         let provider = MoyaProvider<CardTarget>()
         provider.requestObjects(.list(uniqueId: uniqueId), type: CardModel.self, completion: completion)
     }
+    
+    static func open(completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<CardTarget>()
+        provider.requestStatus(.open, completion: completion)
+    }
 }
 
 enum CardTarget {
@@ -43,6 +48,7 @@ enum CardTarget {
     case freeze
     case unfreeze
     case list(uniqueId: String)
+    case open
 }
 
 extension CardTarget: BaseTargetType {
@@ -58,6 +64,8 @@ extension CardTarget: BaseTargetType {
             return "/virtual-card/freeze"
         case .unfreeze:
             return "/virtual-card/unfreeze"
+        case .open:
+            return "/virtual-card/open"
         }
     }
     
@@ -76,6 +84,11 @@ extension CardTarget: BaseTargetType {
         case .unfreeze:
             params["unique_id"] = "6648244"
             params["partner_name"] = "metaprise"
+        case .open:
+            params["unique_id"] = "6648244"
+            params["_skip_auth"] = 1
+            params["type"] = "visa_virtual_debit_card"
+            params["base_currency"] = "USD"
         case .supportType:
             break
         }

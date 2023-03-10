@@ -10,8 +10,15 @@ import UIKit
 
 class ApplyCardSuccessViewController: BaseViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var finishButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = R.string.localizable.applyCardSuccessTitle()
+        subtitleLabel.text = R.string.localizable.applyCardSuccessSubTitle()
+        finishButton.setTitle(R.string.localizable.applyCardSuccessFinish(), for: .normal)
     }
     
     override func setupNavBar() {}

@@ -20,6 +20,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ApplyCardSuccessViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="finishButton" destination="Uk1-os-Bnf" id="V6J-NE-0ns"/>
+                <outlet property="subtitleLabel" destination="7Nf-pP-qjr" id="Vtx-bz-9q8"/>
+                <outlet property="titleLabel" destination="oPV-pg-XtX" id="pO2-oD-VoY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -99,7 +102,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Nf-pP-qjr" secondAttribute="trailing" constant="20" id="p7p-DJ-tDw"/>
                 <constraint firstItem="oPV-pg-XtX" firstAttribute="top" secondItem="JDH-Ce-LIZ" secondAttribute="bottom" constant="24" id="pB0-IA-TL3"/>
             </constraints>
-            <point key="canvasLocation" x="286" y="38"/>
+            <point key="canvasLocation" x="445" y="-50"/>
         </view>
     </objects>
     <resources>

@@ -225,6 +225,12 @@
 "cardFreezeSuccessfullySubtitle" = "Your card is frozen";
 "cardUnfreezeSuccessfullyTitle" = "Freeze Successfully";
 "cardUnfreezeSuccessfullySubtitle" = "Your card is frozen";
+"applyCardTitle" = "Apply Card";
+"applyCardSubTitle" = "Your Payment Currency";
+"applyCardInfo" = "Payment currency is used to display your balance, tran-sactions, and sell cryptocurrency throughout the app";
+"applyCardSuccessTitle" = "Congratulations!";
+"applyCardSuccessSubTitle" = "Your virtual debit card has been activated successfully";
+"applyCardSuccessFinish" = "To See The Card";
 
 /// Tabbar
 "home" = "HOME";

@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 218 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 224 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -165,6 +165,48 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var applyCard: RswiftResources.StringResource { .init(key: "applyCard", tableName: "Localizable", source: source, developmentValue: "Apply Card", comment: nil) }
+
+      /// en translation: Payment currency is used to display your balance, tran-sactions, and sell cryptocurrency throughout the app
+      ///
+      /// Key: applyCardInfo
+      ///
+      /// Locales: en, zh-Hans
+      var applyCardInfo: RswiftResources.StringResource { .init(key: "applyCardInfo", tableName: "Localizable", source: source, developmentValue: "Payment currency is used to display your balance, tran-sactions, and sell cryptocurrency throughout the app", comment: nil) }
+
+      /// en translation: Your Payment Currency
+      ///
+      /// Key: applyCardSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var applyCardSubTitle: RswiftResources.StringResource { .init(key: "applyCardSubTitle", tableName: "Localizable", source: source, developmentValue: "Your Payment Currency", comment: nil) }
+
+      /// en translation: To See The Card
+      ///
+      /// Key: applyCardSuccessFinish
+      ///
+      /// Locales: en, zh-Hans
+      var applyCardSuccessFinish: RswiftResources.StringResource { .init(key: "applyCardSuccessFinish", tableName: "Localizable", source: source, developmentValue: "To See The Card", comment: nil) }
+
+      /// en translation: Your virtual debit card has been activated successfully
+      ///
+      /// Key: applyCardSuccessSubTitle
+      ///
+      /// Locales: en, zh-Hans
+      var applyCardSuccessSubTitle: RswiftResources.StringResource { .init(key: "applyCardSuccessSubTitle", tableName: "Localizable", source: source, developmentValue: "Your virtual debit card has been activated successfully", comment: nil) }
+
+      /// en translation: Congratulations!
+      ///
+      /// Key: applyCardSuccessTitle
+      ///
+      /// Locales: en, zh-Hans
+      var applyCardSuccessTitle: RswiftResources.StringResource { .init(key: "applyCardSuccessTitle", tableName: "Localizable", source: source, developmentValue: "Congratulations!", comment: nil) }
+
+      /// en translation: Apply Card
+      ///
+      /// Key: applyCardTitle
+      ///
+      /// Locales: en, zh-Hans
+      var applyCardTitle: RswiftResources.StringResource { .init(key: "applyCardTitle", tableName: "Localizable", source: source, developmentValue: "Apply Card", comment: nil) }
 
       /// en translation: If you are unable to scan the QR code, please enter this code manually into the app.
       ///
@@ -2364,6 +2406,8 @@ struct _R {
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ApplyCardSuccessViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconExactitude", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconExactitude' is used in nib 'ApplyCardViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconInfo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconInfo' is used in nib 'ApplyCardViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRegisterCheckboxOff", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRegisterCheckboxOff' is used in nib 'ApplyCardViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconRegisterCheckboxOn", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRegisterCheckboxOn' is used in nib 'ApplyCardViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'ApplyCardViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'ApplyCardViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'ApplyCardViewController', but couldn't be loaded.") }

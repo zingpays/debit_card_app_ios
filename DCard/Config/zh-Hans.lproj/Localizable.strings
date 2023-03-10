@@ -224,6 +224,12 @@
 "cardFreezeSuccessfullySubtitle" = "您的卡已被冻结";
 "cardUnfreezeSuccessfullyTitle" = "解冻成功";
 "cardUnfreezeSuccessfullySubtitle" = "你的卡已解冻";
+"applyCardTitle" = "申请卡";
+"applyCardSubTitle" = "你的支付币种";
+"applyCardInfo" = "你支付的币种将用于app展示你卡的余额，用于消费或卖数字货币获得法币类型";
+"applyCardSuccessTitle" = "恭喜！";
+"applyCardSuccessSubTitle" = "你的虚拟借记卡已经激活成功";
+"applyCardSuccessFinish" = "去查看卡";
 
 /// Tabbar
 "home" = "首页";
