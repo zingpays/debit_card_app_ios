@@ -102,7 +102,7 @@ extension KYCTarget: BaseTargetType {
             params["last_name"] = lastName
             params["nationality"] = nationality
             params["date_of_birth"] = "1990-11-30"
-            params["unique_id"] = "6648244"
+//            params["unique_id"] = "6648244"
         case .stepTwo(let country, let state, let city, let address1, let address2, let zipCode):
             params["country"] = country
             params["state"] = state
@@ -110,19 +110,23 @@ extension KYCTarget: BaseTargetType {
             params["address1"] = address1
             params["address2"] = address2
             params["zipcode"] = zipCode
-            params["unique_id"] = "6648244"
+//            params["unique_id"] = "6648244"
         case .stepThree(let veriffSubmitted):
             params["veriff_submitted"] = veriffSubmitted
         case .veriffSession:
-            params["unique_id"] = "6648244"
+//            params["unique_id"] = "6648244"
+            break
         case .submit:
-            params["unique_id"] = "6648244"
+//            params["unique_id"] = "6648244"
+            break
         case .info:
-            params["unique_id"] = "6648244"
-            params["_skip_auth"] = 1
+//            params["unique_id"] = "6648244"
+//            params["_skip_auth"] = 1
+            break
         case .status:
-            params["unique_id"] = "6648244"
-            params["_skip_auth"] = 1
+//            params["unique_id"] = "6648244"
+//            params["_skip_auth"] = 1
+            break
         }
         return params
     }

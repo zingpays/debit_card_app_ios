@@ -62,8 +62,12 @@ class UserCenterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupData()
     }
     
     // MARK: - Private

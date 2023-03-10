@@ -44,29 +44,38 @@ class QuickUnlockViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var rightArrowImageView: UIImageView!
+    @IBOutlet weak var changeButton: UIButton! {
+        didSet {
+            changeButton.setTitle(R.string.localizable.quickUnlockChange(), for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var line: UIView!
+    
     @IBOutlet weak var bioSwitch: UISwitch! {
         didSet {
             bioSwitch.isOn = LocalAuthenManager.shared.isBind
         }
     }
     
+    @IBOutlet weak var patternSwitch: UISwitch!
     @IBOutlet weak var patternLabel: UILabel! {
         didSet {
             patternLabel.text = R.string.localizable.quickUnlockPattern()
         }
     }
     
-    @IBOutlet weak var patternContentLabel: UILabel! {
-        didSet {
-            patternContentLabel.text = R.string.localizable.quickUnlockChange()
-            patternContentLabel.isHidden = LockScreenManager.shared.password?.isEmpty ?? true
-        }
-    }
+    @IBOutlet weak var patternHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updatePattern()
     }
     
     deinit {
@@ -79,36 +88,30 @@ class QuickUnlockViewController: BaseViewController {
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
+        line.backgroundColor = R.color.fw000000()?.withAlphaComponent(0.05)
     }
     
-    private func setupData() {
-        setupNotification()
-    }
-
-    private func setupNotification() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(patternSetupSuccess),
-                                               name: Notification.Name(SETUPPATTERNSUCCESS),
-                                               object: nil)
+    private func updatePattern() {
+        if LockScreenManager.shared.password?.count ?? 0 > 0 {
+            patternHeightConstraint.constant = 100
+            patternSwitch.isOn = true
+            rightArrowImageView.isHidden = false
+            changeButton.isHidden = false
+        } else {
+            patternHeightConstraint.constant = 55
+            patternSwitch.isOn = false
+            rightArrowImageView.isHidden = true
+            changeButton.isHidden = true
+        }
     }
     
     // MARK: - Actions
     
-    @objc func patternSetupSuccess() {
-        patternContentLabel.isHidden = false
-    }
-    
-    @IBAction func patternAction(_ sender: Any) {
+    @IBAction func patternChangeAction(_ sender: Any) {
         let vc = NineGraphLockScreenViewController()
-        if patternContentLabel.isHidden {
-            vc.style = .set
-            vc.patternTitle = R.string.localizable.patternSet()
-            vc.tips = R.string.localizable.patternSetTips()
-        } else {
-            vc.style = .change
-            vc.patternTitle = R.string.localizable.patternChange()
-            vc.tips = R.string.localizable.patternChangeTips()
-        }
+        vc.style = .change
+        vc.patternTitle = R.string.localizable.patternChange()
+        vc.tips = R.string.localizable.patternChangeTips()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -131,6 +134,22 @@ class QuickUnlockViewController: BaseViewController {
             } else {
                 DLog.info(LocalAuthenManager.shared.errorCode)
             }
+        }
+    }
+    
+    @IBAction func patternSwitchAction(_ sender: UIButton) {
+        if patternSwitch.isOn {
+            LockScreenManager.shared.password  = nil
+            patternSwitch.isOn = false
+            patternHeightConstraint.constant = 55
+            rightArrowImageView.isHidden = true
+            changeButton.isHidden = true
+        } else {
+            let vc = NineGraphLockScreenViewController()
+            vc.style = .set
+            vc.patternTitle = R.string.localizable.patternSet()
+            vc.tips = R.string.localizable.patternSetTips()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

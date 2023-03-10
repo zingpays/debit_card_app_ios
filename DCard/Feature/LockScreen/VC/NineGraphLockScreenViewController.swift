@@ -336,22 +336,22 @@ extension NineGraphLockScreenViewController: GPasswordEventDelegate {
         case .change:
             if isAgain {
                 if passwordFirst == password {
+                    LockScreenManager.shared.password = password
+                    NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
                     view.makeToast(R.string.localizable.patternSetupSuccessTips(), duration: 0.8, position: .center) { [weak self] didTap in
                         guard let this = self else { return }
-                        LockScreenManager.shared.password = this.password
-                        NotificationCenter.default.post(name: NSNotification.Name(SETUPPATTERNSUCCESS), object: nil)
                         this.navigationController?.popViewController()
                     }
                 } else {
+                    passwordFirst = password
                     password = ""
-                    updateTips(R.string.localizable.patternAgainErrorTips(), isError: true)
+                    updateTips(R.string.localizable.patternSetAgainTips(), isError: false)
                 }
             } else {
                 if password == LockScreenManager.shared.password {
                     isAgain = true
-                    passwordFirst = password
                     password = ""
-                    updateTips(R.string.localizable.patternSetAgainTips(), isError: false)
+                    updateTips(R.string.localizable.patternChangeAgainTips(), isError: false)
                 } else {
                     password = ""
                     updateTips(R.string.localizable.patternNotMatchOriginPatternErrorTips(), isError: true)

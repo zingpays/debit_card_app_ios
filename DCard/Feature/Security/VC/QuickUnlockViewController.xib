@@ -26,9 +26,13 @@
                 <outlet property="bioIcon" destination="gGF-YC-fPt" id="F8K-8v-oRg"/>
                 <outlet property="bioSwitch" destination="7uD-gg-da4" id="Tk4-Xd-asB"/>
                 <outlet property="bioTitleLabel" destination="1Lp-Xe-Csm" id="AWK-G4-afl"/>
+                <outlet property="changeButton" destination="nac-dQ-1kq" id="Ull-cj-n9z"/>
                 <outlet property="infoLabel" destination="iRh-tI-XW1" id="xRo-kN-l1C"/>
-                <outlet property="patternContentLabel" destination="j4V-GC-7WJ" id="lh0-iO-bWr"/>
+                <outlet property="line" destination="aR6-oK-LDB" id="Gm7-nb-GIz"/>
+                <outlet property="patternHeightConstraint" destination="sh3-Ez-7U5" id="pR3-mJ-BH0"/>
                 <outlet property="patternLabel" destination="YxD-ku-Vr0" id="V3l-72-VAa"/>
+                <outlet property="patternSwitch" destination="UQN-gB-uMg" id="kBe-Np-oKo"/>
+                <outlet property="rightArrowImageView" destination="34n-vA-Ac1" id="bd3-k4-FQV"/>
                 <outlet property="titleLabel" destination="5bH-eS-wAm" id="PJw-ZX-BLH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -109,7 +113,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxX-is-Uav">
-                    <rect key="frame" x="16" y="249" width="361" height="56"/>
+                    <rect key="frame" x="16" y="249" width="361" height="100"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconQuGesture" translatesAutoresizingMaskIntoConstraints="NO" id="mJN-Fl-cAJ">
                             <rect key="frame" x="12" y="14" width="28" height="28"/>
@@ -125,42 +129,68 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRightArrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="34n-vA-Ac1">
-                            <rect key="frame" x="333" y="22" width="12" height="12"/>
+                            <rect key="frame" x="333" y="71" width="12" height="12"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="12" id="Ger-YF-vyj"/>
                                 <constraint firstAttribute="height" constant="12" id="XwF-Qo-7wD"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRt-jj-Wlp">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="56"/>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UQN-gB-uMg">
+                            <rect key="frame" x="298" y="12.666666666666686" width="51" height="31"/>
+                            <color key="onTintColor" name="fw#00A8BB"/>
+                        </switch>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aR6-oK-LDB" userLabel="line">
+                            <rect key="frame" x="12" y="55" width="337" height="1"/>
+                            <color key="backgroundColor" name="fw#000000"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Kzm-AZ-xwu"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nac-dQ-1kq">
+                            <rect key="frame" x="249" y="69" width="84" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="nbl-Ee-3sS"/>
+                                <constraint firstAttribute="width" constant="84" id="yIn-ur-qru"/>
+                            </constraints>
+                            <color key="tintColor" name="fw#00A8BB"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=" Change"/>
+                            <connections>
+                                <action selector="patternChangeAction:" destination="-1" eventType="touchUpInside" id="GRc-cJ-3PG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-fu-3Xz">
+                            <rect key="frame" x="296" y="12.666666666666686" width="51" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="Mn2-5n-wnv"/>
+                                <constraint firstAttribute="width" constant="51" id="Tw9-L4-GUH"/>
+                            </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title=" "/>
                             <connections>
-                                <action selector="patternAction:" destination="-1" eventType="touchUpInside" id="gvL-LQ-hBb"/>
+                                <action selector="patternSwitchAction:" destination="-1" eventType="touchUpInside" id="opp-4r-b2f"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-GC-7WJ">
-                            <rect key="frame" x="270.33333333333331" y="18.666666666666686" width="54.666666666666686" height="19"/>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                            <color key="textColor" name="fw#00A8BB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="fw#FFFFFF"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="WRt-jj-Wlp" secondAttribute="bottom" id="7mh-XY-79I"/>
-                        <constraint firstAttribute="trailing" secondItem="WRt-jj-Wlp" secondAttribute="trailing" id="Erm-8Z-jPO"/>
+                        <constraint firstAttribute="bottom" secondItem="34n-vA-Ac1" secondAttribute="bottom" constant="17" id="BjG-jm-KmM"/>
+                        <constraint firstAttribute="trailing" secondItem="aR6-oK-LDB" secondAttribute="trailing" constant="12" id="ICD-yU-hCD"/>
                         <constraint firstItem="mJN-Fl-cAJ" firstAttribute="leading" secondItem="QxX-is-Uav" secondAttribute="leading" constant="12" id="JLg-9v-hUB"/>
-                        <constraint firstItem="34n-vA-Ac1" firstAttribute="centerY" secondItem="QxX-is-Uav" secondAttribute="centerY" id="PxL-5P-bVD"/>
-                        <constraint firstItem="34n-vA-Ac1" firstAttribute="leading" secondItem="j4V-GC-7WJ" secondAttribute="trailing" constant="8" id="Teb-IY-164"/>
-                        <constraint firstItem="j4V-GC-7WJ" firstAttribute="centerY" secondItem="QxX-is-Uav" secondAttribute="centerY" id="Tf4-Ti-qPD"/>
-                        <constraint firstItem="YxD-ku-Vr0" firstAttribute="centerY" secondItem="QxX-is-Uav" secondAttribute="centerY" id="aiJ-hg-qsd"/>
-                        <constraint firstItem="WRt-jj-Wlp" firstAttribute="leading" secondItem="QxX-is-Uav" secondAttribute="leading" id="dZj-dI-Zzl"/>
+                        <constraint firstAttribute="bottom" secondItem="nac-dQ-1kq" secondAttribute="bottom" constant="15" id="ROD-0f-EpZ"/>
+                        <constraint firstItem="YxD-ku-Vr0" firstAttribute="centerY" secondItem="mJN-Fl-cAJ" secondAttribute="centerY" id="RTL-Pu-kZQ"/>
+                        <constraint firstItem="UOu-fu-3Xz" firstAttribute="centerY" secondItem="YxD-ku-Vr0" secondAttribute="centerY" id="VJk-Ps-Lqp"/>
+                        <constraint firstItem="mJN-Fl-cAJ" firstAttribute="leading" secondItem="QxX-is-Uav" secondAttribute="leading" constant="12" id="bpb-5u-MA7"/>
+                        <constraint firstItem="UQN-gB-uMg" firstAttribute="centerY" secondItem="YxD-ku-Vr0" secondAttribute="centerY" id="eSX-0Y-64w"/>
+                        <constraint firstAttribute="trailing" secondItem="UOu-fu-3Xz" secondAttribute="trailing" constant="14" id="hZz-gF-DBD"/>
                         <constraint firstItem="YxD-ku-Vr0" firstAttribute="leading" secondItem="mJN-Fl-cAJ" secondAttribute="trailing" constant="8" id="hwt-e7-KEu"/>
-                        <constraint firstAttribute="height" constant="56" id="sh3-Ez-7U5"/>
+                        <constraint firstItem="aR6-oK-LDB" firstAttribute="top" secondItem="QxX-is-Uav" secondAttribute="top" constant="55" id="lTt-OL-1X1"/>
+                        <constraint firstItem="aR6-oK-LDB" firstAttribute="leading" secondItem="QxX-is-Uav" secondAttribute="leading" constant="12" id="lpA-oI-rWp"/>
+                        <constraint firstItem="34n-vA-Ac1" firstAttribute="leading" secondItem="nac-dQ-1kq" secondAttribute="trailing" id="oM5-qj-0Sd"/>
+                        <constraint firstItem="mJN-Fl-cAJ" firstAttribute="top" secondItem="QxX-is-Uav" secondAttribute="top" constant="14" id="rQY-yw-cde"/>
+                        <constraint firstAttribute="height" constant="100" id="sh3-Ez-7U5"/>
                         <constraint firstAttribute="trailing" secondItem="34n-vA-Ac1" secondAttribute="trailing" constant="16" id="t7w-hh-YMS"/>
-                        <constraint firstItem="WRt-jj-Wlp" firstAttribute="top" secondItem="QxX-is-Uav" secondAttribute="top" id="wgW-Ao-T2F"/>
-                        <constraint firstItem="mJN-Fl-cAJ" firstAttribute="centerY" secondItem="QxX-is-Uav" secondAttribute="centerY" id="wvY-mL-4iu"/>
+                        <constraint firstAttribute="trailing" secondItem="UQN-gB-uMg" secondAttribute="trailing" constant="14" id="xdi-mx-cCZ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -194,11 +224,17 @@
         <image name="iconQuFaceId" width="28" height="28"/>
         <image name="iconQuGesture" width="28" height="28"/>
         <image name="iconRightArrowBlue" width="12" height="12"/>
+        <namedColor name="fw#000000">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
         <namedColor name="fw#001214">
             <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="fw#00A8BB">
             <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

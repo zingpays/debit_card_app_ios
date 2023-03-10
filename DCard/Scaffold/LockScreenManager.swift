@@ -14,6 +14,7 @@ class LockScreenManager {
     fileprivate let kPatternPasswordKey = "PATTERNPASSWORDKEY"
     fileprivate let kAuthPasswordKey = "AUTHPASSWORDKEY"
     
+    /// 九宫格图案
     var password: String? {
         set {
             UserDefaults.standard.set(newValue, forKey: kPatternPasswordKey)
@@ -24,6 +25,7 @@ class LockScreenManager {
         }
     }
     
+    /// 是否开启了2FA
     var isOn: Bool {
         set {
             UserDefaults.standard.set(newValue, forKey: kAuthPasswordKey)
