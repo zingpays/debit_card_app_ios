@@ -20,6 +20,10 @@ class CardViewController: BaseViewController {
     
     private var cardList: [CardModel] = []
     
+    private var cardInfo: CardModel?
+    
+    private var transactionsData: TransactionsModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -45,7 +49,7 @@ class CardViewController: BaseViewController {
     }
     
     private func setupData() {
-        requestCardList()
+        requestCardInfo()
     }
     
     private func setupNotification() {
@@ -58,7 +62,7 @@ class CardViewController: BaseViewController {
     // MARK: - Action
     
     @objc private func applyCardSuccess() {
-        
+        requestCardInfo()
     }
     
     @IBAction func cardSettingAction(_ sender: Any) {
@@ -98,12 +102,50 @@ class CardViewController: BaseViewController {
             }
         }
     }
+    
+    private func requestCardInfo() {
+        indicator.startAnimating()
+        CardRequest.info { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                if let data = data {
+                    this.cardInfo = data
+                    this.requestTransationsData()
+                    this.cardTableView.reloadData()
+                } else {
+                    this.requestCardSupportType()
+                }
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func requestTransationsData() {
+        indicator.startAnimating()
+        CardRequest.transations(page: 2, per: 5) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                if let data = data {
+                    this.transactionsData = data
+                    this.cardTableView.reloadData()
+                }
+            }
+        }
+    }
+    
 }
 
 extension CardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if cardList.count > 0 {
-            return 2
+        if cardInfo != nil {
+            if transactionsData != nil, transactionsData?.list?.count ?? 0 > 0 {
+                return 2
+            } else {
+                return 1
+            }
         } else {
             return cardTypeData == nil ? 0 : 1
         }
@@ -111,19 +153,19 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            if cardList.isEmpty {
+            if cardInfo == nil {
                 return EmptyCardTableViewCell.height()
             } else {
                 return CardBagTableViewCell.height()
             }
         } else {
-            return RecentTransactionsTableViewCell.height()
+            return RecentTransactionsTableViewCell.height(transactions: transactionsData?.list?.count ?? 0)
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            if cardList.isEmpty {
+            if cardInfo == nil {
                 let cell = tableView.fw.dequeue(cellType: EmptyCardTableViewCell.self, for: indexPath)
                 cell.selectionStyle = .none
                 cell.delegate = self
@@ -133,12 +175,14 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.fw.dequeue(cellType: CardBagTableViewCell.self, for: indexPath)
                 cell.selectionStyle = .none
                 cell.delegate = self
+                cell.update(data: cardInfo)
                 return cell
             }
         } else {
             let cell = tableView.fw.dequeue(cellType: RecentTransactionsTableViewCell.self, for: indexPath)
             cell.selectionStyle = .none
             cell.delegate = self
+            cell.update(data: transactionsData?.list)
             return cell
         }
     }

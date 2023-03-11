@@ -23,6 +23,8 @@ class RecentTransactionsTableViewCell: UITableViewCell {
             transactionsTableview.dataSource = self
         }
     }
+    private var transactions: [TransactionItemModel] = []
+    
     weak var delegate: RecentTransactionsTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -30,8 +32,9 @@ class RecentTransactionsTableViewCell: UITableViewCell {
         setupSubviews()
     }
     
-    static func height() -> CGFloat {
-        return 314 + 20
+    static func height(transactions: Int) -> CGFloat {
+        return CGFloat(transactions * 71 + 48 + 53 + 20)
+        // 71*3=213 213 + 48 = 261  261 + 53 = 314
     }
     
     // MARK: - Private
@@ -41,6 +44,7 @@ class RecentTransactionsTableViewCell: UITableViewCell {
         cardContentShadowView.layer.masksToBounds = false
         cardContentShadowView.layer.shadowColor = R.color.fw005960()?.withAlphaComponent(0.16).cgColor
         transactionsTableview.fw.registerCellNib(TransactionItemTableViewCell.self)
+        titleLabel.text = R.string.localizable.recentTransactions()
     }
     
     // MARK: - Action
@@ -51,7 +55,7 @@ class RecentTransactionsTableViewCell: UITableViewCell {
 
 extension RecentTransactionsTableViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return transactions.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,7 +76,7 @@ extension RecentTransactionsTableViewCell: UITableViewDelegate, UITableViewDataS
             make.centerX.equalToSuperview().offset(-16)
             make.centerY.equalToSuperview()
         }
-        label.text = "View the all"
+        label.text = R.string.localizable.viewTheAll()
         label.textColor = R.color.fw000000()?.withAlphaComponent(0.5)
         label.font = UIFont.fw.font14()
         let imageV = UIImageView()
@@ -93,7 +97,16 @@ extension RecentTransactionsTableViewCell: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeueReusableCell(withIdentifier: TransactionItemTableViewCell.description()) as! TransactionItemTableViewCell
         cell.selectionStyle = .none
+        let data = transactions[indexPath.row]
+        let style: TransactionItemTableViewCellStyle = data.type == .consume ? .withFlag : .content
+        cell.update(style: style, data: data)
         return cell
+    }
+    
+    func update(data: [TransactionItemModel]?) {
+        guard let data = data else { return }
+        transactions = data
+        transactionsTableview.reloadData()
     }
     
 }

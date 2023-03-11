@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 224 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 234 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -236,6 +236,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var authenticatorCodePlaceholder: RswiftResources.StringResource { .init(key: "authenticatorCodePlaceholder", tableName: "Localizable", source: source, developmentValue: "Enter authenticator code", comment: nil) }
 
+      /// en translation: Available banlance
+      ///
+      /// Key: availableBanlance
+      ///
+      /// Locales: en, zh-Hans
+      var availableBanlance: RswiftResources.StringResource { .init(key: "availableBanlance", tableName: "Localizable", source: source, developmentValue: "Available banlance", comment: nil) }
+
       /// en translation: Cancel
       ///
       /// Key: cancel
@@ -256,6 +263,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cardBaseCurrency: RswiftResources.StringResource { .init(key: "cardBaseCurrency", tableName: "Localizable", source: source, developmentValue: "Card Base Currency", comment: nil) }
+
+      /// en translation: Card Deposit
+      ///
+      /// Key: cardDeposit
+      ///
+      /// Locales: en, zh-Hans
+      var cardDeposit: RswiftResources.StringResource { .init(key: "cardDeposit", tableName: "Localizable", source: source, developmentValue: "Card Deposit", comment: nil) }
+
+      /// en translation: Card Detail
+      ///
+      /// Key: cardDetail
+      ///
+      /// Locales: en, zh-Hans
+      var cardDetail: RswiftResources.StringResource { .init(key: "cardDetail", tableName: "Localizable", source: source, developmentValue: "Card Detail", comment: nil) }
 
       /// en translation: Your card is frozen
       ///
@@ -418,6 +439,20 @@ struct _R {
       /// Locales: en, zh-Hans
       var confirmNewPassword: RswiftResources.StringResource { .init(key: "confirmNewPassword", tableName: "Localizable", source: source, developmentValue: "Confirm new password", comment: nil) }
 
+      /// en translation: Consume
+      ///
+      /// Key: consume
+      ///
+      /// Locales: en, zh-Hans
+      var consume: RswiftResources.StringResource { .init(key: "consume", tableName: "Localizable", source: source, developmentValue: "Consume", comment: nil) }
+
+      /// en translation: Consume Refund
+      ///
+      /// Key: consumeRefund
+      ///
+      /// Locales: en, zh-Hans
+      var consumeRefund: RswiftResources.StringResource { .init(key: "consumeRefund", tableName: "Localizable", source: source, developmentValue: "Consume Refund", comment: nil) }
+
       /// en translation: Continue
       ///
       /// Key: continue
@@ -459,6 +494,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var debitCard: RswiftResources.StringResource { .init(key: "debitCard", tableName: "Localizable", source: source, developmentValue: "Debit Card", comment: nil) }
+
+      /// en translation: Deposit
+      ///
+      /// Key: deposit
+      ///
+      /// Locales: en, zh-Hans
+      var deposit: RswiftResources.StringResource { .init(key: "deposit", tableName: "Localizable", source: source, developmentValue: "Deposit", comment: nil) }
 
       /// en translation: Email
       ///
@@ -669,6 +711,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var fullNameAndNationality: RswiftResources.StringResource { .init(key: "fullNameAndNationality", tableName: "Localizable", source: source, developmentValue: "Full Name And Nationality", comment: nil) }
+
+      /// en translation: Funds in transit
+      ///
+      /// Key: fundsInTransit
+      ///
+      /// Locales: en, zh-Hans
+      var fundsInTransit: RswiftResources.StringResource { .init(key: "fundsInTransit", tableName: "Localizable", source: source, developmentValue: "Funds in transit", comment: nil) }
 
       /// en translation: Gesture pattern is incorrect
       ///
@@ -1237,6 +1286,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var reason: RswiftResources.StringResource { .init(key: "reason", tableName: "Localizable", source: source, developmentValue: "Reason", comment: nil) }
 
+      /// en translation: Rebate
+      ///
+      /// Key: rebate
+      ///
+      /// Locales: en, zh-Hans
+      var rebate: RswiftResources.StringResource { .init(key: "rebate", tableName: "Localizable", source: source, developmentValue: "Rebate", comment: nil) }
+
       /// en translation: Recent Transactions
       ///
       /// Key: recentTransactions
@@ -1461,6 +1517,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var sorry: RswiftResources.StringResource { .init(key: "sorry", tableName: "Localizable", source: source, developmentValue: "Sorry", comment: nil) }
 
+      /// en translation: Statemant
+      ///
+      /// Key: statemant
+      ///
+      /// Locales: en, zh-Hans
+      var statemant: RswiftResources.StringResource { .init(key: "statemant", tableName: "Localizable", source: source, developmentValue: "Statemant", comment: nil) }
+
       /// en translation: Submit
       ///
       /// Key: submit
@@ -1656,6 +1719,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var verifyYourIdentityTitle: RswiftResources.StringResource { .init(key: "verifyYourIdentityTitle", tableName: "Localizable", source: source, developmentValue: "Verify Your Identity", comment: nil) }
+
+      /// en translation: View the all
+      ///
+      /// Key: viewTheAll
+      ///
+      /// Locales: en, zh-Hans
+      var viewTheAll: RswiftResources.StringResource { .init(key: "viewTheAll", tableName: "Localizable", source: source, developmentValue: "View the all", comment: nil) }
 
       /// en translation: WALLET
       ///
@@ -2456,6 +2526,7 @@ struct _R {
       if UIKit.UIImage(named: "iconDeposit", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconDeposit' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconStatement", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconStatement' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'CardBagTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconRightArrowBlue", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconRightArrowBlue' is used in nib 'CardSettingTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'CardSettingTableViewCell', but couldn't be loaded.") }

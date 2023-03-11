@@ -231,6 +231,15 @@
 "applyCardSuccessTitle" = "Congratulations!";
 "applyCardSuccessSubTitle" = "Your virtual debit card has been activated successfully";
 "applyCardSuccessFinish" = "To See The Card";
+"availableBanlance" = "Available banlance";
+"fundsInTransit" = "Funds in transit";
+"deposit" = "Deposit";
+"statemant" = "Statemant";
+"cardDetail" = "Card Detail";
+"consume" = "Consumption";
+"consumeRefund" = "Refund";
+"rebate" = "Rebate";
+"cardDeposit" = "Top up";
 
 /// Tabbar
 "home" = "HOME";
@@ -250,3 +259,4 @@
 "email" = "Email";
 "refresh" = "Refresh";
 "sorry" = "Sorry";
+"viewTheAll" = "View the all";

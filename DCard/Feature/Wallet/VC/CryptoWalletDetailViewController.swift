@@ -119,7 +119,7 @@ extension CryptoWalletDetailViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeue(cellType: TransactionItemTableViewCell.self, for: indexPath)
-        cell.updateData(style: .content)
+//        cell.update(style: .content, data: )
         cell.selectionStyle = .none
         return cell
     }

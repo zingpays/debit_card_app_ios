@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 enum TransactionItemTableViewCellStyle {
     case content
@@ -21,7 +22,7 @@ class TransactionItemTableViewCell: UITableViewCell {
         let l = UILabel()
         l.textColor = R.color.fw000000()
         l.font = UIFont.fw.font16()
-        l.text = "Consumption"
+        l.text = "--"
         return l
     }()
     private lazy var leftIconView: UIImageView = {
@@ -33,13 +34,16 @@ class TransactionItemTableViewCell: UITableViewCell {
         let l = UILabel()
         l.textColor = R.color.fw000000()?.withAlphaComponent(0.5)
         l.font = UIFont.fw.font12(weight: .light)
-        l.text = "SUPER MARKET"
+        l.text = "--"
         return l
     }()
     private lazy var leftSubTitleView: UIView = {
         let v = UIView()
         return v
     }()
+    
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -72,7 +76,12 @@ class TransactionItemTableViewCell: UITableViewCell {
         line.backgroundColor = R.color.fw000000()?.withAlphaComponent(0.05)
     }
     
-    func updateData(style: TransactionItemTableViewCellStyle) {
+    func update(style: TransactionItemTableViewCellStyle, data: TransactionItemModel) {
+        leftTitleLabel.text = data.type.formatName()
+        if let amount = data.amount {
+            amountLabel.text = data.type == .consume ? "-$\(amount)" : "+$\(amount)"
+        }
+        dateLabel.text = data.updatedAt
         if style == .content {
             leftSubTitleView.removeFromSuperview()
         } else {
@@ -80,6 +89,7 @@ class TransactionItemTableViewCell: UITableViewCell {
             leftSubTitleView.snp.makeConstraints { make in
                 make.height.equalTo(14)
             }
+            leftSubTitleLabel.text = data.merchant?.name
         }
     }
 }

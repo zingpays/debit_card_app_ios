@@ -230,6 +230,15 @@
 "applyCardSuccessTitle" = "恭喜！";
 "applyCardSuccessSubTitle" = "你的虚拟借记卡已经激活成功";
 "applyCardSuccessFinish" = "去查看卡";
+"availableBanlance" = "余额";
+"fundsInTransit" = "在途资金";
+"deposit" = "充值";
+"statemant" = "账单";
+"cardDetail" = "卡信息";
+"consume" = "消费";
+"consumeRefund" = "退款";
+"rebate" = "返利";
+"cardDeposit" = "充值";
 
 /// Tabbar
 "home" = "首页";
@@ -249,3 +258,4 @@
 "email" = "邮件";
 "refresh" = "刷新";
 "sorry" = "抱歉";
+"viewTheAll" = "查看全部";

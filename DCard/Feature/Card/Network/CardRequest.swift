@@ -40,6 +40,17 @@ struct CardRequest {
         let provider = MoyaProvider<CardTarget>()
         provider.requestStatus(.open, completion: completion)
     }
+    
+    static func info(completion: @escaping ((Bool, String, CardModel?) -> Void)) {
+        let provider = MoyaProvider<CardTarget>()
+        provider.requestObject(.info, type: CardModel.self, completion: completion)
+    }
+    
+    static func transations(page: Int, per: Int,
+                            completion: @escaping ((Bool, String, TransactionsModel?) -> Void)) {
+        let provider = MoyaProvider<CardTarget>()
+        provider.requestObject(.transations(page: page, per: per), type: TransactionsModel.self, completion: completion)
+    }
 }
 
 enum CardTarget {
@@ -49,6 +60,8 @@ enum CardTarget {
     case unfreeze
     case list(uniqueId: String)
     case open
+    case info
+    case transations(page: Int, per: Int)
 }
 
 extension CardTarget: BaseTargetType {
@@ -66,6 +79,10 @@ extension CardTarget: BaseTargetType {
             return "/virtual-card/unfreeze"
         case .open:
             return "/virtual-card/open"
+        case .info:
+            return "/virtual-card/info"
+        case .transations:
+            return "/virtual-card/list-transactions"
         }
     }
     
@@ -89,6 +106,16 @@ extension CardTarget: BaseTargetType {
             params["_skip_auth"] = 1
             params["type"] = "visa_virtual_debit_card"
             params["base_currency"] = "USD"
+        case .info:
+            params["unique_id"] = "6648244"
+            params["_skip_auth"] = 1
+            params["partner_name"] = "metaprise"
+        case .transations(let page, let per):
+            params["unique_id"] = "6648244"
+            params["_skip_auth"] = 1
+            params["partner_name"] = "metaprise"
+            params["page"] = page
+            params["per_page"] = per
         case .supportType:
             break
         }

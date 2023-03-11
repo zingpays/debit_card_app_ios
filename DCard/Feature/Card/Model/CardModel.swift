@@ -10,7 +10,7 @@ import ObjectMapper
 
 struct CardModel: Mappable {
     
-    var uniqueId: Int = 0
+    var availableBalance: String?
     var balance: String?
     var cardCvc: String?
     var cardName: String?
@@ -18,32 +18,44 @@ struct CardModel: Mappable {
     var cardType: String?
     var createdAt: String?
     var currency: String?
-    var displayName: String?
+    var dailyLimit: String?
     var expenseLimit: String?
     var expireDate: String?
     var externalCardId: String?
-    var partnerName: String?
+    var monthlyLimit: String?
+    var note: String?
+    var partnerId: Int = 0
+    var rebateAmount: String?
+    var rebateRate: String?
     var status: CardStatus = .normal
+    var transitAmount: String?
+    var uniqueId: Int = 0
     var updatedAt: String?
 
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        balance          <- map["balance"]
-        cardCvc          <- map["card_cvc"]
-        cardName         <- map["card_name"]
-        cardNumber       <- map["card_number"]
-        cardType         <- map["card_type"]
-        createdAt        <- map["created_at"]
-        currency         <- map["currency"]
-        displayName      <- map["display_name"]
-        expenseLimit     <- map["expense_limit"]
-        expireDate       <- map["expire_date"]
-        externalCardId   <- map["external_card_id"]
-        partnerName      <- map["partner_name"]
-        status           <- map["status"]
-        uniqueId         <- map["unique_id"]
-        updatedAt        <- map["updated_at"]
+        availableBalance  <- map["available_balance"]
+        balance           <- map["balance"]
+        cardCvc           <- map["card_cvc"]
+        cardName          <- map["card_name"]
+        cardNumber        <- map["card_number"]
+        cardType          <- map["card_type"]
+        createdAt         <- map["created_at"]
+        currency          <- map["currency"]
+        dailyLimit        <- map["daily_limit"]
+        expenseLimit      <- map["expense_limit"]
+        expireDate        <- map["expire_date"]
+        externalCardId    <- map["external_card_id"]
+        monthlyLimit      <- map["monthly_limit"]
+        note              <- map["note"]
+        partnerId         <- map["partner_id"]
+        rebateAmount      <- map["rebate_amount"]
+        rebateRate        <- map["rebate_rate"]
+        status            <- map["status"]
+        transitAmount     <- map["transit_amount"]
+        uniqueId          <- map["unique_id"]
+        updatedAt         <- map["updated_at"]
     }
 }
 

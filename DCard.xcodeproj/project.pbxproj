@@ -233,6 +233,7 @@
 		54D4808F298A3A590068671E /* ApplyCardSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */; };
 		54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D48092298A3F750068671E /* CardBagTableViewCell.swift */; };
 		54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D48093298A3F750068671E /* CardBagTableViewCell.xib */; };
+		54D67A1E29BB2E70006F712E /* TransactionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D67A1D29BB2E70006F712E /* TransactionsModel.swift */; };
 		54DE3E7F298D1B190077B120 /* WalletCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */; };
 		54DE3E80298D1B190077B120 /* WalletCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */; };
 		54DE3E832990AD280077B120 /* WalletCryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */; };
@@ -498,6 +499,7 @@
 		54D4808D298A3A590068671E /* ApplyCardSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplyCardSuccessViewController.xib; sourceTree = "<group>"; };
 		54D48092298A3F750068671E /* CardBagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBagTableViewCell.swift; sourceTree = "<group>"; };
 		54D48093298A3F750068671E /* CardBagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardBagTableViewCell.xib; sourceTree = "<group>"; };
+		54D67A1D29BB2E70006F712E /* TransactionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsModel.swift; sourceTree = "<group>"; };
 		54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardTableViewCell.swift; sourceTree = "<group>"; };
 		54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCardTableViewCell.xib; sourceTree = "<group>"; };
 		54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCryptoTableViewCell.swift; sourceTree = "<group>"; };
@@ -848,6 +850,7 @@
 			children = (
 				545E624D29B0B48B007D724E /* SuppportCardInfoModel.swift */,
 				545E624F29B193FB007D724E /* CardModel.swift */,
+				54D67A1D29BB2E70006F712E /* TransactionsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1594,6 +1597,7 @@
 				545E624629AF5311007D724E /* TokenRequest.swift in Sources */,
 				5482975829A4B5FC00F82611 /* AuthSettingQRCodeViewController.swift in Sources */,
 				547385DE29ADA0AD00924AD8 /* TwoFactorAuthModel.swift in Sources */,
+				54D67A1E29BB2E70006F712E /* TransactionsModel.swift in Sources */,
 				54C313142996120900DBF373 /* ChooseCryptoNetworkView.swift in Sources */,
 				54C3131D299625D800DBF373 /* DepositViewController.swift in Sources */,
 				5422268629939AC600447A1A /* TransactionsDetailViewController.swift in Sources */,

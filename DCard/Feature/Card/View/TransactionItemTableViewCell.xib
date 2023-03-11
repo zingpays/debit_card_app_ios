@@ -74,6 +74,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="amountLabel" destination="0jJ-8S-45i" id="YqJ-ea-Cy7"/>
+                <outlet property="dateLabel" destination="yQz-lG-n1F" id="kZ4-GX-cNj"/>
                 <outlet property="leftStackView" destination="sU3-j6-xoD" id="gu7-Bf-OWe"/>
                 <outlet property="line" destination="rwV-RY-i5v" id="bGg-QT-Tue"/>
             </connections>

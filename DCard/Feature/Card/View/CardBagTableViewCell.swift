@@ -21,8 +21,16 @@ class CardBagTableViewCell: UITableViewCell {
     @IBOutlet weak var cardContentView: UIView!
     @IBOutlet weak var cardContentShadowView: UIView!
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var cashbackView: UIView!
     @IBOutlet weak var transitView: UIView!
+    @IBOutlet weak var cardTitleLabel: UILabel!
+    @IBOutlet weak var fundsInTransitLabel: UILabel!
+    @IBOutlet weak var fundsInTransitValueLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var balanceTitleLabel: UILabel!
+    @IBOutlet weak var depositItemLabel: UILabel!
+    @IBOutlet weak var statementItemLabel: UILabel!
+    @IBOutlet weak var cardDetailItemLabel: UILabel!
+    
     weak var delegate: CardBagTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -55,11 +63,32 @@ class CardBagTableViewCell: UITableViewCell {
                                       byRoundingCorners: [.topLeft, .topRight],
                                       cornerRadii: .init(width: 20, height: 20)).cgPath
         cardView.layer.mask = maskLayer
+        transitView.backgroundColor = R.color.fwFAFAFA()?.withAlphaComponent(0.1)
+        let transitMaskLayer = CAShapeLayer()
+        transitMaskLayer.frame = .init(origin: .zero,
+                                size: .init(width: SCREENWIDTH-64, height: 36))
+        transitMaskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: transitMaskLayer.frame.size),
+                                      byRoundingCorners: [.topLeft, .topRight],
+                                      cornerRadii: .init(width: 12, height: 12)).cgPath
+        transitView.layer.mask = transitMaskLayer
+        cardTitleLabel.backgroundColor = R.color.fwFAFAFA()?.withAlphaComponent(0.2)
+        let cardTitleLayer = CAShapeLayer()
+        cardTitleLayer.frame = .init(origin: .zero,
+                                size: .init(width: 140, height: 24))
+        cardTitleLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: cardTitleLayer.frame.size),
+                                      byRoundingCorners: [.bottomRight],
+                                      cornerRadii: .init(width: 8, height: 8)).cgPath
+        cardTitleLabel.layer.mask = cardTitleLayer
+        balanceTitleLabel.text = R.string.localizable.availableBanlance()
+        fundsInTransitLabel.text = R.string.localizable.fundsInTransit()
+        depositItemLabel.text = R.string.localizable.deposit()
+        statementItemLabel.text = R.string.localizable.statemant()
+        cardDetailItemLabel.text = R.string.localizable.cardDetail()
     }
     
-    @IBAction func cashbackInfoAction(_ sender: Any) {
-        delegate?.didSelectedCashbackInfo(self)
-    }
+//    @IBAction func cashbackInfoAction(_ sender: Any) {
+//        delegate?.didSelectedCashbackInfo(self)
+//    }
     
     @IBAction func transitInfoAction(_ sender: Any) {
         delegate?.didSelectedTransitInfo(self)
@@ -75,6 +104,17 @@ class CardBagTableViewCell: UITableViewCell {
     
     @IBAction func cardDetailAction(_ sender: Any) {
         delegate?.didSelectedCardDetail(self)
+    }
+    
+    func update(data: CardModel?) {
+        guard let data = data else { return }
+        cardTitleLabel.text = data.cardName
+        if let availableBalance = data.availableBalance {
+            balanceLabel.text = "$\(availableBalance)"
+        }
+        if let transitAmount = data.transitAmount {
+            fundsInTransitValueLabel.text = "$\(transitAmount)"
+        }
     }
     
 }
