@@ -242,6 +242,12 @@
 "cardDeposit" = "充值";
 "cardHolder" = "持卡人";
 "validityPeriod" = "到期日";
+"cardSecurityVerifyTipsTitle" = "查看卡信息需要安全认证";
+"cardSecurityVerifyTipsContent" = "根据国家法律法规要求，需对持卡人进行身份验证才能查看卡信息";
+"cardFaceVerifyTipsTitle" = "查看卡信息需人脸识别";
+"cardTouchIdVerifyTipsTitle" = "查看卡信息需指纹识别";
+"scanFace" = "人脸识别";
+"touchId" = "指纹识别";
 
 /// Tabbar
 "home" = "首页";

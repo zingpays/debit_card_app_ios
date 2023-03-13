@@ -255,7 +255,7 @@ class NineGraphLockScreenViewController: BaseViewController {
         switch source {
         case .password:
             navigationController?.popViewController()
-        case .pattern:
+        case .pattern, .cardDetail:
             break
         case .biometrics, .none:
             let vc = PasswordLoginViewController()
@@ -268,7 +268,7 @@ class NineGraphLockScreenViewController: BaseViewController {
         switch source {
         case .biometrics:
             navigationController?.popViewController()
-        case .pattern:
+        case .pattern, .cardDetail:
             break
         case .password, .none:
             let vc = PasswordLoginViewController()

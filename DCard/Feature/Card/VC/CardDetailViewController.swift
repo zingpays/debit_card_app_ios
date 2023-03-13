@@ -20,6 +20,18 @@ class CardDetailViewController: BaseViewController {
         setupData()
     }
     
+    override func backItemClick(_ sender: Any) {
+        if let vc = navigationController?.viewControllers.filter({ subVC in
+            if subVC.isMember(of: CardViewController.self) {
+                return true
+            } else {
+                return false
+            }
+        }).first {
+            navigationController?.popToViewController(vc, animated: true)
+        }
+    }
+    
     // MAEK: - Private
     
     private func setupUI() {

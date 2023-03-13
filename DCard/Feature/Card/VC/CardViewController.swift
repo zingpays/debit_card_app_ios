@@ -256,9 +256,41 @@ extension CardViewController: CardBagTableViewCellDelegate {
     }
     
     func didSelectedCardDetail(_ cell: CardBagTableViewCell) {
-        let vc = CardDetailViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        if LocalAuthenManager.shared.isBind {
+            let title = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.cardFaceVerifyTipsTitle() : R.string.localizable.cardTouchIdVerifyTipsTitle()
+            let securityActionTitle = LocalAuthenManager.shared.type == .faceID ? R.string.localizable.scanFace() : R.string.localizable.touchId()
+            let alert = UIAlertController(title: title,
+                                          message: R.string.localizable.cardSecurityVerifyTipsContent(),
+                                          preferredStyle: .alert)
+            let securityAction = UIAlertAction(title: securityActionTitle, style: .default) { action in
+                let vc = BiometricsViewController()
+                vc.hidesBottomBarWhenPushed = true
+                vc.isHasChangeToOtherLoginMethod = false
+                vc.source = .cardDetail
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
+            alert.addAction(cancelAction)
+            alert.addAction(securityAction)
+            self.present(alert, animated: true)
+        } else {
+
+            let alert = UIAlertController(title: R.string.localizable.cardSecurityVerifyTipsTitle(),
+                                          message: R.string.localizable.cardSecurityVerifyTipsContent(),
+                                          preferredStyle: .alert)
+            let securityAction = UIAlertAction(title: R.string.localizable.cardSecurityVerifyTipsTitle(), style: .default) { action in
+                let vc = SecurityVerificationViewController(email: UserManager.shared.email ?? "", phone: nil)
+                vc.hidesBottomBarWhenPushed = true
+                let styles: [SecurityVerificationType] = [.email]
+                vc.dataStyle = styles
+                vc.source = .cardDetail
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel)
+            alert.addAction(cancelAction)
+            alert.addAction(securityAction)
+            self.present(alert, animated: true)
+        }
     }
 }
 

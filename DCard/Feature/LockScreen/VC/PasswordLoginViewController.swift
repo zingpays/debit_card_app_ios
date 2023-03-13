@@ -12,6 +12,7 @@ enum LockScreenSource {
     case password
     case pattern
     case biometrics
+    case cardDetail
     case none
 }
 
@@ -260,7 +261,7 @@ class PasswordLoginViewController: BaseViewController {
         switch source {
         case .pattern:
             navigationController?.popViewController()
-        case .password:
+        case .password, .cardDetail:
             break
         case .biometrics, .none:
             let vc = NineGraphLockScreenViewController()
@@ -275,7 +276,7 @@ class PasswordLoginViewController: BaseViewController {
         switch source {
         case .biometrics:
             navigationController?.popViewController()
-        case .password:
+        case .password, .cardDetail:
             break
         case .pattern, .none:
             let vc = BiometricsViewController()

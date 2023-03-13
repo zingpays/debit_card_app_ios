@@ -243,6 +243,12 @@
 "cardDeposit" = "Top up";
 "cardHolder" = "CARD HOLDER";
 "validityPeriod" = "VALIDITY PERIOD";
+"cardSecurityVerifyTipsTitle" = "Security Verification to View Card Detail";
+"cardSecurityVerifyTipsContent" = "In accordance with the requirements of national laws and regulations, cardholder's identity verification is needed in order to view card detail";
+"cardFaceVerifyTipsTitle" = "Scan Face to View Card Detail";
+"cardTouchIdVerifyTipsTitle" = "Touch ID to View Card Detail";
+"scanFace" = "Scan Face";
+"touchId" = "Touch ID";
 
 /// Tabbar
 "home" = "HOME";

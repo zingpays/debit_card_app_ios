@@ -25,6 +25,7 @@ enum SecurityVerificationSource {
     case resetTwoFa
     case freezeCard
     case unFreezeCard
+    case cardDetail
     case none
 }
 
@@ -211,6 +212,9 @@ class SecurityVerificationViewController: BaseViewController {
             print("")
         case .freezeCard, .unFreezeCard:
             print("")
+        case .cardDetail:
+            let vc = CardDetailViewController()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -257,7 +261,7 @@ class SecurityVerificationViewController: BaseViewController {
             guard let emailCode = emailCode,
                   let phoneCode = phoneCode else { return }
             requestResetAuth(emailCode: emailCode, phoneCode: phoneCode, authToken: authToken ?? "")
-        case .freezeCard, .unFreezeCard:
+        case .freezeCard, .unFreezeCard, .cardDetail:
             requestSecurityCheck(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
         }
     }

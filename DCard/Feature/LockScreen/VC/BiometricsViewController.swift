@@ -87,7 +87,6 @@ class BiometricsViewController: BaseViewController {
         if source == .none {
             setupNotification()
         }
-        
     }
     
     deinit {
@@ -156,8 +155,15 @@ class BiometricsViewController: BaseViewController {
                     LocalAuthenManager.shared.isAuthorized = true
                     LocalAuthenManager.shared.isBind = true
                     if self.source != .none {
-                        DispatchQueue.main.async {
-                            NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
+                        if self.source == .cardDetail {
+                            DispatchQueue.main.async {
+                                let vc = CardDetailViewController()
+                                self.navigationController?.pushViewController(vc, animated: true)
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                NotificationCenter.default.post(name: NSNotification.Name(UNLOCKSUCCESS), object: nil)
+                            }
                         }
                     } else {
                         DispatchQueue.main.async {
@@ -188,7 +194,7 @@ class BiometricsViewController: BaseViewController {
         switch source {
         case .pattern:
             navigationController?.popViewController()
-        case .biometrics:
+        case .biometrics, .cardDetail:
             break
         case .password, .none:
             let vc = NineGraphLockScreenViewController()
@@ -202,7 +208,7 @@ class BiometricsViewController: BaseViewController {
         switch source {
         case .password:
             navigationController?.popViewController()
-        case .biometrics:
+        case .biometrics, .cardDetail:
             break
         case .pattern, .none:
             let vc = PasswordLoginViewController()

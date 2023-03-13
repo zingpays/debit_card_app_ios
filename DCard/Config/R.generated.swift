@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 237 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 243 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -278,6 +278,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var cardDetail: RswiftResources.StringResource { .init(key: "cardDetail", tableName: "Localizable", source: source, developmentValue: "Card Detail", comment: nil) }
 
+      /// en translation: Scan Face to View Card Detail
+      ///
+      /// Key: cardFaceVerifyTipsTitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardFaceVerifyTipsTitle: RswiftResources.StringResource { .init(key: "cardFaceVerifyTipsTitle", tableName: "Localizable", source: source, developmentValue: "Scan Face to View Card Detail", comment: nil) }
+
       /// en translation: Your card is frozen
       ///
       /// Key: cardFreezeSuccessfullySubtitle
@@ -305,6 +312,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cardInformation: RswiftResources.StringResource { .init(key: "cardInformation", tableName: "Localizable", source: source, developmentValue: "Card Information", comment: nil) }
+
+      /// en translation: In accordance with the requirements of national laws and regulations, cardholder's identity verification is needed in order to view card detail
+      ///
+      /// Key: cardSecurityVerifyTipsContent
+      ///
+      /// Locales: en, zh-Hans
+      var cardSecurityVerifyTipsContent: RswiftResources.StringResource { .init(key: "cardSecurityVerifyTipsContent", tableName: "Localizable", source: source, developmentValue: "In accordance with the requirements of national laws and regulations, cardholder's identity verification is needed in order to view card detail", comment: nil) }
+
+      /// en translation: Security Verification to View Card Detail
+      ///
+      /// Key: cardSecurityVerifyTipsTitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardSecurityVerifyTipsTitle: RswiftResources.StringResource { .init(key: "cardSecurityVerifyTipsTitle", tableName: "Localizable", source: source, developmentValue: "Security Verification to View Card Detail", comment: nil) }
 
       /// en translation: Card Setting
       ///
@@ -347,6 +368,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cardSettingWriteOffCardTitle: RswiftResources.StringResource { .init(key: "cardSettingWriteOffCardTitle", tableName: "Localizable", source: source, developmentValue: "Are you sure Write-off this debit card ?", comment: nil) }
+
+      /// en translation: Touch ID to View Card Detail
+      ///
+      /// Key: cardTouchIdVerifyTipsTitle
+      ///
+      /// Locales: en, zh-Hans
+      var cardTouchIdVerifyTipsTitle: RswiftResources.StringResource { .init(key: "cardTouchIdVerifyTipsTitle", tableName: "Localizable", source: source, developmentValue: "Touch ID to View Card Detail", comment: nil) }
 
       /// en translation: Card Type
       ///
@@ -1370,6 +1398,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var resubmitVerification: RswiftResources.StringResource { .init(key: "resubmitVerification", tableName: "Localizable", source: source, developmentValue: "Resubmit Verification", comment: nil) }
 
+      /// en translation: Scan Face
+      ///
+      /// Key: scanFace
+      ///
+      /// Locales: en, zh-Hans
+      var scanFace: RswiftResources.StringResource { .init(key: "scanFace", tableName: "Localizable", source: source, developmentValue: "Scan Face", comment: nil) }
+
       /// en translation: Change Email Authentication
       ///
       /// Key: securityChangeEmailButton
@@ -1677,6 +1712,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var touchIDLoginSubTitle: RswiftResources.StringResource { .init(key: "touchIDLoginSubTitle", tableName: "Localizable", source: source, developmentValue: "Click to verify Touch ID", comment: nil) }
+
+      /// en translation: Touch ID
+      ///
+      /// Key: touchId
+      ///
+      /// Locales: en, zh-Hans
+      var touchId: RswiftResources.StringResource { .init(key: "touchId", tableName: "Localizable", source: source, developmentValue: "Touch ID", comment: nil) }
 
       /// en translation: Touch ID Login
       ///
