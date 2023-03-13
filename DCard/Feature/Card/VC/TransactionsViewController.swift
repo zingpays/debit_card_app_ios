@@ -12,52 +12,37 @@ class TransactionsViewController: BaseViewController {
     
     @IBOutlet weak var transactionTableView: UITableView!
     @IBOutlet weak var filterBoardView: UIView!
+    private var transactionsData: TransactionsModel?
     
     private lazy var rightItem: UIBarButtonItem = {
         let v = UIView()
-        v.frame = CGRect(x: 0, y: 4, width: 84, height: 36)
+        v.frame = CGRect(x: 0, y: 4, width: 36, height: 36)
         let filterBtn = UIButton()
         v.addSubview(filterBtn)
         filterBtn.snp.makeConstraints { make in
-            make.left.top.bottom.equalToSuperview()
+            make.left.top.bottom.right.equalToSuperview()
             make.width.equalTo(36)
         }
         filterBtn.setImage(R.image.iconFilterButtonNormal(), for: .normal)
         filterBtn.addTarget(self, action: #selector(filterAction), for: .touchUpInside)
         filterBtn.backgroundColor = R.color.fw00A8BB()
         filterBtn.layer.cornerRadius = 12
-        let shareBtn = UIButton()
-        v.addSubview(shareBtn)
-        shareBtn.snp.makeConstraints { make in
-            make.left.equalTo(filterBtn.snp.right).offset(12)
-            make.right.top.bottom.equalToSuperview()
-            make.width.equalTo(36)
-        }
-        shareBtn.layer.cornerRadius = 12
-        shareBtn.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
-        shareBtn.backgroundColor = R.color.fwFAFAFA()
-        shareBtn.setImage(R.image.iconShareButton(), for: .normal)
         return UIBarButtonItem(customView: v)
     }()
-    
-    private lazy var tableviewHeaderView: UIView = {
-        let v = UIView()
-        v.backgroundColor = .clear
-        v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 73))
-        let label = UILabel()
-        v.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.top.bottom.right.left.equalToSuperview()
-        }
-        label.text = "Transactions"
-        label.font = UIFont.fw.font28(weight: .bold)
-        label.textColor = R.color.fw000000()
-        return v
-    }()
 
+    @IBOutlet weak var cardTypeLabel: UILabel!
+    @IBOutlet weak var cardValueLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var typeValueLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateValueLabel: UILabel!
+    
+    @IBOutlet weak var filterBoardViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        requestTransationsData()
     }
 
     // MARK: - Private
@@ -80,13 +65,45 @@ class TransactionsViewController: BaseViewController {
         filterBoardView.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT+20)
         }
+        updateFilterBoardView(isShow: false)
         transactionTableView.fw.registerCellNib(TransactionItemTableViewCell.self)
-        transactionTableView.tableHeaderView = tableviewHeaderView
     }
     
     private func setupRightItem() {
         self.gk_navRightBarButtonItem = rightItem
         self.gk_navItemRightSpace = 16
+        self.gk_navTitle = R.string.localizable.transactions()
+    }
+    
+    private func requestTransationsData(type: String? = nil,
+                                        dateForm: String? = nil,
+                                        dateTo: String? = nil) {
+        indicator.startAnimating()
+        CardRequest.transations(type: type, dateTo: dateTo, dateForm: dateForm, page: 1, per: 20) { [weak self] isSuccess, message, data in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                if let data = data {
+                    this.transactionsData = data
+                    this.transactionTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    private func updateFilterBoardView(cardType: FilterTypeModel? = nil, date: FilterDateModel? = nil, isShow: Bool) {
+        if isShow {
+            filterBoardViewHeight.constant = 84
+            filterBoardView.isHidden = false
+            typeValueLabel.text = cardType?.type.formatName()
+            cardValueLabel.text = R.string.localizable.virtualCard()
+            if let from = date?.from, let to = date?.to {
+                dateValueLabel.text = "\(from.toFormat("YYYY/MM/DD")) - \(to.toFormat("YYYY/MM/DD"))"
+            }
+        } else {
+            filterBoardViewHeight.constant = 0 //84
+            filterBoardView.isHidden = true
+        }
     }
     
     // MARK: - Actions
@@ -94,6 +111,7 @@ class TransactionsViewController: BaseViewController {
     @objc private func filterAction() {
         let vc = TransactionsFilterViewController()
         vc.modalPresentationStyle = .fullScreen
+        vc.delegate = self
         self.present(vc, animated: true)
     }
     
@@ -119,7 +137,7 @@ class TransactionsViewController: BaseViewController {
 
 extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return transactionsData?.list?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -127,28 +145,48 @@ extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let maskLayer = CAShapeLayer()
-            maskLayer.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: SCREENWIDTH-32, height: 71))
-            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
-                                          byRoundingCorners: [.topLeft, .topRight],
-                                          cornerRadii: .init(width: 20, height: 20)).cgPath
-            cell.layer.mask = maskLayer
-        }
-        
-        if indexPath.row == 9 {
-            let maskLayer = CAShapeLayer()
-            maskLayer.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: SCREENWIDTH-32, height: 71))
-            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
-                                          byRoundingCorners: [.bottomLeft, .bottomRight],
-                                          cornerRadii: .init(width: 20, height: 20)).cgPath
-            cell.layer.mask = maskLayer
+        if let count = transactionsData?.list?.count, count > 0 {
+            if indexPath.row == 0 {
+                let maskLayer = CAShapeLayer()
+                maskLayer.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: SCREENWIDTH-32, height: 71))
+                maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                              byRoundingCorners: [.topLeft, .topRight],
+                                              cornerRadii: .init(width: 20, height: 20)).cgPath
+                cell.layer.mask = maskLayer
+            } else if indexPath.row == count - 1 {
+                let maskLayer = CAShapeLayer()
+                maskLayer.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: SCREENWIDTH-32, height: 71))
+                maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                              byRoundingCorners: [.bottomLeft, .bottomRight],
+                                              cornerRadii: .init(width: 20, height: 20)).cgPath
+                cell.layer.mask = maskLayer
+            } else {
+                let maskLayer = CAShapeLayer()
+                maskLayer.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: SCREENWIDTH-32, height: 71))
+                maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                              byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight],
+                                              cornerRadii: .init(width: 0, height: 0)).cgPath
+                cell.layer.mask = maskLayer
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeueReusableCell(withIdentifier: TransactionItemTableViewCell.description()) as! TransactionItemTableViewCell
+        if let data = transactionsData?.list?[indexPath.row] {
+            let style: TransactionItemTableViewCellStyle = data.type == .consume ? .withFlag : .content
+            cell.update(style: style, data: data)
+        }
         return cell
     }
     
+}
+
+extension TransactionsViewController: TransactionsFilterViewControllerDelegate {
+    func didSelected(cardType: FilterTypeModel, date: FilterDateModel) {
+        requestTransationsData(type: cardType.type.rawValue,
+                               dateForm: date.from?.iso8601String,
+                               dateTo: date.to?.iso8601String)
+        updateFilterBoardView(cardType: cardType, date: date, isShow: true)
+    }
 }

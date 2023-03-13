@@ -104,6 +104,8 @@ enum TransactionType: String {
     case consumeRefund = "Consume Refund" // 退款
     case deposit = "Card Deposit" // 充值
     case rebate = "Rebate" // 返现
+    case all = "All" // 全部
+    case card = "Card" //虚拟卡
     
     func formatName() -> String {
         switch self {
@@ -115,6 +117,10 @@ enum TransactionType: String {
             return R.string.localizable.deposit()
         case .rebate:
             return R.string.localizable.rebate()
+        case .all:
+            return R.string.localizable.all()
+        case .card:
+            return R.string.localizable.virtualCard()
         }
     }
 }

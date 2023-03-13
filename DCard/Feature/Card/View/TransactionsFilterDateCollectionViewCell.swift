@@ -18,6 +18,9 @@ class TransactionsFilterDateCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var leftView: UIView!
     
+    @IBOutlet weak var dateFromLabel: UILabel!
+    @IBOutlet weak var dateToLabel: UILabel!
+    
     weak var delegate: TransactionsFilterDateCollectionViewCellDelegate?
     
     override func awakeFromNib() {
@@ -36,4 +39,16 @@ class TransactionsFilterDateCollectionViewCell: UICollectionViewCell {
         delegate?.didSelectedEndDate()
     }
     
+    func update(data: FilterDateModel) {
+        if let from = data.from {
+            dateFromLabel.text = from.iso8601String
+        } else {
+            dateFromLabel.text = R.string.localizable.select()
+        }
+        if let to = data.to {
+            dateToLabel.text = to.iso8601String
+        } else {
+            dateToLabel.text = R.string.localizable.select()
+        }
+    }
 }

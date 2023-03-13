@@ -9,12 +9,25 @@
 import UIKit
 import JFPopup
 
+protocol TransactionsFilterViewControllerDelegate: NSObject {
+    func didSelected(cardType: FilterTypeModel, date: FilterDateModel)
+}
+
 class TransactionsFilterViewController: BaseViewController {
+    
+    weak var delegate: TransactionsFilterViewControllerDelegate? = nil
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
+    private let headerTitle: Array = [R.string.localizable.cardType(), R.string.localizable.type(), R.string.localizable.date()]
+    private let cardTypeDatas: [FilterTypeModel] = [FilterTypeModel(type: .card, isSelected: true)]
+    private let typeDatas: [FilterTypeModel] = [FilterTypeModel(type: .all, isSelected: true),
+                                                FilterTypeModel(type: .deposit),
+                                                FilterTypeModel(type: .consume),
+                                                FilterTypeModel(type: .consumeRefund),
+                                                FilterTypeModel(type: .rebate)]
+    private let dateDatas: [FilterDateModel] = [FilterDateModel()]
     
-    private let datas: Array = ["All", "Deposit", "Consumption", "Rebate"]
     
     private lazy var closeItem: UIBarButtonItem = {
         let btn = UIButton()
@@ -97,7 +110,13 @@ class TransactionsFilterViewController: BaseViewController {
     }
     
     @objc private func exactitudeAction() {
-        
+        let cardType = typeDatas.filter { item in
+            return item.isSelected
+        }.first
+        if let cardType = cardType, let date = dateDatas.first {
+            delegate?.didSelected(cardType: cardType, date: date)
+            self.dismiss(animated: true)
+        }
     }
     
     @objc private func closeAction() {
@@ -107,10 +126,13 @@ class TransactionsFilterViewController: BaseViewController {
 
 extension TransactionsFilterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
         if section == 2 {
             return 1
         }
-        return datas.count
+        return typeDatas.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -122,11 +144,17 @@ extension TransactionsFilterViewController: UICollectionViewDelegate, UICollecti
             let cell = collectionView.fw.dequeue(cellType: TransactionsFilterDateCollectionViewCell.self, for: indexPath)
             cell.layer.cornerRadius = 12
             cell.delegate = self
+            cell.update(data: dateDatas[indexPath.row])
             return cell
         }
         let cell = collectionView.fw.dequeue(cellType: TransactionsFilterCollectionViewCell.self, for: indexPath)
         cell.layer.cornerRadius = 12
-        cell.content.text = datas[indexPath.row]
+        if indexPath.section == 0 {
+            cell.update(data: cardTypeDatas[indexPath.row])
+        } else {
+            cell.update(data: typeDatas[indexPath.row])
+        }
+        
         return cell
     }
     
@@ -139,7 +167,7 @@ extension TransactionsFilterViewController: UICollectionViewDelegate, UICollecti
         if kind == UICollectionView.elementKindSectionHeader {
             reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TransactionsFilterCollectionHeaderView", for: indexPath) as? TransactionsFilterCollectionHeaderView
             reusableview.backgroundColor = .clear
-            reusableview.content.text = "Card Type"
+            reusableview.content.text = headerTitle[indexPath.section]
         }
         return reusableview
     }
@@ -148,7 +176,13 @@ extension TransactionsFilterViewController: UICollectionViewDelegate, UICollecti
         if indexPath.section == 2 {
             return CGSize(width: collectionView.width-16, height: 40)
         }
-        let str = datas[indexPath.row]
+        let str: String = {
+            if indexPath.row == 0 {
+                return cardTypeDatas[indexPath.row].type.formatName()
+            } else {
+                return typeDatas[indexPath.row].type.formatName()
+            }
+        }()
         let dic = [NSAttributedString.Key.font: UIFont.fw.font16()]
         let size = CGSize(width: CGFloat(MAXFLOAT), height: 19)
         let width = str.boundingRect(with: size,
@@ -158,12 +192,26 @@ extension TransactionsFilterViewController: UICollectionViewDelegate, UICollecti
         return CGSize(width: width+40, height: 40)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            for data in typeDatas {
+                if data.type == typeDatas[indexPath.row].type {
+                    data.isSelected = true
+                } else {
+                    data.isSelected = false
+                }
+            }
+            collectionView.reloadData()
+        }
+    }
+    
 }
 
 extension TransactionsFilterViewController: TransactionsFilterDateCollectionViewCellDelegate {
     func didSelectedStartDate() {
         popup.bottomSheet {
             let v = ChooseDateView.loadFromNib()
+            v.viewId = 100
             v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 292 + TOUCHBARHEIGHT))
             let maskLayer = CAShapeLayer()
             maskLayer.frame = .init(origin: .zero,
@@ -178,15 +226,34 @@ extension TransactionsFilterViewController: TransactionsFilterDateCollectionView
     }
     
     func didSelectedEndDate() {
-        
+        popup.bottomSheet {
+            let v = ChooseDateView.loadFromNib()
+            v.viewId = 200
+            v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 292 + TOUCHBARHEIGHT))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = .init(origin: .zero,
+                                    size: .init(width: SCREENWIDTH, height: 292 + TOUCHBARHEIGHT))
+            maskLayer.path = UIBezierPath(roundedRect: .init(origin: .zero, size: maskLayer.frame.size),
+                                          byRoundingCorners: [.topLeft, .topRight],
+                                          cornerRadii: .init(width: 32, height: 32)).cgPath
+             v.layer.mask = maskLayer
+            v.delegate = self
+            return v
+        }
     }
     
 }
 
 extension TransactionsFilterViewController: ChooseDateViewDelegate {
-    func didSelectedOK(_ date: Date) {
+    func didSelectedOK(_ view: ChooseDateView, date: Date) {
         popup.dismissPopup()
-        print(date)
+        if view.viewId == 100 {
+            dateDatas.first?.from = date
+        }
+        if view.viewId == 200 {
+            dateDatas.first?.to = date
+        }
+        filterCollectionView.reloadData()
     }
 }
 

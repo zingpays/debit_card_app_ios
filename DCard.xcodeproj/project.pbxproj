@@ -232,6 +232,7 @@
 		54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D48093298A3F750068671E /* CardBagTableViewCell.xib */; };
 		54D67A1E29BB2E70006F712E /* TransactionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D67A1D29BB2E70006F712E /* TransactionsModel.swift */; };
 		54D67A2029BC7100006F712E /* SecurityVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D67A1F29BC7100006F712E /* SecurityVerificationViewController.xib */; };
+		54D67A2429BF4C04006F712E /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D67A2329BF4C04006F712E /* FilterModel.swift */; };
 		54DE3E7F298D1B190077B120 /* WalletCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */; };
 		54DE3E80298D1B190077B120 /* WalletCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */; };
 		54DE3E832990AD280077B120 /* WalletCryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */; };
@@ -496,6 +497,7 @@
 		54D48093298A3F750068671E /* CardBagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardBagTableViewCell.xib; sourceTree = "<group>"; };
 		54D67A1D29BB2E70006F712E /* TransactionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsModel.swift; sourceTree = "<group>"; };
 		54D67A1F29BC7100006F712E /* SecurityVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecurityVerificationViewController.xib; sourceTree = "<group>"; };
+		54D67A2329BF4C04006F712E /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardTableViewCell.swift; sourceTree = "<group>"; };
 		54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCardTableViewCell.xib; sourceTree = "<group>"; };
 		54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCryptoTableViewCell.swift; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 				545E624D29B0B48B007D724E /* SuppportCardInfoModel.swift */,
 				545E624F29B193FB007D724E /* CardModel.swift */,
 				54D67A1D29BB2E70006F712E /* TransactionsModel.swift */,
+				54D67A2329BF4C04006F712E /* FilterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1621,6 +1624,7 @@
 				549D462A298A715F009AEB13 /* TransactionItemTableViewCell.swift in Sources */,
 				54CCDE922990FAE10035DE6D /* CryptoTransactionTableViewCell.swift in Sources */,
 				54A454F3298B668400621311 /* DepositFromTableViewCell.swift in Sources */,
+				54D67A2429BF4C04006F712E /* FilterModel.swift in Sources */,
 				54A45525298CF89300621311 /* FreezeSuccessViewController.swift in Sources */,
 				54A45503298BAC9700621311 /* TransactionsFilterCollectionViewCell.swift in Sources */,
 				541A8D2B29641F1F00C59026 /* AppManager.swift in Sources */,
@@ -1869,7 +1873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 7L38QK69R5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DCard/Config/Info.plist;
@@ -1907,7 +1911,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 7L38QK69R5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DCard/Config/Info.plist;

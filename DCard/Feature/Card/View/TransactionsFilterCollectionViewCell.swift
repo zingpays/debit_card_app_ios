@@ -17,4 +17,12 @@ class TransactionsFilterCollectionViewCell: UICollectionViewCell {
         content.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.1)
     }
 
+    func update(data: FilterTypeModel) {
+        content.text = data.type.formatName()
+        if data.isSelected {
+            content.backgroundColor = R.color.fw00A8BB()
+        } else {
+            content.backgroundColor = R.color.fwFFFFFF()?.withAlphaComponent(0.1)
+        }
+    }
 }

@@ -9,12 +9,13 @@
 import UIKit
 
 protocol ChooseDateViewDelegate: NSObject {
-    func didSelectedOK(_ date: Date)
+    func didSelectedOK(_ view: ChooseDateView, date: Date)
 }
 
 class ChooseDateView: UIView, NibLoadable {
 
     @IBOutlet weak var datePickerView: UIDatePicker!
+    var viewId: Int = 0
     
     weak var delegate: ChooseDateViewDelegate?
     
@@ -23,7 +24,7 @@ class ChooseDateView: UIView, NibLoadable {
     }
     
     @IBAction func okAction(_ sender: Any) {
-        delegate?.didSelectedOK(datePickerView.date)
+        delegate?.didSelectedOK(self, date: datePickerView.date)
     }
     
 }

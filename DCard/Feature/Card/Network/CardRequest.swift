@@ -46,10 +46,14 @@ struct CardRequest {
         provider.requestObject(.info, type: CardModel.self, completion: completion)
     }
     
-    static func transations(page: Int, per: Int,
+    static func transations(type: String? = nil,
+                            dateTo: String? = nil,
+                            dateForm: String? = nil,
+                            page: Int,
+                            per: Int,
                             completion: @escaping ((Bool, String, TransactionsModel?) -> Void)) {
         let provider = MoyaProvider<CardTarget>()
-        provider.requestObject(.transations(page: page, per: per), type: TransactionsModel.self, completion: completion)
+        provider.requestObject(.transations(type: type, dateForm: dateForm, dateTo: dateTo, page: page, per: per), type: TransactionsModel.self, completion: completion)
     }
 }
 
@@ -61,7 +65,7 @@ enum CardTarget {
     case list
     case open
     case info
-    case transations(page: Int, per: Int)
+    case transations(type: String?, dateForm: String?, dateTo: String?, page: Int, per: Int)
 }
 
 extension CardTarget: BaseTargetType {
@@ -110,12 +114,15 @@ extension CardTarget: BaseTargetType {
             params["unique_id"] = "6648244"
             params["_skip_auth"] = 1
             params["partner_name"] = "metaprise"
-        case .transations(let page, let per):
+        case .transations(let type, let dateForm, let dateTo, let page, let per):
             params["unique_id"] = "6648244"
             params["_skip_auth"] = 1
             params["partner_name"] = "metaprise"
             params["page"] = page
             params["per_page"] = per
+            params["type"] = type
+            params["date_to"] = dateTo
+            params["date_from"] = dateForm
         case .supportType:
             break
         }

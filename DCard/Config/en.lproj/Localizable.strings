@@ -249,6 +249,12 @@
 "cardTouchIdVerifyTipsTitle" = "Touch ID to View Card Detail";
 "scanFace" = "Scan Face";
 "touchId" = "Touch ID";
+"virtualCard" = "Virtual Card";
+"type" = "Type";
+"date" = "Date";
+"all" = "All";
+"to" = "TO";
+"select" = "Select";
 
 /// Tabbar
 "home" = "HOME";

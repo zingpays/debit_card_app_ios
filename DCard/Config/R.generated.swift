@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 243 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 249 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -158,6 +158,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var agreement: RswiftResources.StringResource { .init(key: "agreement", tableName: "Localizable", source: source, developmentValue: "I have read and agree with the Privacy Policy and Terms and Conditions. I also agree to not use Stella Pay to transact on behalf of someone else.", comment: nil) }
+
+      /// en translation: All
+      ///
+      /// Key: all
+      ///
+      /// Locales: en, zh-Hans
+      var all: RswiftResources.StringResource { .init(key: "all", tableName: "Localizable", source: source, developmentValue: "All", comment: nil) }
 
       /// en translation: Apply Card
       ///
@@ -529,6 +536,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cryptoWallet: RswiftResources.StringResource { .init(key: "cryptoWallet", tableName: "Localizable", source: source, developmentValue: "Crypto Wallet", comment: nil) }
+
+      /// en translation: Date
+      ///
+      /// Key: date
+      ///
+      /// Locales: en, zh-Hans
+      var date: RswiftResources.StringResource { .init(key: "date", tableName: "Localizable", source: source, developmentValue: "Date", comment: nil) }
 
       /// en translation: Debit Card
       ///
@@ -1531,6 +1545,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var securityVerificationTitle: RswiftResources.StringResource { .init(key: "securityVerificationTitle", tableName: "Localizable", source: source, developmentValue: "Security Verification", comment: nil) }
 
+      /// en translation: Select
+      ///
+      /// Key: select
+      ///
+      /// Locales: en, zh-Hans
+      var select: RswiftResources.StringResource { .init(key: "select", tableName: "Localizable", source: source, developmentValue: "Select", comment: nil) }
+
       /// en translation: Selfie
       ///
       /// Key: selfie
@@ -1636,6 +1657,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var tips: RswiftResources.StringResource { .init(key: "tips", tableName: "Localizable", source: source, developmentValue: "Tips", comment: nil) }
 
+      /// en translation: TO
+      ///
+      /// Key: to
+      ///
+      /// Locales: en, zh-Hans
+      var to: RswiftResources.StringResource { .init(key: "to", tableName: "Localizable", source: source, developmentValue: "TO", comment: nil) }
+
       /// en translation: To Verify
       ///
       /// Key: toVerify
@@ -1734,6 +1762,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var transactions: RswiftResources.StringResource { .init(key: "transactions", tableName: "Localizable", source: source, developmentValue: "Transactions", comment: nil) }
 
+      /// en translation: Type
+      ///
+      /// Key: type
+      ///
+      /// Locales: en, zh-Hans
+      var type: RswiftResources.StringResource { .init(key: "type", tableName: "Localizable", source: source, developmentValue: "Type", comment: nil) }
+
       /// en translation: Unfrozen
       ///
       /// Key: unfreeze
@@ -1789,6 +1824,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var viewTheAll: RswiftResources.StringResource { .init(key: "viewTheAll", tableName: "Localizable", source: source, developmentValue: "View the all", comment: nil) }
+
+      /// en translation: Virtual Card
+      ///
+      /// Key: virtualCard
+      ///
+      /// Locales: en, zh-Hans
+      var virtualCard: RswiftResources.StringResource { .init(key: "virtualCard", tableName: "Localizable", source: source, developmentValue: "Virtual Card", comment: nil) }
 
       /// en translation: WALLET
       ///

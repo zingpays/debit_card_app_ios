@@ -137,6 +137,8 @@
             </constraints>
             <size key="customSize" width="280" height="50"/>
             <connections>
+                <outlet property="dateFromLabel" destination="0Q0-zd-f61" id="iqn-vn-yNU"/>
+                <outlet property="dateToLabel" destination="G3L-63-8JU" id="k7H-y4-HbR"/>
                 <outlet property="leftView" destination="aR8-eh-eDg" id="EZz-RF-rdk"/>
                 <outlet property="rightView" destination="eca-ez-q7F" id="w93-u9-B8F"/>
             </connections>

@@ -248,6 +248,12 @@
 "cardTouchIdVerifyTipsTitle" = "查看卡信息需指纹识别";
 "scanFace" = "人脸识别";
 "touchId" = "指纹识别";
+"virtualCard" = "虚拟卡";
+"type" = "类型";
+"date" = "日期";
+"all" = "全部";
+"to" = "至";
+"select" = "选择";
 
 /// Tabbar
 "home" = "首页";
