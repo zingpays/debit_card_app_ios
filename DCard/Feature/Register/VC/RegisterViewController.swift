@@ -164,7 +164,7 @@ class RegisterViewController: BaseViewController {
     
     private func inputViewEndEditing(_ textField: UITextField) {
         if textField == emailTextField {
-            if let text = textField.text, !text.isEmpty, !text.isValidEmail {
+            if let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty, !text.isValidEmail {
                 updateEmailErrorTips(R.string.localizable.emailIsIncorrectTips())
             } else {
                 emailTextField.layer.borderWidth = 0
@@ -236,7 +236,7 @@ class RegisterViewController: BaseViewController {
     @IBAction func codeAction(_ sender: UIButton) {
         guard sender.alpha == 1 else { return }
         codeTextField.becomeFirstResponder()
-        guard let email = emailTextField.text, email.count > 0, email.isValidEmail else {
+        guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), email.count > 0, email.isValidEmail else {
             return
         }
         requestSendVerifyCode(email: email)

@@ -16,6 +16,12 @@ struct PhoneRequest {
         provider.requestStatus(.sendCode(number: number), completion: completion)
     }
     
+    static func sendCheckCode(num: String,
+                         completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<PhoneTarget>()
+        provider.requestStatus(.sendCheckCode(num: num), completion: completion)
+    }
+    
     static func setPhone(code: String, uniId: String, number: String, phoneCountryCode: String,
                          completion: @escaping ((Bool, String, LoginModel?) -> Void)) {
         let provider = MoyaProvider<PhoneTarget>()
@@ -27,6 +33,7 @@ struct PhoneRequest {
 
 enum PhoneTarget {
     case sendCode(number: String)
+    case sendCheckCode(num: String)
     case setPhone(code: String, uniId: String, number: String, phoneCountryCode: String)
 }
 
@@ -37,6 +44,8 @@ extension PhoneTarget: BaseTargetType {
             return "/user/send-phone-code"
         case .setPhone:
             return "/user/set-phone"
+        case .sendCheckCode:
+            return "/user/send-code-for-set-phone"
         }
     }
     
@@ -45,6 +54,8 @@ extension PhoneTarget: BaseTargetType {
         switch self {
         case .sendCode(let number):
             params["phone_number"] = number
+        case .sendCheckCode(let num):
+            params["phone_number"] = num
         case .setPhone(let code, let uniId, let number, let phoneCountryCode):
             params["phone_code"] = code
             params["user_id"] = uniId

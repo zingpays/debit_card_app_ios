@@ -16,6 +16,7 @@ enum SecurityVerificationItemInfoStyle {
 
 enum SecurityVerificationGetCodeButtonStatus {
     case normal
+    case resend
     case countDown
 }
 

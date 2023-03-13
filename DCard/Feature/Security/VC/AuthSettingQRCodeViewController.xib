@@ -66,13 +66,13 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download and install the Authenticator app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ii-J1-Gw8">
-                    <rect key="frame" x="56" y="138" width="311" height="32"/>
+                    <rect key="frame" x="56" y="138" width="311" height="19"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2o-jI-H3X" userLabel="threeLine">
-                    <rect key="frame" x="200.66666666666666" y="190" width="80.666666666666657" height="3"/>
+                    <rect key="frame" x="200.66666666666666" y="177" width="80.666666666666657" height="3"/>
                     <color key="backgroundColor" name="fw#76A4A7"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -81,7 +81,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWg-Gr-ZaG" userLabel="secondLine">
-                    <rect key="frame" x="111.66666666666669" y="190" width="81" height="3"/>
+                    <rect key="frame" x="111.66666666666669" y="177" width="81" height="3"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -90,7 +90,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBN-zZ-lm0">
-                    <rect key="frame" x="289.33333333333331" y="190" width="80.666666666666686" height="3"/>
+                    <rect key="frame" x="289.33333333333331" y="177" width="80.666666666666686" height="3"/>
                     <color key="backgroundColor" name="fw#76A4A7"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -99,7 +99,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31k-qP-JfS">
-                    <rect key="frame" x="23" y="190" width="80.666666666666671" height="3"/>
+                    <rect key="frame" x="23" y="177" width="80.666666666666671" height="3"/>
                     <color key="backgroundColor" name="fw#76A4A7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="3" id="yHm-Ti-L96"/>
@@ -111,7 +111,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABf-87-jxp" userLabel="QRCODEVIEW">
-                    <rect key="frame" x="16" y="213" width="361" height="310"/>
+                    <rect key="frame" x="16" y="200" width="361" height="310"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZe-Mf-cHw">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="310"/>
@@ -221,7 +221,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psP-7F-EXp">
-                    <rect key="frame" x="27" y="555" width="339" height="46"/>
+                    <rect key="frame" x="27" y="542" width="339" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Fmg-w0-9Il"/>
@@ -266,7 +266,6 @@
                 <constraint firstItem="EWg-Gr-ZaG" firstAttribute="top" secondItem="5Ii-J1-Gw8" secondAttribute="bottom" constant="20" id="b0F-BK-Bco"/>
                 <constraint firstItem="TBN-zZ-lm0" firstAttribute="leading" secondItem="i2o-jI-H3X" secondAttribute="trailing" constant="8" id="bIg-Qm-qVv"/>
                 <constraint firstItem="i2o-jI-H3X" firstAttribute="height" secondItem="31k-qP-JfS" secondAttribute="height" id="gho-SU-4ap"/>
-                <constraint firstItem="5Ii-J1-Gw8" firstAttribute="centerY" secondItem="2oq-vd-fiC" secondAttribute="centerY" id="hOd-8f-EMM"/>
                 <constraint firstItem="TBN-zZ-lm0" firstAttribute="height" secondItem="31k-qP-JfS" secondAttribute="height" id="jKm-wv-d7G"/>
                 <constraint firstItem="EWg-Gr-ZaG" firstAttribute="width" secondItem="31k-qP-JfS" secondAttribute="width" id="l9T-e7-5Iq"/>
                 <constraint firstAttribute="trailing" secondItem="TBN-zZ-lm0" secondAttribute="trailing" constant="23" id="oRy-Bc-prj"/>

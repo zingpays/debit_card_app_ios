@@ -175,7 +175,7 @@
 "logout" = "退出";
 "securitySetting" = "安全设置";
 "language" = "语言";
-"contractUs" = "联系我们";
+"contactUs" = "联系我们";
 "about" = "关于";
 "hello" = "你好!";
 "notVerified" = "未认证";

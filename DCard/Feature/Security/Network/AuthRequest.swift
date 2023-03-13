@@ -10,9 +10,9 @@ import Moya
 import Moya_ObjectMapper
 
 struct AuthRequest {
-    static func verifyCode(uniqueId: String, authToken: String, completion: @escaping ((Bool, String, LoginModel?) -> Void)) {
+    static func verifyCode(uniqueId: String, authToken: String, authCode: String, completion: @escaping ((Bool, String, LoginModel?) -> Void)) {
         let provider = MoyaProvider<AuthTarget>()
-        provider.requestObject(.verifyCode(uniqueId: uniqueId, authToken: authToken), type: LoginModel.self, completion: completion)
+        provider.requestObject(.verifyCode(uniqueId: uniqueId, authToken: authToken, authCode: authCode), type: LoginModel.self, completion: completion)
     }
 
     static func twofa(completion: @escaping ((Bool, String, TwoFactorAuthModel?) -> Void)) {
@@ -41,7 +41,7 @@ struct AuthRequest {
 }
 
 enum AuthTarget {
-    case verifyCode(uniqueId: String, authToken: String)
+    case verifyCode(uniqueId: String, authToken: String, authCode: String)
     case twofa
     case settwofa(authCode: String)
     case unsetTwofa(emailCode: String, phoneCode: String, authCode: String)
@@ -67,9 +67,10 @@ extension AuthTarget: BaseTargetType {
     var parameters: [String : Any]? {
         var params: [String: Any] = [:]
         switch self {
-        case .verifyCode(let uniqueId, let authToken):
+        case .verifyCode(let uniqueId, let authToken, let authCode):
             params["unique_id"] = uniqueId
             params["auth_token"] = authToken
+            params["secret"] = authCode
         case .twofa:
             break
         case .settwofa(let authCode):

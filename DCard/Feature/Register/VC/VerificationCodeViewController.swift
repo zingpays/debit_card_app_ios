@@ -86,7 +86,7 @@ class VerificationCodeViewController: BaseViewController {
     private func setupData() {
         startCountDown()
         boxAction()
-        phoneNumLabel.text = phoneNum
+        phoneNumLabel.text = (phoneCountryCode ?? "") + (phoneNum ?? "")
     }
     
     private func setupSubviews() {
@@ -126,7 +126,7 @@ class VerificationCodeViewController: BaseViewController {
                 DispatchQueue.main.async {
                     this.resendButton.alpha = 1
                     this.resendButton.setTitle(R.string.localizable.resend(), for: .normal)
-                    this.time.cancel()
+                    this.time.suspend()
                 }
             } else {
                 DispatchQueue.main.async {
@@ -175,8 +175,10 @@ class VerificationCodeViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func resendAction(_ sender: UIButton) {
+        guard let phone = phoneNum, let region = phoneCountryCode else { return }
+        startCountDown()
         indicator.startAnimating()
-        PhoneRequest.sendCode(number: phoneNum ?? "") { [weak self] isSuccess, message in
+        PhoneRequest.sendCheckCode(num: region + phone) { [weak self] isSuccess, message in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
@@ -191,7 +193,11 @@ class VerificationCodeViewController: BaseViewController {
         boxInputView.textDidChangeblock = { [weak self] text, isFinish in
             guard let this = self else { return }
             if isFinish {
-                this.requestVerifyPhoneCode(text ?? "", uniId: this.uniqueId ?? "", num: this.phoneNum ?? "", phoneCountryCode: "")
+                guard let code = text,
+                      let uniId = this.uniqueId,
+                      let num = this.phoneNum,
+                      let phoneCountryCode = this.phoneCountryCode else { return }
+                this.requestVerifyPhoneCode(code, uniId: uniId, num: num, phoneCountryCode: phoneCountryCode)
             }
         }
     }

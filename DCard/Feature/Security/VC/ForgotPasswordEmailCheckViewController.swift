@@ -31,6 +31,7 @@ class ForgotPasswordEmailCheckViewController: BaseViewController {
         emailTextField.delegate = self
         titleLabel.text = R.string.localizable.securityForgotPassword()
         subTitleLabel.text = R.string.localizable.securityForgotPasswordSubTitle()
+        nextButton.setTitle(R.string.localizable.next(), for: .normal)
     }
     
     // MARK: - Actions

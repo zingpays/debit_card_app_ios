@@ -21,6 +21,7 @@ class ChooseRegionViewController: UIViewController {
     var pageTitle: String? = nil
     /// data source
     var datasource: [RegionModel] = []
+    var datasourceOld: [RegionModel] = []
     
     var style: ChooseRegionStyle = .code
     
@@ -55,6 +56,7 @@ class ChooseRegionViewController: UIViewController {
         titleLabel.text = pageTitle
         resultTableview.fw.registerCellNib(ChooseRegionTableViewCell.self)
         searchBar.becomeFirstResponder()
+        datasourceOld = datasource
     }
 
 }
@@ -83,5 +85,29 @@ extension ChooseRegionViewController: UITableViewDelegate, UITableViewDataSource
         let data = datasource[indexPath.row]
         didSelectedCompletion?(data)
         self.dismiss(animated: true)
+    }
+}
+
+extension ChooseRegionViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var datas: [RegionModel] = []
+        datas = datasourceOld.filter({ region in
+            if searchText.isEmpty { return true }
+            if let phoneCode = region.phoneCode, searchText.isDigits {
+                return phoneCode.contains(searchText)
+            }
+            if LocalizationManager.shared.currentLanguage() == .zh {
+                if let name = region.nameZh {
+                    return name.contains(searchText)
+                }
+            } else {
+                if let name = region.nameEn {
+                    return name.contains(searchText)
+                }
+            }
+            return false
+        })
+        datasource = datas
+        resultTableview.reloadData()
     }
 }

@@ -107,4 +107,16 @@ class UserManager {
         UserDefaults.standard.synchronize()
     }
     
+    func formatMail() -> String? {
+        guard let mail = email, let index = mail.firstIndex(of: "@") else { return nil }
+        var format = String(mail.prefix(upTo: index))
+        if format.count > 6 {
+            
+        } else {
+            let range = Range(NSMakeRange(1, 2))
+//            format.replace(<#T##regex: RegexComponent##RegexComponent#>, with: <#T##(Regex<Output>.Match) throws -> Collection#>)
+        }
+        return nil
+    }
+    
 }

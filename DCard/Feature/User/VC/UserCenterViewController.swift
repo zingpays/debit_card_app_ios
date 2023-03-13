@@ -49,7 +49,7 @@ class UserCenterViewController: BaseViewController {
     }
     @IBOutlet weak var contractUsLabel: UILabel! {
         didSet {
-            contractUsLabel.text = R.string.localizable.contractUs()
+            contractUsLabel.text = R.string.localizable.contactUs()
         }
     }
     @IBOutlet weak var aboutLabel: UILabel! {
@@ -83,6 +83,7 @@ class UserCenterViewController: BaseViewController {
                 // ....
             }
         }
+        requestUserInfo()
     }
     
     private func setupUI() {
@@ -204,6 +205,16 @@ class UserCenterViewController: BaseViewController {
                 UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
             } else {
                 self.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func requestUserInfo() {
+        UserRequest.loginInfo { isSuccess, message, data in
+            if isSuccess {
+                if let nickName = data?.nickName, !nickName.isEmpty {
+                    self.emailLabel.text = nickName
+                }
             }
         }
     }

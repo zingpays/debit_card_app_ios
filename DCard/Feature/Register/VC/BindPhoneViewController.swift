@@ -75,7 +75,7 @@ class BindPhoneViewController: BaseViewController {
         vc.pageTitle = R.string.localizable.chooseYourCountryTitle()
         vc.datasource = datasource
         vc.didSelectedCompletion = { data in
-            self.phoneRegionLabel.text = LocalizationManager.shared.currentLanguage() == .zh ? data.nameZh ?? "" : data.nameEn ?? ""
+            self.phoneRegionLabel.text = data.phoneCode
         }
         self.present(vc, animated: true)
     }
@@ -118,13 +118,15 @@ class BindPhoneViewController: BaseViewController {
     
     @IBAction func sendVerifyCode(_ sender: Any) {
         if sendButton.alpha == 1 {
-            let phoneNum = phoneTextField.text ?? ""
-            PhoneRequest.sendCode(number: phoneNum) { [weak self] isSuccess, message  in
+            guard let phoneNum = phoneTextField.text,
+                  let region = phoneRegionLabel.text else { return }
+            let num = region + phoneNum
+            PhoneRequest.sendCheckCode(num: num) { [weak self] isSuccess, message  in
                 guard let this = self else { return }
                 if isSuccess {
                     let vc = VerificationCodeViewController()
                     vc.phoneNum = phoneNum
-                    vc.phoneCountryCode = this.phoneRegionLabel.text
+                    vc.phoneCountryCode = region
                     vc.uniqueId = this.uniqueId
                     this.navigationController?.pushViewController(vc, animated: true)
                 } else {

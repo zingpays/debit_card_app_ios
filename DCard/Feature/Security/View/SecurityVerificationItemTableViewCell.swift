@@ -90,6 +90,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
                     this.getCodeButton.setTitle(R.string.localizable.resend(), for: .normal)
                     time.suspend()
                     this.isCountDowning = false
+                    this.itemModel?.getCodeButtonStatus = .resend
                 }
             } else {
                 DispatchQueue.main.async {
@@ -109,6 +110,7 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
     }
     
     @IBAction func inputEditingChangedAction(_ sender: UITextField) {
+        itemModel?.text = sender.text ?? ""
         delegate?.inputTextFieldEditing(self, sender.text, data: itemModel)
     }
     
@@ -177,6 +179,8 @@ class SecurityVerificationItemTableViewCell: UITableViewCell {
         switch data.getCodeButtonStatus {
         case .normal:
             getCodeButton.setTitle(R.string.localizable.getCode(), for: .normal)
+        case .resend:
+            getCodeButton.setTitle(R.string.localizable.resend(), for: .normal)
         case .countDown:
             if isCountDowning {
                 break

@@ -264,12 +264,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var cardBaseCurrency: RswiftResources.StringResource { .init(key: "cardBaseCurrency", tableName: "Localizable", source: source, developmentValue: "Card Base Currency", comment: nil) }
 
-      /// en translation: Card Deposit
+      /// en translation: Top up
       ///
       /// Key: cardDeposit
       ///
       /// Locales: en, zh-Hans
-      var cardDeposit: RswiftResources.StringResource { .init(key: "cardDeposit", tableName: "Localizable", source: source, developmentValue: "Card Deposit", comment: nil) }
+      var cardDeposit: RswiftResources.StringResource { .init(key: "cardDeposit", tableName: "Localizable", source: source, developmentValue: "Top up", comment: nil) }
 
       /// en translation: Card Detail
       ///
@@ -439,19 +439,26 @@ struct _R {
       /// Locales: en, zh-Hans
       var confirmNewPassword: RswiftResources.StringResource { .init(key: "confirmNewPassword", tableName: "Localizable", source: source, developmentValue: "Confirm new password", comment: nil) }
 
-      /// en translation: Consume
+      /// en translation: Consumption
       ///
       /// Key: consume
       ///
       /// Locales: en, zh-Hans
-      var consume: RswiftResources.StringResource { .init(key: "consume", tableName: "Localizable", source: source, developmentValue: "Consume", comment: nil) }
+      var consume: RswiftResources.StringResource { .init(key: "consume", tableName: "Localizable", source: source, developmentValue: "Consumption", comment: nil) }
 
-      /// en translation: Consume Refund
+      /// en translation: Refund
       ///
       /// Key: consumeRefund
       ///
       /// Locales: en, zh-Hans
-      var consumeRefund: RswiftResources.StringResource { .init(key: "consumeRefund", tableName: "Localizable", source: source, developmentValue: "Consume Refund", comment: nil) }
+      var consumeRefund: RswiftResources.StringResource { .init(key: "consumeRefund", tableName: "Localizable", source: source, developmentValue: "Refund", comment: nil) }
+
+      /// en translation: Contact Us
+      ///
+      /// Key: contactUs
+      ///
+      /// Locales: en, zh-Hans
+      var contactUs: RswiftResources.StringResource { .init(key: "contactUs", tableName: "Localizable", source: source, developmentValue: "Contact Us", comment: nil) }
 
       /// en translation: Continue
       ///
@@ -459,13 +466,6 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var `continue`: RswiftResources.StringResource { .init(key: "continue", tableName: "Localizable", source: source, developmentValue: "Continue", comment: nil) }
-
-      /// en translation: Contract Us
-      ///
-      /// Key: contractUs
-      ///
-      /// Locales: en, zh-Hans
-      var contractUs: RswiftResources.StringResource { .init(key: "contractUs", tableName: "Localizable", source: source, developmentValue: "Contract Us", comment: nil) }
 
       /// en translation: Copy successfully
       ///
@@ -2200,7 +2200,7 @@ struct _R {
     var dinRegularTtf: RswiftResources.FileResource { .init(name: "din-regular", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 88 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 87 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -2395,9 +2395,6 @@ struct _R {
 
     /// Nib `SellDetailOrderTableViewCell`.
     var sellDetailOrderTableViewCell: RswiftResources.NibReference<SellDetailOrderTableViewCell> { .init(name: "SellDetailOrderTableViewCell", bundle: bundle) }
-
-    /// Nib `SettingNewPasswordViewController`.
-    var settingNewPasswordViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "SettingNewPasswordViewController", bundle: bundle) }
 
     /// Nib `SettingPasswordTipsTableViewCell`.
     var settingPasswordTipsTableViewCell: RswiftResources.NibReference<SettingPasswordTipsTableViewCell> { .init(name: "SettingPasswordTipsTableViewCell", bundle: bundle) }
@@ -2713,9 +2710,6 @@ struct _R {
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SellDetailOrderItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SellDetailOrderItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SellDetailOrderTableViewCell', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SettingNewPasswordViewController', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SettingNewPasswordViewController', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'SettingNewPasswordViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconTickOff", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconTickOff' is used in nib 'SettingPasswordTipsTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'SettingPasswordTipsTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'SettingPasswordViewController', but couldn't be loaded.") }

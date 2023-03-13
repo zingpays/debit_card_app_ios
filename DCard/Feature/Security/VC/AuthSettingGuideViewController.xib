@@ -55,14 +55,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download and install the Authenticator app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-Wa-5rm">
-                    <rect key="frame" x="56" y="138" width="305" height="32"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download and install the Authenticator app" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-Wa-5rm">
+                    <rect key="frame" x="56" y="138" width="305" height="37.666666666666657"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PN-ai-blN">
-                    <rect key="frame" x="20" y="186" width="82.333333333333329" height="3"/>
+                    <rect key="frame" x="20" y="191.66666666666666" width="82.333333333333329" height="3"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="3" id="ckI-C5-Htc"/>
@@ -74,7 +74,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bF-Y2-k1u">
-                    <rect key="frame" x="110.33333333333334" y="186" width="82.333333333333343" height="3"/>
+                    <rect key="frame" x="110.33333333333334" y="191.66666666666666" width="82.333333333333343" height="3"/>
                     <color key="backgroundColor" name="fw#76A4A7"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -83,7 +83,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fV-EJ-oIY">
-                    <rect key="frame" x="200.66666666666666" y="186" width="81.999999999999972" height="3"/>
+                    <rect key="frame" x="200.66666666666666" y="191.66666666666666" width="81.999999999999972" height="3"/>
                     <color key="backgroundColor" name="fw#76A4A7"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -92,7 +92,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2G-fG-sDY">
-                    <rect key="frame" x="290.66666666666669" y="186" width="82.333333333333314" height="3"/>
+                    <rect key="frame" x="290.66666666666669" y="191.66666666666666" width="82.333333333333314" height="3"/>
                     <color key="backgroundColor" name="fw#76A4A7"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -101,7 +101,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YK4-Xr-kjI">
-                    <rect key="frame" x="16" y="209" width="361" height="160"/>
+                    <rect key="frame" x="16" y="214.66666666666663" width="361" height="160"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" id="oRo-Ai-FF4"/>
@@ -118,7 +118,7 @@
                     </connections>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X1-yE-0cV">
-                    <rect key="frame" x="26" y="401" width="341" height="46"/>
+                    <rect key="frame" x="26" y="406.66666666666669" width="341" height="46"/>
                     <color key="backgroundColor" name="fw#00A8BB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="WDj-x8-Kcw"/>
@@ -145,6 +145,7 @@
                 <constraint firstItem="WWk-ap-4pn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2Nr-rf-G3x"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YK4-Xr-kjI" secondAttribute="trailing" constant="16" id="2nl-ue-ETk"/>
                 <constraint firstItem="A2G-fG-sDY" firstAttribute="width" secondItem="2PN-ai-blN" secondAttribute="width" id="4Di-E1-Mms"/>
+                <constraint firstItem="2PN-ai-blN" firstAttribute="top" secondItem="5BV-Wa-5rm" secondAttribute="bottom" constant="16" id="5Gd-9S-guj"/>
                 <constraint firstItem="5BV-Wa-5rm" firstAttribute="top" secondItem="WWk-ap-4pn" secondAttribute="bottom" constant="16" id="6cl-rF-w02"/>
                 <constraint firstItem="7bF-Y2-k1u" firstAttribute="height" secondItem="2PN-ai-blN" secondAttribute="height" id="9jN-N5-OD1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A2G-fG-sDY" secondAttribute="trailing" constant="20" id="CJf-6d-Wb6"/>
@@ -153,7 +154,6 @@
                 <constraint firstItem="7bF-Y2-k1u" firstAttribute="top" secondItem="2PN-ai-blN" secondAttribute="top" id="QmT-H0-9sC"/>
                 <constraint firstItem="1fV-EJ-oIY" firstAttribute="leading" secondItem="7bF-Y2-k1u" secondAttribute="trailing" constant="8" id="Rlz-aT-3Ur"/>
                 <constraint firstItem="7bF-Y2-k1u" firstAttribute="leading" secondItem="2PN-ai-blN" secondAttribute="trailing" constant="8" id="T0T-Dm-07G"/>
-                <constraint firstItem="5BV-Wa-5rm" firstAttribute="centerY" secondItem="Jla-TB-bX7" secondAttribute="centerY" id="VKN-gU-KQc"/>
                 <constraint firstItem="5BV-Wa-5rm" firstAttribute="leading" secondItem="Jla-TB-bX7" secondAttribute="trailing" constant="8" id="aBN-5V-Rnz"/>
                 <constraint firstItem="A2G-fG-sDY" firstAttribute="leading" secondItem="1fV-EJ-oIY" secondAttribute="trailing" constant="8" id="d9y-PW-6Pd"/>
                 <constraint firstItem="Jla-TB-bX7" firstAttribute="top" secondItem="WWk-ap-4pn" secondAttribute="bottom" constant="16" id="fyL-Gl-tXr"/>
@@ -161,7 +161,6 @@
                 <constraint firstItem="A2G-fG-sDY" firstAttribute="top" secondItem="2PN-ai-blN" secondAttribute="top" id="gYZ-Ub-PzK"/>
                 <constraint firstItem="2X1-yE-0cV" firstAttribute="top" secondItem="YK4-Xr-kjI" secondAttribute="bottom" constant="32" id="gbl-Fo-8ZS"/>
                 <constraint firstItem="2PN-ai-blN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gc2-Iy-8Oy"/>
-                <constraint firstItem="2PN-ai-blN" firstAttribute="top" secondItem="Jla-TB-bX7" secondAttribute="bottom" constant="16" id="lTT-9c-cFe"/>
                 <constraint firstItem="A2G-fG-sDY" firstAttribute="height" secondItem="2PN-ai-blN" secondAttribute="height" id="pNH-pp-PU1"/>
                 <constraint firstItem="YK4-Xr-kjI" firstAttribute="top" secondItem="2PN-ai-blN" secondAttribute="bottom" constant="20" id="qPI-1O-rI1"/>
                 <constraint firstItem="WWk-ap-4pn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="s7t-2N-lbh"/>

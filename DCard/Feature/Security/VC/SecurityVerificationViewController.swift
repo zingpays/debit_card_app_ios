@@ -41,20 +41,25 @@ class SecurityVerificationViewController: BaseViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var securityTableView: UITableView!
     
-    private lazy var footerView: UIView = {
-        let v = UIView()
-        v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 56))
+    private lazy var submitButton: UIButton = {
         let btn = UIButton()
-        v.addSubview(btn)
-        btn.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.top.equalToSuperview().inset(10)
-            make.left.right.equalToSuperview().inset(26)
-        }
         btn.layer.cornerRadius = 23
         btn.backgroundColor = R.color.fw00A8BB()
         btn.setTitle(R.string.localizable.submit(), for: .normal)
         btn.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
+        btn.alpha = 0.4
+        return btn
+    }()
+    
+    private lazy var footerView: UIView = {
+        let v = UIView()
+        v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: 56))
+        v.addSubview(submitButton)
+        submitButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().inset(10)
+            make.left.right.equalToSuperview().inset(26)
+        }
         return v
     }()
     
@@ -62,7 +67,7 @@ class SecurityVerificationViewController: BaseViewController {
         let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位已经发送到\(self.email)的验证码" : "Enter the 6-digit code sent to \(self.email)"
         let item = SecurityVerificationItemModel(title: R.string.localizable.emailVerificationCode(),
                                                  info: info,
-                                                 inputPlaceholder: R.string.localizable.emialInputPlaceholder(),
+                                                 inputPlaceholder: R.string.localizable.emailVerificationCodePlaceholder(),
                                                  style: .email)
         
         return item
@@ -76,7 +81,7 @@ class SecurityVerificationViewController: BaseViewController {
                 return self.phone ?? ""
             }
         }()
-        let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位发送到\(phoneNum)的验证码" : "Enter the 6 digit code sent to \(UserManager.shared.phoneNum ?? "")"
+        let info = LocalizationManager.shared.currentLanguage() == .zh ? "输入6位发送到\(phoneNum)的验证码" : "Enter the 6 digit code sent to \(phoneNum)"
         let item = SecurityVerificationItemModel(title: R.string.localizable.phoneVerificationCode(),
                                                  info: info,
                                                  inputPlaceholder: R.string.localizable.phoneVerificationCodePlaceholder(),
@@ -209,13 +214,25 @@ class SecurityVerificationViewController: BaseViewController {
         }
     }
     
+    private func updateSubmitButtonState() {
+        var fillCount = 0
+        for data in datasource {
+            if data.text.count > 0 {
+                fillCount += 1
+            }
+        }
+        submitButton.alpha = (fillCount == datasource.count && datasource.count > 0) ? 1 : 0.4
+    }
+    
     // MARK: - Actions
     
     @objc private func nextAction() {
+        guard submitButton.alpha == 1 else { return }
         switch source {
         case .forgotPattern:
-            let vc = SettingNewPasswordViewController()
-            navigationController?.pushViewController(vc, animated: true)
+            print("")
+//            let vc = SettingNewPasswordViewController()
+//            navigationController?.pushViewController(vc, animated: true)
         case .changeEmail:
             guard let emailCode = emailCode,
                   let phoneCode = phoneCode else { return }
@@ -353,23 +370,27 @@ class SecurityVerificationViewController: BaseViewController {
     }
     
     private func requestAuthVerify() {
+        guard let uniqueId = uniqueId, let authToken = authToken, let authCode = authCode else { return }
         indicator.startAnimating()
-        AuthRequest.verifyCode(uniqueId: uniqueId ?? "", authToken: authToken ?? "") { [weak self] isSuccess, message, data in
+        AuthRequest.verifyCode(uniqueId: uniqueId, authToken: authToken, authCode: authCode) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
                 if let token = data?.accessToken,
                     let accessTokenExpireDate = data?.accessTokenExpireDate?.toDate()?.date,
                     let email = data?.user?.email,
-                    let phoneNum = data?.user?.phoneNumber {
+                    let phoneNum = data?.user?.phoneNumber,
+                    let phoneCountryCode = data?.user?.phoneCountryCode {
                     LocalAuthenManager.shared.isAuthorized = true
                     // save user token
                     UserManager.shared.saveToken(token, expireDate: accessTokenExpireDate)
                     UserManager.shared.saveUserEmail(email)
-                    UserManager.shared.saveUserPhoneNum(phoneNum)
+                    UserManager.shared.saveUserPhoneNum(phoneCountryCode + phoneNum)
                     // change application root viewController to tabbar viewController
                     UIApplication.shared.keyWindow()?.rootViewController = nil
                     UIApplication.shared.keyWindow()?.rootViewController = TabBarController()
+                } else {
+                    this.view.makeToast("server data error!", position: .center)
                 }
             } else {
                 this.view.makeToast(message, position: .center)
@@ -514,6 +535,7 @@ extension SecurityVerificationViewController: SecurityVerificationItemTableViewC
     }
     
     func inputTextFieldEditing(_ cell: SecurityVerificationItemTableViewCell, _ text: String?, data: SecurityVerificationItemModel?) {
+        updateSubmitButtonState()
         switch data?.style {
         case .auth, .authWithoutReset:
             authCode = text

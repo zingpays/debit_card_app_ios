@@ -213,8 +213,9 @@ class SettingPasswordViewController: BaseViewController {
     // MARK: - Network
     
     private func requestChangePassword(password: String, confirmPassword: String) {
+        guard let verifyCode = verifyCode else { return }
         indicator.startAnimating()
-        PasswordRequest.changePassword(password: password, confirmPassword: confirmPassword, verifyCode: code) { [weak self] isSuccess, message in
+        PasswordRequest.changePassword(password: password, confirmPassword: confirmPassword, verifyCode: verifyCode) { [weak self] isSuccess, message in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
@@ -230,22 +231,39 @@ class SettingPasswordViewController: BaseViewController {
                                        confirmPassword: String,
                                        verifyCode: String) {
         indicator.startAnimating()
-        PasswordRequest.forgotPassword(email: email,
-                                       password: password,
-                                       confirmPassword: confirmPassword,
-                                       verifyCode: verifyCode) { [weak self] isSuccess, message in
-            guard let this = self else { return }
-            this.indicator.stopAnimating()
-            if isSuccess {
-                UserManager.shared.clearUserData()
-                UIApplication.shared.keyWindow()?.rootViewController = nil
-                let vc = LoginViewController()
-                let loginNavVC = UINavigationController(rootViewController: vc)
-                UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
-            } else {
-                this.view.makeToast(message, position: .center)
+        if UserManager.shared.token == nil {
+            // 非登录态
+            PasswordRequest.forgotPasswordNoLogin(email: email, password: password, verifyCode: verifyCode) { [weak self] isSuccess, message in
+                guard let this = self else { return }
+                this.indicator.stopAnimating()
+                if isSuccess {
+                    UserManager.shared.clearUserData()
+                    UIApplication.shared.keyWindow()?.rootViewController = nil
+                    let vc = LoginViewController()
+                    let loginNavVC = UINavigationController(rootViewController: vc)
+                    UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+                } else {
+                    this.view.makeToast(message, position: .center)
+                }
+            }
+        } else {
+            PasswordRequest.forgotPassword(password: password,
+                                           verifyCode: verifyCode) { [weak self] isSuccess, message in
+                guard let this = self else { return }
+                this.indicator.stopAnimating()
+                if isSuccess {
+                    UserManager.shared.clearUserData()
+                    UIApplication.shared.keyWindow()?.rootViewController = nil
+                    let vc = LoginViewController()
+                    let loginNavVC = UINavigationController(rootViewController: vc)
+                    UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+                } else {
+                    this.view.makeToast(message, position: .center)
+                }
             }
         }
+        
+        
     }
     
     // MARK: - Actions
@@ -261,6 +279,7 @@ class SettingPasswordViewController: BaseViewController {
     }
     
     @IBAction func next(_ sender: UIButton) {
+        UIApplication.shared.keyWindow()?.endEditing(true)
         if nextButton.alpha == 1 {
             switch style {
             case .register:

@@ -134,7 +134,7 @@ class FillInAddressViewController: BaseViewController {
             if data.city != nil {
                 cityTipsLabelConstraint.constant = 16
                 inputError(cityTextField)
-                cityTextField.text = R.string.localizable.resubmitErrorTips()
+                cityTipsLabel.text = R.string.localizable.resubmitErrorTips()
             } else {
                 cityTipsLabelConstraint.constant = 0
             }

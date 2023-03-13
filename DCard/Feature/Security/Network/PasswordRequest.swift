@@ -36,13 +36,20 @@ struct PasswordRequest {
                                completion: completion)
     }
     
-    static func forgotPassword(email: String,
-                               password: String,
-                               confirmPassword: String,
+    static func forgotPassword(password: String,
                                verifyCode: String,
                                completion: @escaping ResponseNormalCompletion) {
         let provider = MoyaProvider<PasswordTarget>()
-        provider.requestStatus(.forgotPassword(email: email, password: password, confirmPassword: confirmPassword, verifyCode: verifyCode),
+        provider.requestStatus(.forgotPassword(password: password, verifyCode: verifyCode),
+                               completion: completion)
+    }
+    
+    static func forgotPasswordNoLogin(email: String,
+                               password: String,
+                               verifyCode: String,
+                               completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<PasswordTarget>()
+        provider.requestStatus(.forgotPasswordNoLogin(email: email, password: password, verifyCode: verifyCode),
                                completion: completion)
     }
 }
@@ -51,7 +58,8 @@ enum PasswordTarget {
     case verifyOldPassword(password: String)
     case changePassword(password: String, confirmPassword: String, verifyCode: String)
     case securityVerify(email: String, emailCode: String?, phoneCode: String?, authCode: String?)
-    case forgotPassword(email: String, password: String, confirmPassword: String, verifyCode: String)
+    case forgotPassword(password: String, verifyCode: String)
+    case forgotPasswordNoLogin(email: String, password: String, verifyCode: String)
 }
 
 extension PasswordTarget: BaseTargetType {
@@ -65,6 +73,8 @@ extension PasswordTarget: BaseTargetType {
             return "/user/forgot-password"
         case .forgotPassword:
             return "/user/forgot-password2"
+        case .forgotPasswordNoLogin:
+            return "/user/forgot-password-no-login"
         }
     }
     
@@ -77,6 +87,8 @@ extension PasswordTarget: BaseTargetType {
         case .securityVerify:
             return false
         case .forgotPassword:
+            return true
+        case .forgotPasswordNoLogin:
             return false
         }
     }
@@ -95,10 +107,12 @@ extension PasswordTarget: BaseTargetType {
             params["email_code"] = emailCode
             params["phone_code"] = phoneCode
             params["secret"] = authCode
-        case .forgotPassword(let email, let password, let confirmPassword, let verifyCode):
+        case .forgotPassword(let password, let verifyCode):
+            params["password"] = password
+            params["verify_code"] = verifyCode
+        case .forgotPasswordNoLogin(let email, let password, let verifyCode):
             params["email"] = email
             params["password"] = password
-            params["password_confirmation"] = confirmPassword
             params["verify_code"] = verifyCode
         }
         return params

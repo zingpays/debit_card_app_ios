@@ -120,8 +120,8 @@ extension KYCTarget: BaseTargetType {
 //            params["unique_id"] = "6648244"
             break
         case .info:
-//            params["unique_id"] = "6648244"
-//            params["_skip_auth"] = 1
+            params["unique_id"] = "6648244"
+            params["_skip_auth"] = 1
             break
         case .status:
 //            params["unique_id"] = "6648244"

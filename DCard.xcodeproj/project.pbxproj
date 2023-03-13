@@ -105,9 +105,6 @@
 		546BD3FF299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546BD3FD299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib */; };
 		546BD402299B5BFD003C15D8 /* SecurityVerificationItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546BD401299B5BFD003C15D8 /* SecurityVerificationItemModel.swift */; };
 		5473220429879A18007B9AEA /* SecurityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */; };
-		5473220529879A18007B9AEA /* SecurityVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */; };
-		547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */; };
-		547322092987BF0D007B9AEA /* SettingNewPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */; };
 		5473856F29A8ACA900924AD8 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473856E29A8ACA900924AD8 /* RegisterModel.swift */; };
 		5473857129A8C30E00924AD8 /* PhoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473857029A8C30E00924AD8 /* PhoneRequest.swift */; };
 		5473857529A9C6ED00924AD8 /* RegionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473857429A9C6ED00924AD8 /* RegionRequest.swift */; };
@@ -234,6 +231,7 @@
 		54D48094298A3F750068671E /* CardBagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D48092298A3F750068671E /* CardBagTableViewCell.swift */; };
 		54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D48093298A3F750068671E /* CardBagTableViewCell.xib */; };
 		54D67A1E29BB2E70006F712E /* TransactionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D67A1D29BB2E70006F712E /* TransactionsModel.swift */; };
+		54D67A2029BC7100006F712E /* SecurityVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D67A1F29BC7100006F712E /* SecurityVerificationViewController.xib */; };
 		54DE3E7F298D1B190077B120 /* WalletCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */; };
 		54DE3E80298D1B190077B120 /* WalletCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */; };
 		54DE3E832990AD280077B120 /* WalletCryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */; };
@@ -367,9 +365,6 @@
 		546BD3FD299B26F7003C15D8 /* SecurityVerificationItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityVerificationItemTableViewCell.xib; sourceTree = "<group>"; };
 		546BD401299B5BFD003C15D8 /* SecurityVerificationItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityVerificationItemModel.swift; sourceTree = "<group>"; };
 		5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityVerificationViewController.swift; sourceTree = "<group>"; };
-		5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityVerificationViewController.xib; sourceTree = "<group>"; };
-		547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNewPasswordViewController.swift; sourceTree = "<group>"; };
-		547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNewPasswordViewController.xib; sourceTree = "<group>"; };
 		5473856E29A8ACA900924AD8 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		5473857029A8C30E00924AD8 /* PhoneRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRequest.swift; sourceTree = "<group>"; };
 		5473857429A9C6ED00924AD8 /* RegionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRequest.swift; sourceTree = "<group>"; };
@@ -500,6 +495,7 @@
 		54D48092298A3F750068671E /* CardBagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBagTableViewCell.swift; sourceTree = "<group>"; };
 		54D48093298A3F750068671E /* CardBagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardBagTableViewCell.xib; sourceTree = "<group>"; };
 		54D67A1D29BB2E70006F712E /* TransactionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsModel.swift; sourceTree = "<group>"; };
+		54D67A1F29BC7100006F712E /* SecurityVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecurityVerificationViewController.xib; sourceTree = "<group>"; };
 		54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardTableViewCell.swift; sourceTree = "<group>"; };
 		54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCardTableViewCell.xib; sourceTree = "<group>"; };
 		54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCryptoTableViewCell.swift; sourceTree = "<group>"; };
@@ -986,9 +982,7 @@
 				54CD895629A6106C0038E822 /* ChangePasswordViewController.swift */,
 				54CD895729A6106C0038E822 /* ChangePasswordViewController.xib */,
 				5473220229879A18007B9AEA /* SecurityVerificationViewController.swift */,
-				5473220329879A18007B9AEA /* SecurityVerificationViewController.xib */,
-				547322062987BF0D007B9AEA /* SettingNewPasswordViewController.swift */,
-				547322072987BF0D007B9AEA /* SettingNewPasswordViewController.xib */,
+				54D67A1F29BC7100006F712E /* SecurityVerificationViewController.xib */,
 				5482973829A3417600F82611 /* SecuritySettingsViewController.swift */,
 				5482973929A3417600F82611 /* SecuritySettingsViewController.xib */,
 				5482974029A35B0300F82611 /* QuickUnlockViewController.swift */,
@@ -1313,7 +1307,6 @@
 				5429B93A299F4F00005F721E /* UserCenterViewController.xib in Resources */,
 				541A8D88296C05BB00C59026 /* Roboto-Bold-3.ttf in Resources */,
 				54BBA11B296D7A5500EB316F /* SettingPasswordViewController.xib in Resources */,
-				5473220529879A18007B9AEA /* SecurityVerificationViewController.xib in Resources */,
 				542BC1942970F86A00133659 /* VerificationCodeViewController.xib in Resources */,
 				545C56812978507800D7F058 /* BiometricsViewController.xib in Resources */,
 				5422268F2993ADC000447A1A /* SellDetailItemTableViewCell.xib in Resources */,
@@ -1395,6 +1388,7 @@
 				54A454F8298B876D00621311 /* TransactionsViewController.xib in Resources */,
 				54D082E229865965008B0FBC /* CardViewController.xib in Resources */,
 				54A45512298CA7E800621311 /* ChooseDateView.xib in Resources */,
+				54D67A2029BC7100006F712E /* SecurityVerificationViewController.xib in Resources */,
 				54BBA10D296C0E0600EB316F /* RegisterSuccessViewController.xib in Resources */,
 				54BBA117296D0B9200EB316F /* RegisterViewController.xib in Resources */,
 				54B0850D2991F3D100B6C84B /* SellCryptoViewController.xib in Resources */,
@@ -1406,7 +1400,6 @@
 				542BC190297008EB00133659 /* ChooseRegionTableViewCell.xib in Resources */,
 				54D082CF29863FA6008B0FBC /* KYCFinishViewController.xib in Resources */,
 				5422267B2992580600447A1A /* SellCryptoConfirmView.xib in Resources */,
-				547322092987BF0D007B9AEA /* SettingNewPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1571,7 +1564,6 @@
 				5422268E2993ADC000447A1A /* SellDetailItemTableViewCell.swift in Sources */,
 				5473857129A8C30E00924AD8 /* PhoneRequest.swift in Sources */,
 				5495F8F929A76BDB0073EA48 /* HomeTransactionsViewController.swift in Sources */,
-				547322082987BF0D007B9AEA /* SettingNewPasswordViewController.swift in Sources */,
 				541A8D2929641F1F00C59026 /* BaseViewController.swift in Sources */,
 				54A45510298CA7D100621311 /* ChooseDateView.swift in Sources */,
 				54C313112994F3C300DBF373 /* WithdrawViewController.swift in Sources */,
@@ -1877,7 +1869,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 7L38QK69R5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DCard/Config/Info.plist;
@@ -1915,7 +1907,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 7L38QK69R5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DCard/Config/Info.plist;

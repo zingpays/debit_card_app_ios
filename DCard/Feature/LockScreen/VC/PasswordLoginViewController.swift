@@ -176,12 +176,12 @@ class PasswordLoginViewController: BaseViewController {
                           authToken: loginData.authToken ?? "",
                           uniqueId: loginData.user?.uniqueId ?? "",
                           email: loginData.user?.email ?? "",
-                          phone: loginData.user?.phoneNumber)
+                          phone: (loginData.user?.phoneNumber ?? "") + (loginData.user?.phoneCountryCode ?? ""))
         } else {
             loginFinish(token: loginData.accessToken,
                         expireDate: loginData.accessTokenExpireDate ?? "",
                         email: loginData.user?.email ?? "",
-                        phoneNum: loginData.user?.phoneNumber ?? "")
+                        phoneNum: (loginData.user?.phoneNumber ?? "") + (loginData.user?.phoneCountryCode ?? ""))
         }
     }
     

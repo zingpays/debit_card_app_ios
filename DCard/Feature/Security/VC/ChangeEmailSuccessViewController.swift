@@ -29,7 +29,7 @@ class ChangeEmailSuccessViewController: BaseViewController {
     }
     @IBOutlet weak var contactUsLabel: UILabel! {
         didSet {
-            contactUsLabel.text = R.string.localizable.contractUs()
+            contactUsLabel.text = R.string.localizable.contactUs()
         }
     }
     @IBOutlet weak var emailButton: UIButton!

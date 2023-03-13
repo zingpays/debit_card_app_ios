@@ -16,6 +16,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        UserManager.shared.formatMail()
         setupData()
     }
     
