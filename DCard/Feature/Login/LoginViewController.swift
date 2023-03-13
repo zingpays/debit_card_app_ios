@@ -11,6 +11,7 @@ import SwiftDate
 
 class LoginViewController: BaseViewController {
     
+    var email: String?
     private lazy var loginItem: UIBarButtonItem = {
         let btn = UIButton()
         btn.frame = CGRect(x: 0, y: 4, width: 84, height: 36)
@@ -87,6 +88,7 @@ class LoginViewController: BaseViewController {
     }
     
     private func setupData() {
+        emailTextfield.text = email
         titleLabel.text = R.string.localizable.loginTitle()
         emailTextfield.placeholder = R.string.localizable.emialInputPlaceholder()
         passwordTextField.placeholder = R.string.localizable.passwordInputPlaceholder()
@@ -155,7 +157,7 @@ class LoginViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func emailInputEnd(_ sender: Any) {
-        if let emailText = emailTextfield.text, !emailText.isValidEmail {
+        if let emailText = emailTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines), !emailText.isValidEmail {
             view.makeToast(R.string.localizable.emailErrorTips(), duration: 1, position: .center)
         }
     }
@@ -176,7 +178,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        guard let email = emailTextfield.text, let password = passwordTextField.text else { return }
+        guard let email = emailTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines), let password = passwordTextField.text else { return }
         indicator.startAnimating()
         LoginRequest.login(email: email, password: password) { [weak self] isSuccess, message, data in
             guard let this = self else { return }

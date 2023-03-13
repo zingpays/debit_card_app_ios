@@ -170,6 +170,7 @@
 "securityForgotPassword" = "忘记密码";
 "securityForgotPasswordSubTitle" = "请输入你的e-mail";
 "copySuccessfully" = "复制成功";
+"changePasswordSuccessfully" = "修改密码成功";
 
 /// User
 "logout" = "退出";

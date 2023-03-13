@@ -203,11 +203,14 @@ class SettingPasswordViewController: BaseViewController {
     }
     
     private func changedPasswordAction() {
-        UserManager.shared.clearUserData()
-        UIApplication.shared.keyWindow()?.rootViewController = nil
-        let vc = LoginViewController()
-        let loginNavVC = UINavigationController(rootViewController: vc)
-        UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+        view.makeToast(R.string.localizable.changePasswordSuccessfully(), duration: 0.5, position: .center) { didTap in
+            let email = UserManager.shared.email
+            UserManager.shared.clearUserData()
+            let vc = LoginViewController()
+            vc.email = email
+            let loginNavVC = UINavigationController(rootViewController: vc)
+            UIApplication.shared.keyWindow()?.rootViewController = loginNavVC
+        }
     }
     
     // MARK: - Network

@@ -171,6 +171,7 @@
 "securityForgotPassword" = "Forgot Password";
 "securityForgotPasswordSubTitle" = "Please Enter Your E-mail";
 "copySuccessfully" = "Copy successfully";
+"changePasswordSuccessfully" = "Password changed successfully";
 
 /// User
 "logout" = "Log out";
