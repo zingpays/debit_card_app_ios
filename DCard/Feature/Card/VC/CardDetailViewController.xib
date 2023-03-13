@@ -8,16 +8,10 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Roboto-Bold-3.ttf">
-            <string>Roboto-Bold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardDetailViewController" customModule="DCard" customModuleProvider="target">
             <connections>
                 <outlet property="cardTableView" destination="JiC-nO-0HH" id="Khe-J3-Ka8"/>
-                <outlet property="titleLabel" destination="X3N-TV-JsV" id="YPs-X4-3dx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,14 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3N-TV-JsV">
-                    <rect key="frame" x="16" y="125" width="343" height="33"/>
-                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JiC-nO-0HH">
-                    <rect key="frame" x="0.0" y="178" width="375" height="634"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JiC-nO-0HH">
+                    <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="lk8-Z8-wAG"/>
@@ -44,12 +32,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="X3N-TV-JsV" secondAttribute="trailing" constant="16" id="2OX-Fx-Q5g"/>
                 <constraint firstItem="JiC-nO-0HH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5YQ-4g-Lvy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JiC-nO-0HH" secondAttribute="trailing" id="Kv7-xl-F6Y"/>
-                <constraint firstItem="X3N-TV-JsV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="78" id="hgR-PZ-66F"/>
-                <constraint firstItem="JiC-nO-0HH" firstAttribute="top" secondItem="X3N-TV-JsV" secondAttribute="bottom" constant="20" id="l2l-dQ-YcZ"/>
-                <constraint firstItem="X3N-TV-JsV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pnI-No-xNY"/>
                 <constraint firstAttribute="bottom" secondItem="JiC-nO-0HH" secondAttribute="bottom" id="qHK-s3-Pfs"/>
             </constraints>
             <point key="canvasLocation" x="182" y="10"/>

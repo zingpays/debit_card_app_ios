@@ -241,6 +241,8 @@
 "consumeRefund" = "Refund";
 "rebate" = "Rebate";
 "cardDeposit" = "Top up";
+"cardHolder" = "CARD HOLDER";
+"validityPeriod" = "VALIDITY PERIOD";
 
 /// Tabbar
 "home" = "HOME";

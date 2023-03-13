@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 235 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 237 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -292,6 +292,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var cardFreezeSuccessfullyTitle: RswiftResources.StringResource { .init(key: "cardFreezeSuccessfullyTitle", tableName: "Localizable", source: source, developmentValue: "Freeze Successfully", comment: nil) }
 
+      /// en translation: CARD HOLDER
+      ///
+      /// Key: cardHolder
+      ///
+      /// Locales: en, zh-Hans
+      var cardHolder: RswiftResources.StringResource { .init(key: "cardHolder", tableName: "Localizable", source: source, developmentValue: "CARD HOLDER", comment: nil) }
+
       /// en translation: Card Information
       ///
       /// Key: cardInformation
@@ -376,12 +383,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var changePasswordSubTitle: RswiftResources.StringResource { .init(key: "changePasswordSubTitle", tableName: "Localizable", source: source, developmentValue: "Verify your old password", comment: nil) }
 
-      /// en translation: Change password successfully
+      /// en translation: Password changed successfully
       ///
       /// Key: changePasswordSuccessfully
       ///
       /// Locales: en, zh-Hans
-      var changePasswordSuccessfully: RswiftResources.StringResource { .init(key: "changePasswordSuccessfully", tableName: "Localizable", source: source, developmentValue: "Change password successfully", comment: nil) }
+      var changePasswordSuccessfully: RswiftResources.StringResource { .init(key: "changePasswordSuccessfully", tableName: "Localizable", source: source, developmentValue: "Password changed successfully", comment: nil) }
 
       /// en translation: Choose your city of residence
       ///
@@ -1692,6 +1699,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var unfreeze: RswiftResources.StringResource { .init(key: "unfreeze", tableName: "Localizable", source: source, developmentValue: "Unfrozen", comment: nil) }
 
+      /// en translation: VALIDITY PERIOD
+      ///
+      /// Key: validityPeriod
+      ///
+      /// Locales: en, zh-Hans
+      var validityPeriod: RswiftResources.StringResource { .init(key: "validityPeriod", tableName: "Localizable", source: source, developmentValue: "VALIDITY PERIOD", comment: nil) }
+
       /// en translation: Verification In Review
       ///
       /// Key: verificationInReview
@@ -1838,7 +1852,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 103 images.
+  /// This `_R.image` struct is generated, and contains static references to 105 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -1853,6 +1867,9 @@ struct _R {
 
     /// Image `bgbitcoinCircle`.
     var bgbitcoinCircle: RswiftResources.ImageResource { .init(name: "bgbitcoinCircle", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `cardDetailLogo`.
+    var cardDetailLogo: RswiftResources.ImageResource { .init(name: "cardDetailLogo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `guide_bg_intro_1`.
     var guide_bg_intro_1: RswiftResources.ImageResource { .init(name: "guide_bg_intro_1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -1922,6 +1939,9 @@ struct _R {
 
     /// Image `iconCopy`.
     var iconCopy: RswiftResources.ImageResource { .init(name: "iconCopy", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `iconCopyWhite`.
+    var iconCopyWhite: RswiftResources.ImageResource { .init(name: "iconCopyWhite", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `iconDeposit`.
     var iconDeposit: RswiftResources.ImageResource { .init(name: "iconDeposit", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -2537,6 +2557,8 @@ struct _R {
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'CardSettingTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'CardSettingTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#000000", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#000000' is used in nib 'CardSettingViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "cardDetailLogo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'cardDetailLogo' is used in nib 'CardTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "iconCopyWhite", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconCopyWhite' is used in nib 'CardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FAFAFA", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FAFAFA' is used in nib 'CardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'CardTableViewCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "iconCardSetting", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconCardSetting' is used in nib 'CardViewController', but couldn't be loaded.") }

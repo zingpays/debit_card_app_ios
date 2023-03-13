@@ -339,7 +339,7 @@ class FillInAddressViewController: BaseViewController {
                 case .created, .expired, .resubmissionRequested, .abandoned:
                     this.handleVeriffAction()
                 default:
-                    this.requestSaveKYCStepThree(isVeriffPass: true)
+                    this.submitRequest()
                 }
             } else {
                 this.view.makeToast(message, position: .center)

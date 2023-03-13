@@ -18,8 +18,6 @@ class CardViewController: BaseViewController {
     
     private var numberOfRowsInTable: Int = 0
     
-    private var cardList: [CardModel] = []
-    
     private var cardInfo: CardModel?
     
     private var transactionsData: TransactionsModel?
@@ -81,24 +79,6 @@ class CardViewController: BaseViewController {
             if isSuccess, let datas = datas {
                 this.cardTypeData = datas.first
                 this.cardTableView.reloadData()
-            }
-        }
-    }
-    
-    private func requestCardList() {
-        indicator.startAnimating()
-        CardRequest.list(uniqueId: "6648244") { [weak self] isSuccess, message, list in
-            guard let this = self else { return }
-            this.indicator.stopAnimating()
-            if isSuccess {
-                if let list = list, !list.isEmpty {
-                    this.cardList = list
-                    this.cardTableView.reloadData()
-                } else {
-                    this.requestCardSupportType()
-                }
-            } else {
-                this.view.makeToast(message, position: .center)
             }
         }
     }

@@ -240,6 +240,8 @@
 "consumeRefund" = "退款";
 "rebate" = "返利";
 "cardDeposit" = "充值";
+"cardHolder" = "持卡人";
+"validityPeriod" = "到期日";
 
 /// Tabbar
 "home" = "首页";

@@ -31,9 +31,9 @@ struct CardRequest {
         provider.requestObject(.unfreeze, type: CardStatusModel.self, completion: completion)
     }
     
-    static func list(uniqueId: String, completion: @escaping ((Bool, String, [CardModel]?) -> Void)) {
+    static func list(completion: @escaping ((Bool, String, [CardModel]?) -> Void)) {
         let provider = MoyaProvider<CardTarget>()
-        provider.requestObjects(.list(uniqueId: uniqueId), type: CardModel.self, completion: completion)
+        provider.requestObjects(.list, type: CardModel.self, completion: completion)
     }
     
     static func open(completion: @escaping ResponseNormalCompletion) {
@@ -58,7 +58,7 @@ enum CardTarget {
     case supportType
     case freeze
     case unfreeze
-    case list(uniqueId: String)
+    case list
     case open
     case info
     case transations(page: Int, per: Int)
@@ -89,8 +89,8 @@ extension CardTarget: BaseTargetType {
     var parameters: [String : Any]? {
         var params: [String : Any] = [:]
         switch self {
-        case .list(let uniqueId):
-            params["unique_id"] = uniqueId
+        case .list:
+            params["unique_id"] = "6648244"
         case .status:
             params["unique_id"] = "6648244"
             params["partner_name"] = "metaprise"

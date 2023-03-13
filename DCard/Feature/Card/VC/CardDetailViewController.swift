@@ -9,33 +9,53 @@
 import UIKit
 
 class CardDetailViewController: BaseViewController {
-
-    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var cardTableView: UITableView!
     
-    
-    
+    private var cardList: [CardModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupData()
     }
     
     // MAEK: - Private
     
     private func setupUI() {
-        titleLabel.snp.remakeConstraints { make in
+        cardTableView.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(NAVBARHEIGHT + 26)
         }
         cardTableView.fw.registerCellNib(CardTableViewCell.self)
+        gk_navTitle = R.string.localizable.cardDetail()
+    }
+    
+    private func setupData() {
+        requestCardList()
     }
 
+    // MARK: - Network
+    
+    private func requestCardList() {
+        indicator.startAnimating()
+        CardRequest.list { [weak self] isSuccess, message, list in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                if let list = list, !list.isEmpty {
+                    this.cardList = list
+                    this.cardTableView.reloadData()
+                }
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
 }
 
 extension CardDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        cardList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -45,8 +65,9 @@ extension CardDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fw.dequeue(cellType: CardTableViewCell.self, for: indexPath)
         cell.selectionStyle = .none
+        let data = cardList[indexPath.row]
+        cell.update(data: data)
         return cell
     }
-    
     
 }
