@@ -95,8 +95,8 @@ extension CardTarget: BaseTargetType {
         var params: [String : Any] = [:]
         switch self {
         case .list:
+            params["unique_id"] = "6648244"
             break
-            //params["unique_id"] = "6648244"
         case .status(let partnerName):
 //            params["unique_id"] = "6648244"
 //            params["partner_name"] = "metaprise"
@@ -115,12 +115,12 @@ extension CardTarget: BaseTargetType {
             params["type"] = "visa_virtual_debit_card"
             params["base_currency"] = "USD"
         case .info(let partnerName):
-//            params["unique_id"] = "6648244"
-//            params["_skip_auth"] = 1
+            params["unique_id"] = "6648244"
+            params["_skip_auth"] = 1
             params["partner_name"] = partnerName
         case .transations(let type, let dateForm, let dateTo, let page, let per, let partnerName):
-//            params["unique_id"] = "6648244"
-//            params["_skip_auth"] = 1
+            params["unique_id"] = "6648244"
+            params["_skip_auth"] = 1
             params["partner_name"] = partnerName
             params["page"] = page
             params["per_page"] = per

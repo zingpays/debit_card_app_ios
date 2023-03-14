@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold-3.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light-10.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OpenCardSuccessAlertView" customModule="DCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehn-4A-tfz" userLabel="background">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZO-rr-jY3">
+                            <rect key="frame" x="36.666666666666657" y="301" width="320" height="250"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EwH-86-Rgm">
+                                    <rect key="frame" x="120" y="30" width="80" height="80"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="ao7-4S-gbD"/>
+                                        <constraint firstAttribute="height" constant="80" id="euQ-F5-wyf"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Applying" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBG-Mt-YoA">
+                                    <rect key="frame" x="113" y="126" width="94" height="28"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                                    <color key="textColor" name="fw#00A8BB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The card is being activated, please wait a moment." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0i-hs-6Ct">
+                                    <rect key="frame" x="36" y="166" width="248" height="37.666666666666657"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                    <color key="textColor" name="fw#001214"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="fw#FFFFFF"/>
+                            <constraints>
+                                <constraint firstItem="EwH-86-Rgm" firstAttribute="top" secondItem="HZO-rr-jY3" secondAttribute="top" constant="30" id="H7o-gn-8Od"/>
+                                <constraint firstAttribute="width" constant="320" id="J62-z2-lqb"/>
+                                <constraint firstItem="vBG-Mt-YoA" firstAttribute="centerX" secondItem="HZO-rr-jY3" secondAttribute="centerX" id="P5u-F9-ZPX"/>
+                                <constraint firstItem="EwH-86-Rgm" firstAttribute="centerX" secondItem="HZO-rr-jY3" secondAttribute="centerX" id="b1n-cV-F1x"/>
+                                <constraint firstItem="f0i-hs-6Ct" firstAttribute="centerX" secondItem="HZO-rr-jY3" secondAttribute="centerX" id="iiZ-a2-ANU"/>
+                                <constraint firstAttribute="height" constant="250" id="iww-JL-dyj"/>
+                                <constraint firstItem="f0i-hs-6Ct" firstAttribute="leading" secondItem="HZO-rr-jY3" secondAttribute="leading" constant="36" id="k7f-1C-ubV"/>
+                                <constraint firstAttribute="trailing" secondItem="f0i-hs-6Ct" secondAttribute="trailing" constant="36" id="kQP-IL-rbM"/>
+                                <constraint firstItem="f0i-hs-6Ct" firstAttribute="top" secondItem="vBG-Mt-YoA" secondAttribute="bottom" constant="12" id="nEf-WF-SZ9"/>
+                                <constraint firstItem="vBG-Mt-YoA" firstAttribute="top" secondItem="EwH-86-Rgm" secondAttribute="bottom" constant="16" id="oag-BP-qM5"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="HZO-rr-jY3" firstAttribute="centerX" secondItem="Ehn-4A-tfz" secondAttribute="centerX" id="746-cF-hLJ"/>
+                        <constraint firstItem="HZO-rr-jY3" firstAttribute="centerY" secondItem="Ehn-4A-tfz" secondAttribute="centerY" id="BoX-ym-CjK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ehn-4A-tfz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="EX9-hw-cUh"/>
+                <constraint firstItem="Ehn-4A-tfz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fAN-U2-rkV"/>
+                <constraint firstItem="Ehn-4A-tfz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="viY-EW-gxF"/>
+                <constraint firstAttribute="bottom" secondItem="Ehn-4A-tfz" secondAttribute="bottom" id="wrM-hA-mbX"/>
+            </constraints>
+            <connections>
+                <outlet property="applyTipsLabel" destination="f0i-hs-6Ct" id="xFB-P8-G7a"/>
+                <outlet property="applyingLabel" destination="vBG-Mt-YoA" id="sV9-9K-ES7"/>
+                <outlet property="backgroundView" destination="Ehn-4A-tfz" id="cLd-DK-rpI"/>
+                <outlet property="lodingView" destination="EwH-86-Rgm" id="lQc-2Q-gPg"/>
+            </connections>
+            <point key="canvasLocation" x="-390.07633587786256" y="11.971830985915494"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="fw#001214">
+            <color red="0.016000000759959221" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#00A8BB">
+            <color red="0.29399999976158142" green="0.6470000147819519" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="fw#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

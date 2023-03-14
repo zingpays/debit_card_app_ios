@@ -255,6 +255,8 @@
 "all" = "All";
 "to" = "TO";
 "select" = "Select";
+"applying" = "Applying";
+"applyingTips" = "The card is being activated, please wait a moment.";
 
 /// Tabbar
 "home" = "HOME";

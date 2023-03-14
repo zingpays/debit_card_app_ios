@@ -254,6 +254,8 @@
 "all" = "全部";
 "to" = "至";
 "select" = "选择";
+"applying" = "申请中";
+"applyingTips" = "您的卡正在激活，请稍等片刻。";
 
 /// Tabbar
 "home" = "首页";

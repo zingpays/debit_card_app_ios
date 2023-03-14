@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import JFPopup
 
 class ApplyCardViewController: BaseViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -18,6 +19,15 @@ class ApplyCardViewController: BaseViewController {
     @IBOutlet weak var continueButton: UIButton!
     private let privacyPolicyKey = "PrivacyPolicy"
     private let termsAndConditionsKey = "TermsandConditions"
+    
+    private lazy var successPopView: OpenCardSuccessAlertView = {
+        let v = OpenCardSuccessAlertView.loadFromNib()
+        v.frame = CGRect(origin: .zero, size: CGSize(width: SCREENWIDTH, height: SCREENHEIGHT))
+        return v
+    }()
+    
+    private var isOpenSuccess: Bool = false
+    private var isLoadingFullTime: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,18 +77,30 @@ class ApplyCardViewController: BaseViewController {
     // MARK: - Network
     
     private func requestOpenCard() {
-        indicator.startAnimating()
+        view.addSubview(successPopView)
+        self.perform(#selector(lodingFullTimeAction), with: nil, afterDelay: 3.0)
         CardRequest.open { isSuccess, message in
-            self.indicator.stopAnimating()
             if isSuccess {
-                self.openCardSuccess()
+                self.isOpenSuccess = true
+                if self.isLoadingFullTime {
+                    self.openCardSuccess()
+                }
             } else {
+                self.successPopView.removeFromSuperview()
                 self.view.makeToast(message, position: .center)
             }
         }
     }
 
     // MARK: - Actions
+    
+    @objc private func lodingFullTimeAction() {
+        isLoadingFullTime = true
+        if isOpenSuccess {
+            successPopView.removeFromSuperview()
+            openCardSuccess()
+        }
+    }
     
     @IBAction func continueAction(_ sender: Any) {
         guard checkButton.alpha == 1 else { return }

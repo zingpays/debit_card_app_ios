@@ -113,7 +113,7 @@ struct _R {
       var nsPhotoLibraryUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "We need use your photo library", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 249 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 251 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -214,6 +214,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var applyCardTitle: RswiftResources.StringResource { .init(key: "applyCardTitle", tableName: "Localizable", source: source, developmentValue: "Apply Card", comment: nil) }
+
+      /// en translation: Applying
+      ///
+      /// Key: applying
+      ///
+      /// Locales: en, zh-Hans
+      var applying: RswiftResources.StringResource { .init(key: "applying", tableName: "Localizable", source: source, developmentValue: "Applying", comment: nil) }
+
+      /// en translation: The card is being activated, please wait a moment.
+      ///
+      /// Key: applyingTips
+      ///
+      /// Locales: en, zh-Hans
+      var applyingTips: RswiftResources.StringResource { .init(key: "applyingTips", tableName: "Localizable", source: source, developmentValue: "The card is being activated, please wait a moment.", comment: nil) }
 
       /// en translation: If you are unable to scan the QR code, please enter this code manually into the app.
       ///
@@ -1862,7 +1876,7 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 23 colors.
+  /// This `_R.color` struct is generated, and contains static references to 24 colors.
   struct color {
     let bundle: Foundation.Bundle
 
@@ -1905,6 +1919,9 @@ struct _R {
     /// Color `fw#00DF9C`.
     var fw00DF9C: RswiftResources.ColorResource { .init(name: "fw#00DF9C", path: [], bundle: bundle) }
 
+    /// Color `fw#031315`.
+    var fw031315: RswiftResources.ColorResource { .init(name: "fw#031315", path: [], bundle: bundle) }
+
     /// Color `fw#095CAB`.
     var fw095CAB: RswiftResources.ColorResource { .init(name: "fw#095CAB", path: [], bundle: bundle) }
 
@@ -1936,7 +1953,7 @@ struct _R {
     var fwFFFFFF: RswiftResources.ColorResource { .init(name: "fw#FFFFFF", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 105 images.
+  /// This `_R.image` struct is generated, and contains static references to 106 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -2246,6 +2263,9 @@ struct _R {
     /// Image `iconWithdrawWhite`.
     var iconWithdrawWhite: RswiftResources.ImageResource { .init(name: "iconWithdrawWhite", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `img_0`.
+    var img_0: RswiftResources.ImageResource { .init(name: "img_0", path: [], bundle: bundle, locale: LocaleReference.none, onDemandResourceTags: nil) }
+
     /// Image `lanuchscreen_bg`.
     var lanuchscreen_bg: RswiftResources.ImageResource { .init(name: "lanuchscreen_bg", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -2288,7 +2308,7 @@ struct _R {
     }
   }
 
-  /// This `_R.file` struct is generated, and contains static references to 6 resource files.
+  /// This `_R.file` struct is generated, and contains static references to 8 resource files.
   struct file {
     let bundle: Foundation.Bundle
 
@@ -2304,14 +2324,20 @@ struct _R {
     /// Resource file `Roboto-Regular-14.ttf`.
     var robotoRegular14Ttf: RswiftResources.FileResource { .init(name: "Roboto-Regular-14", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
 
+    /// Resource file `card-applying.json`.
+    var cardApplyingJson: RswiftResources.FileResource { .init(name: "card-applying", pathExtension: "json", bundle: bundle, locale: LocaleReference.none) }
+
     /// Resource file `din-bold.ttf`.
     var dinBoldTtf: RswiftResources.FileResource { .init(name: "din-bold", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
 
     /// Resource file `din-regular.ttf`.
     var dinRegularTtf: RswiftResources.FileResource { .init(name: "din-regular", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `img_0.png`.
+    var img_0Png: RswiftResources.FileResource { .init(name: "img_0", pathExtension: "png", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 87 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 88 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -2461,6 +2487,9 @@ struct _R {
 
     /// Nib `MarketItemTableViewCell`.
     var marketItemTableViewCell: RswiftResources.NibReference<MarketItemTableViewCell> { .init(name: "MarketItemTableViewCell", bundle: bundle) }
+
+    /// Nib `OpenCardSuccessAlertView`.
+    var openCardSuccessAlertView: RswiftResources.NibReference<OpenCardSuccessAlertView> { .init(name: "OpenCardSuccessAlertView", bundle: bundle) }
 
     /// Nib `PasswordLoginViewController`.
     var passwordLoginViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "PasswordLoginViewController", bundle: bundle) }
@@ -2759,6 +2788,9 @@ struct _R {
       if UIKit.UIImage(named: "iconBtc", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'iconBtc' is used in nib 'MarketItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'MarketItemTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#20B085", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#20B085' is used in nib 'MarketItemTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#001214", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#001214' is used in nib 'OpenCardSuccessAlertView', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'OpenCardSuccessAlertView', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'OpenCardSuccessAlertView', but couldn't be loaded.") }
       if UIKit.UIImage(named: "userAvator", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'userAvator' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#00A8BB", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#00A8BB' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }
       if UIKit.UIColor(named: "fw#FFFFFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'fw#FFFFFF' is used in nib 'PasswordLoginViewController', but couldn't be loaded.") }

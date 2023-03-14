@@ -233,6 +233,10 @@
 		54D67A1E29BB2E70006F712E /* TransactionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D67A1D29BB2E70006F712E /* TransactionsModel.swift */; };
 		54D67A2029BC7100006F712E /* SecurityVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D67A1F29BC7100006F712E /* SecurityVerificationViewController.xib */; };
 		54D67A2429BF4C04006F712E /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D67A2329BF4C04006F712E /* FilterModel.swift */; };
+		54D67A2629C05D3D006F712E /* OpenCardSuccessAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D67A2529C05D3D006F712E /* OpenCardSuccessAlertView.swift */; };
+		54D67A2829C05D53006F712E /* OpenCardSuccessAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D67A2729C05D53006F712E /* OpenCardSuccessAlertView.xib */; };
+		54D67A2D29C06A9F006F712E /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D67A2B29C06A9E006F712E /* img_0.png */; };
+		54D67A2E29C06A9F006F712E /* card-applying.json in Resources */ = {isa = PBXBuildFile; fileRef = 54D67A2C29C06A9E006F712E /* card-applying.json */; };
 		54DE3E7F298D1B190077B120 /* WalletCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */; };
 		54DE3E80298D1B190077B120 /* WalletCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */; };
 		54DE3E832990AD280077B120 /* WalletCryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */; };
@@ -498,6 +502,10 @@
 		54D67A1D29BB2E70006F712E /* TransactionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsModel.swift; sourceTree = "<group>"; };
 		54D67A1F29BC7100006F712E /* SecurityVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecurityVerificationViewController.xib; sourceTree = "<group>"; };
 		54D67A2329BF4C04006F712E /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		54D67A2529C05D3D006F712E /* OpenCardSuccessAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCardSuccessAlertView.swift; sourceTree = "<group>"; };
+		54D67A2729C05D53006F712E /* OpenCardSuccessAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenCardSuccessAlertView.xib; sourceTree = "<group>"; };
+		54D67A2B29C06A9E006F712E /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
+		54D67A2C29C06A9E006F712E /* card-applying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "card-applying.json"; sourceTree = "<group>"; };
 		54DE3E7D298D1B190077B120 /* WalletCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardTableViewCell.swift; sourceTree = "<group>"; };
 		54DE3E7E298D1B190077B120 /* WalletCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCardTableViewCell.xib; sourceTree = "<group>"; };
 		54DE3E812990AD280077B120 /* WalletCryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCryptoTableViewCell.swift; sourceTree = "<group>"; };
@@ -591,6 +599,7 @@
 		541A8D182964160100C59026 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				54D67A2929C06A69006F712E /* Lottie */,
 				549D4620298A4B7C009AEB13 /* din-bold.ttf */,
 				549D4621298A4B7C009AEB13 /* din-regular.ttf */,
 				541A8D82296BFCFA00C59026 /* Roboto-Bold-3.ttf */,
@@ -1100,6 +1109,8 @@
 				54A45518298CDE1400621311 /* CardTableViewCell.xib */,
 				54A4551F298CEEF800621311 /* CardSettingTableViewCell.swift */,
 				54A45520298CEEF800621311 /* CardSettingTableViewCell.xib */,
+				54D67A2529C05D3D006F712E /* OpenCardSuccessAlertView.swift */,
+				54D67A2729C05D53006F712E /* OpenCardSuccessAlertView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1125,6 +1136,23 @@
 				54A45524298CF89300621311 /* FreezeSuccessViewController.xib */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		54D67A2929C06A69006F712E /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				54D67A2C29C06A9E006F712E /* card-applying.json */,
+				54D67A2A29C06A9E006F712E /* images */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		54D67A2A29C06A9E006F712E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				54D67A2B29C06A9E006F712E /* img_0.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		54DE3E7B298D1AD00077B120 /* VC */ = {
@@ -1323,6 +1351,7 @@
 				54C313162996121F00DBF373 /* ChooseCryptoNetworkView.xib in Resources */,
 				54E368AD298A15440042D072 /* ApplyCardViewController.xib in Resources */,
 				54D48095298A3F750068671E /* CardBagTableViewCell.xib in Resources */,
+				54D67A2E29C06A9F006F712E /* card-applying.json in Resources */,
 				5482975D29A4DB1600F82611 /* AuthSettingVerifyCodeViewController.xib in Resources */,
 				5482975529A4B16400F82611 /* AuthSettingViewController.xib in Resources */,
 				54569A3D29A71537009DD55D /* HomeMarketTableViewCell.xib in Resources */,
@@ -1341,12 +1370,14 @@
 				54DE3E842990AD280077B120 /* WalletCryptoTableViewCell.xib in Resources */,
 				5495F8FA29A76BDB0073EA48 /* HomeTransactionsViewController.xib in Resources */,
 				5495F8E629A7385B0073EA48 /* MarketItemTableViewCell.xib in Resources */,
+				54D67A2D29C06A9F006F712E /* img_0.png in Resources */,
 				54A454FC298B920C00621311 /* TransactionTableViewCell.xib in Resources */,
 				5422267F2992648900447A1A /* WalletTransactionsViewController.xib in Resources */,
 				5482974729A35F2B00F82611 /* QuickUnlockTableViewCell.xib in Resources */,
 				54DE3E80298D1B190077B120 /* WalletCardTableViewCell.xib in Resources */,
 				5482975929A4B5FC00F82611 /* AuthSettingQRCodeViewController.xib in Resources */,
 				54A45504298BAC9700621311 /* TransactionsFilterCollectionViewCell.xib in Resources */,
+				54D67A2829C05D53006F712E /* OpenCardSuccessAlertView.xib in Resources */,
 				541A8D8A296C05BB00C59026 /* Roboto-Medium-12.ttf in Resources */,
 				542BC1A02977026900133659 /* LoginViewController.xib in Resources */,
 				54A454F4298B668400621311 /* DepositFromTableViewCell.xib in Resources */,
@@ -1596,6 +1627,7 @@
 				54C313142996120900DBF373 /* ChooseCryptoNetworkView.swift in Sources */,
 				54C3131D299625D800DBF373 /* DepositViewController.swift in Sources */,
 				5422268629939AC600447A1A /* TransactionsDetailViewController.swift in Sources */,
+				54D67A2629C05D3D006F712E /* OpenCardSuccessAlertView.swift in Sources */,
 				545C56842984FB1D00D7F058 /* PasswordLoginViewController.swift in Sources */,
 				545C569D2986142F00D7F058 /* FillInAddressViewController.swift in Sources */,
 				54CD895829A6106C0038E822 /* ChangePasswordViewController.swift in Sources */,

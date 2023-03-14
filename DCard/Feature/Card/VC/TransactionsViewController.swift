@@ -41,6 +41,21 @@ class TransactionsViewController: BaseViewController {
     
     private let partnerName: String
     
+    private var currPage: Int = 1
+    
+    private lazy var refreshNormalHeader: MJRefreshNormalHeader? = {
+        let header = MJRefreshNormalHeader(refreshingTarget:self, refreshingAction: #selector(headerRefresh))
+        header.lastUpdatedTimeLabel?.isHidden = true
+        header.stateLabel?.isHidden = true
+        return header
+    }()
+    
+    private lazy var refreshNormalfooter: MJRefreshAutoFooter? = {
+        let footer = MJRefreshAutoFooter(refreshingTarget:self, refreshingAction: #selector(footerRefrsh))
+        footer.isAutomaticallyRefresh = false
+        return footer
+    }()
+    
     init(partnerName: String) {
         self.partnerName = partnerName
         super.init(nibName: nil, bundle: nil)
@@ -88,24 +103,29 @@ class TransactionsViewController: BaseViewController {
     
     private func setupData() {
         requestTransationsData()
-        transactionTableView.mj_header = MJRefreshHeader(refreshingBlock: { [weak self] in
-            guard let this = self else { return }
-//            this.requestTransationsData()
-        })
+        transactionTableView.mj_header = refreshNormalHeader
+        transactionTableView.mj_footer = refreshNormalfooter
     }
     
     private func requestTransationsData(type: String? = nil,
                                         dateForm: String? = nil,
                                         dateTo: String? = nil,
-                                        page: Int = 1,
-                                        per: Int = 15) {
-        indicator.startAnimating()
-        CardRequest.transations(type: type, dateTo: dateTo, dateForm: dateForm, page: page, per: per, partnerName: partnerName) { [weak self] isSuccess, message, data in
+                                        per: Int = 15,
+                                        isNeedLoading: Bool = true,
+                                        isLoadMore: Bool = false) {
+        if isNeedLoading {
+            indicator.startAnimating()
+        }
+        CardRequest.transations(type: type, dateTo: dateTo, dateForm: dateForm, page: currPage, per: per, partnerName: partnerName) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
-//            this.transactionTableView.mj_header.
+            this.transactionTableView.mj_header?.endRefreshing()
+            this.transactionTableView.mj_footer?.endRefreshing()
             if isSuccess {
                 if let data = data {
+                    if isLoadMore {
+                        this.currPage += 1
+                    }
                     this.transactionsData = data
                     this.transactionTableView.reloadData()
                 }
@@ -129,6 +149,15 @@ class TransactionsViewController: BaseViewController {
     }
     
     // MARK: - Actions
+    
+    @objc private func headerRefresh() {
+        currPage = 1
+        requestTransationsData(isNeedLoading: false)
+    }
+    
+    @objc private func footerRefrsh() {
+        requestTransationsData(isNeedLoading: false, isLoadMore: true)
+    }
     
     @objc private func filterAction() {
         let vc = TransactionsFilterViewController()

@@ -58,6 +58,9 @@ target 'DCard' do
   
   # https://github.com/CoderMJLee/MJRefresh
   pod 'MJRefresh'
+  
+  # https://github.com/airbnb/lottie-ios
+  pod 'lottie-ios'
 
   target 'DCardTests' do
     inherit! :search_paths
