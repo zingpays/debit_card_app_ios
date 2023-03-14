@@ -52,6 +52,13 @@ struct PasswordRequest {
         provider.requestStatus(.forgotPasswordNoLogin(email: email, password: password, verifyCode: verifyCode),
                                completion: completion)
     }
+    
+    static func checkPassword(password: String,
+                               completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<PasswordTarget>()
+        provider.requestStatus(.checkPassword(password: password),
+                               completion: completion)
+    }
 }
 
 enum PasswordTarget {
@@ -60,6 +67,7 @@ enum PasswordTarget {
     case securityVerify(email: String, emailCode: String?, phoneCode: String?, authCode: String?)
     case forgotPassword(password: String, verifyCode: String)
     case forgotPasswordNoLogin(email: String, password: String, verifyCode: String)
+    case checkPassword(password: String)
 }
 
 extension PasswordTarget: BaseTargetType {
@@ -75,21 +83,17 @@ extension PasswordTarget: BaseTargetType {
             return "/user/forgot-password2"
         case .forgotPasswordNoLogin:
             return "/user/forgot-password-no-login"
+        case .checkPassword:
+            return "/usert/check-password"
         }
     }
     
     var needAuthorization: Bool {
         switch self {
-        case .verifyOldPassword:
-            return true
-        case .changePassword:
-            return true
-        case .securityVerify:
+        case .securityVerify, .forgotPasswordNoLogin:
             return false
-        case .forgotPassword:
+        default:
             return true
-        case .forgotPasswordNoLogin:
-            return false
         }
     }
     
@@ -114,6 +118,8 @@ extension PasswordTarget: BaseTargetType {
             params["email"] = email
             params["password"] = password
             params["verify_code"] = verifyCode
+        case .checkPassword(let password):
+            params["password"] = password
         }
         return params
     }

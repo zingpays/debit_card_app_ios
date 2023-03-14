@@ -98,7 +98,7 @@ class TransactionsViewController: BaseViewController {
             typeValueLabel.text = cardType?.type.formatName()
             cardValueLabel.text = R.string.localizable.virtualCard()
             if let from = date?.from, let to = date?.to {
-                dateValueLabel.text = "\(from.toFormat("YYYY/MM/DD")) - \(to.toFormat("YYYY/MM/DD"))"
+                dateValueLabel.text = "\(from.toFormat("YYYY/MM/D")) - \(to.toFormat("YYYY/MM/DD"))"
             }
         } else {
             filterBoardViewHeight.constant = 0 //84

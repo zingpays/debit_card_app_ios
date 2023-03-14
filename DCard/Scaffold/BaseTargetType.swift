@@ -30,6 +30,7 @@ extension BaseTargetType {
         if needAuthorization, let token = UserManager.shared.token {
             params["Authorization"] = "Bearer \(token)"
         }
+        params["lang"] = LocalizationManager.shared.currentLanguage() == .zh ? "Zh" : "En"
         return params
     }
 

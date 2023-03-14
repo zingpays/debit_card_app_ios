@@ -20,7 +20,7 @@ class CardDetailViewController: BaseViewController {
         setupData()
     }
     
-    override func backItemClick(_ sender: Any) {
+    override func backAction() {
         if let vc = navigationController?.viewControllers.filter({ subVC in
             if subVC.isMember(of: CardViewController.self) {
                 return true

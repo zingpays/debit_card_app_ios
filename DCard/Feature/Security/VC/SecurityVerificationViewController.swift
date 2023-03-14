@@ -261,8 +261,11 @@ class SecurityVerificationViewController: BaseViewController {
             guard let emailCode = emailCode,
                   let phoneCode = phoneCode else { return }
             requestResetAuth(emailCode: emailCode, phoneCode: phoneCode, authToken: authToken ?? "")
-        case .freezeCard, .unFreezeCard, .cardDetail:
+        case .freezeCard, .unFreezeCard:
             requestSecurityCheck(emailCode: emailCode, phoneCode: phoneCode, authCode: authCode)
+        case .cardDetail:
+            guard let emailCode = emailCode else { return }
+            requestVerifyEmailForCard(code: emailCode)
         }
     }
     
@@ -477,6 +480,19 @@ class SecurityVerificationViewController: BaseViewController {
             if isSuccess {
                 let vc = FreezeSuccessViewController(title: R.string.localizable.cardUnfreezeSuccessfullyTitle(),
                                                      subTitle: R.string.localizable.cardUnfreezeSuccessfullySubtitle())
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.view.makeToast(message, position: .center)
+            }
+        }
+    }
+    
+    private func requestVerifyEmailForCard(code: String) {
+        indicator.startAnimating()
+        MailRequest.verifyEmailForCard(code: code) { isSuccess, message in
+            self.indicator.stopAnimating()
+            if isSuccess {
+                let vc = CardDetailViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
                 self.view.makeToast(message, position: .center)

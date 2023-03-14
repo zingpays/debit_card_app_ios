@@ -54,6 +54,12 @@ struct MailRequest {
         let provider = MoyaProvider<MailTarget>()
         provider.requestObject(.securityStatus(email: email), type: SecurityStatusModel.self, completion: completion)
     }
+    
+    static func verifyEmailForCard(code: String, completion: @escaping ResponseNormalCompletion) {
+        let provider = MoyaProvider<MailTarget>()
+        provider.requestStatus(.verifyEmailForCard(code: code),
+                               completion: completion)
+    }
 }
 
 enum MailTarget {
@@ -62,6 +68,7 @@ enum MailTarget {
     case setEmail(emailCode: String, phoneCode: String, authCode: String?)
     case verifyEmail(email: String, code: String)
     case securityStatus(email: String)
+    case verifyEmailForCard(code: String)
 }
 
 extension MailTarget: BaseTargetType {
@@ -77,6 +84,9 @@ extension MailTarget: BaseTargetType {
             return "/user/verify-email"
         case .securityStatus:
             return "/user/get-user-by-email"
+        case .verifyEmailForCard:
+            return "/user/verify-email-for-card"
+            
         }
     }
     
@@ -99,6 +109,8 @@ extension MailTarget: BaseTargetType {
             params["code"] = code
         case .securityStatus(let email):
             params["email"] = email
+        case .verifyEmailForCard(let code):
+            params["email_code"] = code
         }
         return params
     }

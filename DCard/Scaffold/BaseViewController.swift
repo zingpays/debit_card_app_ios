@@ -70,7 +70,7 @@ class BaseViewController: UIViewController {
     
     // MARK: - Actions
     
-    @objc private func backAction() {
+    @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
 }

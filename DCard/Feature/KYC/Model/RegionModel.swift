@@ -13,7 +13,10 @@ struct RegionModel: Mappable {
     var id: Int?
     var nameEn: String?
     var nameZh: String?
+    /// 手机国家码
     var phoneCode: String?
+    /// 手机号码长度限制，空就不校验
+    var phoneNumberLen: RegionPhoneNumLengthModel?
     
     init?(map: ObjectMapper.Map) {}
 
@@ -22,6 +25,20 @@ struct RegionModel: Mappable {
         nameEn         <- map["name_en"]
         nameZh         <- map["name_zh"]
         phoneCode      <- map["phone_code"]
+        phoneNumberLen <- map["phone_number_len"]
+    }
+}
+
+struct RegionPhoneNumLengthModel: Mappable {
+    
+    var min: Int?
+    var max: String?
+    
+    init?(map: ObjectMapper.Map) {}
+
+    mutating func mapping(map: Map) {
+        min             <- map["min"]
+        max             <- map["max"]
     }
 }
 
