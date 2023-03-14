@@ -13,6 +13,7 @@ struct LoginInfoModel: Mappable {
     var userId: String?
     var nickName: String?
     var realName: String?
+    var cardName: String?
     var avatar: String?
     var desc: String?
     var homePath: String?
@@ -25,6 +26,7 @@ struct LoginInfoModel: Mappable {
         userId            <- map["id"]
         nickName          <- map["nick_name"]
         realName          <- map["real_name"]
+        cardName          <- map["card_name"]
         avatar            <- map["avatar"]
         desc              <- map["desc"]
         homePath          <- map["homePath"]

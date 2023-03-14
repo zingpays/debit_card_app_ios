@@ -31,6 +31,7 @@ struct CardModel: Mappable {
     var transitAmount: String?
     var uniqueId: Int = 0
     var updatedAt: String?
+    var partnerName: String?
 
     init?(map: Map) {}
 
@@ -56,6 +57,7 @@ struct CardModel: Mappable {
         transitAmount     <- map["transit_amount"]
         uniqueId          <- map["unique_id"]
         updatedAt         <- map["updated_at"]
+        partnerName       <- map["partner_name"]
     }
 }
 

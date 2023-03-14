@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="DCard" customModuleProvider="target">
             <connections>
+                <outlet property="cardSettingButton" destination="ukt-3y-CSi" id="vJM-MH-xSr"/>
                 <outlet property="cardTableView" destination="1bW-I7-zHS" id="7bH-zM-rS0"/>
                 <outlet property="titleLabel" destination="haj-t9-WdW" id="iTe-tC-z4C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

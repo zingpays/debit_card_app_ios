@@ -11,9 +11,9 @@ import Moya_ObjectMapper
 
 struct CardRequest {
     
-    static func status(completion: @escaping ((Bool, String, CardStatusModel?) -> Void)) {
+    static func status(partnerName: String, completion: @escaping ((Bool, String, CardStatusModel?) -> Void)) {
         let provider = MoyaProvider<CardTarget>()
-        provider.requestObject(.status, type: CardStatusModel.self, completion: completion)
+        provider.requestObject(.status(partnerName: partnerName), type: CardStatusModel.self, completion: completion)
     }
     
     static func supportType(completion: @escaping ((Bool, String, [SuppportCardInfoModel]?) -> Void)) {
@@ -21,14 +21,14 @@ struct CardRequest {
         provider.requestObjects(.supportType, type: SuppportCardInfoModel.self, completion: completion)
     }
     
-    static func freeze(completion: @escaping ((Bool, String, CardStatusModel?) -> Void)) {
+    static func freeze(partnerName: String, completion: @escaping ((Bool, String, CardStatusModel?) -> Void)) {
         let provider = MoyaProvider<CardTarget>()
-        provider.requestObject(.freeze, type: CardStatusModel.self, completion: completion)
+        provider.requestObject(.freeze(partnerName: partnerName), type: CardStatusModel.self, completion: completion)
     }
     
-    static func unfreeze(completion: @escaping ((Bool, String, CardStatusModel?) -> Void)) {
+    static func unfreeze(partnerName: String, completion: @escaping ((Bool, String, CardStatusModel?) -> Void)) {
         let provider = MoyaProvider<CardTarget>()
-        provider.requestObject(.unfreeze, type: CardStatusModel.self, completion: completion)
+        provider.requestObject(.unfreeze(partnerName: partnerName), type: CardStatusModel.self, completion: completion)
     }
     
     static func list(completion: @escaping ((Bool, String, [CardModel]?) -> Void)) {
@@ -41,9 +41,9 @@ struct CardRequest {
         provider.requestStatus(.open, completion: completion)
     }
     
-    static func info(completion: @escaping ((Bool, String, CardModel?) -> Void)) {
+    static func info(partnerName: String, completion: @escaping ((Bool, String, CardModel?) -> Void)) {
         let provider = MoyaProvider<CardTarget>()
-        provider.requestObject(.info, type: CardModel.self, completion: completion)
+        provider.requestObject(.info(partnerName: partnerName), type: CardModel.self, completion: completion)
     }
     
     static func transations(type: String? = nil,
@@ -51,21 +51,22 @@ struct CardRequest {
                             dateForm: String? = nil,
                             page: Int,
                             per: Int,
+                            partnerName: String,
                             completion: @escaping ((Bool, String, TransactionsModel?) -> Void)) {
         let provider = MoyaProvider<CardTarget>()
-        provider.requestObject(.transations(type: type, dateForm: dateForm, dateTo: dateTo, page: page, per: per), type: TransactionsModel.self, completion: completion)
+        provider.requestObject(.transations(type: type, dateForm: dateForm, dateTo: dateTo, page: page, per: per, partnerName: partnerName), type: TransactionsModel.self, completion: completion)
     }
 }
 
 enum CardTarget {
-    case status
-    case supportType
-    case freeze
-    case unfreeze
     case list
     case open
-    case info
-    case transations(type: String?, dateForm: String?, dateTo: String?, page: Int, per: Int)
+    case supportType
+    case status(partnerName: String)
+    case freeze(partnerName: String)
+    case unfreeze(partnerName: String)
+    case info(partnerName: String)
+    case transations(type: String?, dateForm: String?, dateTo: String?, page: Int, per: Int, partnerName: String)
 }
 
 extension CardTarget: BaseTargetType {
@@ -94,30 +95,33 @@ extension CardTarget: BaseTargetType {
         var params: [String : Any] = [:]
         switch self {
         case .list:
-            params["unique_id"] = "6648244"
-        case .status:
-            params["unique_id"] = "6648244"
-            params["partner_name"] = "metaprise"
-            params["_skip_auth"] = 1
-        case .freeze:
-            params["unique_id"] = "6648244"
-            params["partner_name"] = "metaprise"
-        case .unfreeze:
-            params["unique_id"] = "6648244"
-            params["partner_name"] = "metaprise"
+            break
+            //params["unique_id"] = "6648244"
+        case .status(let partnerName):
+//            params["unique_id"] = "6648244"
+//            params["partner_name"] = "metaprise"
+            params["partner_name"] = partnerName
+//            params["_skip_auth"] = 1
+        case .freeze(let partnerName):
+//            params["unique_id"] = "6648244"
+//            params["partner_name"] = "metaprise"
+            params["partner_name"] = partnerName
+        case .unfreeze(let partnerName):
+//            params["unique_id"] = "6648244"
+            params["partner_name"] = partnerName
         case .open:
-            params["unique_id"] = "6648244"
-            params["_skip_auth"] = 1
+//            params["unique_id"] = "6648244"
+//            params["_skip_auth"] = 1
             params["type"] = "visa_virtual_debit_card"
             params["base_currency"] = "USD"
-        case .info:
-            params["unique_id"] = "6648244"
-            params["_skip_auth"] = 1
-            params["partner_name"] = "metaprise"
-        case .transations(let type, let dateForm, let dateTo, let page, let per):
-            params["unique_id"] = "6648244"
-            params["_skip_auth"] = 1
-            params["partner_name"] = "metaprise"
+        case .info(let partnerName):
+//            params["unique_id"] = "6648244"
+//            params["_skip_auth"] = 1
+            params["partner_name"] = partnerName
+        case .transations(let type, let dateForm, let dateTo, let page, let per, let partnerName):
+//            params["unique_id"] = "6648244"
+//            params["_skip_auth"] = 1
+            params["partner_name"] = partnerName
             params["page"] = page
             params["per_page"] = per
             params["type"] = type

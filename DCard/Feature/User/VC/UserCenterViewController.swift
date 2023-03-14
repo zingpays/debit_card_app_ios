@@ -212,8 +212,8 @@ class UserCenterViewController: BaseViewController {
     private func requestUserInfo() {
         UserRequest.loginInfo { isSuccess, message, data in
             if isSuccess {
-                if let nickName = data?.nickName, !nickName.isEmpty {
-                    self.emailLabel.text = nickName
+                if let cardName = data?.cardName, !cardName.isEmpty {
+                    self.emailLabel.text = cardName
                 }
             }
         }

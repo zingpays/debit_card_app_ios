@@ -13,6 +13,8 @@ class CardViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cardTableView: UITableView!
+    @IBOutlet weak var cardSettingButton: UIButton!
+    
     /// 卡片类型数据
     private var cardTypeData: SuppportCardInfoModel?
     
@@ -21,6 +23,8 @@ class CardViewController: BaseViewController {
     private var cardInfo: CardModel?
     
     private var transactionsData: TransactionsModel?
+    
+    private var partnerName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +48,11 @@ class CardViewController: BaseViewController {
         cardTableView.fw.registerCellNib(EmptyCardTableViewCell.self)
         cardTableView.fw.registerCellNib(CardBagTableViewCell.self)
         cardTableView.fw.registerCellNib(RecentTransactionsTableViewCell.self)
+        cardSettingButton.isHidden = true
     }
     
     private func setupData() {
-        requestCardInfo()
+        requestCardList()
     }
     
     private func setupNotification() {
@@ -64,12 +69,33 @@ class CardViewController: BaseViewController {
     }
     
     @IBAction func cardSettingAction(_ sender: Any) {
-        let vc = CardSettingViewController()
+        let vc = CardSettingViewController(partnerName: partnerName)
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Request
+    
+    private func requestCardList() {
+        indicator.startAnimating()
+        CardRequest.list { [weak self] isSuccess, message, list in
+            guard let this = self else { return }
+            this.indicator.stopAnimating()
+            if isSuccess {
+                if let list = list, !list.isEmpty, let name = list.first?.partnerName {
+                    this.partnerName = name
+                    UserManager.shared.partnerName = name
+                    this.requestCardInfo()
+                    this.cardSettingButton.isHidden = false
+                } else {
+                    this.cardSettingButton.isHidden = true
+                    this.requestCardSupportType()
+                }
+            } else {
+                this.view.makeToast(message, position: .center)
+            }
+        }
+    }
     
     private func requestCardSupportType() {
         indicator.startAnimating()
@@ -85,7 +111,7 @@ class CardViewController: BaseViewController {
     
     private func requestCardInfo() {
         indicator.startAnimating()
-        CardRequest.info { [weak self] isSuccess, message, data in
+        CardRequest.info(partnerName: partnerName) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
@@ -104,7 +130,7 @@ class CardViewController: BaseViewController {
     
     private func requestTransationsData() {
         indicator.startAnimating()
-        CardRequest.transations(page: 2, per: 5) { [weak self] isSuccess, message, data in
+        CardRequest.transations(page: 1, per: 5, partnerName: partnerName) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
             if isSuccess {
@@ -250,7 +276,7 @@ extension CardViewController: CardBagTableViewCellDelegate {
     }
     
     func didSelectedStatement(_ cell: CardBagTableViewCell) {
-        let vc = TransactionsViewController()
+        let vc = TransactionsViewController(partnerName: partnerName)
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -296,7 +322,7 @@ extension CardViewController: CardBagTableViewCellDelegate {
 
 extension CardViewController: RecentTransactionsTableViewCellDelegate {
     func didSelectedViewTheAll(_ cell: RecentTransactionsTableViewCell) {
-        let vc = TransactionsViewController()
+        let vc = TransactionsViewController(partnerName: partnerName)
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -55,6 +55,9 @@ target 'DCard' do
   
   # https://developers.veriff.com/#adding-the-sdk-to-the-project
   pod 'VeriffSDK'
+  
+  # https://github.com/CoderMJLee/MJRefresh
+  pod 'MJRefresh'
 
   target 'DCardTests' do
     inherit! :search_paths

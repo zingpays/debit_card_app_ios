@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class TransactionsViewController: BaseViewController {
     
@@ -36,13 +37,23 @@ class TransactionsViewController: BaseViewController {
     @IBOutlet weak var typeValueLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dateValueLabel: UILabel!
-    
     @IBOutlet weak var filterBoardViewHeight: NSLayoutConstraint!
+    
+    private let partnerName: String
+    
+    init(partnerName: String) {
+        self.partnerName = partnerName
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        requestTransationsData()
+        setupData()
     }
 
     // MARK: - Private
@@ -75,13 +86,24 @@ class TransactionsViewController: BaseViewController {
         self.gk_navTitle = R.string.localizable.transactions()
     }
     
+    private func setupData() {
+        requestTransationsData()
+        transactionTableView.mj_header = MJRefreshHeader(refreshingBlock: { [weak self] in
+            guard let this = self else { return }
+//            this.requestTransationsData()
+        })
+    }
+    
     private func requestTransationsData(type: String? = nil,
                                         dateForm: String? = nil,
-                                        dateTo: String? = nil) {
+                                        dateTo: String? = nil,
+                                        page: Int = 1,
+                                        per: Int = 15) {
         indicator.startAnimating()
-        CardRequest.transations(type: type, dateTo: dateTo, dateForm: dateForm, page: 1, per: 20) { [weak self] isSuccess, message, data in
+        CardRequest.transations(type: type, dateTo: dateTo, dateForm: dateForm, page: page, per: per, partnerName: partnerName) { [weak self] isSuccess, message, data in
             guard let this = self else { return }
             this.indicator.stopAnimating()
+//            this.transactionTableView.mj_header.
             if isSuccess {
                 if let data = data {
                     this.transactionsData = data

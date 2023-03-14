@@ -62,6 +62,8 @@ class UserManager {
   
     var status: UserStatusModel?
     
+    var partnerName: String?
+    
     func saveUserInfo(_ value: LoginModel) {
         UserDefaults.standard.set(value, forKey: USER_INFO_KEY)
         UserDefaults.standard.synchronize()

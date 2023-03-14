@@ -17,6 +17,17 @@ class CardSettingViewController: BaseViewController {
     var titles = [R.string.localizable.freezeCard()]
     var cardStatus: CardStatus = .normal
     
+    private let partnerName: String
+    
+    init(partnerName: String) {
+        self.partnerName = partnerName
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -46,7 +57,7 @@ class CardSettingViewController: BaseViewController {
     
     private func requestStatus() {
         indicator.startAnimating()
-        CardRequest.status { isSuccess, message, data in
+        CardRequest.status(partnerName: partnerName) { isSuccess, message, data in
             self.indicator.stopAnimating()
             if isSuccess, let data = data {
                 self.cardStatus = data.status

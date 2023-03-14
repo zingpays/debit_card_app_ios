@@ -464,7 +464,8 @@ class SecurityVerificationViewController: BaseViewController {
     }
     
     private func requestFreeze() {
-        CardRequest.freeze { isSuccess, message, data in
+        guard let partnerName = UserManager.shared.partnerName else { return }
+        CardRequest.freeze(partnerName: partnerName) { isSuccess, message, data in
             if isSuccess {
                 let vc = FreezeSuccessViewController(title: R.string.localizable.cardFreezeSuccessfullyTitle(),
                                                      subTitle: R.string.localizable.cardFreezeSuccessfullySubtitle())
@@ -476,7 +477,8 @@ class SecurityVerificationViewController: BaseViewController {
     }
     
     private func requestUnfreeze() {
-        CardRequest.unfreeze { isSuccess, message, data in
+        guard let partnerName = UserManager.shared.partnerName else { return }
+        CardRequest.unfreeze(partnerName: partnerName) { isSuccess, message, data in
             if isSuccess {
                 let vc = FreezeSuccessViewController(title: R.string.localizable.cardUnfreezeSuccessfullyTitle(),
                                                      subTitle: R.string.localizable.cardUnfreezeSuccessfullySubtitle())
